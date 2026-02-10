@@ -13,7 +13,7 @@ const person: Person = {
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -58,8 +58,8 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  title: `Ashton Medina - Full-Stack Platform Engineer | Portfolio`,
+  description: `Full-stack platform engineer specializing in systems architecture, automation logic, and secure access controls. Building scalable platforms that transform complex operations into governed, efficient systems.`,
   headline: <>Building platforms that power operations</>,
   featured: {
     display: false,
