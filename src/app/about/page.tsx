@@ -1,8 +1,10 @@
 import {
   Avatar,
   Button,
+  Card,
   Column,
   Heading,
+  Line,
   Media,
   Tag,
   Text,
@@ -75,51 +77,30 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
-      <Row fillWidth s={{ direction: "column"}} horizontal="center">
+      <Column fillWidth horizontal="center" maxWidth="s">
         {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            top="64"
-            fitHeight
-            position="sticky"
-            s={{ position: "relative", style: { top: "auto" } }}
-            xs={{ style: { top: "auto" } }}
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-          </Column>
-        )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
-          <Column
+          <Card
             id={about.intro.title}
             fillWidth
-            minHeight="160"
-            vertical="center"
+            padding="l"
+            radius="l"
+            border="neutral-alpha-weak"
+            background="surface"
             marginBottom="32"
           >
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-            >
-              {person.role}
-            </Text>
-            <Row
-              className={styles.blockAlign}
-              paddingTop="20"
-              paddingBottom="8"
-              gap="8"
-              horizontal="center"
-              fitWidth
-            >
+            <Column fillWidth gap="m" align="center">
+              <Avatar src={person.avatar} size="xl" />
+              <Heading variant="display-strong-xl" align="center">
+                {person.name}
+              </Heading>
+              <Text
+                variant="display-default-xs"
+                onBackground="neutral-weak"
+                align="center"
+              >
+                {person.role}
+              </Text>
+              <Line maxWidth="s" marginTop="s" marginBottom="s" />
               <Button
                 href={`mailto:${person.email}`}
                 prefixIcon="email"
@@ -128,18 +109,29 @@ export default function About() {
                 weight="default"
                 variant="secondary"
               />
-            </Row>
-          </Column>
+            </Column>
+          </Card>
+        )}
+        <Column className={styles.blockAlign} fillWidth>
 
           {about.intro.display && (
-            <Column fillWidth gap="l" marginBottom="40">
-              <Heading as="h2" id={about.intro.title} variant="display-strong-s" marginBottom="m">
-                {about.intro.title}
-              </Heading>
-              <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.75" }}>
-                {about.intro.description}
-              </Text>
-            </Column>
+            <Card
+              fillWidth
+              padding="l"
+              radius="l"
+              border="neutral-alpha-weak"
+              background="surface"
+              marginBottom="40"
+            >
+              <Column fillWidth gap="l">
+                <Heading as="h2" id={about.intro.title} variant="display-strong-s" marginBottom="s">
+                  {about.intro.title}
+                </Heading>
+                <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.75" }}>
+                  {about.intro.description}
+                </Text>
+              </Column>
+            </Card>
           )}
 
           {about.work.display && (
@@ -222,76 +214,63 @@ export default function About() {
           )}
 
           {about.technical.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="32"
-                marginTop="40"
-              >
-                {about.technical.title}
-              </Heading>
-              <Column fillWidth gap="xl">
-                {about.technical.skills.map((skill, index) => (
-                  <Column 
-                    key={`${skill}-${index}`} 
-                    fillWidth 
-                    gap="m"
-                    paddingBottom={index < about.technical.skills.length - 1 ? "xl" : "0"}
-                    style={{
-                      borderBottom: index < about.technical.skills.length - 1 
-                        ? "1px solid var(--neutral-alpha-weak)" 
-                        : "none",
-                    }}
+            <Column fillWidth gap="l" marginTop="40">
+              {about.technical.skills.map((skill, index) => (
+                <Card
+                  key={`${skill}-${index}`}
+                  fillWidth
+                  padding="l"
+                  radius="l"
+                  border="neutral-alpha-weak"
+                  background="surface"
+                  gap="m"
+                >
+                  <Text 
+                    id={skill.title} 
+                    variant="heading-strong-l"
+                    marginBottom="s"
                   >
-                    <Text 
-                      id={skill.title} 
-                      variant="heading-strong-l"
-                      marginBottom="s"
-                    >
-                      {skill.title}
-                    </Text>
-                    <Column fillWidth gap="m">
-                      {skill.description}
-                    </Column>
-                    {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="m" paddingTop="m">
-                        {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
-                            {tag.name}
-                          </Tag>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
+                    {skill.title}
+                  </Text>
+                  <Column fillWidth gap="m">
+                    {skill.description}
                   </Column>
-                ))}
-              </Column>
-            </>
+                  {skill.tags && skill.tags.length > 0 && (
+                    <Row wrap gap="m" paddingTop="s">
+                      {skill.tags.map((tag, tagIndex) => (
+                        <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
+                          {tag.name}
+                        </Tag>
+                      ))}
+                    </Row>
+                  )}
+                  {skill.images && skill.images.length > 0 && (
+                    <Row fillWidth paddingTop="m" gap="12" wrap>
+                      {skill.images.map((image, index) => (
+                        <Row
+                          key={index}
+                          border="neutral-medium"
+                          radius="m"
+                          minWidth={image.width}
+                          height={image.height}
+                        >
+                          <Media
+                            enlarge
+                            radius="m"
+                            sizes={image.width.toString()}
+                            alt={image.alt}
+                            src={image.src}
+                          />
+                        </Row>
+                      ))}
+                    </Row>
+                  )}
+                </Card>
+              ))}
+            </Column>
           )}
         </Column>
-      </Row>
+      </Column>
     </Column>
   );
 }

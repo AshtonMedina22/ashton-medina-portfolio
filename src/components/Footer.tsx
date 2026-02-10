@@ -1,5 +1,5 @@
 import { Row, IconButton, Text } from "@once-ui-system/core";
-import { person } from "@/resources";
+import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -26,13 +26,18 @@ export const Footer = () => {
           <Text paddingX="4">{person.name}</Text>
         </Text>
         <Row gap="16">
-          <IconButton
-            href={`mailto:${person.email}`}
-            icon="email"
-            tooltip="Email"
-            size="s"
-            variant="ghost"
-          />
+          {social
+            .filter((item) => (item.name === "LinkedIn" || item.name === "Email") && item.link)
+            .map((item) => (
+              <IconButton
+                key={item.name}
+                href={item.link}
+                icon={item.icon}
+                tooltip={item.name}
+                size="s"
+                variant="ghost"
+              />
+            ))}
         </Row>
       </Row>
       <Row height="80" hide s={{ hide: false }} />

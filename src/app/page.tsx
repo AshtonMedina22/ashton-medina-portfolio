@@ -13,7 +13,6 @@ import {
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes, techStack } from "@/resources";
 import { Mailchimp, TechStackMarquee } from "@/components";
-import { getPosts } from "@/utils/utils";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -29,9 +28,6 @@ export default function Home() {
   // Use the comprehensive tech stack list from content config
   // This showcases full-stack capabilities beyond just what's in projects
   const displayTechStack = techStack;
-  
-  // Get all projects for featured work section
-  const allProjects = getPosts(["src", "app", "work", "projects"]);
 
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
@@ -100,54 +96,17 @@ export default function Home() {
                     size="m"
                   />
                 )}
-                {about.title}
+                {about.label}
               </Row>
             </Button>
           </RevealFx>
           {displayTechStack.length > 0 && (
-            <RevealFx translateY="8" delay={0.6} fillWidth paddingTop="xl">
-              <Column fillWidth gap="s">
-                <Text variant="label-default-s" align="center" onBackground="neutral-weak">
+            <RevealFx translateY="8" delay={0.6} fillWidth paddingTop="xl" paddingBottom="xl">
+              <Column fillWidth gap="m">
+                <Text variant="label-strong-m" align="center" onBackground="neutral-weak">
                   Technologies I Work With
                 </Text>
                 <TechStackMarquee technologies={displayTechStack} />
-              </Column>
-            </RevealFx>
-          )}
-          <RevealFx translateY="12" delay={0.8} fillWidth paddingTop="32">
-            <Column maxWidth="s" fillWidth gap="m" align="center">
-              <Text wrap="balance" variant="body-default-l" align="center" onBackground="neutral-weak">
-                Most operational systems fail at scale because processes are inconsistent, access is uncontrolled, and execution depends on individual knowledge. I build structured platforms that enforce workflow standards, automate execution paths, and maintain data integrity as organizations grow. My work connects customer experience, operations, vendors, and delivery into governed systems that remain stable under change.
-              </Text>
-            </Column>
-          </RevealFx>
-          {allProjects.length > 0 && (
-            <RevealFx translateY="16" delay={1.0} fillWidth paddingTop="32">
-              <Column fillWidth gap="s" align="center">
-                <Text variant="label-default-s" align="center" onBackground="neutral-weak">
-                  Featured Work
-                </Text>
-                <Row wrap gap="m" horizontal="center" paddingX="l" maxWidth="s">
-                  {allProjects
-                    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime())
-                    .map((project) => (
-                      <Badge
-                        key={project.slug}
-                        href={`/work/${project.slug}`}
-                        background="brand-alpha-weak"
-                        paddingX="16"
-                        paddingY="8"
-                        onBackground="neutral-strong"
-                        textVariant="label-default-m"
-                        arrow={false}
-                        style={{
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {project.metadata.title}
-                      </Badge>
-                    ))}
-                </Row>
               </Column>
             </RevealFx>
           )}

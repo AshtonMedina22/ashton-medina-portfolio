@@ -42,6 +42,8 @@ const techStack: Array<{ name: string; icon: string | null }> = [
   { name: "TypeScript", icon: "typescript" },
   { name: "JavaScript", icon: "javascript" },
   { name: "SCSS", icon: "scss" },
+  { name: "HTML", icon: null },
+  { name: "CSS", icon: null },
   // Backend
   { name: "Node.js", icon: "nodejs" },
   { name: "Python", icon: "python" },
@@ -124,7 +126,7 @@ const about: About = {
   },
   technical: {
     display: true,
-    title: "My Approach",
+    title: "",
     skills: [
       {
         title: "Engineering Principles",
@@ -168,19 +170,7 @@ const about: About = {
         images: [],
       },
       {
-        title: "Typical Scope of Responsibility",
-        description: (
-          <>
-            <Text variant="body-default-m" onBackground="neutral-weak" style={{ lineHeight: "1.75" }}>
-              I typically act as the technical owner for internal platforms, defining data models, workflow states, automation triggers, access rules, and lifecycle behavior while validating the system in real operational use.
-            </Text>
-          </>
-        ),
-        tags: [],
-        images: [],
-      },
-      {
-        title: "System Architecture Patterns I Use",
+        title: "Architecture Patterns",
         description: (
           <>
             <Column as="ul" gap="m" style={{ listStyle: "none", paddingLeft: 0 }}>
@@ -221,7 +211,7 @@ const about: About = {
         images: [],
       },
       {
-        title: "Core Capability Areas",
+        title: "Areas of Expertise",
         description: (
           <>
             <Row wrap gap="m" paddingTop="s">
