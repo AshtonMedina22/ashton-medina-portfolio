@@ -1,0 +1,125 @@
+---
+title: "Operational Intelligence Platform"
+publishedAt: "2024-11-01"
+summary: "Computed KPI and aggregation engine delivering role-filtered operational metrics and executive dashboards that provide real-time visibility into readiness, margin, workload, and performance."
+images:
+  - "/images/projects/project-01/cover-03.jpg"
+  - "/images/projects/project-01/cover-04.jpg"
+  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-01/cover-02.jpg"
+---
+
+## Problem Context
+
+Operational data exists across multiple systems but is rarely aggregated into actionable metrics. Leaders lack real-time visibility into readiness, margin, workload, and performance, making it difficult to make data-driven decisions and identify operational issues before they impact delivery.
+
+Without aggregated intelligence, organizations face:
+- Fragmented data across CRM, execution, and vendor systems
+- Manual metric calculation leading to delays and errors
+- Lack of role-appropriate visibility into operational health
+- Inability to identify margin opportunities and workload imbalances
+- Reactive decision-making instead of proactive operational management
+
+## Solution Overview
+
+This platform computes cross-domain metrics and exposes them through role-aware dashboards. The system aggregates operational records, computes derived KPIs, and provides role-filtered views with drill-down capabilities—enabling executives and operational teams to make informed decisions based on real-time operational intelligence.
+
+## Analytics Model
+
+The platform implements a sophisticated data pipeline:
+
+**Operational Records** → Aggregation Queries → Computed KPI Fields → Derived Metrics → Role-Filtered Views → Dashboard Cards + Drilldown Views
+
+This pipeline ensures real-time metric calculation with proper data transformation and role-based access control.
+
+## Key Features
+
+- **Cross-Domain Aggregation**: Aggregates operational metrics across multiple modules and systems with real-time synchronization
+- **Computed KPIs**: Derives key performance indicators from raw operational data with optimized calculation engines
+- **Role-Filtered Views**: Provides role-aware dashboard views showing relevant metrics for each user with proper access control
+- **Drill-Down Reporting**: Supports detailed analysis with drill-down query views enabling root cause analysis
+- **Real-Time Metrics**: Surfaces readiness and margin indicators with up-to-date calculations and caching
+- **Executive Dashboards**: Enables operational visibility at the leadership level with high-level KPIs and trends
+
+## Technical Implementation
+
+### Engineering Patterns
+
+The platform implements sophisticated analytics patterns:
+
+- **Computed KPI models** with derived metric fields calculated on-demand or pre-computed for performance
+- **Aggregation queries across domains** combining data from multiple sources with proper joins and filtering
+- **Singleton dashboard engine pattern** for consistent metric calculation and caching across all views
+- **Domain-filtered metrics** ensuring role-appropriate data access with field-level permissions
+- **Derived margin calculations** from operational records with cost and revenue aggregation
+- **Timeline readiness metrics** tracking project and event readiness with milestone tracking
+- **Task workload metrics** measuring team capacity and utilization with resource allocation analysis
+- **Drill-down query views** enabling detailed analysis with nested aggregation and filtering
+- **Multi-source aggregation** combining data from CRM, execution, and vendor systems with data transformation
+
+### Dashboard Capabilities
+
+The platform provides comprehensive dashboard functionality:
+
+- **KPI cards** with real-time updates and trend indicators
+- **Role-filtered views** showing metrics relevant to each user's role and permissions
+- **Rep-level performance** tracking individual and team performance metrics
+- **Margin indicators** showing profitability and margin analysis across projects
+- **Event readiness timelines** displaying project and event readiness status
+- **Task workload metrics** showing team capacity, utilization, and allocation
+
+### Data Engineering Signals
+
+The system architecture includes advanced data engineering:
+
+- **Computed fields** with materialized views and caching strategies
+- **Aggregation models** with optimized queries and indexing
+- **Derived metrics** with calculation engines and update triggers
+- **Domain-filtered queries** with role-based access control and data masking
+- **Metric calculation methods** with batch processing and real-time updates
+- **Multi-source aggregation** with ETL processes and data transformation pipelines
+
+### Technical Scope
+
+- **Aggregation queries** with optimized SQL and NoSQL query patterns
+- **Computed KPI models** with materialized views and caching layers
+- **Derived metric fields** with calculation engines and update triggers
+- **Domain-filtered analytics** with role-based access control
+- **Dashboard model layer** with API design and data serialization
+- **Role-scoped metric views** with permission-based filtering
+
+## Business Impact
+
+This platform enables data-driven decision making and operational excellence:
+
+### Capabilities Enabled
+
+- **Enables data-driven decisions** with real-time, accurate operational metrics and trend analysis
+- **Surfaces readiness indicators** identifying projects and events requiring attention with proactive alerts
+- **Provides operational clarity** giving leaders visibility into performance and capacity with executive dashboards
+- **Identifies margin opportunities** through computed margin analysis and profitability insights
+- **Tracks workload distribution** ensuring balanced team utilization and resource allocation
+
+### Results
+
+- **Real-time operational visibility** with sub-minute metric updates
+- **Proactive issue identification** through automated alerts and threshold monitoring
+- **Improved decision-making** with accurate, role-appropriate metrics
+- **Better resource allocation** through workload and capacity analysis
+- **Margin optimization** through profitability tracking and analysis
+
+The result is improved operational decision-making, proactive issue identification, better resource allocation, and margin optimization based on real-time intelligence.
+
+## Technologies & Architecture
+
+- Aggregation queries with optimized database queries and indexing
+- Computed KPI models with materialized views and caching strategies
+- Derived metric fields with calculation engines and update triggers
+- Domain-filtered analytics with role-based access control
+- Dashboard model layer with RESTful API design
+- Role-scoped metric views with permission-based filtering
+- Data warehouse architecture for historical analysis
+- Real-time data streaming for live metric updates
+- Caching layers (Redis/Memcached) for performance optimization
+- ETL pipelines for data transformation and aggregation
+- Time-series databases for metric storage and querying
