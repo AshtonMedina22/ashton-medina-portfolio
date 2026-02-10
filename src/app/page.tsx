@@ -12,8 +12,8 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
+import { Mailchimp, TechStackMarquee } from "@/components";
+import { getPosts } from "@/utils/utils";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -26,6 +26,15 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
+  // Get all unique tech stack items from all projects
+  const allProjects = getPosts(["src", "app", "work", "projects"]);
+  const allTechStack = allProjects.flatMap((project) => project.metadata.techStack || []);
+  
+  // Get unique tech stack items (by name)
+  const uniqueTechStack = Array.from(
+    new Map(allTechStack.map((tech) => [tech.name, tech])).values()
+  );
+
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
@@ -97,12 +106,63 @@ export default function Home() {
               </Row>
             </Button>
           </RevealFx>
+          {uniqueTechStack.length > 0 && (
+            <RevealFx translateY="8" delay={0.6} fillWidth paddingTop="xl">
+              <Column fillWidth gap="s">
+                <Text variant="label-default-s" align="center" onBackground="neutral-weak">
+                  Technologies I Work With
+                </Text>
+                <TechStackMarquee technologies={uniqueTechStack} />
+              </Column>
+            </RevealFx>
+          )}
+          <RevealFx translateY="12" delay={0.8} fillWidth paddingTop="32">
+            <Column maxWidth="s" fillWidth gap="m" align="center">
+              <Text wrap="balance" variant="body-default-l" align="center" onBackground="neutral-weak">
+                Most operational systems fail at scale because processes are inconsistent, access is uncontrolled, and execution depends on individual knowledge. I build structured platforms that enforce workflow standards, automate execution paths, and maintain data integrity as organizations grow. My work connects customer experience, operations, vendors, and delivery into governed systems that remain stable under change.
+              </Text>
+            </Column>
+          </RevealFx>
+          {allProjects.length > 0 && (
+            <RevealFx translateY="16" delay={1.0} fillWidth paddingTop="32">
+              <Column fillWidth gap="s" align="center">
+                <Text variant="label-default-s" align="center" onBackground="neutral-weak">
+                  Featured Work
+                </Text>
+                <Row wrap gap="m" horizontal="center" paddingX="l">
+                  {allProjects
+                    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime())
+                    .map((project) => (
+                      <Badge
+                        key={project.slug}
+                        href={`/work/${project.slug}`}
+                        background="brand-alpha-weak"
+                        paddingX="12"
+                        paddingY="4"
+                        onBackground="neutral-strong"
+                        textVariant="label-default-s"
+                        arrow={false}
+                      >
+                        {project.metadata.title}
+                      </Badge>
+                    ))}
+                </Row>
+              </Column>
+            </RevealFx>
+          )}
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+      <RevealFx translateY="16" delay={0.8} horizontal="center">
+        <Button
+          href="/work"
+          variant="primary"
+          size="m"
+          weight="default"
+          arrowIcon
+        >
+          View My Work
+        </Button>
       </RevealFx>
-      <Projects range={[2]} />
       <Mailchimp />
     </Column>
   );
