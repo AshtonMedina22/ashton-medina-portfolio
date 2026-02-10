@@ -8,7 +8,7 @@ export {
   blog,
   work,
   gallery,
-  contact,
+  techStack,
 } from "./content";
 
 export {

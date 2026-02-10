@@ -1,5 +1,5 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Column, Line, Row, Tag, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Ashton",
@@ -7,7 +7,7 @@ const person: Person = {
   name: `Ashton Medina`,
   role: "Full-Stack Platform Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
+  email: "ashtonmedina22@gmail.com",
   location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -19,31 +19,11 @@ const newsletter: Newsletter = {
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
+  // Only LinkedIn and Email for professional portfolio
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/ashton-medina",
     essential: true,
   },
   {
@@ -52,6 +32,32 @@ const social: Social = [
     link: `mailto:${person.email}`,
     essential: true,
   },
+];
+
+// Comprehensive tech stack for full-stack platform engineer
+const techStack: Array<{ name: string; icon: string | null }> = [
+  // Frontend
+  { name: "React", icon: "react" },
+  { name: "Next.js", icon: "nextjs" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "JavaScript", icon: "javascript" },
+  { name: "SCSS", icon: "scss" },
+  // Backend
+  { name: "Node.js", icon: "nodejs" },
+  { name: "Python", icon: "python" },
+  // Databases & Data
+  { name: "PostgreSQL", icon: "postgresql" },
+  { name: "Supabase", icon: "supabase" },
+  { name: "Redis", icon: "redis" },
+  { name: "SQL", icon: null },
+  { name: "JSON", icon: "json" },
+  // APIs & Middleware
+  { name: "REST API", icon: "api" },
+  { name: "Middleware", icon: null },
+  // Infrastructure & Tools
+  { name: "Docker", icon: "docker" },
+  { name: "Nginx", icon: "nginx" },
+  { name: "Git", icon: "git" },
 ];
 
 const home: Home = {
@@ -84,8 +90,8 @@ const home: Home = {
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `How I Approach Platform and Systems Engineering – ${person.name}`,
+  description: `Learn about ${person.name}'s approach to building scalable, governed platforms and systems`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,139 +100,154 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "How I Approach Platform and Systems Engineering",
     description: (
       <>
-        Ashton is a full-stack platform engineer with a passion for transforming complex operations
-        into scalable, governed systems. His work spans backend architecture, automation logic, 
-        secure access controls, and user-facing interfaces.
+        I approach technology as an operational system, not just an application. My work focuses on building platforms that standardize execution, reduce process risk, and remain maintainable as teams and requirements evolve. Systems are designed for non-technical users, governed workflows, and long-term survivability.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
-    experiences: [
-      {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
-        achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
-      },
-    ],
+    display: false,
+    title: "Engineering Principles",
+    experiences: [],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false,
     title: "Studies",
-    institutions: [
-      {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
+    institutions: [],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "My Approach",
     skills: [
       {
-        title: "Figma",
+        title: "Engineering Principles",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            <Column as="ul" gap="m" style={{ listStyle: "none", paddingLeft: 0 }}>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Systems should make execution repeatable, not person-dependent.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Automation should enforce standards, not bypass them.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Access control and approvals enable safe scale.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Data should be captured once and propagated forward.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  System behavior must be explainable and auditable.
+                </Text>
+              </Row>
+            </Column>
+          </>
         ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Typical Scope of Responsibility",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            <Text variant="body-default-m" onBackground="neutral-weak" style={{ lineHeight: "1.75" }}>
+              I typically act as the technical owner for internal platforms, defining data models, workflow states, automation triggers, access rules, and lifecycle behavior while validating the system in real operational use.
+            </Text>
+          </>
         ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
+      },
+      {
+        title: "System Architecture Patterns I Use",
+        description: (
+          <>
+            <Column as="ul" gap="m" style={{ listStyle: "none", paddingLeft: 0 }}>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Template-driven workflow generation for standardized execution structures.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  State-machine lifecycle modeling for controlled stage progression.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Token-scoped external access for secure third-party interaction.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Computed metric aggregation for operational analytics.
+                </Text>
+              </Row>
+              <Row as="li" gap="m" vertical="start">
+                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
+                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
+                  Modular extension architecture for upgrade-safe platform growth.
+                </Text>
+              </Row>
+            </Column>
+          </>
+        ),
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Core Capability Areas",
+        description: (
+          <>
+            <Row wrap gap="m" paddingTop="s">
+              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
+                Platform architecture and domain modeling
+              </Tag>
+              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
+                Systems integration and cross-module workflows
+              </Tag>
+              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
+                Backend automation and computed logic
+              </Tag>
+              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
+                Operational analytics and KPI modeling
+              </Tag>
+              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
+                Access control and permission design
+              </Tag>
+              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
+                Full software lifecycle delivery
+              </Tag>
+            </Row>
+          </>
+        ),
+        tags: [],
+        images: [],
       },
     ],
   },
@@ -301,11 +322,4 @@ const gallery: Gallery = {
   ],
 };
 
-const contact = {
-  path: "/contact",
-  label: "Contact",
-  title: `Contact – ${person.name}`,
-  description: `Get in touch with ${person.name}`,
-};
-
-export { person, social, newsletter, home, about, blog, work, gallery, contact };
+export { person, social, newsletter, home, about, blog, work, gallery, techStack };

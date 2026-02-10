@@ -8,6 +8,13 @@
   display: flex;
   white-space: nowrap;
   animation: scroll 30s linear infinite;
+  
+  // Preserve original icon colors from react-icons
+  :global(svg) {
+    // Remove any color overrides to show original brand colors
+    color: unset !important;
+    fill: currentColor !important;
+  }
 }
 
 @keyframes scroll {

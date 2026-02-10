@@ -3,8 +3,6 @@ import {
   Button,
   Column,
   Heading,
-  Icon,
-  IconButton,
   Media,
   Tag,
   Text,
@@ -12,7 +10,7 @@ import {
   Schema,
   Row,
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, about, person } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -94,19 +92,6 @@ export default function About() {
             horizontal="center"
           >
             <Avatar src={person.avatar} size="xl" />
-            <Row gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
@@ -117,31 +102,6 @@ export default function About() {
             vertical="center"
             marginBottom="32"
           >
-            {about.calendar.display && (
-              <Row
-                fitWidth
-                border="brand-alpha-medium"
-                background="brand-alpha-weak"
-                radius="full"
-                padding="4"
-                gap="8"
-                marginBottom="m"
-                vertical="center"
-                className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                }}
-              >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
-                <IconButton
-                  href={about.calendar.link}
-                  data-border="rounded"
-                  variant="secondary"
-                  icon="chevronRight"
-                />
-              </Row>
-            )}
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>
@@ -152,53 +112,33 @@ export default function About() {
             >
               {person.role}
             </Text>
-            {social.length > 0 && (
-              <Row
-                className={styles.blockAlign}
-                paddingTop="20"
-                paddingBottom="8"
-                gap="8"
-                wrap
-                horizontal="center"
-                fitWidth
-                data-border="rounded"
-              >
-                {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
-                    item.link && (
-                      <React.Fragment key={item.name}>
-                        <Row s={{ hide: true }}>
-                          <Button
-                            key={item.name}
-                            href={item.link}
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="s"
-                            weight="default"
-                            variant="secondary"
-                          />
-                        </Row>
-                        <Row hide s={{ hide: false }}>
-                          <IconButton
-                            size="l"
-                            key={`${item.name}-icon`}
-                            href={item.link}
-                            icon={item.icon}
-                            variant="secondary"
-                          />
-                        </Row>
-                      </React.Fragment>
-                    ),
-                )}
-              </Row>
-            )}
+            <Row
+              className={styles.blockAlign}
+              paddingTop="20"
+              paddingBottom="8"
+              gap="8"
+              horizontal="center"
+              fitWidth
+            >
+              <Button
+                href={`mailto:${person.email}`}
+                prefixIcon="email"
+                label={person.email}
+                size="s"
+                weight="default"
+                variant="secondary"
+              />
+            </Row>
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
+            <Column fillWidth gap="l" marginBottom="40">
+              <Heading as="h2" id={about.intro.title} variant="display-strong-s" marginBottom="m">
+                {about.intro.title}
+              </Heading>
+              <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.75" }}>
+                {about.intro.description}
+              </Text>
             </Column>
           )}
 
@@ -287,21 +227,36 @@ export default function About() {
                 as="h2"
                 id={about.technical.title}
                 variant="display-strong-s"
-                marginBottom="40"
+                marginBottom="32"
+                marginTop="40"
               >
                 {about.technical.title}
               </Heading>
-              <Column fillWidth gap="l">
+              <Column fillWidth gap="xl">
                 {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
+                  <Column 
+                    key={`${skill}-${index}`} 
+                    fillWidth 
+                    gap="m"
+                    paddingBottom={index < about.technical.skills.length - 1 ? "xl" : "0"}
+                    style={{
+                      borderBottom: index < about.technical.skills.length - 1 
+                        ? "1px solid var(--neutral-alpha-weak)" 
+                        : "none",
+                    }}
+                  >
+                    <Text 
+                      id={skill.title} 
+                      variant="heading-strong-l"
+                      marginBottom="s"
+                    >
                       {skill.title}
                     </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                    <Column fillWidth gap="m">
                       {skill.description}
-                    </Text>
+                    </Column>
                     {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="8">
+                      <Row wrap gap="m" paddingTop="m">
                         {skill.tags.map((tag, tagIndex) => (
                           <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
                             {tag.name}

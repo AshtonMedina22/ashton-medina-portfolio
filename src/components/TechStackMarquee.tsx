@@ -29,8 +29,10 @@ export function TechStackMarquee({ technologies }: TechStackMarqueeProps) {
         {duplicatedTech.map((tech, index) => (
           <Tag
             key={`${tech.name}-${index}`}
-            size="m"
+            size="l"
             prefixIcon={tech.icon || undefined}
+            background="brand-alpha-weak"
+            onBackground="neutral-strong"
             style={{
               flexShrink: 0,
             }}

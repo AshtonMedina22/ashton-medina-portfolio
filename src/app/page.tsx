@@ -11,7 +11,7 @@ import {
   Meta,
   Line,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { home, about, person, baseURL, routes, techStack } from "@/resources";
 import { Mailchimp, TechStackMarquee } from "@/components";
 import { getPosts } from "@/utils/utils";
 
@@ -26,14 +26,12 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
-  // Get all unique tech stack items from all projects
-  const allProjects = getPosts(["src", "app", "work", "projects"]);
-  const allTechStack = allProjects.flatMap((project) => project.metadata.techStack || []);
+  // Use the comprehensive tech stack list from content config
+  // This showcases full-stack capabilities beyond just what's in projects
+  const displayTechStack = techStack;
   
-  // Get unique tech stack items (by name)
-  const uniqueTechStack = Array.from(
-    new Map(allTechStack.map((tech) => [tech.name, tech])).values()
-  );
+  // Get all projects for featured work section
+  const allProjects = getPosts(["src", "app", "work", "projects"]);
 
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
@@ -106,13 +104,13 @@ export default function Home() {
               </Row>
             </Button>
           </RevealFx>
-          {uniqueTechStack.length > 0 && (
+          {displayTechStack.length > 0 && (
             <RevealFx translateY="8" delay={0.6} fillWidth paddingTop="xl">
               <Column fillWidth gap="s">
                 <Text variant="label-default-s" align="center" onBackground="neutral-weak">
                   Technologies I Work With
                 </Text>
-                <TechStackMarquee technologies={uniqueTechStack} />
+                <TechStackMarquee technologies={displayTechStack} />
               </Column>
             </RevealFx>
           )}
@@ -129,7 +127,7 @@ export default function Home() {
                 <Text variant="label-default-s" align="center" onBackground="neutral-weak">
                   Featured Work
                 </Text>
-                <Row wrap gap="m" horizontal="center" paddingX="l">
+                <Row wrap gap="m" horizontal="center" paddingX="l" maxWidth="s">
                   {allProjects
                     .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime())
                     .map((project) => (
@@ -137,11 +135,14 @@ export default function Home() {
                         key={project.slug}
                         href={`/work/${project.slug}`}
                         background="brand-alpha-weak"
-                        paddingX="12"
-                        paddingY="4"
+                        paddingX="16"
+                        paddingY="8"
                         onBackground="neutral-strong"
-                        textVariant="label-default-s"
+                        textVariant="label-default-m"
                         arrow={false}
+                        style={{
+                          whiteSpace: "nowrap",
+                        }}
                       >
                         {project.metadata.title}
                       </Badge>
@@ -152,17 +153,6 @@ export default function Home() {
           )}
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.8} horizontal="center">
-        <Button
-          href="/work"
-          variant="primary"
-          size="m"
-          weight="default"
-          arrowIcon
-        >
-          View My Work
-        </Button>
-      </RevealFx>
       <Mailchimp />
     </Column>
   );
