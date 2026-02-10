@@ -29,7 +29,7 @@ export function TechStackMarquee({ technologies }: TechStackMarqueeProps) {
         {duplicatedTech.map((tech, index) => (
           <Tag
             key={`${tech.name}-${index}`}
-            size="xl"
+            size="l"
             prefixIcon={tech.icon || undefined}
             background="brand-alpha-weak"
             onBackground="neutral-strong"
@@ -38,6 +38,7 @@ export function TechStackMarquee({ technologies }: TechStackMarqueeProps) {
             style={{
               flexShrink: 0,
               fontSize: "1.125rem",
+              padding: "var(--static-space-12) var(--static-space-20)",
             }}
             className={styles.techTag}
           >
