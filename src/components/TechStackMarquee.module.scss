@@ -2,21 +2,25 @@
   position: relative;
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 
 .marquee {
   display: flex;
   white-space: nowrap;
-  animation: scroll 40s linear infinite;
 }
 
-.techTag {
+.marqueeLeft {
+  animation: scrollLeft 60s linear infinite;
+}
+
+.marqueeRight {
+  animation: scrollRight 60s linear infinite;
+}
+
+.techItem {
   // Preserve original icon colors from react-icons simple-icons
-  // Simple-icons have their brand colors in the fill attribute
   :global(svg) {
-    width: 2rem !important;
-    height: 2rem !important;
     // Remove color inheritance to let icons use their default brand colors
     color: unset !important;
     // Keep fill attribute which contains the brand color
@@ -30,11 +34,20 @@
   }
 }
 
-@keyframes scroll {
+@keyframes scrollLeft {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

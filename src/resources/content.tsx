@@ -35,31 +35,37 @@ const social: Social = [
 ];
 
 // Comprehensive tech stack for full-stack platform engineer
-const techStack: Array<{ name: string; icon: string | null }> = [
-  // Frontend
-  { name: "React", icon: "react" },
-  { name: "Next.js", icon: "nextjs" },
-  { name: "TypeScript", icon: "typescript" },
+// Languages & Core
+const techStackLanguages: Array<{ name: string; icon: string | null }> = [
   { name: "JavaScript", icon: "javascript" },
-  { name: "SCSS", icon: "scss" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "Python", icon: "python" },
   { name: "HTML", icon: "html" },
   { name: "CSS", icon: "css" },
-  // Backend
+  { name: "SCSS", icon: "scss" },
+  { name: "SQL", icon: "sql" },
+  { name: "JSON", icon: "json" },
+];
+
+// Frameworks & Platforms
+const techStackPlatforms: Array<{ name: string; icon: string | null }> = [
+  { name: "React", icon: "react" },
+  { name: "Next.js", icon: "nextjs" },
   { name: "Node.js", icon: "nodejs" },
-  { name: "Python", icon: "python" },
-  // Databases & Data
   { name: "PostgreSQL", icon: "postgresql" },
   { name: "Supabase", icon: "supabase" },
   { name: "Redis", icon: "redis" },
-  { name: "SQL", icon: "sql" },
-  { name: "JSON", icon: "json" },
-  // APIs & Middleware
   { name: "REST API", icon: "restapi" },
   { name: "Middleware", icon: "middleware" },
-  // Infrastructure & Tools
   { name: "Docker", icon: "docker" },
   { name: "Nginx", icon: "nginx" },
   { name: "Git", icon: "git" },
+];
+
+// Combined for backwards compatibility
+const techStack: Array<{ name: string; icon: string | null }> = [
+  ...techStackLanguages,
+  ...techStackPlatforms,
 ];
 
 const home: Home = {
@@ -91,7 +97,7 @@ const home: Home = {
 
 const about: About = {
   path: "/about",
-  label: `About ${person.name}`,
+  label: "About",
   title: `How I Approach Platform and Systems Engineering – ${person.name}`,
   description: `Learn about ${person.name}'s approach to building scalable, governed platforms and systems`,
   tableOfContent: {
@@ -312,4 +318,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery, techStack };
+export { person, social, newsletter, home, about, blog, work, gallery, techStack, techStackLanguages, techStackPlatforms };

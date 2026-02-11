@@ -9,6 +9,8 @@ export {
   work,
   gallery,
   techStack,
+  techStackLanguages,
+  techStackPlatforms,
 } from "./content";
 
 export {

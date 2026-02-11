@@ -52,7 +52,13 @@ export default function About() {
     },
   ];
   return (
-    <Row fillWidth gap="l" paddingX="l" s={{ direction: "column", gap: "m", paddingX: "m" }}>
+    <Row 
+      fillWidth 
+      gap="l" 
+      paddingX="l" 
+      style={{ position: "relative", alignItems: "flex-start" }}
+      s={{ direction: "column", gap: "m", paddingX: "m" }}
+    >
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -69,7 +75,7 @@ export default function About() {
       {about.tableOfContent.display && (
         <Column
           left="0"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
+          style={{ top: "50%", transform: "translateY(-50%)", zIndex: 1 }}
           position="fixed"
           paddingLeft="24"
           gap="32"
@@ -83,11 +89,13 @@ export default function About() {
       {about.avatar.display && (
         <Column
           maxWidth={12}
+          minWidth={12}
           paddingRight="40"
           fitHeight
           position="sticky"
           top="80"
           gap="16"
+          style={{ alignSelf: "flex-start", flexShrink: 0 }}
           s={{ hide: true }}
         >
           <Column fillWidth gap="m" align="start">
@@ -115,7 +123,7 @@ export default function About() {
       )}
 
       {/* Scrollable Content Area */}
-      <Column fillWidth maxWidth="s" className={styles.blockAlign}>
+      <Column fillWidth maxWidth="s" style={{ flex: "1 1 auto", minWidth: 0 }} className={styles.blockAlign}>
 
           {about.intro.display && (
             <Card

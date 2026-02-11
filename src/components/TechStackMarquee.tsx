@@ -1,54 +1,69 @@
 "use client";
 
-import { Row, Tag } from "@once-ui-system/core";
+import { Row, Column } from "@once-ui-system/core";
 import { iconLibrary } from "@/resources/icons";
+import { techStackLanguages, techStackPlatforms } from "@/resources";
 import styles from "./TechStackMarquee.module.scss";
 
-interface TechStackMarqueeProps {
-  technologies: Array<{ name: string; icon: string | null }>;
-}
+export function TechStackMarquee() {
+  // Duplicate arrays for seamless infinite scroll
+  const duplicatedLanguages = [...techStackLanguages, ...techStackLanguages];
+  const duplicatedPlatforms = [...techStackPlatforms, ...techStackPlatforms];
 
-export function TechStackMarquee({ technologies }: TechStackMarqueeProps) {
-  // Include all technologies, not just those with icons
-  const allTech = technologies;
-
-  // Duplicate the array for seamless infinite scroll
-  const duplicatedTech = [...allTech, ...allTech];
+  const IconComponent = ({ tech, index, className }: { tech: { name: string; icon: string | null }, index: number, className: string }) => {
+    const Icon = tech.icon && iconLibrary[tech.icon] ? iconLibrary[tech.icon] : null;
+    
+    return (
+      <div
+        key={`${tech.name}-${index}`}
+        className={className}
+        style={{
+          flexShrink: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "0.75rem",
+        }}
+      >
+        {Icon && <Icon style={{ width: "2.5rem", height: "2.5rem" }} />}
+        <span style={{ fontSize: "1.25rem", fontWeight: 500 }}>{tech.name}</span>
+      </div>
+    );
+  };
 
   return (
-    <Row
-      fillWidth
-      overflow="hidden"
-      paddingY="xl"
-      className={styles.marqueeContainer}
-    >
+    <Column fillWidth gap="m">
+      {/* Languages Row - Scroll Left */}
       <Row
-        gap="l"
-        className={styles.marquee}
+        fillWidth
+        overflow="hidden"
+        className={styles.marqueeContainer}
       >
-        {duplicatedTech.map((tech, index) => (
-          <Tag
-            key={`${tech.name}-${index}`}
-            size="l"
-            prefixIcon={tech.icon && iconLibrary[tech.icon] ? tech.icon : undefined}
-            background="brand-alpha-weak"
-            onBackground="neutral-strong"
-            paddingX="24"
-            paddingY="16"
-            style={{
-              flexShrink: 0,
-              fontSize: "1.5rem",
-              minHeight: "3.5rem",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.75rem",
-            }}
-            className={styles.techTag}
-          >
-            {tech.name}
-          </Tag>
-        ))}
+        <Row
+          gap="xl"
+          className={`${styles.marquee} ${styles.marqueeLeft}`}
+        >
+          {duplicatedLanguages.map((tech, index) => (
+            <IconComponent key={`lang-${tech.name}-${index}`} tech={tech} index={index} className={styles.techItem} />
+          ))}
+        </Row>
       </Row>
-    </Row>
+      
+      {/* Platforms Row - Scroll Right */}
+      <Row
+        fillWidth
+        overflow="hidden"
+        className={styles.marqueeContainer}
+      >
+        <Row
+          gap="xl"
+          className={`${styles.marquee} ${styles.marqueeRight}`}
+        >
+          {duplicatedPlatforms.map((tech, index) => (
+            <IconComponent key={`platform-${tech.name}-${index}`} tech={tech} index={index} className={styles.techItem} />
+          ))}
+        </Row>
+      </Row>
+    </Column>
   );
 }
