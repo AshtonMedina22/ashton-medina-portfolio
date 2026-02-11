@@ -9,36 +9,39 @@ interface TechStackMarqueeProps {
 }
 
 export function TechStackMarquee({ technologies }: TechStackMarqueeProps) {
-  // Filter out technologies without icons for the marquee
-  const techWithIcons = technologies.filter((tech) => tech.icon && iconLibrary[tech.icon]);
+  // Include all technologies, not just those with icons
+  const allTech = technologies;
 
   // Duplicate the array for seamless infinite scroll
-  const duplicatedTech = [...techWithIcons, ...techWithIcons];
+  const duplicatedTech = [...allTech, ...allTech];
 
   return (
     <Row
       fillWidth
       overflow="hidden"
-      paddingY="m"
+      paddingY="xl"
       className={styles.marqueeContainer}
     >
       <Row
-        gap="m"
+        gap="l"
         className={styles.marquee}
       >
         {duplicatedTech.map((tech, index) => (
           <Tag
             key={`${tech.name}-${index}`}
             size="l"
-            prefixIcon={tech.icon || undefined}
+            prefixIcon={tech.icon && iconLibrary[tech.icon] ? tech.icon : undefined}
             background="brand-alpha-weak"
             onBackground="neutral-strong"
-            paddingX="20"
-            paddingY="12"
+            paddingX="24"
+            paddingY="16"
             style={{
               flexShrink: 0,
-              fontSize: "1.125rem",
-              padding: "var(--static-space-12) var(--static-space-20)",
+              fontSize: "1.5rem",
+              minHeight: "3.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
             }}
             className={styles.techTag}
           >

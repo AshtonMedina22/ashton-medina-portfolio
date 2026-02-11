@@ -13,6 +13,7 @@ import {
   Row,
 } from "@once-ui-system/core";
 import { baseURL, about, person } from "@/resources";
+import { ThemeAwareAvatar } from "@/components";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -51,7 +52,7 @@ export default function About() {
     },
   ];
   return (
-    <Column maxWidth="m">
+    <Row fillWidth gap="l" paddingX="l">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -77,42 +78,44 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
-      <Column fillWidth horizontal="center" maxWidth="s">
-        {about.avatar.display && (
-          <Card
-            id={about.intro.title}
-            fillWidth
-            padding="l"
-            radius="l"
-            border="neutral-alpha-weak"
-            background="surface"
-            marginBottom="32"
-          >
-            <Column fillWidth gap="m" align="center">
-              <Avatar src={person.avatar} size="xl" />
-              <Heading variant="display-strong-xl" align="center">
-                {person.name}
-              </Heading>
-              <Text
-                variant="display-default-xs"
-                onBackground="neutral-weak"
-                align="center"
-              >
-                {person.role}
-              </Text>
-              <Line maxWidth="s" marginTop="s" marginBottom="s" />
-              <Button
-                href={`mailto:${person.email}`}
-                prefixIcon="email"
-                label={person.email}
-                size="s"
-                weight="default"
-                variant="secondary"
-              />
-            </Column>
-          </Card>
-        )}
-        <Column className={styles.blockAlign} fillWidth>
+      
+      {/* Sticky Left Sidebar with Avatar, Name, Role, Email */}
+      {about.avatar.display && (
+        <Column
+          maxWidth={12}
+          paddingRight="40"
+          fitHeight
+          position="sticky"
+          top="80"
+          gap="16"
+          s={{ hide: true }}
+        >
+          <Column fillWidth gap="m" align="start">
+            <ThemeAwareAvatar size="xl" />
+            <Heading variant="display-strong-xl">
+              {person.name}
+            </Heading>
+            <Text
+              variant="display-default-xs"
+              onBackground="neutral-weak"
+            >
+              {person.role}
+            </Text>
+            <Line maxWidth="s" marginTop="s" marginBottom="s" />
+            <Button
+              href={`mailto:${person.email}`}
+              prefixIcon="email"
+              label={person.email}
+              size="s"
+              weight="default"
+              variant="secondary"
+            />
+          </Column>
+        </Column>
+      )}
+
+      {/* Scrollable Content Area */}
+      <Column fillWidth maxWidth="s" className={styles.blockAlign}>
 
           {about.intro.display && (
             <Card
@@ -269,8 +272,7 @@ export default function About() {
               ))}
             </Column>
           )}
-        </Column>
       </Column>
-    </Column>
+    </Row>
   );
 }

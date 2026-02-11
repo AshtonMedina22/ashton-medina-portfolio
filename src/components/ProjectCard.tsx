@@ -35,23 +35,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m">
-      <Column
-        fillWidth
-        style={{
-          maxHeight: "400px",
-          aspectRatio: "16 / 9",
-          overflow: "hidden",
-          borderRadius: "var(--radius-l)",
-        }}
-      >
-        <Carousel
-          sizes="(max-width: 960px) 100vw, 640px"
-          items={images.map((image) => ({
-            slide: image,
-            alt: title,
-          }))}
-        />
-      </Column>
+      <SmartLink href={href} style={{ textDecoration: "none" }}>
+        <Column
+          fillWidth
+          style={{
+            maxHeight: "400px",
+            aspectRatio: "16 / 9",
+            overflow: "hidden",
+            borderRadius: "var(--radius-l)",
+            cursor: "pointer",
+          }}
+        >
+          <Carousel
+            sizes="(max-width: 960px) 100vw, 640px"
+            items={images.map((image) => ({
+              slide: image,
+              alt: title,
+            }))}
+          />
+        </Column>
+      </SmartLink>
       <Flex
         s={{ direction: "column" }}
         fillWidth
@@ -85,7 +88,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s">View Work</Text>
                 </SmartLink>
               )}
               {link && (

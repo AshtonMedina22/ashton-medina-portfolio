@@ -42,8 +42,8 @@ const techStack: Array<{ name: string; icon: string | null }> = [
   { name: "TypeScript", icon: "typescript" },
   { name: "JavaScript", icon: "javascript" },
   { name: "SCSS", icon: "scss" },
-  { name: "HTML", icon: null },
-  { name: "CSS", icon: null },
+  { name: "HTML", icon: "html" },
+  { name: "CSS", icon: "css" },
   // Backend
   { name: "Node.js", icon: "nodejs" },
   { name: "Python", icon: "python" },
@@ -51,11 +51,11 @@ const techStack: Array<{ name: string; icon: string | null }> = [
   { name: "PostgreSQL", icon: "postgresql" },
   { name: "Supabase", icon: "supabase" },
   { name: "Redis", icon: "redis" },
-  { name: "SQL", icon: null },
+  { name: "SQL", icon: "sql" },
   { name: "JSON", icon: "json" },
   // APIs & Middleware
-  { name: "REST API", icon: "api" },
-  { name: "Middleware", icon: null },
+  { name: "REST API", icon: "restapi" },
+  { name: "Middleware", icon: "middleware" },
   // Infrastructure & Tools
   { name: "Docker", icon: "docker" },
   { name: "Nginx", icon: "nginx" },
@@ -91,7 +91,7 @@ const home: Home = {
 
 const about: About = {
   path: "/about",
-  label: "About",
+  label: `About ${person.name}`,
   title: `How I Approach Platform and Systems Engineering – ${person.name}`,
   description: `Learn about ${person.name}'s approach to building scalable, governed platforms and systems`,
   tableOfContent: {

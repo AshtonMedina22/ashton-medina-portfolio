@@ -12,7 +12,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes, techStack } from "@/resources";
-import { Mailchimp, TechStackMarquee } from "@/components";
+import { Mailchimp, TechStackMarquee, ThemeAwareAvatar } from "@/components";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -89,10 +89,9 @@ export default function Home() {
             >
               <Row gap="8" vertical="center" paddingRight="4">
                 {about.avatar.display && (
-                  <Avatar
+                  <ThemeAwareAvatar
                     marginRight="8"
                     style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
                     size="m"
                   />
                 )}

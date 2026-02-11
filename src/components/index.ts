@@ -10,3 +10,4 @@ export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
 export { TechStack } from "@/components/work/TechStack";
 export { TechStackMarquee } from "@/components/TechStackMarquee";
+export { ThemeAwareAvatar } from "@/components/ThemeAwareAvatar";
