@@ -2,24 +2,22 @@
 # Copy this content to a .env file in your project root
 
 # Site Configuration
-# Replace with your actual domain for production
-NEXT_PUBLIC_BASE_URL=https://demo.magic-portfolio.com
+NEXT_PUBLIC_BASE_URL=https://ashtonmedina.com
 
 # Password Protection (for protected routes)
 # Set a password to protect specific routes defined in once-ui.config.ts
-PAGE_ACCESS_PASSWORD=your-secure-password-here
+PAGE_ACCESS_PASSWORD=
 
 # Builder.io Configuration
-# Get these from your Builder.io account: https://builder.io/account
-# Public Key: Used for client-side Builder.io components
-BUILDER_PUBLIC_KEY=your-builder-public-key-here
-
-# API Key: Used for server-side Builder.io API calls
-BUILDER_API_KEY=your-builder-api-key-here
+# STEP 1: Go to https://builder.io and create an account
+# STEP 2: Create a new space/project
+# STEP 3: Go to Settings > API Keys
+# STEP 4: Copy your Public Key and API Key from there
+BUILDER_PUBLIC_KEY=
+BUILDER_API_KEY=
 
 # Optional: Builder.io Model Name (if using specific models)
 # BUILDER_MODEL=page
 
 # Node Environment
-# Set to 'production' for production builds
 NODE_ENV=production
