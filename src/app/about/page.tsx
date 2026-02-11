@@ -52,7 +52,7 @@ export default function About() {
     },
   ];
   return (
-    <Row fillWidth gap="l" paddingX="l">
+    <Row fillWidth gap="l" paddingX="l" s={{ direction: "column", gap: "m", paddingX: "m" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}

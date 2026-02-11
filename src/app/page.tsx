@@ -12,7 +12,7 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes, techStack } from "@/resources";
-import { Mailchimp, TechStackMarquee, ThemeAwareAvatar } from "@/components";
+import { TechStackMarquee, ThemeAwareAvatar } from "@/components";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -30,7 +30,18 @@ export default function Home() {
   const displayTechStack = techStack;
 
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
+    <Column 
+      maxWidth="m" 
+      fillWidth
+      fillHeight
+      horizontal="center"
+      vertical="center"
+      style={{ 
+        minHeight: "calc(100vh - 160px)",
+        justifyContent: "center",
+        gap: "var(--static-space-24)"
+      }}
+    >
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -44,15 +55,13 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
+      <Column fillWidth horizontal="center" align="center" gap="m" style={{ flex: "0 1 auto" }}>
+        <Column maxWidth="s" horizontal="center" align="center" gap="m">
           {home.featured.display && (
             <RevealFx
               fillWidth
               horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
+              paddingBottom="8"
             >
               <Badge
                 background="brand-alpha-weak"
@@ -67,17 +76,17 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="16">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
+          <RevealFx delay={0.4} horizontal="center">
             <Button
               id="about"
               data-border="rounded"
@@ -99,19 +108,18 @@ export default function Home() {
               </Row>
             </Button>
           </RevealFx>
-          {displayTechStack.length > 0 && (
-            <RevealFx translateY="8" delay={0.6} fillWidth paddingTop="xl" paddingBottom="xl">
-              <Column fillWidth gap="m">
-                <Text variant="label-strong-m" align="center" onBackground="neutral-weak">
-                  Technologies I Work With
-                </Text>
-                <TechStackMarquee technologies={displayTechStack} />
-              </Column>
-            </RevealFx>
-          )}
         </Column>
+        {displayTechStack.length > 0 && (
+          <RevealFx delay={0.6} fillWidth paddingTop="16" paddingBottom="16" style={{ flex: "0 1 auto" }}>
+            <Column fillWidth gap="s">
+              <Text variant="label-strong-m" align="center" onBackground="neutral-weak">
+                Technologies I Work With
+              </Text>
+              <TechStackMarquee technologies={displayTechStack} />
+            </Column>
+          </RevealFx>
+        )}
       </Column>
-      <Mailchimp />
     </Column>
   );
 }
