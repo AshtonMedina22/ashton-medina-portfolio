@@ -132,7 +132,7 @@ const about: About = {
   },
   technical: {
     display: true,
-    title: "",
+    title: "Technical Skills",
     skills: [
       {
         title: "Engineering Principles",

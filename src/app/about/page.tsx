@@ -73,16 +73,7 @@ export default function About() {
         }}
       />
       {about.tableOfContent.display && (
-        <Column
-          left="0"
-          style={{ top: "50%", transform: "translateY(-50%)", zIndex: 1 }}
-          position="fixed"
-          paddingLeft="24"
-          gap="32"
-          s={{ hide: true }}
-        >
-          <TableOfContents structure={structure} about={about} />
-        </Column>
+        <TableOfContents structure={structure} about={about} />
       )}
       
       {/* Sticky Left Sidebar with Avatar, Name, Role, Email */}
