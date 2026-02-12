@@ -114,7 +114,7 @@ export default function About() {
       )}
 
       {/* Scrollable Content Area */}
-      <Column fillWidth maxWidth="s" style={{ flex: "1 1 auto", minWidth: 0 }} className={styles.blockAlign}>
+      <Column fillWidth maxWidth="m" style={{ flex: "1 1 auto", minWidth: 0 }} className={styles.blockAlign}>
 
           {about.intro.display && (
             <Card
@@ -123,10 +123,10 @@ export default function About() {
               radius="l"
               border="neutral-alpha-weak"
               background="surface"
-              marginBottom="40"
+              marginBottom="l"
             >
-              <Column fillWidth gap="l">
-                <Heading as="h2" id={about.intro.title} variant="display-strong-s" marginBottom="s">
+              <Column fillWidth gap="m">
+                <Heading as="h2" id={about.intro.title} variant="display-strong-s">
                   {about.intro.title}
                 </Heading>
                 <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.75" }}>
@@ -138,10 +138,10 @@ export default function About() {
 
           {about.work.display && (
             <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
+              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="l">
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="l" marginBottom="l">
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
@@ -197,10 +197,10 @@ export default function About() {
 
           {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
+              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="l">
                 {about.studies.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="l" marginBottom="l">
                 {about.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                     <Text id={institution.name} variant="heading-strong-l">
@@ -216,7 +216,10 @@ export default function About() {
           )}
 
           {about.technical.display && (
-            <Column fillWidth gap="l" marginTop="40">
+            <Column fillWidth gap="l" marginTop="l">
+              <Heading as="h2" id={about.technical.title} variant="display-strong-s" marginBottom="m">
+                {about.technical.title}
+              </Heading>
               {about.technical.skills.map((skill, index) => (
                 <Card
                   key={`${skill}-${index}`}
@@ -226,6 +229,7 @@ export default function About() {
                   border="neutral-alpha-weak"
                   background="surface"
                   gap="m"
+                  className={styles.skillCard}
                 >
                   <Text 
                     id={skill.title} 

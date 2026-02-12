@@ -8,6 +8,24 @@
     }
 }
 
+.skillCard {
+    transition: border-color 0.2s ease;
+    
+    &:hover {
+        border-color: var(--neutral-alpha-medium);
+    }
+}
+
+@media (max-width: breakpoints.$m) {
+    .textAlign {
+        text-align: center;
+    }
+
+    .blockAlign {
+        align-self: center;
+    }
+}
+
 @media (max-width: breakpoints.$s) {
     .textAlign {
         text-align: center;
