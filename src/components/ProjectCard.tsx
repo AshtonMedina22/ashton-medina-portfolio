@@ -46,7 +46,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           }}
         >
           <Carousel
-            sizes="(max-width: 960px) 100vw, 640px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
             items={images.map((image) => ({
               slide: image,
               alt: title,
