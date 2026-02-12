@@ -1,7 +1,7 @@
 ---
 title: "External Partner Lifecycle & Compliance Platform"
 publishedAt: "2024-11-15"
-summary: "Secure external partner workflow with portal access, compliance tracking, quote comparison, and automated lifecycle controls that formalize partner engagement and reduce compliance risk."
+summary: "Secure external partner workflow with portal access, compliance tracking, and automated lifecycle controls."
 images:
   - "/images/projects/project-01/cover-02.jpg"
   - "/images/projects/project-01/cover-03.jpg"
@@ -14,74 +14,34 @@ techStack:
     icon: "postgresql"
   - name: "JavaScript"
     icon: "javascript"
-  - name: "XML"
-    icon: null
-  - name: "SCSS"
-    icon: "scss"
-  - name: "ORM"
-    icon: null
   - name: "JWT/OAuth"
-    icon: null
-  - name: "RBAC"
     icon: null
   - name: "REST API"
     icon: "api"
-  - name: "JSON"
-    icon: "json"
 ---
 
-## Problem Context
+*Formalizing external partner engagement with secure portals and automated compliance.*
 
-Businesses managing external partners face significant risk when coordination relies on email threads and informal confirmations. Partner assignments go unconfirmed, compliance documents expire unnoticed, and sensitive customer data becomes exposed—creating compliance gaps, accountability issues, and execution delays that impact business operations across all industries.
+## The Challenge
 
-## Solution Overview
+Partner coordination relied on email threads and informal confirmations. Assignments went unconfirmed, compliance documents expired unnoticed, and sensitive data became exposed—creating compliance gaps and accountability issues.
 
-A comprehensive platform that formalizes external partner engagement through a structured lifecycle with secure portal access and automated compliance controls. The system provides secure partner portals, issues structured work orders, tracks compliance documents with automated alerts, and supports multi-partner quote comparison—all while maintaining strict data isolation and security boundaries. Applicable to vendors, suppliers, contractors, freelancers, and any external business relationships.
+## The Solution
 
-## Partner Workflow
+A platform that formalizes partner engagement through structured lifecycles, secure portal access, and automated compliance controls. Partners interact through token-scoped portals with complete audit trails.
 
-**Standard Flow**: Partner Approved → Assignment Created → Work Order Issued → Portal Access → Accept/Decline → Execution Tasks → Completion
+## How It Works
 
-**Quote Comparison Flow**: Quote Request Issued → Multiple Quotes → Comparison → Best Quote Selected → Purchase Order → Standard Flow Continues
+- **Partner approved** → assignment created
+- **Work order issued** → portal access granted
+- **Partner accepts/declines** via secure portal
+- **Compliance tracked** with automated expiry alerts
+- **Quote comparison** for multi-partner requests
 
-## Key Features
+## Results
 
-- **Partner Lifecycle Management**: Automated state transitions from approval through completion
-- **Secure Partner Portal**: Token-scoped access with external user isolation and partner-only record visibility
-- **Structured Work Orders**: Formal work orders with accept/decline capture and audit trails
-- **Compliance Tracking**: Automated document expiry monitoring with proactive alerts
-- **Quote Comparison**: Multi-partner quote evaluation with automated purchase order creation
-- **Automated Reminders**: Configurable escalation for partner responses and deadlines
-
-## Technical Implementation
-
-Built with:
-
-- **Portal access** with token-based authentication and time-limited access
-- **Security rules** with role-based access control and field-level permissions
-- **Work order lifecycle state machine** with enforced transitions
-- **Scheduled automation jobs** for reminders, deadline management, and compliance alerts
-- **Document management** with versioning, expiry tracking, and validation states
-- **Data isolation** preventing partner access to internal systems and customer data
-
-## Business Impact
-
-### Results
-
-- **100% partner assignment confirmation** through structured workflows
-- **Zero compliance document expiries** with automated tracking and alerts
-- **Formal partner engagement** with complete audit trails and accountability
-- **Complete data isolation** protecting customer privacy and sensitive information
-- **Timely partner responses** with automated reminders and deadline management
-
-The platform eliminates unconfirmed assignments, compliance gaps, informal confirmations, partner data overexposure, and deadline drift—delivering formalized, secure partner relationships with reduced compliance risk and improved accountability for any business working with external partners.
-
-## Technologies
-
-- Python/ORM
-- Portal access and external user management
-- Security rules and access control
-- Automated actions and scheduled jobs
-- Document management system
-- Workflow state machines
-- Email/SMS notification system
+- **100% confirmation** on all partner assignments
+- **Zero compliance lapses** with automated monitoring
+- **Complete audit trails** for every partner interaction
+- **Full data isolation** protecting customer information
+- **Faster partner responses** through automated reminders

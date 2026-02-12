@@ -1,7 +1,7 @@
 ---
 title: "Sales-to-Delivery Automation Platform"
 publishedAt: "2024-12-01"
-summary: "Automated workflow system that converts confirmed transactions into standardized execution projects with enforced structure and task generation, eliminating manual setup and ensuring operational consistency."
+summary: "Automated workflow system that converts confirmed transactions into standardized execution projects with enforced structure and task generation."
 images:
   - "/images/projects/project-01/cover-01.jpg"
   - "/images/projects/project-01/cover-02.jpg"
@@ -14,68 +14,34 @@ techStack:
     icon: "postgresql"
   - name: "JavaScript"
     icon: "javascript"
-  - name: "XML"
-    icon: null
-  - name: "SCSS"
-    icon: "scss"
-  - name: "ORM"
-    icon: null
   - name: "REST API"
     icon: "api"
-  - name: "JSON"
-    icon: "json"
+  - name: "ORM"
+    icon: null
 ---
 
-## Problem Context
+*Eliminating manual project setup by automating the handoff from sales to delivery.*
 
-Businesses struggle with inconsistent project delivery when sales transactions, quotes, and execution planning operate in disconnected systems. This fragmentation leads to teams creating projects differently, missing critical tasks, and repeatedly entering the same data—resulting in operational risk, project delays, and quality inconsistencies that impact customer satisfaction and profitability.
+## The Challenge
 
-## Solution Overview
+Sales and delivery operated in disconnected systems. Teams created projects inconsistently, missed critical tasks, and re-entered the same data repeatedly—causing delays and quality issues.
 
-An automated workflow platform that transforms confirmed transactions into fully structured execution projects. The system automatically creates standardized projects, generates complete task structures from templates, and propagates all relevant data—eliminating manual project setup entirely and ensuring every engagement follows the same operational foundation.
+## The Solution
 
-## Core Workflow
+An automation platform that transforms confirmed transactions into fully structured execution projects. One trigger generates the project, tasks, assignments, and data propagation—zero manual setup required.
 
-**Confirmed Transaction** → Automation Trigger → Project Created → Tasks Generated → Ownership Assigned → Execution Ready
+## How It Works
 
-Data flows automatically: Lead → Quote → Confirmed Transaction → Execution Project → Template Tasks → Assigned Owner
+- **Transaction confirmed** → automation trigger fires
+- **Project created** with standardized structure from templates
+- **Tasks generated** automatically based on project type
+- **Data propagated** from quote to project (no re-entry)
+- **Pipeline synced** to reflect execution readiness
 
-## Key Features
+## Results
 
-- **Automatic Project Creation**: One project per confirmed transaction with enforced validation
-- **Standardized Task Generation**: Template-driven task structures ensuring consistent workflows
-- **Data Propagation**: Key business and client data automatically forwarded, eliminating re-entry
-- **Pipeline Synchronization**: Execution readiness automatically updates business pipeline status
-- **Deterministic Workflows**: Consistent project structure across all business engagements
-
-## Technical Implementation
-
-Built with:
-
-- **Server-side automation triggers** on transaction confirmation events
-- **Template-driven task generation** from standardized project templates
-- **Cross-module data propagation** between business systems and project management
-- **Computed fields** for profitability and readiness metrics
-- **Workflow state machines** managing project lifecycle transitions
-- **Related field projections** maintaining data consistency across systems
-
-## Business Impact
-
-### Results
-
-- **100% consistency** in project structure across all engagements
-- **Zero manual project setup** time, reducing operational overhead
-- **Eliminated data re-entry** errors through automated propagation
-- **Real-time pipeline accuracy** with automated synchronization
-- **Reduced operational risk** through deterministic workflows
-
-The platform eliminates duplicate projects, missing tasks, manual setup variance, and pipeline stage drift—delivering consistent, reliable project execution with significantly reduced operational risk for any business type.
-
-## Technologies
-
-- Python/ORM
-- Server-side automation and event triggers
-- Computed fields and related fields
-- Workflow state machines
-- Template-driven project structures
-- Cross-system data integration
+- **100% consistency** in project structure across engagements
+- **Zero manual setup** time for new projects
+- **Eliminated data re-entry** errors
+- **Real-time pipeline accuracy** through automated sync
+- **Reduced operational risk** with deterministic workflows

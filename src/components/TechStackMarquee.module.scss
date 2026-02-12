@@ -19,18 +19,69 @@
 }
 
 .techItem {
-  // Preserve original icon colors from react-icons simple-icons
-  :global(svg) {
-    // Remove color inheritance to let icons use their default brand colors
-    color: unset !important;
-    // Keep fill attribute which contains the brand color
-    fill: currentColor !important;
+  position: relative;
+  flex-shrink: 0;
+  width: 8.25rem;
+  height: 7.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 1.1rem;
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(72, 104, 255, 0.18), rgba(8, 10, 16, 0) 70%),
+    linear-gradient(180deg, rgba(14, 18, 28, 0.98), rgba(8, 10, 16, 0.98));
+  border: 1px solid rgba(120, 138, 255, 0.22);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  text-align: center;
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  color: rgba(244, 247, 255, 0.92);
+}
+
+.techItem::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.techItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55), 0 0 18px rgba(99, 120, 255, 0.35);
+  border-color: rgba(130, 158, 255, 0.4);
+}
+
+.techIcon {
+  width: 2.6rem;
+  height: 2.6rem;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 12px currentColor);
+}
+
+.techLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .techItem {
+    width: 7rem;
+    height: 6.5rem;
   }
-  
-  // Ensure all simple-icons maintain their original colors
-  :global([class*="Si"]) {
-    color: unset !important;
-    fill: currentColor !important;
+
+  .techIcon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .techLabel {
+    font-size: 0.85rem;
   }
 }
 
