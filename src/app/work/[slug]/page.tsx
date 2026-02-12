@@ -122,7 +122,7 @@ export default async function Project({
       {post.metadata.images.length > 0 && (
         <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
       )}
-      <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
+      <Column fillWidth as="article">
         <CustomMDX source={post.content} />
       </Column>
       <ScrollToHash />
