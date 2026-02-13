@@ -56,7 +56,7 @@ export default function About() {
       fillWidth 
       gap="l" 
       paddingX="l" 
-      style={{ position: "relative", alignItems: "flex-start" }}
+      style={{ position: "relative", alignItems: "flex-start", paddingLeft: "200px" }}
       s={{ direction: "column", gap: "m", paddingX: "m" }}
     >
       <Schema
