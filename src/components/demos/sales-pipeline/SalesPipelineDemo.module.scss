@@ -1,0 +1,133 @@
+.statsBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--static-space-24);
+  padding: var(--static-space-16) var(--static-space-24);
+  background: var(--surface-background);
+  border-radius: var(--radius-l);
+  margin-bottom: var(--static-space-24);
+  border: 1px solid var(--neutral-alpha-weak);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: var(--static-space-12);
+
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.statIcon {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  background: var(--brand-alpha-weak);
+  color: var(--brand-solid-strong);
+  border-radius: var(--radius-m);
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--neutral-on-background-weak);
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--neutral-on-background-strong);
+}
+
+.mainContent {
+  display: flex;
+  gap: var(--static-space-24);
+  align-items: flex-start;
+}
+
+.kanbanBoard {
+  flex: 1;
+  display: flex;
+  gap: var(--static-space-16);
+  overflow-x: auto;
+  padding-bottom: var(--static-space-16);
+}
+
+.automationPanel {
+  flex: 0 0 280px;
+  background: var(--surface-background);
+  border: 1px solid var(--neutral-alpha-weak);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+}
+
+.automationHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--static-space-8);
+  padding: var(--static-space-12) var(--static-space-16);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(34, 197, 94, 0.1));
+  border-bottom: 1px solid var(--neutral-alpha-weak);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--neutral-on-background-strong);
+}
+
+.automationIcon {
+  width: 16px;
+  height: 16px;
+  color: #a78bfa;
+}
+
+.automationLog {
+  padding: var(--static-space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--static-space-8);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.logEntry {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--static-space-8);
+  padding: var(--static-space-8);
+  background: var(--neutral-alpha-weak);
+  border-radius: var(--radius-m);
+  font-size: 11px;
+  color: var(--neutral-on-background);
+  line-height: 1.4;
+}
+
+.logIconSuccess {
+  width: 14px;
+  height: 14px;
+  color: #22c55e;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.logIconTransition {
+  width: 14px;
+  height: 14px;
+  color: #a78bfa;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.automationFooter {
+  padding: var(--static-space-12) var(--static-space-16);
+  border-top: 1px solid var(--neutral-alpha-weak);
+  background: var(--neutral-alpha-weak);
+}
+
+.footerNote {
+  font-size: 10px;
+  color: var(--neutral-on-background-weak);
+  font-style: italic;
+}

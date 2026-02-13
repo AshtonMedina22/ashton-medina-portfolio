@@ -1,0 +1,50 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+
+  &.sm {
+    padding: 2px 8px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  &.md {
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  &.default {
+    background: var(--brand-alpha-weak);
+    color: var(--brand-strong);
+  }
+
+  &.success {
+    background: rgba(34, 197, 94, 0.15);
+    color: rgb(34, 197, 94);
+  }
+
+  &.warning {
+    background: rgba(234, 179, 8, 0.15);
+    color: rgb(234, 179, 8);
+  }
+
+  &.danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: rgb(239, 68, 68);
+  }
+
+  &.info {
+    background: rgba(59, 130, 246, 0.15);
+    color: rgb(59, 130, 246);
+  }
+
+  &.neutral {
+    background: var(--neutral-alpha-weak);
+    color: var(--neutral-on-background);
+  }
+}
