@@ -11,7 +11,7 @@ import {
   Meta,
   Line,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { home, about, person, baseURL, routes, techStack } from "@/resources";
 import { TechStackMarquee, ThemeAwareAvatar } from "@/components";
 
 export async function generateMetadata() {
@@ -25,6 +25,9 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
+  // Use the comprehensive tech stack list from content config
+  // This showcases full-stack capabilities beyond just what's in projects
+  const displayTechStack = techStack;
 
   return (
     <Column 
@@ -36,7 +39,7 @@ export default function Home() {
       style={{ 
         minHeight: "calc(100vh - 160px)",
         justifyContent: "center",
-        gap: "48px"
+        gap: "var(--static-space-24)"
       }}
     >
       <Schema
@@ -52,8 +55,8 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" align="center" gap="24" style={{ flex: "0 1 auto" }}>
-        <Column maxWidth="s" horizontal="center" align="center" gap="16">
+      <Column fillWidth horizontal="center" align="center" gap="m" style={{ flex: "0 1 auto" }}>
+        <Column maxWidth="s" horizontal="center" align="center" gap="m">
           {home.featured.display && (
             <RevealFx
               fillWidth
@@ -73,13 +76,13 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="12">
-            <Heading wrap="balance" variant="display-strong-xl">
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8">
+            <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="24">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l">
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="16">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
@@ -101,19 +104,21 @@ export default function Home() {
                     size="m"
                   />
                 )}
-                {`About ${person.name}`}
+                {about.label}
               </Row>
             </Button>
           </RevealFx>
         </Column>
-        <RevealFx delay={0.6} fillWidth paddingTop="32" paddingBottom="16" style={{ flex: "0 1 auto" }}>
-          <Column fillWidth gap="16">
-            <Text variant="body-default-m" align="center" onBackground="neutral-weak">
-              Technologies I Work With
-            </Text>
-            <TechStackMarquee />
-          </Column>
-        </RevealFx>
+        {displayTechStack.length > 0 && (
+          <RevealFx delay={0.6} fillWidth paddingTop="16" paddingBottom="16" style={{ flex: "0 1 auto" }}>
+            <Column fillWidth gap="s">
+              <Text variant="label-strong-m" align="center" onBackground="neutral-weak">
+                Technologies I Work With
+              </Text>
+              <TechStackMarquee technologies={displayTechStack} />
+            </Column>
+          </RevealFx>
+        )}
       </Column>
     </Column>
   );
