@@ -39,6 +39,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <Column
           fillWidth
           style={{
+            maxHeight: "400px",
             aspectRatio: "16 / 9",
             overflow: "hidden",
             borderRadius: "var(--radius-l)",
@@ -46,7 +47,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           }}
         >
           <Carousel
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+            sizes="(max-width: 960px) 100vw, 640px"
             items={images.map((image) => ({
               slide: image,
               alt: title,
@@ -54,41 +55,55 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         </Column>
       </SmartLink>
-      <Column fillWidth gap="m">
+      <Flex
+        s={{ direction: "column" }}
+        fillWidth
+        paddingX="s"
+        paddingTop="12"
+        paddingBottom="24"
+        gap="l"
+      >
         {title && (
-          <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-            {title}
-          </Heading>
+          <Flex flex={5}>
+            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+              {title}
+            </Heading>
+          </Flex>
         )}
-        {description?.trim() && (
-          <Text wrap="balance" variant="body-default-m" onBackground="neutral-weak">
-            {description}
-          </Text>
+        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
+          <Column flex={7} gap="16">
+            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
+            {description?.trim() && (
+              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+                {description}
+              </Text>
+            )}
+            {techStack && techStack.length > 0 && (
+              <TechStack technologies={techStack} size="s" />
+            )}
+            <Flex gap="24" wrap>
+              {content?.trim() && (
+                <SmartLink
+                  suffixIcon="arrowRight"
+                  style={{ margin: "0", width: "fit-content" }}
+                  href={href}
+                >
+                  <Text variant="body-default-s">View Work</Text>
+                </SmartLink>
+              )}
+              {link && (
+                <SmartLink
+                  suffixIcon="arrowUpRightFromSquare"
+                  style={{ margin: "0", width: "fit-content" }}
+                  href={link}
+                >
+                  <Text variant="body-default-s">View project</Text>
+                </SmartLink>
+              )}
+            </Flex>
+          </Column>
         )}
-        {techStack && techStack.length > 0 && (
-          <TechStack technologies={techStack} size="s" />
-        )}
-        <Flex gap="m" wrap>
-          {content?.trim() && (
-            <SmartLink
-              suffixIcon="arrowRight"
-              style={{ margin: "0", width: "fit-content" }}
-              href={href}
-            >
-              <Text variant="body-default-m">View Work</Text>
-            </SmartLink>
-          )}
-          {link && (
-            <SmartLink
-              suffixIcon="arrowUpRightFromSquare"
-              style={{ margin: "0", width: "fit-content" }}
-              href={link}
-            >
-              <Text variant="body-default-m">View project</Text>
-            </SmartLink>
-          )}
-        </Flex>
-      </Column>
+      </Flex>
     </Column>
   );
 };

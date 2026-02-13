@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <Column maxWidth="l" fillWidth paddingX="l" paddingY="80" horizontal="center">
+    <Column maxWidth="m" paddingTop="24">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,7 +28,7 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading marginBottom="48" variant="display-strong-xl" align="center">
+      <Heading marginBottom="l" variant="heading-strong-xl" align="center">
         {work.title}
       </Heading>
       <Projects />
