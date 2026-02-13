@@ -83,7 +83,8 @@ export default function About() {
           gap="m"
           align="center"
           paddingY="l"
-          m={{ hide: true }}
+          hide
+          s={{ hide: false }}
         >
           <ThemeAwareAvatar size="xl" />
           <Heading variant="display-strong-xl" align="center">
