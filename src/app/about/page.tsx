@@ -11,8 +11,9 @@ import {
   Meta,
   Schema,
   Row,
+  Icon,
 } from "@once-ui-system/core";
-import { baseURL, about, person } from "@/resources";
+import { baseURL, about, person, social } from "@/resources";
 import { ThemeAwareAvatar } from "@/components";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
@@ -52,12 +53,13 @@ export default function About() {
     },
   ];
   return (
-    <Row 
+    <Column 
       fillWidth 
-      gap="xl" 
+      paddingY="xl"
       paddingX="l" 
-      style={{ position: "relative", alignItems: "flex-start" }}
-      s={{ direction: "column", gap: "m", paddingX: "m" }}
+      gap="xl"
+      horizontal="center"
+      s={{ paddingX: "m", paddingY: "l" }}
     >
       <Schema
         as="webPage"
@@ -76,60 +78,67 @@ export default function About() {
         <TableOfContents structure={structure} about={about} />
       )}
       
-      {/* Sticky Left Sidebar with Avatar, Name, Role, Email */}
+      {/* Hero Section - Avatar + Name + Role */}
       {about.avatar.display && (
         <Column
-          minWidth={16}
-          maxWidth={16}
-          paddingRight="l"
-          fitHeight
-          position="sticky"
-          top="80"
-          gap="16"
-          style={{ alignSelf: "flex-start", flexShrink: 0, zIndex: 10 }}
-          s={{ hide: true }}
+          fillWidth
+          maxWidth="m"
+          horizontal="center"
+          align="center"
+          gap="l"
+          paddingBottom="l"
         >
-          <Column fillWidth gap="m" align="start">
-            <ThemeAwareAvatar size="xl" />
-            <Heading variant="display-strong-l">
+          <ThemeAwareAvatar size="xl" style={{ width: "140px", height: "140px" }} />
+          <Column horizontal="center" align="center" gap="s">
+            <Heading variant="display-strong-xl">
               {person.name}
             </Heading>
             <Text
-              variant="display-default-xs"
+              variant="heading-default-l"
               onBackground="neutral-weak"
             >
               {person.role}
             </Text>
-            <Line maxWidth="s" marginTop="s" marginBottom="s" />
+          </Column>
+          <Row gap="m" wrap horizontal="center">
             <Button
               href={`mailto:${person.email}`}
               prefixIcon="email"
-              label={person.email}
-              size="s"
-              weight="default"
+              label="Email"
+              size="m"
               variant="secondary"
             />
-          </Column>
+            {social.filter(s => s.link).slice(0, 3).map((item) => (
+              <Button
+                key={item.name}
+                href={item.link}
+                prefixIcon={item.icon}
+                label={item.name}
+                size="m"
+                variant="tertiary"
+              />
+            ))}
+          </Row>
+          <Line fillWidth maxWidth={24} />
         </Column>
       )}
 
-      {/* Scrollable Content Area */}
-      <Column fillWidth maxWidth="m" style={{ flex: "1 1 auto", minWidth: 0 }} className={styles.blockAlign}>
+      {/* Main Content Area */}
+      <Column fillWidth maxWidth="m" gap="xl">
 
           {about.intro.display && (
             <Card
               fillWidth
-              padding="l"
+              padding="xl"
               radius="l"
               border="neutral-alpha-weak"
               background="surface"
-              marginBottom="l"
             >
-              <Column fillWidth gap="m">
-                <Heading as="h2" id={about.intro.title} variant="display-strong-s">
+              <Column fillWidth gap="l">
+                <Heading as="h2" id={about.intro.title} variant="display-strong-m">
                   {about.intro.title}
                 </Heading>
-                <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.75" }}>
+                <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.8" }}>
                   {about.intro.description}
                 </Text>
               </Column>
@@ -137,11 +146,11 @@ export default function About() {
           )}
 
           {about.work.display && (
-            <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="l">
+            <Column fillWidth gap="l">
+              <Heading as="h2" id={about.work.title} variant="display-strong-m">
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="l">
+              <Column fillWidth gap="l">
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
@@ -192,15 +201,15 @@ export default function About() {
                   </Column>
                 ))}
               </Column>
-            </>
+            </Column>
           )}
 
           {about.studies.display && (
-            <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="l">
+            <Column fillWidth gap="l">
+              <Heading as="h2" id={about.studies.title} variant="display-strong-m">
                 {about.studies.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="l">
+              <Column fillWidth gap="l">
                 {about.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                     <Text id={institution.name} variant="heading-strong-l">
@@ -212,29 +221,28 @@ export default function About() {
                   </Column>
                 ))}
               </Column>
-            </>
+            </Column>
           )}
 
           {about.technical.display && (
-            <Column fillWidth gap="l" marginTop="l">
-              <Heading as="h2" id={about.technical.title} variant="display-strong-s" marginBottom="m">
+            <Column fillWidth gap="l">
+              <Heading as="h2" id={about.technical.title} variant="display-strong-m">
                 {about.technical.title}
               </Heading>
               {about.technical.skills.map((skill, index) => (
                 <Card
                   key={`${skill}-${index}`}
                   fillWidth
-                  padding="l"
+                  padding="xl"
                   radius="l"
                   border="neutral-alpha-weak"
                   background="surface"
-                  gap="m"
+                  gap="l"
                   className={styles.skillCard}
                 >
                   <Text 
                     id={skill.title} 
                     variant="heading-strong-l"
-                    marginBottom="s"
                   >
                     {skill.title}
                   </Text>
@@ -276,6 +284,6 @@ export default function About() {
             </Column>
           )}
       </Column>
-    </Row>
+    </Column>
   );
 }
