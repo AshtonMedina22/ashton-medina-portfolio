@@ -76,6 +76,37 @@ export default function About() {
         <TableOfContents structure={structure} about={about} />
       )}
       
+      {/* Mobile Header - Only visible on small screens */}
+      {about.avatar.display && (
+        <Column
+          fillWidth
+          gap="m"
+          align="center"
+          paddingY="l"
+          m={{ hide: true }}
+        >
+          <ThemeAwareAvatar size="xl" />
+          <Heading variant="display-strong-xl" align="center">
+            {person.name}
+          </Heading>
+          <Text
+            variant="display-default-xs"
+            onBackground="neutral-weak"
+            align="center"
+          >
+            {person.role}
+          </Text>
+          <Button
+            href={`mailto:${person.email}`}
+            prefixIcon="email"
+            label={person.email}
+            size="s"
+            weight="default"
+            variant="secondary"
+          />
+        </Column>
+      )}
+      
       {/* Sticky Left Sidebar with Avatar, Name, Role, Email */}
       {about.avatar.display && (
         <Column
