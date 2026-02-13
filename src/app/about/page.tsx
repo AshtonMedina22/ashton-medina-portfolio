@@ -54,7 +54,7 @@ export default function About() {
   return (
     <Row 
       fillWidth 
-      gap="l" 
+      gap="xl" 
       paddingX="l" 
       style={{ position: "relative", alignItems: "flex-start", paddingLeft: "200px" }}
       s={{ direction: "column", gap: "m", paddingX: "m" }}
@@ -79,19 +79,19 @@ export default function About() {
       {/* Sticky Left Sidebar with Avatar, Name, Role, Email */}
       {about.avatar.display && (
         <Column
-          maxWidth={12}
-          minWidth={12}
-          paddingRight="40"
+          minWidth={16}
+          maxWidth={16}
+          paddingRight="l"
           fitHeight
           position="sticky"
           top="80"
           gap="16"
-          style={{ alignSelf: "flex-start", flexShrink: 0 }}
+          style={{ alignSelf: "flex-start", flexShrink: 0, zIndex: 10 }}
           s={{ hide: true }}
         >
           <Column fillWidth gap="m" align="start">
             <ThemeAwareAvatar size="xl" />
-            <Heading variant="display-strong-xl">
+            <Heading variant="display-strong-l">
               {person.name}
             </Heading>
             <Text
@@ -114,7 +114,7 @@ export default function About() {
       )}
 
       {/* Scrollable Content Area */}
-      <Column fillWidth maxWidth="m" style={{ flex: "1 1 auto", minWidth: 0 }} className={styles.blockAlign}>
+      <Column fillWidth maxWidth="m" style={{ flex: "1 1 auto", minWidth: 0, marginLeft: "var(--static-space-24)" }} className={styles.blockAlign}>
 
           {about.intro.display && (
             <Card
