@@ -109,7 +109,7 @@ const about: About = {
   title: `How I Approach Platform and Systems Engineering – ${person.name}`,
   description: `Learn about ${person.name}'s approach to building scalable, governed platforms and systems`,
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {

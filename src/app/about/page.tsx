@@ -56,7 +56,7 @@ export default function About() {
       fillWidth 
       gap="xl" 
       paddingX="l" 
-      style={{ position: "relative", alignItems: "flex-start", paddingLeft: "200px" }}
+      style={{ position: "relative", alignItems: "flex-start" }}
       s={{ direction: "column", gap: "m", paddingX: "m" }}
     >
       <Schema
@@ -114,7 +114,7 @@ export default function About() {
       )}
 
       {/* Scrollable Content Area */}
-      <Column fillWidth maxWidth="m" style={{ flex: "1 1 auto", minWidth: 0, marginLeft: "var(--static-space-24)" }} className={styles.blockAlign}>
+      <Column fillWidth maxWidth="m" style={{ flex: "1 1 auto", minWidth: 0 }} className={styles.blockAlign}>
 
           {about.intro.display && (
             <Card
