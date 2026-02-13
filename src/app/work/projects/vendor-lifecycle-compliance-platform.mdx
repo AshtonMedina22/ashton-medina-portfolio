@@ -1,40 +1,40 @@
 ---
-title: "External Partner Lifecycle & Compliance Platform"
+title: "Vendor Procurement & Portal Platform"
 publishedAt: "2024-11-15"
-summary: "Secure external partner workflow with portal access, compliance tracking, and automated lifecycle controls."
+summary: "Self-service portal with tokenized access, automated RFQ workflows, and record-level data isolation for external partners."
 images:
-  - "/images/projects/project-01/cover-02.jpg"
-  - "/images/projects/project-01/cover-03.jpg"
-  - "/images/projects/project-01/cover-04.jpg"
-  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-02/cover-01.jpg"
+  - "/images/projects/project-02/cover-02.jpg"
+  - "/images/projects/project-02/cover-03.jpg"
+  - "/images/projects/project-02/cover-04.jpg"
 techStack:
   - name: "Python"
     icon: "python"
   - name: "PostgreSQL"
     icon: "postgresql"
-  - name: "JavaScript"
-    icon: "javascript"
-  - name: "JWT/OAuth"
+  - name: "QWeb"
     icon: null
-  - name: "REST API"
+  - name: "Token Auth"
+    icon: null
+  - name: "JSON-RPC"
     icon: "api"
 ---
 
-*Formalizing external partner engagement with secure portals and automated compliance.*
+*Replacing email chains with an auditable, governed vendor workflow.*
 
 <Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## The Challenge
+## The Problem
 
-Partner coordination relied on email threads and informal confirmations. Assignments went unconfirmed, compliance documents expired unnoticed, and sensitive data became exposed—creating compliance gaps and accountability issues.
+Vendor coordination ran on email and phone calls. Work orders were sent as attachments, confirmations were verbal, quote comparisons lived in spreadsheets, and compliance documents were scattered across inboxes. A single missed confirmation could derail an entire event.
 
 </Column>
 <Column fillWidth>
 
 ## The Solution
 
-A platform that formalizes partner engagement through structured lifecycles, secure portal access, and automated compliance controls. Partners interact through token-scoped portals with complete audit trails.
+A 15-route vendor portal with tokenized access links (48-hour expiry), 6-state work order lifecycle, automated RFQ workflows with best-quote selection, and record-level data isolation enforced at the ORM layer.
 
 </Column>
 </Grid>
@@ -42,24 +42,26 @@ A platform that formalizes partner engagement through structured lifecycles, sec
 <Grid columns="2" gap="l" fillWidth marginTop="l">
 <Column fillWidth>
 
-## How It Works
+## Technical Implementation
 
-- **Partner approved** → assignment created
-- **Work order issued** → portal access granted
-- **Partner accepts/declines** via secure portal
-- **Compliance tracked** with automated expiry alerts
-- **Quote comparison** for multi-partner requests
+- **6-state lifecycle:** Pending → Sent → Confirmed → Declined → In Progress → Completed
+- **Tokenized access:** No login credentials, 48-hour expiry for security
+- **Record-level isolation:** Each vendor sees only their assignments—no customer pricing, no other vendors, no margin data
+- **RFQ automation:** Multiple vendors submit quotes, auto-close deadlines, cron-selected best quote
+- **Compliance tracking:** 15+ service categories, 3-tier classification, automated expiry monitoring
+- **Batch reminders:** 200 records/cycle cron job for 24-hour pending work orders
 
 </Column>
 <Column fillWidth>
 
 ## Results
 
-- **100% confirmation** on all partner assignments
-- **Zero compliance lapses** with automated monitoring
-- **Complete audit trails** for every partner interaction
-- **Full data isolation** protecting customer information
-- **Faster partner responses** through automated reminders
+- **15 secure routes** with governed portal access
+- **E-signature accept/decline** with reason capture
+- **Real-time vendor response tracking** for internal teams
+- **Cost variance reporting:** estimated vs. actual
+- **Automated document expiry alerts** across all vendors
+- **1,460+ lines of Python** across portal controllers and assignment models
 
 </Column>
 </Grid>

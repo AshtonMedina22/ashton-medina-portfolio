@@ -1,40 +1,40 @@
 ---
-title: "Operational Intelligence Platform"
+title: "Executive BI Dashboard Platform"
 publishedAt: "2024-11-01"
-summary: "Real-time KPI engine delivering role-filtered operational metrics and executive dashboards for visibility into readiness, profitability, and performance."
+summary: "Configurable analytics interface with drag-and-drop widgets, real-time KPIs, and drill-down to live business records."
 images:
-  - "/images/projects/project-01/cover-03.jpg"
-  - "/images/projects/project-01/cover-04.jpg"
-  - "/images/projects/project-01/cover-01.jpg"
-  - "/images/projects/project-01/cover-02.jpg"
+  - "/images/projects/project-03/cover-01.jpg"
+  - "/images/projects/project-03/cover-02.jpg"
+  - "/images/projects/project-03/cover-03.jpg"
+  - "/images/projects/project-03/cover-04.jpg"
 techStack:
   - name: "Python"
     icon: "python"
-  - name: "PostgreSQL"
-    icon: "postgresql"
   - name: "JavaScript"
     icon: "javascript"
-  - name: "Redis"
-    icon: "redis"
-  - name: "SQL"
+  - name: "AmCharts 5"
     icon: null
+  - name: "GridStack.js"
+    icon: null
+  - name: "PostgreSQL"
+    icon: "postgresql"
 ---
 
-*Turning fragmented operational data into real-time, actionable intelligence.*
+*Replacing the spreadsheet-and-email reporting cycle with click-through analytics.*
 
 <Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## The Challenge
+## The Problem
 
-Business leaders made reactive decisions because operational data was scattered across systems. There was no unified view of readiness, profitability, or performance—issues impacted delivery before anyone noticed.
+Business data lived in silos—sales metrics in the CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. Getting a unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. When an executive saw a concerning number, they couldn't drill in—they had to request another report and wait.
 
 </Column>
 <Column fillWidth>
 
 ## The Solution
 
-An analytics platform that aggregates data from all business systems and computes real-time KPIs. Role-aware dashboards surface the right metrics to the right people with drill-down capabilities.
+A dashboard platform with GridStack.js drag-and-drop layout and AmCharts 5 visualization. Each widget is interactive: clicking a KPI tile or chart segment drills directly into the underlying business records, not a static view. Per-user layout persistence lets each role configure their own dashboard.
 
 </Column>
 </Grid>
@@ -42,24 +42,25 @@ An analytics platform that aggregates data from all business systems and compute
 <Grid columns="2" gap="l" fillWidth marginTop="l">
 <Column fillWidth>
 
-## How It Works
+## Technical Implementation
 
-- **Data aggregated** from all operational systems
-- **KPIs computed** in real-time (profitability, readiness, workload)
-- **Role filtering** ensures relevant metrics per user
-- **Dashboards display** KPI cards with drill-down
-- **Alerts trigger** when thresholds are breached
+- **7+ chart types:** line, bar, doughnut, pie, radar, scatter, map
+- **ORM-level aggregation:** dynamic domain filtering across modules
+- **Drag-and-drop layouts:** GridStack.js with per-user persistence
+- **Click-through to live records:** not static views, actual business objects
+- **Date range filtering:** saved filter presets without new report builds
+- **Cross-module aggregation:** CRM, Sales, Project, Vendor, Accounting in single query layer
 
 </Column>
 <Column fillWidth>
 
 ## Results
 
-- **Real-time visibility** with sub-minute metric updates
-- **Proactive issue detection** through automated alerts
-- **Better decisions** with accurate, role-appropriate data
-- **Improved resource allocation** via workload analysis
-- **Profitability optimization** through margin tracking
+- **3 export formats:** PDF (html2canvas + jsPDF), Excel (xlsxwriter), PNG
+- **Per-user dashboards:** role-configurable views with saved layouts
+- **Real-time data:** rendering against live operational records
+- **Board-ready reports:** one-click exports for presentations
+- **4,600+ lines** of dashboard logic
 
 </Column>
 </Grid>
