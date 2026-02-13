@@ -36,7 +36,7 @@ export default function Home() {
       style={{ 
         minHeight: "calc(100vh - 160px)",
         justifyContent: "center",
-        gap: "var(--static-space-24)"
+        gap: "48px"
       }}
     >
       <Schema
@@ -52,8 +52,8 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" align="center" gap="m" style={{ flex: "0 1 auto" }}>
-        <Column maxWidth="s" horizontal="center" align="center" gap="m">
+      <Column fillWidth horizontal="center" align="center" gap="24" style={{ flex: "0 1 auto" }}>
+        <Column maxWidth="s" horizontal="center" align="center" gap="16">
           {home.featured.display && (
             <RevealFx
               fillWidth
@@ -73,13 +73,13 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="8">
-            <Heading wrap="balance" variant="display-strong-l">
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="12">
+            <Heading wrap="balance" variant="display-strong-xl">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="16">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="24">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l">
               {home.subline}
             </Text>
           </RevealFx>
@@ -106,9 +106,9 @@ export default function Home() {
             </Button>
           </RevealFx>
         </Column>
-        <RevealFx delay={0.6} fillWidth paddingTop="16" paddingBottom="8" style={{ flex: "0 1 auto" }}>
-          <Column fillWidth gap="s">
-            <Text variant="heading-default-m" align="center" onBackground="neutral-weak">
+        <RevealFx delay={0.6} fillWidth paddingTop="32" paddingBottom="16" style={{ flex: "0 1 auto" }}>
+          <Column fillWidth gap="16">
+            <Text variant="body-default-m" align="center" onBackground="neutral-weak">
               Technologies I Work With
             </Text>
             <TechStackMarquee />

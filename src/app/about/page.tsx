@@ -30,11 +30,11 @@ export default function About() {
   return (
     <Column 
       fillWidth 
-      paddingY="xl"
+      paddingY="104"
       paddingX="l" 
-      gap="xl"
+      gap="64"
       horizontal="center"
-      s={{ paddingX: "m", paddingY: "l" }}
+      s={{ paddingX: "m", paddingY: "64" }}
     >
       <Schema
         as="webPage"
@@ -55,24 +55,25 @@ export default function About() {
         <Row
           fillWidth
           maxWidth="m"
-          gap="xl"
+          gap="48"
           vertical="center"
-          s={{ direction: "column", gap: "l", horizontal: "center" }}
+          s={{ direction: "column", gap: "32", horizontal: "center" }}
         >
-          <ThemeAwareAvatar size="xl" />
-          <Column gap="m" style={{ flex: 1 }} s={{ horizontal: "center", align: "center" }}>
-            <Heading variant="display-strong-l">
+          <ThemeAwareAvatar size="xl" style={{ width: "160px", height: "160px", flexShrink: 0 }} />
+          <Column gap="16" style={{ flex: 1 }} s={{ horizontal: "center", align: "center" }}>
+            <Heading variant="display-strong-xl">
               {person.name}
             </Heading>
-            <Text variant="body-default-l" onBackground="neutral-weak">
+            <Text variant="heading-default-l" onBackground="neutral-weak">
               {person.role}
             </Text>
             <Button
               href={`mailto:${person.email}`}
               prefixIcon="email"
               label={person.email}
-              size="s"
+              size="m"
               variant="secondary"
+              style={{ marginTop: "8px" }}
             />
           </Column>
         </Row>
@@ -81,21 +82,21 @@ export default function About() {
       <Line fillWidth maxWidth="m" />
 
       {/* Main Content Area */}
-      <Column fillWidth maxWidth="m" gap="xl">
+      <Column fillWidth maxWidth="m" gap="48">
 
           {about.intro.display && (
             <Card
               fillWidth
-              padding="xl"
+              padding="32"
               radius="l"
               border="neutral-alpha-weak"
               background="surface"
             >
-              <Column fillWidth gap="l">
-                <Heading as="h2" id={about.intro.title} variant="display-strong-m">
+              <Column fillWidth gap="24">
+                <Heading as="h2" id={about.intro.title} variant="display-strong-s">
                   {about.intro.title}
                 </Heading>
-                <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.8" }}>
+                <Text variant="body-default-l" onBackground="neutral-weak" style={{ lineHeight: "1.7" }}>
                   {about.intro.description}
                 </Text>
               </Column>
@@ -182,19 +183,19 @@ export default function About() {
           )}
 
           {about.technical.display && (
-            <Column fillWidth gap="l">
-              <Heading as="h2" id={about.technical.title} variant="display-strong-m">
+            <Column fillWidth gap="24">
+              <Heading as="h2" id={about.technical.title} variant="display-strong-s">
                 {about.technical.title}
               </Heading>
               {about.technical.skills.map((skill, index) => (
                 <Card
                   key={`${skill}-${index}`}
                   fillWidth
-                  padding="xl"
+                  padding="32"
                   radius="l"
                   border="neutral-alpha-weak"
                   background="surface"
-                  gap="l"
+                  gap="20"
                   className={styles.skillCard}
                 >
                   <Text 
@@ -203,7 +204,7 @@ export default function About() {
                   >
                     {skill.title}
                   </Text>
-                  <Column fillWidth gap="m">
+                  <Column fillWidth gap="12">
                     {skill.description}
                   </Column>
                   {skill.tags && skill.tags.length > 0 && (
