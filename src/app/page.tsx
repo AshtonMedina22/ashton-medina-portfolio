@@ -25,9 +25,6 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
-  // Use the comprehensive tech stack list from content config
-  // This showcases full-stack capabilities beyond just what's in projects
-  const displayTechStack = techStack;
 
   return (
     <Column 
@@ -109,13 +106,13 @@ export default function Home() {
             </Button>
           </RevealFx>
         </Column>
-        {displayTechStack.length > 0 && (
+        {techStack.length > 0 && (
           <RevealFx delay={0.6} fillWidth paddingTop="16" paddingBottom="16" style={{ flex: "0 1 auto" }}>
             <Column fillWidth gap="s">
               <Text variant="label-strong-m" align="center" onBackground="neutral-weak">
                 Technologies I Work With
               </Text>
-              <TechStackMarquee technologies={displayTechStack} />
+              <TechStackMarquee />
             </Column>
           </RevealFx>
         )}
