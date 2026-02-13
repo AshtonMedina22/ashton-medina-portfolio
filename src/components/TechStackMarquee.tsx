@@ -10,6 +10,7 @@ export function TechStackMarquee() {
     javascript: "#F7DF1E",
     typescript: "#3178C6",
     python: "#3776AB",
+    java: "#ED8B00",
     html: "#E34F26",
     css: "#1572B6",
     scss: "#CC6699",
@@ -29,6 +30,15 @@ export function TechStackMarquee() {
     docker: "#2496ED",
     nginx: "#009639",
     git: "#F05032",
+    bootstrap: "#7952B3",
+    openai: "#412991",
+    ai: "#412991",
+    aws: "#FF9900",
+    mongodb: "#47A248",
+    tailwind: "#06B6D4",
+    tailwindcss: "#06B6D4",
+    graphql: "#E10098",
+    jest: "#C21325",
   };
 
   // Duplicate arrays for seamless infinite scroll

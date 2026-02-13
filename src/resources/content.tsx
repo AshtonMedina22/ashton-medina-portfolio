@@ -40,10 +40,14 @@ const techStackLanguages: Array<{ name: string; icon: string | null }> = [
   { name: "JavaScript", icon: "javascript" },
   { name: "TypeScript", icon: "typescript" },
   { name: "Python", icon: "python" },
+  { name: "Java", icon: "java" },
   { name: "HTML", icon: "html" },
   { name: "CSS", icon: "css" },
   { name: "SCSS", icon: "scss" },
+  { name: "Tailwind", icon: "tailwind" },
+  { name: "Bootstrap", icon: "bootstrap" },
   { name: "SQL", icon: "sql" },
+  { name: "GraphQL", icon: "graphql" },
   { name: "JSON", icon: "json" },
 ];
 
@@ -53,13 +57,17 @@ const techStackPlatforms: Array<{ name: string; icon: string | null }> = [
   { name: "Next.js", icon: "nextjs" },
   { name: "Node.js", icon: "nodejs" },
   { name: "PostgreSQL", icon: "postgresql" },
+  { name: "MongoDB", icon: "mongodb" },
   { name: "Supabase", icon: "supabase" },
   { name: "Redis", icon: "redis" },
+  { name: "AWS", icon: "aws" },
   { name: "REST API", icon: "restapi" },
   { name: "Middleware", icon: "middleware" },
   { name: "Docker", icon: "docker" },
   { name: "Nginx", icon: "nginx" },
+  { name: "Jest", icon: "jest" },
   { name: "Git", icon: "git" },
+  { name: "AI", icon: "ai" },
 ];
 
 // Combined for backwards compatibility

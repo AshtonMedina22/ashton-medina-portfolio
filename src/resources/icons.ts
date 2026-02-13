@@ -44,7 +44,16 @@ import {
   SiSwagger,
   SiExpress,
   SiFastapi,
+  SiBootstrap,
+  SiOpenai,
+  SiAmazonaws,
+  SiMongodb,
+  SiTailwindcss,
+  SiGraphql,
+  SiJest,
 } from "react-icons/si";
+
+import { FaJava } from "react-icons/fa";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
 
@@ -76,6 +85,7 @@ export const iconLibrary: Record<string, IconType> = {
   supabase: SiSupabase,
   figma: SiFigma,
   python: SiPython,
+  java: FaJava,
   postgresql: SiPostgresql,
   redis: SiRedis,
   docker: SiDocker,
@@ -99,6 +109,15 @@ export const iconLibrary: Record<string, IconType> = {
   css3: SiCss3,
   sql: SiMysql,
   mysql: SiMysql,
+  bootstrap: SiBootstrap,
+  openai: SiOpenai,
+  ai: SiOpenai,
+  aws: SiAmazonaws,
+  mongodb: SiMongodb,
+  tailwind: SiTailwindcss,
+  tailwindcss: SiTailwindcss,
+  graphql: SiGraphql,
+  jest: SiJest,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,

@@ -106,9 +106,9 @@ export default function Home() {
             </Button>
           </RevealFx>
         </Column>
-        <RevealFx delay={0.6} fillWidth paddingTop="24" paddingBottom="16" style={{ flex: "0 1 auto" }}>
-          <Column fillWidth gap="m">
-            <Text variant="heading-default-xl" align="center" onBackground="neutral-weak">
+        <RevealFx delay={0.6} fillWidth paddingTop="16" paddingBottom="8" style={{ flex: "0 1 auto" }}>
+          <Column fillWidth gap="s">
+            <Text variant="heading-default-m" align="center" onBackground="neutral-weak">
               Technologies I Work With
             </Text>
             <TechStackMarquee />
