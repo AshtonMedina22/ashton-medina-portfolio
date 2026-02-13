@@ -46,7 +46,6 @@ import {
   SiFastapi,
   SiBootstrap,
   SiOpenai,
-  SiAmazonaws,
   SiMongodb,
   SiTailwindcss,
   SiGraphql,
@@ -55,7 +54,7 @@ import {
 
 import { FaJava } from "react-icons/fa";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaAws, } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -112,7 +111,7 @@ export const iconLibrary: Record<string, IconType> = {
   bootstrap: SiBootstrap,
   openai: SiOpenai,
   ai: SiOpenai,
-  aws: SiAmazonaws,
+  aws: FaAws,
   mongodb: SiMongodb,
   tailwind: SiTailwindcss,
   tailwindcss: SiTailwindcss,
