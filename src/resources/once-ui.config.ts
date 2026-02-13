@@ -38,28 +38,30 @@ const protectedRoutes: ProtectedRoutesConfig = {
 };
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Open_Sans, Fira_Code } from "next/font/google";
 
-const heading = Geist({
+const heading = Open_Sans({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const body = Geist({
+const body = Open_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const label = Geist({
+const label = Open_Sans({
   variable: "--font-label",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const code = Geist_Mono({
+const code = Fira_Code({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
