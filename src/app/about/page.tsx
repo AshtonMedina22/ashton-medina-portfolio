@@ -183,28 +183,28 @@ export default function About() {
           )}
 
           {about.technical.display && (
-            <Column fillWidth gap="24">
-              <Heading as="h2" id={about.technical.title} variant="display-strong-s">
+            <Column fillWidth gap="16">
+              <Heading as="h2" id={about.technical.title} variant="heading-strong-l">
                 {about.technical.title}
               </Heading>
+              <Row fillWidth gap="16" wrap>
               {about.technical.skills.map((skill, index) => (
                 <Card
                   key={`${skill}-${index}`}
-                  fillWidth
-                  padding="32"
-                  radius="l"
+                  padding="20"
+                  radius="m"
                   border="neutral-alpha-weak"
                   background="surface"
-                  gap="20"
-                  className={styles.skillCard}
+                  gap="12"
+                  style={{ flex: "1 1 300px", minWidth: "280px" }}
                 >
                   <Text 
                     id={skill.title} 
-                    variant="heading-strong-l"
+                    variant="heading-strong-m"
                   >
                     {skill.title}
                   </Text>
-                  <Column fillWidth gap="12">
+                  <Column fillWidth gap="6">
                     {skill.description}
                   </Column>
                   {skill.tags && skill.tags.length > 0 && (
@@ -239,6 +239,7 @@ export default function About() {
                   )}
                 </Card>
               ))}
+              </Row>
             </Column>
           )}
       </Column>

@@ -145,40 +145,13 @@ const about: About = {
       {
         title: "Engineering Principles",
         description: (
-          <>
-            <Column as="ul" gap="m" style={{ listStyle: "none", paddingLeft: 0 }}>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Systems should make execution repeatable, not person-dependent.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Automation should enforce standards, not bypass them.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Access control and approvals enable safe scale.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Data should be captured once and propagated forward.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  System behavior must be explainable and auditable.
-                </Text>
-              </Row>
-            </Column>
-          </>
+          <Column as="ul" gap="4" style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Repeatable execution, not person-dependent</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Automation enforces standards</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Access control enables safe scale</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Capture data once, propagate forward</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Explainable and auditable systems</Text>
+          </Column>
         ),
         tags: [],
         images: [],
@@ -186,40 +159,13 @@ const about: About = {
       {
         title: "Architecture Patterns",
         description: (
-          <>
-            <Column as="ul" gap="m" style={{ listStyle: "none", paddingLeft: 0 }}>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Template-driven workflow generation for standardized execution structures.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  State-machine lifecycle modeling for controlled stage progression.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Token-scoped external access for secure third-party interaction.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Computed metric aggregation for operational analytics.
-                </Text>
-              </Row>
-              <Row as="li" gap="m" vertical="start">
-                <Text variant="body-default-m" style={{ color: "var(--brand-on-background-strong)", marginTop: "0.25rem" }}>•</Text>
-                <Text variant="body-default-m" onBackground="neutral-weak" style={{ flex: 1 }}>
-                  Modular extension architecture for upgrade-safe platform growth.
-                </Text>
-              </Row>
-            </Column>
-          </>
+          <Column as="ul" gap="4" style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Template-driven workflow generation</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— State-machine lifecycle modeling</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Token-scoped external access</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Computed metric aggregation</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Modular extension architecture</Text>
+          </Column>
         ),
         tags: [],
         images: [],
@@ -227,28 +173,14 @@ const about: About = {
       {
         title: "Areas of Expertise",
         description: (
-          <>
-            <Row wrap gap="m" paddingTop="s">
-              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
-                Platform architecture and domain modeling
-              </Tag>
-              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
-                Systems integration and cross-module workflows
-              </Tag>
-              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
-                Backend automation and computed logic
-              </Tag>
-              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
-                Operational analytics and KPI modeling
-              </Tag>
-              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
-                Access control and permission design
-              </Tag>
-              <Tag size="l" background="brand-alpha-weak" onBackground="neutral-strong">
-                Full software lifecycle delivery
-              </Tag>
-            </Row>
-          </>
+          <Row wrap gap="8">
+            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Platform architecture</Tag>
+            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Systems integration</Tag>
+            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Backend automation</Tag>
+            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Operational analytics</Tag>
+            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Access control</Tag>
+            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Full-stack delivery</Tag>
+          </Row>
         ),
         tags: [],
         images: [],
