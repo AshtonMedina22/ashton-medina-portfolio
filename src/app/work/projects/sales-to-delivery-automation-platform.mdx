@@ -1,7 +1,7 @@
 ---
-title: "Sales Pipeline Automation Engine"
+title: "Sales-to-Delivery Automation Platform"
 publishedAt: "2024-12-01"
-summary: "Converts closed deals into delivery-ready projects with zero manual handoffs."
+summary: "Transaction-triggered automation engine that converts confirmed revenue into structured execution - zero manual setup, zero missed steps."
 images:
   - "/images/projects/project-01/cover-01.jpg"
   - "/images/projects/project-01/cover-02.jpg"
@@ -20,47 +20,138 @@ techStack:
     icon: "api"
 ---
 
-*Eliminating the most expensive bottleneck in the business: the gap between "sold" and "started."*
+## Executive Business Problem
+
+Growing companies lose operational consistency when revenue closes faster than operations can execute.
+
+Sales closes a deal → operations manually recreates scope → details are missed → fulfillment delays occur. This creates friction, rework, and revenue risk.
+
+---
+
+## What Was Broken - In Business Terms
 
 <Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## The Problem
-
-Sales closes a deal. Then operations spends hours rebuilding it—re-entering client details, creating task lists from scratch, assigning team members, chasing requirements that were already captured in the CRM. Every handoff is a chance to lose details, delay delivery, or misquote scope.
+- Manual project setup after every sale
+- Inconsistent task creation
+- No enforcement of execution standards
 
 </Column>
 <Column fillWidth>
 
-## The Solution
-
-A 6-phase automation chain that fires on order confirmation. Validates structure, creates CRM linkage, generates service-specific task templates, consolidates records, syncs 65+ fields bidirectionally, and automates stage progression with audit entries.
+- No structured handoff between revenue and delivery
+- Execution dependent on memory and human interpretation
+- No link between what was sold and what got delivered
+- No per-deal profitability visibility
 
 </Column>
 </Grid>
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
+---
+
+## The System I Built
+
+A **transaction-triggered operational automation engine** that:
+
+<Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## Technical Implementation
-
-- **Phase 1:** Order validation and kickoff line item enforcement
-- **Phase 2:** CRM opportunity creation with 6 core event field mapping
-- **Phase 3:** Service-specific task tree generation from templates
-- **Phase 4:** Record consolidation preventing native ERP fragmentation
-- **Phase 5:** 65+ field bidirectional sync across CRM, Sales, Contacts, Projects
-- **Phase 6:** Stage automation (Quote → Proposal → Contract → Booked) with audit logging
+- Detects confirmed revenue events
+- Automatically generates structured execution records
+- Creates standardized task sequences
+- Selects execution templates based on engagement type - different deal types generate different task structures automatically
+- Generates tasks from invoice line items - the services on the order define the execution plan
 
 </Column>
 <Column fillWidth>
 
-## Results
-
-- **Zero manual re-entry** between sales and operations
-- **11 event classifications** with quote revision tracking
-- **Multi-rep sales attribution** synced across 4 business objects
-- **3-tier CRM intake:** identity/logistics, service config, financial estimates
-- **1,675+ lines of Python** across CRM, Sales, and Project models
+- Assigns accountability
+- Enforces workflow stages
+- Prevents progression without required completion
+- Blocks confirmation unless a required trigger product is on the order - hard stop, not a warning
+- Merges fragmented project records into a single workspace - one deal, one project
+- Computes per-engagement margin automatically - client revenue, vendor costs, variance, and margin percentage on every project
 
 </Column>
 </Grid>
+
+---
+
+## How It Works
+
+<Grid columns="2" gap="l" fillWidth>
+<Column fillWidth>
+
+### 1. Trigger
+Sales transaction reaches confirmed state
+- **Client-facing quote acceptance** - Digital acknowledgment workflow with initials capture and acceptance timestamp
+
+### 2. Generate
+System auto-creates execution project
+- **Auto-generated transaction identifiers** - Unique IDs created on record entry for end-to-end traceability
+- **Analytic distribution linking** - Financial tracking accounts auto-assigned from sales record to project for downstream reporting
+- **Workspace consolidation** - Detects and merges duplicate project records into one
+
+### 3. Structure
+Task framework generated from engagement-type templates and invoice line items
+- **Structured service intake** - Tiered pricing model (multiple service levels) with quantity, hours, unit price, and computed subtotals at the pipeline level
+- **Pre-delivery cost estimation** - Vendor cost projections captured before commitment, with estimated margin and margin percentage computed automatically
+- **Order line validation** - Minimum threshold enforcement and price range checks per service variant before quote finalization
+
+</Column>
+<Column fillWidth>
+
+### 4. Assign
+Roles cascade automatically across four business objects
+- **4-object role cascade** - Account owner assignments propagate from customer record → pipeline → sales quote → execution project with no manual re-entry
+- **65+ field bidirectional sync** - Data flows across CRM, Sales, Contacts, and Project modules with changes reflected in real time
+
+### 5. Enforce
+Pipeline stages advance automatically on business events
+- **Pipeline stage automation** - Stages advance on business events (quote sent, order confirmed, project created) with full audit trail
+- **11 transaction classifications** with revision tracking
+- **Confirmation gate** - Blocks deal closure without execution trigger product
+
+### 6. Track
+Completion is tracked through structured state transitions
+- **3-tier intake structure** - Identity and logistics, service configuration, financial estimates
+- **725+ lines** of pipeline automation logic
+- **1,108+ lines** of project and execution model code
+- **Live margin computation** - Revenue, costs, variance, and margin percentage per engagement
+
+</Column>
+</Grid>
+
+---
+
+## Business Impact
+
+<Grid columns="3" gap="m" fillWidth>
+<Column fillWidth>
+
+- **Instant** revenue-to-operations handoff
+- **Zero** manual setup or re-entry
+
+</Column>
+<Column fillWidth>
+
+- **Standardized** execution every time
+- **Reduced** onboarding time
+
+</Column>
+<Column fillWidth>
+
+- **Reduced** operational errors
+- **Increased** delivery predictability
+- **Real-time** per-engagement margin visibility
+- **What's sold is what gets delivered** - scope drives execution
+
+</Column>
+</Grid>
+
+---
+
+## End Result
+
+The company scales revenue without scaling chaos. Execution becomes **system-driven**, not person-dependent.

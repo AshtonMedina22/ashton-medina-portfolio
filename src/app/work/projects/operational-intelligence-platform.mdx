@@ -1,7 +1,7 @@
 ---
-title: "Executive BI Dashboard Platform"
+title: "Operational Intelligence Platform"
 publishedAt: "2024-11-01"
-summary: "Configurable analytics interface with drag-and-drop widgets, real-time KPIs, and drill-down to live business records."
+summary: "Cross-system aggregation and KPI computation engine that surfaces real-time operational intelligence for leadership decision-making."
 images:
   - "/images/projects/project-03/cover-01.jpg"
   - "/images/projects/project-03/cover-02.jpg"
@@ -20,47 +20,134 @@ techStack:
     icon: "postgresql"
 ---
 
-*Replacing the spreadsheet-and-email reporting cycle with click-through analytics.*
+## Executive Business Problem
+
+Leadership cannot manage what it cannot see.
+
+Without structured operational visibility:
 
 <Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## The Problem
-
-Business data lived in silos—sales metrics in the CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. Getting a unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. When an executive saw a concerning number, they couldn't drill in—they had to request another report and wait.
+- Bottlenecks go undetected
+- Workload imbalance persists
 
 </Column>
 <Column fillWidth>
 
-## The Solution
-
-A dashboard platform with GridStack.js drag-and-drop layout and AmCharts 5 visualization. Each widget is interactive: clicking a KPI tile or chart segment drills directly into the underlying business records, not a static view. Per-user layout persistence lets each role configure their own dashboard.
+- Profitability trends are unclear
+- Decisions are reactive
 
 </Column>
 </Grid>
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
+---
+
+## What Was Broken
+
+<Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## Technical Implementation
-
-- **7+ chart types:** line, bar, doughnut, pie, radar, scatter, map
-- **ORM-level aggregation:** dynamic domain filtering across modules
-- **Drag-and-drop layouts:** GridStack.js with per-user persistence
-- **Click-through to live records:** not static views, actual business objects
-- **Date range filtering:** saved filter presets without new report builds
-- **Cross-module aggregation:** CRM, Sales, Project, Vendor, Accounting in single query layer
+- Data trapped inside operational systems
+- No aggregated KPI visibility
 
 </Column>
 <Column fillWidth>
 
-## Results
-
-- **3 export formats:** PDF (html2canvas + jsPDF), Excel (xlsxwriter), PNG
-- **Per-user dashboards:** role-configurable views with saved layouts
-- **Real-time data:** rendering against live operational records
-- **Board-ready reports:** one-click exports for presentations
-- **4,600+ lines** of dashboard logic
+- No role-filtered reporting
+- No executive-level summaries
 
 </Column>
 </Grid>
+
+---
+
+## The System I Built
+
+A **cross-system aggregation and KPI computation engine** that:
+
+<Grid columns="2" gap="l" fillWidth>
+<Column fillWidth>
+
+- Consolidates operational metrics
+- Computes performance indicators
+
+</Column>
+<Column fillWidth>
+
+- Filters visibility by role
+- Surfaces revenue, readiness, workload, and status metrics
+- Delivers scheduled intelligence via email - dashboards auto-send chart snapshots to defined recipients on a recurring schedule without anyone logging in
+
+</Column>
+</Grid>
+
+---
+
+## How It Works
+
+<Grid columns="2" gap="l" fillWidth>
+<Column fillWidth>
+
+### 1. Aggregate
+System pulls data from CRM, Sales, Projects, Vendor Management, and Accounting through a unified query layer
+- **Cross-module aggregation** - Five operational modules queried through a single data layer with no manual data exports or imports
+- **Seven purpose-built views** - Personal tasks, team workload, upcoming engagements, pipeline health, vendor operations, revenue metrics, and a customizable canvas. Each surfaces only the data relevant to that function
+- **Unified engagement calendar** - Pulls upcoming engagements from both the sales pipeline and the project module into a single calendar view, regardless of which module owns the record
+- **ORM-level computation** - Dynamic domain filtering computes metrics at the database layer for performance, not in application code
+
+### 2. Visualize
+Metrics are rendered through interactive, configurable chart components
+- **7+ chart types** - Line, bar, doughnut, pie, radar, scatter, and geographic map visualizations powered by AmCharts 5
+- **Interactive drill-through** - Clicking any KPI tile or chart segment navigates directly to the underlying business records, not a filtered view
+- **Drag-and-drop layout** - Dashboard widgets repositioned freely via GridStack.js with layout saved per user for persistent personalization
+- **Date range filtering** - Saved filter presets allow instant time-window switching without rebuilding reports
+
+</Column>
+<Column fillWidth>
+
+### 3. Filter
+Role permissions determine dashboard visibility with personalized configurations
+- **Per-user dashboards** - Each role configures their own view with widgets, layout, and filters saved independently
+- **Real-time rendering** - All widgets query live operational data on load, ensuring dashboards always reflect current state
+
+### 4. Export
+One-click reporting formatted for executive consumption
+- **3 export formats** - PDF generation (html2canvas + jsPDF), Excel workbooks (xlsxwriter), and PNG image snapshots
+- **Board-ready output** - Exports formatted for executive presentations without manual formatting
+- **Scheduled email delivery** - Dashboards configured to auto-email chart snapshots to a recipient list on a recurring schedule. Executives receive summaries in their inbox
+
+### Platform Scale
+- **4,600+ lines** of dashboard logic across models, views, and client-side rendering
+- **Migration-safe architecture** - Automated migration scripts update security rules and data structures on module upgrade
+- **Full test coverage** - Dedicated test suite for dashboard data integrity and access control validation
+- **Modular widget system** - New KPI widgets added without modifying core dashboard infrastructure
+
+</Column>
+</Grid>
+
+---
+
+## Business Impact
+
+<Grid columns="2" gap="l" fillWidth>
+<Column fillWidth>
+
+- **Faster** strategic decisions
+- **Early** bottleneck detection
+
+</Column>
+<Column fillWidth>
+
+- **Clear** profitability visibility
+- **Performance** transparency
+- **Leadership** receives intelligence without logging in
+
+</Column>
+</Grid>
+
+---
+
+## End Result
+
+Leadership operates with real-time operational intelligence instead of guesswork.

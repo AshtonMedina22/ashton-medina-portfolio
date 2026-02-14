@@ -1,7 +1,7 @@
 ---
-title: "Vendor Procurement & Portal Platform"
+title: "Vendor Lifecycle & Compliance Platform"
 publishedAt: "2024-11-15"
-summary: "Self-service portal with tokenized access, automated RFQ workflows, and record-level data isolation for external partners."
+summary: "Controlled vendor management platform that formalizes onboarding, enforces approval chains, and governs vendor lifecycle from quote to compliance."
 images:
   - "/images/projects/project-02/cover-01.jpg"
   - "/images/projects/project-02/cover-02.jpg"
@@ -20,48 +20,156 @@ techStack:
     icon: "api"
 ---
 
-*Replacing email chains with an auditable, governed vendor workflow.*
+## Executive Business Problem
+
+Companies working with vendors or contractors often lack structured control over:
+
+<Grid columns="3" gap="m" fillWidth>
+<Column fillWidth>
+
+- Onboarding
+- Documentation
+
+</Column>
+<Column fillWidth>
+
+- Approval chains
+- Quote validation
+
+</Column>
+<Column fillWidth>
+
+- Ongoing compliance
+
+</Column>
+</Grid>
+
+This leads to financial risk and operational inconsistency.
+
+---
+
+## What Was Broken
 
 <Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## The Problem
-
-Vendor coordination ran on email and phone calls. Work orders were sent as attachments, confirmations were verbal, quote comparisons lived in spreadsheets, and compliance documents were scattered across inboxes. A single missed confirmation could derail an entire event.
+- Informal vendor onboarding
+- Manual approval tracking
+- No structured quote comparison
 
 </Column>
 <Column fillWidth>
 
-## The Solution
-
-A 15-route vendor portal with tokenized access links (48-hour expiry), 6-state work order lifecycle, automated RFQ workflows with best-quote selection, and record-level data isolation enforced at the ORM layer.
+- No enforced compliance checkpoints
+- Limited visibility into vendor performance
+- No way for vendors to apply or respond to assignments without staff manually relaying information
+- Document expiration tracked manually or not at all
 
 </Column>
 </Grid>
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
+---
+
+## The System I Built
+
+A **controlled vendor management platform** that:
+
+<Grid columns="2" gap="l" fillWidth>
 <Column fillWidth>
 
-## Technical Implementation
-
-- **6-state lifecycle:** Pending → Sent → Confirmed → Declined → In Progress → Completed
-- **Tokenized access:** No login credentials, 48-hour expiry for security
-- **Record-level isolation:** Each vendor sees only their assignments—no customer pricing, no other vendors, no margin data
-- **RFQ automation:** Multiple vendors submit quotes, auto-close deadlines, cron-selected best quote
-- **Compliance tracking:** 15+ service categories, 3-tier classification, automated expiry monitoring
-- **Batch reminders:** 200 records/cycle cron job for 24-hour pending work orders
+- Formalizes onboarding steps
+- Enforces approval chains
+- Tracks vendor lifecycle stages
+- Public-facing vendor application portal - vendors apply, upload documents, and enter the onboarding pipeline directly
 
 </Column>
 <Column fillWidth>
 
-## Results
-
-- **15 secure routes** with governed portal access
-- **E-signature accept/decline** with reason capture
-- **Real-time vendor response tracking** for internal teams
-- **Cost variance reporting:** estimated vs. actual
-- **Automated document expiry alerts** across all vendors
-- **1,460+ lines of Python** across portal controllers and assignment models
+- Manages structured quote comparison
+- Applies role-based access control
+- Logs financial and compliance states
+- Vendor self-service for assignments - vendors accept/decline work orders through a secure portal with e-signature, no staff intermediary
+- Automated expiry monitoring - scheduled jobs flag documents at 30 days, 7 days, and on expiration date
 
 </Column>
 </Grid>
+
+---
+
+## How It Works
+
+<Grid columns="2" gap="l" fillWidth>
+<Column fillWidth>
+
+### 1. Onboard
+Vendor enters onboarding state with required documentation enforced
+- **Vendor tiering** - Multi-level classification system for segmenting vendor capabilities and service authorization
+- **15 secure routes** - Work orders, tasks, upcoming engagements, quote submissions, and messaging all accessible through a governed portal
+- **Tokenized access links** - Time-limited tokens allow vendors to view and respond to assignments without login credentials
+- **Public application intake** - Vendors submit company details and upload required documents (insurance, certifications, licenses) through a web form. Applications enter the onboarding pipeline with tracked status
+
+### 2. Document
+Compliance documents tracked with 4-state monitoring
+- **4-state compliance monitoring** - Scheduled jobs automatically scan all vendor documents and flag at 30 days before expiry, 7 days before expiry, and on expiration date. Status computed per vendor record
+- **Portal dashboard counters** - Real-time counts for pending assignments, active work, upcoming engagements, open tasks, and quote requests
+
+### 3. Approve
+Approval chain validates engagement
+- **E-signature workflow** - Contract requests auto-generated on assignment send, with signature date tracking and decline reason capture
+- **Record-level data isolation** - Each vendor sees only their own assignments at the ORM layer, with no access to pricing, margins, or other vendor data
+
+</Column>
+<Column fillWidth>
+
+### 4. Compare
+Structured RFQ workflow allows multiple vendors to submit quotes
+- **RFQ auto-close** - Quote request deadlines enforced automatically with best-quote selection logic
+- **Batch reminder engine** - Scheduled job processes 200 records per cycle, auto-sending follow-ups for pending assignments
+- **Portal quote submission** - Vendors submit quotes through the portal. Manager selects winner via selection wizard, system auto-closes remaining bids, and generates a purchase order from the winning quote
+
+### 5. Activate
+6-state lifecycle controls activation - Pending, Sent, Confirmed, Declined, In Progress, Completed
+- **Task-to-assignment linking** - Each work order has linked task records with progress tracking displayed as completion ratios
+- **Scheduled start/end tracking** - Time-bound assignments with arrival time and delivery window enforcement
+
+### 6. Govern
+Financial interactions governed through service-specific rate cards
+- **Service rate cards** - Per-vendor, per-service pricing structures with rate descriptions and notes
+- **Cost variance reporting** - Estimated vs. actual cost computed per assignment, aggregated at the project level for budget tracking
+- **Post-delivery performance rating** - 1-5 rating system captured after each completed assignment
+
+</Column>
+</Grid>
+
+---
+
+## Business Impact
+
+<Grid columns="3" gap="m" fillWidth>
+<Column fillWidth>
+
+- **Reduced** procurement risk
+- **Controlled** vendor spending
+
+</Column>
+<Column fillWidth>
+
+- **Clear** compliance trail
+- **Standardized** external engagement
+
+</Column>
+<Column fillWidth>
+
+- **Improved** financial accountability
+- **Measurable** vendor performance
+- **Zero** staff time relaying assignments or collecting vendor responses
+- **Vendors self-serve** from application through delivery
+
+</Column>
+</Grid>
+
+---
+
+## End Result
+
+Vendor relationships become controlled, measurable, and auditable.

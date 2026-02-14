@@ -106,7 +106,7 @@ const home: Home = {
 const about: About = {
   path: "/about",
   label: "About",
-  title: `How I Approach Platform and Systems Engineering – ${person.name}`,
+  title: `How I Approach Platform and Systems Engineering - ${person.name}`,
   description: `Learn about ${person.name}'s approach to building scalable, governed platforms and systems`,
   tableOfContent: {
     display: false,
@@ -146,11 +146,11 @@ const about: About = {
         title: "Engineering Principles",
         description: (
           <Column as="ul" gap="4" style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Repeatable execution, not person-dependent</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Automation enforces standards</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Access control enables safe scale</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Capture data once, propagate forward</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Explainable and auditable systems</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Repeatable execution, not person-dependent</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Automation enforces standards</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Access control enables safe scale</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Capture data once, propagate forward</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Explainable and auditable systems</Text>
           </Column>
         ),
         tags: [],
@@ -160,11 +160,11 @@ const about: About = {
         title: "Architecture Patterns",
         description: (
           <Column as="ul" gap="4" style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Template-driven workflow generation</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— State-machine lifecycle modeling</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Token-scoped external access</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Computed metric aggregation</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Modular extension architecture</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Template-driven workflow generation</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- State-machine lifecycle modeling</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Token-scoped external access</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Computed metric aggregation</Text>
+            <Text as="li" variant="body-default-s" onBackground="neutral-weak">- Modular extension architecture</Text>
           </Column>
         ),
         tags: [],
@@ -201,7 +201,7 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
+  title: `Projects - ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
@@ -210,7 +210,7 @@ const work: Work = {
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
+  title: `Photo gallery - ${person.name}`,
   description: `A photo collection by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
