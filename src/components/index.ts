@@ -9,5 +9,7 @@ export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
 export { TechStack } from "@/components/work/TechStack";
+export { SkillsSection } from "@/components/work/SkillsSection";
 export { TechStackMarquee } from "@/components/TechStackMarquee";
 export { ThemeAwareAvatar } from "@/components/ThemeAwareAvatar";
+export { ContactSection } from "@/components/ContactSection";

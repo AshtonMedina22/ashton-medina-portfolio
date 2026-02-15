@@ -10,6 +10,7 @@ import {
   Text,
 } from "@once-ui-system/core";
 import { TechStack } from "./work/TechStack";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
@@ -34,18 +35,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   techStack,
 }) => {
   return (
-    <Column fillWidth gap="m">
-      <SmartLink href={href} style={{ textDecoration: "none" }}>
-        <Column
-          fillWidth
-          style={{
-            maxHeight: "400px",
-            aspectRatio: "16 / 9",
-            overflow: "hidden",
-            borderRadius: "var(--radius-l)",
-            cursor: "pointer",
-          }}
-        >
+    <Column fillWidth gap="m" className={styles.cardContainer}>
+      <SmartLink href={href} className={styles.imageLink}>
+        <Column fillWidth className={styles.imageContainer}>
           <Carousel
             sizes="(max-width: 960px) 100vw, 640px"
             items={images.map((image) => ({
@@ -55,55 +47,36 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         </Column>
       </SmartLink>
-      <Flex
-        s={{ direction: "column" }}
+      <Column
         fillWidth
         paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
+        paddingTop="m"
+        paddingBottom="m"
+        gap="m"
+        className={styles.cardContent}
       >
         {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
+          <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+            {title}
+          </Heading>
+        )}
+        <Column gap="m">
+          {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
+          {description?.trim() && (
+            <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+              {description}
+            </Text>
+          )}
+          {techStack && techStack.length > 0 && (
+            <TechStack technologies={techStack} size="s" />
+          )}
+          <Flex gap="m" wrap className={styles.ctaContainer}>
+            <SmartLink className={styles.ctaLink} href={href}>
+              <Text variant="body-default-s">View Project</Text>
+            </SmartLink>
           </Flex>
-        )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            {techStack && techStack.length > 0 && (
-              <TechStack technologies={techStack} size="s" />
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-s">View Work</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
-          </Column>
-        )}
-      </Flex>
+        </Column>
+      </Column>
     </Column>
   );
 };

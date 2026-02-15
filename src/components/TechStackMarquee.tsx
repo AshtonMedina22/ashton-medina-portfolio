@@ -10,6 +10,8 @@ export function TechStackMarquee() {
     javascript: "#F7DF1E",
     typescript: "#3178C6",
     python: "#3776AB",
+    go: "#00ADD8",
+    golang: "#00ADD8",
     java: "#ED8B00",
     html: "#E34F26",
     css: "#1572B6",
@@ -27,12 +29,18 @@ export function TechStackMarquee() {
     swagger: "#85EA2D",
     middleware: "#B0B7C3",
     express: "#B0B7C3",
+    fastapi: "#009688",
+    kubernetes: "#326CE5",
+    terraform: "#7B42BC",
+    vercel: "#E5E5E5",
+    auth0: "#EB5424",
+    keycloak: "#F7931D",
+    okta: "#007DC1",
+    clerk: "#6D28D9",
     docker: "#2496ED",
     nginx: "#009639",
     git: "#F05032",
     bootstrap: "#7952B3",
-    openai: "#412991",
-    ai: "#412991",
     aws: "#FF9900",
     mongodb: "#47A248",
     tailwind: "#06B6D4",
@@ -41,7 +49,6 @@ export function TechStackMarquee() {
     jest: "#C21325",
   };
 
-  // Duplicate arrays for seamless infinite scroll
   const duplicatedLanguages = [...techStackLanguages, ...techStackLanguages];
   const duplicatedPlatforms = [...techStackPlatforms, ...techStackPlatforms];
 
@@ -62,7 +69,7 @@ export function TechStackMarquee() {
 
   return (
     <Column fillWidth gap="m">
-      {/* Languages Row - Scroll Left */}
+      {/* Languages */}
       <Row
         fillWidth
         overflow="hidden"
@@ -78,7 +85,7 @@ export function TechStackMarquee() {
         </Row>
       </Row>
       
-      {/* Platforms Row - Scroll Right */}
+      {/* Platforms */}
       <Row
         fillWidth
         overflow="hidden"

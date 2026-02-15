@@ -20,6 +20,12 @@ type Metadata = {
   team: Team[];
   link?: string;
   techStack?: Array<{ name: string; icon: string | null }>;
+  highlights?: Array<{ value: string; label: string }>;
+  performance?: number;
+  accessibility?: number;
+  seo?: number;
+  keyResults?: Array<{ label: string; value: string }>;
+  technicalImplementation?: string[];
 };
 
 import { notFound } from "next/navigation";
@@ -51,6 +57,12 @@ function readMDXFile(filePath: string) {
     team: data.team || [],
     link: data.link || "",
     techStack: data.techStack || [],
+    highlights: data.highlights || [],
+    performance: data.performance,
+    accessibility: data.accessibility,
+    seo: data.seo,
+    keyResults: data.keyResults || [],
+    technicalImplementation: data.technicalImplementation || [],
   };
 
   return { metadata, content };

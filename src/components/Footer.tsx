@@ -1,4 +1,4 @@
-import { Row, IconButton, Text } from "@once-ui-system/core";
+import { Row, SmartLink, Text, Icon } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
@@ -24,18 +24,19 @@ export const Footer = () => {
         <Text variant="body-default-s" onBackground="neutral-strong">
           © {currentYear} {person.name}
         </Text>
-        <Row gap="16">
+        <Row gap="16" vertical="center">
           {social
             .filter((item) => (item.name === "LinkedIn" || item.name === "Email") && item.link)
             .map((item) => (
-              <IconButton
+              <SmartLink
                 key={item.name}
                 href={item.link}
-                icon={item.icon}
-                tooltip={item.name}
-                size="s"
-                variant="ghost"
-              />
+                aria-label={item.name}
+                target={item.icon === "linkedin" ? "_blank" : undefined}
+                rel={item.icon === "linkedin" ? "noopener noreferrer" : undefined}
+              >
+                <Icon name={item.icon as "linkedin" | "email"} size="s" onBackground="neutral-medium" />
+              </SmartLink>
             ))}
         </Row>
       </Row>

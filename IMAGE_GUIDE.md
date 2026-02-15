@@ -149,13 +149,7 @@ Use tools like:
 - **Excalidraw** - Quick technical sketches
 - **Canva** - Professional graphics
 
-### Option 3: Use AI-Generated Images
-Use AI tools to create conceptual images:
-- **Midjourney/DALL-E** - Generate platform concepts
-- **ChatGPT/DALL-E** - Create technical diagrams
-- Prompt: "Professional software platform dashboard, modern UI, clean design"
-
-### Option 4: Keep Placeholders (Temporary)
+### Option 3: Keep Placeholders (Temporary)
 - Current setup works for now
 - Can launch with placeholders
 - Replace later with actual images

@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema, Text } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 
@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <Column maxWidth="m" paddingTop="24">
+    <Column maxWidth="m" paddingTop="24" paddingX="l" horizontal="center" style={{ paddingBottom: "var(--static-space-104)" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -28,9 +28,12 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading marginBottom="l" variant="heading-strong-xl" align="center">
+      <Heading marginBottom="s" variant="display-strong-s" align="center">
         {work.title}
       </Heading>
+      <Text variant="body-default-m" align="center" onBackground="neutral-weak" marginBottom="xl" style={{ maxWidth: "38ch", marginLeft: "auto", marginRight: "auto" }}>
+        Platform engineering and automation—selected projects.
+      </Text>
       <Projects />
     </Column>
   );

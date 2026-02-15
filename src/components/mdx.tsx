@@ -26,6 +26,21 @@ import {
   Line,
 } from "@once-ui-system/core";
 
+import {
+  SectionCard,
+  StepCard,
+  MetricCard,
+  ProcessGrid,
+  MetricsGrid,
+  CalloutBox,
+  AccentColumn,
+  ArchitectureBlock,
+  ArchitectureGrid,
+  WorkflowDiagram,
+  ProofPointsBlock,
+  ProofPoint,
+} from "./work/ProjectCardComponents";
+
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
   children: ReactNode;
@@ -63,8 +78,8 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
 
   return (
     <Media
-      marginTop="8"
-      marginBottom="16"
+      marginTop="l"
+      marginBottom="l"
       enlarge
       radius="m"
       border="neutral-alpha-medium"
@@ -91,20 +106,31 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
   }: Omit<React.ComponentProps<typeof Heading>, "as" | "id">) => {
     const slug = slugify(children as string);
     const variantMap = {
-      h1: "display-strong-xs",
+      h1: "display-strong-m",
       h2: "heading-strong-xl",
       h3: "heading-strong-l",
       h4: "heading-strong-m",
       h5: "heading-strong-s",
       h6: "heading-strong-xs",
     } as const;
-    
+
+    const marginMap = {
+      h1: { marginTop: "40", marginBottom: "28" },
+      h2: { marginTop: "40", marginBottom: "24" },
+      h3: { marginTop: "32", marginBottom: "20" },
+      h4: { marginTop: "24", marginBottom: "16" },
+      h5: { marginTop: "20", marginBottom: "12" },
+      h6: { marginTop: "16", marginBottom: "8" },
+    } as const;
+
+    const { marginTop, marginBottom } = marginMap[as];
+
     return (
-      <Heading 
-        marginTop="24" 
-        marginBottom="12" 
-        as={as} 
-        id={slug} 
+      <Heading
+        marginTop={marginTop as any}
+        marginBottom={marginBottom as any}
+        as={as}
+        id={slug}
         variant={variantMap[as]}
         {...props}
       >
@@ -124,8 +150,8 @@ function createParagraph({ children }: TextProps) {
       style={{ lineHeight: "175%" }}
       variant="body-default-m"
       onBackground="neutral-medium"
-      marginTop="8"
-      marginBottom="12"
+      marginTop="s"
+      marginBottom="m"
     >
       {children}
     </Text>
@@ -147,8 +173,8 @@ function createCodeBlock(props: any) {
 
     return (
       <CodeBlock
-        marginTop="8"
-        marginBottom="16"
+        marginTop="16"
+        marginBottom="20"
         codes={[
           {
             code: children,
@@ -171,7 +197,7 @@ function createList(as: "ul" | "ol") {
 
 function createListItem({ children }: { children: ReactNode }) {
   return (
-    <ListItem marginTop="4" marginBottom="8" style={{ lineHeight: "175%" }}>
+    <ListItem marginTop="s" marginBottom="m" style={{ lineHeight: "175%" }}>
       {children}
     </ListItem>
   );
@@ -179,7 +205,7 @@ function createListItem({ children }: { children: ReactNode }) {
 
 function createHR() {
   return (
-    <Row fillWidth horizontal="center">
+    <Row fillWidth horizontal="center" marginTop="24" marginBottom="24">
       <Line maxWidth="40" />
     </Row>
   );
@@ -217,6 +243,18 @@ const components = {
   Icon,
   Media,
   SmartLink,
+  SectionCard,
+  StepCard,
+  MetricCard,
+  ProcessGrid,
+  MetricsGrid,
+  CalloutBox,
+  AccentColumn,
+  ArchitectureBlock,
+  ArchitectureGrid,
+  WorkflowDiagram,
+  ProofPointsBlock,
+  ProofPoint,
 };
 
 type CustomMDXProps = MDXRemoteProps & {

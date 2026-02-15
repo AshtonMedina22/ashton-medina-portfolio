@@ -1,0 +1,45 @@
+.cardContainer {
+    border-radius: var(--radius-xl, 1.25rem);
+    border: 1px solid var(--neutral-alpha-weak);
+    background: var(--surface-background, var(--neutral-alpha-weak));
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: border-color var(--transition-micro-medium), background var(--transition-micro-medium), box-shadow var(--transition-micro-medium);
+
+    &:hover {
+        border-color: var(--neutral-alpha-medium);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+}
+
+.imageLink {
+    text-decoration: none;
+    display: block;
+}
+
+.imageContainer {
+    max-height: 400px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+/* Clip image to card's top rounded corners */
+.cardContainer .imageContainer {
+    border-radius: var(--radius-xl, 1.25rem) var(--radius-xl, 1.25rem) 0 0;
+}
+
+.cardContent {
+    height: 100%;
+}
+
+.ctaContainer {
+    margin-top: auto;
+    padding-top: var(--static-space-s);
+}
+
+.ctaLink {
+    margin: 0;
+    width: fit-content;
+}

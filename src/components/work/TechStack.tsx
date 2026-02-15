@@ -11,13 +11,9 @@ export function TechStack({ technologies, size = "m" }: TechStackProps) {
   if (!technologies || technologies.length === 0) return null;
 
   return (
-    <Row wrap gap="8" paddingTop="8">
+    <Row wrap gap="s" paddingTop="s">
       {technologies.map((tech, index) => (
-        <Tag
-          key={`${tech.name}-${index}`}
-          size={size}
-          prefixIcon={tech.icon || undefined}
-        >
+        <Tag key={`${tech.name}-${index}`} size={size}>
           {tech.name}
         </Tag>
       ))}

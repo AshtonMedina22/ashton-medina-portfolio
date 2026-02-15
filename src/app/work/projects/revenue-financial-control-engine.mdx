@@ -16,81 +16,42 @@ techStack:
     icon: "api"
 ---
 
-## Executive Business Problem
+## The Problem
 
-Most growing businesses suffer from:
-
-<Grid columns="3" gap="m" fillWidth>
-<Column fillWidth>
-
-- Revenue leakage
-- Unauthorized discounts
-
-</Column>
-<Column fillWidth>
-
-- Weak pricing validation
-- Informal cost approvals
-
-</Column>
-<Column fillWidth>
-
-- Poor financial visibility
-
-</Column>
-</Grid>
-
-Margins erode silently.
+Revenue leakage, unauthorized discounts, weak pricing validation, informal approvals, and poor visibility—margins erode when financial governance isn’t embedded in the system.
 
 ---
 
-## What Was Broken
-
-<Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
-
-- Sales transitions without financial validation
-- Vendor spending without structured approval
-
-</Column>
-<Column fillWidth>
-
-- No enforced separation of duties
-- Weak audit trail
-- No connection between what was budgeted at the pipeline and what it actually cost to deliver
-- Pricing left to rep discretion with no system-enforced guardrails
-
-</Column>
-</Grid>
-
----
-
-## The System I Built
+## The System
 
 A **structured financial governance layer** embedded across revenue and procurement systems that:
 
+<SectionCard>
 <Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+<AccentColumn accent="red">
 
 - Enforces controlled state transitions
 - Requires approval checkpoints
 - Restricts pricing authority
 
-</Column>
-<Column fillWidth>
+</AccentColumn>
+<AccentColumn accent="cyan">
 
 - Tracks financial lifecycle states
 - Applies role-based financial permissions
 
-</Column>
+</AccentColumn>
 </Grid>
+</SectionCard>
 
 ---
 
 ## How It Works
 
+<SectionCard>
+
 <Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+<AccentColumn accent="red">
 
 ### 1. Validate
 Revenue events require validation before confirmation
@@ -110,8 +71,8 @@ Procurement costs pass through enforced checkpoints
 - **Financial field restriction** - Sensitive financial data (margins, costs, compensation) hidden from unauthorized roles including external portal users
 - **Post-delivery cost accountability** - Every vendor assignment tracks estimated cost vs. actual cost with auto-computed variance. Cost overruns surface on the assignment, the project, and the margin calculation
 
-</Column>
-<Column fillWidth>
+</AccentColumn>
+<AccentColumn accent="cyan">
 
 ### 4. Log
 Financial state changes are logged through accounting journal entries
@@ -126,35 +87,33 @@ Only authorized roles can finalize monetary transitions
 - **Performance compensation formula** - Calculated as (Revenue x Attribution %) x Margin Tier Rate, ensuring payout directly reflects deal quality
 - **Automated compensation records** - Draft purchase orders auto-generated monthly per stakeholder, with line-level tracking codes linking each payout to its source project
 
-</Column>
+</AccentColumn>
 </Grid>
+
+</SectionCard>
 
 ---
 
 ## Business Impact
 
-<Grid columns="3" gap="m" fillWidth>
-<Column fillWidth>
-
+<SectionCard>
+<MetricsGrid>
+<MetricCard title="Margin & pricing">
 - **Reduced** margin erosion
 - **Increased** pricing discipline
-
-</Column>
-<Column fillWidth>
-
+</MetricCard>
+<MetricCard title="Control & audit">
 - **Controlled** spending
 - **Audit** readiness
-
-</Column>
-<Column fillWidth>
-
+</MetricCard>
+<MetricCard title="Visibility & automation">
 - **Financial** transparency
 - **Automated** compensation processing
 - **Per-engagement** margin visibility in real time
 - **Budget-to-actual** traceability from pipeline to delivery
-
-</Column>
-</Grid>
+</MetricCard>
+</MetricsGrid>
+</SectionCard>
 
 ---
 

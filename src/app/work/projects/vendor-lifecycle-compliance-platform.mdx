@@ -20,70 +20,27 @@ techStack:
     icon: "api"
 ---
 
-## Executive Business Problem
+## The Problem
 
-Companies working with vendors or contractors often lack structured control over:
-
-<Grid columns="3" gap="m" fillWidth>
-<Column fillWidth>
-
-- Onboarding
-- Documentation
-
-</Column>
-<Column fillWidth>
-
-- Approval chains
-- Quote validation
-
-</Column>
-<Column fillWidth>
-
-- Ongoing compliance
-
-</Column>
-</Grid>
-
-This leads to financial risk and operational inconsistency.
+Vendor and contractor relationships often lack structured control: informal onboarding, manual approval tracking, no enforced compliance checkpoints, and limited visibility into performance—leading to financial risk and inconsistency.
 
 ---
 
-## What Was Broken
-
-<Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
-
-- Informal vendor onboarding
-- Manual approval tracking
-- No structured quote comparison
-
-</Column>
-<Column fillWidth>
-
-- No enforced compliance checkpoints
-- Limited visibility into vendor performance
-- No way for vendors to apply or respond to assignments without staff manually relaying information
-- Document expiration tracked manually or not at all
-
-</Column>
-</Grid>
-
----
-
-## The System I Built
+## The System
 
 A **controlled vendor management platform** that:
 
+<SectionCard>
 <Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+<AccentColumn accent="red">
 
 - Formalizes onboarding steps
 - Enforces approval chains
 - Tracks vendor lifecycle stages
 - Public-facing vendor application portal - vendors apply, upload documents, and enter the onboarding pipeline directly
 
-</Column>
-<Column fillWidth>
+</AccentColumn>
+<AccentColumn accent="cyan">
 
 - Manages structured quote comparison
 - Applies role-based access control
@@ -91,15 +48,18 @@ A **controlled vendor management platform** that:
 - Vendor self-service for assignments - vendors accept/decline work orders through a secure portal with e-signature, no staff intermediary
 - Automated expiry monitoring - scheduled jobs flag documents at 30 days, 7 days, and on expiration date
 
-</Column>
+</AccentColumn>
 </Grid>
+</SectionCard>
 
 ---
 
 ## How It Works
 
+<SectionCard>
+
 <Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+<AccentColumn accent="red">
 
 ### 1. Onboard
 Vendor enters onboarding state with required documentation enforced
@@ -118,8 +78,8 @@ Approval chain validates engagement
 - **E-signature workflow** - Contract requests auto-generated on assignment send, with signature date tracking and decline reason capture
 - **Record-level data isolation** - Each vendor sees only their own assignments at the ORM layer, with no access to pricing, margins, or other vendor data
 
-</Column>
-<Column fillWidth>
+</AccentColumn>
+<AccentColumn accent="cyan">
 
 ### 4. Compare
 Structured RFQ workflow allows multiple vendors to submit quotes
@@ -138,35 +98,33 @@ Financial interactions governed through service-specific rate cards
 - **Cost variance reporting** - Estimated vs. actual cost computed per assignment, aggregated at the project level for budget tracking
 - **Post-delivery performance rating** - 1-5 rating system captured after each completed assignment
 
-</Column>
+</AccentColumn>
 </Grid>
+
+</SectionCard>
 
 ---
 
 ## Business Impact
 
-<Grid columns="3" gap="m" fillWidth>
-<Column fillWidth>
-
+<SectionCard>
+<MetricsGrid>
+<MetricCard title="Risk & spending">
 - **Reduced** procurement risk
 - **Controlled** vendor spending
-
-</Column>
-<Column fillWidth>
-
+</MetricCard>
+<MetricCard title="Compliance & engagement">
 - **Clear** compliance trail
 - **Standardized** external engagement
-
-</Column>
-<Column fillWidth>
-
+</MetricCard>
+<MetricCard title="Accountability & self-serve">
 - **Improved** financial accountability
 - **Measurable** vendor performance
 - **Zero** staff time relaying assignments or collecting vendor responses
 - **Vendors self-serve** from application through delivery
-
-</Column>
-</Grid>
+</MetricCard>
+</MetricsGrid>
+</SectionCard>
 
 ---
 
