@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <rect x="20" y="20" width="760" height="410" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="40" y="55" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#111827">Sales-to-Delivery</text>
+  <text x="40" y="82" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Transaction-triggered automation " Zero manual setup</text>
+  <rect x="40" y="110" width="340" height="140" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="52" y="140" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">Confirmed Sales Order</text>
+  <text x="52" y="165" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Pipeline stages " Line items " Trigger product</text>
+  <rect x="420" y="110" width="340" height="140" rx="6" fill="#d1fae5" stroke="#a7f3d0"/>
+  <text x="432" y="140" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#047857">Auto-Generated Project</text>
+  <text x="432" y="165" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Financials " Kanban " Traceability</text>
+  <rect x="40" y="270" width="720" height="60" rx="6" fill="#2563eb"/>
+  <text x="380" y="308" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">Click to open interactive demo</text>
+</svg>

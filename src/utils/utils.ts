@@ -26,6 +26,7 @@ type Metadata = {
   seo?: number;
   keyResults?: Array<{ label: string; value: string }>;
   technicalImplementation?: string[];
+  demo?: boolean;
 };
 
 import { notFound } from "next/navigation";
@@ -63,6 +64,7 @@ function readMDXFile(filePath: string) {
     seo: data.seo,
     keyResults: data.keyResults || [],
     technicalImplementation: data.technicalImplementation || [],
+    demo: data.demo ?? false,
   };
 
   return { metadata, content };

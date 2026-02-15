@@ -1,0 +1,25 @@
+/* Revenue & Financial Control Demo - ERP financial screen */
+$demo-blue: #2563eb;
+$demo-green: #059669;
+$demo-green-bg: #d1fae5;
+$demo-red: #dc2626;
+$demo-border: #e5e7eb;
+$demo-bg: #fafbfc;
+$demo-card-bg: #ffffff;
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  min-height: 100%;
+  background: $demo-bg;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.section {
+  background: $demo-card-bg;
+  border: 1px solid $demo-border;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}

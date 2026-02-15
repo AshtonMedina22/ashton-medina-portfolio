@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <text x="24" y="48" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#111827">Vendor Lifecycle &amp; Compliance</text>
+  <text x="24" y="74" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Internal admin view + vendor self-service portal</text>
+  <rect x="24" y="100" width="368" height="150" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="36" y="128" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#374151">Admin: Document compliance, rate cards</text>
+  <rect x="408" y="100" width="368" height="150" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="420" y="128" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#374151">Portal: Work orders, Accept/Decline</text>
+  <rect x="24" y="270" width="752" height="80" rx="8" fill="#dbeafe"/>
+  <text x="400" y="312" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#1d4ed8" text-anchor="middle">Click to open interactive demo</text>
+</svg>

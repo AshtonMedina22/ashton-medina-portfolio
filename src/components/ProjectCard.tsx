@@ -15,6 +15,7 @@ import styles from "./ProjectCard.module.scss";
 interface ProjectCardProps {
   href: string;
   priority?: boolean;
+  demoHref?: string;
   images: string[];
   title: string;
   content: string;
@@ -26,6 +27,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
+  demoHref,
   images = [],
   title,
   content,
@@ -36,7 +38,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <Column fillWidth gap="m" className={styles.cardContainer}>
-      <SmartLink href={href} className={styles.imageLink}>
+      <SmartLink
+        href={demoHref ?? href}
+        {...(demoHref ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className={styles.imageLink}
+      >
         <Column fillWidth className={styles.imageContainer}>
           <Carousel
             sizes="(max-width: 960px) 100vw, 640px"

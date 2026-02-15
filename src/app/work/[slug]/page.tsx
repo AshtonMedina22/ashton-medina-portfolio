@@ -131,18 +131,51 @@ export default async function Project({
         </Row>
       </Column>
 
-      {/* Hero image */}
+      {/* Hero image - clickable to demo when available */}
       {post.metadata.images.length > 0 && (
         <div className={styles.heroImageWrap}>
-          <Media
-            fillWidth
-            priority
-            aspectRatio="16 / 9"
-            radius="l"
-            alt={post.metadata.title}
-            src={post.metadata.images[0]}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 900px"
-          />
+          {post.metadata.demo ? (
+            <SmartLink
+              href={`/work/${post.slug}/demo`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.heroImageLink}
+            >
+              <Media
+                fillWidth
+                priority
+                aspectRatio="16 / 9"
+                radius="l"
+                alt={post.metadata.title}
+                src={post.metadata.images[0]}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 900px"
+              />
+            </SmartLink>
+          ) : (
+            <Media
+              fillWidth
+              priority
+              aspectRatio="16 / 9"
+              radius="l"
+              alt={post.metadata.title}
+              src={post.metadata.images[0]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 900px"
+            />
+          )}
+        </div>
+      )}
+
+      {/* Try Interactive Demo CTA */}
+      {post.metadata.demo && (
+        <div className={styles.demoCtaWrap}>
+          <SmartLink
+            href={`/work/${post.slug}/demo`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.demoCta}
+          >
+            Try Interactive Demo
+          </SmartLink>
         </div>
       )}
 

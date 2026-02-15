@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <text x="24" y="40" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#111827">Revenue &amp; Financial Control</text>
+  <rect x="24" y="58" width="760" height="80" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="40" y="88" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#111827">TechCorp Annual Gala  ENG-2024-0842</text>
+  <rect x="40" y="98" width="100" height="24" rx="4" fill="#eff6ff"/>
+  <text x="50" y="115" font-family="system-ui,sans-serif" font-size="10" fill="#2563eb">Sales Order ($12,400)</text>
+  <rect x="24" y="152" width="124" height="70" rx="6" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="36" y="175" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">Client Revenue</text>
+  <text x="36" y="198" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#111827">$12,400</text>
+  <rect x="156" y="152" width="124" height="70" rx="6" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="168" y="175" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">Cost Variance</text>
+  <text x="168" y="198" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#059669">-$400</text>
+  <rect x="288" y="152" width="124" height="70" rx="6" fill="#d1fae5" stroke="#a7f3d0"/>
+  <text x="300" y="175" font-family="system-ui,sans-serif" font-size="9" fill="#059669">Margin %</text>
+  <text x="300" y="198" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#059669">53.2%</text>
+  <rect x="24" y="238" width="350" height="100" rx="6" fill="#fff" stroke="#e5e7eb"/>
+  <text x="36" y="265" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Vendor Cost Breakdown</text>
+  <rect x="390" y="238" width="394" height="100" rx="6" fill="#fff" stroke="#e5e7eb"/>
+  <text x="402" y="265" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Budget-to-Actual Chain</text>
+  <text x="402" y="295" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Pipeline $15k ’ Quoted $12.4k ’ Delivery $5.8k</text>
+  <rect x="24" y="354" width="760" height="70" rx="6" fill="#fff" stroke="#e5e7eb"/>
+  <text x="36" y="385" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Revenue Attribution " Primary/Secondary/Referral</text>
+</svg>
