@@ -1,0 +1,512 @@
+/* Sales-to-Delivery Demo - Modern ERP interface, platform-agnostic */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+$blue: #2563eb;
+$blue-light: #3b82f6;
+$blue-bg: #eff6ff;
+$blue-border: #bfdbfe;
+$green: #059669;
+$green-bg: #d1fae5;
+$green-border: #a7f3d0;
+$border: #e2e8f0;
+$border-light: #f1f5f9;
+$bg: #f8fafc;
+$card-bg: #ffffff;
+$text: #0f172a;
+$text-muted: #64748b;
+$text-subtle: #94a3b8;
+
+.demo {
+  min-height: 100%;
+  background: $bg;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: $card-bg;
+  border-bottom: 1px solid $border;
+}
+
+.headerTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $text;
+  letter-spacing: -0.02em;
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: $text-muted;
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  flex: 1;
+  min-height: 680px;
+  align-items: stretch;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+.flowConnector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.75rem;
+  background: $bg;
+  min-width: 48px;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    padding: 0.75rem;
+    min-width: unset;
+  }
+}
+
+.flowArrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $blue;
+  line-height: 1;
+
+  @media (max-width: 1024px) {
+    margin-right: 0.5rem;
+  }
+}
+
+.flowLabel {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $text-muted;
+  margin-top: 0.25rem;
+
+  @media (max-width: 1024px) {
+    margin-top: 0;
+    margin-left: 0.25rem;
+  }
+}
+
+.panelLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $border-light;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: $card-bg;
+  border: 1px solid $border;
+  overflow: auto;
+
+  @media (max-width: 1024px) {
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+  }
+}
+
+.panelLeft {
+  border-right: none;
+
+  @media (max-width: 1024px) {
+    border-right: 1px solid $border;
+    border-bottom: none;
+  }
+}
+
+.panelRight {
+  background: $card-bg;
+
+  @media (max-width: 1024px) {
+    border-top: 1px solid $border;
+  }
+}
+
+/* Pipeline stages */
+.pipelineRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stagePill {
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.15s ease;
+
+  &.active {
+    background: $green-bg;
+    color: $green;
+    border: 1px solid $green-border;
+  }
+
+  &.inactive {
+    background: $border-light;
+    color: $text-muted;
+    border: 1px solid transparent;
+  }
+}
+
+.stageArrow {
+  font-size: 0.75rem;
+  color: $text-subtle;
+  font-weight: 400;
+}
+
+/* Order header */
+.orderHeader {
+  padding: 1rem;
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: 0.5rem;
+}
+
+.orderClient {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $text;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.orderMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.8125rem;
+  color: $text-muted;
+}
+
+.badge {
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: $blue-bg;
+  color: $blue;
+  border: 1px solid $blue-border;
+}
+
+/* Table */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid $border;
+  border-radius: 0.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+
+  th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: $text-muted;
+    background: $bg;
+    border-bottom: 1px solid $border;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    &:first-child {
+      font-weight: 700;
+      color: $text;
+    }
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid $border-light;
+    vertical-align: middle;
+
+    &:last-child {
+      font-weight: 600;
+      color: $text;
+    }
+  }
+
+  tbody tr {
+    transition: background 0.1s ease;
+
+    &:hover {
+      background: $bg;
+    }
+
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+}
+
+.totalRow td {
+  padding-top: 0.75rem;
+  border-top: 1px solid $border;
+  background: $bg;
+  font-weight: 600;
+  color: $text;
+
+  &:first-child {
+    text-align: right;
+  }
+}
+
+.totalValue {
+  text-align: right !important;
+  font-weight: 700 !important;
+}
+
+.triggerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: $blue-bg;
+  color: $blue;
+  border: 1px solid $blue-border;
+  flex-shrink: 0;
+}
+
+/* System status — project created (not alert/warning) */
+.systemStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  color: #166534;
+}
+
+.systemStatusIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.systemStatusText {
+  font-weight: 500;
+}
+
+/* Project header */
+.projectTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $text;
+  letter-spacing: -0.02em;
+}
+
+.smartButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.smartBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $blue;
+  background: $blue-bg;
+  border: 1px solid $blue-border;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+  }
+}
+
+/* Financial cards — 5 cards, less cramped */
+.financialGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.financialCard {
+  padding: 1rem;
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 0.5rem;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: $blue-border;
+  }
+}
+
+.financialLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.375rem;
+}
+
+.financialValue {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $text;
+  letter-spacing: -0.02em;
+}
+
+.financialValueHighlight {
+  color: $green;
+}
+
+/* Kanban */
+.kanbanGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap: 1rem;
+  flex: 1;
+  min-height: 220px;
+  overflow-x: auto;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.kanbanColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.kanbanColumnHeader {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid $border-light;
+}
+
+.kanbanCards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.kanbanCard {
+  padding: 0.875rem;
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover {
+    border-color: $blue-border;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+  }
+}
+
+.kanbanCardTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $text;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.kanbanCardDue {
+  font-size: 0.6875rem;
+  color: $text-subtle;
+  margin-top: 0.375rem;
+}
+
+.kanbanCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: $text-muted;
+}
+
+.avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: $blue-bg;
+  color: $blue;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.6875rem;
+  flex-shrink: 0;
+}
+
+.subtaskCount {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: $text-subtle;
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <text x="24" y="48" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#111827">Vendor Lifecycle Platform</text>
+  <text x="24" y="78" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Governed vendor management " E-signature " Compliance</text>
+  <rect x="24" y="110" width="240" height="120" rx="8" fill="#eff6ff"/>
+  <text x="36" y="150" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#2563eb">Admin View</text>
+  <text x="36" y="175" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Document tracking, rate cards</text>
+  <rect x="284" y="110" width="240" height="120" rx="8" fill="#d1fae5"/>
+  <text x="296" y="150" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#059669">Portal View</text>
+  <text x="296" y="175" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Work orders, Accept/Decline</text>
+  <rect x="544" y="110" width="240" height="120" rx="8" fill="#fef3c7"/>
+  <text x="556" y="150" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#d97706">No pricing in portal</text>
+  <rect x="24" y="250" width="752" height="80" rx="8" fill="#2563eb"/>
+  <text x="400" y="292" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">Try Interactive Demo</text>
+</svg>

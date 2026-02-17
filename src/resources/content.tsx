@@ -1,15 +1,16 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Contact, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Column, Line, Row, Tag, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Ashton",
   lastName: "Medina",
-  name: `Ashton Medina`,
-  role: "Full-Stack Platform Engineer",
-  avatar: "/images/avatar.jpg",
+  name: "Ashton Medina",
+  role: "Systems & Platform Engineer",
+  avatar: "/images/avatar.png",
   email: "ashtonmedina22@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "America/Chicago",
+  locationLabel: "Dallas–Fort Worth, TX",
+  languages: ["English", "Bahasa"],
 };
 
 const newsletter: Newsletter = {
@@ -19,7 +20,6 @@ const newsletter: Newsletter = {
 };
 
 const social: Social = [
-  // Only LinkedIn and Email for professional portfolio
   {
     name: "LinkedIn",
     icon: "linkedin",
@@ -34,12 +34,11 @@ const social: Social = [
   },
 ];
 
-// Comprehensive tech stack for full-stack platform engineer
-// Languages & Core
 const techStackLanguages: Array<{ name: string; icon: string | null }> = [
   { name: "JavaScript", icon: "javascript" },
   { name: "TypeScript", icon: "typescript" },
   { name: "Python", icon: "python" },
+  { name: "Go", icon: "go" },
   { name: "Java", icon: "java" },
   { name: "HTML", icon: "html" },
   { name: "CSS", icon: "css" },
@@ -51,26 +50,32 @@ const techStackLanguages: Array<{ name: string; icon: string | null }> = [
   { name: "JSON", icon: "json" },
 ];
 
-// Frameworks & Platforms
 const techStackPlatforms: Array<{ name: string; icon: string | null }> = [
   { name: "React", icon: "react" },
   { name: "Next.js", icon: "nextjs" },
   { name: "Node.js", icon: "nodejs" },
+  { name: "Express", icon: "express" },
+  { name: "FastAPI", icon: "fastapi" },
+  { name: "Kubernetes", icon: "kubernetes" },
+  { name: "Terraform", icon: "terraform" },
+  { name: "Vercel", icon: "vercel" },
   { name: "PostgreSQL", icon: "postgresql" },
   { name: "MongoDB", icon: "mongodb" },
   { name: "Supabase", icon: "supabase" },
   { name: "Redis", icon: "redis" },
   { name: "AWS", icon: "aws" },
+  { name: "Auth0", icon: "auth0" },
+  { name: "Keycloak", icon: "keycloak" },
+  { name: "Okta", icon: "okta" },
+  { name: "Clerk", icon: "clerk" },
   { name: "REST API", icon: "restapi" },
   { name: "Middleware", icon: "middleware" },
   { name: "Docker", icon: "docker" },
   { name: "Nginx", icon: "nginx" },
   { name: "Jest", icon: "jest" },
   { name: "Git", icon: "git" },
-  { name: "AI", icon: "ai" },
 ];
 
-// Combined for backwards compatibility
 const techStack: Array<{ name: string; icon: string | null }> = [
   ...techStackLanguages,
   ...techStackPlatforms,
@@ -80,7 +85,7 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `Ashton Medina - Full-Stack Platform Engineer | Portfolio`,
+  title: `Ashton Medina - Systems & Platform Engineer | Portfolio`,
   description: `Full-stack platform engineer specializing in systems architecture, automation logic, and secure access controls. Building scalable platforms that transform complex operations into governed, efficient systems.`,
   headline: <>Building platforms that power operations</>,
   featured: {
@@ -106,8 +111,8 @@ const home: Home = {
 const about: About = {
   path: "/about",
   label: "About",
-  title: `How I Approach Platform and Systems Engineering – ${person.name}`,
-  description: `Learn about ${person.name}'s approach to building scalable, governed platforms and systems`,
+  title: `About — ${person.name}`,
+  description: `${person.name} — Systems & platform engineer. Approach to scalable, governed platforms and delivery.`,
   tableOfContent: {
     display: false,
     subItems: false,
@@ -121,17 +126,75 @@ const about: About = {
   },
   intro: {
     display: true,
-    title: "How I Approach Platform and Systems Engineering",
+    title: "Approach",
     description: (
       <>
-        I approach technology as an operational system, not just an application. My work focuses on building platforms that standardize execution, reduce process risk, and remain maintainable as teams and requirements evolve. Systems are designed for non-technical users, governed workflows, and long-term survivability.
+        I treat technology as an operational system: platforms that standardize execution, reduce process risk, and stay maintainable as teams and requirements change. Built for real users, governed workflows, and long-term durability.
       </>
     ),
   },
   work: {
     display: false,
-    title: "Engineering Principles",
+    title: "Experience",
     experiences: [],
+  },
+  focusAreas: {
+    display: true,
+    areas: [
+      {
+        title: "Systems Architecture",
+        description: "Operational backbones that unify revenue, finance, vendor, and delivery into one enforceable platform.",
+        bullets: [
+          "Multi-domain data modeling",
+          "Cross-module workflow orchestration",
+          "State-driven process enforcement",
+        ],
+      },
+      {
+        title: "Backend & Workflow Engineering",
+        description: "Backend systems that govern execution, not just store data.",
+        bullets: [
+          "Lifecycle state machines",
+          "Approval and milestone structures",
+          "Revenue-to-execution automation",
+        ],
+      },
+      {
+        title: "Systems Integration",
+        description: "Connecting distributed tools into one operational ecosystem.",
+        bullets: [
+          "API and webhook automation",
+          "CRM, ERP, payments, telematics",
+          "Data sync and partner coordination",
+        ],
+      },
+      {
+        title: "Financial & Operational Controls",
+        description: "Governance embedded in application logic.",
+        bullets: [
+          "Pricing authority and approval chains",
+          "Vendor lifecycle management",
+          "Audit-aware design",
+        ],
+      },
+      {
+        title: "Technical Leadership & Delivery",
+        description: "Ownership from architecture through rollout.",
+        bullets: [
+          "Platform replacement and multi-location rollout",
+          "Cross-functional technical leadership",
+          "Documentation and onboarding",
+        ],
+      },
+      {
+        title: "UX-Informed Engineering",
+        description: "Systems built for real adoption.",
+        bullets: [
+          "Workflow usability and dashboarding",
+          "Enablement and performance reporting",
+        ],
+      },
+    ],
   },
   studies: {
     display: false,
@@ -140,48 +203,29 @@ const about: About = {
   },
   technical: {
     display: true,
-    title: "Technical Skills",
+    title: "Principles & Patterns",
     skills: [
       {
         title: "Engineering Principles",
-        description: (
-          <Column as="ul" gap="4" style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Repeatable execution, not person-dependent</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Automation enforces standards</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Access control enables safe scale</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Capture data once, propagate forward</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Explainable and auditable systems</Text>
-          </Column>
-        ),
+        bullets: [
+          "Repeatable execution, not person-dependent",
+          "Automation enforces standards",
+          "Access control enables safe scale",
+          "Capture data once, propagate forward",
+          "Explainable and auditable systems",
+        ],
         tags: [],
         images: [],
       },
       {
         title: "Architecture Patterns",
-        description: (
-          <Column as="ul" gap="4" style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Template-driven workflow generation</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— State-machine lifecycle modeling</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Token-scoped external access</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Computed metric aggregation</Text>
-            <Text as="li" variant="body-default-s" onBackground="neutral-weak">— Modular extension architecture</Text>
-          </Column>
-        ),
-        tags: [],
-        images: [],
-      },
-      {
-        title: "Areas of Expertise",
-        description: (
-          <Row wrap gap="8">
-            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Platform architecture</Tag>
-            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Systems integration</Tag>
-            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Backend automation</Tag>
-            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Operational analytics</Tag>
-            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Access control</Tag>
-            <Tag size="m" background="brand-alpha-weak" onBackground="neutral-strong">Full-stack delivery</Tag>
-          </Row>
-        ),
+        bullets: [
+          "Template-driven workflow generation",
+          "State-machine lifecycle modeling",
+          "Token-scoped external access",
+          "Computed metric aggregation",
+          "Modular extension architecture",
+        ],
         tags: [],
         images: [],
       },
@@ -194,26 +238,27 @@ const blog: Blog = {
   label: "Blog",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
+  title: `Projects - ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+};
+
+const contact: Contact = {
+  path: "/contact",
+  label: "Contact",
+  title: `Contact - ${person.name}`,
+  description: `Get in touch with ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
+  title: `Photo gallery - ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
@@ -258,4 +303,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery, techStack, techStackLanguages, techStackPlatforms };
+export { person, social, newsletter, home, about, blog, work, contact, gallery, techStack, techStackLanguages, techStackPlatforms };

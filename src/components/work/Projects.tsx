@@ -1,6 +1,7 @@
 import { getPosts } from "@/utils/utils";
 import { Column } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
+import styles from "./Projects.module.scss";
 
 interface ProjectsProps {
   range?: [number, number?];
@@ -21,24 +22,27 @@ export function Projects({ range, exclude }: ProjectsProps) {
 
   const displayedProjects = range
     ? sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length)
-    : sortedProjects.slice(0, 3);
+    : sortedProjects;
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40">
-      {displayedProjects.map((post, index) => (
-        <ProjectCard
-          priority={index < 2}
-          key={post.slug}
-          href={`/work/${post.slug}`}
-          images={post.metadata.images}
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          content={post.content}
-          avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
-          link={post.metadata.link || ""}
-          techStack={post.metadata.techStack}
-        />
-      ))}
+    <Column fillWidth marginBottom="xl" paddingX="l">
+      <div className={styles.projectsGrid}>
+        {displayedProjects.map((post, index) => (
+          <ProjectCard
+            priority={index < 2}
+            key={post.slug}
+            href={`/work/${post.slug}`}
+            demoHref={post.metadata.demo ? `/work/${post.slug}/demo` : undefined}
+            images={post.metadata.images}
+            title={post.metadata.title}
+            description={post.metadata.summary}
+            content={post.content}
+            avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
+            link={post.metadata.link || ""}
+            techStack={post.metadata.techStack}
+          />
+        ))}
+      </div>
     </Column>
   );
 }

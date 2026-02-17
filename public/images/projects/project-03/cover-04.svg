@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <text x="24" y="48" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#111827">Revenue &amp; Financial Control</text>
+  <text x="24" y="78" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Governed financial lifecycle " Margin visibility</text>
+  <rect x="24" y="110" width="230" height="100" rx="8" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="36" y="145" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#374151">Financial Summary</text>
+  <text x="36" y="175" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#059669">53.2%</text>
+  <rect x="274" y="110" width="230" height="100" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="286" y="145" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#374151">Budget Chain</text>
+  <text x="286" y="175" font-family="system-ui,sans-serif" font-size="12" fill="#374151">Pipeline ’ Quoted ’ Delivery</text>
+  <rect x="524" y="110" width="252" height="100" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="536" y="145" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#374151">Attribution</text>
+  <text x="536" y="175" font-family="system-ui,sans-serif" font-size="12" fill="#374151">Primary " Secondary " Referral</text>
+  <rect x="24" y="230" width="752" height="100" rx="8" fill="#2563eb"/>
+  <text x="400" y="282" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">Open interactive demo</text>
+</svg>

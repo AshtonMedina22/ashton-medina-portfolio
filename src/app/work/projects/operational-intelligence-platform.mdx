@@ -1,12 +1,13 @@
 ---
-title: "Executive BI Dashboard Platform"
+title: "Operational Intelligence Platform"
 publishedAt: "2024-11-01"
-summary: "Configurable analytics interface with drag-and-drop widgets, real-time KPIs, and drill-down to live business records."
+summary: "Cross-system aggregation and KPI computation engine that surfaces real-time operational intelligence for leadership decision-making."
+demo: true
 images:
-  - "/images/projects/project-03/cover-01.jpg"
-  - "/images/projects/project-03/cover-02.jpg"
-  - "/images/projects/project-03/cover-03.jpg"
-  - "/images/projects/project-03/cover-04.jpg"
+  - "/images/projects/project-04/cover-01.svg"
+  - "/images/projects/project-04/cover-02.svg"
+  - "/images/projects/project-04/cover-03.svg"
+  - "/images/projects/project-04/cover-04.svg"
 techStack:
   - name: "Python"
     icon: "python"
@@ -20,47 +21,111 @@ techStack:
     icon: "postgresql"
 ---
 
-*Replacing the spreadsheet-and-email reporting cycle with click-through analytics.*
-
-<Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
-
 ## The Problem
 
-Business data lived in silos—sales metrics in the CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. Getting a unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. When an executive saw a concerning number, they couldn't drill in—they had to request another report and wait.
+Leadership cannot manage what it cannot see: data trapped in operational systems, no aggregated KPIs, no role-filtered reporting, and reactive decisions.
 
-</Column>
-<Column fillWidth>
+---
 
-## The Solution
+## The System
 
-A dashboard platform with GridStack.js drag-and-drop layout and AmCharts 5 visualization. Each widget is interactive: clicking a KPI tile or chart segment drills directly into the underlying business records, not a static view. Per-user layout persistence lets each role configure their own dashboard.
+A **cross-system aggregation and KPI computation engine** that:
 
-</Column>
+<SectionCard>
+<Grid columns="2" gap="l" fillWidth>
+<AccentColumn accent="red">
+
+- Consolidates operational metrics
+- Computes performance indicators
+
+</AccentColumn>
+<AccentColumn accent="cyan">
+
+- Filters visibility by role
+- Surfaces revenue, readiness, workload, and status metrics
+- Delivers scheduled intelligence via email — dashboards auto-send chart snapshots to defined recipients on a recurring schedule without anyone logging in
+
+</AccentColumn>
+</Grid>
+</SectionCard>
+
+---
+
+## How It Works
+
+<SectionCard>
+
+<Grid columns="2" gap="l" fillWidth>
+<AccentColumn accent="red">
+
+### 1. Aggregate
+System pulls data from CRM, Sales, Projects, Vendor Management, and Accounting through a unified query layer
+
+- **Cross-module aggregation** — Five operational modules queried through a single data layer with no manual data exports or imports
+- **Seven purpose-built views** — Personal tasks, team workload, upcoming engagements, pipeline health, vendor operations, revenue metrics, and a customizable canvas
+- **Unified engagement calendar** — Pulls upcoming engagements from both the sales pipeline and the project module into a single calendar view
+- **ORM-level computation** — Dynamic domain filtering computes metrics at the database layer for performance
+
+### 2. Visualize
+Metrics are rendered through interactive, configurable chart components
+
+- **7+ chart types** — Line, bar, doughnut, pie, radar, scatter, and geographic map visualizations powered by AmCharts 5
+- **Interactive drill-through** — Clicking any KPI tile or chart segment navigates directly to the underlying business records
+- **Drag-and-drop layout** — Dashboard widgets repositioned freely via GridStack.js with layout saved per user
+- **Date range filtering** — Saved filter presets allow instant time-window switching without rebuilding reports
+
+</AccentColumn>
+<AccentColumn accent="cyan">
+
+### 3. Filter
+Role permissions determine dashboard visibility with personalized configurations
+
+- **Per-user dashboards** — Each role configures their own view with widgets, layout, and filters saved independently
+- **Real-time rendering** — All widgets query live operational data on load
+
+### 4. Export
+One-click reporting formatted for executive consumption
+
+- **3 export formats** — PDF (html2canvas + jsPDF), Excel (xlsxwriter), PNG snapshots
+- **Board-ready output** — Exports formatted for executive presentations without manual formatting
+- **Scheduled email delivery** — Dashboards auto-email chart snapshots to a recipient list on a recurring schedule
+
+### Platform Scale
+
+- **4,600+ lines** of dashboard logic across models, views, and client-side rendering
+- **Migration-safe architecture** — Automated migration scripts update security rules and data structures on module upgrade
+- **Full test coverage** — Dedicated test suite for dashboard data integrity and access control validation
+- **Modular widget system** — New KPI widgets added without modifying core dashboard infrastructure
+
+</AccentColumn>
 </Grid>
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
-<Column fillWidth>
+</SectionCard>
 
-## Technical Implementation
+---
 
-- **7+ chart types:** line, bar, doughnut, pie, radar, scatter, map
-- **ORM-level aggregation:** dynamic domain filtering across modules
-- **Drag-and-drop layouts:** GridStack.js with per-user persistence
-- **Click-through to live records:** not static views, actual business objects
-- **Date range filtering:** saved filter presets without new report builds
-- **Cross-module aggregation:** CRM, Sales, Project, Vendor, Accounting in single query layer
+## Business Impact
 
-</Column>
-<Column fillWidth>
+<SectionCard>
+<Grid columns="2" gap="l" fillWidth>
+<AccentColumn accent="red">
 
-## Results
+- **Faster** strategic decisions
+- **Early** bottleneck detection
 
-- **3 export formats:** PDF (html2canvas + jsPDF), Excel (xlsxwriter), PNG
-- **Per-user dashboards:** role-configurable views with saved layouts
-- **Real-time data:** rendering against live operational records
-- **Board-ready reports:** one-click exports for presentations
-- **4,600+ lines** of dashboard logic
+</AccentColumn>
+<AccentColumn accent="cyan">
 
-</Column>
+- **Clear** profitability visibility
+- **Performance** transparency
+- **Leadership** receives intelligence without logging in
+
+</AccentColumn>
 </Grid>
+</SectionCard>
+
+---
+
+## End Result
+
+Leadership operates with real-time operational intelligence instead of guesswork.

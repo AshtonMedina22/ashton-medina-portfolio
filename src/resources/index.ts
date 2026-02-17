@@ -7,6 +7,7 @@ export {
   about,
   blog,
   work,
+  contact,
   gallery,
   techStack,
   techStackLanguages,

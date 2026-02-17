@@ -1,12 +1,13 @@
 ---
-title: "Sales Pipeline Automation Engine"
+title: "Sales-to-Delivery Automation Platform"
 publishedAt: "2024-12-01"
-summary: "Converts closed deals into delivery-ready projects with zero manual handoffs."
+summary: "Transaction-triggered automation engine that converts confirmed revenue into structured execution - zero manual setup, zero missed steps."
+demo: true
 images:
-  - "/images/projects/project-01/cover-01.jpg"
-  - "/images/projects/project-01/cover-02.jpg"
-  - "/images/projects/project-01/cover-03.jpg"
-  - "/images/projects/project-01/cover-04.jpg"
+  - "/images/projects/project-01/cover-01.svg"
+  - "/images/projects/project-01/cover-02.svg"
+  - "/images/projects/project-01/cover-03.svg"
+  - "/images/projects/project-01/cover-04.svg"
 techStack:
   - name: "Python"
     icon: "python"
@@ -18,49 +19,219 @@ techStack:
     icon: null
   - name: "REST API"
     icon: "api"
+highlights:
+  - value: "1,800+"
+    label: "Lines Automation Logic"
+  - value: "65+"
+    label: "Field Bidirectional Sync"
+  - value: "0"
+    label: "Manual Project Setup"
+  - value: "100%"
+    label: "Full Audit Trail"
+technicalImplementation:
+  - "Transaction-triggered automation pipeline (sale event → execution plan)"
+  - "Bidirectional field sync between CRM and project/delivery system"
+  - "Template-driven task and milestone generation"
+  - "Audit trail and compliance tracking across lifecycle"
 ---
 
-*Eliminating the most expensive bottleneck in the business: the gap between "sold" and "started."*
+# Overview
+
+Growing companies lose operational consistency when revenue closes faster than operations can execute. This system automates the entire revenue-to-operations handoff in real time—converting confirmed sales into structured execution plans instantly.
+
+**Key impact**
+- Instant revenue-to-operations handoff with zero manual project setup
+- Standardized execution every time with full accountability cascade
+- Real-time visibility into profitability, margins, and execution status
+
+---
+
+<SectionCard>
+
+## The Business Problem
 
 <Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+<AccentColumn accent="red">
 
-## The Problem
+### What's Broken
 
-Sales closes a deal. Then operations spends hours rebuilding it—re-entering client details, creating task lists from scratch, assigning team members, chasing requirements that were already captured in the CRM. Every handoff is a chance to lose details, delay delivery, or misquote scope.
+- Manual project setup after every sale
+- Inconsistent task creation across deals
+- No enforcement of execution standards
+- Human error in scope interpretation
 
-</Column>
-<Column fillWidth>
+</AccentColumn>
+<AccentColumn accent="cyan">
+
+### The Impact
+
+- No structured handoff between revenue and delivery
+- Execution dependent on individual memory and interpretation
+- Disconnect between what was sold and what gets delivered
+- Zero per-deal profitability visibility
+- Onboarding delays and rework
+
+</AccentColumn>
+</Grid>
+
+</SectionCard>
+
+---
+
+<SectionCard>
 
 ## The Solution
 
-A 6-phase automation chain that fires on order confirmation. Validates structure, creates CRM linkage, generates service-specific task templates, consolidates records, syncs 65+ fields bidirectionally, and automates stage progression with audit entries.
+A **transaction-triggered operational automation engine** that detects when revenue closes and instantly generates standardized, structured execution plans—with zero manual intervention.
 
-</Column>
-</Grid>
+### How It Transforms Operations
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
-<Column fillWidth>
+<ArchitectureGrid>
+<ArchitectureBlock title="Revenue Detection & Triggering" description="Monitors sales transactions for confirmed state">
+- Client-facing quote acceptance with initials and timestamp
+- Automatic execution workflow initiation
+</ArchitectureBlock>
 
-## Technical Implementation
+<ArchitectureBlock title="Intelligent Structure Generation" description="Auto-creates execution infrastructure instantly">
+- Unique transaction identifiers for traceability
+- Auto-assigned financial analytic distribution
+- Unified project workspace consolidation
+</ArchitectureBlock>
 
-- **Phase 1:** Order validation and kickoff line item enforcement
-- **Phase 2:** CRM opportunity creation with 6 core event field mapping
-- **Phase 3:** Service-specific task tree generation from templates
-- **Phase 4:** Record consolidation preventing native ERP fragmentation
-- **Phase 5:** 65+ field bidirectional sync across CRM, Sales, Contacts, Projects
-- **Phase 6:** Stage automation (Quote → Proposal → Contract → Booked) with audit logging
+<ArchitectureBlock title="Role & Accountability Cascade" description="Propagates ownership automatically across objects">
+- 4-object role cascade: Customer → Pipeline → Quote → Project
+- 65+ field bidirectional sync in real time
+- No manual re-entry required
+</ArchitectureBlock>
 
-</Column>
-<Column fillWidth>
+<ArchitectureBlock title="Smart Execution Enforcement" description="Prevents progression without required completions">
+- Automatic stage advancement on business events
+- Confirmation gate blocks deal closure
+- 725+ lines of automation logic
+</ArchitectureBlock>
+</ArchitectureGrid>
 
-## Results
+---
 
-- **Zero manual re-entry** between sales and operations
-- **11 event classifications** with quote revision tracking
-- **Multi-rep sales attribution** synced across 4 business objects
-- **3-tier CRM intake:** identity/logistics, service config, financial estimates
-- **1,675+ lines of Python** across CRM, Sales, and Project models
+## System Workflow
 
-</Column>
-</Grid>
+<WorkflowDiagram />
+
+</SectionCard>
+
+---
+
+## How It Works: The 6-Step Process
+
+<ProcessGrid>
+<StepCard number="1" title="Trigger" subtitle="Revenue Reaches Confirmed State">
+When a sales transaction is confirmed, the system detects the event instantly.
+
+- Client-facing quote acceptance with digital initials capture and timestamp
+- **Result:** Execution workflow initiates without manual intervention
+</StepCard>
+
+<StepCard number="2" title="Generate" subtitle="Auto-Create Execution Infrastructure">
+The system instantly generates the complete project infrastructure.
+
+- Auto-generated transaction identifiers for traceability
+- Analytic distribution linking for downstream financial reporting
+- Workspace consolidation—merges duplicate records into single unified project
+- **Result:** Project workspace ready immediately, no manual setup
+</StepCard>
+
+<StepCard number="3" title="Structure" subtitle="Build Task Framework from Templates & Invoice Line Items">
+Task structure is generated intelligently based on what was actually sold.
+
+- **Engagement-type templates:** Different deal types generate different task structures automatically
+- **Line-item driven execution:** Services on the order define the execution plan
+- **Pre-delivery cost estimation:** Vendor cost projections captured before commitment
+- **Order validation:** Minimum threshold enforcement and price range checks per service variant
+- **Result:** Task framework matches actual scope—what's sold is what gets delivered
+</StepCard>
+
+<StepCard number="4" title="Assign" subtitle="Roles Cascade Across All Business Objects">
+Account ownership and roles propagate automatically with no re-entry.
+
+- Account owner assignments flow from customer record → pipeline → sales quote → execution project
+- 65+ fields sync bidirectionally in real time
+- Changes reflect instantly across all systems
+- **Result:** Complete accountability established—every task knows who owns it
+</StepCard>
+
+<StepCard number="5" title="Enforce" subtitle="Advance Stages Automatically on Business Events">
+The workflow advances based on actual business events—not manual status changes.
+
+- Pipeline stages advance automatically (quote sent → order confirmed → project created)
+- 11 transaction classifications with revision tracking
+- Confirmation gate blocks deal closure without trigger product
+- Full audit trail for compliance
+- **Result:** Workflow progression happens automatically, audit trail complete
+</StepCard>
+
+<StepCard number="6" title="Track" subtitle="Live Margin Computation & Completion Tracking">
+Every engagement tracks margin in real time through structured state transitions.
+
+- 3-tier intake structure: Identity/logistics → Service configuration → Financial estimates
+- Revenue, costs, variance, and margin percentage computed per engagement
+- 1,108+ lines of project and execution model code
+- State transitions create audit trail
+- **Result:** Real-time visibility into profitability and execution status
+</StepCard>
+</ProcessGrid>
+
+---
+
+## Technical Proof Points
+
+<ProofPointsBlock>
+<ProofPoint title="Field Sync">
+**65+** fields sync bidirectionally across CRM, Sales, Contacts, and Projects in real time with zero manual re-entry required.
+</ProofPoint>
+<ProofPoint title="Automation Logic">
+**1,800+** lines of pipeline automation logic providing 725+ lines of smart execution enforcement with 11 transaction classifications.
+</ProofPoint>
+<ProofPoint title="Code Infrastructure">
+**1,108+** lines of project and execution model code supporting 3-tier intake structure and real-time margin computation.
+</ProofPoint>
+</ProofPointsBlock>
+
+---
+
+<SectionCard>
+
+## Business Impact
+
+<MetricsGrid>
+<MetricCard title="Operational Speed">
+**Instant revenue-to-operations handoff** eliminates manual project recreation. When sales closes a deal, the system generates complete project infrastructure automatically—with zero re-entry required.
+
+- Instant project infrastructure creation
+- Zero manual setup or recreation
+- Same-day execution readiness
+</MetricCard>
+
+<MetricCard title="Execution Consistency">
+**Standardized execution every time** removes person-dependent workflows. The system enforces the same process, roles, and validation rules across every deal, reducing onboarding delays by entire days per engagement.
+
+- Standardized process enforcement
+- Reduced onboarding time per deal
+- Eliminated human interpretation errors
+</MetricCard>
+
+<MetricCard title="Financial Visibility">
+**Real-time margin visibility** into every engagement provides automatic profitability tracking. Revenue, costs, variance, and margins compute automatically as deals progress through structured state transitions.
+
+- Real-time per-engagement profitability
+- Automatic cost and margin computation
+- Full audit trail for compliance
+</MetricCard>
+</MetricsGrid>
+
+</SectionCard>
+
+---
+
+## The Result
+
+Execution becomes system-driven, not person-dependent—when a deal closes, the operation already knows what to do and the system enforces it every time.

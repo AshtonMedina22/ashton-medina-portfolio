@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <text x="24" y="36" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#111827">Operations Dashboard</text>
+  <rect x="24" y="46" width="60" height="24" rx="4" fill="#2563eb"/>
+  <text x="34" y="63" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">Engagements</text>
+  <rect x="24" y="84" width="180" height="70" rx="6" fill="#2563eb"/>
+  <text x="36" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Engagements This Week</text>
+  <text x="36" y="138" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#fff">8</text>
+  <rect x="214" y="84" width="180" height="70" rx="6" fill="#dc2626"/>
+  <text x="226" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Overdue Tasks</text>
+  <text x="226" y="138" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#fff">3</text>
+  <rect x="404" y="84" width="180" height="70" rx="6" fill="#059669"/>
+  <text x="416" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Active Projects</text>
+  <text x="416" y="138" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#fff">14</text>
+  <rect x="594" y="84" width="182" height="70" rx="6" fill="#1e40af"/>
+  <text x="606" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Expected Revenue</text>
+  <text x="606" y="138" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#fff">$84,200</text>
+  <rect x="24" y="168" width="470" height="140" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="36" y="195" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#374151">Engagement Calendar</text>
+  <rect x="36" y="208" width="50" height="50" rx="4" fill="#f9fafb"/>
+  <rect x="506" y="168" width="270" height="140" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="518" y="195" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#374151">Tasks by Stage</text>
+  <circle cx="641" cy="248" r="45" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+  <text x="641" y="255" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#111827" text-anchor="middle">47</text>
+  <rect x="24" y="322" width="752" height="100" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="36" y="355" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Upcoming Engagements</text>
+</svg>

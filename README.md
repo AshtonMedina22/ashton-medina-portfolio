@@ -6,7 +6,7 @@ Portfolio website showcasing work as a Full-Stack Platform Engineer.
 
 This portfolio showcases three major platform engineering projects:
 - **Sales-to-Delivery Automation Platform** - Automated cross-module workflow system
-- **Vendor Lifecycle & Compliance Platform** - Secure external partner workflow system
+- **Vendor Lifecycle & Compliance Platform** - Secure vendor management workflow system
 - **Operational Intelligence Platform** - Computed KPI and aggregation engine
 
 ## Tech Stack
