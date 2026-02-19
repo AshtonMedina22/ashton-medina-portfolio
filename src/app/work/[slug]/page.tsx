@@ -12,7 +12,7 @@ import {
   Row,
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { ScrollToHash, CustomMDX, TechStack } from "@/components";
+import { ScrollToHash, CustomMDX, TechStack, ProjectTechStack } from "@/components";
 import { Metadata } from "next";
 import styles from "./ProjectPage.module.scss";
 
@@ -230,9 +230,10 @@ export default async function Project({
         </Row>
       )}
 
-      <Column as="article" horizontal="center" marginTop="xl" className={styles.articleProse}>
+      <Column as="article" horizontal="center" marginTop="xl" className={styles.articleProse} paddingX="l">
         <CustomMDX source={post.content} />
       </Column>
+
       <ScrollToHash />
     </Column>
   );

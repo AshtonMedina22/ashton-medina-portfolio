@@ -1,7 +1,7 @@
 ---
 title: "Operational Intelligence Platform"
 publishedAt: "2024-11-01"
-summary: "Cross-system aggregation and KPI computation engine that surfaces real-time operational intelligence for leadership decision-making."
+summary: "Configurable analytics interface with drag-and-drop widgets, real-time KPIs, and drill-down to live business records."
 demo: true
 images:
   - "/images/projects/project-04/cover-01.svg"
@@ -17,115 +17,77 @@ techStack:
     icon: null
   - name: "GridStack.js"
     icon: null
-  - name: "PostgreSQL"
-    icon: "postgresql"
+  - name: "html2canvas"
+    icon: null
+  - name: "jsPDF"
+    icon: null
+  - name: "xlsxwriter"
+    icon: null
 ---
 
-## The Problem
+<HeroStats stats={[
+  { value: "4,600+", label: "Lines of Dashboard Logic" },
+  { value: "7+", label: "Chart Types" },
+  { value: "5", label: "Aggregated Modules" },
+  { value: "3", label: "Export Formats" }
+]} />
 
-Leadership cannot manage what it cannot see: data trapped in operational systems, no aggregated KPIs, no role-filtered reporting, and reactive decisions.
+## Problem
 
----
-
-## The System
-
-A **cross-system aggregation and KPI computation engine** that:
-
-<SectionCard>
-<Grid columns="2" gap="l" fillWidth>
-<AccentColumn accent="red">
-
-- Consolidates operational metrics
-- Computes performance indicators
-
-</AccentColumn>
-<AccentColumn accent="cyan">
-
-- Filters visibility by role
-- Surfaces revenue, readiness, workload, and status metrics
-- Delivers scheduled intelligence via email — dashboards auto-send chart snapshots to defined recipients on a recurring schedule without anyone logging in
-
-</AccentColumn>
-</Grid>
-</SectionCard>
-
----
+Business data lived in silos—sales metrics in CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. A unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. Reports were stale before they were assembled. When a number looked wrong, leadership couldn't drill in—they had to request another report and wait.
 
 ## How It Works
 
-<SectionCard>
+<HowItWorksGrid>
+<HowItWorksCard title="Cross-Module Aggregation">
+CRM, Sales, Projects, Vendor Management, and Accounting queried through a single data layer. No manual exports, no stale imports — one unified query surface across all five modules.
+</HowItWorksCard>
 
-<Grid columns="2" gap="l" fillWidth>
-<AccentColumn accent="red">
+<HowItWorksCard title="ORM-Level Computation">
+Metrics computed at the database layer using dynamic domain filtering. Performance stays consistent regardless of data volume — no client-side number crunching.
+</HowItWorksCard>
 
-### 1. Aggregate
-System pulls data from CRM, Sales, Projects, Vendor Management, and Accounting through a unified query layer
+<HowItWorksCard title="Seven Purpose-Built Views">
+Personal tasks, team workload, upcoming engagements, pipeline health, vendor operations, revenue metrics, and a fully customizable canvas — each scoped to its operational domain.
+</HowItWorksCard>
 
-- **Cross-module aggregation** — Five operational modules queried through a single data layer with no manual data exports or imports
-- **Seven purpose-built views** — Personal tasks, team workload, upcoming engagements, pipeline health, vendor operations, revenue metrics, and a customizable canvas
-- **Unified engagement calendar** — Pulls upcoming engagements from both the sales pipeline and the project module into a single calendar view
-- **ORM-level computation** — Dynamic domain filtering computes metrics at the database layer for performance
+<HowItWorksCard title="7+ Interactive Chart Types">
+Line, bar, doughnut, pie, radar, scatter, and geographic map visualizations powered by AmCharts 5. Clicking any KPI tile or chart segment drills directly into the underlying live business records.
+</HowItWorksCard>
 
-### 2. Visualize
-Metrics are rendered through interactive, configurable chart components
+<HowItWorksCard title="Drag-and-Drop Layout">
+Widgets repositioned freely via GridStack.js. Layout, filters, and widget configuration saved independently per user — each role owns their own view.
+</HowItWorksCard>
 
-- **7+ chart types** — Line, bar, doughnut, pie, radar, scatter, and geographic map visualizations powered by AmCharts 5
-- **Interactive drill-through** — Clicking any KPI tile or chart segment navigates directly to the underlying business records
-- **Drag-and-drop layout** — Dashboard widgets repositioned freely via GridStack.js with layout saved per user
-- **Date range filtering** — Saved filter presets allow instant time-window switching without rebuilding reports
+<HowItWorksCard title="Date Range & Filter Presets">
+Saved filter presets allow instant time-window switching without rebuilding reports. All widgets query live operational data on every load.
+</HowItWorksCard>
 
-</AccentColumn>
-<AccentColumn accent="cyan">
+<HowItWorksCard title="Scheduled Intelligence Delivery">
+Dashboards auto-email chart snapshots to defined recipients on a recurring schedule. Leadership receives operational intelligence without logging in.
+</HowItWorksCard>
 
-### 3. Filter
-Role permissions determine dashboard visibility with personalized configurations
+<HowItWorksCard title="3-Format Export Engine">
+One-click export to PDF via html2canvas and jsPDF, Excel via xlsxwriter, and PNG for presentations. Outputs formatted for executive consumption without manual formatting.
+</HowItWorksCard>
 
-- **Per-user dashboards** — Each role configures their own view with widgets, layout, and filters saved independently
-- **Real-time rendering** — All widgets query live operational data on load
+<HowItWorksCard title="Modular & Migration-Safe Architecture">
+New KPI widgets added without modifying core infrastructure. Automated migration scripts handle security rule and data structure updates on every module upgrade. Full test coverage for data integrity and access control.
+</HowItWorksCard>
+</HowItWorksGrid>
 
-### 4. Export
-One-click reporting formatted for executive consumption
+## Outcome
 
-- **3 export formats** — PDF (html2canvas + jsPDF), Excel (xlsxwriter), PNG snapshots
-- **Board-ready output** — Exports formatted for executive presentations without manual formatting
-- **Scheduled email delivery** — Dashboards auto-email chart snapshots to a recipient list on a recurring schedule
+Leadership operates with real-time operational intelligence—configurable by role, exportable on demand, and delivered on schedule without anyone logging in.
 
-### Platform Scale
+<OutcomeStats stats={[
+  { value: "Real-Time", label: "Operational Data on Every Load" },
+  { value: "Zero", label: "Manual Report Assembly" },
+  { value: "Full", label: "Cross-Module Visibility in One View" }
+]} />
 
-- **4,600+ lines** of dashboard logic across models, views, and client-side rendering
-- **Migration-safe architecture** — Automated migration scripts update security rules and data structures on module upgrade
-- **Full test coverage** — Dedicated test suite for dashboard data integrity and access control validation
-- **Modular widget system** — New KPI widgets added without modifying core dashboard infrastructure
+## Tech Stack
 
-</AccentColumn>
-</Grid>
+Python · JavaScript · AmCharts 5 · GridStack.js · html2canvas · jsPDF · xlsxwriter
 
-</SectionCard>
 
----
-
-## Business Impact
-
-<SectionCard>
-<Grid columns="2" gap="l" fillWidth>
-<AccentColumn accent="red">
-
-- **Faster** strategic decisions
-- **Early** bottleneck detection
-
-</AccentColumn>
-<AccentColumn accent="cyan">
-
-- **Clear** profitability visibility
-- **Performance** transparency
-- **Leadership** receives intelligence without logging in
-
-</AccentColumn>
-</Grid>
-</SectionCard>
-
----
-
-## End Result
-
-Leadership operates with real-time operational intelligence instead of guesswork.

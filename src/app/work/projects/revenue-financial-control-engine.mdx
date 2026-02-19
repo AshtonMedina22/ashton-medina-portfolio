@@ -1,7 +1,7 @@
 ---
-title: "Revenue & Financial Control Engine"
+title: "Financial Control & Governance Engine"
 publishedAt: "2024-11-20"
-summary: "Structured financial governance layer embedded across revenue and procurement systems - enforcing approval checkpoints, pricing authority, and audit-ready state transitions."
+summary: "Margin protection, pricing enforcement, approval checkpoints, and compensation automation embedded directly into the revenue and procurement layer."
 demo: true
 images:
   - "/images/projects/project-03/cover-01.svg"
@@ -13,111 +13,77 @@ techStack:
     icon: "python"
   - name: "PostgreSQL"
     icon: "postgresql"
-  - name: "REST API"
-    icon: "api"
+  - name: "XML"
+    icon: null
+  - name: "ORM Security Layer"
+    icon: null
+  - name: "JavaScript"
+    icon: "javascript"
 ---
 
-## The Problem
+<HeroStats stats={[
+  { value: "7-Tier", label: "Compensation Rate Table" },
+  { value: "5", label: "Governed Financial States" },
+  { value: "Real-Time", label: "Margin Computation" },
+  { value: "Zero", label: "Unauthorized Pricing" }
+]} />
 
-Revenue leakage, unauthorized discounts, weak pricing validation, informal approvals, and poor visibility—margins erode when financial governance isn’t embedded in the system.
+## Problem
 
----
-
-## The System
-
-A **structured financial governance layer** embedded across revenue and procurement systems that:
-
-<SectionCard>
-<Grid columns="2" gap="l" fillWidth>
-<AccentColumn accent="red">
-
-- Enforces controlled state transitions
-- Requires approval checkpoints
-- Restricts pricing authority
-
-</AccentColumn>
-<AccentColumn accent="cyan">
-
-- Tracks financial lifecycle states
-- Applies role-based financial permissions
-
-</AccentColumn>
-</Grid>
-</SectionCard>
-
----
+Revenue leakage rarely announces itself—it accumulates through unauthorized discounts, informal approvals, unvalidated pricing, and no real-time visibility into margin. By the time finance sees the numbers, the damage is done. Profitability can't be protected after the fact. It has to be enforced at the point of every transaction.
 
 ## How It Works
 
-<SectionCard>
+<HowItWorksGrid>
+<HowItWorksCard title="Live Margin Computation">
+Client revenue, estimated vendor costs, actual costs, dollar variance, and margin percentage computed automatically on every project. Updated in real time — not end-of-month.
+</HowItWorksCard>
 
-<Grid columns="2" gap="l" fillWidth>
-<AccentColumn accent="red">
+<HowItWorksCard title="Pricing Bands & Floor Enforcement">
+Min and max price-per-unit defined on both sell and cost side. Line-item quantity floors trigger inline warnings before a quote is finalized. Reps operate within guardrails, not open negotiation.
+</HowItWorksCard>
 
-### 1. Validate
-Revenue events require validation before confirmation
-- **Live margin computation** - Client revenue, estimated vendor costs, actual vendor costs, dollar variance, and margin percentage computed automatically on every project. Updated in real time, not end-of-month
-- **Financial lifecycle states** - Every monetary record moves through governed states with transitions enforced by business rules
-- **Line-item pricing floors** - Each product carries minimum quantity thresholds. Reps entering a quantity below the minimum see an inline warning on the order line before the quote is finalized
-- **Pricing bands per product** - Min and max price-per-unit defined on both sell side and cost side. Sales and procurement operate within defined guardrails, not open-ended negotiation
+<HowItWorksCard title="Financial Lifecycle States">
+Every monetary record moves through governed states with transitions enforced by business rules. No record skips a checkpoint. Every state change logs a timestamped audit entry with user and previous state.
+</HowItWorksCard>
 
-### 2. Approve
-Pricing changes require permissioned approval
-- **Multi-stakeholder revenue attribution** - Primary, secondary, and referral roles each carry configurable split percentages that flow through the full pipeline
-- **Referral vendor program** - Declining split structure with Year 1 at 50%, Year 2 at 25%, and standard rate after, auto-computed from relationship start date
+<HowItWorksCard title="Role-Based Financial Permissions">
+Read, write, create, and delete permissions defined per model per security group. Sensitive data — margins, costs, compensation — hidden from unauthorized roles including external portal users.
+</HowItWorksCard>
 
-### 3. Control
-Procurement costs pass through enforced checkpoints
-- **Role-based separation of duties** - Read, write, create, and delete permissions defined per model per security group
-- **Financial field restriction** - Sensitive financial data (margins, costs, compensation) hidden from unauthorized roles including external portal users
-- **Post-delivery cost accountability** - Every vendor assignment tracks estimated cost vs. actual cost with auto-computed variance. Cost overruns surface on the assignment, the project, and the margin calculation
+<HowItWorksCard title="Post-Delivery Cost Accountability">
+Every vendor assignment tracks estimated vs. actual cost with auto-computed variance. Overruns surface on the assignment, the project, and the live margin calculation simultaneously.
+</HowItWorksCard>
 
-</AccentColumn>
-<AccentColumn accent="cyan">
+<HowItWorksCard title="Budget-to-Actual Chain">
+Budget captured at pipeline, priced on the sales order, measured against actuals at delivery. Leadership sees what the client said they'd spend, what was quoted, and what it cost to deliver — across connected records.
+</HowItWorksCard>
 
-### 4. Log
-Financial state changes are logged through accounting journal entries
-- **Accounting-integrated queries** - Revenue sourced from income account credit entries, costs from expense account debit entries, filtered by linked financial accounts for accuracy
-- **Audit-ready state transitions** - Every financial state change creates a traceable log entry with timestamp, user, and previous state
-- **Budget-to-actual chain** - Budget captured at pipeline, priced on the sales order, measured against actuals on the project. Leadership sees what the client said they'd spend, what was quoted, and what it cost to deliver - across connected records
+<HowItWorksCard title="Payment Eligibility Gate">
+Four conditions must be cleared before any payout processes: delivery confirmed, all customer invoices paid, all vendor bills paid, and margin threshold met. No exceptions at the system level.
+</HowItWorksCard>
 
-### 5. Authorize
-Only authorized roles can finalize monetary transitions
-- **Payment eligibility gate** - Four conditions must be met before any payout is processed: delivery confirmed, all customer invoices paid, all vendor bills paid, and margin threshold cleared
-- **7-tier rate table** - Compensation rates scale with gross margin performance, from 0% below the threshold floor to the maximum rate at high-margin delivery
-- **Performance compensation formula** - Calculated as (Revenue x Attribution %) x Margin Tier Rate, ensuring payout directly reflects deal quality
-- **Automated compensation records** - Draft purchase orders auto-generated monthly per stakeholder, with line-level tracking codes linking each payout to its source project
+<HowItWorksCard title="7-Tier Compensation Engine">
+Rates scale with gross margin performance from 0% below the floor to maximum rate at high-margin delivery. Formula: (Revenue �- Attribution %) �- Margin Tier Rate. Payout reflects deal quality directly.
+</HowItWorksCard>
 
-</AccentColumn>
-</Grid>
+<HowItWorksCard title="Automated Compensation Records">
+Draft purchase orders auto-generated monthly per stakeholder. Line-level tracking codes link each payout to its source project. Multi-stakeholder attribution supports primary, secondary, and referral splits with a declining referral structure auto-computed from relationship start date.
+</HowItWorksCard>
+</HowItWorksGrid>
 
-</SectionCard>
+## Outcome
 
----
+Profitability is protected through system-enforced governance — every discount, approval, cost, and payout controlled, logged, and traceable from pipeline to delivery.
 
-## Business Impact
+<OutcomeStats stats={[
+  { value: "Real-Time", label: "Per-Engagement Margin Visibility" },
+  { value: "Full", label: "Budget-to-Actual Traceability" },
+  { value: "Automated", label: "Compensation Processing" }
+]} />
 
-<SectionCard>
-<MetricsGrid>
-<MetricCard title="Margin & pricing">
-- **Reduced** margin erosion
-- **Increased** pricing discipline
-</MetricCard>
-<MetricCard title="Control & audit">
-- **Controlled** spending
-- **Audit** readiness
-</MetricCard>
-<MetricCard title="Visibility & automation">
-- **Financial** transparency
-- **Automated** compensation processing
-- **Per-engagement** margin visibility in real time
-- **Budget-to-actual** traceability from pipeline to delivery
-</MetricCard>
-</MetricsGrid>
-</SectionCard>
+## Tech Stack
 
----
+Python · PostgreSQL · XML · ORM Security Layer · JavaScript
 
-## End Result
 
-Profitability is protected through system-enforced governance.

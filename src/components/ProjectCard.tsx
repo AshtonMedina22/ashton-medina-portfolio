@@ -9,7 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
-import { TechStack } from "./work/TechStack";
+import { ProjectCardTechStack } from "./ProjectCardTechStack";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
@@ -55,10 +55,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       </SmartLink>
       <Column
         fillWidth
-        paddingX="s"
+        paddingX="m"
         paddingTop="m"
         paddingBottom="m"
-        gap="m"
+        gap="l"
         className={styles.cardContent}
       >
         {title && (
@@ -66,7 +66,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {title}
           </Heading>
         )}
-        <Column gap="m">
+        <Column gap="m" fillWidth style={{ flex: 1 }}>
           {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
           {description?.trim() && (
             <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
@@ -74,7 +74,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Text>
           )}
           {techStack && techStack.length > 0 && (
-            <TechStack technologies={techStack} size="s" />
+            <ProjectCardTechStack technologies={techStack} />
           )}
           <Flex gap="m" wrap className={styles.ctaContainer}>
             <SmartLink className={styles.ctaLink} href={href}>

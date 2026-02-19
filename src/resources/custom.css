@@ -177,3 +177,5 @@ html {
 [data-theme="light"] .sectionHue::before {
   background: radial-gradient(ellipse 100% 80% at 50% 30%, rgba(167, 139, 250, 0.03), transparent 65%);
 }
+
+

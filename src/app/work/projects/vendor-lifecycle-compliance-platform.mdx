@@ -1,7 +1,7 @@
 ---
-title: "Vendor Lifecycle & Compliance Platform"
+title: "Vendor Management & Portal Platform"
 publishedAt: "2024-11-15"
-summary: "Controlled vendor management platform that formalizes onboarding, enforces approval chains, and governs vendor lifecycle from quote to compliance."
+summary: "Controlled onboarding, tokenized self-service access, automated RFQ workflows, and full lifecycle visibility for internal teams and external partners."
 demo: true
 images:
   - "/images/projects/project-02/cover-01.svg"
@@ -15,120 +15,77 @@ techStack:
     icon: "postgresql"
   - name: "QWeb"
     icon: null
-  - name: "Token Auth"
-    icon: null
   - name: "JSON-RPC"
     icon: "api"
+  - name: "Token Auth"
+    icon: null
+  - name: "E-Signature"
+    icon: null
 ---
 
-## The Problem
+<HeroStats stats={[
+  { value: "1,460+", label: "Lines of Python" },
+  { value: "15", label: "Secure Portal Routes" },
+  { value: "6", label: "Work Order States" },
+  { value: "4", label: "Compliance Alert States" }
+]} />
 
-Vendor and contractor relationships often lack structured control: informal onboarding, manual approval tracking, no enforced compliance checkpoints, and limited visibility into performance—leading to financial risk and inconsistency.
+## Problem
 
----
-
-## The System
-
-A **controlled vendor management platform** that:
-
-<SectionCard>
-<Grid columns="2" gap="l" fillWidth>
-<AccentColumn accent="red">
-
-- Formalizes onboarding steps
-- Enforces approval chains
-- Tracks vendor lifecycle stages
-- Public-facing vendor application portal - vendors apply, upload documents, and enter the onboarding pipeline directly
-
-</AccentColumn>
-<AccentColumn accent="cyan">
-
-- Manages structured quote comparison
-- Applies role-based access control
-- Logs financial and compliance states
-- Vendor self-service for assignments - vendors accept/decline work orders through a secure portal with e-signature, no staff intermediary
-- Automated expiry monitoring - scheduled jobs flag documents at 30 days, 7 days, and on expiration date
-
-</AccentColumn>
-</Grid>
-</SectionCard>
-
----
+Vendor relationships lacked structure—informal onboarding, no enforced compliance checkpoints, manual approval tracking, and zero visibility into performance or spend. Work orders went out as email attachments, confirmations were verbal, and quote comparisons lived in spreadsheets. Internal teams had no real-time view of vendor status and every engagement required manual coordination from application through delivery.
 
 ## How It Works
 
-<SectionCard>
+<HowItWorksGrid>
+<HowItWorksCard title="Public Application Intake">
+Vendors apply through a public-facing portal, upload required documents, and enter the onboarding pipeline directly. No staff intermediary required to initiate the relationship.
+</HowItWorksCard>
 
-<Grid columns="2" gap="l" fillWidth>
-<AccentColumn accent="red">
+<HowItWorksCard title="Tokenized Portal Access">
+Time-limited tokens give vendors secure access to assignments, tasks, quotes, and messaging without login credentials. 15 governed routes control exactly what they can see and do.
+</HowItWorksCard>
 
-### 1. Onboard
-Vendor enters onboarding state with required documentation enforced
-- **Vendor tiering** - Multi-level classification system for segmenting vendor capabilities and service authorization
-- **15 secure routes** - Work orders, tasks, upcoming engagements, quote submissions, and messaging all accessible through a governed portal
-- **Tokenized access links** - Time-limited tokens allow vendors to view and respond to assignments without login credentials
-- **Public application intake** - Vendors submit company details and upload required documents (insurance, certifications, licenses) through a web form. Applications enter the onboarding pipeline with tracked status
+<HowItWorksCard title="Record-Level Isolation">
+Each vendor sees only their own data. Customer pricing, margins, and other vendor records are blocked at the ORM layer — enforced in code, not policy.
+</HowItWorksCard>
 
-### 2. Document
-Compliance documents tracked with 4-state monitoring
-- **4-state compliance monitoring** - Scheduled jobs automatically scan all vendor documents and flag at 30 days before expiry, 7 days before expiry, and on expiration date. Status computed per vendor record
-- **Portal dashboard counters** - Real-time counts for pending assignments, active work, upcoming engagements, open tasks, and quote requests
+<HowItWorksCard title="Work Order Lifecycle">
+A 6-state workflow manages every assignment: Pending → Sent → Confirmed → Declined → In Progress → Completed. Vendors accept with e-signature, decline with a reason, and post messages directly to internal teams.
+</HowItWorksCard>
 
-### 3. Approve
-Approval chain validates engagement
-- **E-signature workflow** - Contract requests auto-generated on assignment send, with signature date tracking and decline reason capture
-- **Record-level data isolation** - Each vendor sees only their own assignments at the ORM layer, with no access to pricing, margins, or other vendor data
+<HowItWorksCard title="RFQ & Quote Engine">
+Multiple vendors submit competing quotes against the same scope through the portal. Deadlines auto-close, a selection wizard picks the winner, remaining bids close automatically, and a purchase order generates from the winning quote.
+</HowItWorksCard>
 
-</AccentColumn>
-<AccentColumn accent="cyan">
+<HowItWorksCard title="Compliance Monitoring">
+Documents tracked across 15+ service categories with a 3-tier vendor classification system. Scheduled jobs flag expiry at 30 days, 7 days, and on the expiration date — per vendor record.
+</HowItWorksCard>
 
-### 4. Compare
-Structured RFQ workflow allows multiple vendors to submit quotes
-- **RFQ auto-close** - Quote request deadlines enforced automatically with best-quote selection logic
-- **Batch reminder engine** - Scheduled job processes 200 records per cycle, auto-sending follow-ups for pending assignments
-- **Portal quote submission** - Vendors submit quotes through the portal. Manager selects winner via selection wizard, system auto-closes remaining bids, and generates a purchase order from the winning quote
+<HowItWorksCard title="Batch Reminder Engine">
+A cron job processes 200 records per cycle and auto-sends follow-ups for assignments pending over 24 hours. No manual chasing by internal staff.
+</HowItWorksCard>
 
-### 5. Activate
-6-state lifecycle controls activation - Pending, Sent, Confirmed, Declined, In Progress, Completed
-- **Task-to-assignment linking** - Each work order has linked task records with progress tracking displayed as completion ratios
-- **Scheduled start/end tracking** - Time-bound assignments with arrival time and delivery window enforcement
+<HowItWorksCard title="Internal Staff Visibility">
+Internal teams have a full cross-vendor view: real-time response status, compliance standing, document expiry, portal dashboard counters, and cost variance (estimated vs. actual) aggregated at the project level.
+</HowItWorksCard>
 
-### 6. Govern
-Financial interactions governed through service-specific rate cards
-- **Service rate cards** - Per-vendor, per-service pricing structures with rate descriptions and notes
-- **Cost variance reporting** - Estimated vs. actual cost computed per assignment, aggregated at the project level for budget tracking
-- **Post-delivery performance rating** - 1-5 rating system captured after each completed assignment
+<HowItWorksCard title="Performance & Rate Governance">
+Per-vendor, per-service rate cards control pricing structures. Post-delivery 1–5 ratings capture performance history. Financial accountability is measurable across every engagement.
+</HowItWorksCard>
+</HowItWorksGrid>
 
-</AccentColumn>
-</Grid>
+## Outcome
 
-</SectionCard>
+Vendor relationships become controlled, measurable, and auditable — vendors self-serve from application through delivery while internal teams maintain complete visibility without touching an inbox.
 
----
+<OutcomeStats stats={[
+  { value: "Zero", label: "Staff Time Relaying Assignments" },
+  { value: "Full", label: "Lifecycle Auditability" },
+  { value: "Real-Time", label: "Cost Variance & Compliance Tracking" }
+]} />
 
-## Business Impact
+## Tech Stack
 
-<SectionCard>
-<MetricsGrid>
-<MetricCard title="Risk & spending">
-- **Reduced** procurement risk
-- **Controlled** vendor spending
-</MetricCard>
-<MetricCard title="Compliance & engagement">
-- **Clear** compliance trail
-- **Standardized** external engagement
-</MetricCard>
-<MetricCard title="Accountability & self-serve">
-- **Improved** financial accountability
-- **Measurable** vendor performance
-- **Zero** staff time relaying assignments or collecting vendor responses
-- **Vendors self-serve** from application through delivery
-</MetricCard>
-</MetricsGrid>
-</SectionCard>
+Python · PostgreSQL · QWeb · JSON-RPC · Token Auth · E-Signature
 
----
 
-## End Result
-
-Vendor relationships become controlled, measurable, and auditable.

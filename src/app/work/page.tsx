@@ -28,12 +28,9 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading marginBottom="s" variant="display-strong-s" align="center">
+      <Heading marginBottom="xl" variant="display-strong-s" align="center">
         {work.title}
       </Heading>
-      <Text variant="body-default-m" align="center" onBackground="neutral-weak" marginBottom="xl" style={{ maxWidth: "38ch", marginLeft: "auto", marginRight: "auto" }}>
-        Platform engineering and automation—selected projects.
-      </Text>
       <Projects />
     </Column>
   );

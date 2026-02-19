@@ -41,6 +41,12 @@ import {
   ProofPoint,
 } from "./work/ProjectCardComponents";
 
+import { ProjectSection } from "./work/ProjectSection";
+import { ProjectTechStack } from "./work/ProjectTechStack";
+import { HeroStats } from "./work/HeroStats";
+import { OutcomeStats } from "./work/OutcomeStats";
+import { HowItWorksCard, HowItWorksGrid } from "./work/HowItWorksCard";
+
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
   children: ReactNode;
@@ -147,6 +153,7 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
 function createParagraph({ children }: TextProps) {
   return (
     <Text
+      className="mdx-paragraph"
       style={{ lineHeight: "175%" }}
       variant="body-default-m"
       onBackground="neutral-medium"
@@ -192,12 +199,21 @@ function createCodeBlock(props: any) {
 }
 
 function createList(as: "ul" | "ol") {
-  return ({ children }: { children: ReactNode }) => <List as={as}>{children}</List>;
+  return ({ children }: { children: ReactNode }) => (
+    <List as={as} className={`mdx-list mdx-list-${as}`}>
+      {children}
+    </List>
+  );
 }
 
 function createListItem({ children }: { children: ReactNode }) {
   return (
-    <ListItem marginTop="s" marginBottom="m" style={{ lineHeight: "175%" }}>
+    <ListItem
+      className="mdx-list-item"
+      marginTop="s"
+      marginBottom="m"
+      style={{ lineHeight: "175%" }}
+    >
       {children}
     </ListItem>
   );
@@ -255,6 +271,12 @@ const components = {
   WorkflowDiagram,
   ProofPointsBlock,
   ProofPoint,
+  ProjectSection,
+  ProjectTechStack,
+  HeroStats,
+  OutcomeStats,
+  HowItWorksCard,
+  HowItWorksGrid,
 };
 
 type CustomMDXProps = MDXRemoteProps & {
