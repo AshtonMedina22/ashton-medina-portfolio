@@ -101,17 +101,31 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 /* Demo Section - Embedded */
 .demoSection {
-  width: 100%;
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   margin-bottom: 4rem;
   margin-top: 2rem;
-  border-radius: $radius-xl;
-  overflow: hidden;
-  border: 1px solid var(--brand-alpha-medium);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+  border: none;
+  border-top: 1px solid var(--brand-alpha-medium);
+  border-bottom: 1px solid var(--brand-alpha-medium);
   background: var(--neutral-background-weak);
   min-width: 0;
+
+  @media (max-width: 768px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 /* Metrics */
