@@ -17,6 +17,8 @@ $demo-card-bg: #1a1625;
   min-height: 100%;
   background: $demo-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .sectionDivider {

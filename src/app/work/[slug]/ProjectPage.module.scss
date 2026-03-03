@@ -101,38 +101,25 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 /* Demo Section - Embedded */
 .demoSection {
-  width: calc(100% + 4rem);
-  margin-left: -2rem;
-  margin-right: -2rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   margin-bottom: 6rem;
   margin-top: 4rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0;
-  padding-bottom: 0;
   border-radius: 0;
   border: none;
   border-top: 1px solid var(--brand-alpha-medium);
   border-bottom: 1px solid var(--brand-alpha-medium);
   background: var(--neutral-background-weak);
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
 
   @media (max-width: 768px) {
-    width: calc(100% + 3rem);
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     margin-bottom: 4rem;
     margin-top: 3rem;
   }
 
   @media (max-width: 480px) {
-    width: calc(100% + 2rem);
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
     margin-bottom: 3rem;
     margin-top: 2rem;
   }
