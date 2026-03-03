@@ -1,0 +1,349 @@
+/* Project page layout tokens */
+$radius-sm: 0.75rem;
+$radius-md: 1rem;
+$radius-lg: 1.25rem;
+$radius-xl: 1.5rem;
+$radius-2xl: 1.75rem;
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+$transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+.pageWrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  min-width: 0;
+}
+
+/* Hero */
+.hero {
+  text-align: left;
+  margin-bottom: 0;
+  padding: 4rem 2rem;
+  max-width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.heroBreadcrumb {
+  display: none;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 1rem 0;
+  color: var(--neutral-on-background-strong);
+}
+
+.heroTagline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--neutral-on-background-medium);
+  max-width: 600px;
+  margin: 0 0 0;
+  letter-spacing: -0.01em;
+}
+
+.heroDate {
+  display: none;
+}
+
+.heroTech {
+  display: none;
+}
+
+/* Hero image */
+.heroImageWrap {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+  border-radius: $radius-2xl;
+  overflow: hidden;
+  border: none;
+  box-shadow: $shadow-lg;
+  background: transparent;
+  transition: box-shadow $transition;
+  min-width: 0;
+
+  &:hover {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Hero image link */
+.heroImageLink {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Demo CTA */
+.demoCtaWrap {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 4rem;
+  margin-top: 0;
+  text-align: left;
+}
+
+.demoCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--neutral-on-background-strong);
+  background: var(--neutral-alpha-strong);
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: all $transition;
+  letter-spacing: -0.01em;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--neutral-on-background-strong);
+    color: var(--neutral-alpha-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Metrics */
+.metricsSection {
+  display: none;
+}
+
+.metricsSectionTitle {
+  display: none;
+}
+
+.metricsGrid {
+  display: none;
+}
+
+.metricCard {
+  display: none;
+}
+
+.metricValue {
+  display: none;
+}
+
+.metricLabel {
+  display: none;
+}
+
+/* Technical implementation */
+.techImplSection {
+  display: none;
+}
+
+.techImplTitle {
+  display: none;
+}
+
+.techImplList {
+  display: none;
+}
+
+/* Article prose */
+.articleProse {
+  width: 100%;
+  max-width: 900px;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media (max-width: 768px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  :global(h2) {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    color: var(--neutral-on-background-strong);
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  :global(h3) {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--neutral-on-background-strong);
+    letter-spacing: -0.01em;
+  }
+
+  :global(.mdx-paragraph) {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.75rem;
+    overflow-wrap: break-word;
+    line-height: 1.8;
+    font-size: 1.0625rem;
+    color: var(--neutral-on-background-medium);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  :global(.mdx-list) {
+    list-style: none;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.75rem;
+    max-width: 65ch;
+  }
+
+  :global(.mdx-list-item) {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: var(--neutral-on-background-medium);
+    font-size: 1.0625rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.articleProseWide {
+  max-width: 960px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroTagline {
+    font-size: 1rem;
+  }
+
+  .heroImageWrap {
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+  }
+
+  .demoCtaWrap {
+    margin-bottom: 3rem;
+  }
+
+  .articleProse {
+    padding-top: 1.5rem;
+
+    :global(h2) {
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    :global(h3) {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    :global(.mdx-paragraph) {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    :global(.mdx-list-item) {
+      font-size: 1rem;
+      margin-bottom: 0.875rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroTagline {
+    font-size: 0.9375rem;
+  }
+
+  .heroImageWrap {
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .demoCtaWrap {
+    margin-bottom: 2rem;
+  }
+
+  .articleProse {
+    padding-top: 1.25rem;
+
+    :global(h2) {
+      font-size: 1.375rem;
+      margin-top: 2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    :global(h3) {
+      font-size: 1.125rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.875rem;
+    }
+
+    :global(.mdx-paragraph) {
+      font-size: 0.9375rem;
+      margin-bottom: 1.25rem;
+    }
+
+    :global(.mdx-list-item) {
+      font-size: 0.9375rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+}

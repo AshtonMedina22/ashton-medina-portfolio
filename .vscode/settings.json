@@ -1,11 +1,7 @@
 {
-  "builder.publicKey": "485ec0635617498bb60c52890fcf2d08",
-  "builder.privateKey": "bpk-dd0f59824de04da19e21ff16fd91d6b0",
-  "builder.spaceId": "430b575840604ae38fa520b979e6122e",
-  "builder.environment": "production",
-  "builder.serverUrl": "http://localhost:3000",
-  "builder.command": "npm run dev",
-  "builder.runDevServer": false,
-  "builder.autoDetectDevServer": true,
-  "builder.launchType": "browser"
+    "builder.serverUrl": "",
+    "builder.command": "npm run dev",
+    "builder.runDevServer": true,
+    "builder.autoDetectDevServer": true,
+    "builder.launchType": "browser"
 }

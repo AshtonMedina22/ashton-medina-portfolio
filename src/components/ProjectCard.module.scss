@@ -1,0 +1,77 @@
+.cardContainer {
+    border-radius: var(--radius-xl, 1.25rem);
+    border: 1px solid var(--neutral-alpha-weak);
+    background: var(--surface-background, var(--neutral-alpha-weak));
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: border-color var(--transition-micro-medium), background var(--transition-micro-medium), box-shadow var(--transition-micro-medium);
+
+    &:hover {
+        border-color: var(--neutral-alpha-medium);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+}
+
+.imageLink {
+    text-decoration: none;
+    display: none;
+}
+
+.imageContainer {
+    max-height: 400px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0;
+    cursor: pointer;
+    display: none;
+}
+
+/* Clip image to card's top rounded corners */
+.cardContainer .imageContainer {
+    border-radius: var(--radius-xl, 1.25rem) var(--radius-xl, 1.25rem) 0 0;
+}
+
+.cardContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ctaContainer {
+    margin-top: auto;
+    padding-top: var(--static-space-m);
+    display: flex;
+}
+
+.ctaLink {
+    margin: 0;
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    background: var(--brand-solid-medium);
+    color: var(--brand-on-solid-strong);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--brand-solid-strong);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    :global(span) {
+        color: var(--brand-on-solid-strong) !important;
+        font-weight: 600;
+    }
+}

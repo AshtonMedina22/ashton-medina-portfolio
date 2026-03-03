@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <rect x="20" y="20" width="760" height="410" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="40" y="52" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#111827">Sales-to-Delivery Platform</text>
+  <text x="40" y="78" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Split-panel ERP: Confirmed Order ’ Auto-Generated Project</text>
+  <rect x="40" y="100" width="360" height="140" rx="6" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="52" y="125" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#374151">Confirmed Sales Order</text>
+  <rect x="52" y="138" width="120" height="24" rx="4" fill="#d1fae5"/>
+  <text x="62" y="155" font-family="system-ui,sans-serif" font-size="10" fill="#059669">Booked</text>
+  <rect x="400" y="100" width="360" height="140" rx="6" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="412" y="125" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#374151">Auto-Generated Project</text>
+  <rect x="412" y="138" width="80" height="24" rx="4" fill="#eff6ff"/>
+  <text x="422" y="155" font-family="system-ui,sans-serif" font-size="10" fill="#2563eb">Kanban</text>
+  <rect x="40" y="260" width="720" height="150" rx="6" fill="#dbeafe"/>
+  <text x="52" y="295" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#1d4ed8">Try Interactive Demo</text>
+  <text x="52" y="320" font-family="system-ui,sans-serif" font-size="12" fill="#2563eb">Click to open the full demo experience</text>
+</svg>

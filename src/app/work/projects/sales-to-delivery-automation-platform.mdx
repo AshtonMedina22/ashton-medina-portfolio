@@ -1,12 +1,13 @@
 ---
-title: "Sales Pipeline Automation Engine"
+title: "Sales-to-Delivery Automation Platform"
 publishedAt: "2024-12-01"
 summary: "Converts closed deals into delivery-ready projects with zero manual handoffs."
+demo: true
 images:
-  - "/images/projects/project-01/cover-01.jpg"
-  - "/images/projects/project-01/cover-02.jpg"
-  - "/images/projects/project-01/cover-03.jpg"
-  - "/images/projects/project-01/cover-04.jpg"
+  - "/images/projects/project-01/cover-01.svg"
+  - "/images/projects/project-01/cover-02.svg"
+  - "/images/projects/project-01/cover-03.svg"
+  - "/images/projects/project-01/cover-04.svg"
 techStack:
   - name: "Python"
     icon: "python"
@@ -20,47 +21,57 @@ techStack:
     icon: "api"
 ---
 
-*Eliminating the most expensive bottleneck in the business: the gap between "sold" and "started."*
+<HeroStats stats={[
+  { value: "1,675+", label: "Lines of Python" },
+  { value: "65+", label: "Synced Fields" },
+  { value: "4", label: "Business Objects" },
+  { value: "Zero", label: "Manual Re-entry" }
+]} />
 
-<Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+## Problem
 
-## The Problem
+Sales closes a deal. Then operations spends hours rebuilding it—re-entering client details, creating task lists from scratch, assigning team members, chasing requirements already captured in the CRM. Every handoff is a chance to lose details, delay delivery, or misquote scope. The gap between "sold" and "started" was the most expensive bottleneck in the business.
 
-Sales closes a deal. Then operations spends hours rebuilding it—re-entering client details, creating task lists from scratch, assigning team members, chasing requirements that were already captured in the CRM. Every handoff is a chance to lose details, delay delivery, or misquote scope.
+## How It Works
 
-</Column>
-<Column fillWidth>
+<HowItWorksGrid>
+<HowItWorksCard title="Order Validation">
+Validates order structure on confirmation. Blocks malformed records before any downstream automation runs.
+</HowItWorksCard>
 
-## The Solution
+<HowItWorksCard title="CRM Linkage">
+Creates or links the opportunity and maps core deal fields. Establishes the canonical record all downstream objects reference.
+</HowItWorksCard>
 
-A 6-phase automation chain that fires on order confirmation. Validates structure, creates CRM linkage, generates service-specific task templates, consolidates records, syncs 65+ fields bidirectionally, and automates stage progression with audit entries.
+<HowItWorksCard title="Project Generation">
+Triggers task template copy per service line. Each product spawns its own task tree with subtasks scoped to what was sold.
+</HowItWorksCard>
 
-</Column>
-</Grid>
+<HowItWorksCard title="Task Consolidation">
+Merges all generated tasks into one project. Eliminates record fragmentation native ERP flows create on multi-service orders.
+</HowItWorksCard>
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
-<Column fillWidth>
+<HowItWorksCard title="Data Sync Engine">
+Syncs 65+ fields bidirectionally across CRM, Sales Orders, Contacts, and Projects. Reporting stays consistent across all four objects.
+</HowItWorksCard>
 
-## Technical Implementation
+<HowItWorksCard title="Stage Automation">
+Drives CRM stage progression on key deal milestones. Each transition logs a timestamped audit entry to the record thread.
+</HowItWorksCard>
+</HowItWorksGrid>
 
-- **Phase 1:** Order validation and kickoff line item enforcement
-- **Phase 2:** CRM opportunity creation with 6 core event field mapping
-- **Phase 3:** Service-specific task tree generation from templates
-- **Phase 4:** Record consolidation preventing native ERP fragmentation
-- **Phase 5:** 65+ field bidirectional sync across CRM, Sales, Contacts, Projects
-- **Phase 6:** Stage automation (Quote → Proposal → Contract → Booked) with audit logging
+## Outcome
 
-</Column>
-<Column fillWidth>
+Confirming a sale auto-generates a scoped project, inherits all client requirements from CRM, and maintains full traceability from first contact to close.
 
-## Results
+<OutcomeStats stats={[
+  { value: "Zero", label: "Manual Re-entry" },
+  { value: "1,675+", label: "Lines of Python" },
+  { value: "4", label: "Objects Kept in Sync" }
+]} />
 
-- **Zero manual re-entry** between sales and operations
-- **11 event classifications** with quote revision tracking
-- **Multi-rep sales attribution** synced across 4 business objects
-- **3-tier CRM intake:** identity/logistics, service config, financial estimates
-- **1,675+ lines of Python** across CRM, Sales, and Project models
+## Tech Stack
 
-</Column>
-</Grid>
+Python · PostgreSQL · XML · QWeb · REST APIs
+
+

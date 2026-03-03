@@ -1,0 +1,80 @@
+"use client";
+
+import { Column, Row } from "@once-ui-system/core";
+import { iconLibrary } from "@/resources/icons";
+import styles from "./ProjectTechStack.module.scss";
+
+interface Technology {
+  name: string;
+  icon?: string | null;
+}
+
+interface ProjectTechStackProps {
+  technologies?: Technology[];
+}
+
+export function ProjectTechStack({ technologies = [] }: ProjectTechStackProps) {
+  const techIconColors: Record<string, string> = {
+    javascript: "#F7DF1E",
+    typescript: "#3178C6",
+    python: "#3776AB",
+    go: "#00ADD8",
+    golang: "#00ADD8",
+    java: "#ED8B00",
+    html: "#E34F26",
+    css: "#1572B6",
+    scss: "#CC6699",
+    sql: "#4479A1",
+    json: "#E2E8F0",
+    react: "#61DAFB",
+    nextjs: "#E5E7EB",
+    nodejs: "#339933",
+    postgresql: "#4169E1",
+    supabase: "#3ECF8E",
+    redis: "#DC382D",
+    restapi: "#85EA2D",
+    api: "#85EA2D",
+    swagger: "#85EA2D",
+    middleware: "#B0B7C3",
+    express: "#B0B7C3",
+    fastapi: "#009688",
+    kubernetes: "#326CE5",
+    terraform: "#7B42BC",
+    vercel: "#E5E5E5",
+    auth0: "#EB5424",
+    keycloak: "#F7931D",
+    okta: "#007DC1",
+    clerk: "#6D28D9",
+    docker: "#2496ED",
+    nginx: "#009639",
+    git: "#F05032",
+    bootstrap: "#7952B3",
+    aws: "#FF9900",
+    mongodb: "#47A248",
+    tailwind: "#06B6D4",
+    tailwindcss: "#06B6D4",
+    graphql: "#E10098",
+    jest: "#C21325",
+  };
+
+  return (
+    <div className={styles.techStackSection}>
+      <h3 className={styles.techTitle}>Technologies Used</h3>
+      <div className={styles.techGrid}>
+        {technologies.map((tech) => {
+          const Icon = tech.icon && iconLibrary[tech.icon] ? iconLibrary[tech.icon] : null;
+          const iconColor = tech.icon ? techIconColors[tech.icon] : undefined;
+
+          return (
+            <div key={tech.name} className={styles.techItem}>
+              {Icon && (
+                <Icon className={styles.techIcon} style={iconColor ? { color: iconColor } : undefined} />
+              )}
+              <span className={styles.techLabel}>{tech.name}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}

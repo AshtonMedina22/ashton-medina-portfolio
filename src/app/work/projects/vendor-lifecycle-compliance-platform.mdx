@@ -1,12 +1,13 @@
 ---
-title: "Vendor Procurement & Portal Platform"
+title: "Vendor Management & Portal Platform"
 publishedAt: "2024-11-15"
-summary: "Self-service portal with tokenized access, automated RFQ workflows, and record-level data isolation for external partners."
+summary: "Controlled onboarding, tokenized self-service access, automated RFQ workflows, and full lifecycle visibility for internal teams and external partners."
+demo: true
 images:
-  - "/images/projects/project-02/cover-01.jpg"
-  - "/images/projects/project-02/cover-02.jpg"
-  - "/images/projects/project-02/cover-03.jpg"
-  - "/images/projects/project-02/cover-04.jpg"
+  - "/images/projects/project-02/cover-01.svg"
+  - "/images/projects/project-02/cover-02.svg"
+  - "/images/projects/project-02/cover-03.svg"
+  - "/images/projects/project-02/cover-04.svg"
 techStack:
   - name: "Python"
     icon: "python"
@@ -14,54 +15,77 @@ techStack:
     icon: "postgresql"
   - name: "QWeb"
     icon: null
-  - name: "Token Auth"
-    icon: null
   - name: "JSON-RPC"
     icon: "api"
+  - name: "Token Auth"
+    icon: null
+  - name: "E-Signature"
+    icon: null
 ---
 
-*Replacing email chains with an auditable, governed vendor workflow.*
+<HeroStats stats={[
+  { value: "1,460+", label: "Lines of Python" },
+  { value: "15", label: "Secure Portal Routes" },
+  { value: "6", label: "Work Order States" },
+  { value: "4", label: "Compliance Alert States" }
+]} />
 
-<Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+## Problem
 
-## The Problem
+Vendor relationships lacked structure—informal onboarding, no enforced compliance checkpoints, manual approval tracking, and zero visibility into performance or spend. Work orders went out as email attachments, confirmations were verbal, and quote comparisons lived in spreadsheets. Internal teams had no real-time view of vendor status and every engagement required manual coordination from application through delivery.
 
-Vendor coordination ran on email and phone calls. Work orders were sent as attachments, confirmations were verbal, quote comparisons lived in spreadsheets, and compliance documents were scattered across inboxes. A single missed confirmation could derail an entire event.
+## How It Works
 
-</Column>
-<Column fillWidth>
+<HowItWorksGrid>
+<HowItWorksCard title="Public Application Intake">
+Vendors apply through a public-facing portal, upload required documents, and enter the onboarding pipeline directly. No staff intermediary required to initiate the relationship.
+</HowItWorksCard>
 
-## The Solution
+<HowItWorksCard title="Tokenized Portal Access">
+Time-limited tokens give vendors secure access to assignments, tasks, quotes, and messaging without login credentials. 15 governed routes control exactly what they can see and do.
+</HowItWorksCard>
 
-A 15-route vendor portal with tokenized access links (48-hour expiry), 6-state work order lifecycle, automated RFQ workflows with best-quote selection, and record-level data isolation enforced at the ORM layer.
+<HowItWorksCard title="Record-Level Isolation">
+Each vendor sees only their own data. Customer pricing, margins, and other vendor records are blocked at the ORM layer — enforced in code, not policy.
+</HowItWorksCard>
 
-</Column>
-</Grid>
+<HowItWorksCard title="Work Order Lifecycle">
+A 6-state workflow manages every assignment: Pending → Sent → Confirmed → Declined → In Progress → Completed. Vendors accept with e-signature, decline with a reason, and post messages directly to internal teams.
+</HowItWorksCard>
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
-<Column fillWidth>
+<HowItWorksCard title="RFQ & Quote Engine">
+Multiple vendors submit competing quotes against the same scope through the portal. Deadlines auto-close, a selection wizard picks the winner, remaining bids close automatically, and a purchase order generates from the winning quote.
+</HowItWorksCard>
 
-## Technical Implementation
+<HowItWorksCard title="Compliance Monitoring">
+Documents tracked across 15+ service categories with a 3-tier vendor classification system. Scheduled jobs flag expiry at 30 days, 7 days, and on the expiration date — per vendor record.
+</HowItWorksCard>
 
-- **6-state lifecycle:** Pending → Sent → Confirmed → Declined → In Progress → Completed
-- **Tokenized access:** No login credentials, 48-hour expiry for security
-- **Record-level isolation:** Each vendor sees only their assignments—no customer pricing, no other vendors, no margin data
-- **RFQ automation:** Multiple vendors submit quotes, auto-close deadlines, cron-selected best quote
-- **Compliance tracking:** 15+ service categories, 3-tier classification, automated expiry monitoring
-- **Batch reminders:** 200 records/cycle cron job for 24-hour pending work orders
+<HowItWorksCard title="Batch Reminder Engine">
+A cron job processes 200 records per cycle and auto-sends follow-ups for assignments pending over 24 hours. No manual chasing by internal staff.
+</HowItWorksCard>
 
-</Column>
-<Column fillWidth>
+<HowItWorksCard title="Internal Staff Visibility">
+Internal teams have a full cross-vendor view: real-time response status, compliance standing, document expiry, portal dashboard counters, and cost variance (estimated vs. actual) aggregated at the project level.
+</HowItWorksCard>
 
-## Results
+<HowItWorksCard title="Performance & Rate Governance">
+Per-vendor, per-service rate cards control pricing structures. Post-delivery 1–5 ratings capture performance history. Financial accountability is measurable across every engagement.
+</HowItWorksCard>
+</HowItWorksGrid>
 
-- **15 secure routes** with governed portal access
-- **E-signature accept/decline** with reason capture
-- **Real-time vendor response tracking** for internal teams
-- **Cost variance reporting:** estimated vs. actual
-- **Automated document expiry alerts** across all vendors
-- **1,460+ lines of Python** across portal controllers and assignment models
+## Outcome
 
-</Column>
-</Grid>
+Vendor relationships become controlled, measurable, and auditable — vendors self-serve from application through delivery while internal teams maintain complete visibility without touching an inbox.
+
+<OutcomeStats stats={[
+  { value: "Zero", label: "Staff Time Relaying Assignments" },
+  { value: "Full", label: "Lifecycle Auditability" },
+  { value: "Real-Time", label: "Cost Variance & Compliance Tracking" }
+]} />
+
+## Tech Stack
+
+Python · PostgreSQL · QWeb · JSON-RPC · Token Auth · E-Signature
+
+

@@ -1,12 +1,13 @@
 ---
-title: "Executive BI Dashboard Platform"
+title: "Operational Intelligence Platform"
 publishedAt: "2024-11-01"
 summary: "Configurable analytics interface with drag-and-drop widgets, real-time KPIs, and drill-down to live business records."
+demo: true
 images:
-  - "/images/projects/project-03/cover-01.jpg"
-  - "/images/projects/project-03/cover-02.jpg"
-  - "/images/projects/project-03/cover-03.jpg"
-  - "/images/projects/project-03/cover-04.jpg"
+  - "/images/projects/project-04/cover-01.svg"
+  - "/images/projects/project-04/cover-02.svg"
+  - "/images/projects/project-04/cover-03.svg"
+  - "/images/projects/project-04/cover-04.svg"
 techStack:
   - name: "Python"
     icon: "python"
@@ -16,51 +17,77 @@ techStack:
     icon: null
   - name: "GridStack.js"
     icon: null
-  - name: "PostgreSQL"
-    icon: "postgresql"
+  - name: "html2canvas"
+    icon: null
+  - name: "jsPDF"
+    icon: null
+  - name: "xlsxwriter"
+    icon: null
 ---
 
-*Replacing the spreadsheet-and-email reporting cycle with click-through analytics.*
+<HeroStats stats={[
+  { value: "4,600+", label: "Lines of Dashboard Logic" },
+  { value: "7+", label: "Chart Types" },
+  { value: "5", label: "Aggregated Modules" },
+  { value: "3", label: "Export Formats" }
+]} />
 
-<Grid columns="2" gap="l" fillWidth>
-<Column fillWidth>
+## Problem
 
-## The Problem
+Business data lived in silos—sales metrics in CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. A unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. Reports were stale before they were assembled. When a number looked wrong, leadership couldn't drill in—they had to request another report and wait.
 
-Business data lived in silos—sales metrics in the CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. Getting a unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. When an executive saw a concerning number, they couldn't drill in—they had to request another report and wait.
+## How It Works
 
-</Column>
-<Column fillWidth>
+<HowItWorksGrid>
+<HowItWorksCard title="Cross-Module Aggregation">
+CRM, Sales, Projects, Vendor Management, and Accounting queried through a single data layer. No manual exports, no stale imports — one unified query surface across all five modules.
+</HowItWorksCard>
 
-## The Solution
+<HowItWorksCard title="ORM-Level Computation">
+Metrics computed at the database layer using dynamic domain filtering. Performance stays consistent regardless of data volume — no client-side number crunching.
+</HowItWorksCard>
 
-A dashboard platform with GridStack.js drag-and-drop layout and AmCharts 5 visualization. Each widget is interactive: clicking a KPI tile or chart segment drills directly into the underlying business records, not a static view. Per-user layout persistence lets each role configure their own dashboard.
+<HowItWorksCard title="Seven Purpose-Built Views">
+Personal tasks, team workload, upcoming engagements, pipeline health, vendor operations, revenue metrics, and a fully customizable canvas — each scoped to its operational domain.
+</HowItWorksCard>
 
-</Column>
-</Grid>
+<HowItWorksCard title="7+ Interactive Chart Types">
+Line, bar, doughnut, pie, radar, scatter, and geographic map visualizations powered by AmCharts 5. Clicking any KPI tile or chart segment drills directly into the underlying live business records.
+</HowItWorksCard>
 
-<Grid columns="2" gap="l" fillWidth marginTop="l">
-<Column fillWidth>
+<HowItWorksCard title="Drag-and-Drop Layout">
+Widgets repositioned freely via GridStack.js. Layout, filters, and widget configuration saved independently per user — each role owns their own view.
+</HowItWorksCard>
 
-## Technical Implementation
+<HowItWorksCard title="Date Range & Filter Presets">
+Saved filter presets allow instant time-window switching without rebuilding reports. All widgets query live operational data on every load.
+</HowItWorksCard>
 
-- **7+ chart types:** line, bar, doughnut, pie, radar, scatter, map
-- **ORM-level aggregation:** dynamic domain filtering across modules
-- **Drag-and-drop layouts:** GridStack.js with per-user persistence
-- **Click-through to live records:** not static views, actual business objects
-- **Date range filtering:** saved filter presets without new report builds
-- **Cross-module aggregation:** CRM, Sales, Project, Vendor, Accounting in single query layer
+<HowItWorksCard title="Scheduled Intelligence Delivery">
+Dashboards auto-email chart snapshots to defined recipients on a recurring schedule. Leadership receives operational intelligence without logging in.
+</HowItWorksCard>
 
-</Column>
-<Column fillWidth>
+<HowItWorksCard title="3-Format Export Engine">
+One-click export to PDF via html2canvas and jsPDF, Excel via xlsxwriter, and PNG for presentations. Outputs formatted for executive consumption without manual formatting.
+</HowItWorksCard>
 
-## Results
+<HowItWorksCard title="Modular & Migration-Safe Architecture">
+New KPI widgets added without modifying core infrastructure. Automated migration scripts handle security rule and data structure updates on every module upgrade. Full test coverage for data integrity and access control.
+</HowItWorksCard>
+</HowItWorksGrid>
 
-- **3 export formats:** PDF (html2canvas + jsPDF), Excel (xlsxwriter), PNG
-- **Per-user dashboards:** role-configurable views with saved layouts
-- **Real-time data:** rendering against live operational records
-- **Board-ready reports:** one-click exports for presentations
-- **4,600+ lines** of dashboard logic
+## Outcome
 
-</Column>
-</Grid>
+Leadership operates with real-time operational intelligence—configurable by role, exportable on demand, and delivered on schedule without anyone logging in.
+
+<OutcomeStats stats={[
+  { value: "Real-Time", label: "Operational Data on Every Load" },
+  { value: "Zero", label: "Manual Report Assembly" },
+  { value: "Full", label: "Cross-Module Visibility in One View" }
+]} />
+
+## Tech Stack
+
+Python · JavaScript · AmCharts 5 · GridStack.js · html2canvas · jsPDF · xlsxwriter
+
+

@@ -1,0 +1,20 @@
+/* Operational Intelligence Demo - BI dashboard */
+$demo-blue: #2563eb;
+$demo-dark-blue: #1e40af;
+$demo-green: #059669;
+$demo-red: #dc2626;
+$demo-yellow: #ca8a04;
+$demo-gray: #6b7280;
+$demo-border: #e5e7eb;
+$demo-bg: #fafbfc;
+$demo-card-bg: #ffffff;
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  min-height: 100%;
+  background: $demo-bg;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

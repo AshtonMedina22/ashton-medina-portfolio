@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#fafbfc"/>
+  <rect x="20" y="20" width="760" height="410" rx="8" fill="#fff" stroke="#e5e7eb"/>
+  <text x="40" y="55" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#111827">Operations Dashboard</text>
+  <rect x="40" y="70" width="600" height="28" rx="4" fill="#f3f4f6"/>
+  <text x="52" y="89" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">My Tasks | Team | Engagements | Pipeline | Vendors | Revenue</text>
+  <rect x="40" y="115" width="180" height="80" rx="6" fill="#2563eb"/>
+  <text x="52" y="150" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">This Week</text>
+  <text x="52" y="175" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="#fff">8</text>
+  <rect x="40" y="210" width="360" height="120" rx="6" fill="#f9fafb"/>
+  <text x="52" y="240" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#374151">Calendar + Doughnut</text>
+  <rect x="420" y="210" width="340" height="120" rx="6" fill="#f9fafb"/>
+  <text x="432" y="240" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#374151">Upcoming Engagements Table</text>
+  <rect x="40" y="348" width="720" height="60" rx="6" fill="#2563eb"/>
+  <text x="400" y="385" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">Try Interactive Demo</text>
+</svg>

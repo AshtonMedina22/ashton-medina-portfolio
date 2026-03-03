@@ -1,5 +1,208 @@
 @use "../breakpoints.scss" as breakpoints;
 
+.heroInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.heroName {
+  font-size: var(--font-size-display-m);
+  line-height: var(--line-height-display-m);
+  font-weight: var(--font-weight-display-strong);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.heroRole {
+  font-size: var(--font-size-heading-l);
+  line-height: var(--line-height-heading-l);
+  font-weight: var(--font-weight-heading-default);
+  margin: 0;
+  opacity: 0.92;
+}
+
+.heroLocation {
+  font-size: var(--font-size-body-m);
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.heroActions {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--static-space-12);
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .heroInfo {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .heroActions {
+    justify-content: flex-start;
+  }
+}
+
+/* Focus areas */
+.focusAreaGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--static-space-16);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .focusAreaGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--static-space-20);
+  }
+}
+
+.focusAreaCard {
+  padding: var(--static-space-20);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--surface-background);
+  color: var(--neutral-on-background-strong);
+  text-align: left;
+  cursor: default;
+}
+
+.focusAreaTitle {
+  font-size: var(--font-size-heading-m);
+  line-height: var(--line-height-heading-m);
+  font-weight: var(--font-weight-heading-strong);
+  margin: 0 0 0.375rem 0;
+  color: var(--neutral-on-background-strong);
+}
+
+.focusAreaDescription {
+  font-size: var(--font-size-body-s);
+  line-height: 1.5;
+  margin: 0 0 0.5rem 0;
+  color: var(--neutral-on-background-medium);
+  opacity: 0.95;
+}
+
+.focusAreaList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-body-xs);
+  line-height: 1.45;
+  color: var(--neutral-on-background-medium);
+}
+
+.focusAreaList li {
+  padding: 0.15rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.focusAreaList li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: var(--brand-solid-medium);
+}
+
+/* Technical */
+.technicalGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--static-space-16);
+  width: 100%;
+}
+
+@media (min-width: 560px) {
+  .technicalGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.technicalCard {
+  padding: var(--static-space-20);
+  border-radius: var(--radius-m);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--surface-background);
+  cursor: default;
+}
+
+.technicalCardTitle {
+  font-size: var(--font-size-heading-s);
+  font-weight: var(--font-weight-heading-strong);
+  margin: 0 0 0.5rem 0;
+  color: var(--neutral-on-background-strong);
+}
+
+.technicalCardContent {
+  font-size: var(--font-size-body-xs);
+  line-height: 1.5;
+  color: var(--neutral-on-background-medium);
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 0.2rem 0;
+  }
+}
+
+.technicalList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-body-xs);
+  line-height: 1.5;
+  color: var(--neutral-on-background-medium);
+}
+
+.technicalList li {
+  padding: 0.2rem 0;
+}
+
+/* Intro block */
+.introBlock {
+  padding: var(--static-space-24);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--surface-background);
+}
+
+.introTitle {
+  font-size: var(--font-size-display-s);
+  font-weight: var(--font-weight-display-strong);
+  margin: 0 0 0.5rem 0;
+  color: var(--neutral-on-background-strong);
+}
+
+.introDescription {
+  font-size: var(--font-size-body-m);
+  line-height: 1.6;
+  margin: 0;
+  color: var(--neutral-on-background-medium);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-heading-xl);
+  font-weight: var(--font-weight-heading-strong);
+  margin: 0 0 var(--static-space-16) 0;
+  color: var(--neutral-on-background-strong);
+}
+
 .hover {
     transition: var(--transition-micro-medium);
 
