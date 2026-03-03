@@ -1,89 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
-  <defs>
-    <linearGradient id="darkBg13" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <rect width="1200" height="600" fill="url(#darkBg13)"/>
+  <rect width="1200" height="600" fill="#09090b"/>
   
   <!-- Header -->
-  <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
-  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Operations Dashboard</text>
-  <text x="1100" y="38" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa" text-anchor="end">Last synced: 2 minutes ago</text>
-  
-  <!-- Filter bar -->
-  <rect x="24" y="75" width="1152" height="40" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
-  <rect x="40" y="84" width="80" height="22" rx="4" fill="#a78bfa"/>
-  <text x="80" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#09090b" text-anchor="middle">This Month</text>
-  <text x="140" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">⬇ All Teams</text>
-  <text x="230" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">All Projects</text>
-  <text x="1100" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="end">🔄 ⚙️</text>
+  <text x="24" y="32" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#f5f3ff">Operations Dashboard</text>
   
   <!-- KPI Cards -->
-  <!-- Row 1 -->
-  <rect x="24" y="130" width="270" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="40" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">ACTIVE ENGAGEMENTS</text>
-  <text x="40" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#22d3ee">24</text>
-  <text x="40" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">+18% vs last month</text>
+  <rect x="24" y="50" width="270" height="90" rx="8" fill="#a78bfa15" stroke="#a78bfa30" stroke-width="1"/>
+  <text x="40" y="70" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">ENGAGEMENTS THIS WEEK</text>
+  <text x="40" y="110" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#a78bfa">8</text>
   
-  <rect x="316" y="130" width="270" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="332" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">REVENUE PIPELINE</text>
-  <text x="332" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#a78bfa">$847K</text>
-  <text x="332" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">+12% vs last month</text>
+  <rect x="316" y="50" width="270" height="90" rx="8" fill="#dc262615" stroke="#dc262630" stroke-width="1"/>
+  <text x="332" y="70" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">OVERDUE TASKS</text>
+  <text x="332" y="110" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#dc2626">3</text>
   
-  <rect x="608" y="130" width="270" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="624" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">AVG PROJECT MARGIN</text>
-  <text x="624" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#10b981">48.2%</text>
-  <text x="624" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Target: 50%</text>
+  <rect x="608" y="50" width="270" height="90" rx="8" fill="#10b98115" stroke="#10b98130" stroke-width="1"/>
+  <text x="624" y="70" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">ACTIVE PROJECTS</text>
+  <text x="624" y="110" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#10b981">14</text>
   
-  <rect x="900" y="130" width="276" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="916" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">DELIVERIES ON TIME</text>
-  <text x="916" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#10b981">94%</text>
-  <text x="916" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">23 of 24 projects</text>
+  <rect x="900" y="50" width="276" height="90" rx="8" fill="#22d3ee15" stroke="#22d3ee30" stroke-width="1"/>
+  <text x="916" y="70" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">EXPECTED REVENUE</text>
+  <text x="916" y="110" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#22d3ee">$84K</text>
   
-  <!-- Charts row -->
-  <!-- Line chart -->
-  <rect x="24" y="265" width="560" height="310" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="40" y="290" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Revenue Trend</text>
+  <!-- Calendar and Tasks -->
+  <text x="24" y="170" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">December 2024</text>
   
-  <!-- Chart area -->
-  <rect x="40" y="310" width="510" height="250" rx="6" fill="#27272a" opacity="0.5"/>
+  <rect x="24" y="185" width="570" height="200" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="40" y="210" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">Calendar view showing engagements and milestones</text>
+  <text x="40" y="250" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">Sun  Mon  Tue  Wed  Thu  Fri  Sat</text>
   
-  <!-- Fake line chart -->
-  <polyline points="60,520 120,480 180,510 240,460 300,440 360,470 420,420 480,460 540,410" 
-            stroke="#a78bfa" stroke-width="2" fill="none"/>
-  <circle cx="60" cy="520" r="3" fill="#a78bfa"/>
-  <circle cx="120" cy="480" r="3" fill="#a78bfa"/>
-  <circle cx="540" cy="410" r="3" fill="#a78bfa"/>
+  <!-- Mini calendar grid -->
+  <rect x="40" y="270" width="30" height="30" rx="4" fill="#27272a"/>
+  <text x="55" y="290" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle" fill="#f5f3ff">1</text>
   
-  <!-- Y axis labels -->
-  <text x="30" y="525" font-family="Open Sans, sans-serif" font-size="8" fill="#a1a1aa">$0</text>
-  <text x="20" y="470" font-family="Open Sans, sans-serif" font-size="8" fill="#a1a1aa">$250K</text>
-  <text x="20" y="315" font-family="Open Sans, sans-serif" font-size="8" fill="#a1a1aa">$500K</text>
+  <rect x="80" y="270" width="30" height="30" rx="4" fill="#27272a"/>
+  <text x="95" y="290" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle" fill="#f5f3ff">10</text>
   
-  <!-- Bar chart -->
-  <rect x="616" y="265" width="560" height="310" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="632" y="290" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Project Distribution by Status</text>
+  <rect x="120" y="270" width="30" height="30" rx="4" fill="#27272a"/>
+  <text x="135" y="290" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle" fill="#f5f3ff">18</text>
+  
+  <text x="40" y="340" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">🔵 Pipeline • 🟢 Confirmed</text>
+  
+  <!-- Tasks by Stage -->
+  <rect x="626" y="185" width="570" height="200" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="642" y="210" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Tasks by Stage</text>
+  
+  <!-- Doughnut center -->
+  <circle cx="911" cy="280" r="40" fill="none" stroke="#a78bfa" stroke-width="10"/>
+  <circle cx="911" cy="280" r="40" fill="none" stroke="#22d3ee" stroke-width="8" stroke-dashoffset="-150"/>
+  <circle cx="911" cy="280" r="40" fill="none" stroke="#10b981" stroke-width="6" stroke-dashoffset="-180"/>
+  <text x="911" y="290" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#f5f3ff" text-anchor="middle">47</text>
   
   <!-- Legend -->
-  <rect x="632" y="310" width="20" height="20" rx="3" fill="#a78bfa"/>
-  <text x="660" y="323" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">In Progress (12)</text>
+  <rect x="642" y="320" width="15" height="15" rx="3" fill="#a78bfa"/>
+  <text x="665" y="330" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">To Do (12)</text>
   
-  <rect x="850" y="310" width="20" height="20" rx="3" fill="#22d3ee"/>
-  <text x="878" y="323" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Completed (7)</text>
+  <rect x="810" y="320" width="15" height="15" rx="3" fill="#22d3ee"/>
+  <text x="833" y="330" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">In Progress (8)</text>
   
-  <rect x="1050" y="310" width="20" height="20" rx="3" fill="#a1a1aa"/>
-  <text x="1078" y="323" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Planned (5)</text>
+  <rect x="1010" y="320" width="15" height="15" rx="3" fill="#10b981"/>
+  <text x="1033" y="330" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">Done (22)</text>
   
-  <!-- Simple bar visualization -->
-  <rect x="650" y="360" width="40" height="150" rx="4" fill="#a78bfa"/>
-  <text x="670" y="530" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">12</text>
+  <!-- Upcoming Engagements -->
+  <text x="24" y="420" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Upcoming Engagements</text>
   
-  <rect x="750" y="410" width="40" height="100" rx="4" fill="#22d3ee"/>
-  <text x="770" y="530" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">7</text>
+  <rect x="24" y="435" width="1152" height="35" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="40" y="458" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">ID</text>
+  <text x="140" y="458" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">CLIENT</text>
+  <text x="300" y="458" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">TYPE</text>
+  <text x="420" y="458" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">DATE</text>
+  <text x="580" y="458" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">STATUS</text>
+  <text x="760" y="458" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">REP</text>
+  <text x="1100" y="458" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa" text-anchor="end">REVENUE</text>
   
-  <rect x="850" y="470" width="40" height="40" rx="4" fill="#a1a1aa"/>
-  <text x="870" y="530" font-family="Open Sans, sans-serif" font-size="9" fill="#09090b" text-anchor="middle">5</text>
+  <!-- Row 1 -->
+  <rect x="24" y="475" width="1152" height="28" rx="4" fill="#27272a" opacity="0.5"/>
+  <text x="40" y="494" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">ENG-0891</text>
+  <text x="140" y="494" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">TechCorp</text>
+  <text x="300" y="494" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">Type A</text>
+  <text x="420" y="494" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">Dec 10</text>
+  <rect x="580" y="482" width="70" height="18" rx="3" fill="#10b98120"/>
+  <text x="615" y="494" font-family="system-ui,sans-serif" font-size="9" fill="#10b981" text-anchor="middle">Confirmed</text>
+  <text x="760" y="494" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">Sarah M.</text>
+  <text x="1100" y="494" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff" text-anchor="end">$12,400</text>
 </svg>

@@ -1,75 +1,84 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
-  <defs>
-    <linearGradient id="darkBg9" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <rect width="1200" height="600" fill="url(#darkBg9)"/>
+  <rect width="1200" height="600" fill="#09090b"/>
   
   <!-- Header -->
-  <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
-  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Financial Dashboard</text>
+  <text x="24" y="32" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#f5f3ff">Financial Control</text>
   
-  <!-- Real-time margin display -->
-  <text x="24" y="95" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Real-Time Margin Analysis</text>
+  <!-- Project info -->
+  <rect x="24" y="50" width="1152" height="60" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="40" y="75" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#f5f3ff">ENG-2024-0842 — TechCorp</text>
+  <text x="40" y="95" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">Type A • Platform Implementation</text>
   
-  <!-- Margin metrics -->
-  <rect x="24" y="110" width="280" height="120" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="40" y="135" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">CLIENT REVENUE</text>
-  <text x="40" y="165" font-family="Open Sans, sans-serif" font-size="32" font-weight="700" fill="#22d3ee">$47,500</text>
-  <text x="40" y="185" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">TechCorp Platform Impl.</text>
+  <!-- Financial metrics -->
+  <rect x="24" y="125" width="280" height="80" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="40" y="150" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">CLIENT REVENUE</text>
+  <text x="40" y="180" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#22d3ee">$12,400</text>
   
-  <rect x="328" y="110" width="280" height="120" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="344" y="135" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">ESTIMATED COST</text>
-  <text x="344" y="165" font-family="Open Sans, sans-serif" font-size="32" font-weight="700" fill="#a78bfa">$22,100</text>
-  <text x="344" y="185" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">All vendor assignments</text>
+  <rect x="328" y="125" width="280" height="80" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="344" y="150" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">ESTIMATED COST</text>
+  <text x="344" y="180" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#a78bfa">$6,200</text>
   
-  <rect x="632" y="110" width="280" height="120" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="648" y="135" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">MARGIN AMOUNT</text>
-  <text x="648" y="165" font-family="Open Sans, sans-serif" font-size="32" font-weight="700" fill="#10b981">$25,400</text>
-  <text x="648" y="185" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Protected & locked</text>
+  <rect x="632" y="125" width="280" height="80" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="648" y="150" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">MARGIN</text>
+  <text x="648" y="180" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#10b981">$6,200</text>
   
-  <rect x="936" y="110" width="240" height="120" rx="10" fill="#1a1625" stroke="#a78bfa" stroke-width="2"/>
-  <text x="952" y="135" font-family="Open Sans, sans-serif" font-size="10" fill="#a78bfa">MARGIN %</text>
-  <text x="952" y="165" font-family="Open Sans, sans-serif" font-size="32" font-weight="700" fill="#a78bfa">53.5%</text>
-  <text x="952" y="185" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Well above target</text>
+  <rect x="936" y="125" width="240" height="80" rx="8" fill="#1a1625" stroke="#a78bfa" stroke-width="2"/>
+  <text x="952" y="150" font-family="system-ui,sans-serif" font-size="10" fill="#a78bfa">MARGIN %</text>
+  <text x="952" y="180" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#a78bfa">50%</text>
   
-  <!-- Variance breakdown -->
-  <text x="24" y="270" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Cost Variance Tracking</text>
+  <!-- Vendor breakdown table -->
+  <text x="24" y="235" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Vendor Cost Breakdown</text>
   
-  <!-- Service 1 -->
-  <rect x="24" y="285" width="540" height="80" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <rect x="40" y="305" width="500" height="2" fill="#a78bfa" opacity="0.3"/>
-  <text x="40" y="330" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">System Implementation</text>
-  <text x="40" y="348" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Est: $12,000 • Actual: $11,800 • Variance: -$200 (Favorable)</text>
-  <text x="480" y="330" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#10b981" text-anchor="end">✓ On Budget</text>
+  <rect x="24" y="250" width="1152" height="35" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="40" y="271" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">VENDOR</text>
+  <text x="300" y="271" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">SERVICE</text>
+  <text x="550" y="271" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">EST.</text>
+  <text x="650" y="271" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">ACTUAL</text>
+  <text x="750" y="271" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">VARIANCE</text>
   
-  <!-- Service 2 -->
-  <rect x="608" y="285" width="540" height="80" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <rect x="624" y="305" width="500" height="2" fill="#22d3ee" opacity="0.3"/>
-  <text x="624" y="330" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Training & Documentation</text>
-  <text x="624" y="348" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Est: $8,500 • Actual: $9,200 • Variance: +$700 (Monitor)</text>
-  <text x="1064" y="330" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#fbbf24" text-anchor="end">⚠ Overrun</text>
+  <rect x="24" y="295" width="1152" height="32" rx="6" fill="#27272a" stroke="#27272a" stroke-width="1"/>
+  <text x="40" y="316" font-family="system-ui,sans-serif" font-size="11" fill="#f5f3ff">Vendor A</text>
+  <text x="300" y="316" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">Service Type A</text>
+  <text x="550" y="316" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">$3,000</text>
+  <text x="650" y="316" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">$2,800</text>
+  <text x="750" y="316" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">-$200 ✓</text>
   
-  <!-- Cost breakdown chart -->
-  <text x="24" y="415" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Vendor Cost Breakdown</text>
+  <rect x="24" y="335" width="1152" height="32" rx="6" fill="#27272a" stroke="#27272a" stroke-width="1"/>
+  <text x="40" y="356" font-family="system-ui,sans-serif" font-size="11" fill="#f5f3ff">Vendor B</text>
+  <text x="300" y="356" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">Service Type B</text>
+  <text x="550" y="356" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">$2,000</text>
+  <text x="650" y="356" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">$2,100</text>
+  <text x="750" y="356" font-family="system-ui,sans-serif" font-size="11" fill="#dc2626">+$100</text>
   
-  <rect x="24" y="430" width="1152" height="140" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="24" y="375" width="1152" height="32" rx="6" fill="#27272a" stroke="#27272a" stroke-width="1"/>
+  <text x="40" y="396" font-family="system-ui,sans-serif" font-size="11" fill="#f5f3ff">Vendor C</text>
+  <text x="300" y="396" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">Service Type C</text>
+  <text x="550" y="396" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">$1,200</text>
+  <text x="650" y="396" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">$900</text>
+  <text x="750" y="396" font-family="system-ui,sans-serif" font-size="11" fill="#10b981">-$300 ✓</text>
   
-  <!-- Bar 1 -->
-  <rect x="40" y="450" width="400" height="25" rx="6" fill="#a78bfa"/>
-  <text x="56" y="467" font-family="Open Sans, sans-serif" font-size="11" fill="#09090b" font-weight="600">Development Services (45%)</text>
-  <text x="448" y="467" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">$9,945</text>
+  <!-- Budget-to-Actual chain -->
+  <text x="24" y="445" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Budget-to-Actual Chain</text>
   
-  <!-- Bar 2 -->
-  <rect x="40" y="485" width="250" height="25" rx="6" fill="#22d3ee"/>
-  <text x="56" y="502" font-family="Open Sans, sans-serif" font-size="11" fill="#09090b" font-weight="600">Infrastructure (28%)</text>
-  <text x="298" y="502" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">$6,188</text>
+  <rect x="24" y="460" width="270" height="50" rx="6" fill="#a78bfa15" stroke="#a78bfa30" stroke-width="1"/>
+  <text x="40" y="480" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">PIPELINE</text>
+  <text x="40" y="500" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#a78bfa">$15,000</text>
   
-  <!-- Bar 3 -->
-  <rect x="40" y="520" width="180" height="25" rx="6" fill="#10b981"/>
-  <text x="56" y="537" font-family="Open Sans, sans-serif" font-size="11" fill="#09090b" font-weight="600">Staffing (20%)</text>
-  <text x="228" y="537" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">$4,420</text>
+  <text x="310" y="490" font-family="system-ui,sans-serif" font-size="18" fill="#a78bfa" text-anchor="middle">→</text>
+  
+  <rect x="340" y="460" width="270" height="50" rx="6" fill="#fbbf2415" stroke="#fbbf2430" stroke-width="1"/>
+  <text x="356" y="480" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">QUOTED</text>
+  <text x="356" y="500" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#fbbf24">$12,400</text>
+  
+  <text x="626" y="490" font-family="system-ui,sans-serif" font-size="18" fill="#a78bfa" text-anchor="middle">→</text>
+  
+  <rect x="656" y="460" width="270" height="50" rx="6" fill="#10b98115" stroke="#10b98130" stroke-width="1"/>
+  <text x="672" y="480" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">DELIVERY</text>
+  <text x="672" y="500" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#10b981">$5,800</text>
+  
+  <text x="942" y="490" font-family="system-ui,sans-serif" font-size="18" fill="#a78bfa" text-anchor="middle">→</text>
+  
+  <rect x="972" y="460" width="204" height="50" rx="6" fill="#10b98115" stroke="#10b98130" stroke-width="1"/>
+  <text x="988" y="480" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">MARGIN</text>
+  <text x="988" y="500" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#10b981">$6,600</text>
 </svg>
