@@ -1,30 +1,58 @@
 "use client";
 
-import { SalesOrderPanel } from "./SalesOrderPanel";
-import { ProjectPanel } from "./ProjectPanel";
+import Image from "next/image";
 import styles from "./sales-to-delivery-demo.module.scss";
+
+const MOCKUPS = [
+  {
+    src: "/images/projects/project-01/cover-01.svg",
+    title: "Sales Order Entry & Automation Preview",
+    description: "Order confirmation form showing what happens automatically on submission",
+  },
+  {
+    src: "/images/projects/project-01/cover-02.svg",
+    title: "Project Auto-Generation",
+    description: "Dashboard showing auto-generated project with 27 tasks across 5 modules",
+  },
+  {
+    src: "/images/projects/project-01/cover-03.svg",
+    title: "Data Synchronization Engine",
+    description: "Real-time bidirectional sync of 65+ fields across CRM, Projects, and Contacts",
+  },
+  {
+    src: "/images/projects/project-01/cover-04.svg",
+    title: "Pipeline Analytics & Timeline",
+    description: "Automated handoff tracking from quote to delivery completion",
+  },
+];
 
 export function SalesToDeliveryDemo() {
   return (
     <div className={styles.demo}>
-      {/* ERP-style header bar */}
-      <header className={styles.header}>
-        <div>
-          <h1 className={styles.headerTitle}>Sales Order → Project</h1>
-          <p className={styles.headerMeta}>
-            Confirmed sales order with auto-generated execution project
-          </p>
-        </div>
+      <header className={styles.demoHeader}>
+        <h1>Sales-to-Delivery Automation Platform</h1>
+        <p>Automated order-to-project conversion with zero manual handoffs</p>
       </header>
 
-      {/* Split layout with flow indicator */}
-      <div className={styles.splitLayout}>
-        <SalesOrderPanel />
-        <div className={styles.flowConnector} aria-hidden>
-          <span className={styles.flowArrow}>→</span>
-          <span className={styles.flowLabel}>creates</span>
-        </div>
-        <ProjectPanel />
+      <div className={styles.mockupGallery}>
+        {MOCKUPS.map((mockup, idx) => (
+          <div key={idx} className={styles.mockupCard}>
+            <div className={styles.mockupImageContainer}>
+              <Image
+                src={mockup.src}
+                alt={mockup.title}
+                width={1200}
+                height={600}
+                priority={idx === 0}
+                className={styles.mockupImage}
+              />
+            </div>
+            <div className={styles.mockupInfo}>
+              <h3>{mockup.title}</h3>
+              <p>{mockup.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

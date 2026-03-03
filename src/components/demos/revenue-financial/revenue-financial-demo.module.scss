@@ -23,3 +23,78 @@ $demo-card-bg: #ffffff;
   border-radius: 0.5rem;
   padding: 1.25rem;
 }
+
+/* Demo gallery for mockups */
+.demoHeader {
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #09090b 0%, #0f0a1a 100%);
+  border-bottom: 1px solid #2e1064;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f5f3ff;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #a1a1aa;
+    margin: 0;
+  }
+}
+
+.mockupGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0 1.5rem 2rem;
+}
+
+.mockupCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #1a1625;
+  border: 1px solid #2e1064;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: #a78bfa;
+  }
+}
+
+.mockupImageContainer {
+  width: 100%;
+  background: #09090b;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.mockupInfo {
+  padding: 1.5rem;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f5f3ff;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #a1a1aa;
+    margin: 0;
+    line-height: 1.6;
+  }
+}
