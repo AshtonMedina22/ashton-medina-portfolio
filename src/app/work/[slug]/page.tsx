@@ -135,39 +135,6 @@ export default async function Project({
         </Row>
       </Column>
 
-      {/* Hero image - clickable to demo when available */}
-      {post.metadata.images.length > 0 && (
-        <div className={styles.heroImageWrap}>
-          {post.metadata.demo ? (
-            <SmartLink
-              href={`/work/${post.slug}/demo`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.heroImageLink}
-            >
-              <Media
-                fillWidth
-                priority
-                aspectRatio="16 / 9"
-                radius="l"
-                alt={post.metadata.title}
-                src={post.metadata.images[0]}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 900px"
-              />
-            </SmartLink>
-          ) : (
-            <Media
-              fillWidth
-              priority
-              aspectRatio="16 / 9"
-              radius="l"
-              alt={post.metadata.title}
-              src={post.metadata.images[0]}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 900px"
-            />
-          )}
-        </div>
-      )}
 
       {/* Interactive Demo - Embedded directly on page */}
       {post.metadata.demo && (
