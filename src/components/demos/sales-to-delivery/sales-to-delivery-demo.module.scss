@@ -1,20 +1,20 @@
 /* Sales-to-Delivery Demo - Modern ERP interface, platform-agnostic */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-$blue: #2563eb;
-$blue-light: #3b82f6;
-$blue-bg: #eff6ff;
-$blue-border: #bfdbfe;
-$green: #059669;
-$green-bg: #d1fae5;
-$green-border: #a7f3d0;
-$border: #e2e8f0;
-$border-light: #f1f5f9;
-$bg: #f8fafc;
-$card-bg: #ffffff;
-$text: #0f172a;
-$text-muted: #64748b;
-$text-subtle: #94a3b8;
+$blue: #a78bfa;
+$blue-light: #c4b5fd;
+$blue-bg: #a78bfa15;
+$blue-border: #a78bfa30;
+$green: #10b981;
+$green-bg: #10b98115;
+$green-border: #10b98130;
+$border: #2e1064;
+$border-light: #27272a;
+$bg: #09090b;
+$card-bg: #1a1625;
+$text: #f5f3ff;
+$text-muted: #a1a1aa;
+$text-subtle: #52525b;
 
 .demo {
   min-height: 100%;
@@ -23,6 +23,8 @@ $text-subtle: #94a3b8;
   font-size: 14px;
   color: $text;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .header {
@@ -30,14 +32,14 @@ $text-subtle: #94a3b8;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
+  gap: 2rem;
+  padding: 2.5rem 3rem;
   background: $card-bg;
   border-bottom: 1px solid $border;
 }
 
 .headerTitle {
-  font-size: 1rem;
+  font-size: 1.375rem;
   font-weight: 700;
   color: $text;
   letter-spacing: -0.02em;
@@ -47,7 +49,7 @@ $text-subtle: #94a3b8;
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: $text-muted;
 }
 
@@ -55,7 +57,7 @@ $text-subtle: #94a3b8;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   flex: 1;
-  min-height: 680px;
+  min-height: 750px;
   align-items: stretch;
 
   @media (max-width: 1024px) {
@@ -119,8 +121,8 @@ $text-subtle: #94a3b8;
 .panel {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.5rem;
+  gap: 2rem;
+  padding: 2.5rem;
   background: $card-bg;
   border: 1px solid $border;
   overflow: auto;
@@ -185,17 +187,17 @@ $text-subtle: #94a3b8;
 
 /* Order header */
 .orderHeader {
-  padding: 1rem;
+  padding: 1.5rem;
   background: $bg;
   border: 1px solid $border;
   border-radius: 0.5rem;
 }
 
 .orderClient {
-  font-size: 1.125rem;
+  font-size: 1.375rem;
   font-weight: 700;
   color: $text;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
 }
 
@@ -203,8 +205,8 @@ $text-subtle: #94a3b8;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1.25rem;
-  font-size: 0.8125rem;
+  gap: 1rem 1.75rem;
+  font-size: 0.9375rem;
   color: $text-muted;
 }
 
@@ -220,7 +222,8 @@ $text-subtle: #94a3b8;
 
 /* Table */
 .tableWrap {
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: visible;
   border: 1px solid $border;
   border-radius: 0.5rem;
 }
@@ -228,16 +231,16 @@ $text-subtle: #94a3b8;
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
 
   th {
     text-align: left;
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.25rem;
     font-weight: 600;
     color: $text-muted;
     background: $bg;
     border-bottom: 1px solid $border;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
 
@@ -248,7 +251,7 @@ $text-subtle: #94a3b8;
   }
 
   td {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.25rem;
     border-bottom: 1px solid $border-light;
     vertical-align: middle;
 
@@ -369,7 +372,7 @@ $text-subtle: #94a3b8;
 .financialGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem;
+  gap: 1.25rem;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
@@ -381,7 +384,7 @@ $text-subtle: #94a3b8;
 }
 
 .financialCard {
-  padding: 1rem;
+  padding: 1.5rem;
   background: $card-bg;
   border: 1px solid $border;
   border-radius: 0.5rem;
@@ -393,16 +396,16 @@ $text-subtle: #94a3b8;
 }
 
 .financialLabel {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: $text-muted;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.625rem;
 }
 
 .financialValue {
-  font-size: 1.125rem;
+  font-size: 1.375rem;
   font-weight: 700;
   color: $text;
   letter-spacing: -0.02em;
@@ -415,10 +418,10 @@ $text-subtle: #94a3b8;
 /* Kanban */
 .kanbanGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 1.5rem;
   flex: 1;
-  min-height: 220px;
+  min-height: 280px;
   overflow-x: auto;
 
   @media (max-width: 1200px) {
@@ -433,17 +436,17 @@ $text-subtle: #94a3b8;
   background: $card-bg;
   border: 1px solid $border;
   border-radius: 0.5rem;
-  padding: 0.75rem;
+  padding: 1.25rem;
 }
 
 .kanbanColumnHeader {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: $text-muted;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding-bottom: 0.75rem;
-  margin-bottom: 0.75rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid $border-light;
 }
 
@@ -510,5 +513,3 @@ $text-subtle: #94a3b8;
   font-weight: 600;
   color: $text-subtle;
 }
-
-

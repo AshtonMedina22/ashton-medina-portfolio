@@ -1,14 +1,14 @@
-/* Vendor Lifecycle Demo - ERP + Portal style, blue accent */
-$demo-blue: #2563eb;
-$demo-green: #059669;
-$demo-green-bg: #d1fae5;
-$demo-yellow: #d97706;
-$demo-yellow-bg: #fef3c7;
+/* Vendor Lifecycle Demo - ERP + Portal style, violet accent */
+$demo-blue: #a78bfa;
+$demo-green: #10b981;
+$demo-green-bg: #10b98115;
+$demo-yellow: #fbbf24;
+$demo-yellow-bg: #fbbf2415;
 $demo-red: #dc2626;
-$demo-red-bg: #fee2e2;
-$demo-border: #e5e7eb;
-$demo-bg: #fafbfc;
-$demo-card-bg: #ffffff;
+$demo-red-bg: #dc262615;
+$demo-border: #2e1064;
+$demo-bg: #09090b;
+$demo-card-bg: #1a1625;
 
 .demo {
   display: flex;
@@ -17,16 +17,18 @@ $demo-card-bg: #ffffff;
   min-height: 100%;
   background: $demo-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .sectionDivider {
-  padding: 0.75rem 1.25rem;
-  font-size: 0.75rem;
+  padding: 1.25rem 2rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #4b5563;
-  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+  color: #a1a1aa;
+  background: $demo-card-bg;
   border-top: 2px solid $demo-border;
   border-bottom: 2px solid $demo-border;
 }
@@ -36,36 +38,36 @@ $demo-card-bg: #ffffff;
 }
 
 .sectionDividerPortal {
-  padding: 1rem 1.25rem;
-  font-size: 0.75rem;
+  padding: 1.5rem 2rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #1e40af;
-  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
-  border-top: 2px solid #93c5fd;
-  border-bottom: 2px solid #93c5fd;
+  color: #a78bfa;
+  background: $demo-card-bg;
+  border-top: 2px solid $demo-border;
+  border-bottom: 2px solid $demo-border;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.25rem;
 }
 
 .sectionDividerSub {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: #3b82f6;
+  color: #a78bfa;
   text-transform: none;
   letter-spacing: 0.02em;
 }
 
 .internalPanel {
-  padding: 1.25rem;
+  padding: 2rem;
   background: $demo-card-bg;
   border: 1px solid $demo-border;
 }
 
 .portalPanel {
-  padding: 1.5rem 1.75rem;
+  padding: 2rem;
   background: $demo-card-bg;
   border: 1px solid $demo-border;
 }

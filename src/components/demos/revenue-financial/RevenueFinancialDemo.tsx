@@ -29,18 +29,18 @@ export function RevenueFinancialDemo() {
       {/* Project Header */}
       <div className={styles.section}>
         <div style={{ marginBottom: "0.75rem" }}>
-          <h1 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#111827", margin: "0 0 0.25rem 0" }}>
+          <h1 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#f5f3ff", margin: "0 0 0.25rem 0" }}>
             ENG-2024-0842 — TechCorp
           </h1>
-          <div style={{ fontSize: "0.875rem", color: "#6b7280" }}>
+          <div style={{ fontSize: "0.875rem", color: "#a1a1aa" }}>
             Client: TechCorp
             <span
               style={{
                 marginLeft: "0.75rem",
                 padding: "0.2rem 0.5rem",
                 borderRadius: "0.25rem",
-                backgroundColor: "#dbeafe",
-                color: "#2563eb",
+                backgroundColor: "#a78bfa30",
+                color: "#a78bfa",
                 fontWeight: 500,
               }}
             >
@@ -57,9 +57,9 @@ export function RevenueFinancialDemo() {
                 padding: "0.4rem 0.75rem",
                 fontSize: "0.8125rem",
                 fontWeight: 500,
-                color: "#2563eb",
-                backgroundColor: "#eff6ff",
-                border: "1px solid #bfdbfe",
+                color: "#a78bfa",
+                backgroundColor: "#a78bfa15",
+                border: "1px solid #a78bfa30",
                 borderRadius: "0.375rem",
                 cursor: "pointer",
               }}
@@ -81,12 +81,12 @@ export function RevenueFinancialDemo() {
         >
           {METRIC_CARDS.map((card) => {
             const stylesByVariant: Record<string, { bg: string; border: string; color: string }> = {
-              revenue: { bg: "#eff6ff", border: "#bfdbfe", color: "#1d4ed8" },
-              cost: { bg: "#fefce8", border: "#fde047", color: "#a16207" },
-              green: { bg: "#d1fae5", border: "#a7f3d0", color: "#059669" },
-              margin: { bg: "#d1fae5", border: "#a7f3d0", color: "#047857" },
-              marginPct: { bg: "#d1fae5", border: "#22c55e", color: "#047857" },
-              default: { bg: "#f9fafb", border: "#e5e7eb", color: "#111827" },
+              revenue: { bg: "#22d3ee15", border: "#22d3ee30", color: "#22d3ee" },
+              cost: { bg: "#fbbf2415", border: "#fbbf2430", color: "#fbbf24" },
+              green: { bg: "#10b98115", border: "#10b98130", color: "#10b981" },
+              margin: { bg: "#10b98115", border: "#10b98130", color: "#10b981" },
+              marginPct: { bg: "#10b98115", border: "#10b98130", color: "#10b981" },
+              default: { bg: "#27272a", border: "#3f3f46", color: "#fafafa" },
             };
             const s = stylesByVariant[card.variant] ?? stylesByVariant.default;
             return (
@@ -99,7 +99,7 @@ export function RevenueFinancialDemo() {
                   borderRadius: "0.375rem",
                 }}
               >
-                <div style={{ fontSize: "0.75rem", color: "#6b7280", marginBottom: "0.35rem" }}>
+                <div style={{ fontSize: "0.75rem", color: "#a1a1aa", marginBottom: "0.35rem" }}>
                   {card.label}
                 </div>
                 <div
@@ -119,33 +119,33 @@ export function RevenueFinancialDemo() {
 
       {/* Section 2 - Vendor Assignment Cost Breakdown */}
       <div className={styles.section}>
-        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#374151", margin: "0 0 1rem 0" }}>
+        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#f5f3ff", margin: "0 0 1rem 0" }}>
           Vendor Assignment Cost Breakdown
         </h3>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Vendor</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Service</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Est. Cost</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Actual Cost</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Variance</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Status</th>
+            <tr style={{ borderBottom: "1px solid #2e1064" }}>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Vendor</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Service</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Est. Cost</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Actual Cost</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Variance</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Status</th>
             </tr>
           </thead>
           <tbody>
             {VENDOR_ROWS.map((row) => (
-              <tr key={row.vendor} style={{ borderBottom: "1px solid #f3f4f6" }}>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.vendor}</td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.service}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right" }}>{row.est}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right" }}>{row.actual}</td>
+              <tr key={row.vendor} style={{ borderBottom: "1px solid #27272a" }}>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.vendor}</td>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.service}</td>
+                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", color: "#fafafa" }}>{row.est}</td>
+                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", color: "#fafafa" }}>{row.actual}</td>
                 <td
                   style={{
                     padding: "0.5rem 0.75rem",
                     textAlign: "right",
                     fontWeight: 600,
-                    color: row.varianceColor === "green" ? "#059669" : "#dc2626",
+                    color: row.varianceColor === "green" ? "#10b981" : "#dc2626",
                   }}
                 >
                   {row.variance}
@@ -157,8 +157,8 @@ export function RevenueFinancialDemo() {
                       borderRadius: "0.25rem",
                       fontSize: "0.75rem",
                       fontWeight: 500,
-                      backgroundColor: row.status === "Completed" ? "#d1fae5" : "#dbeafe",
-                      color: row.status === "Completed" ? "#059669" : "#2563eb",
+                      backgroundColor: row.status === "Completed" ? "#10b98115" : "#a78bfa15",
+                      color: row.status === "Completed" ? "#10b981" : "#a78bfa",
                     }}
                   >
                     {row.status}
@@ -172,7 +172,7 @@ export function RevenueFinancialDemo() {
 
       {/* Section 3 - Budget-to-Actual Chain — prominent visual */}
       <div className={styles.section}>
-        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#374151", margin: "0 0 1rem 0" }}>
+        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#f5f3ff", margin: "0 0 1rem 0" }}>
           Budget-to-Actual Chain
         </h3>
         <div
@@ -187,59 +187,59 @@ export function RevenueFinancialDemo() {
           <div
             style={{
               padding: "1.25rem 1.5rem",
-              backgroundColor: "#eff6ff",
-              border: "2px solid #93c5fd",
+              backgroundColor: "#a78bfa15",
+              border: "2px solid #a78bfa30",
               borderRadius: "0.5rem",
               fontWeight: 700,
-              color: "#1d4ed8",
+              color: "#a78bfa",
               fontSize: "1rem",
               minWidth: 160,
             }}
           >
             Pipeline Budget: $15,000
-            <div style={{ fontSize: "0.75rem", fontWeight: 500, color: "#3b82f6", marginTop: "0.25rem" }}>from CRM</div>
+            <div style={{ fontSize: "0.75rem", fontWeight: 500, color: "#a78bfa", marginTop: "0.25rem" }}>from CRM</div>
           </div>
-          <span style={{ fontSize: "1.5rem", color: "#2563eb", fontWeight: 700 }}>→</span>
+          <span style={{ fontSize: "1.5rem", color: "#a78bfa", fontWeight: 700 }}>→</span>
           <div
             style={{
               padding: "1.25rem 1.5rem",
-              backgroundColor: "#fefce8",
-              border: "2px solid #fde047",
+              backgroundColor: "#fbbf2415",
+              border: "2px solid #fbbf2430",
               borderRadius: "0.5rem",
               fontWeight: 700,
-              color: "#a16207",
+              color: "#fbbf24",
               fontSize: "1rem",
               minWidth: 160,
             }}
           >
             Quoted: $12,400
-            <div style={{ fontSize: "0.75rem", fontWeight: 500, color: "#ca8a04", marginTop: "0.25rem" }}>from Sales Order</div>
+            <div style={{ fontSize: "0.75rem", fontWeight: 500, color: "#fbbf24", marginTop: "0.25rem" }}>from Sales Order</div>
           </div>
-          <span style={{ fontSize: "1.5rem", color: "#2563eb", fontWeight: 700 }}>→</span>
+          <span style={{ fontSize: "1.5rem", color: "#a78bfa", fontWeight: 700 }}>→</span>
           <div
             style={{
               padding: "1.25rem 1.5rem",
-              backgroundColor: "#d1fae5",
-              border: "2px solid #22c55e",
+              backgroundColor: "#10b98115",
+              border: "2px solid #10b98130",
               borderRadius: "0.5rem",
               fontWeight: 700,
-              color: "#047857",
+              color: "#10b981",
               fontSize: "1rem",
               minWidth: 160,
             }}
           >
             Delivery Cost: $5,800
-            <div style={{ fontSize: "0.75rem", fontWeight: 500, color: "#059669", marginTop: "0.25rem" }}>from Project Actuals</div>
+            <div style={{ fontSize: "0.75rem", fontWeight: 500, color: "#10b981", marginTop: "0.25rem" }}>from Project Actuals</div>
           </div>
         </div>
-        <div style={{ fontSize: "1rem", fontWeight: 700, color: "#059669", padding: "0.75rem", backgroundColor: "#d1fae5", borderRadius: "0.375rem", display: "inline-block" }}>
+        <div style={{ fontSize: "1rem", fontWeight: 700, color: "#10b981", padding: "0.75rem", backgroundColor: "#10b98115", border: "1px solid #10b98130", borderRadius: "0.375rem", display: "inline-block" }}>
           Margin Captured: $6,600 (53.2%)
         </div>
       </div>
 
       {/* Pricing guardrail — min/max bands */}
       <div className={styles.section}>
-        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#374151", margin: "0 0 0.75rem 0" }}>
+        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#f5f3ff", margin: "0 0 0.75rem 0" }}>
           Pricing Guardrails
         </h3>
         <div
@@ -248,61 +248,59 @@ export function RevenueFinancialDemo() {
             alignItems: "center",
             gap: "1rem",
             padding: "1rem",
-            backgroundColor: "#f0fdf4",
-            border: "1px solid #86efac",
+            backgroundColor: "#10b98115",
+            border: "1px solid #10b98130",
             borderRadius: "0.5rem",
             fontSize: "0.875rem",
           }}
         >
           <div style={{ flex: 1 }}>
-            <div style={{ fontWeight: 600, color: "#166534", marginBottom: "0.25rem" }}>Service Type A</div>
+            <div style={{ fontWeight: 600, color: "#10b981", marginBottom: "0.25rem" }}>Service Type A</div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <span style={{ color: "#6b7280" }}>Min:</span>
-              <span style={{ fontWeight: 500 }}>$150/hr</span>
-              <span style={{ color: "#9ca3af" }}>–</span>
-              <span style={{ color: "#6b7280" }}>Max:</span>
-              <span style={{ fontWeight: 500 }}>$250/hr</span>
-              <span style={{ marginLeft: "0.5rem", padding: "0.1rem 0.35rem", backgroundColor: "#d1fae5", color: "#059669", borderRadius: "0.25rem", fontSize: "0.75rem", fontWeight: 600 }}>In range</span>
+              <span style={{ color: "#a1a1aa" }}>Min:</span>
+              <span style={{ fontWeight: 500, color: "#fafafa" }}>$150/hr</span>
+              <span style={{ color: "#52525b" }}>–</span>
+              <span style={{ color: "#a1a1aa" }}>Max:</span>
+              <span style={{ fontWeight: 500, color: "#fafafa" }}>$250/hr</span>
+              <span style={{ marginLeft: "0.5rem", padding: "0.1rem 0.35rem", backgroundColor: "#10b98130", color: "#10b981", borderRadius: "0.25rem", fontSize: "0.75rem", fontWeight: 600 }}>In range</span>
             </div>
           </div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontWeight: 600, color: "#166534", marginBottom: "0.25rem" }}>Line Item Floor</div>
-            <div style={{ color: "#6b7280" }}>Minimum $200 per line enforced</div>
+            <div style={{ fontWeight: 600, color: "#10b981", marginBottom: "0.25rem" }}>Line Item Floor</div>
+            <div style={{ color: "#a1a1aa" }}>Minimum $200 per line enforced</div>
           </div>
         </div>
       </div>
 
       {/* Section 4 - Revenue Attribution */}
       <div className={styles.section}>
-        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#374151", margin: "0 0 1rem 0" }}>
+        <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#f5f3ff", margin: "0 0 1rem 0" }}>
           Revenue Attribution
         </h3>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Role</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Name</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Split %</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Attributed Revenue</th>
+            <tr style={{ borderBottom: "1px solid #2e1064" }}>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Role</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Name</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Split %</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Attributed Revenue</th>
             </tr>
           </thead>
           <tbody>
             {REVENUE_ROWS.map((row) => (
-              <tr key={row.role} style={{ borderBottom: "1px solid #f3f4f6" }}>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.role}</td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.name}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right" }}>{row.split}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", fontWeight: 500 }}>{row.revenue}</td>
+              <tr key={row.role} style={{ borderBottom: "1px solid #27272a" }}>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.role}</td>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.name}</td>
+                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", color: "#fafafa" }}>{row.split}</td>
+                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", fontWeight: 500, color: "#fafafa" }}>{row.revenue}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <p style={{ fontSize: "0.75rem", color: "#6b7280", margin: "0.75rem 0 0 0" }}>
+        <p style={{ fontSize: "0.75rem", color: "#a1a1aa", margin: "0.75rem 0 0 0" }}>
           Referral tier: Year 1 (50% → 25% Year 2)
         </p>
       </div>
     </div>
   );
 }
-
-

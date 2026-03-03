@@ -1,34 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
   <defs>
-    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#fafbfc"/><stop offset="100%" style="stop-color:#f3f4f6"/></linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
+    </linearGradient>
   </defs>
-  <rect width="800" height="450" fill="url(#bg1)"/>
-  <text x="24" y="32" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#111827">Sales-to-Delivery Automation</text>
-  <rect x="20" y="48" width="380" height="380" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-  <rect x="400" y="48" width="380" height="380" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
-  <rect x="28" y="56" width="364" height="28" rx="4" fill="#d1fae5"/>
-  <text x="40" y="75" font-family="system-ui,sans-serif" font-size="11" font-weight="500" fill="#059669">Intake � Qualification � Approval � Booked</text>
-  <rect x="28" y="92" width="364" height="40" rx="4" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="40" y="112" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#111827">TechCorp " SO-2024-0842</text>
-  <rect x="28" y="140" width="364" height="120" rx="4" fill="#fff" stroke="#e5e7eb"/>
-  <line x1="28" y1="168" x2="392" y2="168" stroke="#e5e7eb"/>
-  <text x="40" y="158" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Line Items</text>
-  <rect x="28" y="268" width="364" height="36" rx="4" fill="#dbeafe"/>
-  <text x="40" y="290" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1d4ed8">Project auto-generated on confirmation</text>
-  <text x="420" y="70" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#111827">ENG-2024-0842  TechCorp</text>
-  <rect x="408" y="88" width="100" height="24" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
-  <text x="418" y="105" font-family="system-ui,sans-serif" font-size="10" fill="#2563eb">Sales Order</text>
-  <rect x="518" y="88" width="100" height="24" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
-  <text x="528" y="105" font-family="system-ui,sans-serif" font-size="10" fill="#2563eb">3 Vendors</text>
-  <rect x="408" y="120" width="85" height="52" rx="4" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="418" y="138" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">Revenue</text>
-  <text x="418" y="158" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#111827">$12,400</text>
-  <rect x="503" y="120" width="85" height="52" rx="4" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="513" y="138" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">Margin</text>
-  <text x="513" y="158" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#059669">53.2%</text>
-  <rect x="408" y="180" width="180" height="32" rx="4" fill="#f3f4f6"/>
-  <text x="418" y="200" font-family="system-ui,sans-serif" font-size="10" fill="#374151">To Do</text>
-  <rect x="412" y="218" width="172" height="48" rx="4" fill="#fff" stroke="#e5e7eb"/>
-  <text x="422" y="238" font-family="system-ui,sans-serif" font-size="10" fill="#111827">DJ Services Setup</text>
-  <text x="422" y="256" font-family="system-ui,sans-serif" font-size="9" fill="#6b7280">3/4 subtasks</text>
+  
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="50" fill="#09090b" opacity="0.8"/>
+  <text x="24" y="32" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#f5f3ff">Sales Order → Project</text>
+  
+  <!-- Left panel: Sales Order -->
+  <rect x="20" y="60" width="580" height="520" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  
+  <text x="40" y="85" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#a1a1aa">CONFIRMED SALES ORDER</text>
+  
+  <!-- Pipeline stages -->
+  <text x="40" y="115" font-family="system-ui,sans-serif" font-size="9" fill="#a78bfa">Intake</text>
+  <text x="95" y="115" font-family="system-ui,sans-serif" font-size="8" fill="#a1a1aa">→</text>
+  <text x="110" y="115" font-family="system-ui,sans-serif" font-size="9" fill="#a78bfa">Qualification</text>
+  <text x="210" y="115" font-family="system-ui,sans-serif" font-size="8" fill="#a1a1aa">→</text>
+  <text x="225" y="115" font-family="system-ui,sans-serif" font-size="9" fill="#a78bfa">Booked</text>
+  
+  <!-- Order header -->
+  <rect x="40" y="135" width="500" height="60" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="55" y="155" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#f5f3ff">TechCorp</text>
+  <text x="55" y="172" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">Order #SO-2024-0842 • ENG-2024-0842 • Type A • Dec 10, 2024</text>
+  
+  <!-- Table header -->
+  <text x="40" y="225" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#a1a1aa">SERVICE NAME</text>
+  <text x="240" y="225" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#a1a1aa">QTY</text>
+  <text x="290" y="225" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#a1a1aa">HOURS</text>
+  <text x="360" y="225" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#a1a1aa">SUBTOTAL</text>
+  
+  <!-- Table rows -->
+  <line x1="40" y1="235" x2="540" y2="235" stroke="#3f3f46" stroke-width="1"/>
+  <text x="40" y="258" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">Service A — Premier</text>
+  <text x="240" y="258" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">1</text>
+  <text x="290" y="258" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">8</text>
+  <text x="360" y="258" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">$3,200</text>
+  
+  <line x1="40" y1="268" x2="540" y2="268" stroke="#27272a" stroke-width="1"/>
+  <text x="40" y="291" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">Service B — Classic</text>
+  <text x="240" y="291" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">1</text>
+  <text x="290" y="291" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">6</text>
+  <text x="360" y="291" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">$2,800</text>
+  
+  <line x1="40" y1="301" x2="540" y2="301" stroke="#27272a" stroke-width="1"/>
+  <text x="40" y="324" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">Service C — Essentials</text>
+  <text x="240" y="324" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">1</text>
+  <text x="290" y="324" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">4</text>
+  <text x="360" y="324" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">$3,200</text>
+  
+  <line x1="40" y1="334" x2="540" y2="334" stroke="#27272a" stroke-width="1"/>
+  <text x="40" y="357" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">Service D — Standard</text>
+  <text x="240" y="357" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">1</text>
+  <text x="290" y="357" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">2</text>
+  <text x="360" y="357" font-family="system-ui,sans-serif" font-size="10" fill="#f5f3ff">$3,200</text>
+  
+  <line x1="40" y1="367" x2="540" y2="367" stroke="#3f3f46" stroke-width="2"/>
+  <text x="460" y="390" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#f5f3ff" text-anchor="end">TOTAL</text>
+  <text x="540" y="390" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#f5f3ff" text-anchor="end">$12,400</text>
+  
+  <!-- Status message -->
+  <rect x="40" y="420" width="500" height="40" rx="6" fill="#10b98120" stroke="#10b98130" stroke-width="1"/>
+  <text x="55" y="447" font-family="system-ui,sans-serif" font-size="10" fill="#10b981">✓ Project auto-generated on confirmation</text>
+  
+  <!-- Right panel: Auto-generated Project -->
+  <rect x="620" y="60" width="560" height="520" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  
+  <text x="640" y="85" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#a1a1aa">AUTO-GENERATED PROJECT</text>
+  
+  <!-- Project header -->
+  <rect x="640" y="105" width="520" height="50" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="655" y="130" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#f5f3ff">ENG-2024-0842 — TechCorp</text>
+  
+  <!-- Project metrics -->
+  <rect x="640" y="170" width="160" height="60" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="655" y="190" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">STATUS</text>
+  <text x="655" y="215" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#a78bfa">In Planning</text>
+  
+  <rect x="820" y="170" width="160" height="60" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="835" y="190" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">TIMELINE</text>
+  <text x="835" y="215" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#22d3ee">12 weeks</text>
+  
+  <rect x="1000" y="170" width="160" height="60" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="1015" y="190" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa">TEAM</text>
+  <text x="1015" y="215" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">6 members</text>
+  
+  <!-- Tasks -->
+  <text x="640" y="270" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#a1a1aa">GENERATED TASKS</text>
+  
+  <rect x="640" y="285" width="520" height="35" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="655" y="297" width="16" height="16" rx="3" fill="#a78bfa"/>
+  <text x="680" y="307" font-family="system-ui,sans-serif" font-size="11" fill="#f5f3ff">Implementation (12 tasks)</text>
+  
+  <rect x="640" y="330" width="520" height="35" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="655" y="342" width="16" height="16" rx="3" fill="#22d3ee"/>
+  <text x="680" y="352" font-family="system-ui,sans-serif" font-size="11" fill="#f5f3ff">Data Migration (8 tasks)</text>
+  
+  <rect x="640" y="375" width="520" height="35" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="655" y="387" width="16" height="16" rx="3" fill="#10b981"/>
+  <text x="680" y="397" font-family="system-ui,sans-serif" font-size="11" fill="#f5f3ff">Training (7 tasks)</text>
+  
+  <!-- Central arrow -->
+  <text x="600" y="340" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#a78bfa" text-anchor="middle">→</text>
+  <text x="600" y="365" font-family="system-ui,sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">creates</text>
 </svg>

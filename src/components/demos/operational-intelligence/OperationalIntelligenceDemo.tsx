@@ -13,17 +13,17 @@ import styles from "./operational-intelligence-demo.module.scss";
 const TABS = ["My Tasks", "Team", "Engagements", "Pipeline", "Vendors", "Revenue", "Custom"];
 
 const KPI_CARDS = [
-  { label: "Engagements This Week", value: "8", color: "#2563eb", icon: HiOutlineCalendar },
+  { label: "Engagements This Week", value: "8", color: "#a78bfa", icon: HiOutlineCalendar },
   { label: "Overdue Tasks", value: "3", color: "#dc2626", icon: HiOutlineExclamation },
-  { label: "Active Projects", value: "14", color: "#059669", icon: HiOutlineFolder },
-  { label: "Expected Revenue", value: "$84,200", color: "#1e40af", icon: HiOutlineCurrencyDollar },
+  { label: "Active Projects", value: "14", color: "#10b981", icon: HiOutlineFolder },
+  { label: "Expected Revenue", value: "$84,200", color: "#22d3ee", icon: HiOutlineCurrencyDollar },
 ];
 
 const TASKS_BY_STAGE = [
-  { label: "To Do", value: 12, color: "#2563eb" },
-  { label: "In Progress", value: 8, color: "#ca8a04" },
-  { label: "Waiting", value: 5, color: "#6b7280" },
-  { label: "Done", value: 22, color: "#059669" },
+  { label: "To Do", value: 12, color: "#a78bfa" },
+  { label: "In Progress", value: 8, color: "#fbbf24" },
+  { label: "Waiting", value: 5, color: "#52525b" },
+  { label: "Done", value: 22, color: "#10b981" },
 ];
 
 const ENGAGEMENTS = [
@@ -76,14 +76,14 @@ function TasksDoughnut() {
             width: 70,
             height: 70,
             borderRadius: "50%",
-            backgroundColor: "#fff",
-            border: "2px solid #e5e7eb",
+            backgroundColor: "#1a1625",
+            border: "2px solid #2e1064",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             fontSize: "0.875rem",
             fontWeight: 700,
-            color: "#111827",
+            color: "#f5f3ff",
           }}
         >
           {total} Tasks
@@ -93,8 +93,8 @@ function TasksDoughnut() {
         {TASKS_BY_STAGE.map((t) => (
           <div key={t.label} style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem" }}>
             <span style={{ width: 12, height: 12, borderRadius: 3, backgroundColor: t.color, flexShrink: 0 }} />
-            <span style={{ fontWeight: 500 }}>{t.label}</span>
-            <span style={{ color: "#6b7280", marginLeft: "auto" }}>{t.value}</span>
+            <span style={{ fontWeight: 500, color: "#f5f3ff" }}>{t.label}</span>
+            <span style={{ color: "#a1a1aa", marginLeft: "auto" }}>{t.value}</span>
           </div>
         ))}
       </div>
@@ -115,12 +115,12 @@ function EngagementCalendar() {
 
   return (
     <div>
-      <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "#374151", marginBottom: "0.75rem" }}>
+      <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f5f3ff", marginBottom: "0.75rem" }}>
         December 2024
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "2px", fontSize: "0.75rem" }}>
         {weekdays.map((d) => (
-          <div key={d} style={{ padding: "0.35rem", fontWeight: 600, color: "#6b7280", textAlign: "center" }}>
+          <div key={d} style={{ padding: "0.35rem", fontWeight: 600, color: "#a1a1aa", textAlign: "center" }}>
             {d}
           </div>
         ))}
@@ -133,12 +133,12 @@ function EngagementCalendar() {
               style={{
                 padding: "0.5rem",
                 minHeight: 48,
-                backgroundColor: "#fff",
-                border: "1px solid #e5e7eb",
+                backgroundColor: "#27272a",
+                border: "1px solid #3f3f46",
                 borderRadius: 4,
               }}
             >
-              <div style={{ fontWeight: 500, color: "#374151", marginBottom: evt ? "0.25rem" : 0 }}>{d}</div>
+              <div style={{ fontWeight: 500, color: "#f5f3ff", marginBottom: evt ? "0.25rem" : 0 }}>{d}</div>
               {evt && (
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem", marginTop: "0.2rem" }}>
                   <div
@@ -146,11 +146,11 @@ function EngagementCalendar() {
                       width: 6,
                       height: 6,
                       borderRadius: "50%",
-                      backgroundColor: evt.type === "pipeline" ? "#2563eb" : "#059669",
+                      backgroundColor: evt.type === "pipeline" ? "#a78bfa" : "#10b981",
                     }}
                   />
                   {evt.label && (
-                    <div style={{ fontSize: "0.65rem", color: "#6b7280", lineHeight: 1.2 }}>{evt.label}</div>
+                    <div style={{ fontSize: "0.65rem", color: "#a1a1aa", lineHeight: 1.2 }}>{evt.label}</div>
                   )}
                 </div>
               )}
@@ -158,12 +158,12 @@ function EngagementCalendar() {
           );
         })}
       </div>
-      <div style={{ display: "flex", gap: "1rem", marginTop: "0.75rem", fontSize: "0.75rem", color: "#6b7280" }}>
+      <div style={{ display: "flex", gap: "1rem", marginTop: "0.75rem", fontSize: "0.75rem", color: "#a1a1aa" }}>
         <span style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#2563eb" }} /> Pipeline
+          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#a78bfa" }} /> Pipeline
         </span>
         <span style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#059669" }} /> Confirmed
+          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#10b981" }} /> Confirmed
         </span>
       </div>
     </div>
@@ -181,10 +181,10 @@ export function OperationalIntelligenceDemo() {
           flexWrap: "wrap",
           gap: "1rem",
           paddingBottom: "1rem",
-          borderBottom: "1px solid #e5e7eb",
+          borderBottom: "1px solid #2e1064",
         }}
       >
-        <h1 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#111827", margin: 0 }}>
+        <h1 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#f5f3ff", margin: 0 }}>
           Operations Dashboard
         </h1>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}>
@@ -196,9 +196,9 @@ export function OperationalIntelligenceDemo() {
                 padding: "0.5rem 0.875rem",
                 fontSize: "0.8125rem",
                 fontWeight: tab === "Engagements" ? 700 : 600,
-                color: tab === "Engagements" ? "#fff" : "#4b5563",
-                backgroundColor: tab === "Engagements" ? "#2563eb" : "#f3f4f6",
-                border: tab === "Engagements" ? "none" : "1px solid #e5e7eb",
+                color: tab === "Engagements" ? "#09090b" : "#a1a1aa",
+                backgroundColor: tab === "Engagements" ? "#a78bfa" : "#27272a",
+                border: tab === "Engagements" ? "none" : "1px solid #3f3f46",
                 borderRadius: "0.375rem",
                 cursor: "pointer",
               }}
@@ -212,9 +212,10 @@ export function OperationalIntelligenceDemo() {
             style={{
               padding: "0.4rem 0.75rem",
               fontSize: "0.8125rem",
-              border: "1px solid #e5e7eb",
+              border: "1px solid #3f3f46",
               borderRadius: "0.25rem",
-              backgroundColor: "#fff",
+              backgroundColor: "#27272a",
+              color: "#fafafa",
             }}
           >
             <option>This Month</option>
@@ -223,9 +224,10 @@ export function OperationalIntelligenceDemo() {
             style={{
               padding: "0.4rem 0.75rem",
               fontSize: "0.8125rem",
-              border: "1px solid #e5e7eb",
+              border: "1px solid #3f3f46",
               borderRadius: "0.25rem",
-              backgroundColor: "#fff",
+              backgroundColor: "#27272a",
+              color: "#fafafa",
             }}
           >
             <option>All Projects</option>
@@ -237,10 +239,11 @@ export function OperationalIntelligenceDemo() {
             type="button"
             style={{
               padding: "0.4rem",
-              border: "1px solid #e5e7eb",
+              border: "1px solid #3f3f46",
               borderRadius: "0.25rem",
-              backgroundColor: "#fff",
+              backgroundColor: "#27272a",
               cursor: "pointer",
+              color: "#a1a1aa",
             }}
           >
             <HiOutlineRefresh size={18} />
@@ -250,13 +253,14 @@ export function OperationalIntelligenceDemo() {
             style={{
               padding: "0.4rem 0.75rem",
               fontSize: "0.8125rem",
-              border: "1px solid #e5e7eb",
+              border: "1px solid #3f3f46",
               borderRadius: "0.25rem",
-              backgroundColor: "#fff",
+              backgroundColor: "#27272a",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "0.35rem",
+              color: "#a1a1aa",
             }}
           >
             <HiOutlineDownload size={16} /> Export
@@ -266,9 +270,9 @@ export function OperationalIntelligenceDemo() {
               padding: "0.35rem 0.625rem",
               fontSize: "0.75rem",
               fontWeight: 600,
-              color: "#059669",
-              backgroundColor: "#d1fae5",
-              border: "1px solid #86efac",
+              color: "#10b981",
+              backgroundColor: "#10b98115",
+              border: "1px solid #10b98130",
               borderRadius: "0.25rem",
             }}
           >
@@ -290,8 +294,9 @@ export function OperationalIntelligenceDemo() {
             key={kpi.label}
             style={{
               padding: "1.25rem",
-              backgroundColor: kpi.color,
-              color: "#fff",
+              backgroundColor: kpi.color + "15",
+              border: `1px solid ${kpi.color}30`,
+              color: "#f5f3ff",
               borderRadius: "0.5rem",
               boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
               cursor: "pointer",
@@ -306,10 +311,10 @@ export function OperationalIntelligenceDemo() {
           >
             <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
               <div>
-                <div style={{ fontSize: "0.75rem", opacity: 0.9, marginBottom: "0.25rem" }}>{kpi.label}</div>
-                <div style={{ fontSize: "1.5rem", fontWeight: 700 }}>{kpi.value}</div>
+                <div style={{ fontSize: "0.75rem", opacity: 0.9, marginBottom: "0.25rem", color: "#a1a1aa" }}>{kpi.label}</div>
+                <div style={{ fontSize: "1.5rem", fontWeight: 700, color: kpi.color }}>{kpi.value}</div>
               </div>
-              <kpi.icon size={24} style={{ opacity: 0.8 }} />
+              <kpi.icon size={24} style={{ opacity: 0.8, color: kpi.color }} />
             </div>
           </div>
         ))}
@@ -326,8 +331,8 @@ export function OperationalIntelligenceDemo() {
         <div
           style={{
             padding: "1.25rem",
-            backgroundColor: "#fff",
-            border: "1px solid #e5e7eb",
+            backgroundColor: "#1a1625",
+            border: "1px solid #2e1064",
             borderRadius: "0.5rem",
             boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
           }}
@@ -337,13 +342,13 @@ export function OperationalIntelligenceDemo() {
         <div
           style={{
             padding: "1.25rem",
-            backgroundColor: "#fff",
-            border: "1px solid #e5e7eb",
+            backgroundColor: "#1a1625",
+            border: "1px solid #2e1064",
             borderRadius: "0.5rem",
             boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
           }}
         >
-          <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "#374151", marginBottom: "1rem" }}>
+          <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f5f3ff", marginBottom: "1rem" }}>
             Tasks by Stage
           </div>
           <TasksDoughnut />
@@ -354,25 +359,25 @@ export function OperationalIntelligenceDemo() {
       <div
         style={{
           padding: "1.25rem",
-          backgroundColor: "#fff",
-          border: "1px solid #e5e7eb",
+          backgroundColor: "#1a1625",
+          border: "1px solid #2e1064",
           borderRadius: "0.5rem",
           boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
         }}
       >
-        <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "#374151", margin: "0 0 1rem 0" }}>
+        <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "#f5f3ff", margin: "0 0 1rem 0" }}>
           Upcoming Engagements
         </h3>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Engagement ID</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Client</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Type</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Date</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Status</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Assigned Rep</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600 }}>Revenue</th>
+            <tr style={{ borderBottom: "1px solid #2e1064" }}>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Engagement ID</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Client</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Type</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Date</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Status</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Assigned Rep</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Revenue</th>
             </tr>
           </thead>
           <tbody>
@@ -380,14 +385,14 @@ export function OperationalIntelligenceDemo() {
               <tr
                 key={row.id}
                 style={{
-                  borderBottom: "1px solid #f3f4f6",
+                  borderBottom: "1px solid #27272a",
                   cursor: "pointer",
                 }}
               >
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.id}</td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.client}</td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.type}</td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.date}</td>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.id}</td>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.client}</td>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.type}</td>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.date}</td>
                 <td style={{ padding: "0.5rem 0.75rem" }}>
                   <span
                     style={{
@@ -397,23 +402,23 @@ export function OperationalIntelligenceDemo() {
                       fontWeight: 500,
                       backgroundColor:
                         row.statusColor === "green"
-                          ? "#d1fae5"
+                          ? "#10b98115"
                           : row.statusColor === "blue"
-                            ? "#dbeafe"
-                            : "#fef3c7",
+                            ? "#a78bfa15"
+                            : "#fbbf2415",
                       color:
                         row.statusColor === "green"
-                          ? "#059669"
+                          ? "#10b981"
                           : row.statusColor === "blue"
-                            ? "#2563eb"
-                            : "#ca8a04",
+                            ? "#a78bfa"
+                            : "#fbbf24",
                     }}
                   >
                     {row.status}
                   </span>
                 </td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{row.rep}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", fontWeight: 500 }}>{row.revenue}</td>
+                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.rep}</td>
+                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", fontWeight: 500, color: "#fafafa" }}>{row.revenue}</td>
               </tr>
             ))}
           </tbody>
@@ -425,9 +430,9 @@ export function OperationalIntelligenceDemo() {
             justifyContent: "space-between",
             marginTop: "1rem",
             paddingTop: "0.75rem",
-            borderTop: "1px solid #e5e7eb",
+            borderTop: "1px solid #2e1064",
             fontSize: "0.8125rem",
-            color: "#6b7280",
+            color: "#a1a1aa",
           }}
         >
           <span>Showing 1-5 of 23</span>
@@ -436,10 +441,11 @@ export function OperationalIntelligenceDemo() {
               type="button"
               style={{
                 padding: "0.25rem 0.5rem",
-                border: "1px solid #e5e7eb",
+                border: "1px solid #3f3f46",
                 borderRadius: "0.25rem",
-                backgroundColor: "#fff",
+                backgroundColor: "#27272a",
                 cursor: "pointer",
+                color: "#a1a1aa",
               }}
             >
               ←
@@ -448,10 +454,11 @@ export function OperationalIntelligenceDemo() {
               type="button"
               style={{
                 padding: "0.25rem 0.5rem",
-                border: "1px solid #e5e7eb",
+                border: "1px solid #3f3f46",
                 borderRadius: "0.25rem",
-                backgroundColor: "#fff",
+                backgroundColor: "#27272a",
                 cursor: "pointer",
+                color: "#a1a1aa",
               }}
             >
               →
@@ -467,19 +474,17 @@ export function OperationalIntelligenceDemo() {
           gap: "0.5rem",
           marginTop: "1rem",
           padding: "0.75rem",
-          backgroundColor: "#f9fafb",
-          border: "1px solid #e5e7eb",
+          backgroundColor: "#27272a",
+          border: "1px solid #3f3f46",
           borderRadius: "0.375rem",
           fontSize: "0.75rem",
         }}
       >
-        <span style={{ fontWeight: 600, color: "#6b7280" }}>Other views:</span>
-        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#dbeafe", color: "#2563eb", borderRadius: "0.25rem", fontWeight: 500 }}>Revenue</span>
-        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#f3f4f6", color: "#4b5563", borderRadius: "0.25rem" }}>Team</span>
-        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#f3f4f6", color: "#4b5563", borderRadius: "0.25rem" }}>Pipeline</span>
+        <span style={{ fontWeight: 600, color: "#a1a1aa" }}>Other views:</span>
+        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#a78bfa15", color: "#a78bfa", borderRadius: "0.25rem", fontWeight: 500 }}>Revenue</span>
+        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#27272a", color: "#a1a1aa", borderRadius: "0.25rem" }}>Team</span>
+        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#27272a", color: "#a1a1aa", borderRadius: "0.25rem" }}>Pipeline</span>
       </div>
     </div>
   );
 }
-
-
