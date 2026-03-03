@@ -1,20 +1,20 @@
 /* Sales-to-Delivery Demo - Modern ERP interface, platform-agnostic */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-$blue: #2563eb;
-$blue-light: #3b82f6;
-$blue-bg: #eff6ff;
-$blue-border: #bfdbfe;
-$green: #059669;
-$green-bg: #d1fae5;
-$green-border: #a7f3d0;
-$border: #e2e8f0;
-$border-light: #f1f5f9;
-$bg: #f8fafc;
-$card-bg: #ffffff;
-$text: #0f172a;
-$text-muted: #64748b;
-$text-subtle: #94a3b8;
+$blue: #a78bfa;
+$blue-light: #c4b5fd;
+$blue-bg: #a78bfa15;
+$blue-border: #a78bfa30;
+$green: #10b981;
+$green-bg: #10b98115;
+$green-border: #10b98130;
+$border: #2e1064;
+$border-light: #27272a;
+$bg: #09090b;
+$card-bg: #1a1625;
+$text: #f5f3ff;
+$text-muted: #a1a1aa;
+$text-subtle: #52525b;
 
 .demo {
   min-height: 100%;
@@ -509,79 +509,4 @@ $text-subtle: #94a3b8;
   font-size: 0.6875rem;
   font-weight: 600;
   color: $text-subtle;
-}
-
-/* Demo gallery for mockups */
-.demoHeader {
-  padding: 2rem 1.5rem;
-  background: linear-gradient(135deg, #09090b 0%, #0f0a1a 100%);
-  border-bottom: 1px solid #2e1064;
-  margin-bottom: 2rem;
-
-  h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #f5f3ff;
-    margin: 0 0 0.5rem 0;
-    letter-spacing: -0.02em;
-  }
-
-  p {
-    font-size: 1rem;
-    color: #a1a1aa;
-    margin: 0;
-  }
-}
-
-.mockupGallery {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 0 1.5rem 2rem;
-}
-
-.mockupCard {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background: #1a1625;
-  border: 1px solid #2e1064;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.3s ease;
-
-  &:hover {
-    border-color: #a78bfa;
-  }
-}
-
-.mockupImageContainer {
-  width: 100%;
-  background: #09090b;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-
-.mockupInfo {
-  padding: 1.5rem;
-
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #f5f3ff;
-    margin: 0 0 0.75rem 0;
-    letter-spacing: -0.01em;
-  }
-
-  p {
-    font-size: 0.95rem;
-    color: #a1a1aa;
-    margin: 0;
-    line-height: 1.6;
-  }
 }
