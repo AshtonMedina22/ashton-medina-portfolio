@@ -92,36 +92,26 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 /* Demo CTA */
 .demoCtaWrap {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 4rem;
-  margin-top: 0;
-  text-align: left;
+  display: none;
 }
 
 .demoCta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--neutral-on-background-strong);
-  background: var(--neutral-alpha-strong);
-  border-radius: $radius-md;
-  text-decoration: none;
-  transition: all $transition;
-  letter-spacing: -0.01em;
-  border: none;
-  cursor: pointer;
+  display: none;
+}
 
-  &:hover {
-    background: var(--neutral-on-background-strong);
-    color: var(--neutral-alpha-strong);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
+/* Demo Section - Embedded */
+.demoSection {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  border: 1px solid var(--brand-alpha-medium);
+  background: var(--neutral-background-weak);
+  min-width: 0;
 }
 
 /* Metrics */

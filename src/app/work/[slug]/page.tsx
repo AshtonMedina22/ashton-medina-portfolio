@@ -13,6 +13,10 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { ScrollToHash, CustomMDX, TechStack, ProjectTechStack } from "@/components";
+import { SalesToDeliveryDemo } from "@/components/demos/sales-to-delivery/SalesToDeliveryDemo";
+import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorLifecycleDemo";
+import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
+import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
 import { Metadata } from "next";
 import styles from "./ProjectPage.module.scss";
 
@@ -165,17 +169,13 @@ export default async function Project({
         </div>
       )}
 
-      {/* Try Interactive Demo CTA */}
+      {/* Interactive Demo - Embedded directly on page */}
       {post.metadata.demo && (
-        <div className={styles.demoCtaWrap}>
-          <SmartLink
-            href={`/work/${post.slug}/demo`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.demoCta}
-          >
-            Try Interactive Demo
-          </SmartLink>
+        <div className={styles.demoSection}>
+          {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
+          {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
+          {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
+          {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
         </div>
       )}
 
