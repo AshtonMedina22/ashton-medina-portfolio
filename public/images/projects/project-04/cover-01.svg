@@ -1,27 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-  <rect width="800" height="450" fill="#09090b"/>
-  <text x="24" y="36" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#f5f3ff">Operations Dashboard</text>
-  <rect x="24" y="46" width="60" height="24" rx="4" fill="#a78bfa"/>
-  <text x="34" y="63" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#09090b">Engagements</text>
-  <rect x="24" y="84" width="180" height="70" rx="6" fill="#a78bfa"/>
-  <text x="36" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Engagements This Week</text>
-  <text x="36" y="138" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#fff">8</text>
-  <rect x="214" y="84" width="180" height="70" rx="6" fill="#dc2626"/>
-  <text x="226" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Overdue Tasks</text>
-  <text x="226" y="138" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#fff">3</text>
-  <rect x="404" y="84" width="180" height="70" rx="6" fill="#10b981"/>
-  <text x="416" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Active Projects</text>
-  <text x="416" y="138" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#fff">14</text>
-  <rect x="594" y="84" width="182" height="70" rx="6" fill="#22d3ee"/>
-  <text x="606" y="115" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Expected Revenue</text>
-  <text x="606" y="138" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#fff">$84,200</text>
-  <rect x="24" y="168" width="470" height="140" rx="8" fill="#1a1625" stroke="#2e1064"/>
-  <text x="36" y="195" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Engagement Calendar</text>
-  <rect x="36" y="208" width="50" height="50" rx="4" fill="#27272a"/>
-  <rect x="506" y="168" width="270" height="140" rx="8" fill="#1a1625" stroke="#2e1064"/>
-  <text x="518" y="195" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Tasks by Stage</text>
-  <circle cx="641" cy="248" r="45" fill="none" stroke="#2e1064" stroke-width="12"/>
-  <text x="641" y="255" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#f5f3ff" text-anchor="middle">47</text>
-  <rect x="24" y="322" width="752" height="100" rx="8" fill="#1a1625" stroke="#2e1064"/>
-  <text x="36" y="355" font-family="system-ui,sans-serif" font-size="10" fill="#a1a1aa">Upcoming Engagements</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="darkBg13" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#darkBg13)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
+  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Operations Dashboard</text>
+  <text x="1100" y="38" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa" text-anchor="end">Last synced: 2 minutes ago</text>
+  
+  <!-- Filter bar -->
+  <rect x="24" y="75" width="1152" height="40" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="40" y="84" width="80" height="22" rx="4" fill="#a78bfa"/>
+  <text x="80" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#09090b" text-anchor="middle">This Month</text>
+  <text x="140" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">⬇ All Teams</text>
+  <text x="230" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">All Projects</text>
+  <text x="1100" y="100" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="end">🔄 ⚙️</text>
+  
+  <!-- KPI Cards -->
+  <!-- Row 1 -->
+  <rect x="24" y="130" width="270" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="40" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">ACTIVE ENGAGEMENTS</text>
+  <text x="40" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#22d3ee">24</text>
+  <text x="40" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">+18% vs last month</text>
+  
+  <rect x="316" y="130" width="270" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="332" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">REVENUE PIPELINE</text>
+  <text x="332" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#a78bfa">$847K</text>
+  <text x="332" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">+12% vs last month</text>
+  
+  <rect x="608" y="130" width="270" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="624" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">AVG PROJECT MARGIN</text>
+  <text x="624" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#10b981">48.2%</text>
+  <text x="624" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Target: 50%</text>
+  
+  <rect x="900" y="130" width="276" height="110" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="916" y="155" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">DELIVERIES ON TIME</text>
+  <text x="916" y="185" font-family="Open Sans, sans-serif" font-size="36" font-weight="700" fill="#10b981">94%</text>
+  <text x="916" y="210" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">23 of 24 projects</text>
+  
+  <!-- Charts row -->
+  <!-- Line chart -->
+  <rect x="24" y="265" width="560" height="310" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="40" y="290" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Revenue Trend</text>
+  
+  <!-- Chart area -->
+  <rect x="40" y="310" width="510" height="250" rx="6" fill="#27272a" opacity="0.5"/>
+  
+  <!-- Fake line chart -->
+  <polyline points="60,520 120,480 180,510 240,460 300,440 360,470 420,420 480,460 540,410" 
+            stroke="#a78bfa" stroke-width="2" fill="none"/>
+  <circle cx="60" cy="520" r="3" fill="#a78bfa"/>
+  <circle cx="120" cy="480" r="3" fill="#a78bfa"/>
+  <circle cx="540" cy="410" r="3" fill="#a78bfa"/>
+  
+  <!-- Y axis labels -->
+  <text x="30" y="525" font-family="Open Sans, sans-serif" font-size="8" fill="#a1a1aa">$0</text>
+  <text x="20" y="470" font-family="Open Sans, sans-serif" font-size="8" fill="#a1a1aa">$250K</text>
+  <text x="20" y="315" font-family="Open Sans, sans-serif" font-size="8" fill="#a1a1aa">$500K</text>
+  
+  <!-- Bar chart -->
+  <rect x="616" y="265" width="560" height="310" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="632" y="290" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Project Distribution by Status</text>
+  
+  <!-- Legend -->
+  <rect x="632" y="310" width="20" height="20" rx="3" fill="#a78bfa"/>
+  <text x="660" y="323" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">In Progress (12)</text>
+  
+  <rect x="850" y="310" width="20" height="20" rx="3" fill="#22d3ee"/>
+  <text x="878" y="323" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Completed (7)</text>
+  
+  <rect x="1050" y="310" width="20" height="20" rx="3" fill="#a1a1aa"/>
+  <text x="1078" y="323" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Planned (5)</text>
+  
+  <!-- Simple bar visualization -->
+  <rect x="650" y="360" width="40" height="150" rx="4" fill="#a78bfa"/>
+  <text x="670" y="530" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">12</text>
+  
+  <rect x="750" y="410" width="40" height="100" rx="4" fill="#22d3ee"/>
+  <text x="770" y="530" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">7</text>
+  
+  <rect x="850" y="470" width="40" height="40" rx="4" fill="#a1a1aa"/>
+  <text x="870" y="530" font-family="Open Sans, sans-serif" font-size="9" fill="#09090b" text-anchor="middle">5</text>
 </svg>
