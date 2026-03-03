@@ -1,17 +1,86 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-  <rect width="800" height="450" fill="#fafbfc"/>
-  <rect x="20" y="20" width="760" height="410" rx="8" fill="#fff" stroke="#e5e7eb"/>
-  <text x="40" y="52" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#111827">Sales-to-Delivery Platform</text>
-  <text x="40" y="78" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Split-panel ERP: Confirmed Order ’ Auto-Generated Project</text>
-  <rect x="40" y="100" width="360" height="140" rx="6" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="52" y="125" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#374151">Confirmed Sales Order</text>
-  <rect x="52" y="138" width="120" height="24" rx="4" fill="#d1fae5"/>
-  <text x="62" y="155" font-family="system-ui,sans-serif" font-size="10" fill="#059669">Booked</text>
-  <rect x="400" y="100" width="360" height="140" rx="6" fill="#f9fafb" stroke="#e5e7eb"/>
-  <text x="412" y="125" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#374151">Auto-Generated Project</text>
-  <rect x="412" y="138" width="80" height="24" rx="4" fill="#eff6ff"/>
-  <text x="422" y="155" font-family="system-ui,sans-serif" font-size="10" fill="#2563eb">Kanban</text>
-  <rect x="40" y="260" width="720" height="150" rx="6" fill="#dbeafe"/>
-  <text x="52" y="295" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#1d4ed8">Try Interactive Demo</text>
-  <text x="52" y="320" font-family="system-ui,sans-serif" font-size="12" fill="#2563eb">Click to open the full demo experience</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="darkBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="successGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#darkBg2)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
+  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Project Dashboard</text>
+  
+  <!-- Success banner -->
+  <rect x="24" y="75" width="1152" height="50" rx="8" fill="url(#successGrad)" stroke="#a78bfa" stroke-width="1"/>
+  <circle cx="48" cy="100" r="8" fill="#a78bfa"/>
+  <text x="65" y="105" font-family="Open Sans, sans-serif" font-size="12" fill="#f5f3ff">Order ENG-2024-0842 processed. Project auto-generated with 27 tasks</text>
+  
+  <!-- Left column: Project info -->
+  <rect x="24" y="140" width="560" height="440" rx="12" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  
+  <!-- Project header -->
+  <rect x="40" y="160" width="528" height="60" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="56" y="180" font-family="Open Sans, sans-serif" font-size="12" fill="#a1a1aa">PROJECT</text>
+  <text x="56" y="205" font-family="Open Sans, sans-serif" font-size="18" font-weight="700" fill="#f5f3ff">TechCorp Platform Implementation</text>
+  
+  <!-- Status cards -->
+  <rect x="40" y="235" width="165" height="75" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="56" y="255" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">STATUS</text>
+  <text x="56" y="280" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#22d3ee">In Planning</text>
+  <text x="56" y="300" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">Created 2 minutes ago</text>
+  
+  <rect x="219" y="235" width="165" height="75" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="235" y="255" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">TIMELINE</text>
+  <text x="235" y="280" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#f5f3ff">12 weeks</text>
+  <text x="235" y="300" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">Mar 15 - May 15</text>
+  
+  <rect x="398" y="235" width="170" height="75" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="414" y="255" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">TEAM</text>
+  <text x="414" y="280" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#f5f3ff">6 members</text>
+  <text x="414" y="300" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">Auto-assigned</text>
+  
+  <!-- Task summary -->
+  <text x="56" y="340" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Tasks Generated</text>
+  
+  <rect x="40" y="360" width="528" height="50" rx="8" fill="#27272a" stroke="#2e1064" stroke-width="1"/>
+  <rect x="56" y="375" width="30" height="20" rx="4" fill="#a78bfa"/>
+  <text x="94" y="388" font-family="Open Sans, sans-serif" font-size="13" font-weight="600" fill="#f5f3ff">Implementation (12)</text>
+  
+  <rect x="40" y="420" width="528" height="50" rx="8" fill="#27272a" stroke="#2e1064" stroke-width="1"/>
+  <rect x="56" y="435" width="30" height="20" rx="4" fill="#22d3ee"/>
+  <text x="94" y="448" font-family="Open Sans, sans-serif" font-size="13" font-weight="600" fill="#f5f3ff">Data Migration (8)</text>
+  
+  <!-- Right column: Task breakdown -->
+  <rect x="616" y="140" width="560" height="440" rx="12" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  
+  <!-- Task header -->
+  <text x="632" y="165" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Task Distribution</text>
+  <rect x="632" y="175" width="510" height="2" fill="#a78bfa" opacity="0.3"/>
+  
+  <!-- Task list -->
+  <rect x="632" y="200" width="510" height="45" rx="6" fill="#27272a" opacity="0.7" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="648" y="215" width="20" height="20" rx="4" fill="#a78bfa"/>
+  <text x="678" y="228" font-family="Open Sans, sans-serif" font-size="12" fill="#f5f3ff">Core System Configuration</text>
+  <text x="1080" y="228" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">Assigned</text>
+  
+  <rect x="632" y="260" width="510" height="45" rx="6" fill="#27272a" opacity="0.7" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="648" y="275" width="20" height="20" rx="4" fill="#a78bfa"/>
+  <text x="678" y="288" font-family="Open Sans, sans-serif" font-size="12" fill="#f5f3ff">User Access & Permissions</text>
+  <text x="1080" y="288" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">Assigned</text>
+  
+  <rect x="632" y="320" width="510" height="45" rx="6" fill="#27272a" opacity="0.7" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="648" y="335" width="20" height="20" rx="4" fill="#22d3ee"/>
+  <text x="678" y="348" font-family="Open Sans, sans-serif" font-size="12" fill="#f5f3ff">Data Validation & Testing</text>
+  <text x="1080" y="348" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">Pending</text>
+  
+  <rect x="632" y="380" width="510" height="45" rx="6" fill="#27272a" opacity="0.5" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="648" y="395" width="20" height="20" rx="4" fill="#52525b"/>
+  <text x="678" y="408" font-family="Open Sans, sans-serif" font-size="12" fill="#a1a1aa">Training & Documentation</text>
+  <text x="1080" y="408" font-family="Open Sans, sans-serif" font-size="11" fill="#52525b">Scheduled</text>
 </svg>

@@ -1,14 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-  <rect width="800" height="450" fill="#fafbfc"/>
-  <text x="24" y="48" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#111827">Revenue &amp; Financial Control</text>
-  <text x="24" y="74" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Live margin computation " Budget-to-actual " Attribution</text>
-  <rect x="24" y="100" width="180" height="90" rx="6" fill="#f9fafb"/>
-  <text x="36" y="130" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Financial Summary</text>
-  <text x="36" y="155" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#059669">$6,600</text>
-  <text x="36" y="175" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Margin 53.2%</text>
-  <rect x="220" y="100" width="360" height="90" rx="6" fill="#fff" stroke="#e5e7eb"/>
-  <text x="232" y="130" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Budget-to-Actual Chain</text>
-  <text x="232" y="155" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Pipeline ’ Quoted ’ Delivery</text>
-  <rect x="24" y="210" width="752" height="180" rx="8" fill="#dbeafe"/>
-  <text x="400" y="295" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#1d4ed8" text-anchor="middle">Click to open interactive demo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="darkBg10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#darkBg10)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
+  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Pricing Enforcement Engine</text>
+  
+  <!-- Title -->
+  <text x="24" y="95" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#f5f3ff">Price Bands & Approval Workflow</text>
+  
+  <!-- Pricing bands visualization -->
+  <!-- Header -->
+  <rect x="24" y="120" width="1152" height="50" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="40" y="150" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Price-Per-Unit Bands: Implementation Services</text>
+  
+  <!-- Band visualization -->
+  <rect x="24" y="190" width="1152" height="80" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  
+  <!-- Min price -->
+  <rect x="40" y="210" width="200" height="50" rx="6" fill="#27272a" border="#3f3f46" border-width="1"/>
+  <text x="140" y="225" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">MINIMUM</text>
+  <text x="140" y="248" font-family="Open Sans, sans-serif" font-size="16" font-weight="700" fill="#f5f3ff" text-anchor="middle">$145/hr</text>
+  
+  <!-- Good price (green) -->
+  <rect x="280" y="200" width="500" height="70" rx="6" fill="#10b98112" border="#10b981" border-width="2"/>
+  <text x="530" y="218" font-family="Open Sans, sans-serif" font-size="10" fill="#10b981" text-anchor="middle">APPROVED RANGE</text>
+  <text x="530" y="248" font-family="Open Sans, sans-serif" font-size="18" font-weight="700" fill="#10b981" text-anchor="middle">$175 - $225/hr</text>
+  <text x="530" y="262" font-family="Open Sans, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">Current bid: $195/hr âœ“</text>
+  
+  <!-- Max price -->
+  <rect x="840" y="210" width="200" height="50" rx="6" fill="#27272a" border="#3f3f46" border-width="1"/>
+  <text x="940" y="225" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">MAXIMUM</text>
+  <text x="940" y="248" font-family="Open Sans, sans-serif" font-size="16" font-weight="700" fill="#f5f3ff" text-anchor="middle">$275/hr</text>
+  
+  <!-- Approval workflows -->
+  <text x="24" y="310" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Discount Approval Workflow</text>
+  
+  <!-- Workflow box -->
+  <rect x="24" y="325" width="1152" height="250" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  
+  <!-- Step 1: Request -->
+  <rect x="50" y="350" width="200" height="90" rx="8" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <circle cx="150" cy="370" r="6" fill="#a78bfa"/>
+  <text x="150" y="410" font-family="Open Sans, sans-serif" font-size="10" font-weight="600" fill="#f5f3ff" text-anchor="middle">Sales Rep Requests</text>
+  <text x="150" y="427" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">Discount</text>
+  <text x="150" y="450" font-family="Open Sans, sans-serif" font-size="9" fill="#a78bfa" font-weight="600" text-anchor="middle">$165/hr (Below Band)</text>
+  
+  <!-- Arrow -->
+  <line x1="250" y1="395" x2="290" y2="395" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowViolet)"/>
+  
+  <!-- Step 2: Trigger -->
+  <rect x="290" y="350" width="200" height="90" rx="8" fill="#27272a" stroke="#fbbf24" stroke-width="2"/>
+  <circle cx="390" cy="370" r="6" fill="#fbbf24"/>
+  <text x="390" y="410" font-family="Open Sans, sans-serif" font-size="10" font-weight="600" fill="#fbbf24" text-anchor="middle">Pricing Guard</text>
+  <text x="390" y="427" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">Triggered</text>
+  <text x="390" y="450" font-family="Open Sans, sans-serif" font-size="9" fill="#fbbf24" font-weight="600" text-anchor="middle">Below minimum</text>
+  
+  <!-- Arrow -->
+  <line x1="490" y1="395" x2="530" y2="395" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowViolet)"/>
+  
+  <!-- Step 3: Approval -->
+  <rect x="530" y="350" width="200" height="90" rx="8" fill="#27272a" stroke="#a78bfa" stroke-width="2"/>
+  <circle cx="630" cy="370" r="6" fill="#a78bfa"/>
+  <text x="630" y="410" font-family="Open Sans, sans-serif" font-size="10" font-weight="600" fill="#f5f3ff" text-anchor="middle">Manager Reviews</text>
+  <text x="630" y="427" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">+ Approves</text>
+  <text x="630" y="450" font-family="Open Sans, sans-serif" font-size="9" fill="#a78bfa" font-weight="600" text-anchor="middle">Within tolerance</text>
+  
+  <!-- Arrow -->
+  <line x1="730" y1="395" x2="770" y2="395" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowViolet)"/>
+  
+  <!-- Step 4: Audit -->
+  <rect x="770" y="350" width="200" height="90" rx="8" fill="#27272a" stroke="#10b981" stroke-width="2"/>
+  <circle cx="870" cy="370" r="6" fill="#10b981"/>
+  <text x="870" y="410" font-family="Open Sans, sans-serif" font-size="10" font-weight="600" fill="#10b981" text-anchor="middle">Logged &amp; Audited</text>
+  <text x="870" y="427" font-family="Open Sans, sans-serif" font-size="9" fill="#a1a1aa" text-anchor="middle">Order Proceeds</text>
+  <text x="870" y="450" font-family="Open Sans, sans-serif" font-size="9" fill="#10b981" font-weight="600" text-anchor="middle">With full record</text>
+  
+  <!-- Benefits -->
+  <text x="50" y="480" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa">Impact</text>
+  
+  <rect x="50" y="500" width="330" height="55" rx="8" fill="#27272a" opacity="0.8" stroke="#3f3f46" stroke-width="1"/>
+  <circle cx="70" cy="520" r="4" fill="#a78bfa"/>
+  <text x="90" y="518" font-family="Open Sans, sans-serif" font-size="11" fill="#f5f3ff">No unauthorized discounts</text>
+  <text x="90" y="536" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Every deviation requires approval</text>
+  
+  <rect x="410" y="500" width="330" height="55" rx="8" fill="#27272a" opacity="0.8" stroke="#3f3f46" stroke-width="1"/>
+  <circle cx="430" cy="520" r="4" fill="#a78bfa"/>
+  <text x="450" y="518" font-family="Open Sans, sans-serif" font-size="11" fill="#f5f3ff">Complete audit trail</text>
+  <text x="450" y="536" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Who discounted, when, why</text>
+  
+  <rect x="770" y="500" width="330" height="55" rx="8" fill="#27272a" opacity="0.8" stroke="#3f3f46" stroke-width="1"/>
+  <circle cx="790" cy="520" r="4" fill="#a78bfa"/>
+  <text x="810" y="518" font-family="Open Sans, sans-serif" font-size="11" fill="#f5f3ff">Margin protection</text>
+  <text x="810" y="536" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">System enforces floor, not policy</text>
 </svg>

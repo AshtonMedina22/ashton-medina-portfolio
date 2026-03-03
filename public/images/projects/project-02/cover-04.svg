@@ -1,15 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-  <rect width="800" height="450" fill="#fafbfc"/>
-  <text x="24" y="48" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#111827">Vendor Lifecycle Platform</text>
-  <text x="24" y="78" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">Governed vendor management " E-signature " Compliance</text>
-  <rect x="24" y="110" width="240" height="120" rx="8" fill="#eff6ff"/>
-  <text x="36" y="150" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#2563eb">Admin View</text>
-  <text x="36" y="175" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Document tracking, rate cards</text>
-  <rect x="284" y="110" width="240" height="120" rx="8" fill="#d1fae5"/>
-  <text x="296" y="150" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#059669">Portal View</text>
-  <text x="296" y="175" font-family="system-ui,sans-serif" font-size="11" fill="#374151">Work orders, Accept/Decline</text>
-  <rect x="544" y="110" width="240" height="120" rx="8" fill="#fef3c7"/>
-  <text x="556" y="150" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#d97706">No pricing in portal</text>
-  <rect x="24" y="250" width="752" height="80" rx="8" fill="#2563eb"/>
-  <text x="400" y="292" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">Try Interactive Demo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="darkBg8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#darkBg8)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
+  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Compliance & Performance</text>
+  
+  <!-- Compliance overview -->
+  <text x="24" y="95" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Compliance Status</text>
+  
+  <!-- Top stats -->
+  <rect x="24" y="110" width="550" height="100" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="40" y="135" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">OVERALL COMPLIANCE</text>
+  <text x="40" y="165" font-family="Open Sans, sans-serif" font-size="32" font-weight="700" fill="#10b981">100%</text>
+  <text x="40" y="185" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">All documents current • No alerts</text>
+  
+  <rect x="606" y="110" width="550" height="100" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <text x="622" y="135" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">NEXT EXPIRATION</text>
+  <text x="622" y="165" font-family="Open Sans, sans-serif" font-size="28" font-weight="700" fill="#a78bfa">45 days</text>
+  <text x="622" y="185" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Insurance • Auto-renewal in place</text>
+  
+  <!-- Documents list -->
+  <text x="24" y="240" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Document Tracking</text>
+  
+  <!-- Document 1 -->
+  <rect x="24" y="255" width="1152" height="70" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="42" y="275" width="40" height="40" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="62" y="300" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa" text-anchor="middle">📋</text>
+  <text x="100" y="283" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">General Liability Insurance</text>
+  <text x="100" y="301" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Expires: June 15, 2024 • Status: Current</text>
+  <circle cx="1100" cy="290" r="6" fill="#10b981"/>
+  
+  <!-- Document 2 -->
+  <rect x="24" y="340" width="1152" height="70" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="42" y="360" width="40" height="40" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="62" y="385" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa" text-anchor="middle">✓</text>
+  <text x="100" y="368" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Business License</text>
+  <text x="100" y="386" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Expires: December 31, 2024 • Status: Current</text>
+  <circle cx="1100" cy="375" r="6" fill="#10b981"/>
+  
+  <!-- Document 3 -->
+  <rect x="24" y="425" width="1152" height="70" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="42" y="445" width="40" height="40" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="62" y="470" font-family="Open Sans, sans-serif" font-size="11" fill="#a1a1aa" text-anchor="middle">⚠️</text>
+  <text x="100" y="453" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Workers Comp Certificate</text>
+  <text x="100" y="471" font-family="Open Sans, sans-serif" font-size="10" fill="#fbbf24">Expires: March 20, 2024 • Status: Expiring Soon (30 days)</text>
+  <rect x="1050" y="450" width="100" height="32" rx="6" fill="#a78bfa"/>
+  <text x="1100" y="471" font-family="Open Sans, sans-serif" font-size="10" font-weight="600" fill="#09090b" text-anchor="middle">Renew Now</text>
 </svg>

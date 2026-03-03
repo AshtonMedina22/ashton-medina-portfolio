@@ -1,13 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-  <rect width="800" height="450" fill="#fafbfc"/>
-  <text x="24" y="48" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#111827">Operational Intelligence Platform</text>
-  <text x="24" y="74" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">KPI dashboard " Unified calendar " Drill-through</text>
-  <rect x="24" y="100" width="240" height="100" rx="8" fill="#2563eb"/>
-  <text x="36" y="135" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">Engagements: 8</text>
-  <rect x="284" y="100" width="240" height="100" rx="8" fill="#059669"/>
-  <text x="296" y="135" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">Projects: 14</text>
-  <rect x="544" y="100" width="252" height="100" rx="8" fill="#1e40af"/>
-  <text x="556" y="135" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.9)">Revenue: $84,200</text>
-  <rect x="24" y="220" width="772" height="120" rx="8" fill="#dbeafe"/>
-  <text x="410" y="275" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#1d4ed8" text-anchor="middle">Click to open interactive demo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="darkBg14" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#darkBg14)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
+  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Available Chart Types</text>
+  
+  <!-- Chart widgets (customizable) -->
+  <text x="24" y="95" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Add Chart Widgets to Your Dashboard</text>
+  
+  <!-- Chart 1: Line Chart -->
+  <rect x="24" y="115" width="370" height="220" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="24" y="115" width="370" height="35" rx="10" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="40" y="140" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Line Chart</text>
+  <text x="330" y="140" font-family="Open Sans, sans-serif" font-size="18" fill="#a1a1aa" text-anchor="end">+</text>
+  
+  <polyline points="40,210 100,180 160,200 220,150 280,170 330,130" stroke="#a78bfa" stroke-width="2" fill="none"/>
+  <circle cx="40" cy="210" r="2" fill="#a78bfa"/>
+  <circle cx="100" cy="180" r="2" fill="#a78bfa"/>
+  <circle cx="330" cy="130" r="2" fill="#a78bfa"/>
+  <text x="180" y="310" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">Trends over time</text>
+  
+  <!-- Chart 2: Bar Chart -->
+  <rect x="416" y="115" width="370" height="220" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="416" y="115" width="370" height="35" rx="10" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="432" y="140" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Bar Chart</text>
+  <text x="722" y="140" font-family="Open Sans, sans-serif" font-size="18" fill="#a1a1aa" text-anchor="end">+</text>
+  
+  <rect x="440" y="180" width="40" height="80" rx="3" fill="#a78bfa"/>
+  <rect x="490" y="160" width="40" height="100" rx="3" fill="#22d3ee"/>
+  <rect x="540" y="140" width="40" height="120" rx="3" fill="#a1a1aa"/>
+  <rect x="590" y="170" width="40" height="90" rx="3" fill="#a78bfa"/>
+  <rect x="640" y="150" width="40" height="110" rx="3" fill="#22d3ee"/>
+  <text x="572" y="310" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">Comparisons</text>
+  
+  <!-- Chart 3: Pie Chart -->
+  <rect x="808" y="115" width="370" height="220" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="808" y="115" width="370" height="35" rx="10" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="824" y="140" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Pie Chart</text>
+  <text x="1114" y="140" font-family="Open Sans, sans-serif" font-size="18" fill="#a1a1aa" text-anchor="end">+</text>
+  
+  <!-- Pie segments -->
+  <circle cx="993" cy="220" r="50" fill="none" stroke="#a78bfa" stroke-width="15"/>
+  <circle cx="993" cy="220" r="50" fill="none" stroke="#22d3ee" stroke-width="12"/>
+  <circle cx="993" cy="220" r="50" fill="none" stroke="#a1a1aa" stroke-width="8"/>
+  <text x="993" y="310" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">Distribution</text>
+  
+  <!-- Row 2: More chart types -->
+  
+  <!-- Chart 4: Scatter Plot -->
+  <rect x="24" y="370" width="370" height="210" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="24" y="370" width="370" height="35" rx="10" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="40" y="395" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Scatter Plot</text>
+  <text x="330" y="395" font-family="Open Sans, sans-serif" font-size="18" fill="#a1a1aa" text-anchor="end">+</text>
+  
+  <circle cx="60" cy="510" r="3" fill="#a78bfa"/>
+  <circle cx="120" cy="460" r="3" fill="#a78bfa"/>
+  <circle cx="180" cy="490" r="3" fill="#22d3ee"/>
+  <circle cx="240" cy="440" r="3" fill="#22d3ee"/>
+  <circle cx="300" cy="480" r="3" fill="#a78bfa"/>
+  <circle cx="360" cy="430" r="3" fill="#a78bfa"/>
+  <text x="180" y="555" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">Correlation</text>
+  
+  <!-- Chart 5: Doughnut Chart -->
+  <rect x="416" y="370" width="370" height="210" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="416" y="370" width="370" height="35" rx="10" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="432" y="395" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Doughnut Chart</text>
+  <text x="722" y="395" font-family="Open Sans, sans-serif" font-size="18" fill="#a1a1aa" text-anchor="end">+</text>
+  
+  <!-- Doughnut visualization -->
+  <circle cx="572" cy="470" r="35" fill="none" stroke="#a78bfa" stroke-width="12"/>
+  <circle cx="572" cy="470" r="35" fill="none" stroke="#22d3ee" stroke-width="10"/>
+  <circle cx="572" cy="470" r="35" fill="none" stroke="#a1a1aa" stroke-width="8"/>
+  <circle cx="572" cy="470" r="18" fill="#1a1625"/>
+  <text x="572" y="475" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">58%</text>
+  <text x="572" y="555" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">Distribution</text>
+  
+  <!-- Chart 6: Radar Chart -->
+  <rect x="808" y="370" width="370" height="210" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
+  <rect x="808" y="370" width="370" height="35" rx="10" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <text x="824" y="395" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#f5f3ff">Radar Chart</text>
+  <text x="1114" y="395" font-family="Open Sans, sans-serif" font-size="18" fill="#a1a1aa" text-anchor="end">+</text>
+  
+  <!-- Radar visualization -->
+  <polygon points="993,425 1020,460 1010,495 970,500 945,470" fill="#a78bfa" opacity="0.3" stroke="#a78bfa" stroke-width="1.5"/>
+  <circle cx="993" cy="470" r="4" fill="#a78bfa"/>
+  <circle cx="1020" cy="460" r="3" fill="#22d3ee"/>
+  <circle cx="1010" cy="495" r="3" fill="#22d3ee"/>
+  <circle cx="945" cy="470" r="3" fill="#22d3ee"/>
+  <text x="993" y="555" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa" text-anchor="middle">Performance</text>
 </svg>
