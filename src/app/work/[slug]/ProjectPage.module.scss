@@ -10,10 +10,11 @@ $shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 /* Wider page so content and mockups aren't squished (override design system "m" ~720px) */
+/* overflow-x: visible so full-bleed demo section can extend to viewport edges (no clip) */
 .pageWrap {
   width: 100%;
   max-width: min(1280px, 100%);
-  overflow-x: clip;
+  overflow-x: visible;
   min-width: 0;
 }
 
@@ -104,6 +105,7 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 .demoSection {
   width: 100vw;
   max-width: 100vw;
+  min-width: 1100px; /* keep mockups readable; horizontal scroll on viewports < 1100px */
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   margin-bottom: 6rem;

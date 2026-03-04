@@ -23,7 +23,7 @@ $text-subtle: #52525b;
   font-size: 14px;
   color: $text;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: auto;
   width: 100%;
 }
 
@@ -222,7 +222,7 @@ $text-subtle: #52525b;
 
 /* Table */
 .tableWrap {
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: visible;
   border: 1px solid $border;
   border-radius: 0.5rem;
