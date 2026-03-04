@@ -39,3 +39,5 @@ next-env.d.ts
 # builder / editor tooling (not part of site)
 .builder/
 .cursor/
+builder.config.json
+.builderrc

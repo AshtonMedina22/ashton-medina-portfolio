@@ -99,11 +99,12 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: none;
 }
 
-/* Demo Section - Embedded */
+/* Demo Section - Embedded (allow horizontal scroll so mockups aren't cut off) */
 .demoSection {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
+  max-width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
   margin-bottom: 6rem;
   margin-top: 4rem;
   border-radius: 0;
@@ -111,8 +112,9 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-top: 1px solid var(--brand-alpha-medium);
   border-bottom: 1px solid var(--brand-alpha-medium);
   background: var(--neutral-background-weak);
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
 
   @media (max-width: 768px) {
     margin-bottom: 4rem;
