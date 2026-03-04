@@ -93,7 +93,7 @@ export default async function Project({
   const showTechnicalImplementation = technicalImplementation.length > 0;
 
   return (
-    <Column as="section" maxWidth="m" horizontal="center" gap="l" paddingX="l" className={styles.pageWrap}>
+    <Column as="section" maxWidth="l" horizontal="center" gap="l" paddingX="l" className={styles.pageWrap}>
       <Schema
         as="blogPosting"
         baseURL={baseURL}

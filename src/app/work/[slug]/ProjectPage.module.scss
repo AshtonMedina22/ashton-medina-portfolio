@@ -9,9 +9,10 @@ $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+/* Wider page so content and mockups aren't squished (override design system "m" ~720px) */
 .pageWrap {
   width: 100%;
-  max-width: 100%;
+  max-width: min(1280px, 100%);
   overflow-x: clip;
   min-width: 0;
 }
@@ -99,12 +100,12 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: none;
 }
 
-/* Demo Section - Embedded (allow horizontal scroll so mockups aren't cut off) */
+/* Demo Section - Full-bleed so mockups use full viewport width (not squished in narrow column) */
 .demoSection {
-  width: 100%;
+  width: 100vw;
   max-width: 100vw;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   margin-bottom: 6rem;
   margin-top: 4rem;
   border-radius: 0;
@@ -115,6 +116,7 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-x: auto;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     margin-bottom: 4rem;
@@ -165,10 +167,10 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: none;
 }
 
-/* Article prose */
+/* Article prose (wider so "How It Works" and text aren't smooshed) */
 .articleProse {
   width: 100%;
-  max-width: 900px;
+  max-width: 960px;
   min-width: 0;
   margin-left: auto;
   margin-right: auto;
