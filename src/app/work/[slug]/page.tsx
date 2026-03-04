@@ -136,13 +136,15 @@ export default async function Project({
       </Column>
 
 
-      {/* Interactive Demo - Embedded directly on page */}
+      {/* Interactive Demo - Contained app preview */}
       {post.metadata.demo && (
         <div className={styles.demoSection}>
-          {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
-          {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
-          {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
-          {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
+          <div className={styles.demoSectionInner}>
+            {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
+            {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
+            {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
+            {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
+          </div>
         </div>
       )}
 

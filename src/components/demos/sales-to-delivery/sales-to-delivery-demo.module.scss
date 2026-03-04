@@ -17,7 +17,7 @@ $text-muted: #a1a1aa;
 $text-subtle: #52525b;
 
 .demo {
-  min-height: 100%;
+  min-height: 0;
   background: $bg;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   font-size: 14px;
@@ -32,8 +32,8 @@ $text-subtle: #52525b;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2.5rem 3rem;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
   background: $card-bg;
   border-bottom: 1px solid $border;
 }
@@ -57,7 +57,7 @@ $text-subtle: #52525b;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   flex: 1;
-  min-height: 750px;
+  min-height: 520px;
   align-items: stretch;
 
   @media (max-width: 1024px) {
@@ -94,7 +94,7 @@ $text-subtle: #52525b;
 }
 
 .flowLabel {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -121,8 +121,8 @@ $text-subtle: #52525b;
 .panel {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2.5rem;
+  gap: 1.5rem;
+  padding: 1.5rem 1.75rem;
   background: $card-bg;
   border: 1px solid $border;
   overflow: auto;
@@ -307,17 +307,17 @@ $text-subtle: #52525b;
   flex-shrink: 0;
 }
 
-/* System status — project created (not alert/warning) */
+/* System status — dark theme success (project created) */
 .systemStatus {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
+  background: $green-bg;
+  border: 1px solid $green-border;
   border-radius: 0.375rem;
   font-size: 0.8125rem;
-  color: #166534;
+  color: $green;
 }
 
 .systemStatusIcon {
@@ -327,8 +327,8 @@ $text-subtle: #52525b;
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 50%;
-  background: #22c55e;
-  color: #fff;
+  background: $green;
+  color: $bg;
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -359,12 +359,12 @@ $text-subtle: #52525b;
   background: $blue-bg;
   border: 1px solid $blue-border;
   border-radius: 0.375rem;
-  cursor: pointer;
-  transition: all 0.15s ease;
+  cursor: default;
+  transition: background 0.15s ease, border-color 0.15s ease;
 
   &:hover {
-    background: #dbeafe;
-    border-color: #93c5fd;
+    background: rgba($blue, 0.2);
+    border-color: rgba($blue, 0.5);
   }
 }
 

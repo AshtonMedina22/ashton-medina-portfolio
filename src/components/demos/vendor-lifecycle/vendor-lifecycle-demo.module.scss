@@ -14,7 +14,7 @@ $demo-card-bg: #1a1625;
   display: flex;
   flex-direction: column;
   gap: 0;
-  min-height: 100%;
+  min-height: 0;
   background: $demo-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   overflow-x: auto;
@@ -60,14 +60,172 @@ $demo-card-bg: #1a1625;
   letter-spacing: 0.02em;
 }
 
-.internalPanel {
-  padding: 2rem;
+.internalPanel,
+.portalPanel {
+  padding: 1.5rem 2rem;
   background: $demo-card-bg;
   border: 1px solid $demo-border;
 }
 
-.portalPanel {
-  padding: 2rem;
-  background: $demo-card-bg;
+/* Shared dark-theme typography and controls (professional ERP look) */
+.panelTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f5f3ff;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem 0;
+}
+
+.panelSubtitle {
+  font-size: 0.875rem;
+  color: #a1a1aa;
+  margin: 0;
+}
+
+.badgeSuccess {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: $demo-green-bg;
+  color: $demo-green;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.pillBtn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: $demo-blue;
+  background: rgba($demo-blue, 0.1);
+  border: 1px solid rgba($demo-blue, 0.3);
+  border-radius: 0.375rem;
+  cursor: default;
+}
+
+.sectionHeading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #a1a1aa;
+  margin: 0 0 0.75rem 0;
+}
+
+.detailLabel {
+  color: #71717a;
+  font-size: 0.875rem;
+}
+
+.detailValue {
+  color: #f5f3ff;
+}
+
+.tag {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  background: #27272a;
+  color: #a1a1aa;
+  border: 1px solid #3f3f46;
+}
+
+.tagPrimary {
+  background: rgba($demo-blue, 0.15);
+  color: $demo-blue;
+  border-color: rgba($demo-blue, 0.3);
+}
+
+/* Tables - dark theme */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    color: #71717a;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid $demo-border;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #27272a;
+    color: #f5f3ff;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.statusPill {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusGreen {
+  background: $demo-green-bg;
+  color: $demo-green;
+}
+
+.statusYellow {
+  background: $demo-yellow-bg;
+  color: $demo-yellow;
+}
+
+.statusRed {
+  background: $demo-red-bg;
+  color: $demo-red;
+}
+
+/* Portal summary cards */
+.summaryCard {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.workOrderCard {
+  padding: 1.25rem;
   border: 1px solid $demo-border;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.btnPrimary {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #09090b;
+  background: $demo-green;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: default;
+}
+
+.btnGhost {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $demo-red;
+  background: transparent;
+  border: 1px solid $demo-red;
+  border-radius: 0.375rem;
+  cursor: default;
+}
+
+.signatureLine {
+  border-top: 1px dashed #3f3f46;
+  padding-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: #71717a;
 }

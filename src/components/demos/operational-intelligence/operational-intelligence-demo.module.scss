@@ -12,9 +12,9 @@ $demo-card-bg: #1a1625;
 .demo {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2.5rem;
-  min-height: 100%;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  min-height: 0;
   background: $demo-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   overflow-x: auto;

@@ -125,12 +125,12 @@ export function RevenueFinancialDemo() {
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #2e1064" }}>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Vendor</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Service</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Est. Cost</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Actual Cost</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Variance</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Status</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Vendor</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Service</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Est. Cost</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Actual Cost</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Variance</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -280,10 +280,10 @@ export function RevenueFinancialDemo() {
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #2e1064" }}>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Role</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Name</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Split %</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Attributed Revenue</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Role</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Name</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Split %</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Attributed Revenue</th>
             </tr>
           </thead>
           <tbody>

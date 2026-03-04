@@ -150,7 +150,7 @@ function EngagementCalendar() {
                     }}
                   />
                   {evt.label && (
-                    <div style={{ fontSize: "0.65rem", color: "#a1a1aa", lineHeight: 1.2 }}>{evt.label}</div>
+                    <div style={{ fontSize: "0.75rem", color: "#a1a1aa", lineHeight: 1.2 }}>{evt.label}</div>
                   )}
                 </div>
               )}
@@ -371,13 +371,13 @@ export function OperationalIntelligenceDemo() {
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #2e1064" }}>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Engagement ID</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Client</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Type</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Date</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Status</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Assigned Rep</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#a1a1aa" }}>Revenue</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Engagement ID</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Client</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Type</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Date</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Status</th>
+              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Rep</th>
+              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Revenue</th>
             </tr>
           </thead>
           <tbody>
@@ -467,24 +467,6 @@ export function OperationalIntelligenceDemo() {
         </div>
       </div>
 
-      {/* Tab preview — second view thumbnail */}
-      <div
-        style={{
-          display: "flex",
-          gap: "0.5rem",
-          marginTop: "1rem",
-          padding: "0.75rem",
-          backgroundColor: "#27272a",
-          border: "1px solid #3f3f46",
-          borderRadius: "0.375rem",
-          fontSize: "0.75rem",
-        }}
-      >
-        <span style={{ fontWeight: 600, color: "#a1a1aa" }}>Other views:</span>
-        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#a78bfa15", color: "#a78bfa", borderRadius: "0.25rem", fontWeight: 500 }}>Revenue</span>
-        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#27272a", color: "#a1a1aa", borderRadius: "0.25rem" }}>Team</span>
-        <span style={{ padding: "0.2rem 0.5rem", backgroundColor: "#27272a", color: "#a1a1aa", borderRadius: "0.25rem" }}>Pipeline</span>
-      </div>
     </div>
   );
 }
