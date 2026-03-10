@@ -9,14 +9,493 @@ $demo-border: #2e1064;
 $demo-bg: #09090b;
 $demo-card-bg: #1a1625;
 
+.shell {
+  min-height: 0;
+  background: $demo-bg;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.shellTopBar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  background: linear-gradient(180deg, rgba($demo-card-bg, 0.98) 0%, $demo-card-bg 100%);
+  border-bottom: 1px solid $demo-border;
+}
+
+.windowDots {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+
+  span {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    display: block;
+
+    &:nth-child(1) { background: #ef4444; }
+    &:nth-child(2) { background: #eab308; }
+    &:nth-child(3) { background: #22c55e; }
+  }
+}
+
+.shellTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: $demo-gray;
+}
+
+.demoContent {
+  display: flex;
+  flex-direction: column;
+  background: $demo-bg;
+  min-height: 0;
+  overflow-x: auto;
+}
+
 .demo {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
   min-height: 0;
-  background: $demo-bg;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  overflow-x: auto;
+  flex: 1;
   width: 100%;
+}
+
+.controlsBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $demo-border;
+}
+
+.controlsBarTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f5f3ff;
+  margin: 0;
+}
+
+.tabsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tabBtn {
+  padding: 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $demo-gray;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.tabActive {
+  font-weight: 700;
+  color: $demo-bg;
+  background: $demo-blue;
+  border-color: $demo-blue;
+}
+
+.filterExportGroup {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectFilter {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8125rem;
+  border: 1px solid #3f3f46;
+  border-radius: 0.25rem;
+  background: #27272a;
+  color: #fafafa;
+}
+
+.iconBtn {
+  padding: 0.4rem;
+  border: 1px solid #3f3f46;
+  border-radius: 0.25rem;
+  background: #27272a;
+  cursor: pointer;
+  color: $demo-gray;
+}
+
+.exportBtn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8125rem;
+  border: 1px solid #3f3f46;
+  border-radius: 0.25rem;
+  background: #27272a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: $demo-gray;
+}
+
+.autoEmailBadge {
+  padding: 0.35rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $demo-green;
+  background: #10b98115;
+  border: 1px solid #10b98130;
+  border-radius: 0.25rem;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.kpiCard {
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.kpiCardPurple {
+  background-color: #a78bfa15;
+  border: 1px solid #a78bfa30;
+  .kpiValue,
+  .kpiIcon {
+    color: #a78bfa;
+  }
+}
+
+.kpiCardRed {
+  background-color: #dc262615;
+  border: 1px solid #dc262630;
+  .kpiValue,
+  .kpiIcon {
+    color: #dc2626;
+  }
+}
+
+.kpiCardGreen {
+  background-color: #10b98115;
+  border: 1px solid #10b98130;
+  .kpiValue,
+  .kpiIcon {
+    color: #10b981;
+  }
+}
+
+.kpiCardCyan {
+  background-color: #22d3ee15;
+  border: 1px solid #22d3ee30;
+  .kpiValue,
+  .kpiIcon {
+    color: #22d3ee;
+  }
+}
+
+.kpiCardContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.kpiLabel {
+  font-size: 0.75rem;
+  color: $demo-gray;
+  margin-bottom: 0.25rem;
+}
+
+.kpiValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.kpiIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chartPanel,
+.tablePanel {
+  padding: 1.25rem;
+  background: $demo-card-bg;
+  border: 1px solid $demo-border;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.chartPanelTitle,
+.tablePanelTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f5f3ff;
+  margin: 0 0 1rem 0;
+}
+
+.tasksDoughnutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doughnutChart {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.doughnutCenterText {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: $demo-card-bg;
+  border: 2px solid $demo-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #f5f3ff;
+  z-index: 1;
+}
+
+.doughnutLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.colorDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.colorDotToDo {
+  background-color: #a78bfa;
+}
+
+.colorDotInProgress {
+  background-color: #fbbf24;
+}
+
+.colorDotWaiting {
+  background-color: #52525b;
+}
+
+.colorDotDone {
+  background-color: #10b981;
+}
+
+.legendLabel {
+  font-weight: 500;
+  color: #f5f3ff;
+}
+
+.legendValue {
+  color: $demo-gray;
+  margin-left: auto;
+}
+
+.calendarHeader {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f5f3ff;
+  margin-bottom: 0.75rem;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  font-size: 0.75rem;
+}
+
+.weekday {
+  padding: 0.25rem;
+  font-weight: 600;
+  color: $demo-gray;
+  text-align: center;
+}
+
+.dayCell {
+  padding: 0.35rem;
+  min-height: 48px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid $demo-border;
+  border-radius: 4px;
+}
+
+.dayNumber {
+  font-weight: 500;
+  color: #f5f3ff;
+  margin-bottom: 0.25rem;
+}
+
+.eventIndicator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.eventDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.eventDotPipeline {
+  background: $demo-blue;
+}
+
+.eventDotConfirmed {
+  background: $demo-green;
+}
+
+.eventLabel {
+  font-size: 0.75rem;
+  color: $demo-gray;
+}
+
+.calendarLegend {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: $demo-gray;
+}
+
+.calendarLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+
+  thead tr {
+    border-bottom: 1px solid $demo-border;
+  }
+  th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    color: #71717a;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  tbody tr {
+    border-bottom: 1px solid #27272a;
+    cursor: pointer;
+  }
+  td {
+    padding: 0.5rem 0.75rem;
+    color: #fafafa;
+  }
+}
+
+.tableCellRight {
+  text-align: right;
+  font-weight: 500;
+}
+
+.statusPill {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusGreen {
+  background: #10b98115;
+  color: $demo-green;
+}
+
+.statusBlue {
+  background: rgba($demo-blue, 0.1);
+  color: $demo-blue;
+}
+
+.statusYellow {
+  background: #fbbf2415;
+  color: $demo-yellow;
+}
+
+.tablePagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid $demo-border;
+  font-size: 0.8125rem;
+  color: $demo-gray;
+}
+
+.paginationControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.paginationBtn {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #3f3f46;
+  border-radius: 0.25rem;
+  background: #27272a;
+  cursor: pointer;
+  color: $demo-gray;
 }

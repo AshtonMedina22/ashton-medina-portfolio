@@ -9,6 +9,19 @@ $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+/* Type scale and spacing (project-page-only) */
+$font-size-base: 1rem;
+$font-size-h2: 1.75rem;
+$font-size-h3: 1.25rem;
+$font-size-h4: 1.125rem;
+$line-height-body: 1.6;
+$line-height-heading: 1.25;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2rem;
+$space-xl: 3rem;
+$space-xxl: 4rem;
+
 /* Wider page so content and mockups aren't squished (override design system "m" ~720px) */
 /* overflow-x: visible so full-bleed demo section can extend to viewport edges (no clip) */
 .pageWrap {
@@ -39,17 +52,17 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .heroTitle {
-  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   margin: 0 0 1rem 0;
   color: var(--neutral-on-background-strong);
 }
 
 .heroTagline {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: $line-height-body;
   color: var(--neutral-on-background-medium);
   max-width: 600px;
   margin: 0 0 0;
@@ -61,7 +74,41 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .heroTech {
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+
+  &::before {
+    content: "Tech Stack:";
+    font-weight: 600;
+    color: var(--neutral-on-background-strong);
+    margin-right: 0.25rem;
+  }
+
+  /* Target Row wrapper so pills flow and gap */
+  > * {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+  }
+
+  /* Pill style for Tag children (Once UI or any pill) */
+  > * > * {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    background: var(--neutral-background-medium);
+    border: 1px solid var(--neutral-alpha-weak);
+    color: var(--neutral-on-background-strong);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
 }
 
 /* Hero image */
@@ -101,7 +148,35 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: none;
 }
 
+/* Live Demo section wrapper (title + caption + demo) */
+.mockupSection {
+  width: 100%;
+  margin-top: $space-xxl;
+  padding-top: $space-xl;
+  text-align: center;
+}
+
+.mockupSectionTitle {
+  font-size: $font-size-h2;
+  font-weight: 700;
+  line-height: $line-height-heading;
+  margin: 0 0 $space-sm;
+  color: var(--neutral-on-background-strong);
+}
+
+.mockupSectionCaption {
+  max-width: 720px;
+  margin: 0 auto $space-lg;
+  font-size: $font-size-base;
+  line-height: $line-height-body;
+  color: var(--neutral-on-background-medium);
+}
+
 /* Demo Section - Contained app preview (professional portfolio style) */
+.mockupSection .demoSection {
+  margin-top: 0;
+}
+
 .demoSection {
   width: 100%;
   max-width: 1120px;
@@ -116,13 +191,9 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 }
 
-/* Browser-style chrome bar */
+/* Chrome bar removed - each demo provides its own app shell (dots + title) */
 .demoSection::before {
-  content: "";
-  display: block;
-  height: 32px;
-  background: rgba(0, 0, 0, 0.25);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: none;
 }
 
 /* Inner scroll area so mockup doesn't stretch the page */
@@ -198,11 +269,11 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 /* Article prose - comfortable reading width for a professional case study */
 .articleProse {
   width: 100%;
-  max-width: 680px;
+  max-width: 720px;
   min-width: 0;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2rem;
+  padding-top: $space-lg;
   padding-left: 2rem;
   padding-right: 2rem;
 
@@ -217,12 +288,12 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   :global(h2) {
-    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-size: $font-size-h2;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: $line-height-heading;
     letter-spacing: -0.02em;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin-top: $space-xxl;
+    margin-bottom: $space-md;
     color: var(--neutral-on-background-strong);
 
     &:first-of-type {
@@ -231,23 +302,23 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   :global(h3) {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-size: $font-size-h3;
     font-weight: 600;
     line-height: 1.3;
-    margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
+    margin-top: $space-xl;
+    margin-bottom: $space-sm;
     color: var(--neutral-on-background-strong);
     letter-spacing: -0.01em;
   }
 
   :global(.mdx-paragraph) {
-    max-width: 65ch;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.75rem;
+    margin-bottom: $space-md;
     overflow-wrap: break-word;
-    line-height: 1.8;
-    font-size: 1.0625rem;
+    line-height: $line-height-body;
+    font-size: $font-size-base;
     color: var(--neutral-on-background-medium);
 
     &:last-child {
@@ -260,17 +331,17 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding-left: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.75rem;
-    max-width: 65ch;
+    margin-bottom: $space-md;
+    max-width: 720px;
   }
 
   :global(.mdx-list-item) {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 1rem;
-    line-height: 1.8;
+    margin-bottom: $space-sm;
+    line-height: $line-height-body;
     color: var(--neutral-on-background-medium);
-    font-size: 1.0625rem;
+    font-size: $font-size-base;
 
     &:last-child {
       margin-bottom: 0;
@@ -279,7 +350,7 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .articleProseWide {
-  max-width: 680px;
+  max-width: 720px;
 }
 
 /* Responsive */
@@ -306,28 +377,28 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .articleProse {
-    padding-top: 1.5rem;
+    padding-top: $space-md;
 
     :global(h2) {
       font-size: 1.5rem;
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
+      margin-top: $space-xl;
+      margin-bottom: $space-md;
     }
 
     :global(h3) {
-      font-size: 1.25rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: $font-size-h3;
+      margin-top: $space-lg;
+      margin-bottom: $space-sm;
     }
 
     :global(.mdx-paragraph) {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
+      font-size: $font-size-base;
+      margin-bottom: $space-md;
     }
 
     :global(.mdx-list-item) {
-      font-size: 1rem;
-      margin-bottom: 0.875rem;
+      font-size: $font-size-base;
+      margin-bottom: $space-sm;
     }
   }
 }
@@ -355,28 +426,28 @@ $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .articleProse {
-    padding-top: 1.25rem;
+    padding-top: $space-md;
 
     :global(h2) {
       font-size: 1.375rem;
-      margin-top: 2rem;
-      margin-bottom: 1.25rem;
+      margin-top: $space-lg;
+      margin-bottom: $space-sm;
     }
 
     :global(h3) {
-      font-size: 1.125rem;
-      margin-top: 1.75rem;
-      margin-bottom: 0.875rem;
+      font-size: $font-size-h4;
+      margin-top: $space-md;
+      margin-bottom: $space-sm;
     }
 
     :global(.mdx-paragraph) {
       font-size: 0.9375rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: $space-md;
     }
 
     :global(.mdx-list-item) {
       font-size: 0.9375rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: $space-sm;
     }
   }
 }

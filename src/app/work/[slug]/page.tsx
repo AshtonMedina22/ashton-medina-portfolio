@@ -135,19 +135,6 @@ export default async function Project({
         </Row>
       </Column>
 
-
-      {/* Interactive Demo - Contained app preview */}
-      {post.metadata.demo && (
-        <div className={styles.demoSection}>
-          <div className={styles.demoSectionInner}>
-            {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
-            {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
-            {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
-            {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
-          </div>
-        </div>
-      )}
-
       {/* Metrics / key results */}
       {(showMetricsBlock && metricsItems.length > 0) || (!showMetricsBlock && highlights.length > 0) ? (
         <section className={styles.metricsSection} aria-labelledby="metrics-heading">
@@ -202,6 +189,26 @@ export default async function Project({
       <Column as="article" horizontal="center" marginTop="xl" className={styles.articleProse} paddingX="l">
         <CustomMDX source={post.content} />
       </Column>
+
+      {/* Live Demo section - after article so reader sees narrative first */}
+      {post.metadata.demo && (
+        <section className={styles.mockupSection} aria-labelledby="live-demo-heading">
+          <h3 id="live-demo-heading" className={styles.mockupSectionTitle}>
+            Live Demo
+          </h3>
+          <p className={styles.mockupSectionCaption}>
+            Explore the interactive flow below.
+          </p>
+          <div className={styles.demoSection}>
+            <div className={styles.demoSectionInner}>
+              {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
+              {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
+              {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
+              {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
+            </div>
+          </div>
+        </section>
+      )}
 
       <ScrollToHash />
     </Column>

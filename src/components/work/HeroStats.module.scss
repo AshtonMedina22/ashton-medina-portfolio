@@ -1,27 +1,27 @@
 .statsContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
   width: 100%;
   max-width: 100%;
-  border-bottom: 1px solid var(--neutral-alpha-weak);
-  margin-top: 3rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 2rem;
+  border-top: 1px solid var(--neutral-alpha-weak);
 }
 
 .statBlock {
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   text-align: left;
-  border-right: 1px solid var(--neutral-alpha-weak);
-
-  &:last-child {
-    border-right: none;
-  }
+  background: var(--neutral-background-medium);
+  border: 1px solid var(--neutral-alpha-weak);
+  border-radius: 0.75rem;
 }
 
 .statValue {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -30,31 +30,22 @@
 }
 
 .statLabel {
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-size: 0.875rem;
   line-height: 1.4;
   color: var(--neutral-on-background-medium);
   font-weight: 500;
-}
-
-@media (max-width: 900px) {
-  .statsContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 480px) {
   .statsContainer {
-    grid-template-columns: 1fr;
+    padding: 1.25rem 0 0;
+    gap: 1rem;
   }
 
   .statBlock {
-    padding: 1.5rem;
-    border-right: none;
-    border-bottom: 1px solid var(--neutral-alpha-weak);
-
-    &:last-child {
-      border-bottom: none;
-    }
+    padding: 1.25rem;
   }
 
   .statValue {

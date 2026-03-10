@@ -13,11 +13,13 @@ import styles from "./operational-intelligence-demo.module.scss";
 const TABS = ["My Tasks", "Team", "Engagements", "Pipeline", "Vendors", "Revenue", "Custom"];
 
 const KPI_CARDS = [
-  { label: "Engagements This Week", value: "8", color: "#a78bfa", icon: HiOutlineCalendar },
-  { label: "Overdue Tasks", value: "3", color: "#dc2626", icon: HiOutlineExclamation },
-  { label: "Active Projects", value: "14", color: "#10b981", icon: HiOutlineFolder },
-  { label: "Expected Revenue", value: "$84,200", color: "#22d3ee", icon: HiOutlineCurrencyDollar },
+  { label: "Engagements This Week", value: "8", variant: "Purple" as const, icon: HiOutlineCalendar },
+  { label: "Overdue Tasks", value: "3", variant: "Red" as const, icon: HiOutlineExclamation },
+  { label: "Active Projects", value: "14", variant: "Green" as const, icon: HiOutlineFolder },
+  { label: "Expected Revenue", value: "$84,200", variant: "Cyan" as const, icon: HiOutlineCurrencyDollar },
 ];
+
+const LEGEND_DOT_CLASSES = ["colorDotToDo", "colorDotInProgress", "colorDotWaiting", "colorDotDone"] as const;
 
 const TASKS_BY_STAGE = [
   { label: "To Do", value: 12, color: "#a78bfa" },
@@ -57,44 +59,21 @@ function TasksDoughnut() {
   const conicParts = segments.map((s) => `${s.color} ${s.offset}% ${s.offset + s.pct}%`).join(", ");
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <div className={styles.tasksDoughnutContainer}>
       <div
-        style={{
-          width: 140,
-          height: 140,
-          borderRadius: "50%",
-          background: `conic-gradient(${conicParts})`,
-          position: "relative",
-          marginBottom: "1rem",
-        }}
+        className={styles.doughnutChart}
+        style={{ background: `conic-gradient(${conicParts})` }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 70,
-            height: 70,
-            borderRadius: "50%",
-            backgroundColor: "#1a1625",
-            border: "2px solid #2e1064",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "0.875rem",
-            fontWeight: 700,
-            color: "#f5f3ff",
-          }}
-        >
+        <div className={styles.doughnutCenterText}>
           {total} Tasks
         </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", width: "100%" }}>
-        {TASKS_BY_STAGE.map((t) => (
-          <div key={t.label} style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem" }}>
-            <span style={{ width: 12, height: 12, borderRadius: 3, backgroundColor: t.color, flexShrink: 0 }} />
-            <span style={{ fontWeight: 500, color: "#f5f3ff" }}>{t.label}</span>
-            <span style={{ color: "#a1a1aa", marginLeft: "auto" }}>{t.value}</span>
+      <div className={styles.doughnutLegend}>
+        {TASKS_BY_STAGE.map((t, i) => (
+          <div key={t.label} className={styles.legendItem}>
+            <span className={`${styles.colorDot} ${styles[LEGEND_DOT_CLASSES[i]]}`} />
+            <span className={styles.legendLabel}>{t.label}</span>
+            <span className={styles.legendValue}>{t.value}</span>
           </div>
         ))}
       </div>
@@ -115,55 +94,33 @@ function EngagementCalendar() {
 
   return (
     <div>
-      <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f5f3ff", marginBottom: "0.75rem" }}>
-        December 2024
-      </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "2px", fontSize: "0.75rem" }}>
+      <div className={styles.calendarHeader}>December 2024</div>
+      <div className={styles.calendarGrid}>
         {weekdays.map((d) => (
-          <div key={d} style={{ padding: "0.35rem", fontWeight: 600, color: "#a1a1aa", textAlign: "center" }}>
-            {d}
-          </div>
+          <div key={d} className={styles.weekday}>{d}</div>
         ))}
         {allDays.map((d, i) => {
           if (d === null) return <div key={`blank-${i}`} />;
           const evt = CALENDAR_EVENTS[d];
           return (
-            <div
-              key={d}
-              style={{
-                padding: "0.5rem",
-                minHeight: 48,
-                backgroundColor: "#27272a",
-                border: "1px solid #3f3f46",
-                borderRadius: 4,
-              }}
-            >
-              <div style={{ fontWeight: 500, color: "#f5f3ff", marginBottom: evt ? "0.25rem" : 0 }}>{d}</div>
+            <div key={d} className={styles.dayCell}>
+              <div className={styles.dayNumber}>{d}</div>
               {evt && (
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem", marginTop: "0.2rem" }}>
-                  <div
-                    style={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: "50%",
-                      backgroundColor: evt.type === "pipeline" ? "#a78bfa" : "#10b981",
-                    }}
-                  />
-                  {evt.label && (
-                    <div style={{ fontSize: "0.75rem", color: "#a1a1aa", lineHeight: 1.2 }}>{evt.label}</div>
-                  )}
+                <div className={styles.eventIndicator}>
+                  <div className={evt.type === "pipeline" ? styles.eventDotPipeline : styles.eventDotConfirmed} />
+                  {evt.label && <div className={styles.eventLabel}>{evt.label}</div>}
                 </div>
               )}
             </div>
           );
         })}
       </div>
-      <div style={{ display: "flex", gap: "1rem", marginTop: "0.75rem", fontSize: "0.75rem", color: "#a1a1aa" }}>
-        <span style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#a78bfa" }} /> Pipeline
+      <div className={styles.calendarLegend}>
+        <span className={styles.calendarLegendItem}>
+          <span className={`${styles.eventDot} ${styles.eventDotPipeline}`} /> Pipeline
         </span>
-        <span style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#10b981" }} /> Confirmed
+        <span className={styles.calendarLegendItem}>
+          <span className={`${styles.eventDot} ${styles.eventDotConfirmed}`} /> Confirmed
         </span>
       </div>
     </div>
@@ -172,301 +129,126 @@ function EngagementCalendar() {
 
 export function OperationalIntelligenceDemo() {
   return (
+    <div className={styles.shell}>
+      <div className={styles.shellTopBar}>
+        <div className={styles.windowDots} aria-hidden>
+          <span />
+          <span />
+          <span />
+        </div>
+        <span className={styles.shellTitle}>Operational Intelligence Dashboard</span>
+      </div>
+      <div className={styles.demoContent}>
     <div className={styles.demo}>
-      {/* Top Bar */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "1rem",
-          paddingBottom: "1rem",
-          borderBottom: "1px solid #2e1064",
-        }}
-      >
-        <h1 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#f5f3ff", margin: 0 }}>
-          Operations Dashboard
-        </h1>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}>
+      {/* Controls bar */}
+      <div className={styles.controlsBar}>
+        <h1 className={styles.controlsBarTitle}>Operations Dashboard</h1>
+        <div className={styles.tabsContainer}>
           {TABS.map((tab) => (
             <button
               key={tab}
               type="button"
-              style={{
-                padding: "0.5rem 0.875rem",
-                fontSize: "0.8125rem",
-                fontWeight: tab === "Engagements" ? 700 : 600,
-                color: tab === "Engagements" ? "#09090b" : "#a1a1aa",
-                backgroundColor: tab === "Engagements" ? "#a78bfa" : "#27272a",
-                border: tab === "Engagements" ? "none" : "1px solid #3f3f46",
-                borderRadius: "0.375rem",
-                cursor: "pointer",
-              }}
+              className={tab === "Engagements" ? `${styles.tabBtn} ${styles.tabActive}` : styles.tabBtn}
             >
               {tab}
             </button>
           ))}
         </div>
-        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          <select
-            style={{
-              padding: "0.4rem 0.75rem",
-              fontSize: "0.8125rem",
-              border: "1px solid #3f3f46",
-              borderRadius: "0.25rem",
-              backgroundColor: "#27272a",
-              color: "#fafafa",
-            }}
-          >
+        <div className={styles.filterExportGroup}>
+          <select className={styles.selectFilter}>
             <option>This Month</option>
           </select>
-          <select
-            style={{
-              padding: "0.4rem 0.75rem",
-              fontSize: "0.8125rem",
-              border: "1px solid #3f3f46",
-              borderRadius: "0.25rem",
-              backgroundColor: "#27272a",
-              color: "#fafafa",
-            }}
-          >
+          <select className={styles.selectFilter}>
             <option>All Projects</option>
             <option>Q4 Active Engagements</option>
             <option>My Team Only</option>
             <option>High Value ($20k+)</option>
           </select>
-          <button
-            type="button"
-            style={{
-              padding: "0.4rem",
-              border: "1px solid #3f3f46",
-              borderRadius: "0.25rem",
-              backgroundColor: "#27272a",
-              cursor: "pointer",
-              color: "#a1a1aa",
-            }}
-          >
+          <button type="button" className={styles.iconBtn}>
             <HiOutlineRefresh size={18} />
           </button>
-          <button
-            type="button"
-            style={{
-              padding: "0.4rem 0.75rem",
-              fontSize: "0.8125rem",
-              border: "1px solid #3f3f46",
-              borderRadius: "0.25rem",
-              backgroundColor: "#27272a",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.35rem",
-              color: "#a1a1aa",
-            }}
-          >
+          <button type="button" className={styles.exportBtn}>
             <HiOutlineDownload size={16} /> Export
           </button>
-          <span
-            style={{
-              padding: "0.35rem 0.625rem",
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              color: "#10b981",
-              backgroundColor: "#10b98115",
-              border: "1px solid #10b98130",
-              borderRadius: "0.25rem",
-            }}
-          >
+          <span className={styles.autoEmailBadge}>
             Auto-email: Weekly → leadership@company.com
           </span>
         </div>
       </div>
 
       {/* Row 1 - KPI Cards */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "1rem",
-        }}
-      >
+      <div className={styles.kpiGrid}>
         {KPI_CARDS.map((kpi) => (
           <div
             key={kpi.label}
-            style={{
-              padding: "1.25rem",
-              backgroundColor: kpi.color + "15",
-              border: `1px solid ${kpi.color}30`,
-              color: "#f5f3ff",
-              borderRadius: "0.5rem",
-              boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
-              cursor: "pointer",
-              transition: "transform 0.15s ease",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
+            className={`${styles.kpiCard} ${(styles as Record<string, string>)[`kpiCard${kpi.variant}`]}`}
           >
-            <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
+            <div className={styles.kpiCardContent}>
               <div>
-                <div style={{ fontSize: "0.75rem", opacity: 0.9, marginBottom: "0.25rem", color: "#a1a1aa" }}>{kpi.label}</div>
-                <div style={{ fontSize: "1.5rem", fontWeight: 700, color: kpi.color }}>{kpi.value}</div>
+                <div className={styles.kpiLabel}>{kpi.label}</div>
+                <div className={styles.kpiValue}>{kpi.value}</div>
               </div>
-              <kpi.icon size={24} style={{ opacity: 0.8, color: kpi.color }} />
+              <kpi.icon size={24} className={styles.kpiIcon} />
             </div>
           </div>
         ))}
       </div>
 
       {/* Row 2 - Calendar + Doughnut */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1.5fr 1fr",
-          gap: "1.5rem",
-        }}
-      >
-        <div
-          style={{
-            padding: "1.25rem",
-            backgroundColor: "#1a1625",
-            border: "1px solid #2e1064",
-            borderRadius: "0.5rem",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
-          }}
-        >
+      <div className={styles.chartGrid}>
+        <div className={styles.chartPanel}>
           <EngagementCalendar />
         </div>
-        <div
-          style={{
-            padding: "1.25rem",
-            backgroundColor: "#1a1625",
-            border: "1px solid #2e1064",
-            borderRadius: "0.5rem",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
-          }}
-        >
-          <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f5f3ff", marginBottom: "1rem" }}>
-            Tasks by Stage
-          </div>
+        <div className={styles.chartPanel}>
+          <div className={styles.chartPanelTitle}>Tasks by Stage</div>
           <TasksDoughnut />
         </div>
       </div>
 
       {/* Row 3 - Table */}
-      <div
-        style={{
-          padding: "1.25rem",
-          backgroundColor: "#1a1625",
-          border: "1px solid #2e1064",
-          borderRadius: "0.5rem",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
-        }}
-      >
-        <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "#f5f3ff", margin: "0 0 1rem 0" }}>
-          Upcoming Engagements
-        </h3>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
+      <div className={styles.tablePanel}>
+        <h3 className={styles.tablePanelTitle}>Upcoming Engagements</h3>
+        <table className={styles.table}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #2e1064" }}>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Engagement ID</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Client</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Type</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Date</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Status</th>
-              <th style={{ textAlign: "left", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Rep</th>
-              <th style={{ textAlign: "right", padding: "0.5rem 0.75rem", fontWeight: 600, color: "#71717a", fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Revenue</th>
+            <tr>
+              <th>Engagement ID</th>
+              <th>Client</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Rep</th>
+              <th className={styles.tableCellRight}>Revenue</th>
             </tr>
           </thead>
           <tbody>
             {ENGAGEMENTS.map((row) => (
-              <tr
-                key={row.id}
-                style={{
-                  borderBottom: "1px solid #27272a",
-                  cursor: "pointer",
-                }}
-              >
-                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.id}</td>
-                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.client}</td>
-                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.type}</td>
-                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.date}</td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>
-                  <span
-                    style={{
-                      padding: "0.2rem 0.5rem",
-                      borderRadius: "0.25rem",
-                      fontSize: "0.75rem",
-                      fontWeight: 500,
-                      backgroundColor:
-                        row.statusColor === "green"
-                          ? "#10b98115"
-                          : row.statusColor === "blue"
-                            ? "#a78bfa15"
-                            : "#fbbf2415",
-                      color:
-                        row.statusColor === "green"
-                          ? "#10b981"
-                          : row.statusColor === "blue"
-                            ? "#a78bfa"
-                            : "#fbbf24",
-                    }}
-                  >
+              <tr key={row.id}>
+                <td>{row.id}</td>
+                <td>{row.client}</td>
+                <td>{row.type}</td>
+                <td>{row.date}</td>
+                <td>
+                  <span className={`${styles.statusPill} ${row.statusColor === "green" ? styles.statusGreen : row.statusColor === "blue" ? styles.statusBlue : styles.statusYellow}`}>
                     {row.status}
                   </span>
                 </td>
-                <td style={{ padding: "0.5rem 0.75rem", color: "#fafafa" }}>{row.rep}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right", fontWeight: 500, color: "#fafafa" }}>{row.revenue}</td>
+                <td>{row.rep}</td>
+                <td className={styles.tableCellRight}>{row.revenue}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "1rem",
-            paddingTop: "0.75rem",
-            borderTop: "1px solid #2e1064",
-            fontSize: "0.8125rem",
-            color: "#a1a1aa",
-          }}
-        >
+        <div className={styles.tablePagination}>
           <span>Showing 1-5 of 23</span>
-          <div style={{ display: "flex", gap: "0.5rem" }}>
-            <button
-              type="button"
-              style={{
-                padding: "0.25rem 0.5rem",
-                border: "1px solid #3f3f46",
-                borderRadius: "0.25rem",
-                backgroundColor: "#27272a",
-                cursor: "pointer",
-                color: "#a1a1aa",
-              }}
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              style={{
-                padding: "0.25rem 0.5rem",
-                border: "1px solid #3f3f46",
-                borderRadius: "0.25rem",
-                backgroundColor: "#27272a",
-                cursor: "pointer",
-                color: "#a1a1aa",
-              }}
-            >
-              →
-            </button>
+          <div className={styles.paginationControls}>
+            <button type="button" className={styles.paginationBtn}>←</button>
+            <button type="button" className={styles.paginationBtn}>→</button>
           </div>
         </div>
       </div>
 
+    </div>
+      </div>
     </div>
   );
 }
