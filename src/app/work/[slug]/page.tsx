@@ -93,7 +93,7 @@ export default async function Project({
   const showTechnicalImplementation = technicalImplementation.length > 0;
 
   return (
-    <Column as="section" maxWidth="l" horizontal="center" gap="l" paddingX="l" className={styles.pageWrap}>
+    <Column as="section" horizontal="center" gap="l" className={styles.pageWrap}>
       <Schema
         as="blogPosting"
         baseURL={baseURL}
@@ -186,7 +186,7 @@ export default async function Project({
         </Row>
       )}
 
-      <Column as="article" horizontal="center" marginTop="xl" className={styles.articleProse} paddingX="l">
+      <Column as="article" horizontal="center" marginTop="xl" className={styles.articleProse}>
         <CustomMDX source={post.content} />
       </Column>
 

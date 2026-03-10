@@ -22,28 +22,43 @@ $space-lg: 2rem;
 $space-xl: 3rem;
 $space-xxl: 4rem;
 
-/* Wider page so content and mockups aren't squished (override design system "m" ~720px) */
-/* overflow-x: visible so full-bleed demo section can extend to viewport edges (no clip) */
+/* Outer page container: one width, centered, shared horizontal padding (fixes "squished and centered") */
 .pageWrap {
   width: 100%;
-  max-width: min(1280px, 100%);
+  max-width: 1120px;
+  margin: 0 auto;
   overflow-x: visible;
   min-width: 0;
+  padding: 0 2rem;
 }
 
-/* Hero - compact so page feels balanced */
+@media (max-width: 768px) {
+  .pageWrap {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageWrap {
+    padding: 0 1rem;
+  }
+}
+
+/* Alignment: hero, article, and mockup all centered; use full page width (no skinny center column) */
+/* Hero - full width of pageWrap content area */
 .hero {
-  text-align: left;
-  margin-bottom: 0;
-  padding: 2.5rem 2rem 0;
+  text-align: center;
+  margin: $space-xl auto 0;
+  width: 100%;
   max-width: 100%;
+  padding: 2.5rem 0 0;
 
   @media (max-width: 768px) {
-    padding: 2rem 1.5rem 0;
+    padding: 2rem 0 0;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 1rem 0;
+    padding: 1.5rem 0 0;
   }
 }
 
@@ -64,9 +79,10 @@ $space-xxl: 4rem;
   font-size: 1.125rem;
   line-height: $line-height-body;
   color: var(--neutral-on-background-medium);
-  max-width: 600px;
-  margin: 0 0 0;
+  max-width: 100%;
+  margin: 0 auto;
   letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .heroDate {
@@ -165,7 +181,7 @@ $space-xxl: 4rem;
 }
 
 .mockupSectionCaption {
-  max-width: 720px;
+  max-width: 100%;
   margin: 0 auto $space-lg;
   font-size: $font-size-base;
   line-height: $line-height-body;
@@ -179,7 +195,7 @@ $space-xxl: 4rem;
 
 .demoSection {
   width: 100%;
-  max-width: 1120px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem;
@@ -266,26 +282,16 @@ $space-xxl: 4rem;
   display: none;
 }
 
-/* Article prose - comfortable reading width for a professional case study */
+/* Article prose - full width of pageWrap so grids and text use full content area (no skinny center) */
 .articleProse {
   width: 100%;
-  max-width: 720px;
+  max-width: 100%;
+  margin: $space-xl auto 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
   min-width: 0;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: $space-lg;
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  @media (max-width: 768px) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  text-align: center;
 
   :global(h2) {
     font-size: $font-size-h2;
@@ -312,9 +318,6 @@ $space-xxl: 4rem;
   }
 
   :global(.mdx-paragraph) {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: $space-md;
     overflow-wrap: break-word;
     line-height: $line-height-body;
@@ -329,10 +332,7 @@ $space-xxl: 4rem;
   :global(.mdx-list) {
     list-style: none;
     padding-left: 0;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: $space-md;
-    max-width: 720px;
   }
 
   :global(.mdx-list-item) {
@@ -350,7 +350,7 @@ $space-xxl: 4rem;
 }
 
 .articleProseWide {
-  max-width: 720px;
+  max-width: 100%;
 }
 
 /* Responsive */

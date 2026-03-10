@@ -1,6 +1,7 @@
+/* 3 outcome stats: one row on desktop, stacked on mobile — no 2+1 orphan */
 .statsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   width: 100%;
   max-width: 100%;
@@ -10,6 +11,12 @@
   margin-right: auto;
   padding-top: 2rem;
   border-top: 1px solid var(--neutral-alpha-weak);
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.25rem 0 0;
+  }
 
   @media (max-width: 480px) {
     gap: 1rem;

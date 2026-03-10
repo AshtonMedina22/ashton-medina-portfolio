@@ -56,6 +56,19 @@ Use this when you want to change something on the site. **Ctrl+P** (or Cmd+P) an
 
 ## 📄 One project page (e.g. Sales-to-Delivery, `/work/sales-to-delivery-automation-platform`)
 
+### Where is the project page layout? **GLOBAL — one template for ALL projects**
+
+| What | Where | Same for every project? |
+|------|--------|--------------------------|
+| **Layout / structure** (hero, article, Live Demo section, order of blocks) | **`src/app/work/[slug]/page.tsx`** | **YES — one file, all four project pages use it.** |
+| **Layout styles** (hero title size, article width, demo section, tech pills) | **`src/app/work/[slug]/ProjectPage.module.scss`** | **YES — one file, all four use it.** |
+| **Text content** (title, summary, Problem, How It Works, Outcome) | **One `.mdx` per project** in `src/app/work/projects/` | **NO — each project has its own MDX.** |
+| **Interactive demo** (the app mockup at bottom) | **One demo component per project** in `src/components/demos/` | **NO — Sales, Vendor, Financial, Operational each have their own.** |
+
+So: change **layout/structure** in the **global** `[slug]/page.tsx` and `ProjectPage.module.scss`. Change **words and sections** in each project’s **individual** `.mdx` file.
+
+---
+
 ### Text content (title, summary, Problem, How It Works, Outcome)
 
 | Project | File to open |

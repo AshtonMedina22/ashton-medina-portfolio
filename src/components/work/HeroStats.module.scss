@@ -1,6 +1,7 @@
+/* Hero stats: 4 cards → 4 cols (1 row) on desktop, 2 cols on tablet, 1 on mobile */
 .statsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   width: 100%;
   max-width: 100%;
@@ -10,11 +11,19 @@
   margin-right: auto;
   padding-top: 2rem;
   border-top: 1px solid var(--neutral-alpha-weak);
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .statBlock {
   padding: 1.5rem;
-  text-align: left;
+  text-align: center;
   background: var(--neutral-background-medium);
   border: 1px solid var(--neutral-alpha-weak);
   border-radius: 0.75rem;
@@ -42,6 +51,7 @@
   .statsContainer {
     padding: 1.25rem 0 0;
     gap: 1rem;
+    grid-template-columns: 1fr;
   }
 
   .statBlock {

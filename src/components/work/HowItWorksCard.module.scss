@@ -1,12 +1,17 @@
+/* How It Works: 6 cards → 3 cols (2 rows) on desktop, 2 cols on tablet, 1 on mobile — no extra-long 2-column layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   width: 100%;
   max-width: 100%;
   margin-top: 2rem;
 
-  @media (max-width: 640px) {
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 520px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
@@ -14,6 +19,7 @@
 
 .card {
   padding: 1.5rem;
+  text-align: center;
   border: 1px solid var(--neutral-alpha-weak);
   background: var(--neutral-background-medium);
   border-radius: 0.75rem;
