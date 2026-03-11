@@ -47,33 +47,37 @@
     width: 100%;
 }
 
-/* Uses design-system primary (--brand-solid-medium = dark purple from custom.css) */
+/* Primary CTA: dark purple background, light text. !important overrides Once UI utility classes (reset-button-styles, etc.) */
 .ctaLink {
-    margin: 0;
-    padding: 0.75rem 1.5rem;
-    background: var(--brand-solid-medium);
-    color: var(--brand-on-solid-strong);
-    text-decoration: none;
-    border-radius: 0.5rem;
-    border: 1px solid transparent;
-    transition: background var(--transition-med), border-color var(--transition-med);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    cursor: pointer;
+    margin: 0 !important;
+    padding: 0.75rem 1.5rem !important;
+    background: var(--brand-solid-medium, #1e1b2e) !important;
+    color: var(--brand-on-solid-strong, #fafafa) !important;
+    text-decoration: none !important;
+    border-radius: 0.5rem !important;
+    border: 1px solid transparent !important;
+    transition: background var(--transition-med), border-color var(--transition-med) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+    cursor: pointer !important;
 
     &:hover {
-        background: var(--brand-solid-strong);
+        background: var(--brand-solid-strong, #2e1064) !important;
     }
 
     &:active {
-        background: var(--brand-solid-weak);
+        background: var(--brand-solid-weak, #0f0a1e) !important;
     }
 
-    :global(span) {
-        color: inherit;
-        font-weight: 600;
+    * {
+        color: inherit !important;
     }
+}
+
+.cardContainer .ctaLink,
+.cardContainer .ctaLink * {
+    color: var(--brand-on-solid-strong, #fafafa) !important;
 }
