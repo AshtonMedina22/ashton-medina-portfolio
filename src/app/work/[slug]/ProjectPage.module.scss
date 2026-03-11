@@ -22,10 +22,10 @@ $space-lg: 1.5rem;
 $space-xl: 1.5rem;
 $space-xxl: 2rem;
 
-/* Outer page container: one width, centered, shared horizontal padding (fixes "squished and centered") */
+/* Outer page container: wider so mockup has room to breathe (hero/article stay readable) */
 .pageWrap {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
   overflow-x: visible;
   min-width: 0;
@@ -138,13 +138,13 @@ $space-xxl: 2rem;
   border-radius: $radius-2xl;
   overflow: hidden;
   border: none;
-  box-shadow: $shadow-lg;
+  box-shadow: var(--shadow-subtle);
   background: transparent;
-  transition: box-shadow $transition;
+  transition: box-shadow var(--transition-med);
   min-width: 0;
 
   &:hover {
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-soft);
   }
 }
 
@@ -202,9 +202,10 @@ $space-xxl: 2rem;
   margin-top: 1.5rem;
   border-radius: 12px;
   overflow: visible;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-soft);
   background: var(--neutral-background-weak);
   box-sizing: border-box;
+  transition: box-shadow var(--transition-med);
 }
 
 /* Chrome bar removed - each demo provides its own app shell (dots + title) */

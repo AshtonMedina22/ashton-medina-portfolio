@@ -15,6 +15,7 @@ export async function generateMetadata() {
 export default function Gallery() {
   return (
     <Flex maxWidth="l">
+      <div className="sectionHue" style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -29,6 +30,7 @@ export default function Gallery() {
         }}
       />
       <GalleryView />
+      </div>
     </Flex>
   );
 }

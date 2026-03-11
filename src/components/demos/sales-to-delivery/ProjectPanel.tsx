@@ -36,7 +36,7 @@ export function ProjectPanel() {
 
       {/* Smart buttons */}
       <div className={styles.smartButtons}>
-        <button type="button" className={styles.smartBtn}>
+        <button type="button" className={`${styles.smartBtn} ${styles.smartBtnActive}`}>
           Sales Order
         </button>
         <button type="button" className={styles.smartBtn}>

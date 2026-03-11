@@ -33,7 +33,7 @@ export function SalesToDeliveryDemo() {
         <SalesOrderPanel />
         <div className={styles.flowConnector} aria-hidden>
           <span className={styles.flowArrow}>→</span>
-          <span className={styles.flowLabel}>creates</span>
+          <span className={styles.flowLabel}>CREATES</span>
         </div>
         <ProjectPanel />
           </div>

@@ -108,7 +108,7 @@ export default function About() {
                 tagSize="m"
                 titleLevel="section"
                 titleClassName={styles.sectionTitle}
-                align="left"
+                align="center"
               />
             </div>
           )}

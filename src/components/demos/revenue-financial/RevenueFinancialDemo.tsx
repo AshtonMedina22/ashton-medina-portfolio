@@ -40,13 +40,17 @@ export function RevenueFinancialDemo() {
           <div className={styles.panelHeaderWrap}>
             <h1 className={styles.panelHeaderTitle}>WO-0842 · TechCorp</h1>
             <div className={styles.panelHeaderMeta}>
-              Client: TechCorp
+              Client: TechCorp{" "}
               <span className={styles.projectTypeBadge}>Type A</span>
             </div>
           </div>
           <div className={styles.relatedButtons}>
-            {["Sales Order ($12,400)", "Pipeline Opportunity", "4 Vendor Assignments", "2 Invoices ($12,400)"].map((label) => (
-              <button key={label} type="button" className={styles.relatedBtn}>
+            {["Sales Order ($12,400)", "Pipeline Opportunity", "4 Vendor Assignments", "2 Invoices ($12,400)"].map((label, i) => (
+              <button
+                key={label}
+                type="button"
+                className={i === 0 ? `${styles.relatedBtn} ${styles.relatedBtnActive}` : styles.relatedBtn}
+              >
                 {label}
               </button>
             ))}
@@ -142,7 +146,7 @@ export function RevenueFinancialDemo() {
             </div>
             <div className={styles.pricingDetail}>
               <div className={styles.pricingHeading}>Line Item Floor</div>
-              <div className={styles.pricingLabel}>Minimum $200 per line enforced</div>
+              <div className={styles.pricingFloorValue}>Minimum $200 per line enforced</div>
             </div>
           </div>
           </div>

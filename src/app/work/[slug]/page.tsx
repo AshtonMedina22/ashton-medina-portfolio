@@ -96,7 +96,7 @@ export default async function Project({
   const showTechnicalImplementation = technicalImplementation.length > 0;
 
   return (
-    <Column as="section" horizontal="center" gap="l" className={styles.pageWrap}>
+    <Column as="section" horizontal="center" gap="l" className={`${styles.pageWrap} sectionHue`}>
       <Schema
         as="blogPosting"
         baseURL={baseURL}

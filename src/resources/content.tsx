@@ -99,7 +99,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Ashton, a full-stack platform engineer. I build systems with structured data models, automation logic, and secure access controls, turning complex operations into governed, scalable platforms.
+      I'm Ashton, a full-stack platform engineer. I design operational platforms that convert complex business processes into scalable, maintainable systems. My work combines systems architecture and full-stack development to standardize workflows, reduce operational risk, and deliver durable business infrastructure.
     </>
   ),
 };

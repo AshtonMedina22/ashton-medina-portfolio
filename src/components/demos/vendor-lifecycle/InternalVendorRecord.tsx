@@ -18,13 +18,13 @@ const RATE_CARDS = [
 export function InternalVendorRecord() {
   return (
     <div className={styles.internalPanel}>
-      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0.75rem", marginBottom: "0.75rem" }}>
+      <div className={styles.panelHeaderRow}>
         <h2 className={styles.panelTitle}>Elite Sound Productions</h2>
         <span className={styles.badgeSuccess}>Active</span>
         <span className={styles.badgeSuccess}>Compliant</span>
       </div>
 
-      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
+      <div className={styles.panelCountRow}>
         {["12 Assignments", "8 Documents", "3 Open RFQs"].map((label) => (
           <span key={label} className={styles.pillBtn}>
             {label}
@@ -35,13 +35,15 @@ export function InternalVendorRecord() {
 
       <div className={styles.internalGrid}>
         <div>
-          <h3 className={styles.sectionHeading}>Vendor Details</h3>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", fontSize: "0.875rem" }}>
+          <div className={styles.sectionHeadingRow}>
+            <h3 className={styles.sectionHeading}>Vendor Details</h3>
             <span className={`${styles.tag} ${styles.tagPrimary}`}>Premier</span>
+          </div>
+          <div className={styles.vendorDetailsList}>
             <div><span className={styles.detailLabel}>Contact: </span><span className={styles.detailValue}>Maria Chen</span></div>
             <div><span className={styles.detailLabel}>Phone: </span><span className={styles.detailValue}>(214) 555-0123</span></div>
             <div><span className={styles.detailLabel}>Email: </span><span className={styles.detailValue}>maria@elitesoundpro.com</span></div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", marginTop: "0.25rem" }}>
+            <div className={styles.serviceTypeTags}>
               {["Service Type A", "Service Type B", "Service Type C"].map((tag) => (
                 <span key={tag} className={styles.tag}>{tag}</span>
               ))}
@@ -57,7 +59,7 @@ export function InternalVendorRecord() {
               <tr>
                 <th>Document Type</th>
                 <th>Status</th>
-                <th>Expiry</th>
+                <th className={styles.textRight}>Expiry</th>
               </tr>
             </thead>
             <tbody>
@@ -69,7 +71,7 @@ export function InternalVendorRecord() {
                       {doc.status}
                     </span>
                   </td>
-                  <td style={{ color: "#a1a1aa" }}>{doc.expiry}</td>
+                  <td className={styles.textRight} style={{ color: "#a1a1aa" }}>{doc.expiry}</td>
                 </tr>
               ))}
             </tbody>
@@ -84,7 +86,7 @@ export function InternalVendorRecord() {
             <tr>
               <th>Service</th>
               <th>Tier</th>
-              <th>Rate</th>
+              <th className={styles.textRight}>Rate</th>
               <th>Notes</th>
             </tr>
           </thead>
@@ -93,7 +95,7 @@ export function InternalVendorRecord() {
               <tr key={r.service}>
                 <td>{r.service}</td>
                 <td>{r.tier}</td>
-                <td>{r.rate}</td>
+                <td className={styles.textRight}>{r.rate}</td>
                 <td style={{ color: "#a1a1aa" }}>{r.notes}</td>
               </tr>
             ))}

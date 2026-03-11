@@ -27,6 +27,11 @@
   background: var(--neutral-background-medium);
   border: 1px solid var(--neutral-alpha-weak);
   border-radius: 0.75rem;
+  box-shadow: var(--shadow-subtle);
+  transition: box-shadow var(--transition-med);
+  &:hover {
+    box-shadow: var(--shadow-soft);
+  }
 }
 
 .statValue {

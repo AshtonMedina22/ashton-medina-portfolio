@@ -21,13 +21,15 @@
   padding: 1.5rem;
   text-align: center;
   border: 1px solid var(--neutral-alpha-weak);
-  background: var(--neutral-background-medium);
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--neutral-background-medium) 45%);
   border-radius: 0.75rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-subtle);
+  transition: border-color var(--transition-med), box-shadow var(--transition-med);
   cursor: default;
 
   &:hover {
     border-color: var(--brand-solid-medium);
+    box-shadow: var(--shadow-soft);
   }
 }
 

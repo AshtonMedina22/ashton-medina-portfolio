@@ -1,14 +1,14 @@
 .cardContainer {
     border-radius: var(--radius-xl, 1.25rem);
     border: 1px solid var(--neutral-alpha-weak);
-    background: var(--surface-background, var(--neutral-alpha-weak));
+    background: linear-gradient(160deg, var(--cyan-soft) 0%, var(--surface-background, var(--neutral-alpha-weak)) 40%);
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    transition: border-color var(--transition-micro-medium), background var(--transition-micro-medium), box-shadow var(--transition-micro-medium);
+    box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.06));
+    transition: border-color var(--transition-micro-medium), background var(--transition-micro-medium), box-shadow var(--transition-med, 0.22s ease-out);
 
     &:hover {
         border-color: var(--neutral-alpha-medium);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
+        box-shadow: var(--shadow-soft, 0 8px 24px rgba(0, 0, 0, 0.1));
     }
 }
 
@@ -35,23 +35,26 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .ctaContainer {
     margin-top: auto;
     padding-top: var(--static-space-m);
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .ctaLink {
     margin: 0;
-    width: 100%;
-    padding: 0.875rem 1.25rem;
-    background: var(--brand-solid-medium);
-    color: var(--brand-on-solid-strong);
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-accent), var(--accent-cyan));
+    color: #fff;
     text-decoration: none;
     border-radius: 0.5rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,11 +62,12 @@
     letter-spacing: -0.01em;
     border: none;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(167, 139, 250, 0.25);
 
     &:hover {
-        background: var(--brand-solid-strong);
+        opacity: 0.95;
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+        box-shadow: 0 4px 20px rgba(167, 139, 250, 0.35), 0 0 24px rgba(34, 211, 238, 0.2);
     }
 
     &:active {
@@ -71,7 +75,7 @@
     }
 
     :global(span) {
-        color: var(--brand-on-solid-strong) !important;
+        color: #fff !important;
         font-weight: 600;
     }
 }

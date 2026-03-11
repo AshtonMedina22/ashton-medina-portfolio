@@ -37,13 +37,13 @@ const ENGAGEMENTS = [
 ];
 
 const CALENDAR_EVENTS: Record<number, { label?: string; type: "pipeline" | "confirmed" }> = {
-  5: { label: "WO-0875", type: "pipeline" },
+  5: { label: "WO-0875 - Winter Foundation", type: "pipeline" },
   10: { label: "WO-0891 - TechCorp", type: "confirmed" },
-  14: { label: "WO-0887 - Acme", type: "pipeline" },
-  18: { label: "WO-0882", type: "confirmed" },
-  22: { label: "WO-0879", type: "confirmed" },
-  26: { type: "pipeline" },
-  28: { type: "confirmed" },
+  14: { label: "WO-0887 - Acme Inc", type: "pipeline" },
+  18: { label: "WO-0882 - Acme Corp", type: "confirmed" },
+  22: { label: "WO-0879 - Rivera Co", type: "confirmed" },
+  26: { label: "WO-0874", type: "pipeline" },
+  28: { label: "WO-0872 - Client", type: "confirmed" },
 };
 
 function TasksDoughnut() {
@@ -170,7 +170,7 @@ export function OperationalIntelligenceDemo() {
           <button type="button" className={styles.exportBtn}>
             <HiOutlineDownload size={16} /> Export
           </button>
-          <span className={styles.autoEmailBadge}>
+          <span className={styles.autoEmailBadge} role="status" aria-label="Auto-email enabled: Weekly to leadership@company.com">
             Auto-email: Weekly → leadership@company.com
           </span>
         </div>
@@ -241,8 +241,8 @@ export function OperationalIntelligenceDemo() {
         <div className={styles.tablePagination}>
           <span>Showing 1-5 of 23</span>
           <div className={styles.paginationControls}>
-            <button type="button" className={styles.paginationBtn}>←</button>
-            <button type="button" className={styles.paginationBtn}>→</button>
+            <button type="button" className={styles.paginationBtn} aria-label="Previous page">Previous</button>
+            <button type="button" className={styles.paginationBtn} aria-label="Next page">Next</button>
           </div>
         </div>
       </div>

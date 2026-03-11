@@ -44,6 +44,7 @@ export function ContactSection() {
               size="m"
               variant="primary"
               prefixIcon="email"
+              className="ctaGradient"
             />
             {linkedIn && (
               <Button

@@ -16,6 +16,7 @@ export async function generateMetadata() {
 export default function Blog() {
   return (
     <Column maxWidth="m" paddingTop="24">
+      <div className="sectionHue" style={{ width: "100%" }}>
       <Schema
         as="blogPosting"
         baseURL={baseURL}
@@ -41,6 +42,7 @@ export default function Blog() {
         </Heading>
         <Posts range={[4]} columns="2" />
       </Column>
+      </div>
     </Column>
   );
 }

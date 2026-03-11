@@ -1,4 +1,4 @@
-/* Operational Intelligence Demo - BI dashboard */
+/* Operational Intelligence Demo - BI dashboard. Uses design tokens: --success-color, --danger-color, --shadow-subtle, --accent-soft */
 $demo-blue: #a78bfa;
 $demo-dark-blue: #7c3aed;
 $demo-green: #10b981;
@@ -13,7 +13,7 @@ $demo-card-bg: #1a1625;
 .shell {
   min-height: 0;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
   background: $demo-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -52,7 +52,7 @@ $demo-card-bg: #1a1625;
 
 .shellTitle {
   flex: 1;
-  text-align: center;
+  text-align: left;
   font-size: 0.75rem;
   font-weight: 500;
   color: $demo-gray;
@@ -70,7 +70,7 @@ $demo-card-bg: #1a1625;
 .demo {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1.25rem;
   padding: 0;
   min-height: 0;
   flex: 1;
@@ -82,7 +82,8 @@ $demo-card-bg: #1a1625;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem;
-  padding: 0 0.25rem 0.75rem;
+  padding: 0 0.25rem 1rem;
+  margin-bottom: 0.25rem;
   border-bottom: 1px solid $demo-border;
 
   @media (max-width: 768px) {
@@ -92,18 +93,20 @@ $demo-card-bg: #1a1625;
 }
 
 .controlsBarTitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: #f5f3ff;
   margin: 0;
+  flex: 0 0 auto;
 }
 
 .tabsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.2rem;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .tabBtn {
@@ -113,22 +116,23 @@ $demo-card-bg: #1a1625;
   color: $demo-gray;
   background: $demo-card-bg;
   border: 1px solid $demo-border;
-  border-radius: 0.25rem;
+  border-radius: 9999px;
   cursor: pointer;
 }
 
 .tabActive {
   font-weight: 700;
   color: $demo-bg;
-  background: $demo-blue;
-  border-color: $demo-blue;
+  background: var(--accent-soft-strong, $demo-blue);
+  border-color: var(--color-accent, $demo-blue);
+  color: #f5f3ff;
 }
 
 .filterExportGroup {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 
   @media (max-width: 768px) {
     margin-left: 0;
@@ -172,9 +176,9 @@ $demo-card-bg: #1a1625;
   padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   font-weight: 600;
-  color: $demo-green;
-  background: #10b98115;
-  border: 1px solid #10b98130;
+  color: var(--success-color, $demo-green);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 9999px;
 }
 
@@ -192,7 +196,7 @@ $demo-card-bg: #1a1625;
 .kpiCard {
   padding: 0.9rem;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.1));
   cursor: pointer;
   transition: transform 0.15s ease;
 
@@ -202,35 +206,35 @@ $demo-card-bg: #1a1625;
 }
 
 .kpiCardPurple {
-  background-color: #a78bfa15;
-  border: 1px solid #a78bfa30;
+  background-color: var(--accent-soft, rgba(167, 139, 250, 0.16));
+  border: 1px solid rgba(167, 139, 250, 0.3);
   .kpiValue,
   .kpiIcon {
-    color: #a78bfa;
+    color: $demo-blue;
   }
 }
 
 .kpiCardRed {
-  background-color: #dc262615;
-  border: 1px solid #dc262630;
+  background-color: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.25);
   .kpiValue,
   .kpiIcon {
-    color: #dc2626;
+    color: var(--danger-color, $demo-red);
   }
 }
 
 .kpiCardGreen {
-  background-color: #10b98115;
-  border: 1px solid #10b98130;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   .kpiValue,
   .kpiIcon {
-    color: #10b981;
+    color: var(--success-color, $demo-green);
   }
 }
 
 .kpiCardCyan {
-  background-color: #22d3ee15;
-  border: 1px solid #22d3ee30;
+  background-color: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.25);
   .kpiValue,
   .kpiIcon {
     color: #22d3ee;
@@ -241,10 +245,11 @@ $demo-card-bg: #1a1625;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .kpiLabel {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: $demo-gray;
   margin-bottom: 0.25rem;
 }
@@ -277,7 +282,7 @@ $demo-card-bg: #1a1625;
   background: $demo-card-bg;
   border: 1px solid rgba($demo-border, 0.6);
   border-radius: 0.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.25));
 }
 
 .tablePanel {
@@ -286,7 +291,7 @@ $demo-card-bg: #1a1625;
   background: $demo-card-bg;
   border: 1px solid rgba($demo-border, 0.6);
   border-radius: 0.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.25));
 }
 
 .chartPanelTitle,
@@ -366,7 +371,7 @@ $demo-card-bg: #1a1625;
 }
 
 .colorDotDone {
-  background-color: #10b981;
+  background-color: var(--success-color, $demo-green);
 }
 
 .legendLabel {
@@ -375,7 +380,9 @@ $demo-card-bg: #1a1625;
 }
 
 .legendValue {
-  color: $demo-gray;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #f5f3ff;
   margin-left: auto;
 }
 
@@ -434,7 +441,7 @@ $demo-card-bg: #1a1625;
 }
 
 .eventDotConfirmed {
-  background: $demo-green;
+  background: var(--success-color, $demo-green);
 }
 
 .eventLabel {
@@ -444,6 +451,7 @@ $demo-card-bg: #1a1625;
 
 .calendarLegend {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 0.75rem;
   font-size: 0.7rem;
@@ -467,15 +475,19 @@ $demo-card-bg: #1a1625;
   th {
     text-align: left;
     padding: 0.4rem 0.6rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #71717a;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
   tbody tr {
     border-bottom: 1px solid #27272a;
     cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  tbody tr:hover {
+    background: rgba(167, 139, 250, 0.06);
   }
   td {
     padding: 0.4rem 0.6rem;
@@ -496,17 +508,17 @@ $demo-card-bg: #1a1625;
 }
 
 .statusGreen {
-  background: #10b98115;
-  color: $demo-green;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success-color, $demo-green);
 }
 
 .statusBlue {
-  background: rgba($demo-blue, 0.1);
+  background: rgba(167, 139, 250, 0.12);
   color: $demo-blue;
 }
 
 .statusYellow {
-  background: #fbbf2415;
+  background: rgba(251, 191, 36, 0.12);
   color: $demo-yellow;
 }
 
@@ -527,11 +539,16 @@ $demo-card-bg: #1a1625;
 }
 
 .paginationBtn {
-  padding: 0.2rem 0.4rem;
-  font-size: 0.7rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
   border: 1px solid $demo-border;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   background: $demo-card-bg;
   cursor: pointer;
   color: $demo-gray;
+  transition: background 0.15s ease, color 0.15s ease;
+  &:hover {
+    background: rgba(167, 139, 250, 0.1);
+    color: #f5f3ff;
+  }
 }

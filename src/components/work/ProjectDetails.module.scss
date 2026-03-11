@@ -5,25 +5,22 @@ $radius-md: 1rem;
 $radius-lg: 1.25rem;
 $radius-xl: 1.5rem;
 $radius-2xl: 1.75rem;
-$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
-$shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
-$transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+/* Use design tokens from custom.css: --shadow-subtle, --shadow-soft, --transition-med */
 
 /* Section card */
 .sectionCard {
   border-radius: $radius-2xl;
   border: 1px solid var(--brand-alpha-weak);
-  background: var(--brand-alpha-weak);
+  background: linear-gradient(135deg, var(--accent-soft-strong) 0%, var(--brand-alpha-weak) 40%);
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
   max-width: 100%;
   min-width: 0;
-  box-shadow: $shadow-sm;
-  transition: box-shadow $transition, border-color $transition;
+  box-shadow: var(--shadow-subtle);
+  transition: box-shadow var(--transition-med), border-color var(--transition-med);
 
   &:hover {
-    box-shadow: $shadow-md;
+    box-shadow: var(--shadow-soft);
     border-color: var(--brand-alpha-medium);
   }
 
@@ -61,17 +58,17 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--brand-alpha-weak);
   padding: 1.25rem;
   margin-bottom: 0;
-  transition: transform $transition, box-shadow $transition, border-color $transition;
+  transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
   height: 100%;
   min-height: 0;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  box-shadow: $shadow-sm;
+  box-shadow: var(--shadow-subtle);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: $shadow-hover;
+    box-shadow: var(--shadow-soft);
     border-color: var(--brand-alpha-medium);
   }
 
@@ -165,14 +162,14 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: transform $transition, box-shadow $transition, border-color $transition;
+  transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
   max-width: 100%;
   min-width: 0;
-  box-shadow: $shadow-sm;
+  box-shadow: var(--shadow-subtle);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: $shadow-hover;
+    box-shadow: var(--shadow-soft);
     border-color: var(--brand-alpha-medium);
   }
 
@@ -313,7 +310,7 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 2rem 0;
   max-width: 100%;
   min-width: 0;
-  box-shadow: $shadow-sm;
+  box-shadow: var(--shadow-subtle);
 
   p {
     margin: 0;
@@ -351,10 +348,10 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 0;
   min-width: 0;
   background: var(--project-accent-alpha, var(--neutral-alpha-weak));
-  transition: box-shadow $transition, border-color $transition;
+  transition: box-shadow var(--transition-med), border-color var(--transition-med);
   position: relative;
   overflow: hidden;
-  box-shadow: $shadow-sm;
+  box-shadow: var(--shadow-subtle);
 
   &::before {
     content: "";
@@ -417,9 +414,9 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 0;
   display: flex;
   flex-direction: column;
-  transition: transform $transition, box-shadow $transition, border-color $transition;
+  transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
   min-width: 0;
-  box-shadow: $shadow-sm;
+  box-shadow: var(--shadow-subtle);
   position: relative;
   overflow: hidden;
 
@@ -437,7 +434,7 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: $shadow-hover;
+    box-shadow: var(--shadow-soft);
     border-color: var(--brand-alpha-medium);
   }
 
@@ -514,7 +511,7 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: $radius-xl;
   border: 1px solid var(--brand-alpha-weak);
   background: var(--brand-alpha-weak);
-  box-shadow: $shadow-sm;
+  box-shadow: var(--shadow-subtle);
   overflow: hidden;
 }
 
@@ -569,7 +566,7 @@ $transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: $radius-lg;
   border: 1px solid var(--brand-alpha-weak);
   background: var(--brand-alpha-weak);
-  box-shadow: $shadow-sm;
+  box-shadow: var(--shadow-subtle);
 }
 
 .workflowDiagramTitle {
