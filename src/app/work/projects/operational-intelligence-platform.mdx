@@ -32,9 +32,24 @@ techStack:
   { value: "3", label: "Export Formats" }
 ]} />
 
+<ProblemSolutionColumns>
+  <div>
 ## Problem
 
 Business data lived in silos—sales metrics in CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. A unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. Reports were stale before they were assembled. When a number looked wrong, leadership couldn't drill in—they had to request another report and wait.
+  </div>
+  <div>
+## Solution
+
+Leadership operates with real-time operational intelligence—configurable by role, exportable on demand, and delivered on schedule without anyone logging in.
+
+<OutcomeStats stats={[
+  { value: "Real-Time", label: "Operational Data on Every Load" },
+  { value: "Zero", label: "Manual Report Assembly" },
+  { value: "Full", label: "Cross-Module Visibility in One View" }
+]} />
+  </div>
+</ProblemSolutionColumns>
 
 ## How It Works
 
@@ -75,19 +90,3 @@ One-click export to PDF via html2canvas and jsPDF, Excel via xlsxwriter, and PNG
 New KPI widgets added without modifying core infrastructure. Automated migration scripts handle security rule and data structure updates on every module upgrade. Full test coverage for data integrity and access control.
 </HowItWorksCard>
 </HowItWorksGrid>
-
-## Outcome
-
-Leadership operates with real-time operational intelligence—configurable by role, exportable on demand, and delivered on schedule without anyone logging in.
-
-<OutcomeStats stats={[
-  { value: "Real-Time", label: "Operational Data on Every Load" },
-  { value: "Zero", label: "Manual Report Assembly" },
-  { value: "Full", label: "Cross-Module Visibility in One View" }
-]} />
-
-## Tech Stack
-
-Python · JavaScript · AmCharts 5 · GridStack.js · html2canvas · jsPDF · xlsxwriter
-
-

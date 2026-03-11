@@ -50,32 +50,30 @@
 .ctaLink {
     margin: 0;
     padding: 0.75rem 1.5rem;
-    background: var(--button-primary);
-    color: #fff;
+    background: var(--scheme-brand-200);
+    color: var(--neutral-on-background-strong);
     text-decoration: none;
     border-radius: 0.5rem;
-    transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
+    border: 1px solid var(--scheme-brand-400);
+    transition: border-color var(--transition-med), background-color var(--transition-med);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
     letter-spacing: -0.01em;
-    border: none;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 
     &:hover {
-        background: var(--button-primary-hover);
-        transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        background: var(--scheme-brand-300);
+        border-color: var(--scheme-brand-500);
     }
 
     &:active {
-        transform: translateY(0);
+        background: var(--scheme-brand-300);
     }
 
     :global(span) {
-        color: #fff !important;
+        color: inherit !important;
         font-weight: 600;
     }
 }

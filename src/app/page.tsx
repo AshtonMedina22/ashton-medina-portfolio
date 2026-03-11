@@ -46,7 +46,7 @@ export default function Home() {
       <div className={styles.viewportFill}>
         <div className={styles.contentBlock}>
           <div className="sectionHue" style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-            <Column maxWidth="s" horizontal="center" align="center" gap="s">
+            <Column maxWidth="m" horizontal="center" align="center" gap="s">
               {home.featured.display && (
                 <RevealFx fillWidth horizontal="center" paddingBottom="4">
                   <Badge

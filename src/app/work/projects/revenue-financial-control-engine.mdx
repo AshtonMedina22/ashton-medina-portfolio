@@ -28,15 +28,30 @@ techStack:
   { value: "Zero", label: "Unauthorized Pricing" }
 ]} />
 
+<ProblemSolutionColumns>
+  <div>
 ## Problem
 
-Revenue leakage rarely announces itselfâ€”it accumulates through unauthorized discounts, informal approvals, unvalidated pricing, and no real-time visibility into margin. By the time finance sees the numbers, the damage is done. Profitability can't be protected after the fact. It has to be enforced at the point of every transaction.
+Revenue leakage rarely announces itself—it accumulates through unauthorized discounts, informal approvals, unvalidated pricing, and no real-time visibility into margin. By the time finance sees the numbers, the damage is done. Profitability can't be protected after the fact. It has to be enforced at the point of every transaction.
+  </div>
+  <div>
+## Solution
+
+Profitability is protected through system-enforced governance — every discount, approval, cost, and payout controlled, logged, and traceable from pipeline to delivery.
+
+<OutcomeStats stats={[
+  { value: "Real-Time", label: "Per-Engagement Margin Visibility" },
+  { value: "Full", label: "Budget-to-Actual Traceability" },
+  { value: "Automated", label: "Compensation Processing" }
+]} />
+  </div>
+</ProblemSolutionColumns>
 
 ## How It Works
 
 <HowItWorksGrid>
 <HowItWorksCard title="Live Margin Computation">
-Client revenue, estimated vendor costs, actual costs, dollar variance, and margin percentage computed automatically on every project. Updated in real time â€” not end-of-month.
+Client revenue, estimated vendor costs, actual costs, dollar variance, and margin percentage computed automatically on every project. Updated in real time — not end-of-month.
 </HowItWorksCard>
 
 <HowItWorksCard title="Pricing Bands & Floor Enforcement">
@@ -48,7 +63,7 @@ Every monetary record moves through governed states with transitions enforced by
 </HowItWorksCard>
 
 <HowItWorksCard title="Role-Based Financial Permissions">
-Read, write, create, and delete permissions defined per model per security group. Sensitive data â€” margins, costs, compensation â€” hidden from unauthorized roles including external portal users.
+Read, write, create, and delete permissions defined per model per security group. Sensitive data — margins, costs, compensation — hidden from unauthorized roles including external portal users.
 </HowItWorksCard>
 
 <HowItWorksCard title="Post-Delivery Cost Accountability">
@@ -56,7 +71,7 @@ Every vendor assignment tracks estimated vs. actual cost with auto-computed vari
 </HowItWorksCard>
 
 <HowItWorksCard title="Budget-to-Actual Chain">
-Budget captured at pipeline, priced on the sales order, measured against actuals at delivery. Leadership sees what the client said they'd spend, what was quoted, and what it cost to deliver â€” across connected records.
+Budget captured at pipeline, priced on the sales order, measured against actuals at delivery. Leadership sees what the client said they'd spend, what was quoted, and what it cost to deliver — across connected records.
 </HowItWorksCard>
 
 <HowItWorksCard title="Payment Eligibility Gate">
@@ -64,26 +79,10 @@ Four conditions must be cleared before any payout processes: delivery confirmed,
 </HowItWorksCard>
 
 <HowItWorksCard title="7-Tier Compensation Engine">
-Rates scale with gross margin performance from 0% below the floor to maximum rate at high-margin delivery. Formula: (Revenue Ã- Attribution %) Ã- Margin Tier Rate. Payout reflects deal quality directly.
+Rates scale with gross margin performance from 0% below the floor to maximum rate at high-margin delivery. Formula: (Revenue × Attribution %) × Margin Tier Rate. Payout reflects deal quality directly.
 </HowItWorksCard>
 
 <HowItWorksCard title="Automated Compensation Records">
 Draft purchase orders auto-generated monthly per stakeholder. Line-level tracking codes link each payout to its source project. Multi-stakeholder attribution supports primary, secondary, and referral splits with a declining referral structure auto-computed from relationship start date.
 </HowItWorksCard>
 </HowItWorksGrid>
-
-## Outcome
-
-Profitability is protected through system-enforced governance â€” every discount, approval, cost, and payout controlled, logged, and traceable from pipeline to delivery.
-
-<OutcomeStats stats={[
-  { value: "Real-Time", label: "Per-Engagement Margin Visibility" },
-  { value: "Full", label: "Budget-to-Actual Traceability" },
-  { value: "Automated", label: "Compensation Processing" }
-]} />
-
-## Tech Stack
-
-Python Â· PostgreSQL Â· XML Â· ORM Security Layer Â· JavaScript
-
-

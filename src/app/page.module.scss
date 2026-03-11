@@ -41,7 +41,7 @@
   line-height: 1.4 !important;
   margin: 0 !important;
   text-align: center;
-  max-width: 42ch;
+  max-width: min(65ch, 100%);
 }
 
 .techSection {

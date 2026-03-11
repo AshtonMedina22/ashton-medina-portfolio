@@ -28,9 +28,24 @@ techStack:
   { value: "Zero", label: "Manual Re-entry" }
 ]} />
 
+<ProblemSolutionColumns>
+  <div>
 ## Problem
 
 Sales closes a deal. Then operations spends hours rebuilding it—re-entering client details, creating task lists from scratch, assigning team members, chasing requirements already captured in the CRM. Every handoff is a chance to lose details, delay delivery, or misquote scope. The gap between "sold" and "started" was the most expensive bottleneck in the business.
+  </div>
+  <div>
+## Solution
+
+Confirming a sale auto-generates a scoped project, inherits all client requirements from CRM, and maintains full traceability from first contact to close.
+
+<OutcomeStats stats={[
+  { value: "Zero", label: "Manual Re-entry" },
+  { value: "1,675+", label: "Lines of Python" },
+  { value: "4", label: "Objects Kept in Sync" }
+]} />
+  </div>
+</ProblemSolutionColumns>
 
 ## How It Works
 
@@ -59,19 +74,3 @@ Syncs 65+ fields bidirectionally across CRM, Sales Orders, Contacts, and Project
 Drives CRM stage progression on key deal milestones. Each transition logs a timestamped audit entry to the record thread.
 </HowItWorksCard>
 </HowItWorksGrid>
-
-## Outcome
-
-Confirming a sale auto-generates a scoped project, inherits all client requirements from CRM, and maintains full traceability from first contact to close.
-
-<OutcomeStats stats={[
-  { value: "Zero", label: "Manual Re-entry" },
-  { value: "1,675+", label: "Lines of Python" },
-  { value: "4", label: "Objects Kept in Sync" }
-]} />
-
-## Tech Stack
-
-Python · PostgreSQL · XML · QWeb · REST APIs
-
-

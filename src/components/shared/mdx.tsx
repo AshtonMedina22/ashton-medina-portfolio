@@ -46,6 +46,7 @@ import { ProjectTechStack } from "../work/ProjectTechStack";
 import { HeroStats } from "../work/HeroStats";
 import { OutcomeStats } from "../work/OutcomeStats";
 import { HowItWorksCard, HowItWorksGrid } from "../work/HowItWorksCard";
+import { ProblemSolutionColumns } from "../work/ProblemSolutionColumns";
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -277,6 +278,7 @@ const components = {
   OutcomeStats,
   HowItWorksCard,
   HowItWorksGrid,
+  ProblemSolutionColumns,
 };
 
 type CustomMDXProps = MDXRemoteProps & {
