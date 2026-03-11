@@ -127,7 +127,7 @@ export default async function Project({
         <SmartLink href="/work" className={styles.heroBreadcrumb}>
           <Text variant="label-strong-m">Projects</Text>
         </SmartLink>
-        <Heading as="h1" variant="display-strong-xl" wrap="balance" className={styles.heroTitle}>
+        <Heading as="h1" variant="heading-strong-xl" wrap="balance" className={styles.heroTitle}>
           {post.metadata.title}
         </Heading>
         <Text

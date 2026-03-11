@@ -8,6 +8,7 @@ import {
   HiOutlineRefresh,
   HiOutlineDownload,
 } from "react-icons/hi";
+import { CLIENT_NAME, SALES_ORDER_ID, CLIENT_REVENUE_FORMATTED } from "../projectData";
 import styles from "./operational-intelligence-demo.module.scss";
 
 const TABS = ["My Tasks", "Team", "Engagements", "Pipeline", "Vendors", "Revenue", "Custom"];
@@ -28,22 +29,23 @@ const TASKS_BY_STAGE = [
   { label: "Done", value: 22, color: "#10b981" },
 ];
 
+// Engagements = projects / sales orders (top level). IDs are sales order or project refs, not work orders.
 const ENGAGEMENTS = [
-  { id: "WO-0891", client: "TechCorp", type: "Type A", date: "Dec 10, 2026", status: "Confirmed", statusColor: "green", rep: "Sarah M.", revenue: "$12,400" },
-  { id: "WO-0887", client: "Acme Inc", type: "Type B", date: "Dec 14, 2026", status: "Proposal Sent", statusColor: "blue", rep: "James K.", revenue: "$8,200" },
-  { id: "WO-0882", client: "Acme Corp", type: "Type A", date: "Dec 18, 2026", status: "Contract Sent", statusColor: "yellow", rep: "Sarah M.", revenue: "$15,000" },
-  { id: "WO-0879", client: "Rivera Co", type: "Type B", date: "Dec 22, 2026", status: "Confirmed", statusColor: "green", rep: "James K.", revenue: "$6,500" },
-  { id: "WO-0875", client: "Winter Foundation", type: "Type A", date: "Dec 28, 2026", status: "Proposal Sent", statusColor: "blue", rep: "Sarah M.", revenue: "$22,000" },
+  { id: SALES_ORDER_ID, client: CLIENT_NAME, type: "Type A", date: "Dec 10, 2026", status: "Confirmed", statusColor: "green", rep: "Sarah M.", revenue: CLIENT_REVENUE_FORMATTED },
+  { id: "SO-0887", client: "Acme Inc", type: "Type B", date: "Dec 14, 2026", status: "Proposal Sent", statusColor: "blue", rep: "James K.", revenue: "$8,200" },
+  { id: "SO-0882", client: "Acme Corp", type: "Type A", date: "Dec 18, 2026", status: "Contract Sent", statusColor: "yellow", rep: "Sarah M.", revenue: "$15,000" },
+  { id: "SO-0879", client: "Rivera Co", type: "Type B", date: "Dec 22, 2026", status: "Confirmed", statusColor: "green", rep: "James K.", revenue: "$6,500" },
+  { id: "SO-0875", client: "Winter Foundation", type: "Type A", date: "Dec 28, 2026", status: "Proposal Sent", statusColor: "blue", rep: "Sarah M.", revenue: "$22,000" },
 ];
 
 const CALENDAR_EVENTS: Record<number, { label?: string; type: "pipeline" | "confirmed" }> = {
-  5: { label: "WO-0875 - Winter Foundation", type: "pipeline" },
-  10: { label: "WO-0891 - TechCorp", type: "confirmed" },
-  14: { label: "WO-0887 - Acme Inc", type: "pipeline" },
-  18: { label: "WO-0882 - Acme Corp", type: "confirmed" },
-  22: { label: "WO-0879 - Rivera Co", type: "confirmed" },
-  26: { label: "WO-0874", type: "pipeline" },
-  28: { label: "WO-0872 - Client", type: "confirmed" },
+  5: { label: "SO-0875 - Winter Foundation", type: "pipeline" },
+  10: { label: `${SALES_ORDER_ID} - ${CLIENT_NAME}`, type: "confirmed" },
+  14: { label: "SO-0887 - Acme Inc", type: "pipeline" },
+  18: { label: "SO-0882 - Acme Corp", type: "confirmed" },
+  22: { label: "SO-0879 - Rivera Co", type: "confirmed" },
+  26: { label: "SO-0874", type: "pipeline" },
+  28: { label: "SO-0872 - Client", type: "confirmed" },
 };
 
 function TasksDoughnut() {
@@ -138,8 +140,8 @@ export function OperationalIntelligenceDemo() {
         </div>
         <span className={styles.shellTitle}>Operational Intelligence Dashboard</span>
       </div>
-      <div className={styles.demoContent}>
-    <div className={styles.demo}>
+      <div className={styles.content}>
+    <div className={styles.view}>
       {/* Controls bar */}
       <div className={styles.controlsBar}>
         <h1 className={styles.controlsBarTitle}>Operations Dashboard</h1>

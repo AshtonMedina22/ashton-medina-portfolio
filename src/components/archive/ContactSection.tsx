@@ -34,7 +34,7 @@ export function ContactSection() {
         <section className={styles.infoBox}>
           <h2 className={styles.boxTitle}>Available For</h2>
           <p className={styles.boxRow}>
-            {AVAILABLE_FOR.join(" · ")}
+            {AVAILABLE_FOR.join(", ")}
           </p>
           <p className={styles.boxMeta}>{LOCATION}</p>
           <div className={styles.actions}>

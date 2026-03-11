@@ -1,13 +1,13 @@
-/* Operational Intelligence Demo - BI dashboard. Uses design tokens: --success-color, --danger-color, --shadow-subtle, --accent-soft */
-$demo-blue: #a78bfa;
-$demo-dark-blue: #7c3aed;
-$demo-green: #10b981;
-$demo-red: #dc2626;
-$demo-yellow: #fbbf24;
-$demo-gray: #a1a1aa;
-$demo-border: #2e1064;
-$demo-bg: #09090b;
-$demo-card-bg: #1a1625;
+/* Operational Intelligence - BI dashboard. Uses design tokens: --success-color, --danger-color, --shadow-subtle, --accent-soft */
+$ui-blue: #a78bfa;
+$ui-dark-blue: #7c3aed;
+$ui-green: #10b981;
+$ui-red: #dc2626;
+$ui-yellow: #fbbf24;
+$ui-gray: #a1a1aa;
+$ui-border: #2e1064;
+$ui-bg: #09090b;
+$ui-card-bg: #1a1625;
 
 /* Fixed product shot: no internal scrollbars, BI dashboard width */
 .shell {
@@ -15,13 +15,13 @@ $demo-card-bg: #1a1625;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  background: $demo-bg;
+  background: $ui-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   line-height: 1.35;
   overflow: hidden;
   border-radius: 0.75rem;
-  border: 1px solid $demo-border;
+  border: 1px solid $ui-border;
 }
 
 .shellTopBar {
@@ -29,8 +29,8 @@ $demo-card-bg: #1a1625;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0.9rem;
-  background: linear-gradient(180deg, rgba($demo-card-bg, 0.98) 0%, $demo-card-bg 100%);
-  border-bottom: 1px solid $demo-border;
+  background: linear-gradient(180deg, rgba($ui-card-bg, 0.98) 0%, $ui-card-bg 100%);
+  border-bottom: 1px solid $ui-border;
 }
 
 .windowDots {
@@ -55,19 +55,19 @@ $demo-card-bg: #1a1625;
   text-align: left;
   font-size: 0.75rem;
   font-weight: 500;
-  color: $demo-gray;
+  color: $ui-gray;
 }
 
-.demoContent {
+.content {
   display: flex;
   flex-direction: column;
-  background: $demo-bg;
+  background: $ui-bg;
   min-height: 0;
   overflow-x: hidden;
   padding: 1rem 1.25rem;
 }
 
-.demo {
+.view {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -84,7 +84,7 @@ $demo-card-bg: #1a1625;
   gap: 0.75rem;
   padding: 0 0.25rem 1rem;
   margin-bottom: 0.25rem;
-  border-bottom: 1px solid $demo-border;
+  border-bottom: 1px solid $ui-border;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -113,18 +113,18 @@ $demo-card-bg: #1a1625;
   padding: 0.4rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 600;
-  color: $demo-gray;
-  background: $demo-card-bg;
-  border: 1px solid $demo-border;
+  color: $ui-gray;
+  background: $ui-card-bg;
+  border: 1px solid $ui-border;
   border-radius: 9999px;
   cursor: pointer;
 }
 
 .tabActive {
   font-weight: 700;
-  color: $demo-bg;
-  background: var(--accent-soft-strong, $demo-blue);
-  border-color: var(--color-accent, $demo-blue);
+  color: $ui-bg;
+  background: var(--accent-soft-strong, $ui-blue);
+  border-color: var(--color-accent, $ui-blue);
   color: #f5f3ff;
 }
 
@@ -144,39 +144,39 @@ $demo-card-bg: #1a1625;
 .selectFilter {
   padding: 0.3rem 0.6rem;
   font-size: 0.75rem;
-  border: 1px solid $demo-border;
+  border: 1px solid $ui-border;
   border-radius: 0.25rem;
-  background: $demo-card-bg;
+  background: $ui-card-bg;
   color: #fafafa;
 }
 
 .iconBtn {
   padding: 0.3rem 0.6rem;
-  border: 1px solid $demo-border;
+  border: 1px solid $ui-border;
   border-radius: 0.25rem;
-  background: $demo-card-bg;
+  background: $ui-card-bg;
   cursor: pointer;
-  color: $demo-gray;
+  color: $ui-gray;
 }
 
 .exportBtn {
   padding: 0.3rem 0.6rem;
   font-size: 0.75rem;
-  border: 1px solid $demo-border;
+  border: 1px solid $ui-border;
   border-radius: 0.25rem;
-  background: $demo-card-bg;
+  background: $ui-card-bg;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: $demo-gray;
+  color: $ui-gray;
 }
 
 .autoEmailBadge {
   padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
   font-weight: 600;
-  color: var(--success-color, $demo-green);
+  color: var(--success-color, $ui-green);
   background: rgba(16, 185, 129, 0.12);
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 9999px;
@@ -211,7 +211,7 @@ $demo-card-bg: #1a1625;
   border: 1px solid rgba(167, 139, 250, 0.3);
   .kpiValue,
   .kpiIcon {
-    color: $demo-blue;
+    color: $ui-blue;
   }
 }
 
@@ -220,7 +220,7 @@ $demo-card-bg: #1a1625;
   border: 1px solid rgba(220, 38, 38, 0.25);
   .kpiValue,
   .kpiIcon {
-    color: var(--danger-color, $demo-red);
+    color: var(--danger-color, $ui-red);
   }
 }
 
@@ -229,7 +229,7 @@ $demo-card-bg: #1a1625;
   border: 1px solid rgba(16, 185, 129, 0.25);
   .kpiValue,
   .kpiIcon {
-    color: var(--success-color, $demo-green);
+    color: var(--success-color, $ui-green);
   }
 }
 
@@ -251,7 +251,7 @@ $demo-card-bg: #1a1625;
 
 .kpiLabel {
   font-size: 0.75rem;
-  color: $demo-gray;
+  color: $ui-gray;
   margin-bottom: 0.25rem;
 }
 
@@ -281,8 +281,8 @@ $demo-card-bg: #1a1625;
 
 .chartPanel {
   padding: 1rem 1.125rem;
-  background: $demo-card-bg;
-  border: 1px solid rgba($demo-border, 0.6);
+  background: $ui-card-bg;
+  border: 1px solid rgba($ui-border, 0.6);
   border-radius: 0.5rem;
   box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.25));
   min-width: 0;
@@ -291,8 +291,8 @@ $demo-card-bg: #1a1625;
 .tablePanel {
   padding: 1rem 1.25rem;
   margin-bottom: 0;
-  background: $demo-card-bg;
-  border: 1px solid rgba($demo-border, 0.6);
+  background: $ui-card-bg;
+  border: 1px solid rgba($ui-border, 0.6);
   border-radius: 0.5rem;
   box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.25));
   min-width: 0;
@@ -330,8 +330,8 @@ $demo-card-bg: #1a1625;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: $demo-card-bg;
-  border: 2px solid $demo-border;
+  background: $ui-card-bg;
+  border: 2px solid $ui-border;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,7 +375,7 @@ $demo-card-bg: #1a1625;
 }
 
 .colorDotDone {
-  background-color: var(--success-color, $demo-green);
+  background-color: var(--success-color, $ui-green);
 }
 
 .legendLabel {
@@ -408,7 +408,7 @@ $demo-card-bg: #1a1625;
   padding: 0.15rem;
   font-size: 0.65rem;
   font-weight: 600;
-  color: $demo-gray;
+  color: $ui-gray;
   text-align: center;
 }
 
@@ -416,7 +416,7 @@ $demo-card-bg: #1a1625;
   padding: 0.3rem;
   min-height: 40px;
   background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba($demo-border, 0.6);
+  border: 1px solid rgba($ui-border, 0.6);
   border-radius: 0.25rem;
   min-width: 0;
 }
@@ -442,16 +442,16 @@ $demo-card-bg: #1a1625;
 }
 
 .eventDotPipeline {
-  background: $demo-blue;
+  background: $ui-blue;
 }
 
 .eventDotConfirmed {
-  background: var(--success-color, $demo-green);
+  background: var(--success-color, $ui-green);
 }
 
 .eventLabel {
   font-size: 0.6875rem;
-  color: $demo-gray;
+  color: $ui-gray;
   line-height: 1.3;
   word-break: break-word;
 }
@@ -462,7 +462,7 @@ $demo-card-bg: #1a1625;
   gap: 0.75rem;
   margin-top: 0.75rem;
   font-size: 0.7rem;
-  color: $demo-gray;
+  color: $ui-gray;
 }
 
 .calendarLegendItem {
@@ -477,7 +477,7 @@ $demo-card-bg: #1a1625;
   font-size: 0.78rem;
 
   thead tr {
-    border-bottom: 1px solid $demo-border;
+    border-bottom: 1px solid $ui-border;
   }
   th {
     text-align: left;
@@ -518,17 +518,17 @@ $demo-card-bg: #1a1625;
 
 .statusGreen {
   background: rgba(16, 185, 129, 0.12);
-  color: var(--success-color, $demo-green);
+  color: var(--success-color, $ui-green);
 }
 
 .statusBlue {
   background: rgba(167, 139, 250, 0.12);
-  color: $demo-blue;
+  color: $ui-blue;
 }
 
 .statusYellow {
   background: rgba(251, 191, 36, 0.12);
-  color: $demo-yellow;
+  color: $ui-yellow;
 }
 
 .tablePagination {
@@ -537,9 +537,9 @@ $demo-card-bg: #1a1625;
   justify-content: space-between;
   margin-top: 0.75rem;
   padding-top: 0.5rem;
-  border-top: 1px solid $demo-border;
+  border-top: 1px solid $ui-border;
   font-size: 0.75rem;
-  color: $demo-gray;
+  color: $ui-gray;
 }
 
 .paginationControls {
@@ -550,11 +550,11 @@ $demo-card-bg: #1a1625;
 .paginationBtn {
   padding: 0.35rem 0.6rem;
   font-size: 0.75rem;
-  border: 1px solid $demo-border;
+  border: 1px solid $ui-border;
   border-radius: 0.5rem;
-  background: $demo-card-bg;
+  background: $ui-card-bg;
   cursor: pointer;
-  color: $demo-gray;
+  color: $ui-gray;
   transition: background 0.15s ease, color 0.15s ease;
   &:hover {
     background: rgba(167, 139, 250, 0.1);

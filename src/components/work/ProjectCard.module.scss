@@ -47,15 +47,16 @@
     width: 100%;
 }
 
+/* Uses design-system primary (--brand-solid-medium = dark purple from custom.css) */
 .ctaLink {
     margin: 0;
     padding: 0.75rem 1.5rem;
-    background: var(--scheme-brand-200);
-    color: var(--neutral-on-background-strong);
+    background: var(--brand-solid-medium);
+    color: var(--brand-on-solid-strong);
     text-decoration: none;
     border-radius: 0.5rem;
-    border: 1px solid var(--scheme-brand-400);
-    transition: border-color var(--transition-med), background-color var(--transition-med);
+    border: 1px solid transparent;
+    transition: background var(--transition-med), border-color var(--transition-med);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,16 +65,15 @@
     cursor: pointer;
 
     &:hover {
-        background: var(--scheme-brand-300);
-        border-color: var(--scheme-brand-500);
+        background: var(--brand-solid-strong);
     }
 
     &:active {
-        background: var(--scheme-brand-300);
+        background: var(--brand-solid-weak);
     }
 
     :global(span) {
-        color: inherit !important;
+        color: inherit;
         font-weight: 600;
     }
 }

@@ -16,7 +16,7 @@ import { OperationalIntelligenceDemo } from "@/components/demos/operational-inte
 import { SmartLink, Text } from "@once-ui-system/core";
 import styles from "./demo.module.scss";
 
-const DEMO_SLUGS = [
+const MOCKUP_SLUGS = [
   "sales-to-delivery-automation-platform",
   "vendor-lifecycle-compliance-platform",
   "revenue-financial-control-engine",
@@ -36,20 +36,20 @@ export default async function Demo({
 }) {
   const { slug } = await params;
 
-  if (!DEMO_SLUGS.includes(slug as (typeof DEMO_SLUGS)[number])) {
+  if (!MOCKUP_SLUGS.includes(slug as (typeof MOCKUP_SLUGS)[number])) {
     notFound();
   }
 
   const projectTitle = getProjectTitle(slug);
 
   return (
-    <div className={styles.demoWrapper}>
-      <div className={styles.demoBar}>
+    <div className={styles.wrapper}>
+      <div className={styles.bar}>
         <SmartLink href={`/work/${slug}`} className={styles.backLink}>
           ← Back to {projectTitle}
         </SmartLink>
       </div>
-      <div className={styles.demoContent}>
+      <div className={styles.content}>
         {slug === "sales-to-delivery-automation-platform" && (
           <SalesToDeliveryDemo />
         )}

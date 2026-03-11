@@ -1,21 +1,21 @@
 "use client";
 
 import { HiLockClosed } from "react-icons/hi";
+import { CLIENT_NAME, SALES_ORDER_ID } from "../projectData";
 import styles from "./sales-to-delivery-demo.module.scss";
 
 const PIPELINE_STAGES = [
   "Intake",
   "Qualification",
-  "Approval",
   "Proposal Sent",
-  "Contract Sent",
   "Booked",
 ] as const;
 
+// Line items total CLIENT_REVENUE; shared across mockups
 const LINE_ITEMS = [
-  { service: "Service A", tier: "Premier", qty: 1, hours: 8, unitPrice: 3200, subtotal: 3200, isTrigger: false },
-  { service: "Service B", tier: "Classic", qty: 1, hours: 6, unitPrice: 2800, subtotal: 2800, isTrigger: false },
-  { service: "Service C", tier: "Essentials", qty: 1, hours: 4, unitPrice: 3200, subtotal: 3200, isTrigger: false },
+  { service: "Service A", tier: "Premier", qty: 1, hours: 8, unitPrice: 4000, subtotal: 4000, isTrigger: false },
+  { service: "Service B", tier: "Classic", qty: 1, hours: 6, unitPrice: 4200, subtotal: 4200, isTrigger: false },
+  { service: "Service C", tier: "Essentials", qty: 1, hours: 4, unitPrice: 4200, subtotal: 4200, isTrigger: false },
 ];
 
 export function SalesOrderPanel() {
@@ -36,12 +36,10 @@ export function SalesOrderPanel() {
 
       {/* Order header */}
       <div className={styles.orderHeader}>
-        <div className={styles.orderClient}>TechCorp</div>
+        <div className={styles.orderClient}>{CLIENT_NAME}</div>
         <div className={styles.orderMeta}>
-          <span>Order #SO-0842</span>
-          <span>WO-0842</span>
-          <span className={styles.badge}>Type A</span>
-          <span>Delivery: Dec 10</span>
+          <span>Order #{SALES_ORDER_ID}</span>
+          <span>Signed: Dec 6, 2026</span>
           <span>Rep: S. M.</span>
         </div>
       </div>
@@ -64,7 +62,7 @@ export function SalesOrderPanel() {
               <tr key={`${row.service}-${row.tier}`}>
                 <td>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
-                    {row.service} · {row.tier}
+                    {row.service} - {row.tier}
                     {row.isTrigger && (
                       <span className={styles.triggerBadge} title="Required trigger product: project auto-generates on confirmation">
                         <HiLockClosed size={12} aria-hidden />

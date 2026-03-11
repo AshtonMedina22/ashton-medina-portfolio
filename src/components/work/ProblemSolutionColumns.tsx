@@ -18,8 +18,8 @@ export function ProblemSolutionColumns({ children }: ProblemSolutionColumnsProps
 
   return (
     <div className={styles.root} role="region" aria-label="Problem and Solution">
-      <div className={styles.column}>{left}</div>
-      <div className={styles.column}>{right}</div>
+      <div className={styles.columnProblem}>{left}</div>
+      <div className={styles.columnSolution}>{right}</div>
     </div>
   );
 }

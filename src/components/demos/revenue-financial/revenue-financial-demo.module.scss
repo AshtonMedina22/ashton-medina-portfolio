@@ -1,11 +1,11 @@
-/* Revenue & Financial Control Demo - ERP financial screen */
-$demo-blue: #a78bfa;
-$demo-green: #10b981;
-$demo-green-bg: #10b98115;
-$demo-red: #dc2626;
-$demo-border: #2e1064;
-$demo-bg: #09090b;
-$demo-card-bg: #1a1625;
+/* Revenue & Financial Control - ERP financial screen */
+$ui-blue: #a78bfa;
+$ui-green: #10b981;
+$ui-green-bg: #10b98115;
+$ui-red: #dc2626;
+$ui-border: #2e1064;
+$ui-bg: #09090b;
+$ui-card-bg: #1a1625;
 
 /* Fixed product shot: no internal scrollbars */
 .shell {
@@ -13,12 +13,12 @@ $demo-card-bg: #1a1625;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  background: $demo-bg;
+  background: $ui-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   overflow: hidden;
   border-radius: 0.75rem;
-  border: 1px solid $demo-border;
+  border: 1px solid $ui-border;
 }
 
 .shellTopBar {
@@ -26,8 +26,8 @@ $demo-card-bg: #1a1625;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0.9rem;
-  background: linear-gradient(180deg, rgba($demo-card-bg, 0.98) 0%, $demo-card-bg 100%);
-  border-bottom: 1px solid $demo-border;
+  background: linear-gradient(180deg, rgba($ui-card-bg, 0.98) 0%, $ui-card-bg 100%);
+  border-bottom: 1px solid $ui-border;
 }
 
 .windowDots {
@@ -55,12 +55,12 @@ $demo-card-bg: #1a1625;
   color: #a1a1aa;
 }
 
-.demoContent {
+.content {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   padding: 1rem 1.25rem;
-  background: $demo-bg;
+  background: $ui-bg;
   min-height: 0;
   overflow-x: hidden;
 }
@@ -77,8 +77,8 @@ $demo-card-bg: #1a1625;
 }
 
 .projectOverviewPanel {
-  background: $demo-card-bg;
-  border: 1px solid $demo-border;
+  background: $ui-card-bg;
+  border: 1px solid $ui-border;
   border-radius: 0.625rem;
   padding: 1.25rem 1.5rem;
   box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.15));
@@ -86,8 +86,8 @@ $demo-card-bg: #1a1625;
 }
 
 .sectionCard {
-  background: $demo-card-bg;
-  border: 1px solid $demo-border;
+  background: $ui-card-bg;
+  border: 1px solid $ui-border;
   border-radius: 0.625rem;
   padding: 1.25rem;
   box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.15));
@@ -98,15 +98,28 @@ $demo-card-bg: #1a1625;
   font-size: 0.9375rem;
   font-weight: 700;
   color: #f5f3ff;
-  margin: 0 0 0.875rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid $demo-border;
+  margin: 0 0 0.35rem 0;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid $ui-border;
   letter-spacing: -0.01em;
   line-height: 1.25;
 }
 
-.panelHeaderWrap {
+.sectionSubline {
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+  max-width: 56em;
+}
+
+.panelHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .panelHeaderTitle {
@@ -114,6 +127,32 @@ $demo-card-bg: #1a1625;
   font-weight: 700;
   color: #f5f3ff;
   margin: 0 0 0.25rem 0;
+}
+
+.viewingAs {
+  font-size: 0.7rem;
+  color: #71717a;
+  margin-left: 0.75rem;
+}
+
+.recordStateBar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.recordStateLabel {
+  color: #a1a1aa;
+}
+
+.recordStateValue {
+  font-weight: 600;
+  color: var(--success-color, $ui-green);
+}
+
+.panelHeaderWrap {
+  margin-bottom: 0.75rem;
 }
 
 .panelHeaderMeta {
@@ -125,8 +164,8 @@ $demo-card-bg: #1a1625;
   margin-left: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 9999px;
-  background: rgba($demo-blue, 0.2);
-  color: $demo-blue;
+  background: rgba($ui-blue, 0.2);
+  color: $ui-blue;
   font-weight: 500;
 }
 
@@ -140,17 +179,41 @@ $demo-card-bg: #1a1625;
   padding: 0.4rem 0.75rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: $demo-blue;
-  background: rgba($demo-blue, 0.1);
-  border: 1px solid rgba($demo-blue, 0.3);
+  color: $ui-blue;
+  background: rgba($ui-blue, 0.1);
+  border: 1px solid rgba($ui-blue, 0.3);
   border-radius: 9999px;
   cursor: pointer;
 }
 
 .relatedBtnActive {
-  background: rgba($demo-blue, 0.28);
-  border-color: rgba($demo-blue, 0.5);
+  background: rgba($ui-blue, 0.28);
+  border-color: rgba($ui-blue, 0.5);
   color: #f5f3ff;
+}
+
+.marginStripHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.marginStripTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #f5f3ff;
+}
+
+.liveBadge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--success-color, $ui-green);
+  padding: 0.2rem 0.45rem;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 9999px;
 }
 
 .metricGrid {
@@ -189,9 +252,9 @@ $demo-card-bg: #1a1625;
 }
 
 .metricRevenue {
-  background: rgba($demo-blue, 0.12);
-  border-color: rgba($demo-blue, 0.3);
-  .metricValue { color: $demo-blue; }
+  background: rgba($ui-blue, 0.12);
+  border-color: rgba($ui-blue, 0.3);
+  .metricValue { color: $ui-blue; }
 }
 
 .metricCost {
@@ -201,22 +264,22 @@ $demo-card-bg: #1a1625;
 }
 
 .metricGreen {
-  background: var(--success-soft, $demo-green-bg);
+  background: var(--success-soft, $ui-green-bg);
   border-color: rgba(16, 185, 129, 0.35);
-  .metricValue { color: var(--success-color, $demo-green); }
+  .metricValue { color: var(--success-color, $ui-green); }
 }
 
 .metricMargin,
 .metricMarginPct {
-  background: var(--success-soft, $demo-green-bg);
+  background: var(--success-soft, $ui-green-bg);
   border-color: rgba(16, 185, 129, 0.35);
-  .metricValue { color: var(--success-color, $demo-green); }
+  .metricValue { color: var(--success-color, $ui-green); }
 }
 
 .metricRed {
   background: var(--danger-soft, #dc262615);
   border-color: rgba(220, 38, 38, 0.35);
-  .metricValue { color: var(--danger-color, $demo-red); }
+  .metricValue { color: var(--danger-color, $ui-red); }
 }
 
 .table {
@@ -225,7 +288,7 @@ $demo-card-bg: #1a1625;
   font-size: 0.8rem;
 
   thead tr {
-    border-bottom: 1px solid $demo-border;
+    border-bottom: 1px solid $ui-border;
   }
   th,
   td {
@@ -254,8 +317,8 @@ $demo-card-bg: #1a1625;
   }
 }
 
-.varianceGreen { color: var(--success-color, $demo-green) !important; font-weight: 600; }
-.varianceRed { color: var(--danger-color, $demo-red) !important; font-weight: 600; }
+.varianceGreen { color: var(--success-color, $ui-green) !important; font-weight: 600; }
+.varianceRed { color: var(--danger-color, $ui-red) !important; font-weight: 600; }
 
 .statusPill {
   display: inline-block;
@@ -269,13 +332,13 @@ $demo-card-bg: #1a1625;
 }
 
 .statusCompleted {
-  background: var(--success-soft, $demo-green-bg);
-  color: var(--success-color, $demo-green);
+  background: var(--success-soft, $ui-green-bg);
+  color: var(--success-color, $ui-green);
 }
 
 .statusInProgress {
-  background: rgba($demo-blue, 0.1);
-  color: $demo-blue;
+  background: rgba($ui-blue, 0.1);
+  color: $ui-blue;
 }
 
 .budgetFlow {
@@ -283,72 +346,48 @@ $demo-card-bg: #1a1625;
   align-items: stretch;
   flex-wrap: wrap;
   gap: 0.75rem 1rem;
-  margin-bottom: 0.75rem;
 }
 
-.budgetPipeline,
-.budgetQuoted,
-.budgetActual {
+.budgetChainBox {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex: 1 1 160px;
-  min-width: 160px;
-  max-width: 200px;
-  padding: 0.875rem 1rem;
-  font-size: 0.9rem;
+  flex: 1 1 120px;
+  min-width: 120px;
+  max-width: 180px;
+  padding: 0.75rem 0.875rem;
   border-radius: 0.5rem;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  color: #fafafa;
+}
+
+.budgetValue {
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
-.budgetPipeline {
-  background: rgba($demo-blue, 0.1);
-  border: 2px solid rgba($demo-blue, 0.3);
-  color: $demo-blue;
-}
-
-.budgetQuoted {
-  background: #fbbf2415;
-  border: 2px solid #fbbf2430;
-  color: #fbbf24;
-}
-
-.budgetActual {
-  background: var(--success-soft, $demo-green-bg);
-  border: 2px solid rgba(16, 185, 129, 0.35);
-  color: var(--success-color, $demo-green);
+.budgetLabel {
+  font-size: 0.7rem;
+  color: #a1a1aa;
+  margin-top: 0.15rem;
 }
 
 .budgetMeta {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 500;
-  margin-top: 0.35rem;
-  line-height: 1.4;
+  margin-top: 0.25rem;
+  line-height: 1.3;
   white-space: nowrap;
+  color: #71717a;
 }
-
-.budgetMetaBlue { color: $demo-blue; }
-.budgetMetaYellow { color: #fbbf24; }
-.budgetMetaGreen { color: var(--success-color, $demo-green); }
 
 .flowArrow {
-  font-size: 1.2rem;
-  color: $demo-blue;
+  font-size: 1.1rem;
+  color: #71717a;
   font-weight: 700;
   align-self: center;
-}
-
-.marginCapturedPill {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--success-color, $demo-green);
-  padding: 0.75rem 1rem;
-  background: var(--success-soft, $demo-green-bg);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  border-radius: 0.5rem;
-  display: inline-block;
-  max-width: 280px;
 }
 
 .pricingGuardrailPanel {
@@ -356,7 +395,7 @@ $demo-card-bg: #1a1625;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem 1.125rem;
-  background: var(--success-soft, rgba($demo-green, 0.08));
+  background: var(--success-soft, rgba($ui-green, 0.08));
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 0.5rem;
   font-size: 0.8125rem;
@@ -374,7 +413,7 @@ $demo-card-bg: #1a1625;
 
 .pricingHeading {
   font-weight: 600;
-  color: var(--success-color, $demo-green);
+  color: var(--success-color, $ui-green);
   margin-bottom: 0.25rem;
 }
 
@@ -393,7 +432,7 @@ $demo-card-bg: #1a1625;
   margin-left: 0.5rem;
   padding: 0.15rem 0.4rem;
   background: rgba(16, 185, 129, 0.25);
-  color: var(--success-color, $demo-green);
+  color: var(--success-color, $ui-green);
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -420,4 +459,132 @@ $demo-card-bg: #1a1625;
   padding-top: 0.5rem;
   border-top: 1px solid #27272a;
   line-height: 1.4;
+}
+
+/* Financial Lifecycle States */
+.lifecycleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lifecyclePill {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  color: #a1a1aa;
+}
+
+.lifecyclePillActive {
+  background: rgba($ui-blue, 0.15);
+  border-color: rgba($ui-blue, 0.35);
+  color: $ui-blue;
+}
+
+/* Role-Based Permissions */
+.permissionTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.permissionTag {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  color: #d4d4d8;
+}
+
+/* Payment Eligibility Gate */
+.eligibilityList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #fafafa;
+  line-height: 1.6;
+}
+
+.eligibilityList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eligibilityCheck {
+  color: var(--success-color, $ui-green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.payoutStatus {
+  margin-bottom: 0.5rem;
+}
+
+.payoutStatusValue {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--success-color, $ui-green);
+}
+
+.compensationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.compensationHeader .sectionCardTitle {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.draftPOBadge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #a1a1aa;
+}
+
+/* 7-Tier Compensation (legacy - kept for reference if needed) */
+.compensationFormula {
+  font-size: 0.8125rem;
+  font-family: ui-monospace, monospace;
+  color: #a1a1aa;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: #27272a;
+  border-radius: 0.375rem;
+  border: 1px solid #3f3f46;
+  max-width: 28rem;
+}
+
+.tierRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tierPill {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  color: #71717a;
+}
+
+.tierPillActive {
+  border-color: rgba($ui-blue, 0.4);
+  color: $ui-blue;
 }

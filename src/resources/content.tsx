@@ -9,7 +9,7 @@ const person: Person = {
   avatar: "/images/avatar.png",
   email: "ashtonmedina22@gmail.com",
   location: "America/Chicago",
-  locationLabel: "Dallas–Fort Worth, TX",
+  locationLabel: "Dallas-Fort Worth, TX",
   languages: ["English", "Bahasa"],
 };
 
@@ -108,7 +108,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About | ${person.name}`,
-  description: `${person.name} · Systems & platform engineer. Approach to scalable, governed platforms and delivery.`,
+  description: `${person.name} - Systems & platform engineer. Approach to scalable, governed platforms and delivery.`,
   tableOfContent: {
     display: false,
     subItems: false,

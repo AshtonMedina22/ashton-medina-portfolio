@@ -15,8 +15,8 @@ export function VendorLifecycleDemo() {
         </div>
         <span className={styles.shellTitle}>Vendor Management & Portal</span>
       </div>
-      <div className={styles.demoContent}>
-        <div className={styles.demo}>
+      <div className={styles.content}>
+        <div className={styles.view}>
           <div className={styles.sectionDividerRow}>
             <span className={styles.sectionDividerLabel}>Internal View</span>
             <span className={styles.sectionDividerLabel}>Vendor Portal View</span>

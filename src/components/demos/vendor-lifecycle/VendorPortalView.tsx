@@ -1,11 +1,12 @@
 "use client";
 
 import { HiOutlineClipboardList, HiOutlineBriefcase, HiOutlineCalendar, HiOutlineDocumentText } from "react-icons/hi";
+import { CLIENT_NAME, ASSIGNMENT_REF } from "../projectData";
 import styles from "./vendor-lifecycle-demo.module.scss";
 
 const SUMMARY_CARDS = [
   { label: "2 Pending Assignments", icon: HiOutlineClipboardList, variant: "warning" as const },
-  { label: "1 Active Work Order", icon: HiOutlineBriefcase, variant: "success" as const },
+  { label: "1 Active Assignment", icon: HiOutlineBriefcase, variant: "success" as const },
   { label: "3 Upcoming Engagements", icon: HiOutlineCalendar, variant: "accent" as const },
   { label: "1 Open Quote Request", icon: HiOutlineDocumentText, variant: "accent" as const },
 ];
@@ -32,13 +33,13 @@ export function VendorPortalView() {
 
       <div className={styles.workOrderCard}>
         <h3 className={styles.workOrderTitle}>
-          WO-0842 · TechCorp Q4 Delivery
+          Assignment #{ASSIGNMENT_REF} - {CLIENT_NAME} Q4 Delivery
         </h3>
         <div className={styles.workOrderDetails}>
           <div><span className={styles.detailLabel}>Date: </span><span className={styles.detailValue}>Dec 10, 2026</span></div>
           <div><span className={styles.detailLabel}>Venue: </span><span className={styles.detailValue}>Site A, Primary Location</span></div>
           <div><span className={styles.detailLabel}>Arrival: </span><span className={styles.detailValue}>2:00 PM</span></div>
-          <div><span className={styles.detailLabel}>Service: </span><span className={styles.detailValue}>Service Type A, Service Type B · Full Scope</span></div>
+          <div><span className={styles.detailLabel}>Service: </span><span className={styles.detailValue}>Service Type A, Service Type B - Full Scope</span></div>
         </div>
         <div className={styles.actionRow}>
           <button type="button" className={styles.btnPrimary}>Accept & Sign</button>

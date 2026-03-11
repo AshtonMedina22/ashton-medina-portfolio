@@ -62,9 +62,9 @@
   --color-violet: #a78bfa;
   --color-cyan: #22d3ee;
 
-  /* Primary action: one violet, site-wide (professional, not bright) */
-  --button-primary: var(--scheme-brand-500);
-  --button-primary-hover: var(--scheme-brand-600);
+  /* Primary action: dark purple (matches site), not bright */
+  --button-primary: var(--scheme-brand-200);
+  --button-primary-hover: var(--scheme-brand-300);
   /* Kept for demos / optional tints only; not used for CTAs */
   --accent-soft: rgba(167, 139, 250, 0.16);
   --accent-soft-strong: rgba(167, 139, 250, 0.28);
@@ -80,6 +80,18 @@
   /* Danger / negative (over-budget variance, errors) */
   --danger-color: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.16);
+
+  /* Override Once UI display scale — was 5rem/4rem/3rem (huge); now sane heading sizes */
+  --font-size-display-xl: 1.75rem;
+  --font-size-display-l: 1.5rem;
+  --font-size-display-m: 1.375rem;
+  --font-size-display-s: 1.25rem;
+  --font-size-display-xs: 1.125rem;
+  --line-height-display-xl: 1.25;
+  --line-height-display-l: 1.25;
+  --line-height-display-m: 1.25;
+  --line-height-display-s: 1.25;
+  --line-height-display-xs: 1.25;
 }
 
 [data-theme="dark"],
@@ -101,6 +113,12 @@
   --brand-alpha-weak: rgba(167, 139, 250, 0.14);
   --brand-alpha-medium: rgba(167, 139, 250, 0.25);
   --brand-alpha-strong: rgba(167, 139, 250, 0.4);
+  /* Once UI primary buttons: use dark purple (page/site), not bright violet */
+  --brand-solid-strong: var(--scheme-brand-300);
+  --brand-solid-medium: var(--scheme-brand-200);
+  --brand-solid-weak: var(--scheme-brand-100);
+  --brand-on-solid-strong: #fafafa;
+  --brand-on-solid-weak: var(--scheme-brand-800);
 }
 
 /* --------------------------------------------------------------------------
@@ -117,6 +135,12 @@
   --brand-alpha-weak: rgba(167, 139, 250, 0.12);
   --brand-alpha-medium: rgba(167, 139, 250, 0.22);
   --brand-alpha-strong: rgba(167, 139, 250, 0.35);
+  /* Once UI primary buttons: darker violet, not bright */
+  --brand-solid-strong: var(--scheme-brand-400);
+  --brand-solid-medium: var(--scheme-brand-300);
+  --brand-solid-weak: var(--scheme-brand-200);
+  --brand-on-solid-strong: #fafafa;
+  --brand-on-solid-weak: var(--scheme-brand-1000);
 }
 
 [data-theme="dark"] body,

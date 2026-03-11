@@ -61,7 +61,14 @@ export function TechStackMarquee() {
         key={`${tech.name}-${index}`}
         className={className}
       >
-        {Icon && <Icon className={styles.techIcon} style={iconColor ? { color: iconColor } : undefined} />}
+        {Icon && (
+          <span
+            className={styles.techIconWrap}
+            style={iconColor ? { color: iconColor } : undefined}
+          >
+            <Icon className={styles.techIcon} />
+          </span>
+        )}
         <span className={styles.techLabel}>{tech.name}</span>
       </div>
     );

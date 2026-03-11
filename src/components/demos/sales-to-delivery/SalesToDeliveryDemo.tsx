@@ -16,8 +16,8 @@ export function SalesToDeliveryDemo() {
         </div>
         <span className={styles.shellTitle}>Sales Order → Project</span>
       </div>
-      <div className={styles.demoContent}>
-        <div className={styles.demo}>
+      <div className={styles.content}>
+        <div className={styles.view}>
           {/* ERP-style header bar */}
           <header className={styles.header}>
             <div>

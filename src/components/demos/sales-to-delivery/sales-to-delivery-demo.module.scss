@@ -1,4 +1,4 @@
-/* Sales-to-Delivery Demo - Modern ERP interface, platform-agnostic */
+/* Sales-to-Delivery - Modern ERP interface, platform-agnostic */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 $blue: #a78bfa;
@@ -16,7 +16,7 @@ $text: #f5f3ff;
 $text-muted: #a1a1aa;
 $text-subtle: #52525b;
 
-/* Wrapper: subtle vignette and padding so demo reads as a product shot */
+/* Wrapper: subtle vignette and padding for product shot */
 .shellWrap {
   padding: 1.5rem;
   background: radial-gradient(
@@ -86,7 +86,7 @@ $text-subtle: #52525b;
   color: $text-muted;
 }
 
-.demoContent {
+.content {
   display: flex;
   flex-direction: column;
   background: $bg;
@@ -94,7 +94,7 @@ $text-subtle: #52525b;
   overflow: hidden;
 }
 
-.demo {
+.view {
   min-height: 0;
   flex: 1;
   width: 100%;
@@ -498,16 +498,6 @@ $text-subtle: #52525b;
   &:hover {
     box-shadow: 0 0 0 1px rgba($blue, 0.3);
   }
-
-  &:nth-child(4),
-  &:nth-child(5) {
-    background: var(--success-soft, $green-bg);
-    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.25);
-
-    .financialLabel {
-      color: var(--success-color, $green);
-    }
-  }
 }
 
 .financialLabel {
@@ -524,14 +514,6 @@ $text-subtle: #52525b;
   font-weight: 700;
   color: $text;
   letter-spacing: -0.02em;
-  margin-top: auto;
-  align-self: flex-end;
-}
-
-.financialValueHighlight {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--success-color, $green);
   margin-top: auto;
   align-self: flex-end;
 }
