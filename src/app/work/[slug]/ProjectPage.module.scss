@@ -9,18 +9,18 @@ $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-/* Type scale and spacing (project-page-only) */
+/* Type scale and spacing (project-page-only) — Option A: tighter, consistent */
 $font-size-base: 1rem;
 $font-size-h2: 1.75rem;
 $font-size-h3: 1.25rem;
 $font-size-h4: 1.125rem;
 $line-height-body: 1.6;
 $line-height-heading: 1.25;
-$space-sm: 1rem;
-$space-md: 1.5rem;
-$space-lg: 2rem;
-$space-xl: 3rem;
-$space-xxl: 4rem;
+$space-sm: 0.75rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 1.5rem;
+$space-xxl: 2rem;
 
 /* Outer page container: one width, centered, shared horizontal padding (fixes "squished and centered") */
 .pageWrap {
@@ -48,17 +48,17 @@ $space-xxl: 4rem;
 /* Hero - full width of pageWrap content area */
 .hero {
   text-align: center;
-  margin: $space-xl auto 0;
+  margin: $space-lg auto 0;
   width: 100%;
   max-width: 100%;
-  padding: 2.5rem 0 0;
+  padding: 1.5rem 0 0;
 
   @media (max-width: 768px) {
-    padding: 2rem 0 0;
+    padding: 1.25rem 0 0;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 0 0;
+    padding: 1rem 0 0;
   }
 }
 
@@ -133,8 +133,8 @@ $space-xxl: 4rem;
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 4rem;
-  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  margin-top: 2rem;
   border-radius: $radius-2xl;
   overflow: hidden;
   border: none;
@@ -168,7 +168,7 @@ $space-xxl: 4rem;
 .mockupSection {
   width: 100%;
   margin-top: $space-xxl;
-  padding-top: $space-xl;
+  padding-top: $space-lg;
   text-align: center;
 }
 
@@ -182,7 +182,7 @@ $space-xxl: 4rem;
 
 .mockupSectionCaption {
   max-width: 100%;
-  margin: 0 auto $space-lg;
+  margin: 0 auto $space-md;
   font-size: $font-size-base;
   line-height: $line-height-body;
   color: var(--neutral-on-background-medium);
@@ -198,8 +198,8 @@ $space-xxl: 4rem;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 4rem;
-  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
@@ -282,7 +282,7 @@ $space-xxl: 4rem;
   display: none;
 }
 
-/* Article prose - full width of pageWrap so grids and text use full content area (no skinny center) */
+/* Article prose - full width of pageWrap; body copy in one readable column (720px) for consistent feel */
 .articleProse {
   width: 100%;
   max-width: 100%;
@@ -311,13 +311,16 @@ $space-xxl: 4rem;
     font-size: $font-size-h3;
     font-weight: 600;
     line-height: 1.3;
-    margin-top: $space-xl;
+    margin-top: $space-lg;
     margin-bottom: $space-sm;
     color: var(--neutral-on-background-strong);
     letter-spacing: -0.01em;
   }
 
   :global(.mdx-paragraph) {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: $space-md;
     overflow-wrap: break-word;
     line-height: $line-height-body;
@@ -381,13 +384,13 @@ $space-xxl: 4rem;
 
     :global(h2) {
       font-size: 1.5rem;
-      margin-top: $space-xl;
+      margin-top: $space-lg;
       margin-bottom: $space-md;
     }
 
     :global(h3) {
       font-size: $font-size-h3;
-      margin-top: $space-lg;
+      margin-top: $space-md;
       margin-bottom: $space-sm;
     }
 
@@ -430,13 +433,13 @@ $space-xxl: 4rem;
 
     :global(h2) {
       font-size: 1.375rem;
-      margin-top: $space-lg;
+      margin-top: $space-md;
       margin-bottom: $space-sm;
     }
 
     :global(h3) {
       font-size: $font-size-h4;
-      margin-top: $space-md;
+      margin-top: $space-sm;
       margin-bottom: $space-sm;
     }
 

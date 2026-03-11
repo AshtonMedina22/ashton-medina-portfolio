@@ -1,4 +1,4 @@
-@use "./breakpoints.scss" as breakpoints;
+@use "../shared/breakpoints.scss" as breakpoints;
 
 .mask {
     pointer-events: none;

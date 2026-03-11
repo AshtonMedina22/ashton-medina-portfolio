@@ -8,7 +8,7 @@ import {
   Meta,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, techStack } from "@/resources";
-import { TechStackMarquee } from "@/components";
+import { TechStackMarquee } from "@/components/home/TechStackMarquee";
 import styles from "./page.module.scss";
 
 export async function generateMetadata() {

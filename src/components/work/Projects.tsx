@@ -1,6 +1,6 @@
 import { getPosts } from "@/utils/utils";
 import { Column } from "@once-ui-system/core";
-import { ProjectCard } from "@/components";
+import { ProjectCard } from "./ProjectCard";
 import styles from "./Projects.module.scss";
 
 interface ProjectsProps {

@@ -12,7 +12,10 @@ import {
   Row,
 } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { ScrollToHash, CustomMDX, TechStack, ProjectTechStack } from "@/components";
+import { CustomMDX } from "@/components/shared/mdx";
+import { ScrollToHash } from "@/components/shared/ScrollToHash";
+import { TechStack } from "@/components/work/TechStack";
+import { ProjectTechStack } from "@/components/work/ProjectTechStack";
 import { SalesToDeliveryDemo } from "@/components/demos/sales-to-delivery/SalesToDeliveryDemo";
 import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorLifecycleDemo";
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
@@ -186,7 +189,7 @@ export default async function Project({
         </Row>
       )}
 
-      <Column as="article" horizontal="center" marginTop="xl" className={styles.articleProse}>
+      <Column as="article" horizontal="center" marginTop="l" className={styles.articleProse}>
         <CustomMDX source={post.content} />
       </Column>
 

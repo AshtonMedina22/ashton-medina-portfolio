@@ -2,6 +2,8 @@
 
 Use this when you want to change something on the site. **Ctrl+P** (or Cmd+P) and paste the path to open the file.
 
+**→ What’s actually LIVE on the site vs unused/template?** See **`LIVE_SITE_MAP.md`** (same folder). It lists every route → file, which demos are in use, and what’s not used (e.g. ContactSection, template docs).
+
 ---
 
 ## Sidebar quick map (main pages → main file)

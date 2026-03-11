@@ -9,7 +9,8 @@ import {
   Row,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social, techStack } from "@/resources";
-import { ThemeAwareAvatar, SkillsSection } from "@/components";
+import { ThemeAwareAvatar } from "@/components/about/ThemeAwareAvatar";
+import { SkillsSection } from "@/components/about/SkillsSection";
 import styles from "@/components/about/about.module.scss";
 
 export async function generateMetadata() {

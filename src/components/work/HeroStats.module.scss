@@ -2,14 +2,14 @@
 .statsContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
   width: 100%;
   max-width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--neutral-alpha-weak);
 
   @media (max-width: 640px) {

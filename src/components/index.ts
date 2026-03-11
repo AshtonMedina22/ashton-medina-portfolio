@@ -1,21 +1,30 @@
-export { Header } from "@/components/Header";
-export { Footer } from "@/components/Footer";
-export { Mailchimp } from "@/components/Mailchimp";
-export { ProjectCard } from "@/components/ProjectCard";
-export { HeadingLink } from "@/components/HeadingLink";
-export { RouteGuard } from "@/components/RouteGuard";
-export { Providers } from "@/components/Providers";
-export { ScrollToHash } from "@/components/ScrollToHash";
-export { ThemeToggle } from "@/components/ThemeToggle";
-export { CustomMDX } from "@/components/mdx";
+// Layout — used on every page
+export { Header } from "@/components/layout/Header";
+export { Footer } from "@/components/layout/Footer";
+export { ThemeToggle } from "@/components/layout/ThemeToggle";
+export { Providers } from "@/components/layout/Providers";
+export { RouteGuard } from "@/components/layout/RouteGuard";
+
+// Shared — project pages + blog posts (MDX, anchor scroll)
+export { CustomMDX } from "@/components/shared/mdx";
+export { ScrollToHash } from "@/components/shared/ScrollToHash";
+
+// Home
+export { TechStackMarquee } from "@/components/home/TechStackMarquee";
+
+// About
+export { ThemeAwareAvatar } from "@/components/about/ThemeAwareAvatar";
+export { SkillsSection } from "@/components/about/SkillsSection";
+
+// Work (list + project page building blocks)
+export { ProjectCard } from "@/components/work/ProjectCard";
+export { ProjectCardTechStack } from "@/components/work/ProjectCardTechStack";
 export { TechStack } from "@/components/work/TechStack";
-export { SkillsSection } from "@/components/work/SkillsSection";
 export { ProjectSection } from "@/components/work/ProjectSection";
 export { ProjectTechStack } from "@/components/work/ProjectTechStack";
-export { ProjectCardTechStack } from "@/components/ProjectCardTechStack";
 export { HeroStats } from "@/components/work/HeroStats";
 export { OutcomeStats } from "@/components/work/OutcomeStats";
 export { HowItWorksCard, HowItWorksGrid } from "@/components/work/HowItWorksCard";
-export { TechStackMarquee } from "@/components/TechStackMarquee";
-export { ThemeAwareAvatar } from "@/components/ThemeAwareAvatar";
-export { ContactSection } from "@/components/ContactSection";
+
+// Blog
+export { Mailchimp } from "@/components/blog/Mailchimp";

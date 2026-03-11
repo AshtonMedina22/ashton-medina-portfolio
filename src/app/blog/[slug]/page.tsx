@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { CustomMDX, ScrollToHash } from "@/components";
+import { CustomMDX } from "@/components/shared/mdx";
+import { ScrollToHash } from "@/components/shared/ScrollToHash";
 import {
   Meta,
   Schema,

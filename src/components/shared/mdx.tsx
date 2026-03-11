@@ -39,13 +39,13 @@ import {
   WorkflowDiagram,
   ProofPointsBlock,
   ProofPoint,
-} from "./work/ProjectCardComponents";
+} from "../work/ProjectCardComponents";
 
-import { ProjectSection } from "./work/ProjectSection";
-import { ProjectTechStack } from "./work/ProjectTechStack";
-import { HeroStats } from "./work/HeroStats";
-import { OutcomeStats } from "./work/OutcomeStats";
-import { HowItWorksCard, HowItWorksGrid } from "./work/HowItWorksCard";
+import { ProjectSection } from "../work/ProjectSection";
+import { ProjectTechStack } from "../work/ProjectTechStack";
+import { HeroStats } from "../work/HeroStats";
+import { OutcomeStats } from "../work/OutcomeStats";
+import { HowItWorksCard, HowItWorksGrid } from "../work/HowItWorksCard";
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
