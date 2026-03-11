@@ -4,9 +4,9 @@ import styles from "./vendor-lifecycle-demo.module.scss";
 
 const DOCUMENTS = [
   { type: "General Liability Insurance", status: "Compliant", statusColor: "green", expiry: "2026-03-15" },
-  { type: "W-9", status: "Compliant", statusColor: "green", expiry: "—" },
+  { type: "W-9", status: "Compliant", statusColor: "green", expiry: "N/A" },
   { type: "Business License", status: "Expiring Soon", statusColor: "yellow", expiry: "2025-03-01" },
-  { type: "Workers Comp", status: "Missing Required", statusColor: "red", expiry: "—" },
+  { type: "Workers Comp", status: "Missing Required", statusColor: "red", expiry: "N/A" },
 ];
 
 const RATE_CARDS = [

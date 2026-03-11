@@ -43,13 +43,13 @@ export function VendorPortalView() {
 
       <div className={styles.workOrderCard}>
         <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "#f5f3ff", margin: "0 0 1rem 0" }}>
-          ENG-2024-0842 — TechCorp Q4 Delivery
+          ENG-2024-0842 · TechCorp Q4 Delivery
         </h3>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1rem", fontSize: "0.9375rem" }}>
           <div><span className={styles.detailLabel}>Date: </span><span className={styles.detailValue}>Dec 10, 2024</span></div>
-          <div><span className={styles.detailLabel}>Venue: </span><span className={styles.detailValue}>Site A — Primary Location</span></div>
+          <div><span className={styles.detailLabel}>Venue: </span><span className={styles.detailValue}>Site A, Primary Location</span></div>
           <div><span className={styles.detailLabel}>Arrival: </span><span className={styles.detailValue}>2:00 PM</span></div>
-          <div><span className={styles.detailLabel}>Service: </span><span className={styles.detailValue}>Service Type A, Service Type B — Full Scope</span></div>
+          <div><span className={styles.detailLabel}>Service: </span><span className={styles.detailValue}>Service Type A, Service Type B · Full Scope</span></div>
         </div>
         <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem" }}>
           <span className={styles.btnPrimary}>Accept & Sign</span>

@@ -92,14 +92,10 @@ const home: Home = {
     display: false,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
+        <Text onBackground="brand-medium">Featured work</Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/sales-to-delivery-automation-platform",
   },
   subline: (
     <>
@@ -111,8 +107,8 @@ const home: Home = {
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About — ${person.name}`,
-  description: `${person.name} — Systems & platform engineer. Approach to scalable, governed platforms and delivery.`,
+  title: `About | ${person.name}`,
+  description: `${person.name} · Systems & platform engineer. Approach to scalable, governed platforms and delivery.`,
   tableOfContent: {
     display: false,
     subItems: false,

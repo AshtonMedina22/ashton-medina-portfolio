@@ -1,8 +1,8 @@
 /* ==========================================================================
-   Modern Minimal palette (aligned with devportfoliotemplates light/dark)
+   Modern minimal palette
    - Light: white / off-white bg, dark text, gray surfaces, single accent
    - Dark: true dark bg, light text, elevated surfaces, same accent
-   - One accent: violet (#a78bfa) for links, buttons, focus only
+   - Accent: violet (#a78bfa) for links, buttons, focus
    ========================================================================== */
 
 /* Custom palette (data-neutral/brand/accent=custom) */
@@ -69,7 +69,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   DARK THEME — modern minimal (like devportfoliotemplates modern-minimal)
+   DARK THEME
    -------------------------------------------------------------------------- */
 [data-theme="dark"] {
   --page-background: #09090b;
@@ -85,7 +85,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   LIGHT THEME — modern minimal (like devportfoliotemplates modern-minimal-light)
+   LIGHT THEME
    -------------------------------------------------------------------------- */
 [data-theme="light"] {
   --page-background: #ffffff;

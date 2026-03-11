@@ -31,7 +31,7 @@ $text-subtle: #52525b;
 .shell {
   min-height: 0;
   width: 100%;
-  max-width: 960px;
+  max-width: 1120px;
   margin: 0 auto;
   background: $bg;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
@@ -134,13 +134,10 @@ $text-subtle: #52525b;
   gap: 0.75rem;
   padding: 0.875rem 1rem 1rem;
   flex: 1;
-  max-height: 420px;
-  overflow: hidden;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    max-height: none;
   }
 }
 

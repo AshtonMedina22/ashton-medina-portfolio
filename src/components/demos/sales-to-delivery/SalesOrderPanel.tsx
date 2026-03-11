@@ -64,9 +64,9 @@ export function SalesOrderPanel() {
               <tr key={`${row.service}-${row.tier}`}>
                 <td>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
-                    {row.service} — {row.tier}
+                    {row.service} · {row.tier}
                     {row.isTrigger && (
-                      <span className={styles.triggerBadge} title="Required trigger product — project auto-generates on confirmation">
+                      <span className={styles.triggerBadge} title="Required trigger product: project auto-generates on confirmation">
                         <HiLockClosed size={12} aria-hidden />
                         <span>Trigger</span>
                       </span>

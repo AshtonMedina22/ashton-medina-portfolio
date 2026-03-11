@@ -31,7 +31,7 @@ export function ProjectPanel() {
       <h3 className={styles.panelLabel}>Auto-Generated Project</h3>
       {/* Project header */}
       <div>
-        <h2 className={styles.projectTitle}>ENG-2024-0842 — TechCorp</h2>
+        <h2 className={styles.projectTitle}>ENG-2024-0842 · TechCorp</h2>
       </div>
 
       {/* Smart buttons */}

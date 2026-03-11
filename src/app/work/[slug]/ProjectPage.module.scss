@@ -112,7 +112,7 @@ $space-xxl: 2rem;
     gap: 0.5rem 0.75rem;
   }
 
-  /* Pill style for Tag children (Once UI or any pill) */
+  /* Pill style for tag/pill components */
   > * > * {
     display: inline-block;
     padding: 0.25rem 0.625rem;
@@ -201,7 +201,7 @@ $space-xxl: 2rem;
   margin-bottom: 2.5rem;
   margin-top: 1.5rem;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
   background: var(--neutral-background-weak);
   box-sizing: border-box;
@@ -212,12 +212,10 @@ $space-xxl: 2rem;
   display: none;
 }
 
-/* Inner scroll area so mockup doesn't stretch the page */
+/* Demo area: no height cap — full demo visible, page scrolls instead of inner scroll */
 .demoSectionInner {
-  max-height: 580px;
-  overflow-x: auto;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -226,10 +224,6 @@ $space-xxl: 2rem;
     margin-top: 2rem;
     border-radius: 10px;
   }
-
-  .demoSectionInner {
-    max-height: 480px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -237,10 +231,6 @@ $space-xxl: 2rem;
     margin-bottom: 2.5rem;
     margin-top: 1.5rem;
     border-radius: 8px;
-  }
-
-  .demoSectionInner {
-    max-height: 420px;
   }
 }
 

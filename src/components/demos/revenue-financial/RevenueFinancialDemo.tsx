@@ -38,7 +38,7 @@ export function RevenueFinancialDemo() {
         {/* Project overview card */}
         <div className={styles.projectOverviewPanel}>
           <div className={styles.panelHeaderWrap}>
-            <h1 className={styles.panelHeaderTitle}>ENG-2024-0842 — TechCorp</h1>
+            <h1 className={styles.panelHeaderTitle}>ENG-2024-0842 · TechCorp</h1>
             <div className={styles.panelHeaderMeta}>
               Client: TechCorp
               <span className={styles.projectTypeBadge}>Type A</span>
