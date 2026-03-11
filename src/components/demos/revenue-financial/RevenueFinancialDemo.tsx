@@ -53,23 +53,23 @@ export function RevenueFinancialDemo() {
           </div>
         </div>
 
-        {/* Section 1 - Financial Summary */}
-        <div className={styles.sectionCard}>
-          <h3 className={styles.sectionCardTitle}>Financial Summary</h3>
-          <div className={styles.metricGrid}>
-            {METRIC_CARDS.map((card) => (
-              <div key={card.label} className={`${styles.metricCard} ${(styles as Record<string, string>)[`metric${card.variant.charAt(0).toUpperCase() + card.variant.slice(1)}`]}`}>
-                <div className={styles.metricLabel}>{card.label}</div>
-                <div className={styles.metricValue}>{card.value}</div>
-              </div>
-            ))}
+        <div className={styles.mainGrid}>
+          {/* Financial Summary + Vendor table side-by-side */}
+          <div className={styles.sectionCard}>
+            <h3 className={styles.sectionCardTitle}>Financial Summary</h3>
+            <div className={styles.metricGrid}>
+              {METRIC_CARDS.map((card) => (
+                <div key={card.label} className={`${styles.metricCard} ${(styles as Record<string, string>)[`metric${card.variant.charAt(0).toUpperCase() + card.variant.slice(1)}`]}`}>
+                  <div className={styles.metricLabel}>{card.label}</div>
+                  <div className={styles.metricValue}>{card.value}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Section 2 - Vendor Assignment Cost Breakdown */}
-        <div className={styles.sectionCard}>
-          <h3 className={styles.sectionCardTitle}>Vendor Assignment Cost Breakdown</h3>
-          <table className={styles.table}>
+          <div className={styles.sectionCard}>
+            <h3 className={styles.sectionCardTitle}>Vendor Assignment Cost Breakdown</h3>
+            <table className={styles.table}>
             <thead>
               <tr>
                 <th>Vendor</th>
@@ -99,10 +99,10 @@ export function RevenueFinancialDemo() {
               ))}
             </tbody>
           </table>
-        </div>
+          </div>
 
-        {/* Section 3 - Budget-to-Actual Chain */}
-        <div className={styles.sectionCard}>
+          {/* Budget chain + Pricing side-by-side */}
+          <div className={styles.sectionCard}>
           <h3 className={styles.sectionCardTitle}>Budget-to-Actual Chain</h3>
           <div className={styles.budgetFlow}>
             <div className={styles.budgetPipeline}>
@@ -145,11 +145,11 @@ export function RevenueFinancialDemo() {
               <div className={styles.pricingLabel}>Minimum $200 per line enforced</div>
             </div>
           </div>
-        </div>
+          </div>
 
-        {/* Section 4 - Revenue Attribution */}
-        <div className={styles.sectionCard}>
-          <h3 className={styles.sectionCardTitle}>Revenue Attribution</h3>
+          {/* Revenue Attribution — full width */}
+          <div className={`${styles.sectionCard} ${styles.sectionCardFull}`}>
+            <h3 className={styles.sectionCardTitle}>Revenue Attribution</h3>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -173,6 +173,7 @@ export function RevenueFinancialDemo() {
           <p className={styles.tableFooterNote}>
             Referral tier: Year 1 (50% → 25% Year 2)
           </p>
+          </div>
         </div>
       </div>
     </div>

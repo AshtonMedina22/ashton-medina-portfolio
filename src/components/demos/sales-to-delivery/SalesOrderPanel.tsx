@@ -16,7 +16,6 @@ const LINE_ITEMS = [
   { service: "Service A", tier: "Premier", qty: 1, hours: 8, unitPrice: 3200, subtotal: 3200, isTrigger: false },
   { service: "Service B", tier: "Classic", qty: 1, hours: 6, unitPrice: 2800, subtotal: 2800, isTrigger: false },
   { service: "Service C", tier: "Essentials", qty: 1, hours: 4, unitPrice: 3200, subtotal: 3200, isTrigger: false },
-  { service: "Service D", tier: "Standard", qty: 1, hours: 2, unitPrice: 3200, subtotal: 3200, isTrigger: true },
 ];
 
 export function SalesOrderPanel() {
@@ -40,10 +39,10 @@ export function SalesOrderPanel() {
         <div className={styles.orderClient}>TechCorp</div>
         <div className={styles.orderMeta}>
           <span>Order #SO-2024-0842</span>
-          <span>Engagement ENG-2024-0842</span>
+          <span>ENG-2024-0842</span>
           <span className={styles.badge}>Type A</span>
-          <span>Delivery: Dec 10, 2024</span>
-          <span>Rep: Sarah M.</span>
+          <span>Delivery: Dec 10</span>
+          <span>Rep: S. M.</span>
         </div>
       </div>
 

@@ -15,7 +15,7 @@
   font-size: var(--font-size-display-m);
   line-height: var(--line-height-display-m);
   font-weight: var(--font-weight-display-strong);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin: 0;
 }
 
@@ -23,15 +23,16 @@
   font-size: var(--font-size-heading-l);
   line-height: var(--line-height-heading-l);
   font-weight: var(--font-weight-heading-default);
+  letter-spacing: -0.03em;
   margin: 0;
-  opacity: 0.92;
+  color: var(--neutral-on-background-medium);
 }
 
 .heroLocation {
   font-size: var(--font-size-body-m);
   line-height: 1.4;
   margin: 0;
-  opacity: 0.8;
+  color: var(--neutral-on-background-medium);
 }
 
 .heroActions {
@@ -76,6 +77,11 @@
   color: var(--neutral-on-background-strong);
   text-align: left;
   cursor: default;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--brand-solid-medium);
+  }
 }
 
 .focusAreaTitle {
@@ -88,10 +94,9 @@
 
 .focusAreaDescription {
   font-size: var(--font-size-body-s);
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0 0 0.5rem 0;
   color: var(--neutral-on-background-medium);
-  opacity: 0.95;
 }
 
 .focusAreaList {
@@ -110,7 +115,7 @@
 }
 
 .focusAreaList li::before {
-  content: "·";
+  content: "— ";
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -137,18 +142,24 @@
   border: 1px solid var(--neutral-alpha-weak);
   background: var(--surface-background);
   cursor: default;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--brand-solid-medium);
+  }
 }
 
 .technicalCardTitle {
   font-size: var(--font-size-heading-s);
   font-weight: var(--font-weight-heading-strong);
+  letter-spacing: -0.02em;
   margin: 0 0 0.5rem 0;
   color: var(--neutral-on-background-strong);
 }
 
 .technicalCardContent {
   font-size: var(--font-size-body-xs);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--neutral-on-background-medium);
 
   ul {
@@ -185,6 +196,7 @@
 .introTitle {
   font-size: var(--font-size-display-s);
   font-weight: var(--font-weight-display-strong);
+  letter-spacing: -0.02em;
   margin: 0 0 0.5rem 0;
   color: var(--neutral-on-background-strong);
 }
@@ -199,6 +211,7 @@
 .sectionTitle {
   font-size: var(--font-size-heading-xl);
   font-weight: var(--font-weight-heading-strong);
+  letter-spacing: -0.02em;
   margin: 0 0 var(--static-space-16) 0;
   color: var(--neutral-on-background-strong);
 }

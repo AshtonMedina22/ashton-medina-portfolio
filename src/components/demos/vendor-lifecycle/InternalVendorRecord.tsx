@@ -18,13 +18,13 @@ const RATE_CARDS = [
 export function InternalVendorRecord() {
   return (
     <div className={styles.internalPanel}>
-      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0.75rem", marginBottom: "1rem" }}>
+      <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0.75rem", marginBottom: "0.75rem" }}>
         <h2 className={styles.panelTitle}>Elite Sound Productions</h2>
         <span className={styles.badgeSuccess}>Active</span>
         <span className={styles.badgeSuccess}>Compliant</span>
       </div>
 
-      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem", marginBottom: "1.25rem" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
         {["12 Assignments", "8 Documents", "3 Open RFQs"].map((label) => (
           <span key={label} className={styles.pillBtn}>
             {label}
@@ -33,14 +33,7 @@ export function InternalVendorRecord() {
         <span className={styles.badgeSuccess}>Portal Access: Enabled</span>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(200px, 1fr) minmax(260px, 1.2fr)",
-          gap: "1.5rem",
-          marginBottom: "1.25rem",
-        }}
-      >
+      <div className={styles.internalGrid}>
         <div>
           <h3 className={styles.sectionHeading}>Vendor Details</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", fontSize: "0.875rem" }}>

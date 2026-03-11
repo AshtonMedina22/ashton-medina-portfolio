@@ -10,14 +10,18 @@ $demo-border: #2e1064;
 $demo-bg: #09090b;
 $demo-card-bg: #1a1625;
 
-/* App shell */
+/* App shell — fixed product shot, no scrollbars */
 .shell {
   min-height: 0;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   background: $demo-bg;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
   overflow: hidden;
-  width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid $demo-border;
 }
 
 .shellTopBar {
@@ -65,7 +69,8 @@ $demo-card-bg: #1a1625;
   flex-direction: column;
   background: $demo-bg;
   min-height: 0;
-  overflow-x: auto;
+  overflow-x: hidden;
+  padding: 1rem 1.25rem;
 }
 
 .demo {
@@ -75,6 +80,28 @@ $demo-card-bg: #1a1625;
   min-height: 0;
   flex: 1;
   width: 100%;
+}
+
+.sectionDividerRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a1a1aa;
+  margin-bottom: 0.75rem;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 1rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Simple section headers (no tab bar / view toggle) */
@@ -115,23 +142,27 @@ $demo-card-bg: #1a1625;
   letter-spacing: 0.02em;
 }
 
+.internalGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
 /* Card-style panels */
 .internalPanel,
 .portalPanel {
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0;
+  min-width: 0;
   background: $demo-card-bg;
   border: 1px solid $demo-border;
-  border-radius: 0.5rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  border-radius: 0.625rem;
 }
 
 /* Shared dark-theme typography and controls (professional ERP look) */
 .panelTitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #f5f3ff;
   letter-spacing: -0.02em;
@@ -145,10 +176,10 @@ $demo-card-bg: #1a1625;
 }
 
 .sectionHeading {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #f5f3ff;
-  margin: 1rem 0 0.5rem 0;
+  margin: 0.75rem 0 0.4rem 0;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid $demo-border;
 }
@@ -164,8 +195,8 @@ $demo-card-bg: #1a1625;
 }
 
 .pillBtn {
-  padding: 0.4rem 0.75rem;
-  font-size: 0.8125rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: $demo-blue;
   background: rgba($demo-blue, 0.1);
@@ -176,7 +207,7 @@ $demo-card-bg: #1a1625;
 
 .detailLabel {
   color: #71717a;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .detailValue {
@@ -186,8 +217,8 @@ $demo-card-bg: #1a1625;
 .tag {
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
-  font-size: 0.75rem;
-  background: #27272a;
+  font-size: 0.72rem;
+  background: #18181b;
   color: #a1a1aa;
   border: 1px solid #3f3f46;
 }
@@ -202,21 +233,23 @@ $demo-card-bg: #1a1625;
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
+  table-layout: fixed;
+  word-break: break-word;
 
   th {
     text-align: left;
-    padding: 0.5rem 0.75rem;
+    padding: 0.4rem 0.6rem;
     font-weight: 600;
     color: #71717a;
-    font-size: 0.6875rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     border-bottom: 1px solid $demo-border;
   }
 
   td {
-    padding: 0.5rem 0.75rem;
+    padding: 0.4rem 0.6rem;
     border-bottom: 1px solid #27272a;
     color: #f5f3ff;
   }
@@ -250,27 +283,27 @@ $demo-card-bg: #1a1625;
 
 /* Portal summary cards */
 .summaryCard {
-  padding: 1rem;
+  padding: 0.85rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid $demo-border;
   background: $demo-card-bg;
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .workOrderCard {
-  padding: 1.25rem;
+  padding: 1rem 1.1rem;
   border: 1px solid $demo-border;
   border-radius: 0.5rem;
   background: $demo-card-bg;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .btnPrimary {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #09090b;
   background: $demo-green;
@@ -280,8 +313,8 @@ $demo-card-bg: #1a1625;
 }
 
 .btnGhost {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: $demo-red;
   background: transparent;

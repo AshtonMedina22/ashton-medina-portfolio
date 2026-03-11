@@ -6,7 +6,8 @@ import styles from "./sales-to-delivery-demo.module.scss";
 
 export function SalesToDeliveryDemo() {
   return (
-    <div className={styles.shell}>
+    <div className={styles.shellWrap}>
+      <div className={styles.shell}>
       <div className={styles.shellTopBar}>
         <div className={styles.windowDots} aria-hidden>
           <span />
@@ -37,6 +38,7 @@ export function SalesToDeliveryDemo() {
         <ProjectPanel />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

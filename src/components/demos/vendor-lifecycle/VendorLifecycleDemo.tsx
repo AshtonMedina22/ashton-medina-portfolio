@@ -17,15 +17,14 @@ export function VendorLifecycleDemo() {
       </div>
       <div className={styles.demoContent}>
         <div className={styles.demo}>
-          <div className={styles.sectionDivider}>
+          <div className={styles.sectionDividerRow}>
             <span className={styles.sectionDividerLabel}>Internal View</span>
-          </div>
-          <InternalVendorRecord />
-          <div className={styles.sectionDividerPortal}>
             <span className={styles.sectionDividerLabel}>Vendor Portal View</span>
-            <span className={styles.sectionDividerSub}>External-facing experience</span>
           </div>
-          <VendorPortalView />
+          <div className={styles.mainGrid}>
+            <InternalVendorRecord />
+            <VendorPortalView />
+          </div>
         </div>
       </div>
     </div>
