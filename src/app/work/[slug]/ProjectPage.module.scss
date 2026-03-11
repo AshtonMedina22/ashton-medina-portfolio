@@ -9,10 +9,10 @@ $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-/* Type scale and spacing (project-page-only) — balanced so heading isn’t huge vs body */
-$font-size-base: 1.0625rem;   /* 17px — readable body */
-$font-size-h2: 1.5rem;        /* 24px — section heads, not giant */
-$font-size-h3: 1.125rem;     /* 18px */
+/* Type scale — tighter hierarchy so heading and body feel balanced */
+$font-size-base: 1.125rem;   /* 18px — body readable, not tiny */
+$font-size-h2: 1.375rem;     /* 22px — section heads */
+$font-size-h3: 1.125rem;    /* 18px */
 $font-size-h4: 1.0625rem;
 $line-height-body: 1.6;
 $line-height-heading: 1.25;
@@ -67,16 +67,16 @@ $space-xxl: 2rem;
 }
 
 .heroTitle {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.375rem, 3.5vw, 1.75rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.03em;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.75rem 0;
   color: var(--neutral-on-background-strong);
 }
 
 .heroTagline {
-  font-size: 1.125rem;
+  font-size: $font-size-base;
   line-height: $line-height-body;
   color: var(--neutral-on-background-medium);
   max-width: 100%;
@@ -97,14 +97,6 @@ $space-xxl: 2rem;
   gap: 0.5rem 0.75rem;
   margin-top: 1rem;
   font-size: 0.8125rem;
-
-  &::before {
-    content: "Tech Stack:";
-    font-weight: 600;
-    color: var(--neutral-on-background-medium);
-    margin-right: 0.35rem;
-    flex-shrink: 0;
-  }
 
   /* Target Row wrapper so pills flow and gap */
   > * {
@@ -397,7 +389,7 @@ $space-xxl: 2rem;
   }
 
   .heroTitle {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .heroTagline {
@@ -446,7 +438,7 @@ $space-xxl: 2rem;
   }
 
   .heroTitle {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 
   .heroTagline {

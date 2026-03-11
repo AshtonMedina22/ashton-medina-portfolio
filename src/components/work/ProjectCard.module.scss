@@ -50,11 +50,11 @@
 .ctaLink {
     margin: 0;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, var(--color-accent), var(--accent-cyan));
+    background: var(--button-primary);
     color: #fff;
     text-decoration: none;
     border-radius: 0.5rem;
-    transition: opacity var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
+    transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,12 +62,12 @@
     letter-spacing: -0.01em;
     border: none;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(167, 139, 250, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 
     &:hover {
-        opacity: 0.95;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 20px rgba(167, 139, 250, 0.35), 0 0 24px rgba(34, 211, 238, 0.2);
+        background: var(--button-primary-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
     &:active {

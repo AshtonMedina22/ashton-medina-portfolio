@@ -1,8 +1,8 @@
 /* ==========================================================================
    Modern minimal palette — clean, professional
-   - Violet primary accent; cyan for CTA gradients only
-   - No section overlays: single clean background
-   - Solid card backgrounds; shadows for depth; gradient only on primary CTAs
+   - Single violet accent site-wide (primary buttons, links, focus)
+   - No bright gradients; solid accent only
+   - No section overlays; solid card backgrounds
    ========================================================================== */
 
 /* Custom palette (data-neutral/brand/accent=custom) */
@@ -62,11 +62,12 @@
   --color-violet: #a78bfa;
   --color-cyan: #22d3ee;
 
-  /* Stand-out tokens: cyan secondary, soft glows, shadows (use on cards/panels/CTAs) */
-  --accent-cyan: #22d3ee;
+  /* Primary action: one violet, site-wide (professional, not bright) */
+  --button-primary: var(--scheme-brand-500);
+  --button-primary-hover: var(--scheme-brand-600);
+  /* Kept for demos / optional tints only; not used for CTAs */
   --accent-soft: rgba(167, 139, 250, 0.16);
   --accent-soft-strong: rgba(167, 139, 250, 0.28);
-  --cyan-soft: rgba(34, 211, 238, 0.12);
   --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.14);
   --shadow-subtle: 0 1px 1px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.28);
   --transition-fast: 0.16s ease-out;
@@ -185,31 +186,30 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   Primary CTAs & buttons — violet → cyan gradient (CodeAcademy-style)
+   Primary CTAs & buttons — single violet, site-wide (professional)
    -------------------------------------------------------------------------- */
 [data-variant="primary"],
 .ctaGradient,
 a.ctaGradient,
 button.ctaGradient {
-  background: linear-gradient(135deg, var(--color-accent), var(--accent-cyan)) !important;
+  background: var(--button-primary) !important;
   color: #fff !important;
   border: none;
-  transition: opacity var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
-  box-shadow: 0 2px 8px rgba(167, 139, 250, 0.25);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 [data-variant="primary"]:hover,
 .ctaGradient:hover,
 a.ctaGradient:hover,
 button.ctaGradient:hover {
-  opacity: 0.95;
-  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.35), 0 0 24px rgba(34, 211, 238, 0.2);
+  background: var(--button-primary-hover) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 [data-variant="primary"]:focus-visible,
 .ctaGradient:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--button-primary);
   outline-offset: 2px;
 }
-/* Ensure text and icons on gradient CTAs stay light */
 [data-variant="primary"] span,
 [data-variant="primary"] svg,
 .ctaGradient span,
