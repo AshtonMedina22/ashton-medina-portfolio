@@ -29,19 +29,19 @@ const TASKS_BY_STAGE = [
 ];
 
 const ENGAGEMENTS = [
-  { id: "ENG-2024-0891", client: "TechCorp", type: "Type A", date: "Dec 10, 2024", status: "Confirmed", statusColor: "green", rep: "Sarah M.", revenue: "$12,400" },
-  { id: "ENG-2024-0887", client: "Acme Inc", type: "Type B", date: "Dec 14, 2024", status: "Proposal Sent", statusColor: "blue", rep: "James K.", revenue: "$8,200" },
-  { id: "ENG-2024-0882", client: "Acme Corp", type: "Type A", date: "Dec 18, 2024", status: "Contract Sent", statusColor: "yellow", rep: "Sarah M.", revenue: "$15,000" },
-  { id: "ENG-2024-0879", client: "Rivera Co", type: "Type B", date: "Dec 22, 2024", status: "Confirmed", statusColor: "green", rep: "James K.", revenue: "$6,500" },
-  { id: "ENG-2024-0875", client: "Winter Foundation", type: "Type A", date: "Dec 28, 2024", status: "Proposal Sent", statusColor: "blue", rep: "Sarah M.", revenue: "$22,000" },
+  { id: "WO-0891", client: "TechCorp", type: "Type A", date: "Dec 10, 2026", status: "Confirmed", statusColor: "green", rep: "Sarah M.", revenue: "$12,400" },
+  { id: "WO-0887", client: "Acme Inc", type: "Type B", date: "Dec 14, 2026", status: "Proposal Sent", statusColor: "blue", rep: "James K.", revenue: "$8,200" },
+  { id: "WO-0882", client: "Acme Corp", type: "Type A", date: "Dec 18, 2026", status: "Contract Sent", statusColor: "yellow", rep: "Sarah M.", revenue: "$15,000" },
+  { id: "WO-0879", client: "Rivera Co", type: "Type B", date: "Dec 22, 2026", status: "Confirmed", statusColor: "green", rep: "James K.", revenue: "$6,500" },
+  { id: "WO-0875", client: "Winter Foundation", type: "Type A", date: "Dec 28, 2026", status: "Proposal Sent", statusColor: "blue", rep: "Sarah M.", revenue: "$22,000" },
 ];
 
 const CALENDAR_EVENTS: Record<number, { label?: string; type: "pipeline" | "confirmed" }> = {
-  5: { label: "ENG-2024-0875", type: "pipeline" },
-  10: { label: "ENG-2024-0891 - TechCorp", type: "confirmed" },
-  14: { label: "ENG-2024-0887 - Acme", type: "pipeline" },
-  18: { label: "ENG-2024-0882", type: "confirmed" },
-  22: { label: "ENG-2024-0879", type: "confirmed" },
+  5: { label: "WO-0875", type: "pipeline" },
+  10: { label: "WO-0891 - TechCorp", type: "confirmed" },
+  14: { label: "WO-0887 - Acme", type: "pipeline" },
+  18: { label: "WO-0882", type: "confirmed" },
+  22: { label: "WO-0879", type: "confirmed" },
   26: { type: "pipeline" },
   28: { type: "confirmed" },
 };
@@ -82,7 +82,7 @@ function TasksDoughnut() {
 }
 
 function EngagementCalendar() {
-  const year = 2024;
+  const year = 2026;
   const month = 12;
   const daysInMonth = 31;
   const firstDay = 0; // Sunday
@@ -94,7 +94,7 @@ function EngagementCalendar() {
 
   return (
     <div>
-      <div className={styles.calendarHeader}>December 2024</div>
+      <div className={styles.calendarHeader}>December 2026</div>
       <div className={styles.calendarGrid}>
         {weekdays.map((d) => (
           <div key={d} className={styles.weekday}>{d}</div>

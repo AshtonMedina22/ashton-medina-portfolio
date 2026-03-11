@@ -3,11 +3,11 @@
 import styles from "./sales-to-delivery-demo.module.scss";
 
 const TASKS = [
-  { title: "Service A Setup", subtasks: "3/4", assignee: "JM", due: "Dec 8, 2024", column: "todo" as const },
-  { title: "Service B Configuration", subtasks: "2/3", assignee: "SK", due: "Dec 9, 2024", column: "todo" as const },
-  { title: "Service C Coordination", subtasks: "1/3", assignee: "AB", due: "Dec 7, 2024", column: "progress" as const },
-  { title: "Contract Confirmation & Payment Receipt", subtasks: "2/2", assignee: "SM", due: "Dec 6, 2024", column: "waiting" as const },
-  { title: "Pre-delivery Checklist", subtasks: "3/3", assignee: "JM", due: "Dec 5, 2024", column: "done" as const },
+  { title: "Service A Setup", subtasks: "3/4", assignee: "JM", due: "Dec 8, 2026", column: "todo" as const },
+  { title: "Service B Configuration", subtasks: "2/3", assignee: "SK", due: "Dec 9, 2026", column: "todo" as const },
+  { title: "Service C Coordination", subtasks: "1/3", assignee: "AB", due: "Dec 7, 2026", column: "progress" as const },
+  { title: "Contract Confirmation & Payment Receipt", subtasks: "2/2", assignee: "SM", due: "Dec 6, 2026", column: "waiting" as const },
+  { title: "Pre-delivery Checklist", subtasks: "3/3", assignee: "JM", due: "Dec 5, 2026", column: "done" as const },
 ];
 
 const FINANCIAL_CARDS = [
@@ -31,7 +31,7 @@ export function ProjectPanel() {
       <h3 className={styles.panelLabel}>Auto-Generated Project</h3>
       {/* Project header */}
       <div>
-        <h2 className={styles.projectTitle}>ENG-2024-0842 · TechCorp</h2>
+        <h2 className={styles.projectTitle}>WO-0842 · TechCorp</h2>
       </div>
 
       {/* Smart buttons */}

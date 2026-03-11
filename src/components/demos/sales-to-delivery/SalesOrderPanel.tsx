@@ -38,8 +38,8 @@ export function SalesOrderPanel() {
       <div className={styles.orderHeader}>
         <div className={styles.orderClient}>TechCorp</div>
         <div className={styles.orderMeta}>
-          <span>Order #SO-2024-0842</span>
-          <span>ENG-2024-0842</span>
+          <span>Order #SO-0842</span>
+          <span>WO-0842</span>
           <span className={styles.badge}>Type A</span>
           <span>Delivery: Dec 10</span>
           <span>Rep: S. M.</span>
