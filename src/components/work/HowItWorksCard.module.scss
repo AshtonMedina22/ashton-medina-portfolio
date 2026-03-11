@@ -21,7 +21,7 @@
   padding: 1.5rem;
   text-align: center;
   border: 1px solid var(--neutral-alpha-weak);
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--neutral-background-medium) 45%);
+  background: var(--neutral-background-medium);
   border-radius: 0.75rem;
   box-shadow: var(--shadow-subtle);
   transition: border-color var(--transition-med), box-shadow var(--transition-med);

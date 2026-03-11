@@ -45,13 +45,21 @@ export async function generateMetadata({
 
   if (!post) return {};
 
-  return Meta.generate({
+  const base = Meta.generate({
     title: post.metadata.title,
     description: post.metadata.summary,
     baseURL: baseURL,
     image: post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
     path: `${work.path}/${post.slug}`,
   });
+  return {
+    ...base,
+    title: post.metadata.title,
+    openGraph: {
+      ...(typeof base?.openGraph === "object" && base.openGraph),
+      title: post.metadata.title,
+    },
+  };
 }
 
 export default async function Project({
@@ -204,10 +212,12 @@ export default async function Project({
           </p>
           <div className={styles.demoSection}>
             <div className={styles.demoSectionInner}>
-              {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
-              {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
-              {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
-              {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
+              <div className={styles.demoFrame}>
+                {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
+                {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
+                {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
+                {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
+              </div>
             </div>
           </div>
         </section>

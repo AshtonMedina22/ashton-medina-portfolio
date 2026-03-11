@@ -74,7 +74,7 @@
   border-radius: var(--radius-l);
   border: 1px solid var(--neutral-alpha-weak);
   border-top: 2px solid var(--brand-solid-medium);
-  background: linear-gradient(180deg, var(--accent-soft) 0%, var(--surface-background) 30%);
+  background: var(--surface-background);
   color: var(--neutral-on-background-strong);
   text-align: left;
   cursor: default;
@@ -147,7 +147,7 @@
   padding: var(--static-space-20);
   border-radius: var(--radius-m);
   border: 1px solid var(--neutral-alpha-weak);
-  background: linear-gradient(160deg, var(--cyan-soft) 0%, var(--surface-background) 50%);
+  background: var(--surface-background);
   cursor: default;
   transition: border-color var(--transition-med);
 

@@ -1,7 +1,7 @@
 .cardContainer {
     border-radius: var(--radius-xl, 1.25rem);
     border: 1px solid var(--neutral-alpha-weak);
-    background: linear-gradient(160deg, var(--cyan-soft) 0%, var(--surface-background, var(--neutral-alpha-weak)) 40%);
+    background: var(--surface-background, var(--neutral-background-medium));
     overflow: hidden;
     box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.06));
     transition: border-color var(--transition-micro-medium), background var(--transition-micro-medium), box-shadow var(--transition-med, 0.22s ease-out);

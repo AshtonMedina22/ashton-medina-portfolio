@@ -9,11 +9,11 @@ $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
 $transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-/* Type scale and spacing (project-page-only) — Option A: tighter, consistent */
-$font-size-base: 1rem;
-$font-size-h2: 1.75rem;
-$font-size-h3: 1.25rem;
-$font-size-h4: 1.125rem;
+/* Type scale and spacing (project-page-only) — balanced so heading isn’t huge vs body */
+$font-size-base: 1.0625rem;   /* 17px — readable body */
+$font-size-h2: 1.5rem;        /* 24px — section heads, not giant */
+$font-size-h3: 1.125rem;     /* 18px */
+$font-size-h4: 1.0625rem;
 $line-height-body: 1.6;
 $line-height-heading: 1.25;
 $space-sm: 0.75rem;
@@ -67,9 +67,9 @@ $space-xxl: 2rem;
 }
 
 .heroTitle {
-  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   margin: 0 0 1rem 0;
   color: var(--neutral-on-background-strong);
@@ -93,6 +93,7 @@ $space-xxl: 2rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem 0.75rem;
   margin-top: 1rem;
   font-size: 0.8125rem;
@@ -100,8 +101,9 @@ $space-xxl: 2rem;
   &::before {
     content: "Tech Stack:";
     font-weight: 600;
-    color: var(--neutral-on-background-strong);
-    margin-right: 0.25rem;
+    color: var(--neutral-on-background-medium);
+    margin-right: 0.35rem;
+    flex-shrink: 0;
   }
 
   /* Target Row wrapper so pills flow and gap */
@@ -109,21 +111,29 @@ $space-xxl: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem 0.75rem;
   }
 
-  /* Pill style for tag/pill components */
+  /* Pill style: clear surface, visible border, readable text */
   > * > * {
     display: inline-block;
-    padding: 0.25rem 0.625rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 9999px;
-    background: var(--neutral-background-medium);
-    border: 1px solid var(--neutral-alpha-weak);
+    background: var(--neutral-background-strong);
+    border: 1px solid var(--neutral-alpha-medium);
     color: var(--neutral-on-background-strong);
-    font-size: 0.6875rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
+    box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.15));
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  > * > *:hover {
+    border-color: var(--brand-alpha-medium);
+    background: var(--accent-soft, rgba(167, 139, 250, 0.12));
   }
 }
 
@@ -200,10 +210,11 @@ $space-xxl: 2rem;
   margin-right: auto;
   margin-bottom: 2.5rem;
   margin-top: 1.5rem;
-  border-radius: 12px;
+  padding: 2rem;
+  border-radius: 16px;
   overflow: visible;
-  box-shadow: var(--shadow-soft);
-  background: var(--neutral-background-weak);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  background: var(--neutral-background-medium);
   box-sizing: border-box;
   transition: box-shadow var(--transition-med);
 }
@@ -219,10 +230,37 @@ $space-xxl: 2rem;
   width: 100%;
 }
 
+/* Product-shot frame: vignette + padding so the dark app shell reads as a device/screenshot */
+.demoFrame {
+  padding: 1.5rem;
+  background: radial-gradient(
+    ellipse 98% 98% at 50% 50%,
+    transparent 25%,
+    rgba(0, 0, 0, 0.06) 70%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+  border-radius: 12px;
+  min-width: 0;
+}
+
+[data-theme="dark"] .demoFrame {
+  background: radial-gradient(
+    ellipse 98% 98% at 50% 50%,
+    transparent 20%,
+    rgba(0, 0, 0, 0.2) 70%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
 @media (max-width: 768px) {
   .demoSection {
     margin-bottom: 3rem;
     margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  .demoFrame {
+    padding: 1rem;
     border-radius: 10px;
   }
 }
@@ -231,6 +269,11 @@ $space-xxl: 2rem;
   .demoSection {
     margin-bottom: 2.5rem;
     margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .demoFrame {
+    padding: 0.75rem;
     border-radius: 8px;
   }
 }
@@ -354,11 +397,11 @@ $space-xxl: 2rem;
   }
 
   .heroTitle {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .heroTagline {
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
 
   .heroImageWrap {
@@ -374,13 +417,13 @@ $space-xxl: 2rem;
     padding-top: $space-md;
 
     :global(h2) {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       margin-top: $space-lg;
       margin-bottom: $space-md;
     }
 
     :global(h3) {
-      font-size: $font-size-h3;
+      font-size: 1.125rem;
       margin-top: $space-md;
       margin-bottom: $space-sm;
     }
@@ -403,11 +446,11 @@ $space-xxl: 2rem;
   }
 
   .heroTitle {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .heroTagline {
-    font-size: 0.9375rem;
+    font-size: 1rem;
   }
 
   .heroImageWrap {
@@ -429,18 +472,18 @@ $space-xxl: 2rem;
     }
 
     :global(h3) {
-      font-size: $font-size-h4;
+      font-size: 1.0625rem;
       margin-top: $space-sm;
       margin-bottom: $space-sm;
     }
 
     :global(.mdx-paragraph) {
-      font-size: 0.9375rem;
+      font-size: 1rem;
       margin-bottom: $space-md;
     }
 
     :global(.mdx-list-item) {
-      font-size: 0.9375rem;
+      font-size: 1rem;
       margin-bottom: $space-sm;
     }
   }

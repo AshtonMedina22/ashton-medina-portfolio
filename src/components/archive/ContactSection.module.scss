@@ -16,7 +16,7 @@
   padding: 1.5rem 1.75rem;
   border-radius: 0.75rem;
   border: 1px solid var(--neutral-alpha-weak);
-  background: linear-gradient(160deg, var(--cyan-soft) 0%, var(--neutral-background-medium) 50%);
+  background: var(--neutral-background-medium);
   box-shadow: var(--shadow-subtle);
   transition: box-shadow var(--transition-med);
   display: flex;
@@ -28,7 +28,7 @@
 }
 
 [data-theme="light"] .infoBox {
-  background: linear-gradient(160deg, var(--cyan-soft) 0%, var(--neutral-background-medium) 50%);
+  background: var(--neutral-background-medium);
   border-color: var(--neutral-alpha-weak);
 }
 

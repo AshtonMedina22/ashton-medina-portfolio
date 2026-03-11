@@ -20,13 +20,25 @@ import { Providers } from "@/components/layout/Providers";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
-  return Meta.generate({
+  const base = Meta.generate({
     title: home.title,
     description: home.description,
     baseURL: baseURL,
     path: home.path,
     image: home.image,
   });
+  return {
+    ...base,
+    metadataBase: new URL(baseURL),
+    title: {
+      default: base?.title && typeof base.title === "string" ? base.title : home.title,
+      template: "%s | Ashton Medina",
+    },
+    icons: {
+      icon: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+  };
 }
 
 export default async function RootLayout({

@@ -1,8 +1,8 @@
 /* ==========================================================================
-   Modern minimal palette — professional, stands out
-   - Violet primary accent; cyan secondary for gradients and highlights
-   - Section hues: dual violet + cyan radials for depth without noise
-   - Shadows and accent-soft tokens for cards and CTAs
+   Modern minimal palette — clean, professional
+   - Violet primary accent; cyan for CTA gradients only
+   - No section overlays: single clean background
+   - Solid card backgrounds; shadows for depth; gradient only on primary CTAs
    ========================================================================== */
 
 /* Custom palette (data-neutral/brand/accent=custom) */
@@ -168,7 +168,7 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   Section hues — dual violet + cyan radials for depth and stand-out (professional)
+   Section wrapper — layout only, NO overlay (clean background)
    -------------------------------------------------------------------------- */
 .sectionHue {
   position: relative;
@@ -176,31 +176,12 @@ html {
   width: 100%;
 }
 .sectionHue::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(ellipse 120% 100% at 0% 0%, rgba(167, 139, 250, 0.1), transparent 60%),
-    radial-gradient(ellipse 120% 100% at 100% 0%, rgba(34, 211, 238, 0.08), transparent 55%);
+  content: none;
+  display: none;
 }
 .sectionHue > * {
   position: relative;
   z-index: 1;
-}
-
-[data-theme="dark"] .sectionHue::before {
-  background:
-    radial-gradient(ellipse 120% 100% at 0% 0%, rgba(167, 139, 250, 0.1), transparent 60%),
-    radial-gradient(ellipse 120% 100% at 100% 0%, rgba(34, 211, 238, 0.08), transparent 55%);
-}
-
-[data-theme="light"] .sectionHue::before {
-  background:
-    radial-gradient(ellipse 120% 100% at 0% 0%, rgba(167, 139, 250, 0.06), transparent 60%),
-    radial-gradient(ellipse 120% 100% at 100% 0%, rgba(34, 211, 238, 0.05), transparent 55%);
 }
 
 /* --------------------------------------------------------------------------

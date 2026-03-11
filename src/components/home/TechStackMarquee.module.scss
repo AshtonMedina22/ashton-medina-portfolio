@@ -29,16 +29,14 @@
   justify-content: center;
   gap: 0.25rem;
   border-radius: 0.75rem;
-  background:
-    radial-gradient(120% 100% at 50% 0%, rgba(167, 139, 250, 0.08), transparent 72%),
-    linear-gradient(180deg, rgba(14, 18, 28, 0.98), rgba(8, 10, 16, 0.98));
-  border: 1px solid rgba(167, 139, 250, 0.12);
+  background: var(--neutral-background-strong);
+  border: 1px solid var(--neutral-alpha-weak);
   box-shadow:
     0 10px 24px rgba(0, 0, 0, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
   text-align: center;
   transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
-  color: rgba(244, 247, 255, 0.92);
+  color: var(--neutral-on-background-strong);
 }
 
 .techItem::after {
@@ -52,8 +50,8 @@
 
 .techItem:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55), 0 0 18px rgba(99, 120, 255, 0.35);
-  border-color: rgba(130, 158, 255, 0.4);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--neutral-alpha-medium);
 }
 
 /* Light theme: cards match the page so the two rows don't read as separate dark bands */
