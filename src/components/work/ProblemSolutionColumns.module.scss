@@ -32,7 +32,7 @@
     box-shadow: var(--shadow-soft);
   }
 
-  :global(h2) {
+  h2 {
     font-size: 1.125rem;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -41,7 +41,7 @@
     line-height: 1.3;
   }
 
-  :global(p) {
+  p {
     font-size: 0.9375rem;
     line-height: 1.65;
     margin: 0 0 0.75rem 0;
@@ -52,12 +52,12 @@
     }
   }
 
-  :global(p + p) {
+  p + p {
     margin-top: 0.25rem;
   }
 
   /* OutcomeStats or other components inside Solution column */
-  :global(> *:not(h2):not(p)) {
+  > *:not(h2):not(p) {
     margin-top: 1rem;
   }
 }
@@ -76,14 +76,14 @@
     padding: 1.5rem;
   }
 
-  .columnProblem :global(h2),
-  .columnSolution :global(h2) {
+  .columnProblem h2,
+  .columnSolution h2 {
     font-size: 1.0625rem;
     margin-bottom: 0.875rem;
   }
 
-  .columnProblem :global(p),
-  .columnSolution :global(p) {
+  .columnProblem p,
+  .columnSolution p {
     font-size: 0.875rem;
   }
 }
@@ -94,14 +94,14 @@
     padding: 1.25rem;
   }
 
-  .columnProblem :global(h2),
-  .columnSolution :global(h2) {
+  .columnProblem h2,
+  .columnSolution h2 {
     font-size: 1rem;
     margin-bottom: 0.75rem;
   }
 
-  .columnProblem :global(p),
-  .columnSolution :global(p) {
+  .columnProblem p,
+  .columnSolution p {
     font-size: 0.8125rem;
   }
 }
