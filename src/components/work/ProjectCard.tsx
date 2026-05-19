@@ -36,26 +36,20 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
   if (variant === "revenue") {
     return (
       <div className={`${styles.thumbnail} ${styles.thumbnailRevenue}`} aria-label={`${title} thumbnail`}>
-        <div className={styles.thumbChrome}>
-          <span>Financial control</span>
+        <div className={styles.graphicHero}>
+          <div className={styles.profitOrb}>
+            <span>53.2%</span>
+          </div>
+          <div className={styles.financeLedgerMark} aria-hidden>
+            <i />
+            <i />
+            <i />
+          </div>
+        </div>
+        <div className={styles.graphicSignals}>
+          <span>Margin protected</span>
           <strong>SO-0842</strong>
-        </div>
-        <div className={styles.thumbKpis}>
-          <div><span>Revenue</span><strong>$12.4K</strong></div>
-          <div><span>Margin</span><strong>53.2%</strong></div>
-          <div><span>Status</span><strong>Paid</strong></div>
-        </div>
-        <div className={styles.thumbFlowLine}>
-          <span>Quoted</span>
-          <i />
-          <span>Actual</span>
-          <i />
-          <span>Protected</span>
-        </div>
-        <div className={styles.thumbTable}>
-          <div><span>Vendor A</span><strong>-$200</strong></div>
-          <div><span>Vendor B</span><strong>+$100</strong></div>
-          <div><span>Eligibility</span><strong>Cleared</strong></div>
+          <small>Paid · -$400 variance · payout eligible</small>
         </div>
       </div>
     );
@@ -64,26 +58,17 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
   if (variant === "vendor") {
     return (
       <div className={`${styles.thumbnail} ${styles.thumbnailVendor}`} aria-label={`${title} thumbnail`}>
-        <div className={styles.thumbChrome}>
-          <span>Vendor lifecycle</span>
-          <strong>Portal enabled</strong>
-        </div>
-        <div className={styles.thumbPaneGrid}>
-          <div>
-            <span>Internal control</span>
-            <strong>Elite Sound</strong>
-            <small>Active - compliant</small>
+        <div className={styles.graphicHero}>
+          <div className={styles.portalSplitMark} aria-hidden>
+            <i />
+            <i />
           </div>
-          <div>
-            <span>Vendor portal</span>
-            <strong>#0842</strong>
-            <small>Accept & sign</small>
-          </div>
+          <div className={styles.complianceSeal}>✓</div>
         </div>
-        <div className={styles.thumbTable}>
-          <div><span>COI document</span><strong>Valid</strong></div>
-          <div><span>Assignment</span><strong>Sent</strong></div>
-          <div><span>Portal token</span><strong>Secure</strong></div>
+        <div className={styles.graphicSignals}>
+          <span>Vendor portal</span>
+          <strong>Elite Sound</strong>
+          <small>Compliant · 3 docs · portal enabled</small>
         </div>
       </div>
     );
@@ -92,24 +77,19 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
   if (variant === "ops") {
     return (
       <div className={`${styles.thumbnail} ${styles.thumbnailOps}`} aria-label={`${title} thumbnail`}>
-        <div className={styles.thumbChrome}>
-          <span>Operations dashboard</span>
-          <strong>This month</strong>
+        <div className={styles.graphicHero}>
+          <div className={styles.opsPulseMark} aria-hidden>
+            <i />
+            <i />
+            <i />
+            <i />
+          </div>
+          <div className={styles.opsScore}>86%</div>
         </div>
-        <div className={styles.thumbKpis}>
-          <div><span>Engagements</span><strong>8</strong></div>
-          <div><span>Active</span><strong>14</strong></div>
-          <div><span>Revenue</span><strong>$84K</strong></div>
-        </div>
-        <div className={styles.thumbChart}>
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={styles.thumbTable}>
-          <div><span>Upcoming</span><strong>3 rows</strong></div>
-          <div><span>Auto-report</span><strong>Ready</strong></div>
+        <div className={styles.graphicSignals}>
+          <span>Live operations</span>
+          <strong>Executive view</strong>
+          <small>8 engagements · $84.2K · report ready</small>
         </div>
       </div>
     );
@@ -117,26 +97,22 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
 
   return (
     <div className={`${styles.thumbnail} ${styles.thumbnailSales}`} aria-label={`${title} thumbnail`}>
-      <div className={styles.thumbChrome}>
-          <span>Sales order to project</span>
-        <strong>Confirmed</strong>
-      </div>
-      <div className={styles.thumbPaneGrid}>
-        <div>
-          <span>Sales order</span>
-          <strong>SO-0842</strong>
-          <small>3 services - $12.4K</small>
+      <div className={styles.graphicHero}>
+        <div className={styles.orderFlowMark} aria-hidden>
+          <i />
+          <em>→</em>
+          <i />
         </div>
-        <div>
-          <span>Generated project</span>
-          <strong>Project ready</strong>
-          <small>Tasks synced</small>
+        <div className={styles.flowNodeCluster} aria-hidden>
+          <span />
+          <span />
+          <span />
         </div>
       </div>
-      <div className={styles.thumbTable}>
-        <div><span>Implementation</span><strong>12 tasks</strong></div>
-        <div><span>Data migration</span><strong>8 tasks</strong></div>
-        <div><span>Training</span><strong>7 tasks</strong></div>
+      <div className={styles.graphicSignals}>
+        <span>Order → project</span>
+        <strong>SO-0842</strong>
+        <small>3 services · $12.4K · zero re-entry</small>
       </div>
     </div>
   );
