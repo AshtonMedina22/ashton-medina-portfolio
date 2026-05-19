@@ -588,3 +588,390 @@ $ui-card-bg: #1a1625;
   border-color: rgba($ui-blue, 0.4);
   color: $ui-blue;
 }
+
+.financeShell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(88, 28, 135, 0.72);
+  border-radius: 0.75rem;
+  background: #08080b;
+  color: #f5f3ff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.financeStatusStrip {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr 1.15fr;
+  gap: 0.5rem;
+  align-items: center;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(88, 28, 135, 0.65);
+  background: #11101a;
+
+  span,
+  strong {
+    min-width: 0;
+    padding: 0.4rem 0.65rem;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 0.45rem;
+    background: rgba(15, 23, 42, 0.74);
+    color: #cbd5e1;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  strong {
+    border-color: rgba(16, 185, 129, 0.28);
+    background: rgba(16, 185, 129, 0.11);
+    color: #6ee7b7;
+    font-weight: 760;
+  }
+}
+
+.financeComposition {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(167, 139, 250, 0.11), transparent 30%),
+    #08080b;
+}
+
+.marginHero {
+  grid-column: span 8;
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  min-height: 30rem;
+  padding: 1rem;
+  border: 1px solid rgba(167, 139, 250, 0.28);
+  border-radius: 0.65rem;
+  background: #171421;
+}
+
+.marginHeroHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+
+  p {
+    margin: 0 0 0.35rem;
+    color: #c4b5fd;
+    font-size: 0.65rem;
+    font-weight: 780;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 28rem;
+    margin: 0;
+    color: #f5f3ff;
+    font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+    line-height: 1.14;
+    letter-spacing: -0.035em;
+  }
+
+  > span {
+    flex-shrink: 0;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    border-radius: 999px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #6ee7b7;
+    font-size: 0.72rem;
+    font-weight: 760;
+  }
+}
+
+.marginHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+}
+
+.marginPrimaryPanel,
+.financeMetricGrid div,
+.budgetActualChain div,
+.supportModule {
+  min-width: 0;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 0.55rem;
+  background: rgba(8, 8, 11, 0.68);
+}
+
+.marginPrimaryPanel {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 22rem;
+  padding: 1.25rem;
+  border-color: rgba(16, 185, 129, 0.22);
+  background:
+    radial-gradient(circle at 16% 10%, rgba(16, 185, 129, 0.14), transparent 35%),
+    rgba(8, 8, 11, 0.7);
+
+  span {
+    color: #a7f3d0;
+    font-size: 0.72rem;
+    font-weight: 780;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    margin-top: 0.65rem;
+    color: #ffffff;
+    font-size: clamp(3.2rem, 6vw, 5.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.075em;
+  }
+
+  small {
+    display: block;
+    max-width: 18rem;
+    margin-top: 0.9rem;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+}
+
+.financeMetricGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+
+  div {
+    padding: 0.85rem;
+  }
+
+  span {
+    display: block;
+    color: #a1a1aa;
+    font-size: 0.62rem;
+    font-weight: 780;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.35rem;
+    color: #f5f3ff;
+    font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+  }
+}
+
+.budgetActualChain {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 0.55rem;
+
+  div {
+    padding: 0.75rem;
+    background: rgba(15, 23, 42, 0.72);
+  }
+
+  span {
+    display: block;
+    color: #a1a1aa;
+    font-size: 0.62rem;
+    font-weight: 780;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.3rem;
+    color: #f5f3ff;
+    font-size: 0.92rem;
+  }
+
+  i {
+    width: 1.25rem;
+    height: 1px;
+    background: rgba(167, 139, 250, 0.5);
+  }
+}
+
+.financeSupportRail {
+  grid-column: span 4;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.supportModule {
+  padding: 1rem;
+  background: #14131d;
+}
+
+.moduleEyebrow {
+  color: #a1a1aa;
+  font-size: 0.62rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.variancePreviewList {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+
+  div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.2rem 0.75rem;
+    align-items: center;
+    min-width: 0;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 0.45rem;
+    background: rgba(15, 23, 42, 0.72);
+  }
+
+  span {
+    color: #f5f3ff;
+    font-size: 0.78rem;
+    font-weight: 760;
+  }
+
+  small {
+    grid-column: 1;
+    color: #a1a1aa;
+    font-size: 0.68rem;
+  }
+
+  strong {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    font-size: 0.72rem;
+  }
+}
+
+.varianceGood {
+  color: #6ee7b7;
+}
+
+.varianceRisk {
+  color: #f87171;
+}
+
+.payoutState {
+  margin-top: 0.85rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  border-radius: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: #6ee7b7;
+  font-size: 1.15rem;
+  font-weight: 820;
+}
+
+.eligibilityPreviewList {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #f5f3ff;
+    font-size: 0.8rem;
+  }
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 999px;
+    background: rgba(16, 185, 129, 0.16);
+    color: #6ee7b7;
+    font-size: 0.7rem;
+    font-weight: 820;
+  }
+}
+
+@media (max-width: 1100px) {
+  .financeComposition {
+    grid-template-columns: 1fr;
+  }
+
+  .marginHero,
+  .financeSupportRail {
+    grid-column: auto;
+  }
+
+  .financeSupportRail {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .financeStatusStrip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .financeComposition,
+  .marginHero,
+  .supportModule {
+    padding: 0.75rem;
+  }
+
+  .marginHeroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .marginPrimaryPanel {
+    min-height: 12rem;
+  }
+
+  .budgetActualChain {
+    grid-template-columns: 1fr;
+
+    i {
+      width: 1px;
+      height: 0.65rem;
+      justify-self: center;
+    }
+  }
+
+  .financeSupportRail {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .financeStatusStrip,
+  .financeMetricGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .marginHeroHeader {
+    flex-direction: column;
+  }
+}
