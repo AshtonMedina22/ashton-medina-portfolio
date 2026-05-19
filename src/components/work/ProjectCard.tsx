@@ -31,28 +31,31 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
       ? "vendor"
       : href.includes("operational")
         ? "ops"
-        : "sales";
+      : "sales";
 
   if (variant === "revenue") {
     return (
       <div className={`${styles.thumbnail} ${styles.thumbnailRevenue}`} aria-label={`${title} thumbnail`}>
-        <div className={styles.thumbHeader}>
+        <div className={styles.thumbChrome}>
           <span>Financial control</span>
           <strong>SO-0842</strong>
         </div>
-        <div className={styles.thumbPrimary}>
-          <span>Protected margin</span>
-          <strong>53.2%</strong>
-          <small>$6,600 live margin</small>
+        <div className={styles.thumbKpis}>
+          <div><span>Revenue</span><strong>$12.4K</strong></div>
+          <div><span>Margin</span><strong>53.2%</strong></div>
+          <div><span>Status</span><strong>Paid</strong></div>
         </div>
-        <div className={styles.thumbChain}>
+        <div className={styles.thumbFlowLine}>
           <span>Quoted</span>
+          <i />
           <span>Actual</span>
-          <span>Paid</span>
+          <i />
+          <span>Protected</span>
         </div>
-        <div className={styles.thumbMiniRows}>
-          <span>Vendor A variance</span>
-          <strong>-$200</strong>
+        <div className={styles.thumbTable}>
+          <div><span>Vendor A</span><strong>-$200</strong></div>
+          <div><span>Vendor B</span><strong>+$100</strong></div>
+          <div><span>Eligibility</span><strong>Cleared</strong></div>
         </div>
       </div>
     );
@@ -61,22 +64,26 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
   if (variant === "vendor") {
     return (
       <div className={`${styles.thumbnail} ${styles.thumbnailVendor}`} aria-label={`${title} thumbnail`}>
-        <div className={styles.thumbSplit}>
+        <div className={styles.thumbChrome}>
+          <span>Vendor lifecycle</span>
+          <strong>Portal enabled</strong>
+        </div>
+        <div className={styles.thumbPaneGrid}>
           <div>
             <span>Internal control</span>
-            <strong>Active vendor</strong>
-            <small>Compliant</small>
+            <strong>Elite Sound</strong>
+            <small>Active - compliant</small>
           </div>
           <div>
             <span>Vendor portal</span>
-            <strong>Assignment #0842</strong>
+            <strong>#0842</strong>
             <small>Accept & sign</small>
           </div>
         </div>
-        <div className={styles.thumbChain}>
-          <span>3 docs</span>
-          <span>1 assignment</span>
-          <span>Secure access</span>
+        <div className={styles.thumbTable}>
+          <div><span>COI document</span><strong>Valid</strong></div>
+          <div><span>Assignment</span><strong>Sent</strong></div>
+          <div><span>Portal token</span><strong>Secure</strong></div>
         </div>
       </div>
     );
@@ -85,21 +92,24 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
   if (variant === "ops") {
     return (
       <div className={`${styles.thumbnail} ${styles.thumbnailOps}`} aria-label={`${title} thumbnail`}>
+        <div className={styles.thumbChrome}>
+          <span>Operations dashboard</span>
+          <strong>This month</strong>
+        </div>
+        <div className={styles.thumbKpis}>
+          <div><span>Engagements</span><strong>8</strong></div>
+          <div><span>Active</span><strong>14</strong></div>
+          <div><span>Revenue</span><strong>$84K</strong></div>
+        </div>
         <div className={styles.thumbChart}>
           <span />
           <span />
           <span />
           <span />
         </div>
-        <div className={styles.thumbPrimary}>
-          <span>Live operations</span>
-          <strong>$84.2K</strong>
-          <small>Expected revenue</small>
-        </div>
-        <div className={styles.thumbChain}>
-          <span>8 this week</span>
-          <span>14 active</span>
-          <span>Auto-report</span>
+        <div className={styles.thumbTable}>
+          <div><span>Upcoming</span><strong>3 rows</strong></div>
+          <div><span>Auto-report</span><strong>Ready</strong></div>
         </div>
       </div>
     );
@@ -107,23 +117,26 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
 
   return (
     <div className={`${styles.thumbnail} ${styles.thumbnailSales}`} aria-label={`${title} thumbnail`}>
-      <div className={styles.thumbFlow}>
+      <div className={styles.thumbChrome}>
+          <span>Sales order to project</span>
+        <strong>Confirmed</strong>
+      </div>
+      <div className={styles.thumbPaneGrid}>
         <div>
-          <span>Confirmed order</span>
+          <span>Sales order</span>
           <strong>SO-0842</strong>
-          <small>Meridian Group</small>
+          <small>3 services - $12.4K</small>
         </div>
-        <em aria-hidden>-&gt;</em>
         <div>
           <span>Generated project</span>
-          <strong>Delivery ready</strong>
-          <small>Tasks + client data synced</small>
+          <strong>Project ready</strong>
+          <small>Tasks synced</small>
         </div>
       </div>
-      <div className={styles.thumbChain}>
-        <span>3 services</span>
-        <span>$12.4K</span>
-        <span>0 re-entry</span>
+      <div className={styles.thumbTable}>
+        <div><span>Implementation</span><strong>12 tasks</strong></div>
+        <div><span>Data migration</span><strong>8 tasks</strong></div>
+        <div><span>Training</span><strong>7 tasks</strong></div>
       </div>
     </div>
   );
