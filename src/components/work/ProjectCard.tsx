@@ -66,7 +66,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {title}
           </Heading>
         )}
-        <Column gap="m" fillWidth style={{ flex: 1, alignItems: "center" }}>
+        <Column gap="m" fillWidth className={styles.cardBody}>
           {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
           {description?.trim() && (
             <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">

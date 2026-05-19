@@ -1,20 +1,34 @@
 .cardContainer {
-    border-radius: 10px;
-    border: 1px solid var(--neutral-alpha-weak);
-    background: var(--surface-background, var(--neutral-background-medium));
+    display: grid !important;
+    grid-template-columns: minmax(420px, 1.05fr) minmax(360px, 0.95fr);
+    align-items: stretch;
+    border-radius: 12px;
+    border: 1px solid var(--neutral-alpha-medium);
+    background: color-mix(in srgb, var(--neutral-background-medium) 92%, transparent);
     overflow: hidden;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 18px 48px rgba(15, 23, 42, 0.08);
     transition: border-color var(--transition-micro-medium), background var(--transition-micro-medium), box-shadow var(--transition-med, 0.22s ease-out);
 
     &:hover {
-        border-color: var(--neutral-alpha-medium);
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        border-color: var(--neutral-alpha-strong);
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 22px 56px rgba(15, 23, 42, 0.11);
+    }
+
+    @media (max-width: 980px) {
+        grid-template-columns: 1fr;
     }
 }
 
 .imageLink {
     text-decoration: none;
     display: block;
+    min-width: 0;
+    border-right: 1px solid var(--neutral-alpha-weak);
+
+    @media (max-width: 980px) {
+        border-right: none;
+        border-bottom: 1px solid var(--neutral-alpha-weak);
+    }
 }
 
 .imageContainer {
@@ -23,28 +37,65 @@
     border-radius: 0;
     cursor: pointer;
     display: block;
-    background: var(--neutral-background-weak);
+    background: #08080b;
+    min-height: 100%;
 }
 
 /* Clip image to card's top rounded corners */
 .cardContainer .imageContainer {
-    border-radius: 10px 10px 0 0;
+    border-radius: 12px 0 0 12px;
+
+    @media (max-width: 980px) {
+        border-radius: 12px 12px 0 0;
+    }
 }
 
 .cardContent {
+    width: 100% !important;
     height: 100%;
+    box-sizing: border-box;
+    align-self: stretch;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-height: 18rem;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    min-height: 22rem;
+    padding: 2.25rem !important;
+    background: var(--neutral-background-medium);
+
+    h2 {
+        max-width: 18ch;
+        margin: 0;
+        text-align: left;
+    }
+
+    @media (max-width: 980px) {
+        min-height: auto;
+        padding: 2rem !important;
+    }
+
+    @media (max-width: 520px) {
+        padding: 1.5rem !important;
+    }
+}
+
+.cardBody {
+    align-items: flex-start !important;
+    text-align: left;
+    max-width: 34rem;
+
+    p {
+        text-align: left;
+        max-width: 34rem;
+    }
 }
 
 .ctaContainer {
     margin-top: auto;
-    padding-top: var(--static-space-m);
+    padding-top: 1.25rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
 }
 

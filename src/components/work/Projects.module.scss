@@ -1,14 +1,16 @@
 .projectsGrid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--static-space-32);
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
     width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
     .projectsGrid {
         grid-template-columns: 1fr;
-        gap: var(--static-space-24);
+        gap: 1.75rem;
     }
 }
 

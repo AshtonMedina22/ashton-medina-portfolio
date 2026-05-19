@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Work() {
   return (
-    <Column maxWidth="m" paddingTop="24" paddingX="l" horizontal="center" style={{ paddingBottom: "var(--static-space-104)" }}>
+    <Column maxWidth="l" paddingTop="24" paddingX="l" horizontal="center" style={{ paddingBottom: "var(--static-space-104)" }}>
       <div className="sectionHue" style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
       <Schema
         as="webPage"
