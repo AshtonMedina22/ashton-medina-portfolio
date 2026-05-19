@@ -10,7 +10,7 @@
   
   <!-- Header -->
   <rect x="0" y="0" width="1200" height="60" fill="#09090b" opacity="0.8"/>
-  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Export & Scheduled Reporting</text>
+  <text x="24" y="38" font-family="Open Sans, sans-serif" font-size="16" font-weight="600" fill="#f5f3ff">Export &amp; Scheduled Reporting</text>
   
   <!-- Title -->
   <text x="24" y="95" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#f5f3ff">Multi-Format Export • Scheduled Delivery</text>

@@ -52,7 +52,7 @@
   <text x="56" y="377" font-family="Open Sans, sans-serif" font-size="10" fill="#a1a1aa">Budget: $3,500 • Service: Event Setup</text>
   
   <rect x="900" y="330" width="140" height="44" rx="8" fill="#a78bfa"/>
-  <text x="970" y="358" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#09090b" text-anchor="middle">Accept & Sign</text>
+  <text x="970" y="358" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#09090b" text-anchor="middle">Accept &amp; Sign</text>
   
   <!-- Assignment card 2 -->
   <rect x="24" y="410" width="1152" height="80" rx="10" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>

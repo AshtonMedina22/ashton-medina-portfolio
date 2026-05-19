@@ -1,17 +1,17 @@
 /* Project detail components */
 
-$radius-sm: 0.75rem;
-$radius-md: 1rem;
-$radius-lg: 1.25rem;
-$radius-xl: 1.5rem;
-$radius-2xl: 1.75rem;
+$radius-sm: 0.5rem;
+$radius-md: 0.625rem;
+$radius-lg: 0.75rem;
+$radius-xl: 0.875rem;
+$radius-2xl: 1rem;
 /* Use design tokens from custom.css: --shadow-subtle, --shadow-soft, --transition-med */
 
 /* Section card */
 .sectionCard {
   border-radius: $radius-2xl;
-  border: 1px solid var(--brand-alpha-weak);
-  background: var(--brand-alpha-weak);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--neutral-background-medium);
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
   max-width: 100%;
@@ -20,8 +20,8 @@ $radius-2xl: 1.75rem;
   transition: box-shadow var(--transition-med), border-color var(--transition-med);
 
   &:hover {
-    box-shadow: var(--shadow-soft);
-    border-color: var(--brand-alpha-medium);
+    box-shadow: var(--shadow-subtle);
+    border-color: var(--neutral-alpha-medium);
   }
 
   > h2:first-child {
@@ -54,8 +54,8 @@ $radius-2xl: 1.75rem;
 /* Step cards */
 .stepCard {
   border-radius: $radius-xl;
-  border: 1px solid var(--brand-alpha-weak);
-  background: var(--brand-alpha-weak);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--neutral-background-weak);
   padding: 1.25rem;
   margin-bottom: 0;
   transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
@@ -67,9 +67,8 @@ $radius-2xl: 1.75rem;
   box-shadow: var(--shadow-subtle);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
-    border-color: var(--brand-alpha-medium);
+    box-shadow: var(--shadow-subtle);
+    border-color: var(--neutral-alpha-medium);
   }
 
   @media (max-width: 768px) {
@@ -153,8 +152,8 @@ $radius-2xl: 1.75rem;
 /* Metric cards */
 .metricCard {
   border-radius: $radius-xl;
-  border: 1px solid var(--brand-alpha-weak);
-  background: var(--brand-alpha-weak);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--neutral-background-weak);
   padding: 1.25rem;
   text-align: left;
   height: 100%;
@@ -168,9 +167,8 @@ $radius-2xl: 1.75rem;
   box-shadow: var(--shadow-subtle);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
-    border-color: var(--brand-alpha-medium);
+    box-shadow: var(--shadow-subtle);
+    border-color: var(--neutral-alpha-medium);
   }
 
   .metricContent p:first-of-type strong:first-of-type {
@@ -305,7 +303,7 @@ $radius-2xl: 1.75rem;
 .calloutBox {
   border-radius: $radius-xl;
   border: 1px solid var(--brand-alpha-medium);
-  background: var(--brand-alpha-weak);
+  background: color-mix(in srgb, var(--brand-alpha-weak) 70%, var(--neutral-background-medium));
   padding: 1.5rem 1.75rem;
   margin: 2rem 0;
   max-width: 100%;
@@ -407,8 +405,8 @@ $radius-2xl: 1.75rem;
 /* Architecture block */
 .architectureBlock {
   border-radius: $radius-xl;
-  border: 1px solid var(--brand-alpha-weak);
-  background: var(--brand-alpha-weak);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--neutral-background-weak);
   padding: 1.25rem;
   height: 100%;
   min-height: 0;
@@ -433,9 +431,8 @@ $radius-2xl: 1.75rem;
   }
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
-    border-color: var(--brand-alpha-medium);
+    box-shadow: var(--shadow-subtle);
+    border-color: var(--neutral-alpha-medium);
   }
 
   @media (max-width: 768px) {
@@ -509,8 +506,8 @@ $radius-2xl: 1.75rem;
   margin: 1rem 0;
   padding: 0;
   border-radius: $radius-xl;
-  border: 1px solid var(--brand-alpha-weak);
-  background: var(--brand-alpha-weak);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--neutral-background-weak);
   box-shadow: var(--shadow-subtle);
   overflow: hidden;
 }
@@ -564,8 +561,8 @@ $radius-2xl: 1.75rem;
   margin: 1rem 0;
   padding: 1rem 1.25rem;
   border-radius: $radius-lg;
-  border: 1px solid var(--brand-alpha-weak);
-  background: var(--brand-alpha-weak);
+  border: 1px solid var(--neutral-alpha-weak);
+  background: var(--neutral-background-weak);
   box-shadow: var(--shadow-subtle);
 }
 

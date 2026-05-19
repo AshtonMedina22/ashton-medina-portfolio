@@ -70,7 +70,7 @@
   <rect x="24" y="360" width="1152" height="200" rx="12" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
   
   <!-- Metrics title -->
-  <text x="40" y="385" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Sync Status & Metrics</text>
+  <text x="40" y="385" font-family="Open Sans, sans-serif" font-size="12" font-weight="600" fill="#f5f3ff">Sync Status &amp; Metrics</text>
   <rect x="40" y="395" width="1110" height="1" fill="#a78bfa" opacity="0.2"/>
   
   <!-- Synced fields -->
