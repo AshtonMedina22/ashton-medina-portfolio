@@ -1,508 +1,237 @@
-/* Vendor Lifecycle - ERP + Portal style, violet accent */
-$ui-blue: #a78bfa;
-$ui-green: #10b981;
-$ui-green-bg: #10b98115;
-$ui-yellow: #fbbf24;
-$ui-yellow-bg: #fbbf2415;
-$ui-red: #dc2626;
-$ui-red-bg: #dc262615;
-$ui-border: #2e1064;
-$ui-bg: #09090b;
-$ui-card-bg: #1a1625;
+$bg: #0b0d12;
+$panel: #111827;
+$soft: #0f172a;
+$border: rgba(148, 163, 184, 0.18);
+$border-strong: rgba(148, 163, 184, 0.28);
+$text: #f8fafc;
+$muted: #94a3b8;
+$success: #10b981;
+$warning: #f59e0b;
 
-/* App shell — fixed product shot, no scrollbars */
 .shell {
-  min-height: 0;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  background: $ui-bg;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 13px;
   overflow: hidden;
-  border-radius: 0.75rem;
-  border: 1px solid $ui-border;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: $bg;
+  color: $text;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.16);
 }
 
-.shellTopBar {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.9rem;
-  background: linear-gradient(180deg, rgba($ui-card-bg, 0.98) 0%, $ui-card-bg 100%);
-  border-bottom: 1px solid $ui-border;
-}
-
-.windowDots {
-  display: flex;
-  gap: 0.35rem;
-  flex-shrink: 0;
-
-  span {
-    width: 0.45rem;
-    height: 0.45rem;
-    border-radius: 50%;
-    display: block;
-
-    &:nth-child(1) {
-      background: #ef4444;
-    }
-    &:nth-child(2) {
-      background: #eab308;
-    }
-    &:nth-child(3) {
-      background: #22c55e;
-    }
-  }
-}
-
-.shellTitle {
-  flex: 1;
-  text-align: left;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #a1a1aa;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  background: $ui-bg;
-  min-height: 0;
-  overflow-x: hidden;
-  padding: 1rem 1.25rem;
-  gap: 0;
-}
-
-.view {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  min-height: 0;
-  flex: 1;
-  width: 100%;
-}
-
-.sectionDividerRow {
+.chrome,
+.statusStrip {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #a1a1aa;
-  margin-bottom: 0.75rem;
+  border-bottom: 1px solid $border;
 }
 
-.mainGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-  gap: 1.25rem;
-  align-items: start;
+.chrome {
+  grid-template-columns: 1fr auto;
+  padding: 0.75rem 1rem;
+  background: #0f131c;
+  color: $muted;
+  font-size: 0.76rem;
+}
 
-  @media (max-width: 900px) {
+.chrome span:first-child {
+  color: $text;
+  font-weight: 650;
+}
+
+.statusStrip {
+  grid-template-columns: 2fr repeat(3, 1fr);
+  padding: 0.85rem 1rem;
+  color: $muted;
+  font-size: 0.78rem;
+}
+
+.statusStrip strong {
+  color: $success;
+}
+
+.layout {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.hero {
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  gap: 1rem;
+}
+
+.internalPane,
+.portalPane,
+.supportCard {
+  min-width: 0;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: $soft;
+}
+
+.internalPane,
+.portalPane {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.internalPane {
+  background: $panel;
+  border-color: $border-strong;
+}
+
+.eyebrow {
+  color: $muted;
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+
+.internalPane h2,
+.portalPane h3 {
+  margin: 0.65rem 0 0.3rem;
+  color: $text;
+  letter-spacing: 0;
+}
+
+.internalPane h2 {
+  font-size: clamp(2rem, 4.2vw, 4.2rem);
+  line-height: 0.95;
+}
+
+.portalPane h3 {
+  font-size: clamp(1.45rem, 2.5vw, 2.4rem);
+  line-height: 1;
+}
+
+.internalPane p,
+.portalPane p {
+  max-width: 37rem;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.internalStats,
+.assignmentMeta {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+}
+
+.internalStats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.assignmentMeta {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.internalStats span,
+.assignmentMeta span,
+.actionLine {
+  border: 1px solid $border;
+  border-radius: 7px;
+  background: rgba(15, 23, 42, 0.68);
+  padding: 0.7rem;
+  color: #dbe4ef;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.actionLine {
+  width: fit-content;
+  margin-top: 1rem;
+  color: $success;
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.supportRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.supportCard {
+  padding: 1rem;
+}
+
+.cardHeader,
+.previewRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cardHeader {
+  margin-bottom: 0.85rem;
+  color: $muted;
+  font-size: 0.78rem;
+}
+
+.cardHeader strong {
+  color: $text;
+}
+
+.previewRows {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.previewRow {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  color: #dbe4ef;
+  font-size: 0.84rem;
+}
+
+.previewRow:last-child {
+  border-bottom: 0;
+}
+
+.previewRow strong {
+  color: $warning;
+}
+
+.previewRow:first-child strong {
+  color: $success;
+}
+
+.actionSummary {
+  display: grid;
+  gap: 0.65rem;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.actionSummary strong {
+  color: $text;
+}
+
+@media (max-width: 1024px) {
+  .hero {
     grid-template-columns: 1fr;
   }
 }
 
-/* Simple section headers (no tab bar / view toggle) */
-.sectionDivider {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #a1a1aa;
-  background: $ui-card-bg;
-  border-bottom: 1px solid $ui-border;
-}
-
-.sectionDividerLabel {
-  display: block;
-}
-
-.sectionDividerPortal {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #a1a1aa;
-  background: $ui-card-bg;
-  border-bottom: 1px solid $ui-border;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.sectionDividerSub {
-  font-size: 0.6875rem;
-  font-weight: 500;
-  color: #a78bfa;
-  text-transform: none;
-  letter-spacing: 0.02em;
-}
-
-.internalGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
-  gap: 1rem;
-  margin-bottom: 0.9rem;
-}
-
-/* Card-style panels */
-.internalPanel,
-.portalPanel {
-  padding: 1.125rem 1.25rem;
-  margin-bottom: 0;
-  min-width: 0;
-  background: $ui-card-bg;
-  border: 1px solid $ui-border;
-  border-radius: 0.625rem;
-  box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.25));
-}
-
-/* Shared dark-theme typography and controls (professional ERP look) */
-.panelTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #f5f3ff;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.25rem 0;
-}
-
-.panelSubtitle {
-  font-size: 0.875rem;
-  color: #a1a1aa;
-  margin: 0;
-}
-
-.sectionHeading {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #f5f3ff;
-  margin: 0.75rem 0 0.4rem 0;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid $ui-border;
-}
-
-.sectionHeadingRow {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.75rem 0 0.4rem 0;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid $ui-border;
-}
-
-.sectionHeadingRow .sectionHeading {
-  margin: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.badgeSuccess {
-  padding: 0.25rem 0.55rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: var(--success-soft, $ui-green-bg);
-  color: var(--success-color, $ui-green);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-}
-
-.panelHeaderRow {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.panelCountRow {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.pillBtn {
-  padding: 0.35rem 0.7rem;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: $ui-blue;
-  background: rgba($ui-blue, 0.1);
-  border: 1px solid rgba($ui-blue, 0.3);
-  border-radius: 9999px;
-  cursor: default;
-}
-
-.detailLabel {
-  color: #71717a;
-  font-size: 0.8rem;
-}
-
-.detailValue {
-  color: #f5f3ff;
-}
-
-.tag {
-  padding: 0.2rem 0.5rem;
-  min-width: 4.5rem;
-  text-align: center;
-  border-radius: 9999px;
-  font-size: 0.72rem;
-  background: #18181b;
-  color: #a1a1aa;
-  border: 1px solid #3f3f46;
-}
-
-.tagPrimary {
-  background: rgba($ui-blue, 0.15);
-  color: $ui-blue;
-  border-color: rgba($ui-blue, 0.3);
-  min-width: 3.5rem;
-}
-
-.vendorDetailsList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-}
-
-.serviceTypeTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 0.15rem;
-  margin-bottom: 0.15rem;
-}
-
-/* Tables - dark theme, consistent spacing and alignment */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.8rem;
-  table-layout: auto;
-
-  th {
-    text-align: left;
-    padding: 0.5rem 0.6rem;
-    font-weight: 600;
-    color: #71717a;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    border-bottom: 1px solid $ui-border;
-    white-space: nowrap;
-
-    &.textRight {
-      text-align: right;
-    }
+@media (max-width: 640px) {
+  .chrome,
+  .statusStrip,
+  .supportRow,
+  .internalStats,
+  .assignmentMeta {
+    grid-template-columns: 1fr;
   }
 
-  th:first-child {
-    min-width: 5rem;
+  .hero {
+    min-height: 0;
   }
-
-  td {
-    padding: 0.5rem 0.6rem;
-    border-bottom: 1px solid #27272a;
-    color: #f5f3ff;
-    vertical-align: middle;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    min-height: 2.25rem;
-
-    &.textRight {
-      text-align: right;
-    }
-  }
-
-  tbody tr:last-child td {
-    border-bottom: none;
-  }
-}
-
-.statusPill {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  min-width: 5.5rem;
-  text-align: center;
-  line-height: 1.2;
-  border-radius: 9999px;
-  font-size: 0.7rem;
-  font-weight: 500;
-}
-
-.statusGreen {
-  background: var(--success-soft, $ui-green-bg);
-  color: var(--success-color, $ui-green);
-}
-
-.statusYellow {
-  background: $ui-yellow-bg;
-  color: $ui-yellow;
-}
-
-.statusRed {
-  background: var(--danger-soft, $ui-red-bg);
-  color: var(--danger-color, $ui-red);
-}
-
-/* Portal summary grid and cards */
-.portalSummaryGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.875rem;
-  margin-bottom: 1.25rem;
-}
-
-.summaryCard {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid $ui-border;
-  background: $ui-card-bg;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.25));
-}
-
-.summaryCardIcon {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-}
-
-.summaryCardLabel {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #f5f3ff;
-  line-height: 1.3;
-  min-width: 0;
-  word-break: break-word;
-}
-
-.summaryCardWarning {
-  background: #fbbf2415;
-  border-color: rgba(251, 191, 36, 0.4);
-  .summaryCardIcon { color: #fbbf24; }
-}
-
-.summaryCardSuccess {
-  background: var(--success-soft, $ui-green-bg);
-  border-color: rgba(16, 185, 129, 0.4);
-  .summaryCardIcon { color: var(--success-color, $ui-green); }
-}
-
-.summaryCardAccent {
-  background: rgba($ui-blue, 0.12);
-  border-color: rgba($ui-blue, 0.35);
-  .summaryCardIcon { color: $ui-blue; }
-}
-
-.portalPanelHeader {
-  margin-bottom: 1.5rem;
-}
-
-.workOrderCard {
-  padding: 1rem 1.1rem;
-  border: 1px solid $ui-border;
-  border-radius: 0.5rem;
-  background: $ui-card-bg;
-  box-shadow: var(--shadow-subtle, 0 1px 2px rgba(0, 0, 0, 0.25));
-}
-
-.workOrderTitle {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #f5f3ff;
-  margin: 0 0 1rem 0;
-  letter-spacing: -0.02em;
-}
-
-.workOrderDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 0.9375rem;
-  min-width: 0;
-
-  > div {
-    min-width: 0;
-  }
-}
-
-.workOrderDetails .detailValue {
-  word-break: break-word;
-}
-
-.actionRow {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.btnPrimary {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  line-height: 1.25;
-  color: #09090b;
-  background: var(--success-color, $ui-green);
-  border: none;
-  border-radius: 9999px;
-  cursor: default;
-}
-
-.btnGhost {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--danger-color, $ui-red);
-  background: transparent;
-  border: 1px solid var(--danger-color, $ui-red);
-  border-radius: 9999px;
-  cursor: default;
-}
-
-.signatureLine {
-  border-top: 1px dashed #3f3f46;
-  padding-top: 0.75rem;
-  font-size: 0.8125rem;
-  color: #71717a;
-}
-
-.signatureRow {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.signatureRow:first-of-type {
-  margin-top: 0.25rem;
-}
-
-.signatureLabel {
-  font-weight: 600;
-  font-size: 0.8125rem;
-  color: #a1a1aa;
-  flex-shrink: 0;
-  min-width: 4.5rem;
-}
-
-.signatureBlock {
-  flex: 1;
-  min-width: 80px;
-  border-bottom: 1px dashed #52525b;
-  min-height: 1.25rem;
 }

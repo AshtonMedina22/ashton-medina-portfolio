@@ -208,7 +208,7 @@ export default async function Project({
             Live Demo
           </h3>
           <p className={styles.mockupSectionCaption}>
-            Explore the interactive flow below.
+            Review the product preview below.
           </p>
           <div className={styles.demoSection}>
             <div className={styles.demoSectionInner}>
