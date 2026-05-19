@@ -506,3 +506,415 @@ $ui-card-bg: #1a1625;
   border-bottom: 1px dashed #52525b;
   min-height: 1.25rem;
 }
+
+.vendorShell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(88, 28, 135, 0.72);
+  border-radius: 0.75rem;
+  background: #08080b;
+  color: #f5f3ff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.vendorStatusStrip {
+  display: grid;
+  grid-template-columns: 1.8fr repeat(3, minmax(0, 0.8fr));
+  gap: 0.5rem;
+  align-items: center;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(88, 28, 135, 0.65);
+  background: #11101a;
+
+  span,
+  strong {
+    min-width: 0;
+    padding: 0.4rem 0.65rem;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 0.45rem;
+    background: rgba(15, 23, 42, 0.74);
+    color: #cbd5e1;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  strong {
+    border-color: rgba(16, 185, 129, 0.28);
+    background: rgba(16, 185, 129, 0.11);
+    color: #6ee7b7;
+    font-weight: 760;
+  }
+}
+
+.vendorComposition {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 22% 0%, rgba(167, 139, 250, 0.11), transparent 30%),
+    #08080b;
+}
+
+.vendorHero {
+  display: grid;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  gap: 1rem;
+  min-height: 30rem;
+}
+
+.internalPane,
+.portalPane,
+.supportCard {
+  min-width: 0;
+  border: 1px solid rgba(167, 139, 250, 0.26);
+  border-radius: 0.65rem;
+  background: #171421;
+}
+
+.internalPane,
+.portalPane {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.portalPane {
+  background: #14131d;
+}
+
+.paneHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+
+  p {
+    margin: 0 0 0.35rem;
+    color: #c4b5fd;
+    font-size: 0.65rem;
+    font-weight: 780;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 0;
+    color: #f5f3ff;
+    font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  > span {
+    flex-shrink: 0;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 999px;
+    background: rgba(167, 139, 250, 0.11);
+    color: #c4b5fd;
+    font-size: 0.72rem;
+    font-weight: 760;
+  }
+}
+
+.vendorStateRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  span {
+    padding: 0.4rem 0.65rem;
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    border-radius: 999px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #6ee7b7;
+    font-size: 0.72rem;
+    font-weight: 760;
+  }
+}
+
+.vendorControlGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 1rem;
+  flex: 1;
+}
+
+.vendorProfileBlock,
+.compliancePreview,
+.assignmentCard,
+.portalVisibilityNote {
+  min-width: 0;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 0.55rem;
+  background: rgba(8, 8, 11, 0.68);
+}
+
+.vendorProfileBlock {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  padding: 1rem;
+
+  div {
+    padding: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 0.45rem;
+    background: rgba(15, 23, 42, 0.72);
+  }
+
+  span {
+    display: block;
+    color: #a1a1aa;
+    font-size: 0.64rem;
+    font-weight: 760;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.25rem;
+    color: #f5f3ff;
+    font-size: 0.95rem;
+  }
+}
+
+.moduleEyebrow {
+  color: #a1a1aa;
+  font-size: 0.62rem;
+  font-weight: 780;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.compliancePreview {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  padding: 1rem;
+
+  > div:not(.moduleEyebrow) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.2rem 0.75rem;
+    align-items: center;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 0.45rem;
+    background: rgba(15, 23, 42, 0.72);
+  }
+
+  span {
+    color: #f5f3ff;
+    font-size: 0.78rem;
+    font-weight: 760;
+  }
+
+  small {
+    grid-column: 1;
+    color: #a1a1aa;
+    font-size: 0.68rem;
+  }
+
+  strong {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    color: #6ee7b7;
+    font-size: 0.7rem;
+  }
+}
+
+.reviewState {
+  color: #fbbf24 !important;
+}
+
+.assignmentCard {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+
+  h3 {
+    margin: 0;
+    color: #f5f3ff;
+    font-size: clamp(1rem, 1.45vw, 1.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+}
+
+.assignmentMeta {
+  display: grid;
+  gap: 0.45rem;
+
+  span {
+    padding: 0.55rem 0.65rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 0.45rem;
+    background: rgba(39, 39, 42, 0.7);
+    color: #cbd5e1;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+}
+
+.portalActionRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+
+  strong,
+  span {
+    min-width: 0;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.45rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 780;
+  }
+
+  strong {
+    border: 1px solid rgba(16, 185, 129, 0.36);
+    background: rgba(16, 185, 129, 0.14);
+    color: #6ee7b7;
+  }
+
+  span {
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    background: rgba(15, 23, 42, 0.72);
+    color: #cbd5e1;
+  }
+}
+
+.portalVisibilityNote {
+  margin-top: auto;
+  padding: 0.85rem;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.vendorSupportRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.supportCard {
+  padding: 1rem;
+}
+
+.supportMetricGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+
+  div {
+    min-width: 0;
+    padding: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 0.45rem;
+    background: rgba(15, 23, 42, 0.72);
+  }
+
+  span {
+    display: block;
+    color: #a1a1aa;
+    font-size: 0.62rem;
+    font-weight: 760;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.25rem;
+    color: #f5f3ff;
+    font-size: 1.25rem;
+  }
+}
+
+.assignmentSummary {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 0.85rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 0.45rem;
+  background: rgba(15, 23, 42, 0.72);
+
+  span {
+    color: #a1a1aa;
+    font-size: 0.7rem;
+    font-weight: 760;
+  }
+
+  strong {
+    color: #6ee7b7;
+    font-size: 1rem;
+  }
+
+  small {
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 1100px) {
+  .vendorHero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .vendorStatusStrip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vendorComposition {
+    padding: 0.75rem;
+  }
+
+  .vendorControlGrid,
+  .vendorSupportRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .vendorStatusStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .internalPane,
+  .portalPane,
+  .supportCard {
+    padding: 0.75rem;
+  }
+
+  .paneHeader,
+  .portalActionRow {
+    grid-template-columns: 1fr;
+  }
+
+  .paneHeader {
+    flex-direction: column;
+  }
+
+  .supportMetricGrid {
+    grid-template-columns: 1fr;
+  }
+}
