@@ -1,27 +1,79 @@
 import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
-import {
-  Meta,
-  Schema,
-  AvatarGroup,
-  Column,
-  Heading,
-  Media,
-  Text,
-  SmartLink,
-  Row,
-} from "@once-ui-system/core";
+import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
 import { CustomMDX } from "@/components/shared/mdx";
 import { ScrollToHash } from "@/components/shared/ScrollToHash";
 import { TechStack } from "@/components/work/TechStack";
-import { ProjectTechStack } from "@/components/work/ProjectTechStack";
 import { SalesToDeliveryDemo } from "@/components/demos/sales-to-delivery/SalesToDeliveryDemo";
 import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorLifecycleDemo";
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
 import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
 import { Metadata } from "next";
 import styles from "./ProjectPage.module.scss";
+
+const projectProfiles: Record<
+  string,
+  {
+    eyebrow: string;
+    systemType: string;
+    proof: { value: string; label: string }[];
+    brief: string[];
+  }
+> = {
+  "sales-to-delivery-automation-platform": {
+    eyebrow: "Sales-to-Delivery System",
+    systemType: "ERP workflow automation",
+    proof: [
+      { value: "65+", label: "Synced fields" },
+      { value: "4", label: "Business objects" },
+      { value: "Zero", label: "Manual re-entry" },
+      { value: "Live", label: "Project generation" },
+    ],
+    brief: ["Confirmed order", "Project record", "Task tree", "CRM linkage"],
+  },
+  "revenue-financial-control-engine": {
+    eyebrow: "Financial Governance System",
+    systemType: "Revenue control engine",
+    proof: [
+      { value: "7-Tier", label: "Compensation table" },
+      { value: "5", label: "Financial states" },
+      { value: "Real-time", label: "Margin logic" },
+      { value: "Zero", label: "Unauthorized pricing" },
+    ],
+    brief: ["Margin guardrails", "Approval gates", "Variance tracking", "Payout logic"],
+  },
+  "vendor-lifecycle-compliance-platform": {
+    eyebrow: "Vendor Lifecycle System",
+    systemType: "Compliance and portal platform",
+    proof: [
+      { value: "15", label: "Secure portal routes" },
+      { value: "6", label: "Work order states" },
+      { value: "4", label: "Alert states" },
+      { value: "Full", label: "Lifecycle auditability" },
+    ],
+    brief: ["Internal control", "Vendor portal", "Compliance alerts", "E-signature"],
+  },
+  "operational-intelligence-platform": {
+    eyebrow: "Operational Intelligence System",
+    systemType: "Executive operations dashboard",
+    proof: [
+      { value: "Live", label: "KPI visibility" },
+      { value: "Auto", label: "Reporting workflow" },
+      { value: "Export", label: "Operational records" },
+      { value: "Drill-down", label: "Business context" },
+    ],
+    brief: ["Executive view", "Operational KPIs", "Record drill-down", "Report exports"],
+  },
+};
+
+function renderDemo(slugPath: string) {
+  if (slugPath === "sales-to-delivery-automation-platform") return <SalesToDeliveryDemo />;
+  if (slugPath === "vendor-lifecycle-compliance-platform") return <VendorLifecycleDemo />;
+  if (slugPath === "revenue-financial-control-engine") return <RevenueFinancialDemo />;
+  if (slugPath === "operational-intelligence-platform") return <OperationalIntelligenceDemo />;
+  return null;
+}
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -41,7 +93,7 @@ export async function generateMetadata({
     : routeParams.slug || "";
 
   const posts = getPosts(["src", "app", "work", "projects"]);
-  let post = posts.find((post) => post.slug === slugPath);
+  const post = posts.find((post) => post.slug === slugPath);
 
   if (!post) return {};
 
@@ -72,39 +124,27 @@ export default async function Project({
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
+  const post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
 
   if (!post) {
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((p) => ({
-      src: p.avatar,
-    })) || [];
-
-  const highlights = post.metadata.highlights ?? [];
-  const hasLighthouse =
-    typeof post.metadata.performance === "number" &&
-    typeof post.metadata.accessibility === "number" &&
-    typeof post.metadata.seo === "number";
-  const keyResults = post.metadata.keyResults ?? [];
-  const hasKeyResults = keyResults.length > 0;
-  const showMetricsBlock = hasLighthouse || hasKeyResults;
-  const metricsItems = hasLighthouse
-    ? [
-        { label: "performance", value: String(post.metadata.performance) },
-        { label: "accessibility", value: String(post.metadata.accessibility) },
-        { label: "seo", value: String(post.metadata.seo) },
-      ]
-    : hasKeyResults
-      ? keyResults
-      : [];
-  const technicalImplementation = post.metadata.technicalImplementation ?? [];
-  const showTechnicalImplementation = technicalImplementation.length > 0;
+  const profile = projectProfiles[slugPath] ?? {
+    eyebrow: "Enterprise System",
+    systemType: "Operational platform",
+    proof: [
+      { value: `${post.metadata.techStack?.length ?? 0}`, label: "Technologies" },
+      { value: post.metadata.demo ? "Live" : "Written", label: "Case study" },
+      { value: new Date(post.metadata.publishedAt).getFullYear().toString(), label: "Published" },
+      { value: "ERP", label: "System focus" },
+    ],
+    brief: ["Architecture", "Workflow logic", "Automation", "Operational control"],
+  };
+  const demo = post.metadata.demo ? renderDemo(slugPath) : null;
 
   return (
-    <Column as="section" horizontal="center" gap="l" className={`${styles.pageWrap} sectionHue`}>
+    <main className={styles.pageWrap}>
       <Schema
         as="blogPosting"
         baseURL={baseURL}
@@ -122,108 +162,89 @@ export default async function Project({
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      {/* Hero */}
-      <Column className={styles.hero} gap="m" horizontal="center" align="center">
-        <SmartLink href="/work" className={styles.heroBreadcrumb}>
-          <Text variant="label-strong-m">Projects</Text>
-        </SmartLink>
-        <Heading as="h1" variant="heading-strong-xl" wrap="balance" className={styles.heroTitle}>
-          {post.metadata.title}
-        </Heading>
-        <Text
-          variant="body-default-l"
-          onBackground="neutral-medium"
-          className={styles.heroTagline}
-        >
-          {post.metadata.summary}
-        </Text>
-        <Row gap="m" vertical="center" horizontal="center" wrap>
+
+      <section className={styles.hero}>
+        <div className={styles.heroCopy}>
+          <SmartLink href="/work" className={styles.heroBreadcrumb}>
+            Work / Case Study
+          </SmartLink>
+          <span className={styles.eyebrow}>{profile.eyebrow}</span>
+          <h1 className={styles.heroTitle}>{post.metadata.title}</h1>
+          <p className={styles.heroTagline}>{post.metadata.summary}</p>
           {post.metadata.techStack && post.metadata.techStack.length > 0 && (
             <div className={styles.heroTech}>
               <TechStack technologies={post.metadata.techStack} size="s" />
             </div>
           )}
-        </Row>
-      </Column>
+          <div className={styles.heroActions}>
+            {demo && (
+              <a href="#live-demo" className={styles.primaryCta}>
+                View live demo
+              </a>
+            )}
+            <SmartLink href="/work" className={styles.secondaryCta}>
+              Back to work
+            </SmartLink>
+          </div>
+        </div>
 
-      {/* Metrics / key results */}
-      {(showMetricsBlock && metricsItems.length > 0) || (!showMetricsBlock && highlights.length > 0) ? (
-        <section className={styles.metricsSection} aria-labelledby="metrics-heading">
-          <h2 id="metrics-heading" className={styles.metricsSectionTitle}>
-            {showMetricsBlock ? "Performance metrics" : "Key results"}
-          </h2>
-          <div className={styles.metricsGrid}>
-            {(showMetricsBlock ? metricsItems : highlights).map((h, idx) => (
-              <div key={idx} className={styles.metricCard}>
-                <span className={styles.metricValue}>{h.value}</span>
-                <span className={styles.metricLabel}>{h.label}</span>
+        <aside className={styles.heroPanel} aria-label="Project system summary">
+          <div className={styles.panelTopline}>
+            <span>{profile.systemType}</span>
+            <span>Built by Ashton Medina</span>
+          </div>
+          <div className={styles.panelMetric}>
+            <span>Primary system outcome</span>
+            <strong>{profile.proof[0]?.value ?? "ERP"}</strong>
+            <em>{profile.proof[0]?.label ?? "Operational control"}</em>
+          </div>
+          <div className={styles.panelFlow}>
+            {profile.brief.map((item, index) => (
+              <div className={styles.flowItem} key={item}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{item}</strong>
               </div>
             ))}
           </div>
-        </section>
-      ) : null}
+        </aside>
+      </section>
 
-      {/* Technical implementation */}
-      {showTechnicalImplementation && (
-        <section className={styles.techImplSection} aria-labelledby="tech-impl-heading">
-          <h2 id="tech-impl-heading" className={styles.techImplTitle}>
-            Technical Implementation
-          </h2>
-          <ul className={styles.techImplList}>
-            {technicalImplementation.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <section className={styles.proofStrip} aria-label="Project proof points">
+        {profile.proof.map((item) => (
+          <div className={styles.proofItem} key={`${item.value}-${item.label}`}>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </section>
 
-      {post.metadata.team && post.metadata.team.length > 0 && (
-        <Row marginBottom="l" horizontal="center">
-          <Row gap="m" vertical="center">
-            <AvatarGroup reverse avatars={avatars} size="s" />
-            <Text variant="label-default-m" onBackground="brand-weak">
-              {post.metadata.team.map((member, idx) => (
-                <span key={idx}>
-                  {idx > 0 && (
-                    <Text as="span" onBackground="neutral-weak">
-                      ,{" "}
-                    </Text>
-                  )}
-                  <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
-                </span>
-              ))}
-            </Text>
-          </Row>
-        </Row>
-      )}
-
-      <Column as="article" horizontal="center" marginTop="l" className={styles.articleProse}>
-        <CustomMDX source={post.content} />
-      </Column>
-
-      {/* Live Demo section - after article so reader sees narrative first */}
-      {post.metadata.demo && (
-        <section className={styles.mockupSection} aria-labelledby="live-demo-heading">
-          <h3 id="live-demo-heading" className={styles.mockupSectionTitle}>
-            Live Demo
-          </h3>
-          <p className={styles.mockupSectionCaption}>
-            Review the product preview below.
-          </p>
+      {demo && (
+        <section id="live-demo" className={styles.mockupSection} aria-labelledby="live-demo-heading">
+          <div className={styles.sectionHeading}>
+            <span className={styles.eyebrow}>Live Demo</span>
+            <h2 id="live-demo-heading">Curated Product Preview</h2>
+            <p>
+              A focused ERP mockup showing the core workflow, business logic, and operational
+              structure without turning the page into a full admin screen.
+            </p>
+          </div>
           <div className={styles.demoSection}>
-            <div className={styles.demoSectionInner}>
-              <div className={styles.demoFrame}>
-                {slugPath === "sales-to-delivery-automation-platform" && <SalesToDeliveryDemo />}
-                {slugPath === "vendor-lifecycle-compliance-platform" && <VendorLifecycleDemo />}
-                {slugPath === "revenue-financial-control-engine" && <RevenueFinancialDemo />}
-                {slugPath === "operational-intelligence-platform" && <OperationalIntelligenceDemo />}
-              </div>
-            </div>
+            <div className={styles.demoFrame}>{demo}</div>
           </div>
         </section>
       )}
+
+      <section className={styles.articleSection} aria-labelledby="case-study-heading">
+        <div className={styles.sectionHeading}>
+          <span className={styles.eyebrow}>Case Study</span>
+          <h2 id="case-study-heading">Architecture, Workflow Logic, and Technical Depth</h2>
+        </div>
+        <article className={styles.articleProse}>
+          <CustomMDX source={post.content} />
+        </article>
+      </section>
 
       <ScrollToHash />
-    </Column>
+    </main>
   );
 }

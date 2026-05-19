@@ -1,107 +1,60 @@
-/* Two-column layout: Problem | Solution as card-style blocks (matches How It Works) */
 .root {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   width: 100%;
-  max-width: 100%;
   margin: 2rem 0;
-  align-items: stretch;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
 }
 
 .columnProblem,
 .columnSolution {
   min-width: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  background: var(--neutral-background-weak);
-  border: 1px solid var(--neutral-alpha-weak);
-  border-radius: 0.625rem;
-  box-shadow: none;
-  transition: border-color var(--transition-med), box-shadow var(--transition-med);
-
-  &:hover {
-    border-color: var(--neutral-alpha-medium);
-    box-shadow: var(--shadow-subtle);
-  }
+  padding: clamp(1.1rem, 2vw, 1.5rem);
+  border: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  background: rgba(18, 24, 38, 0.72);
+  box-shadow: var(--project-depth, 0 8px 24px rgba(0, 0, 0, 0.18));
 
   h2 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0 0 1rem 0;
-    color: var(--neutral-on-background-strong);
-    line-height: 1.3;
+    margin: 0 0 1rem;
+    color: var(--project-text, #f8fafc);
+    font-family: var(--font-heading), Inter, system-ui, sans-serif;
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    text-transform: uppercase;
   }
 
   p {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    margin: 0 0 0.75rem 0;
-    color: var(--neutral-on-background-medium);
+    margin: 0 0 0.85rem;
+    color: var(--project-muted, #94a3b8);
+    font-size: 0.98rem;
+    line-height: 1.7;
 
     &:last-child {
       margin-bottom: 0;
     }
   }
-
-  p + p {
-    margin-top: 0.25rem;
-  }
-
-  /* OutcomeStats or other components inside Solution column */
-  > *:not(h2):not(p) {
-    margin-top: 1rem;
-  }
 }
 
 .columnProblem {
-  border-left: 3px solid var(--neutral-alpha-medium);
+  border-left-color: rgba(148, 163, 184, 0.34);
 }
 
 .columnSolution {
-  border-left: 3px solid var(--brand-solid-medium);
+  border-left-color: var(--project-indigo, #6366f1);
 }
 
-@media (max-width: 768px) {
+[data-theme="light"] {
   .columnProblem,
   .columnSolution {
-    padding: 1.5rem;
-  }
-
-  .columnProblem h2,
-  .columnSolution h2 {
-    font-size: 1.0625rem;
-    margin-bottom: 0.875rem;
-  }
-
-  .columnProblem p,
-  .columnSolution p {
-    font-size: 0.875rem;
+    background: rgba(255, 255, 255, 0.86);
   }
 }
 
-@media (max-width: 480px) {
-  .columnProblem,
-  .columnSolution {
-    padding: 1.25rem;
-  }
-
-  .columnProblem h2,
-  .columnSolution h2 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .columnProblem p,
-  .columnSolution p {
-    font-size: 0.8125rem;
+@media (max-width: 760px) {
+  .root {
+    grid-template-columns: 1fr;
   }
 }

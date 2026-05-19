@@ -159,7 +159,7 @@ export function WorkflowDiagram() {
               <div className={styles.stepBox}>{step}</div>
             </div>
             {index < steps.length - 1 && (
-              <div className={styles.flowArrow}>→</div>
+              <div className={styles.flowArrow}>-&gt;</div>
             )}
           </React.Fragment>
         ))}

@@ -1,80 +1,47 @@
-/* How It Works: 6 cards → 3 cols (2 rows) on desktop, 2 cols on tablet, 1 on mobile — no extra-long 2-column layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.875rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
   width: 100%;
-  max-width: 100%;
-  margin-top: 1rem;
-
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 520px) {
-    grid-template-columns: 1fr;
-    gap: 0.875rem;
-  }
+  margin-top: 1.25rem;
 }
 
 .card {
-  padding: 1.125rem;
-  text-align: left;
-  border: 1px solid var(--neutral-alpha-weak);
-  background: var(--neutral-background-weak);
-  border-radius: 0.625rem;
-  box-shadow: none;
-  transition: border-color var(--transition-med), box-shadow var(--transition-med);
-  cursor: default;
-
-  &:hover {
-    border-color: var(--neutral-alpha-medium);
-    box-shadow: var(--shadow-subtle);
-  }
+  min-width: 0;
+  padding: 1.15rem;
+  border: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
+  border-radius: 12px;
+  background: rgba(26, 34, 51, 0.7);
 }
 
 .cardTitle {
-  font-size: 0.9375rem;
+  margin: 0 0 0.65rem;
+  color: var(--project-text, #f8fafc);
+  font-size: 0.98rem;
   font-weight: 600;
-  line-height: 1.35;
-  margin: 0 0 0.625rem 0;
-  color: var(--neutral-on-background-strong);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
 .cardContent {
-  font-size: 0.8125rem;
-  line-height: 1.55;
   margin: 0;
-  color: var(--neutral-on-background-medium);
+  color: var(--project-muted, #94a3b8);
+  font-size: 0.88rem;
+  line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .card {
-    padding: 1rem;
-  }
+[data-theme="light"] .card {
+  background: #ffffff;
+}
 
-  .cardTitle {
-    font-size: 1rem;
-    margin-bottom: 0.875rem;
-  }
-
-  .cardContent {
-    font-size: 0.875rem;
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 480px) {
-  .card {
-    padding: 1rem;
-  }
-
-  .cardTitle {
-    font-size: 0.9375rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .cardContent {
-    font-size: 0.8125rem;
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
