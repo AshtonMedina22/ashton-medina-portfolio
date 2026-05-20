@@ -1,8 +1,8 @@
 /* ==========================================================================
    Modern minimal palette — clean, professional
-   - Single violet accent site-wide (primary buttons, links, focus)
-   - No bright gradients; solid accent only
-   - No section overlays; solid card backgrounds
+   - Slate/neutral base with restrained violet, blue, cyan, and green accents
+   - Gradients are reserved for major emphasis text and key product moments
+   - Page depth comes from surfaces and hierarchy, not a purple background wash
    ========================================================================== */
 
 /* Custom palette (data-neutral/brand/accent=custom) */
@@ -58,11 +58,14 @@
 
   --color-background: #09090b;
   --color-text: #fafafa;
-  --color-accent: #a78bfa;
-  --color-violet: #a78bfa;
-  --color-cyan: #22d3ee;
+  --color-accent: #38bdf8;
+  --color-violet: #8b5cf6;
+  --color-blue: #3b82f6;
+  --color-cyan: #38bdf8;
+  --color-green: #22c55e;
+  --accent-gradient: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
 
-  /* Primary action: dark purple (matches site), not bright */
+  /* Primary action: restrained violet from the multi-accent system */
   --button-primary: var(--scheme-brand-200);
   --button-primary-hover: var(--scheme-brand-300);
   /* Kept for demos / optional tints only; not used for CTAs */
@@ -74,8 +77,8 @@
   --transition-med: 0.22s ease-out;
 
   /* Success / positive (demos: Booked, Margin, project-created) */
-  --success-color: #10b981;
-  --success-soft: rgba(16, 185, 129, 0.16);
+  --success-color: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.16);
 
   /* Danger / negative (over-budget variance, errors) */
   --danger-color: #dc2626;
@@ -113,7 +116,7 @@
   --brand-alpha-weak: rgba(167, 139, 250, 0.14);
   --brand-alpha-medium: rgba(167, 139, 250, 0.25);
   --brand-alpha-strong: rgba(167, 139, 250, 0.4);
-  /* Once UI primary buttons: use dark purple (page/site), not bright violet */
+  /* Once UI primary buttons: restrained violet from the site accent set */
   --brand-solid-strong: var(--scheme-brand-300);
   --brand-solid-medium: var(--scheme-brand-200);
   --brand-solid-weak: var(--scheme-brand-100);
@@ -135,7 +138,7 @@
   --brand-alpha-weak: rgba(167, 139, 250, 0.12);
   --brand-alpha-medium: rgba(167, 139, 250, 0.22);
   --brand-alpha-strong: rgba(167, 139, 250, 0.35);
-  /* Once UI primary buttons: darker violet, not bright */
+  /* Once UI primary buttons: restrained violet from the site accent set */
   --brand-solid-strong: var(--scheme-brand-400);
   --brand-solid-medium: var(--scheme-brand-300);
   --brand-solid-weak: var(--scheme-brand-200);

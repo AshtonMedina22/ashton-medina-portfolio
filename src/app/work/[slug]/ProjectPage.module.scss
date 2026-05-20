@@ -15,8 +15,8 @@
   padding: clamp(5.25rem, 7vw, 6.75rem) max(1rem, calc((100vw - 1280px) / 2)) clamp(3.5rem, 6vw, 5rem);
   color: var(--project-text);
   background:
-    radial-gradient(circle at 76% 8%, rgba(99, 102, 241, 0.14), transparent 26rem),
-    radial-gradient(circle at 10% 28%, rgba(6, 182, 212, 0.08), transparent 24rem),
+    radial-gradient(circle at 76% 8%, rgba(6, 182, 212, 0.11), transparent 26rem),
+    radial-gradient(circle at 10% 28%, rgba(34, 197, 94, 0.06), transparent 24rem),
     linear-gradient(180deg, #070b12 0%, var(--project-bg) 48%, #08111d 100%);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
 }
@@ -44,7 +44,7 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  color: #8b5cf6 !important;
+  color: #38bdf8 !important;
   font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -422,8 +422,8 @@
   --project-depth: 0 14px 34px rgba(15, 23, 42, 0.1);
 
   background:
-    radial-gradient(circle at 76% 8%, rgba(99, 102, 241, 0.13), transparent 26rem),
-    radial-gradient(circle at 10% 28%, rgba(6, 182, 212, 0.1), transparent 24rem),
+    radial-gradient(circle at 76% 8%, rgba(6, 182, 212, 0.13), transparent 26rem),
+    radial-gradient(circle at 10% 28%, rgba(59, 130, 246, 0.09), transparent 24rem),
     radial-gradient(circle at 82% 88%, rgba(34, 197, 94, 0.08), transparent 22rem),
     linear-gradient(180deg, #f8fafc 0%, var(--project-bg) 52%, #eef2f7 100%);
 }

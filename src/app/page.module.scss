@@ -14,8 +14,8 @@
   min-height: 100vh;
   color: var(--home-text);
   background:
-    radial-gradient(circle at 62% 12%, rgba(99, 102, 241, 0.18), transparent 28rem),
-    radial-gradient(circle at 86% 34%, rgba(6, 182, 212, 0.09), transparent 26rem),
+    radial-gradient(circle at 62% 12%, rgba(6, 182, 212, 0.13), transparent 28rem),
+    radial-gradient(circle at 86% 34%, rgba(34, 197, 94, 0.06), transparent 26rem),
     linear-gradient(180deg, #070b12 0%, var(--home-bg) 46%, #08111d 100%);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
 }
@@ -47,7 +47,7 @@
 .sectionEyebrow {
   display: inline-flex;
   width: fit-content;
-  color: #a78bfa;
+  color: #38bdf8;
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -81,7 +81,10 @@
 
   span {
     display: block;
-    color: #8b5cf6;
+    color: transparent;
+    background: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 }
 
@@ -571,7 +574,7 @@
 
 .platformArrow {
   align-self: center;
-  color: #a78bfa;
+  color: #38bdf8;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -598,7 +601,10 @@
     line-height: 1.06;
 
     span {
-      color: #8b5cf6;
+      color: transparent;
+      background: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
     }
   }
 
@@ -615,7 +621,7 @@
     align-items: center;
     gap: 0.55rem;
     margin-top: 1.25rem;
-    color: #a78bfa !important;
+    color: #38bdf8 !important;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -799,7 +805,7 @@
 
   p {
     margin: 0;
-    color: #a78bfa;
+    color: #38bdf8;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -828,7 +834,7 @@
     align-items: center;
     gap: 0.45rem;
     margin-top: 1.25rem;
-    color: #a78bfa !important;
+    color: #38bdf8 !important;
     text-decoration: none !important;
     font-size: 0.76rem;
     font-weight: 600;
@@ -881,8 +887,8 @@
   --home-depth: 0 14px 34px rgba(15, 23, 42, 0.1);
 
   background:
-    radial-gradient(circle at 60% 12%, rgba(99, 102, 241, 0.14), transparent 28rem),
-    radial-gradient(circle at 84% 34%, rgba(6, 182, 212, 0.1), transparent 26rem),
+    radial-gradient(circle at 60% 12%, rgba(6, 182, 212, 0.14), transparent 28rem),
+    radial-gradient(circle at 84% 34%, rgba(59, 130, 246, 0.1), transparent 26rem),
     radial-gradient(circle at 14% 80%, rgba(34, 197, 94, 0.07), transparent 24rem),
     linear-gradient(180deg, #f8fafc 0%, var(--home-bg) 48%, #eef2f7 100%);
 }
