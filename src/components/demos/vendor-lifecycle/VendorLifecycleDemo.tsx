@@ -4,12 +4,12 @@ import { ASSIGNMENT_REF, CLIENT_NAME } from "../projectData";
 import styles from "./vendor-lifecycle-demo.module.scss";
 
 const complianceRows = [
-  { item: "General liability", state: "Valid", detail: "Expires Mar 15, 2026" },
+  { item: "General liability", state: "Valid", detail: "Expires Aug 15, 2026" },
   { item: "W-9", state: "Valid", detail: "On file" },
-  { item: "Business license", state: "Review", detail: "30-day renewal window" },
+  { item: "Business license", state: "Review", detail: "Renewal needed before next assignment" },
 ];
 
-const statusPills = ["Active", "Compliant", "Portal enabled"];
+const statusPills = ["Active vendor", "Documents scoped", "Portal enabled"];
 
 export function VendorLifecycleDemo() {
   return (
@@ -20,13 +20,13 @@ export function VendorLifecycleDemo() {
           <span />
           <span />
         </div>
-        <span className={styles.shellTitle}>Vendor Lifecycle Control</span>
+        <span className={styles.shellTitle}>Vendor Lifecycle Compliance Platform</span>
       </div>
 
       <div className={styles.vendorStatusStrip}>
         <span>Elite Sound Productions</span>
         <strong>Active</strong>
-        <strong>Compliant</strong>
+        <strong>7 docs valid</strong>
         <strong>Portal enabled</strong>
       </div>
 
@@ -59,7 +59,7 @@ export function VendorLifecycleDemo() {
                 </div>
                 <div>
                   <span>Open RFQs</span>
-                  <strong>3 active</strong>
+                  <strong>3 awaiting response</strong>
                 </div>
               </div>
 
@@ -89,11 +89,11 @@ export function VendorLifecycleDemo() {
 
             <div className={styles.assignmentCard}>
               <div className={styles.moduleEyebrow}>Awaiting vendor acceptance</div>
-              <h3>{CLIENT_NAME} Q4 Delivery</h3>
+              <h3>{CLIENT_NAME} delivery scope</h3>
               <div className={styles.assignmentMeta}>
-                <span>Dec 10, 2026</span>
+                <span>May 28, 2026</span>
                 <span>2:00 PM arrival</span>
-                <span>Service Type A/B</span>
+                <span>Implementation + training support</span>
               </div>
               <div className={styles.portalActionRow}>
                 <strong>Accept & sign</strong>
@@ -102,7 +102,7 @@ export function VendorLifecycleDemo() {
             </div>
 
             <div className={styles.portalVisibilityNote}>
-              Portal exposes only assigned scope, documents, quote requests, and messaging. Customer pricing and margin stay internal.
+              Portal exposes assigned scope, required documents, quote requests, signature, and messaging. Customer pricing and margin stay internal.
             </div>
           </div>
         </section>
@@ -122,7 +122,7 @@ export function VendorLifecycleDemo() {
             <div className={styles.assignmentSummary}>
               <span>Assignment #{ASSIGNMENT_REF}</span>
               <strong>Sent to portal</strong>
-              <small>Vendor can accept, decline, sign, and message without staff handoff.</small>
+              <small>Vendor can accept, decline, upload documents, sign, and message without staff handoff.</small>
             </div>
           </div>
         </section>

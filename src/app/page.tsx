@@ -68,37 +68,37 @@ const selectedProjects = [
 
 const projectPreviewRows = {
   cyan: {
-    header: "Revenue control",
-    status: "Margin review",
+    header: "Project finance control",
+    status: "Closeout gate",
     rows: [
-      ["Invoice", "Posted"],
-      ["Vendor bill", "Matched"],
-      ["Payment", "Pending"],
-      ["Approval", "Required"],
+      ["Customer invoice", "Paid"],
+      ["Vendor bills", "Matched"],
+      ["Margin variance", "-$400 favorable"],
+      ["Payout approval", "Eligible"],
     ],
-    footer: ["Margin visible", "Closeout gated"],
+    footer: ["Invoice paid", "Margin protected"],
   },
   teal: {
-    header: "Vendor lifecycle",
-    status: "Portal access",
+    header: "Vendor compliance record",
+    status: "Portal enabled",
     rows: [
-      ["Onboarding", "Active"],
-      ["Compliance docs", "Verified"],
-      ["RFQ workflow", "Open"],
-      ["Assignment", "Accepted"],
+      ["Onboarding state", "Active"],
+      ["Insurance document", "Valid"],
+      ["RFQ response", "Open"],
+      ["Assignment scope", "Sent"],
     ],
-    footer: ["Docs current", "RFQ linked"],
+    footer: ["Token access", "Docs scoped"],
   },
   indigo: {
-    header: "Operations view",
-    status: "Workload report",
+    header: "Operations reporting view",
+    status: "Leadership packet",
     rows: [
-      ["Projects", "In flight"],
-      ["Tasks", "At risk"],
-      ["Invoices", "Queued"],
-      ["Events", "Scheduled"],
+      ["Active projects", "14"],
+      ["Overdue tasks", "3 flagged"],
+      ["Expected revenue", "$84.2K"],
+      ["Report export", "Ready"],
     ],
-    footer: ["CRM linked", "Project rollup"],
+    footer: ["CRM rollup", "Task visibility"],
   },
 } as const;
 
@@ -130,25 +130,25 @@ function OperationsVisual() {
         </div>
         <div className={styles.recordSummary}>
           <div>
-            <span>Sales order</span>
-            <strong>SO-0842 - Meridian Group</strong>
+            <span>Source transaction</span>
+            <strong>SO-0842 confirmed from CRM opportunity</strong>
           </div>
           <div>
-            <span>Linked project</span>
-            <strong>Delivery workspace generated</strong>
+            <span>Automation result</span>
+            <strong>Project, tasks, and assignments generated</strong>
           </div>
           <div>
-            <span>Vendor workflow</span>
-            <strong>Portal assignment pending</strong>
+            <span>Governance state</span>
+            <strong>Finance and vendor controls inherited</strong>
           </div>
         </div>
         <div className={styles.executionTable}>
-          <div className={styles.panelHeader}>Operational handoff</div>
+          <div className={styles.panelHeader}>Order-to-delivery workflow trace</div>
           {[
-            ["Confirmed sales order", "Synced", "CRM"],
-            ["Project workspace", "Generated", "Delivery"],
-            ["Implementation tasks", "Queued", "Project"],
-            ["Vendor assignment", "Review", "Portal"],
+            ["CRM account + contacts", "Synced", "65+ fields"],
+            ["Project workspace", "Created", "Source ID linked"],
+            ["Task template tree", "Generated", "27 tasks"],
+            ["Vendor assignment packet", "Scoped", "Portal only"],
           ].map(([workflow, status, owner]) => (
             <div key={workflow}>
               <span>{workflow}</span>
@@ -160,15 +160,15 @@ function OperationsVisual() {
         <div className={styles.controlPanel}>
           <div>
             <span>Financial control</span>
-            <strong>Margin review required before closeout</strong>
+            <strong>Invoice, bill, payment, and margin checks attached to project</strong>
           </div>
           <div>
             <span>Approval state</span>
-            <strong>Operations manager review</strong>
+            <strong>Closeout blocked until finance and delivery states are complete</strong>
           </div>
           <div>
             <span>Reporting view</span>
-            <strong>Sales, project, invoice, and task records linked</strong>
+            <strong>Sales order, project, invoice, task, and vendor records roll up together</strong>
           </div>
         </div>
       </div>
@@ -185,17 +185,17 @@ function SalesPlatformVisual() {
       </div>
       <div className={styles.platformCanvas}>
         <section className={styles.orderPane}>
-          <span>Confirmed order</span>
-          <h3>Meridian Group</h3>
+          <span>Confirmed sales order</span>
+          <h3>SO-0842</h3>
           <div className={styles.orderMeta}>
-            <i>3 svc</i>
+            <i>Meridian Group</i>
             <i>$12.4K</i>
-            <i>Set</i>
+            <i>Confirmed</i>
           </div>
           <div className={styles.platformRows}>
-            <em><b>Deal</b><span>CRM linked</span></em>
-            <em><b>CRM data</b><span>65+ fields synced</span></em>
-            <em><b>Billing</b><span>Controls copied</span></em>
+            <em><b>CRM source</b><span>Opportunity, contacts, terms</span></em>
+            <em><b>Order lines</b><span>3 services create delivery scope</span></em>
+            <em><b>Finance rules</b><span>Revenue, cost, margin copied</span></em>
           </div>
         </section>
         <div className={styles.platformArrow} aria-hidden>
@@ -203,11 +203,11 @@ function SalesPlatformVisual() {
         </div>
         <section className={styles.projectPane}>
           <span>Generated project</span>
-          <h3>Delivery ready</h3>
+          <h3>Delivery workspace</h3>
           <div className={styles.taskStack}>
-            <i>Implementation</i>
-            <i>Data migration</i>
-            <i>Training</i>
+            <i>Milestones copied</i>
+            <i>Task owners assigned</i>
+            <i>Source records linked</i>
           </div>
         </section>
         <div className={styles.platformArrow} aria-hidden>
@@ -216,17 +216,17 @@ function SalesPlatformVisual() {
         <section className={styles.executionPane}>
           <span>Execution flow</span>
           <div className={styles.executionChecklist}>
-            <i>Vendor assignment</i>
-            <i>Task ownership</i>
-            <i>Delivery readiness</i>
-            <i>Closeout controls</i>
+            <i>Vendor packet scoped</i>
+            <i>Delivery tasks queued</i>
+            <i>Invoice controls active</i>
+            <i>Closeout gate enforced</i>
           </div>
         </section>
       </div>
       <div className={styles.platformStatus}>
         <span>CRM linked</span>
-        <span>Task tree generated</span>
-        <span>Zero re-entry</span>
+        <span>Project + tasks generated</span>
+        <span>Financial controls inherited</span>
       </div>
     </div>
   );

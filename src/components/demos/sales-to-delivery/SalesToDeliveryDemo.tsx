@@ -10,21 +10,22 @@ import {
 import styles from "./sales-to-delivery-demo.module.scss";
 
 const orderLines = [
-  { service: "Service A - Premier", qty: 1, subtotal: "$4,000" },
-  { service: "Service B - Classic", qty: 1, subtotal: "$4,200" },
-  { service: "Service C - Essentials", qty: 1, subtotal: "$4,200" },
+  { service: "Implementation package", qty: 1, subtotal: "$4,000" },
+  { service: "Data migration package", qty: 1, subtotal: "$4,200" },
+  { service: "Training and handoff", qty: 1, subtotal: "$4,200" },
 ];
 
 const generatedTasks = [
-  { title: "Implementation kickoff", detail: "12 generated tasks", state: "Ready" },
-  { title: "Data migration", detail: "8 generated tasks", state: "Queued" },
-  { title: "Training plan", detail: "7 generated tasks", state: "Ready" },
+  { title: "Implementation milestone", detail: "12 tasks from service line", state: "Ready" },
+  { title: "Data migration milestone", detail: "8 tasks with assigned owner", state: "Queued" },
+  { title: "Training and closeout", detail: "7 tasks plus approval gate", state: "Ready" },
 ];
 
 const syncFields = [
   { label: "Client revenue", value: CLIENT_REVENUE_FORMATTED },
   { label: "Estimated cost", value: ESTIMATED_COST_FORMATTED },
   { label: "Projected margin", value: MARGIN_FORMATTED },
+  { label: "Source link", value: SALES_ORDER_ID },
 ];
 
 export function SalesToDeliveryDemo() {
@@ -44,7 +45,7 @@ export function SalesToDeliveryDemo() {
           <span>{SALES_ORDER_ID}</span>
           <span>{CLIENT_NAME}</span>
           <strong>Confirmed</strong>
-          <strong>Project auto-generated</strong>
+          <strong>Project + tasks generated</strong>
         </div>
 
         <div className={styles.salesComposition}>
@@ -52,7 +53,7 @@ export function SalesToDeliveryDemo() {
             <div className={styles.salesHeroHeader}>
               <div>
                 <p>Order-to-project automation</p>
-                <h2>Confirmed sale became a delivery-ready project</h2>
+                <h2>Confirmed order created the project, task tree, and controls</h2>
               </div>
               <span>0 manual re-entry</span>
             </div>
@@ -63,7 +64,7 @@ export function SalesToDeliveryDemo() {
                 <h3>{CLIENT_NAME}</h3>
                 <div className={styles.recordMeta}>
                   <span>Order #{SALES_ORDER_ID}</span>
-                  <span>Signed Dec 6, 2026</span>
+                  <span>Signed May 6, 2026</span>
                   <span>Booked</span>
                 </div>
 
@@ -94,8 +95,8 @@ export function SalesToDeliveryDemo() {
                 <h3>Project from {SALES_ORDER_ID}</h3>
                 <div className={styles.recordMeta}>
                   <span>Client linked</span>
-                  <span>Task tree copied</span>
-                  <span>Owners assigned</span>
+                  <span>Task template generated</span>
+                  <span>Owners and vendors assigned</span>
                 </div>
 
                 <div className={styles.projectStagePreview}>
@@ -118,7 +119,7 @@ export function SalesToDeliveryDemo() {
                 </div>
 
                 <div className={styles.projectTrace}>
-                  Sales order, opportunity, project, assignments, and financial records share the same source ID.
+                  Sales order, opportunity, project, vendor assignments, invoices, and margin controls share the same source ID.
                 </div>
               </div>
             </div>

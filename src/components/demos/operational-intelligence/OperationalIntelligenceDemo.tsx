@@ -4,16 +4,16 @@ import { CLIENT_NAME, SALES_ORDER_ID, CLIENT_REVENUE_FORMATTED } from "../projec
 import styles from "./operational-intelligence-demo.module.scss";
 
 const KPI_CARDS = [
-  { label: "Engagements this week", value: "8", tone: "violet" },
-  { label: "Active projects", value: "14", tone: "green" },
+  { label: "Engagements reviewed", value: "8", tone: "violet" },
+  { label: "Active delivery projects", value: "14", tone: "green" },
   { label: "Overdue tasks", value: "3", tone: "red" },
   { label: "Expected revenue", value: "$84.2K", tone: "blue" },
 ] as const;
 
 const STAGE_ROWS = [
   { label: "Confirmed delivery", value: 72, color: "green" },
-  { label: "Proposal pending", value: 18, color: "violet" },
-  { label: "At-risk follow-up", value: 10, color: "red" },
+  { label: "Proposal follow-up", value: 18, color: "violet" },
+  { label: "At-risk operations", value: 10, color: "red" },
 ] as const;
 
 const ENGAGEMENT_ROWS = [
@@ -43,7 +43,7 @@ const ENGAGEMENT_ROWS = [
 const REPORT_ITEMS = [
   "Leadership report queued",
   "Revenue rollup reconciled",
-  "At-risk work surfaced",
+  "Overdue project tasks surfaced",
 ] as const;
 
 export function OperationalIntelligenceDemo() {
@@ -59,9 +59,9 @@ export function OperationalIntelligenceDemo() {
       </div>
 
       <div className={styles.opsStatusStrip}>
-        <strong>Live operations</strong>
-        <span>This month</span>
-        <strong>Auto-report enabled</strong>
+        <strong>ERP records live</strong>
+        <span>May 2026</span>
+        <strong>Auto-report queued</strong>
         <span>Export ready</span>
       </div>
 
@@ -70,7 +70,7 @@ export function OperationalIntelligenceDemo() {
           <div className={styles.heroHeader}>
             <div>
               <p>Executive operational insight</p>
-              <h2>Delivery pipeline is healthy, with 3 overdue tasks needing leadership attention</h2>
+              <h2>Delivery pipeline is healthy, with 3 overdue tasks requiring manager review</h2>
             </div>
             <span>Operations view</span>
           </div>
@@ -79,12 +79,12 @@ export function OperationalIntelligenceDemo() {
             <div className={styles.healthPanel}>
               <span>Operational health</span>
               <strong>86%</strong>
-              <small>8 engagements this week with $84.2K expected revenue</small>
+              <small>Calculated from CRM, project, task, invoice, and event records</small>
             </div>
 
             <div className={styles.pipelinePanel}>
               <div className={styles.panelTitleRow}>
-                <span>Engagement stage mix</span>
+                <span>Pipeline workload mix</span>
                 <strong>100%</strong>
               </div>
               <div className={styles.stageBars}>
@@ -108,7 +108,7 @@ export function OperationalIntelligenceDemo() {
 
             <div className={styles.engagementPreview}>
               <div className={styles.panelTitleRow}>
-                <span>Priority engagement records</span>
+                <span>Priority operational records</span>
                 <strong>3 shown</strong>
               </div>
               <table>

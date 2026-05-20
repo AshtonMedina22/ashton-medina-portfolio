@@ -68,7 +68,7 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
         <div className={styles.graphicSignals}>
           <span>Vendor portal</span>
           <strong>Elite Sound</strong>
-          <small>Compliant · 3 docs · portal enabled</small>
+          <small>Compliant · 7 docs valid · portal enabled</small>
         </div>
       </div>
     );

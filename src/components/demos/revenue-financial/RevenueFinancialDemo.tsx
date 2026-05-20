@@ -24,10 +24,10 @@ const varianceRows = VENDOR_BREAKDOWN.map((row) => {
 });
 
 const eligibilityItems = [
-  "Delivery confirmed",
-  "Customer invoices paid",
-  "Vendor bills paid",
-  "Margin threshold met",
+  "Delivery status confirmed",
+  "Customer invoice paid",
+  "Vendor bills matched",
+  "Margin threshold passed",
 ];
 
 export function RevenueFinancialDemo() {
@@ -39,13 +39,13 @@ export function RevenueFinancialDemo() {
           <span />
           <span />
         </div>
-        <span className={styles.shellTitle}>Financial Control & Governance</span>
+        <span className={styles.shellTitle}>Revenue Financial Control Engine</span>
       </div>
 
       <div className={styles.financeStatusStrip}>
         <span>{SALES_ORDER_ID}</span>
         <strong>Paid</strong>
-        <span>Finance view</span>
+        <span>Closeout view</span>
         <strong>Margin protected</strong>
       </div>
 
@@ -53,8 +53,8 @@ export function RevenueFinancialDemo() {
         <section className={styles.marginHero} aria-label="Live margin governance">
           <div className={styles.marginHeroHeader}>
             <div>
-              <p>Live margin governance</p>
-              <h2>{CLIENT_NAME} profitability is protected at paid state</h2>
+              <p>Project-level financial governance</p>
+              <h2>Closeout is gated by invoice, bill, payment, and margin logic</h2>
             </div>
             <span>Finance controlled</span>
           </div>
@@ -63,7 +63,7 @@ export function RevenueFinancialDemo() {
             <div className={styles.marginPrimaryPanel}>
               <span>Protected margin</span>
               <strong>{MARGIN_PCT_FORMATTED}</strong>
-              <small>{MARGIN_FORMATTED} retained after actual vendor cost</small>
+              <small>{MARGIN_FORMATTED} retained after vendor bills are reconciled</small>
             </div>
 
             <div className={styles.financeMetricGrid}>
@@ -83,12 +83,12 @@ export function RevenueFinancialDemo() {
 
             <div className={styles.budgetActualChain}>
               <div>
-                <span>Pipeline</span>
+                <span>Pipeline value</span>
                 <strong>$15,000</strong>
               </div>
               <i aria-hidden />
               <div>
-                <span>Quoted</span>
+                <span>Contracted</span>
                 <strong>{CLIENT_REVENUE_FORMATTED}</strong>
               </div>
               <i aria-hidden />
@@ -107,7 +107,7 @@ export function RevenueFinancialDemo() {
 
         <aside className={styles.financeSupportRail} aria-label="Variance and payout controls">
           <section className={styles.supportModule}>
-            <div className={styles.moduleEyebrow}>Variance preview</div>
+            <div className={styles.moduleEyebrow}>Vendor cost reconciliation</div>
             <div className={styles.variancePreviewList}>
               {varianceRows.map((row) => (
                 <div key={row.vendor}>
@@ -122,7 +122,7 @@ export function RevenueFinancialDemo() {
           </section>
 
           <section className={styles.supportModule}>
-            <div className={styles.moduleEyebrow}>Payout eligibility</div>
+            <div className={styles.moduleEyebrow}>Closeout approval logic</div>
             <div className={styles.payoutState}>Eligible</div>
             <ul className={styles.eligibilityPreviewList}>
               {eligibilityItems.map((item) => (
