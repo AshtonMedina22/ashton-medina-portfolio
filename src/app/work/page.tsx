@@ -42,6 +42,108 @@ const featuredStats = [
   { value: "Vendor workflow", label: "Coordination" },
 ] as const;
 
+const visualContent: Record<
+  string,
+  {
+    title: string;
+    status: string;
+    record: string;
+    related: Array<[string, string]>;
+    states: string[];
+    rows: Array<[string, string, string]>;
+    side: Array<[string, string]>;
+  }
+> = {
+  "sales-to-delivery-automation-platform": {
+    title: "Sales order to delivery",
+    status: "Delivery ready",
+    record: "SO-0842 - Meridian Group",
+    related: [
+      ["Order", "Confirmed"],
+      ["Project", "Generated"],
+      ["Vendor", "Review"],
+    ],
+    states: ["Sales order", "CRM sync", "Project created", "Task tree"],
+    rows: [
+      ["CRM field sync", "Account, contacts, order terms", "Complete"],
+      ["Project workspace", "Milestones and task ownership", "Generated"],
+      ["Vendor handoff", "Assignment package", "Review"],
+      ["Delivery readiness", "Execution workspace", "Ready"],
+    ],
+    side: [
+      ["Revenue", "$12.4K"],
+      ["Tasks", "12"],
+      ["Margin", "$6.6K"],
+    ],
+  },
+  "revenue-financial-control-engine": {
+    title: "Revenue control workspace",
+    status: "Approval required",
+    record: "Project P-1847 - Closeout review",
+    related: [
+      ["Invoice", "Posted"],
+      ["Bill", "Matched"],
+      ["Margin", "Protected"],
+    ],
+    states: ["Invoice issued", "Cost matched", "Margin reviewed", "Payout gated"],
+    rows: [
+      ["Customer invoice", "INV-1048", "Issued"],
+      ["Vendor bill", "BILL-771", "Matched"],
+      ["Margin review", "Variance threshold", "Review"],
+      ["Closeout approval", "Finance manager", "Waiting"],
+    ],
+    side: [
+      ["Margin", "53.2%"],
+      ["Variance", "-$400"],
+      ["Payout", "Eligible"],
+    ],
+  },
+  "vendor-lifecycle-compliance-platform": {
+    title: "Vendor lifecycle workspace",
+    status: "Portal active",
+    record: "Vendor V-221 - Compliance packet",
+    related: [
+      ["Onboarding", "Active"],
+      ["Docs", "Review"],
+      ["RFQ", "Open"],
+    ],
+    states: ["Invited", "Portal opened", "Docs received", "Assignment sent"],
+    rows: [
+      ["W-9 / tax form", "Document upload", "Received"],
+      ["Insurance certificate", "Compliance review", "Review"],
+      ["RFQ response", "Portal submission", "Open"],
+      ["Assignment acceptance", "External vendor action", "Pending"],
+    ],
+    side: [
+      ["Routes", "15"],
+      ["Docs", "8"],
+      ["Needs review", "1"],
+    ],
+  },
+  "operational-intelligence-platform": {
+    title: "Operational reporting view",
+    status: "Records aggregated",
+    record: "Operations overview - Delivery pipeline",
+    related: [
+      ["Workload", "Grouped"],
+      ["Projects", "Visible"],
+      ["Reports", "Ready"],
+    ],
+    states: ["Records synced", "Workload grouped", "Events attached", "Report queued"],
+    rows: [
+      ["SO-0842", "Meridian Group", "Confirmed"],
+      ["SO-0887", "Acme Inc", "Proposal sent"],
+      ["SO-0882", "Acme Corp", "Contract sent"],
+      ["Overdue tasks", "Leadership review", "Flagged"],
+    ],
+    side: [
+      ["Health", "86%"],
+      ["Active", "14"],
+      ["Overdue", "3"],
+    ],
+  },
+};
+
 export async function generateMetadata() {
   return Meta.generate({
     title: work.title,
@@ -60,6 +162,7 @@ function sortProjects(projects: ProjectPost[]) {
 
 function ProjectVisual({ slug, featured = false }: { slug: string; featured?: boolean }) {
   const visualClass = visualMap[slug] ?? "salesVisual";
+  const visual = visualContent[slug] ?? visualContent["sales-to-delivery-automation-platform"];
 
   return (
     <div className={`${styles.projectVisual} ${styles[visualClass]} ${featured ? styles.featuredVisual : ""}`} aria-hidden>
@@ -71,26 +174,48 @@ function ProjectVisual({ slug, featured = false }: { slug: string; featured?: bo
       </div>
       <div className={styles.visualCanvas}>
         <div className={styles.visualTopline}>
-          <strong>{featured ? "Executive overview" : "System preview"}</strong>
-          <span>ERP records</span>
+          <strong>{visual.title}</strong>
+          <span>{visual.status}</span>
         </div>
-        <div className={styles.visualMetricRow}>
-          <i />
-          <i />
-          <i />
+        <div className={styles.visualRecordHeader}>
+          <strong>{visual.record}</strong>
+          <div>
+            {visual.related.map(([label, value]) => (
+              <span key={label}>
+                <em>{label}</em>
+                {value}
+              </span>
+            ))}
+          </div>
         </div>
         <div className={styles.visualBody}>
-          <div className={styles.visualChart}>
-            <span />
-            <span />
-            <span />
-            <span />
+          <div className={styles.visualTable}>
+            <div className={styles.visualTableHead}>
+              <span>Workflow item</span>
+              <span>Record context</span>
+              <span>Status</span>
+            </div>
+            {visual.rows.map(([item, context, status]) => (
+              <div key={item}>
+                <span>{item}</span>
+                <span>{context}</span>
+                <strong>{status}</strong>
+              </div>
+            ))}
           </div>
-          <div className={styles.visualSignal}>
-            <em />
-            <em />
-            <em />
+          <div className={styles.visualSidePanel}>
+            {visual.side.map(([label, value]) => (
+              <span key={label}>
+                <em>{label}</em>
+                <strong>{value}</strong>
+              </span>
+            ))}
           </div>
+        </div>
+        <div className={styles.visualStateTrack}>
+          {visual.states.map((state) => (
+            <span key={state}>{state}</span>
+          ))}
         </div>
       </div>
     </div>

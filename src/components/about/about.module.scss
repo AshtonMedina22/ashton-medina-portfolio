@@ -124,8 +124,19 @@
   display: grid;
   align-items: center;
 
-  &::after {
-    display: none;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 18%;
+    top: 12%;
+    bottom: 10%;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 48%),
+      rgba(26, 34, 51, 0.36);
+    transform: translate(1rem, 1rem);
   }
 }
 
@@ -138,7 +149,7 @@
   border: 1px solid var(--about-border);
   border-radius: 14px;
   background: #121826;
-  box-shadow: var(--about-depth);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
 
   img {
     width: 100%;
@@ -160,8 +171,9 @@
   overflow: hidden;
   border: 1px solid var(--about-border);
   border-radius: 14px;
-  background: rgba(18, 24, 38, 0.92);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  background:
+    linear-gradient(180deg, rgba(26, 34, 51, 0.96), rgba(18, 24, 38, 0.96));
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
 
   > div {
     display: grid;
@@ -178,7 +190,7 @@
   svg {
     width: 1rem;
     height: 1rem;
-    color: #a78bfa;
+    color: var(--about-cyan);
   }
 
   strong {
@@ -222,9 +234,9 @@
   }
 
   svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    color: #a78bfa;
+    width: 1.05rem;
+    height: 1.05rem;
+    color: var(--about-cyan);
   }
 
   strong {
@@ -291,14 +303,18 @@
   article {
     min-width: 0;
     min-height: 11rem;
-    padding: 1.5rem 1.6rem;
-    border: 1px solid var(--about-border);
+    padding: 1.55rem 1.65rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
     border-radius: 12px;
-    background: rgba(18, 24, 38, 0.54);
+    background: rgba(18, 24, 38, 0.38);
   }
 
   article:first-child {
-    background: rgba(26, 34, 51, 0.72);
+    grid-column: span 2;
+    min-height: 9rem;
+    background:
+      linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 44%),
+      rgba(26, 34, 51, 0.68);
   }
 
   svg {
@@ -308,7 +324,7 @@
   }
 
   article:nth-child(odd) svg {
-    color: #a78bfa;
+    color: var(--about-cyan);
   }
 
   h3 {
@@ -384,9 +400,11 @@
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
   margin-top: 2rem;
+  border-top: 1px solid var(--about-border);
+  border-bottom: 1px solid var(--about-border);
 
   &::before {
     display: none;
@@ -394,9 +412,14 @@
 
   article {
     min-width: 0;
-    padding: 1.2rem 1.25rem;
-    border-top: 1px solid var(--about-border);
+    padding: 1.15rem 1.1rem;
+    border-top: 0;
+    border-right: 1px solid var(--about-border);
     text-align: left;
+
+    &:last-child {
+      border-right: 0;
+    }
   }
 
   article > span {
@@ -423,7 +446,7 @@
 }
 
 .activeJourney {
-  background: rgba(26, 34, 51, 0.42);
+  background: transparent;
 }
 
 .ctaSection {
@@ -433,9 +456,11 @@
   gap: 2rem;
   margin-top: clamp(2.75rem, 5vw, 4rem);
   padding: 1rem 1.1rem;
-  border: 1px solid var(--about-border);
+  border: 1px solid rgba(148, 163, 184, 0.12);
   border-radius: 14px;
-  background: rgba(18, 24, 38, 0.52);
+  background:
+    linear-gradient(90deg, rgba(6, 182, 212, 0.06), transparent 58%),
+    rgba(18, 24, 38, 0.42);
 
   > div:first-child {
     display: flex;
@@ -447,7 +472,7 @@
     flex: 0 0 auto;
     width: 1.25rem;
     height: 1.25rem;
-    color: #a78bfa;
+    color: var(--about-cyan);
   }
 
   p {
@@ -521,11 +546,16 @@
 
 [data-theme="light"] {
   .profilePanel,
-  .capabilityGrid article,
   .ctaSection {
     border-color: rgba(15, 23, 42, 0.12);
     background: rgba(255, 255, 255, 0.9);
     box-shadow: var(--about-depth);
+  }
+
+  .capabilityGrid article {
+    border-color: rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: none;
   }
 
   .focusStrip,
@@ -592,6 +622,10 @@
   .timeline {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .timeline article:nth-child(2n) {
+    border-right: 0;
+  }
 }
 
 @media (max-width: 760px) {
@@ -641,6 +675,10 @@
   .systemChips,
   .timeline {
     grid-template-columns: 1fr;
+  }
+
+  .capabilityGrid article:first-child {
+    grid-column: auto;
   }
 
   .systemChips span {
