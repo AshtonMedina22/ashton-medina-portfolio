@@ -348,9 +348,11 @@ export default function Home() {
         <section className={styles.capabilitiesSection}>
           <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Capabilities</span>
-            <h2>
-              Enterprise systems, built around operational <span>control.</span>
-            </h2>
+            <h2>Operational systems capability.</h2>
+            <p>
+              The work is centered on ERP automation, governed workflows, financial controls,
+              and reporting views that make day-to-day execution easier to manage.
+            </p>
           </div>
           <div className={styles.capabilityGrid}>
             {capabilities.map((capability) => {
@@ -369,9 +371,7 @@ export default function Home() {
         <section className={styles.workPreview}>
           <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Selected work</span>
-            <h2>
-              Enterprise systems built for operational <span>execution.</span>
-            </h2>
+            <h2>Selected operational systems.</h2>
             <SmartLink href="/work">
               View all projects
               <HiOutlineArrowRight />

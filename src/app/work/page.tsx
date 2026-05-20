@@ -271,13 +271,13 @@ export default function Work() {
         <div>
           <span className={styles.eyebrow}>My work</span>
           <h1>
-            Systems built for complexity. Designed for <span>impact.</span>
+            Operational systems <span>portfolio.</span>
           </h1>
         </div>
         <div className={styles.heroAside}>
           <p>
-            A selection of enterprise platforms and automation systems designed to solve
-            real operational challenges and deliver measurable business outcomes.
+            Four ERP, workflow, vendor, finance, and reporting systems built around
+            business operations, controls, and execution visibility.
           </p>
         </div>
       </section>

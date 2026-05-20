@@ -31,7 +31,7 @@
 
 .heroSection {
   width: min(100% - 3rem, 1280px);
-  min-height: min(720px, calc(100vh - 72px));
+  min-height: min(660px, calc(100vh - 72px));
   display: grid;
   grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
   align-items: center;
@@ -74,10 +74,10 @@
 }
 
 .heroContent h1 {
-  max-width: 14.5ch;
+  max-width: 15.5ch;
   margin-top: 1.35rem;
-  font-size: clamp(3.35rem, 4.5vw, 3.75rem);
-  line-height: 0.97;
+  font-size: clamp(3rem, 4vw, 3.55rem);
+  line-height: 1;
 
   span {
     display: block;
@@ -582,9 +582,9 @@
 
 .capabilitiesSection {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.62fr) minmax(0, 1fr);
-  gap: clamp(2.5rem, 5vw, 5rem);
-  padding: clamp(3.25rem, 5vw, 4.75rem) 0;
+  grid-template-columns: minmax(18rem, 0.48fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  padding: clamp(2.75rem, 4vw, 4rem) 0;
   border-top: 1px solid var(--home-border);
 }
 
@@ -592,14 +592,22 @@
   min-width: 0;
 
   h2 {
-    max-width: 13ch;
-    margin-top: 1rem;
-    font-size: clamp(2.35rem, 4.3vw, 4rem);
-    line-height: 0.98;
+    max-width: 18ch;
+    margin-top: 0.85rem;
+    font-size: clamp(1.75rem, 2.8vw, 2.55rem);
+    line-height: 1.06;
 
     span {
       color: #8b5cf6;
     }
+  }
+
+  > p {
+    max-width: 34rem;
+    margin: 1rem 0 0;
+    color: var(--home-muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
   }
 
   > a {
@@ -649,7 +657,7 @@
 }
 
 .workPreview {
-  padding: clamp(3.25rem, 5vw, 4.75rem) 0;
+  padding: clamp(2.75rem, 4vw, 4rem) 0;
   border-top: 1px solid var(--home-border);
 }
 

@@ -201,7 +201,7 @@ export default function About() {
       <section className={styles.capabilitiesSection}>
         <div className={styles.sectionIntro}>
           <span className={styles.sectionEyebrow}>What I do</span>
-          <h2>I design, build, and optimize systems that run the business.</h2>
+          <h2>Architecture, workflow logic, and implementation ownership.</h2>
         </div>
         <p className={styles.sectionLead}>
           {about.intro.display ? about.intro.description : "I partner with organizations to solve complex operational challenges through custom-built platforms, automation, and data-driven intelligence."}
@@ -223,7 +223,7 @@ export default function About() {
       <section className={styles.systemsSection}>
         <div className={styles.sectionIntro}>
           <span className={styles.sectionEyebrow}>Systems I build</span>
-          <h2>Platforms that support real business operations.</h2>
+          <h2>Core system areas.</h2>
         </div>
         <div className={styles.systemChips}>
           {systemChips.map((chip, index) => (
@@ -239,7 +239,7 @@ export default function About() {
         <div className={styles.journeyHeader}>
           <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Operating principles</span>
-            <h2>Practical systems, clear logic, reliable execution.</h2>
+            <h2>How I approach system work.</h2>
           </div>
           <p>
             I focus on building systems that match how operations actually work, reduce manual

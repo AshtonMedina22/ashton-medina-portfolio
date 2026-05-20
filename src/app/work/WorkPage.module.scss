@@ -31,8 +31,8 @@
 
 .workHero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 0.72fr);
-  gap: clamp(2rem, 4.5vw, 4.5rem);
+  grid-template-columns: minmax(0, 0.82fr) minmax(22rem, 0.78fr);
+  gap: clamp(1.75rem, 4vw, 4rem);
   align-items: end;
 }
 
@@ -48,14 +48,14 @@
 }
 
 .workHero h1 {
-  max-width: 15ch;
+  max-width: 17ch;
   margin: 1rem 0 0;
   color: var(--work-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
-  font-size: clamp(3.35rem, 4.9vw, 4rem);
+  font-size: clamp(2.75rem, 4.2vw, 3.45rem);
   font-weight: 700;
   letter-spacing: -0.025em;
-  line-height: 0.98;
+  line-height: 1;
   text-transform: uppercase;
 
   span {
@@ -71,7 +71,7 @@
     max-width: 55ch;
     margin: 0;
     color: var(--work-muted);
-    font-size: 1.08rem;
+    font-size: 1.02rem;
     line-height: 1.65;
   }
 }
@@ -81,7 +81,7 @@
   grid-template-columns: minmax(20rem, 0.45fr) minmax(0, 0.55fr);
   gap: clamp(1.75rem, 3vw, 3rem);
   align-items: stretch;
-  margin-top: 2rem;
+  margin-top: 1.7rem;
   padding: clamp(1.35rem, 2vw, 1.8rem);
   border: 1px solid var(--work-border);
   border-radius: 16px;
@@ -99,10 +99,10 @@
     margin: 0.9rem 0 0;
     color: var(--work-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(1.9rem, 3vw, 2.75rem);
+    font-size: clamp(1.65rem, 2.5vw, 2.25rem);
     font-weight: 700;
     letter-spacing: -0.04em;
-    line-height: 1.04;
+    line-height: 1.08;
   }
 }
 
@@ -127,7 +127,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.85rem;
-  margin-top: 2rem;
+  margin-top: 1.55rem;
 
   div {
     min-width: 0;
@@ -138,7 +138,7 @@
   strong {
     display: block;
     color: var(--work-text);
-    font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+    font-size: clamp(1rem, 1.35vw, 1.25rem);
     font-weight: 600;
     letter-spacing: -0.03em;
   }
@@ -428,7 +428,7 @@
 }
 
 .allProjectsSection {
-  margin-top: 2.25rem;
+  margin-top: 2rem;
 }
 
 .projectGrid {
