@@ -8,11 +8,11 @@
   --project-border: rgba(255, 255, 255, 0.08);
   --project-indigo: #6366f1;
   --project-cyan: #06b6d4;
-  --project-depth: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --project-depth: 0 18px 48px rgba(0, 0, 0, 0.2);
 
   width: 100%;
   min-height: 100vh;
-  padding: clamp(6rem, 8vw, 8rem) max(1rem, calc((100vw - 1400px) / 2)) clamp(4rem, 7vw, 6rem);
+  padding: clamp(5.25rem, 7vw, 6.75rem) max(1rem, calc((100vw - 1280px) / 2)) clamp(3.5rem, 6vw, 5rem);
   color: var(--project-text);
   background:
     radial-gradient(circle at 76% 8%, rgba(99, 102, 241, 0.14), transparent 26rem),
@@ -25,7 +25,7 @@
 .proofStrip,
 .mockupSection,
 .articleSection {
-  width: min(100% - 2rem, 1400px);
+  width: min(100% - 2rem, 1280px);
   margin-inline: auto;
 }
 
@@ -151,14 +151,25 @@
 }
 
 .heroPanel {
+  position: relative;
   min-width: 0;
   padding: clamp(1.1rem, 2vw, 1.5rem);
   border: 1px solid var(--project-border);
   border-radius: 16px;
   background:
-    linear-gradient(135deg, rgba(99, 102, 241, 0.12), transparent 36%),
-    rgba(18, 24, 38, 0.78);
+    linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 42%),
+    rgba(18, 24, 38, 0.84);
   box-shadow: var(--project-depth);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 1rem -0.75rem -0.75rem 1rem;
+    z-index: -1;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 18px;
+    background: rgba(26, 34, 51, 0.28);
+  }
 }
 
 .panelTopline {
@@ -232,8 +243,8 @@
     width: 2.1rem;
     height: 2.1rem;
     border-radius: 8px;
-    background: rgba(99, 102, 241, 0.16);
-    color: #a78bfa;
+    background: rgba(6, 182, 212, 0.1);
+    color: #67e8f9;
     font-size: 0.72rem;
     font-weight: 700;
   }
@@ -251,11 +262,11 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   margin-top: clamp(2rem, 4vw, 4rem);
-  border: 1px solid var(--project-border);
-  border-radius: 16px;
-  background: rgba(18, 24, 38, 0.72);
-  box-shadow: var(--project-depth);
-  overflow: hidden;
+  border-block: 1px solid var(--project-border);
+  border-inline: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .proofItem {
@@ -328,12 +339,12 @@
 
 .demoSection {
   padding: clamp(0.9rem, 1.7vw, 1.5rem);
-  border: 1px solid var(--project-border);
-  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 18px;
   background:
-    radial-gradient(circle at 50% 8%, rgba(99, 102, 241, 0.1), transparent 24rem),
+    radial-gradient(circle at 18% 10%, rgba(6, 182, 212, 0.08), transparent 22rem),
     #070b12;
-  box-shadow: var(--project-depth);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.24);
 }
 
 .demoFrame {
@@ -408,24 +419,29 @@
   --project-border: rgba(15, 23, 42, 0.08);
   --project-indigo: #4f46e5;
   --project-cyan: #0891b2;
-  --project-depth: 0 6px 18px rgba(15, 23, 42, 0.06);
+  --project-depth: 0 14px 36px rgba(15, 23, 42, 0.08);
 
   background:
-    radial-gradient(circle at 76% 8%, rgba(79, 70, 229, 0.11), transparent 26rem),
-    radial-gradient(circle at 10% 28%, rgba(8, 145, 178, 0.08), transparent 24rem),
-    linear-gradient(180deg, #f4f7fb 0%, #ffffff 48%, #eef2f7 100%);
+    radial-gradient(circle at 76% 8%, rgba(79, 70, 229, 0.08), transparent 26rem),
+    radial-gradient(circle at 10% 28%, rgba(8, 145, 178, 0.1), transparent 24rem),
+    linear-gradient(180deg, #f5f7fb 0%, #eef2f7 52%, #f8fafc 100%);
 }
 
 [data-theme="light"] {
   .heroTech > * > *,
   .heroPanel,
-  .proofStrip {
-    background: rgba(255, 255, 255, 0.86);
-  }
-
   .panelMetric,
   .flowItem {
-    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.84);
+  }
+
+  .heroPanel::before {
+    background: rgba(226, 232, 240, 0.72);
+  }
+
+  .proofStrip {
+    border-color: rgba(15, 23, 42, 0.1);
   }
 
   .secondaryCta {
@@ -438,8 +454,9 @@
 
   .demoSection {
     background:
-      radial-gradient(circle at 50% 8%, rgba(79, 70, 229, 0.08), transparent 24rem),
-      #ffffff;
+      radial-gradient(circle at 18% 10%, rgba(6, 182, 212, 0.08), transparent 22rem),
+      #070b12;
+    box-shadow: 0 24px 64px rgba(15, 23, 42, 0.16);
   }
 }
 

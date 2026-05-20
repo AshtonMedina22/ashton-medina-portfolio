@@ -10,10 +10,10 @@
 .columnSolution {
   min-width: 0;
   padding: clamp(1.1rem, 2vw, 1.5rem);
-  border: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
-  border-radius: 16px;
-  background: rgba(18, 24, 38, 0.72);
-  box-shadow: var(--project-depth, 0 8px 24px rgba(0, 0, 0, 0.18));
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 14px;
+  background: rgba(18, 24, 38, 0.48);
+  box-shadow: none;
 
   h2 {
     margin: 0 0 1rem;
@@ -43,13 +43,23 @@
 }
 
 .columnSolution {
-  border-left-color: var(--project-indigo, #6366f1);
+  border-left-color: var(--project-cyan, #06b6d4);
+  background:
+    linear-gradient(135deg, rgba(6, 182, 212, 0.06), transparent 48%),
+    rgba(18, 24, 38, 0.56);
 }
 
 [data-theme="light"] {
   .columnProblem,
   .columnSolution {
-    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.66);
+  }
+
+  .columnSolution {
+    background:
+      linear-gradient(135deg, rgba(8, 145, 178, 0.06), transparent 48%),
+      rgba(255, 255, 255, 0.78);
   }
 }
 
