@@ -1,67 +1,68 @@
-import {
-  Column,
-  Meta,
-  Schema,
-  SmartLink,
-} from "@once-ui-system/core";
+import { Column, Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
-  HiOutlineCube,
-  HiOutlineDatabase,
-  HiOutlineLightningBolt,
+  HiOutlineChartBar,
   HiOutlineShieldCheck,
-  HiOutlineViewGrid,
+  HiOutlineShare,
 } from "react-icons/hi";
 import { home, about, person, baseURL, techStack } from "@/resources";
 import { TechStackMarquee } from "@/components/home/TechStackMarquee";
 import styles from "./page.module.scss";
 
-const featuredProjects = [
-  {
-    title: "Sales-to-Delivery Automation Platform",
-    description: "Converts confirmed sales orders into delivery-ready projects with governed handoff logic.",
-    href: "/work/sales-to-delivery-automation-platform",
-    accent: "indigo",
-  },
-  {
-    title: "Revenue Financial Control Engine",
-    description: "Protects margin, approval states, vendor variance, and payout readiness across delivery records.",
-    href: "/work/revenue-financial-control-engine",
-    accent: "cyan",
-  },
-  {
-    title: "Vendor Lifecycle Compliance Platform",
-    description: "Coordinates onboarding, compliance status, portal access, and assignment acceptance.",
-    href: "/work/vendor-lifecycle-compliance-platform",
-    accent: "teal",
-  },
+const proofMetrics = [
+  { value: "4", label: "Enterprise systems showcased" },
+  { value: "65+", label: "Synced fields in sales workflow" },
+  { value: "15", label: "Governed vendor portal routes" },
+  { value: "7-Tier", label: "Financial governance logic" },
+] as const;
+
+const proofStrip = [
+  "ERP Workflow Automation",
+  "Financial Governance",
+  "Vendor Lifecycle Systems",
+  "Operational Intelligence",
+  "Platform Engineering",
 ] as const;
 
 const capabilities = [
   {
-    icon: HiOutlineCube,
-    title: "System Architecture",
-    text: "Designing scalable, secure, and maintainable enterprise systems.",
-  },
-  {
-    icon: HiOutlineViewGrid,
+    icon: HiOutlineShare,
     title: "Workflow Automation",
-    text: "Building governed workflows that remove manual operational friction.",
-  },
-  {
-    icon: HiOutlineDatabase,
-    title: "Data Integration",
-    text: "Unifying records across sales, finance, delivery, vendors, and reporting.",
+    text: "Convert operational handoffs into governed system flows across sales, delivery, vendors, and internal teams.",
   },
   {
     icon: HiOutlineShieldCheck,
-    title: "Governance & Compliance",
-    text: "Enforcing access, approval states, audit logic, and lifecycle controls.",
+    title: "Financial Governance",
+    text: "Embed approval states, margin controls, access rules, and payout readiness directly into transaction records.",
   },
   {
-    icon: HiOutlineLightningBolt,
+    icon: HiOutlineChartBar,
     title: "Operational Intelligence",
-    text: "Turning live system activity into executive visibility and action.",
+    text: "Turn live ERP activity into readable executive views with KPIs, variance signals, and drill-down context.",
+  },
+] as const;
+
+const selectedProjects = [
+  {
+    title: "Financial Control & Governance Engine",
+    description: "Margin protection, approval checkpoints, vendor variance, and compensation governance.",
+    href: "/work/revenue-financial-control-engine",
+    category: "Financial governance",
+    accent: "cyan",
+  },
+  {
+    title: "Vendor Management & Portal Platform",
+    description: "Controlled onboarding, compliance state, tokenized portal access, and assignment acceptance.",
+    href: "/work/vendor-lifecycle-compliance-platform",
+    category: "Vendor lifecycle",
+    accent: "teal",
+  },
+  {
+    title: "Operational Intelligence Platform",
+    description: "Executive operational visibility across KPIs, reporting, engagement records, and exports.",
+    href: "/work/operational-intelligence-platform",
+    category: "Operational intelligence",
+    accent: "indigo",
   },
 ] as const;
 
@@ -77,7 +78,7 @@ export async function generateMetadata() {
 
 function OperationsVisual() {
   return (
-    <div className={styles.opsVisual} aria-label="Operational intelligence platform visual">
+    <div className={styles.opsVisual} aria-label="Operational command-center product preview">
       <div className={styles.visualRail} aria-hidden>
         <span className={styles.logoMark}>A</span>
         <i className={styles.activeIcon} />
@@ -127,9 +128,15 @@ function OperationsVisual() {
             <div className={styles.panelHeader}>Workflow status</div>
             <div className={styles.donut} aria-hidden />
             <ul>
-              <li><span /> Completed <strong>72%</strong></li>
-              <li><span /> In progress <strong>18%</strong></li>
-              <li><span /> Exceptions <strong>10%</strong></li>
+              <li>
+                <span /> Completed <strong>72%</strong>
+              </li>
+              <li>
+                <span /> In progress <strong>18%</strong>
+              </li>
+              <li>
+                <span /> Exceptions <strong>10%</strong>
+              </li>
             </ul>
           </div>
         </div>
@@ -153,9 +160,53 @@ function OperationsVisual() {
   );
 }
 
-function ProjectPreview({ project }: { project: (typeof featuredProjects)[number] }) {
+function SalesPlatformVisual() {
   return (
-    <SmartLink href={project.href} className={styles.projectCard}>
+    <div className={styles.salesPlatformVisual} aria-label="Sales-to-delivery platform preview">
+      <div className={styles.platformTopbar}>
+        <strong>Sales Order to Project</strong>
+        <span>SO-0842</span>
+      </div>
+      <div className={styles.platformCanvas}>
+        <section className={styles.orderPane}>
+          <span>Confirmed order</span>
+          <h3>Meridian Group</h3>
+          <div className={styles.orderMeta}>
+            <i>3 services</i>
+            <i>$12.4K</i>
+            <i>Confirmed</i>
+          </div>
+          <div className={styles.previewRows}>
+            <em />
+            <em />
+            <em />
+          </div>
+        </section>
+        <div className={styles.platformArrow} aria-hidden>
+          -&gt;
+        </div>
+        <section className={styles.projectPane}>
+          <span>Generated project</span>
+          <h3>Delivery ready</h3>
+          <div className={styles.taskStack}>
+            <i>Implementation</i>
+            <i>Data migration</i>
+            <i>Training</i>
+          </div>
+        </section>
+      </div>
+      <div className={styles.platformStatus}>
+        <span>CRM linked</span>
+        <span>Task tree generated</span>
+        <span>Zero re-entry</span>
+      </div>
+    </div>
+  );
+}
+
+function ProjectPreview({ project }: { project: (typeof selectedProjects)[number] }) {
+  return (
+    <article className={styles.projectCard}>
       <div className={`${styles.projectVisual} ${styles[project.accent]}`} aria-hidden>
         <span />
         <div>
@@ -165,14 +216,15 @@ function ProjectPreview({ project }: { project: (typeof featuredProjects)[number
         </div>
       </div>
       <div className={styles.projectCardBody}>
+        <p>{project.category}</p>
         <h3>{project.title}</h3>
-        <p>{project.description}</p>
-        <span>
+        <span>{project.description}</span>
+        <SmartLink href={project.href}>
           View case study
           <HiOutlineArrowRight />
-        </span>
+        </SmartLink>
       </div>
-    </SmartLink>
+    </article>
   );
 }
 
@@ -201,74 +253,62 @@ export default function Home() {
               I build operational systems that drive <span>enterprise outcomes.</span>
             </h1>
             <p>
-              Architecting end-to-end platforms that unify data, enforce governance,
-              and automate mission-critical workflows across modern operations.
+              I architect operational platforms that connect ERP data, enforce governance, and
+              automate mission-critical workflows across sales, finance, vendors, and delivery.
             </p>
             <div className={styles.heroActions}>
               <SmartLink href="/work" className={styles.primaryCta}>
-                Explore my work
+                Explore Work
                 <HiOutlineArrowRight />
               </SmartLink>
-              <SmartLink href="/about" className={styles.secondaryCta}>
-                View architecture
+              <SmartLink href="/work/sales-to-delivery-automation-platform" className={styles.secondaryCta}>
+                View Architecture
               </SmartLink>
             </div>
             <div className={styles.heroStats}>
-              <div>
-                <strong>4</strong>
-                <span>Enterprise systems showcased</span>
-              </div>
-              <div>
-                <strong>40+</strong>
-                <span>Mission-critical workflows modeled</span>
-              </div>
-              <div>
-                <strong>Full-stack</strong>
-                <span>Architecture through implementation</span>
-              </div>
+              {proofMetrics.map((metric) => (
+                <div key={metric.label}>
+                  <strong>{metric.value}</strong>
+                  <span>{metric.label}</span>
+                </div>
+              ))}
             </div>
           </div>
           <OperationsVisual />
         </section>
 
-        {techStack.length > 0 && (
-          <section className={styles.techBanner} aria-label="Technology stack">
-            <span>Technology stack behind the systems</span>
-            <TechStackMarquee />
-          </section>
-        )}
+        <section className={styles.proofStrip} aria-label="Operational system capabilities">
+          {proofStrip.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </section>
 
-        <section className={styles.featuredSection}>
-          <div className={styles.sectionIntro}>
-            <div>
-              <span className={styles.sectionEyebrow}>Featured work</span>
-              <h2>
-                Platforms built for complexity. Designed for <span>impact.</span>
-              </h2>
+        <section className={styles.featuredPlatform}>
+          <div className={styles.featuredCopy}>
+            <span className={styles.sectionEyebrow}>Featured platform</span>
+            <h2>Sales-to-Delivery Automation Platform</h2>
+            <p>
+              A governed ERP workflow that converts confirmed sales orders into delivery-ready
+              projects with synced CRM data, generated task trees, and zero manual re-entry.
+            </p>
+            <div className={styles.featuredOutcomes}>
+              <span>65+ synced fields</span>
+              <span>4 business objects</span>
+              <span>Auto-generated project</span>
             </div>
-            <div>
-              <p>
-                End-to-end systems that unify operations, enforce governance,
-                and deliver measurable business value.
-              </p>
-              <SmartLink href="/work">
-                View all projects
-                <HiOutlineArrowRight />
-              </SmartLink>
-            </div>
+            <SmartLink href="/work/sales-to-delivery-automation-platform" className={styles.primaryCta}>
+              View Project
+              <HiOutlineArrowRight />
+            </SmartLink>
           </div>
-          <div className={styles.projectGrid}>
-            {featuredProjects.map((project) => (
-              <ProjectPreview key={project.href} project={project} />
-            ))}
-          </div>
+          <SalesPlatformVisual />
         </section>
 
         <section className={styles.capabilitiesSection}>
-          <div className={styles.capabilityLead}>
+          <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Capabilities</span>
             <h2>
-              From architecture to execution. <span>I build it all.</span>
+              Enterprise systems, built around operational <span>control.</span>
             </h2>
           </div>
           <div className={styles.capabilityGrid}>
@@ -284,6 +324,31 @@ export default function Home() {
             })}
           </div>
         </section>
+
+        <section className={styles.workPreview}>
+          <div className={styles.sectionIntro}>
+            <span className={styles.sectionEyebrow}>Selected work</span>
+            <h2>
+              Real project systems, not generic portfolio <span>tiles.</span>
+            </h2>
+            <SmartLink href="/work">
+              View all projects
+              <HiOutlineArrowRight />
+            </SmartLink>
+          </div>
+          <div className={styles.projectGrid}>
+            {selectedProjects.map((project) => (
+              <ProjectPreview key={project.href} project={project} />
+            ))}
+          </div>
+        </section>
+
+        {techStack.length > 0 && (
+          <section className={styles.techBanner} aria-label="Technology stack">
+            <span>Technology stack behind the systems</span>
+            <TechStackMarquee />
+          </section>
+        )}
       </div>
     </Column>
   );
