@@ -42,6 +42,71 @@ const featuredStats = [
   { value: "Vendor workflow", label: "Coordination" },
 ] as const;
 
+const visualContent: Record<
+  string,
+  {
+    title: string;
+    status: string;
+    record: string;
+    related: string[];
+    states: string[];
+    rows: Array<[string, string, string]>;
+  }
+> = {
+  "sales-to-delivery-automation-platform": {
+    title: "Sales order to delivery",
+    status: "Delivery ready",
+    record: "SO-0842 · Meridian Group",
+    related: ["CRM account linked", "Project workspace generated", "Vendor tasks queued"],
+    states: ["Confirmed", "Project created", "Task tree generated", "Ready for execution"],
+    rows: [
+      ["CRM sync", "Account, contacts, order terms", "Complete"],
+      ["Project setup", "Milestones and task tree", "Generated"],
+      ["Vendor handoff", "Assignment package", "Pending review"],
+      ["Delivery readiness", "Operations workspace", "Ready"],
+    ],
+  },
+  "revenue-financial-control-engine": {
+    title: "Revenue financial controls",
+    status: "Approval required",
+    record: "Project P-1847 · Closeout review",
+    related: ["Invoice linked", "Vendor bill matched", "Margin variance flagged"],
+    states: ["Invoice issued", "Vendor cost matched", "Margin reviewed", "Payment approved"],
+    rows: [
+      ["Customer invoice", "INV-1048", "Issued"],
+      ["Vendor bill", "BILL-771", "Matched"],
+      ["Margin review", "Variance threshold", "Review"],
+      ["Closeout approval", "Finance manager", "Waiting"],
+    ],
+  },
+  "vendor-lifecycle-compliance-platform": {
+    title: "Vendor lifecycle workspace",
+    status: "Portal access active",
+    record: "Vendor V-221 · Compliance packet",
+    related: ["Onboarding state tracked", "RFQ response open", "Documents under review"],
+    states: ["Invited", "Portal opened", "Documents received", "Assignment pending"],
+    rows: [
+      ["W-9 / tax form", "Document upload", "Received"],
+      ["Insurance certificate", "Compliance review", "Review"],
+      ["RFQ response", "Portal submission", "Open"],
+      ["Assignment acceptance", "External vendor action", "Pending"],
+    ],
+  },
+  "operational-intelligence-platform": {
+    title: "Operational reporting view",
+    status: "Aggregated records",
+    record: "Operations overview · Project activity",
+    related: ["CRM records", "Sales orders", "Projects and invoices"],
+    states: ["Records synced", "Workload grouped", "Events attached", "Reports ready"],
+    rows: [
+      ["Project workload", "Tasks, milestones, owners", "Visible"],
+      ["Sales context", "Account and order records", "Linked"],
+      ["Invoice status", "Billing and payment state", "Tracked"],
+      ["Event history", "Operational notes and activity", "Current"],
+    ],
+  },
+};
+
 export async function generateMetadata() {
   return Meta.generate({
     title: work.title,
@@ -60,6 +125,7 @@ function sortProjects(projects: ProjectPost[]) {
 
 function ProjectVisual({ slug, featured = false }: { slug: string; featured?: boolean }) {
   const visualClass = visualMap[slug] ?? "salesVisual";
+  const visual = visualContent[slug] ?? visualContent["sales-to-delivery-automation-platform"];
 
   return (
     <div className={`${styles.projectVisual} ${styles[visualClass]} ${featured ? styles.featuredVisual : ""}`} aria-hidden>
@@ -71,27 +137,45 @@ function ProjectVisual({ slug, featured = false }: { slug: string; featured?: bo
       </div>
       <div className={styles.visualCanvas}>
         <div className={styles.visualTopline}>
-          <strong>{featured ? "Executive overview" : "System preview"}</strong>
-          <span>Live records</span>
+          <strong>{visual.title}</strong>
+          <span>{visual.status}</span>
         </div>
-        <div className={styles.visualMetricRow}>
-          <i />
-          <i />
-          <i />
-        </div>
-        <div className={styles.visualBody}>
-          <div className={styles.visualChart}>
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className={styles.visualSignal}>
-            <em />
-            <em />
-            <em />
+        <div className={styles.visualRecordHeader}>
+          <strong>{visual.record}</strong>
+          <div>
+            {visual.related.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
           </div>
         </div>
+        <div className={styles.visualStateTrack}>
+          {visual.states.map((state) => (
+            <span key={state}>{state}</span>
+          ))}
+        </div>
+        <div className={styles.visualTable}>
+          <div className={styles.visualTableHead}>
+            <span>Workflow item</span>
+            <span>Record context</span>
+            <span>Status</span>
+          </div>
+          {visual.rows.map(([item, context, status]) => (
+            <div key={item}>
+              <span>{item}</span>
+              <span>{context}</span>
+              <strong>{status}</strong>
+            </div>
+          ))}
+        </div>
+        {featured && (
+          <div className={styles.visualRelationship}>
+            <span>Sales order</span>
+            <i />
+            <span>Generated project</span>
+            <i />
+            <span>Delivery execution</span>
+          </div>
+        )}
       </div>
     </div>
   );

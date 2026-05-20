@@ -89,71 +89,51 @@ function OperationsVisual() {
       </div>
       <div className={styles.visualMain}>
         <div className={styles.visualTopbar}>
-          <strong>Operational Intelligence Platform</strong>
-          <span>Live system view</span>
+          <strong>Odoo 19 Operations Workspace</strong>
+          <span>ERP workflow view</span>
         </div>
-        <div className={styles.metricGrid}>
+        <div className={styles.recordSummary}>
           <div>
-            <span>Active workflows</span>
-            <strong>128</strong>
-          </div>
-          <div>
-            <span>Exceptions</span>
-            <strong>24</strong>
+            <span>Sales order</span>
+            <strong>SO-0842 · Meridian Group</strong>
           </div>
           <div>
-            <span>Pending approvals</span>
-            <strong>17</strong>
+            <span>Linked project</span>
+            <strong>Delivery workspace generated</strong>
           </div>
           <div>
-            <span>System health</span>
-            <strong>98%</strong>
-          </div>
-        </div>
-        <div className={styles.visualGrid}>
-          <div className={styles.lineChart}>
-            <div className={styles.panelHeader}>Workflow activity</div>
-            <svg viewBox="0 0 360 150" role="img" aria-label="Workflow activity trend">
-              <polyline
-                points="0,110 38,86 75,94 112,64 148,88 184,56 220,72 256,47 292,58 330,22 360,8"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className={styles.statusChart}>
-            <div className={styles.panelHeader}>Workflow status</div>
-            <div className={styles.donut} aria-hidden />
-            <ul>
-              <li>
-                <span /> Completed <strong>72%</strong>
-              </li>
-              <li>
-                <span /> In progress <strong>18%</strong>
-              </li>
-              <li>
-                <span /> Exceptions <strong>10%</strong>
-              </li>
-            </ul>
+            <span>Vendor workflow</span>
+            <strong>Portal assignment pending</strong>
           </div>
         </div>
         <div className={styles.executionTable}>
-          <div className={styles.panelHeader}>Recent workflow executions</div>
+          <div className={styles.panelHeader}>Operational handoff</div>
           {[
-            ["Vendor onboarding", "Completed", "Low"],
-            ["Contract compliance check", "Completed", "Low"],
-            ["Invoice validation", "Exception", "High"],
-            ["Payment authorization", "In progress", "Medium"],
-          ].map(([workflow, status, impact]) => (
+            ["Confirmed sales order", "Synced", "CRM"],
+            ["Project workspace", "Generated", "Delivery"],
+            ["Implementation tasks", "Queued", "Project"],
+            ["Vendor assignment", "Review", "Portal"],
+          ].map(([workflow, status, owner]) => (
             <div key={workflow}>
               <span>{workflow}</span>
               <strong>{status}</strong>
-              <em>{impact}</em>
+              <em>{owner}</em>
             </div>
           ))}
+        </div>
+        <div className={styles.controlPanel}>
+          <div>
+            <span>Financial control</span>
+            <strong>Margin review required before closeout</strong>
+          </div>
+          <div>
+            <span>Approval state</span>
+            <strong>Operations manager review</strong>
+          </div>
+          <div>
+            <span>Reporting view</span>
+            <strong>Sales, project, invoice, and task records linked</strong>
+          </div>
         </div>
       </div>
     </div>

@@ -265,15 +265,15 @@
   }
 }
 
-.metricGrid {
+.recordSummary {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.85rem;
   margin-top: 1.25rem;
 
   div {
     min-width: 0;
-    padding: 1rem;
+    padding: 1rem 1.05rem;
     border: 1px solid var(--home-border);
     border-radius: 12px;
     background: var(--home-surface);
@@ -283,46 +283,25 @@
     display: block;
     color: var(--home-muted);
     font-size: 0.72rem;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   strong {
     display: block;
     margin-top: 0.55rem;
     color: var(--home-text);
-    font-size: 1.6rem;
+    font-size: 0.92rem;
     font-weight: 600;
-    letter-spacing: -0.04em;
-  }
-
-  div:nth-child(2) strong {
-    color: #fb7185;
-  }
-
-  div:nth-child(4) strong {
-    color: #34d399;
+    line-height: 1.35;
   }
 }
 
-.visualGrid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 0.85rem;
-  margin-top: 0.85rem;
-}
-
-.lineChart,
-.statusChart,
 .executionTable {
   border: 1px solid var(--home-border);
   border-radius: 12px;
   background: var(--home-surface);
-}
-
-.lineChart,
-.statusChart {
-  min-height: 12rem;
-  padding: 1rem;
 }
 
 .panelHeader {
@@ -330,82 +309,6 @@
   color: var(--home-text);
   font-size: 0.76rem;
   font-weight: 600;
-}
-
-.lineChart {
-  color: #818cf8;
-
-  svg {
-    display: block;
-    width: 100%;
-    height: 8rem;
-    opacity: 0.95;
-  }
-}
-
-.statusChart {
-  display: grid;
-  grid-template-columns: 8rem 1fr;
-  align-items: center;
-  gap: 1rem;
-
-  .panelHeader {
-    grid-column: 1 / -1;
-    margin-bottom: 0;
-  }
-
-  ul {
-    display: grid;
-    gap: 0.65rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 0.45rem;
-    color: var(--home-muted);
-    font-size: 0.72rem;
-  }
-
-  li span {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: var(--home-indigo);
-  }
-
-  li:nth-child(2) span {
-    background: var(--home-cyan);
-  }
-
-  li:nth-child(3) span {
-    background: #fb7185;
-  }
-
-  li strong {
-    color: var(--home-text);
-    font-weight: 600;
-  }
-}
-
-.donut {
-  position: relative;
-  width: 7.4rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: conic-gradient(var(--home-indigo) 0 72%, var(--home-cyan) 72% 90%, #fb7185 90% 100%);
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 27%;
-    border-radius: inherit;
-    background: var(--home-surface);
-  }
 }
 
 .executionTable {
@@ -425,18 +328,56 @@
   }
 
   strong {
-    color: #34d399;
-    font-weight: 500;
-  }
-
-  div:nth-child(4) strong {
-    color: #fb7185;
+    color: var(--home-text);
+    font-weight: 600;
   }
 
   em {
     color: var(--home-muted);
     font-style: normal;
     text-align: right;
+  }
+}
+
+.controlPanel {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--home-border);
+  border-radius: 12px;
+  background: var(--home-surface);
+
+  div {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.38fr) minmax(0, 1fr);
+    gap: 1rem;
+    padding: 0.72rem 0;
+    border-top: 1px solid var(--home-border);
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  span {
+    color: var(--home-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: var(--home-text);
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.35;
   }
 }
 
@@ -881,18 +822,13 @@
 
   .orderPane,
   .projectPane,
-  .metricGrid div,
-  .lineChart,
-  .statusChart,
+  .recordSummary div,
+  .controlPanel,
   .executionTable {
     background: #ffffff;
   }
 
   .projectCard:hover {
-    background: #ffffff;
-  }
-
-  .donut::after {
     background: #ffffff;
   }
 
@@ -951,9 +887,8 @@
   }
 
   .heroStats,
-  .metricGrid,
-  .visualGrid,
-  .statusChart,
+  .recordSummary,
+  .controlPanel div,
   .platformCanvas,
   .orderMeta,
   .platformStatus {
