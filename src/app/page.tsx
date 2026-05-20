@@ -10,10 +10,10 @@ import { TechStackMarquee } from "@/components/home/TechStackMarquee";
 import styles from "./page.module.scss";
 
 const proofMetrics = [
-  { value: "4", label: "Enterprise systems showcased" },
-  { value: "65+", label: "Synced fields in sales workflow" },
-  { value: "15", label: "Governed vendor portal routes" },
-  { value: "7-Tier", label: "Financial governance logic" },
+  { value: "4", label: "Enterprise systems" },
+  { value: "65+", label: "Synced fields" },
+  { value: "Vendor portal access controls", label: "" },
+  { value: "Project-level financial controls", label: "" },
 ] as const;
 
 const proofStrip = [
@@ -44,14 +44,14 @@ const capabilities = [
 
 const selectedProjects = [
   {
-    title: "Financial Control & Governance Engine",
+    title: "Revenue Financial Control Engine",
     description: "Margin protection, approval checkpoints, vendor variance, and compensation governance.",
     href: "/work/revenue-financial-control-engine",
     category: "Financial governance",
     accent: "cyan",
   },
   {
-    title: "Vendor Management & Portal Platform",
+    title: "Vendor Lifecycle Compliance Platform",
     description: "Controlled onboarding, compliance state, tokenized portal access, and assignment acceptance.",
     href: "/work/vendor-lifecycle-compliance-platform",
     category: "Vendor lifecycle",
@@ -90,68 +90,41 @@ function OperationsVisual() {
       <div className={styles.visualMain}>
         <div className={styles.visualTopbar}>
           <strong>Operational Intelligence Platform</strong>
-          <span>Live system view</span>
+          <span>Odoo 19 operations layer</span>
         </div>
-        <div className={styles.metricGrid}>
+        <div className={styles.operationSummary}>
           <div>
-            <span>Active workflows</span>
-            <strong>128</strong>
+            <span>Sales order intake</span>
+            <strong>CRM and confirmed order data</strong>
           </div>
           <div>
-            <span>Exceptions</span>
-            <strong>24</strong>
+            <span>Project creation</span>
+            <strong>Delivery workspaces and task trees</strong>
           </div>
           <div>
-            <span>Pending approvals</span>
-            <strong>17</strong>
-          </div>
-          <div>
-            <span>System health</span>
-            <strong>98%</strong>
+            <span>Controls</span>
+            <strong>Vendor access and financial approvals</strong>
           </div>
         </div>
-        <div className={styles.visualGrid}>
-          <div className={styles.lineChart}>
-            <div className={styles.panelHeader}>Workflow activity</div>
-            <svg viewBox="0 0 360 150" role="img" aria-label="Workflow activity trend">
-              <polyline
-                points="0,110 38,86 75,94 112,64 148,88 184,56 220,72 256,47 292,58 330,22 360,8"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className={styles.statusChart}>
-            <div className={styles.panelHeader}>Workflow status</div>
-            <div className={styles.donut} aria-hidden />
-            <ul>
-              <li>
-                <span /> Completed <strong>72%</strong>
-              </li>
-              <li>
-                <span /> In progress <strong>18%</strong>
-              </li>
-              <li>
-                <span /> Exceptions <strong>10%</strong>
-              </li>
-            </ul>
-          </div>
+        <div className={styles.systemFlow}>
+          <div className={styles.panelHeader}>Operational workflow map</div>
+          {["Sales order", "Project workspace", "Vendor coordination", "Financial controls"].map((step) => (
+            <div key={step}>
+              <span>{step}</span>
+            </div>
+          ))}
         </div>
         <div className={styles.executionTable}>
-          <div className={styles.panelHeader}>Recent workflow executions</div>
+          <div className={styles.panelHeader}>System modules represented</div>
           {[
-            ["Vendor onboarding", "Completed", "Low"],
-            ["Contract compliance check", "Completed", "Low"],
-            ["Invoice validation", "Exception", "High"],
-            ["Payment authorization", "In progress", "Medium"],
-          ].map(([workflow, status, impact]) => (
-            <div key={workflow}>
-              <span>{workflow}</span>
-              <strong>{status}</strong>
-              <em>{impact}</em>
+            ["Sales-to-delivery automation", "CRM sync"],
+            ["Vendor lifecycle management", "Portal access"],
+            ["Revenue control logic", "Approvals"],
+            ["Operational dashboards", "Reporting"],
+          ].map(([module, focus]) => (
+            <div key={module}>
+              <span>{module}</span>
+              <strong>{focus}</strong>
             </div>
           ))}
         </div>
@@ -250,11 +223,11 @@ export default function Home() {
           <div className={styles.heroContent}>
             <span className={styles.eyebrow}>Systems. Workflows. Outcomes.</span>
             <h1>
-              I build operational systems that drive <span>enterprise outcomes.</span>
+              I build enterprise systems that automate and organize <span>business operations.</span>
             </h1>
             <p>
-              I architect operational platforms that connect ERP data, enforce governance, and
-              automate mission-critical workflows across sales, finance, vendors, and delivery.
+              I specialize in ERP platforms, workflow automation, vendor systems, financial
+              controls, and operational dashboards built on Odoo 19.
             </p>
             <div className={styles.heroActions}>
               <SmartLink href="/work" className={styles.primaryCta}>
@@ -267,9 +240,9 @@ export default function Home() {
             </div>
             <div className={styles.heroStats}>
               {proofMetrics.map((metric) => (
-                <div key={metric.label}>
+                <div key={metric.value}>
                   <strong>{metric.value}</strong>
-                  <span>{metric.label}</span>
+                  {metric.label && <span>{metric.label}</span>}
                 </div>
               ))}
             </div>
@@ -288,13 +261,13 @@ export default function Home() {
             <span className={styles.sectionEyebrow}>Featured platform</span>
             <h2>Sales-to-Delivery Automation Platform</h2>
             <p>
-              A governed ERP workflow that converts confirmed sales orders into delivery-ready
-              projects with synced CRM data, generated task trees, and zero manual re-entry.
+              An ERP automation platform that converts confirmed sales orders into delivery-ready
+              projects with synchronized CRM, project, vendor, and execution workflows.
             </p>
             <div className={styles.featuredOutcomes}>
               <span>65+ synced fields</span>
-              <span>4 business objects</span>
-              <span>Auto-generated project</span>
+              <span>CRM-to-project automation</span>
+              <span>Zero manual re-entry</span>
             </div>
             <SmartLink href="/work/sales-to-delivery-automation-platform" className={styles.primaryCta}>
               View Project
@@ -329,7 +302,7 @@ export default function Home() {
           <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Selected work</span>
             <h2>
-              Real project systems, not generic portfolio <span>tiles.</span>
+              Enterprise systems built for operational <span>execution.</span>
             </h2>
             <SmartLink href="/work">
               View all projects

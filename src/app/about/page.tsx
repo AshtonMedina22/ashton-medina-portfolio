@@ -44,8 +44,8 @@ const credentialCards = [
   {
     icon: HiOutlineShare,
     label: "Workflow logic",
-    value: "40+ modeled",
-    detail: "Operational paths across core functions",
+    value: "Workflow automation",
+    detail: "CRM, finance, vendor, and project workflows",
   },
   {
     icon: HiOutlineLocationMarker,
@@ -59,20 +59,20 @@ const proofStats = [
   {
     icon: HiOutlineCube,
     value: "Architecture",
-    label: "Systems thinking",
-    detail: "Structure-first platform design",
+    label: "Platform design",
+    detail: "ERP, workflow, and operational systems",
   },
   {
     icon: HiOutlineCollection,
     value: "4",
     label: "Project systems",
-    detail: "ERP, delivery, finance, vendor, and ops",
+    detail: "ERP, finance, vendor, project, and operational systems",
   },
   {
     icon: HiOutlineShare,
-    value: "40+",
-    label: "Workflow paths",
-    detail: "Automated across core business functions",
+    value: "Workflow Automation",
+    label: "",
+    detail: "CRM, finance, vendor, and project workflows",
   },
   {
     icon: HiOutlineShieldCheck,
@@ -99,26 +99,26 @@ const systemChips = [
   "Custom Business Platforms",
 ] as const;
 
-const journey = [
+const operatingPrinciples = [
   {
-    title: "Systems Foundation",
-    detail: "Learning how complex workflows break when structure, ownership, and data models are unclear.",
+    title: "Design Around Real Workflows",
+    detail: "Start with how teams actually sell, approve, deliver, report, and coordinate work.",
   },
   {
-    title: "First Builds",
-    detail: "Building applications and automation systems through practical implementation.",
+    title: "Make System Logic Explicit",
+    detail: "Use clear data models, workflow states, permissions, and approval rules instead of informal process knowledge.",
   },
   {
-    title: "Platform Growth",
-    detail: "Engineering systems that connect business rules, users, records, and reporting.",
+    title: "Reduce Manual Handoffs",
+    detail: "Automate repeatable transitions between CRM, finance, vendor, project, and reporting workflows.",
   },
   {
-    title: "Systems Architect",
-    detail: "Architecting ERP, automation, and operational intelligence platforms for durable execution.",
+    title: "Build For Maintainability",
+    detail: "Keep systems readable, testable, documented, and adaptable as business requirements change.",
   },
   {
-    title: "What's Next",
-    detail: "Continuing to build systems that drive outcomes and create operational clarity.",
+    title: "Improve Visibility",
+    detail: "Give teams useful operational context without turning every system into a noisy dashboard.",
   },
 ] as const;
 
@@ -150,11 +150,12 @@ export default function About() {
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>About me</span>
           <h1>
-            I build systems that organize complexity and <span>drive outcomes.</span>
+            I build systems that organize complex operations and <span>improve execution.</span>
           </h1>
           <p>
             I&apos;m {person.name}, a systems and platform engineer specializing in ERP platforms,
-            workflow automation, and operational intelligence systems for enterprise environments.
+            workflow automation, vendor systems, financial controls, and operational dashboards
+            built on Odoo 19.
           </p>
           <div className={styles.focusStrip}>
             <HiOutlineShieldCheck />
@@ -224,7 +225,7 @@ export default function About() {
       <section className={styles.systemsSection}>
         <div className={styles.sectionIntro}>
           <span className={styles.sectionEyebrow}>Systems I build</span>
-          <h2>Platforms that power mission-critical operations.</h2>
+          <h2>Platforms that support real business operations.</h2>
         </div>
         <div className={styles.systemChips}>
           {systemChips.map((chip, index) => (
@@ -239,16 +240,16 @@ export default function About() {
       <section className={styles.journeySection}>
         <div className={styles.journeyHeader}>
           <div className={styles.sectionIntro}>
-            <span className={styles.sectionEyebrow}>My journey</span>
-            <h2>Built on curiosity. Driven by problem solving.</h2>
+            <span className={styles.sectionEyebrow}>Operating principles</span>
+            <h2>Practical systems, clear logic, reliable execution.</h2>
           </div>
           <p>
-            From a practical problem solver to a systems architect, my work has been about
-            building, learning, and creating real operational impact.
+            I focus on building systems that match how operations actually work, reduce manual
+            coordination, and make business rules easier to manage.
           </p>
         </div>
         <div className={styles.timeline}>
-          {journey.map((item, index) => (
+          {operatingPrinciples.map((item, index) => (
             <article key={item.title} className={index === 2 ? styles.activeJourney : undefined}>
               <span />
               <h3>{item.title}</h3>
@@ -261,7 +262,7 @@ export default function About() {
       <section className={styles.ctaSection}>
         <div>
           <HiOutlineShare />
-          <p>I believe great systems don&apos;t just solve problems. They create clarity, drive outcomes, and scale impact.</p>
+          <p>Well-designed systems reduce operational friction, improve visibility, and create more reliable execution.</p>
         </div>
         <div className={styles.ctaActions}>
           <SmartLink href={getContactHref()} className={styles.primaryCta}>

@@ -86,8 +86,8 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `Ashton Medina - Systems & Platform Engineer | Portfolio`,
-  description: `Full-stack platform engineer specializing in systems architecture, automation logic, and secure access controls. Building scalable platforms that transform complex operations into governed, efficient systems.`,
-  headline: <>Building platforms that power operations</>,
+  description: `Systems and platform engineer specializing in ERP platforms, workflow automation, vendor systems, financial controls, and operational dashboards built on Odoo 19.`,
+  headline: <>Building enterprise systems that automate and organize business operations</>,
   featured: {
     display: false,
     title: (
@@ -99,7 +99,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Ashton, a full-stack platform engineer. I design operational platforms that convert complex business processes into scalable, maintainable systems. My work combines systems architecture and full-stack development to standardize workflows, reduce operational risk, and deliver durable business infrastructure.
+      I'm Ashton, a systems and platform engineer specializing in ERP platforms, workflow automation, vendor systems, financial controls, and operational dashboards built on Odoo 19.
     </>
   ),
 };
@@ -139,7 +139,7 @@ const about: About = {
     areas: [
       {
         title: "Systems Architecture",
-        description: "Operational backbones that unify revenue, finance, vendor, and delivery into one enforceable platform.",
+        description: "Operational systems that connect sales, finance, vendors, projects, and delivery into one managed workflow.",
         bullets: [
           "Multi-domain data modeling",
           "Cross-module workflow orchestration",
@@ -157,7 +157,7 @@ const about: About = {
       },
       {
         title: "Systems Integration",
-        description: "Connecting distributed tools into one operational ecosystem.",
+        description: "Connecting disconnected tools into one operational system.",
         bullets: [
           "API and webhook automation",
           "CRM, ERP, payments, telematics",
@@ -166,7 +166,7 @@ const about: About = {
       },
       {
         title: "Financial & Operational Controls",
-        description: "Governance embedded in application logic.",
+        description: "Invoice, payment, margin, and approval controls built directly into workflows.",
         bullets: [
           "Pricing authority and approval chains",
           "Vendor lifecycle management",
@@ -175,7 +175,7 @@ const about: About = {
       },
       {
         title: "Technical Leadership & Delivery",
-        description: "Ownership from architecture through rollout.",
+        description: "Leading projects from architecture, implementation, testing, and rollout through operational adoption.",
         bullets: [
           "Platform replacement and multi-location rollout",
           "Cross-functional technical leadership",

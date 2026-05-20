@@ -177,6 +177,14 @@
     line-height: 1;
   }
 
+  div:nth-child(n + 3) strong {
+    max-width: 12rem;
+    font-size: clamp(0.92rem, 1.05vw, 1.05rem);
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
   span {
     margin-top: 0.5rem;
     color: var(--home-muted);
@@ -257,15 +265,15 @@
   }
 }
 
-.metricGrid {
+.operationSummary {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.85rem;
   margin-top: 1.25rem;
 
   div {
     min-width: 0;
-    padding: 1rem;
+    padding: 1rem 1.05rem;
     border: 1px solid var(--home-border);
     border-radius: 12px;
     background: var(--home-surface);
@@ -275,32 +283,70 @@
     display: block;
     color: var(--home-muted);
     font-size: 0.72rem;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   strong {
     display: block;
     margin-top: 0.55rem;
     color: var(--home-text);
-    font-size: 1.6rem;
+    font-size: 0.96rem;
     font-weight: 600;
-    letter-spacing: -0.04em;
-  }
-
-  div:nth-child(2) strong {
-    color: #fb7185;
-  }
-
-  div:nth-child(4) strong {
-    color: #34d399;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
   }
 }
 
-.visualGrid {
+.systemFlow {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 0.85rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
   margin-top: 0.85rem;
+  border: 1px solid var(--home-border);
+  border-radius: 12px;
+  background: var(--home-surface);
+  padding: 1rem;
+
+  .panelHeader {
+    grid-column: 1 / -1;
+  }
+
+  > div:not(.panelHeader) {
+    position: relative;
+    min-height: 5.6rem;
+    padding: 1rem 0.85rem 0.9rem;
+    border-top: 1px solid var(--home-border);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1.05rem;
+      height: 1.05rem;
+      margin-bottom: 0.85rem;
+      border: 1px solid rgba(99, 102, 241, 0.58);
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.22);
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 1.52rem;
+      left: 2.3rem;
+      right: 0;
+      height: 1px;
+      background: rgba(148, 163, 184, 0.2);
+    }
+  }
+
+  span {
+    color: var(--home-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
 }
 
 .lineChart,
@@ -336,52 +382,7 @@
 }
 
 .statusChart {
-  display: grid;
-  grid-template-columns: 8rem 1fr;
-  align-items: center;
-  gap: 1rem;
-
-  .panelHeader {
-    grid-column: 1 / -1;
-    margin-bottom: 0;
-  }
-
-  ul {
-    display: grid;
-    gap: 0.65rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 0.45rem;
-    color: var(--home-muted);
-    font-size: 0.72rem;
-  }
-
-  li span {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: var(--home-indigo);
-  }
-
-  li:nth-child(2) span {
-    background: var(--home-cyan);
-  }
-
-  li:nth-child(3) span {
-    background: #fb7185;
-  }
-
-  li strong {
-    color: var(--home-text);
-    font-weight: 600;
-  }
+  display: none;
 }
 
 .donut {
@@ -408,7 +409,7 @@
 
   > div:not(.panelHeader) {
     display: grid;
-    grid-template-columns: 1.4fr 0.9fr 0.6fr;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.75rem;
     padding: 0.62rem 0;
     border-top: 1px solid var(--home-border);
@@ -417,12 +418,9 @@
   }
 
   strong {
-    color: #34d399;
-    font-weight: 500;
-  }
-
-  div:nth-child(4) strong {
-    color: #fb7185;
+    color: var(--home-text);
+    font-weight: 600;
+    text-align: right;
   }
 
   em {
@@ -873,7 +871,8 @@
 
   .orderPane,
   .projectPane,
-  .metricGrid div,
+  .operationSummary div,
+  .systemFlow,
   .lineChart,
   .statusChart,
   .executionTable {
@@ -943,8 +942,8 @@
   }
 
   .heroStats,
-  .metricGrid,
-  .visualGrid,
+  .operationSummary,
+  .systemFlow,
   .statusChart,
   .platformCanvas,
   .orderMeta,
@@ -982,6 +981,10 @@
 
   .executionTable > div:not(.panelHeader) {
     grid-template-columns: 1fr;
+  }
+
+  .systemFlow > div:not(.panelHeader)::after {
+    display: none;
   }
 
   .executionTable em {
