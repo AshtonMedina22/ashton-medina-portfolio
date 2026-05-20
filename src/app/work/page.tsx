@@ -42,37 +42,6 @@ const featuredStats = [
   { value: "Vendor workflow", label: "Coordination" },
 ] as const;
 
-const visualContent: Record<string, { title: string; status: string; primary: string[]; flow: string[]; details: string[] }> = {
-  "sales-to-delivery-automation-platform": {
-    title: "Sales order to project",
-    status: "Confirmed workflow",
-    primary: ["Confirmed order", "CRM account", "Delivery workspace"],
-    flow: ["Sales order", "Project", "Vendor tasks"],
-    details: ["Customer data synchronized", "Task tree generated", "Execution team assigned"],
-  },
-  "revenue-financial-control-engine": {
-    title: "Revenue controls",
-    status: "Approval workflow",
-    primary: ["Invoice", "Vendor bill", "Margin review"],
-    flow: ["Billing", "Payments", "Closeout"],
-    details: ["Margin visibility", "Approval checkpoint", "Payment status linked"],
-  },
-  "vendor-lifecycle-compliance-platform": {
-    title: "Vendor lifecycle",
-    status: "Portal access",
-    primary: ["Onboarding", "RFQ workflow", "Compliance docs"],
-    flow: ["Invite", "Review", "Assign"],
-    details: ["Tokenized portal access", "Document status tracked", "Assignment response captured"],
-  },
-  "operational-intelligence-platform": {
-    title: "Operational reporting",
-    status: "Centralized view",
-    primary: ["CRM", "Projects", "Invoices"],
-    flow: ["Records", "Reports", "Visibility"],
-    details: ["Tasks and events aggregated", "Sales context linked", "Operational views centralized"],
-  },
-};
-
 export async function generateMetadata() {
   return Meta.generate({
     title: work.title,
@@ -91,7 +60,6 @@ function sortProjects(projects: ProjectPost[]) {
 
 function ProjectVisual({ slug, featured = false }: { slug: string; featured?: boolean }) {
   const visualClass = visualMap[slug] ?? "salesVisual";
-  const visual = visualContent[slug] ?? visualContent["sales-to-delivery-automation-platform"];
 
   return (
     <div className={`${styles.projectVisual} ${styles[visualClass]} ${featured ? styles.featuredVisual : ""}`} aria-hidden>
@@ -99,29 +67,29 @@ function ProjectVisual({ slug, featured = false }: { slug: string; featured?: bo
         <span />
         <i />
         <i />
+        <i />
       </div>
       <div className={styles.visualCanvas}>
         <div className={styles.visualTopline}>
-          <strong>{visual.title}</strong>
-          <span>{visual.status}</span>
+          <strong>{featured ? "Executive overview" : "System preview"}</strong>
+          <span>Live records</span>
         </div>
-        <div className={styles.visualRecordRow}>
-          {visual.primary.map((item) => (
-            <div key={item}>
-              <span>{item}</span>
-            </div>
-          ))}
+        <div className={styles.visualMetricRow}>
+          <i />
+          <i />
+          <i />
         </div>
         <div className={styles.visualBody}>
-          <div className={styles.visualFlow}>
-            {visual.flow.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
+          <div className={styles.visualChart}>
+            <span />
+            <span />
+            <span />
+            <span />
           </div>
-          <div className={styles.visualDetailList}>
-            {visual.details.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
+          <div className={styles.visualSignal}>
+            <em />
+            <em />
+            <em />
           </div>
         </div>
       </div>

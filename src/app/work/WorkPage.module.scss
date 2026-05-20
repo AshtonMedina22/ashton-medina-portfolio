@@ -263,133 +263,120 @@
   }
 }
 
-.visualRecordRow {
+.visualMetricRow {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
   margin-top: 1rem;
 
-  div {
-    min-height: 4.2rem;
-    display: flex;
-    align-items: flex-end;
-    padding: 0.85rem;
+  i {
+    height: 4.2rem;
     border: 1px solid var(--work-border);
     border-radius: 10px;
     background: rgba(26, 34, 51, 0.82);
-  }
-
-  span {
-    color: var(--work-text);
-    font-size: 0.76rem;
-    font-weight: 600;
-    line-height: 1.3;
   }
 }
 
 .visualBody {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.78fr);
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 0.75rem;
   margin-top: 0.75rem;
 }
 
-.visualFlow,
-.visualDetailList {
+.visualChart,
+.visualSignal {
   min-height: 10rem;
   border: 1px solid var(--work-border);
   border-radius: 10px;
   background: rgba(26, 34, 51, 0.72);
 }
 
-.visualFlow {
+.visualChart {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: 0.65rem;
+  padding: 1rem;
+
+  span {
+    display: block;
+    border-radius: 7px 7px 3px 3px;
+    background: #6366f1;
+
+    &:nth-child(1) { height: 38%; }
+    &:nth-child(2) { height: 62%; background: #06b6d4; }
+    &:nth-child(3) { height: 48%; background: #8b5cf6; }
+    &:nth-child(4) { height: 82%; background: #22c55e; }
+  }
+}
+
+.visualSignal {
   display: grid;
   align-content: center;
-  gap: 0.7rem;
+  gap: 0.8rem;
   padding: 1rem;
 
+  em {
+    height: 0.7rem;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.54);
+
+    &:nth-child(1) { width: 82%; }
+    &:nth-child(2) { width: 58%; background: rgba(6, 182, 212, 0.62); }
+    &:nth-child(3) { width: 72%; background: rgba(34, 197, 94, 0.58); }
+  }
+}
+
+.salesVisual .visualChart {
   span {
-    position: relative;
-    display: block;
-    padding: 0.78rem 0.9rem 0.78rem 2.25rem;
-    border: 1px solid var(--work-border);
-    border-radius: 8px;
-    color: var(--work-text);
-    background: rgba(99, 102, 241, 0.1);
-    font-size: 0.78rem;
-    font-weight: 600;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0.85rem;
-      top: 50%;
-      width: 0.55rem;
-      height: 0.55rem;
-      border-radius: 50%;
-      background: #6366f1;
-      transform: translateY(-50%);
-    }
+    border-radius: 999px;
+    height: 0.75rem !important;
   }
 }
 
-.visualDetailList {
-  display: grid;
-  align-content: start;
-  gap: 0;
-  padding: 1rem;
+.revenueVisual .visualSignal {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  min-height: 8rem;
+  justify-self: center;
+  width: min(9rem, 100%);
+  background: conic-gradient(#22c55e 0 54%, #6366f1 54% 78%, rgba(148, 163, 184, 0.25) 78% 100%);
+
+  em {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    align-self: center;
+    justify-self: center;
+    width: 48%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #0f1726;
+  }
+}
+
+.vendorVisual .visualChart {
+  grid-template-columns: 1fr 0.72fr;
 
   span {
-    display: block;
-    padding: 0.7rem 0;
-    border-bottom: 1px solid var(--work-border);
-    color: var(--work-muted);
-    font-size: 0.74rem;
-    font-weight: 500;
-    line-height: 1.35;
+    height: 70% !important;
+    border-radius: 10px;
+    background: rgba(20, 184, 166, 0.55);
+  }
 
-    &:last-child {
-      border-bottom: 0;
-    }
+  span:nth-child(n + 3) {
+    display: none;
   }
 }
 
-.salesVisual .visualFlow span::before {
-  background: #06b6d4;
-}
-
-.salesVisual .visualRecordRow div:first-child {
-  background: rgba(6, 182, 212, 0.1);
-}
-
-.revenueVisual {
-  .visualFlow span::before {
-    background: #22c55e;
-  }
-
-  .visualRecordRow div:first-child {
-    background: rgba(34, 197, 94, 0.1);
-  }
-}
-
-.vendorVisual {
-  .visualFlow span::before {
-    background: #14b8a6;
-  }
-
-  .visualRecordRow div:first-child {
-    background: rgba(20, 184, 166, 0.1);
-  }
-}
-
-.opsVisual {
-  .visualFlow span::before {
-    background: #60a5fa;
-  }
-
-  .visualRecordRow div:first-child {
-    background: rgba(96, 165, 250, 0.1);
-  }
+.opsVisual .visualChart span {
+  &:nth-child(1) { background: #60a5fa; }
+  &:nth-child(2) { background: #7c3aed; }
+  &:nth-child(3) { background: #14b8a6; }
+  &:nth-child(4) { background: #2563eb; }
 }
 
 .allProjectsSection {
@@ -507,9 +494,13 @@
     background: rgba(238, 242, 247, 0.78);
   }
 
-  .visualRecordRow div,
-  .visualFlow,
-  .visualDetailList {
+  .visualMetricRow i,
+  .visualChart,
+  .visualSignal {
+    background: #ffffff;
+  }
+
+  .revenueVisual .visualSignal::after {
     background: #ffffff;
   }
 
@@ -576,12 +567,12 @@
     display: none;
   }
 
-  .visualRecordRow,
+  .visualMetricRow,
   .visualBody {
     grid-template-columns: 1fr;
   }
 
-  .visualDetailList {
+  .visualSignal {
     min-height: 6.5rem;
   }
 }

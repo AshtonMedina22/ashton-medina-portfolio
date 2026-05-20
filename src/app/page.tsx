@@ -90,41 +90,68 @@ function OperationsVisual() {
       <div className={styles.visualMain}>
         <div className={styles.visualTopbar}>
           <strong>Operational Intelligence Platform</strong>
-          <span>Odoo 19 operations layer</span>
+          <span>Live system view</span>
         </div>
-        <div className={styles.operationSummary}>
+        <div className={styles.metricGrid}>
           <div>
-            <span>Sales order intake</span>
-            <strong>CRM and confirmed order data</strong>
+            <span>Active workflows</span>
+            <strong>128</strong>
           </div>
           <div>
-            <span>Project creation</span>
-            <strong>Delivery workspaces and task trees</strong>
+            <span>Exceptions</span>
+            <strong>24</strong>
           </div>
           <div>
-            <span>Controls</span>
-            <strong>Vendor access and financial approvals</strong>
+            <span>Pending approvals</span>
+            <strong>17</strong>
+          </div>
+          <div>
+            <span>System health</span>
+            <strong>98%</strong>
           </div>
         </div>
-        <div className={styles.systemFlow}>
-          <div className={styles.panelHeader}>Operational workflow map</div>
-          {["Sales order", "Project workspace", "Vendor coordination", "Financial controls"].map((step) => (
-            <div key={step}>
-              <span>{step}</span>
-            </div>
-          ))}
+        <div className={styles.visualGrid}>
+          <div className={styles.lineChart}>
+            <div className={styles.panelHeader}>Workflow activity</div>
+            <svg viewBox="0 0 360 150" role="img" aria-label="Workflow activity trend">
+              <polyline
+                points="0,110 38,86 75,94 112,64 148,88 184,56 220,72 256,47 292,58 330,22 360,8"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+          <div className={styles.statusChart}>
+            <div className={styles.panelHeader}>Workflow status</div>
+            <div className={styles.donut} aria-hidden />
+            <ul>
+              <li>
+                <span /> Completed <strong>72%</strong>
+              </li>
+              <li>
+                <span /> In progress <strong>18%</strong>
+              </li>
+              <li>
+                <span /> Exceptions <strong>10%</strong>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className={styles.executionTable}>
-          <div className={styles.panelHeader}>System modules represented</div>
+          <div className={styles.panelHeader}>Recent workflow executions</div>
           {[
-            ["Sales-to-delivery automation", "CRM sync"],
-            ["Vendor lifecycle management", "Portal access"],
-            ["Revenue control logic", "Approvals"],
-            ["Operational dashboards", "Reporting"],
-          ].map(([module, focus]) => (
-            <div key={module}>
-              <span>{module}</span>
-              <strong>{focus}</strong>
+            ["Vendor onboarding", "Completed", "Low"],
+            ["Contract compliance check", "Completed", "Low"],
+            ["Invoice validation", "Exception", "High"],
+            ["Payment authorization", "In progress", "Medium"],
+          ].map(([workflow, status, impact]) => (
+            <div key={workflow}>
+              <span>{workflow}</span>
+              <strong>{status}</strong>
+              <em>{impact}</em>
             </div>
           ))}
         </div>
