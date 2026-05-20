@@ -1,7 +1,7 @@
 /* Revenue & Financial Control - ERP financial screen */
 $ui-blue: #a78bfa;
-$ui-green: #10b981;
-$ui-green-bg: #10b98115;
+$ui-green: #22c55e;
+$ui-green-bg: #22c55e1f;
 $ui-red: #dc2626;
 $ui-border: #2e1064;
 $ui-bg: #09090b;
@@ -212,7 +212,7 @@ $ui-card-bg: #1a1625;
   letter-spacing: 0.05em;
   color: var(--success-color, $ui-green);
   padding: 0.2rem 0.45rem;
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(34, 197, 94, 0.18);
   border-radius: 9999px;
 }
 
@@ -246,9 +246,13 @@ $ui-card-bg: #1a1625;
 }
 
 .metricValue {
-  font-size: 1.0625rem;
+  max-width: 100%;
+  font-size: clamp(0.86rem, 1.6vw, 1.0625rem);
   font-weight: 700;
   line-height: 1.25;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  word-break: normal;
 }
 
 .metricRevenue {
@@ -265,14 +269,14 @@ $ui-card-bg: #1a1625;
 
 .metricGreen {
   background: var(--success-soft, $ui-green-bg);
-  border-color: rgba(16, 185, 129, 0.35);
+  border-color: rgba(34, 197, 94, 0.42);
   .metricValue { color: var(--success-color, $ui-green); }
 }
 
 .metricMargin,
 .metricMarginPct {
   background: var(--success-soft, $ui-green-bg);
-  border-color: rgba(16, 185, 129, 0.35);
+  border-color: rgba(34, 197, 94, 0.42);
   .metricValue { color: var(--success-color, $ui-green); }
 }
 
@@ -396,7 +400,7 @@ $ui-card-bg: #1a1625;
   gap: 1rem;
   padding: 1rem 1.125rem;
   background: var(--success-soft, rgba($ui-green, 0.08));
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(34, 197, 94, 0.32);
   border-radius: 0.5rem;
   font-size: 0.8125rem;
   min-width: 0;
@@ -431,7 +435,7 @@ $ui-card-bg: #1a1625;
 .pricingStatusBadge {
   margin-left: 0.5rem;
   padding: 0.15rem 0.4rem;
-  background: rgba(16, 185, 129, 0.25);
+  background: rgba(34, 197, 94, 0.25);
   color: var(--success-color, $ui-green);
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -628,8 +632,8 @@ $ui-card-bg: #1a1625;
   }
 
   strong {
-    border-color: rgba(16, 185, 129, 0.28);
-    background: rgba(16, 185, 129, 0.11);
+    border-color: rgba(34, 197, 94, 0.36);
+    background: rgba(34, 197, 94, 0.12);
     color: #6ee7b7;
     font-weight: 760;
   }
@@ -686,9 +690,9 @@ $ui-card-bg: #1a1625;
   > span {
     flex-shrink: 0;
     padding: 0.4rem 0.65rem;
-    border: 1px solid rgba(16, 185, 129, 0.28);
+    border: 1px solid rgba(34, 197, 94, 0.36);
     border-radius: 999px;
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(34, 197, 94, 0.12);
     color: #6ee7b7;
     font-size: 0.72rem;
     font-weight: 760;
@@ -719,9 +723,9 @@ $ui-card-bg: #1a1625;
   justify-content: center;
   min-height: 22rem;
   padding: 1.25rem;
-  border-color: rgba(16, 185, 129, 0.22);
+  border-color: rgba(34, 197, 94, 0.34);
   background:
-    radial-gradient(circle at 16% 10%, rgba(16, 185, 129, 0.14), transparent 35%),
+    radial-gradient(circle at 16% 10%, rgba(34, 197, 94, 0.18), transparent 35%),
     rgba(8, 8, 11, 0.7);
 
   span {
@@ -878,9 +882,9 @@ $ui-card-bg: #1a1625;
 .payoutState {
   margin-top: 0.85rem;
   padding: 0.85rem;
-  border: 1px solid rgba(16, 185, 129, 0.28);
+  border: 1px solid rgba(34, 197, 94, 0.38);
   border-radius: 0.5rem;
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(34, 197, 94, 0.13);
   color: #6ee7b7;
   font-size: 1.15rem;
   font-weight: 820;
@@ -908,7 +912,7 @@ $ui-card-bg: #1a1625;
     width: 1.1rem;
     height: 1.1rem;
     border-radius: 999px;
-    background: rgba(16, 185, 129, 0.16);
+    background: rgba(34, 197, 94, 0.2);
     color: #6ee7b7;
     font-size: 0.7rem;
     font-weight: 820;

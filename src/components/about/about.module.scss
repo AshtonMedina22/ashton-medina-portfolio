@@ -527,63 +527,88 @@
 }
 
 [data-theme="light"] .aboutPage {
-  --about-bg: #f4f7fb;
-  --about-surface: #ffffff;
-  --about-panel: #eef2f7;
-  --about-text: #0f172a;
-  --about-muted: #475569;
+  --about-bg: #0a0f18;
+  --about-surface: #121826;
+  --about-panel: #1a2233;
+  --about-text: #f8fafc;
+  --about-muted: #94a3b8;
   --about-soft: #64748b;
-  --about-border: rgba(15, 23, 42, 0.08);
-  --about-indigo: #4f46e5;
-  --about-cyan: #0891b2;
-  --about-depth: 0 8px 22px rgba(15, 23, 42, 0.08);
+  --about-border: rgba(255, 255, 255, 0.08);
+  --about-indigo: #6366f1;
+  --about-cyan: #06b6d4;
+  --about-depth: 0 18px 48px rgba(0, 0, 0, 0.22);
 
   background:
-    radial-gradient(circle at 76% 13%, rgba(79, 70, 229, 0.12), transparent 24rem),
-    radial-gradient(circle at 5% 35%, rgba(8, 145, 178, 0.08), transparent 28rem),
-    linear-gradient(180deg, #f5f7fb 0%, #ffffff 48%, #eef2f7 100%);
+    radial-gradient(circle at 76% 13%, rgba(99, 102, 241, 0.18), transparent 24rem),
+    radial-gradient(circle at 5% 35%, rgba(6, 182, 212, 0.09), transparent 28rem),
+    radial-gradient(circle at 84% 86%, rgba(34, 197, 94, 0.06), transparent 22rem),
+    linear-gradient(180deg, #070b12 0%, var(--about-bg) 48%, #08111d 100%);
 }
 
 [data-theme="light"] {
   .profilePanel,
   .ctaSection {
-    border-color: rgba(15, 23, 42, 0.12);
-    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--about-border);
+    background: rgba(18, 24, 38, 0.86);
     box-shadow: var(--about-depth);
   }
 
   .capabilityGrid article {
-    border-color: rgba(15, 23, 42, 0.1);
-    background: rgba(255, 255, 255, 0.72);
+    border-color: var(--about-border);
+    background: rgba(18, 24, 38, 0.58);
     box-shadow: none;
   }
 
   .focusStrip,
   .proofStrip,
   .systemChips {
-    border-color: rgba(15, 23, 42, 0.12);
+    border-color: var(--about-border);
   }
 
   .capabilityGrid article:first-child,
   .activeJourney {
-    background: #eef2f7;
+    background: rgba(26, 34, 51, 0.76);
   }
 
   .portraitCard {
-    background: #eef2f7;
+    background: #121826;
   }
 
   .timeline article > span {
-    background: #f5f7fb;
+    background: #0a0f18;
   }
 
   .secondaryCta {
-    color: #0f172a !important;
+    color: var(--about-text) !important;
 
     &:hover {
-      background: #eef2f7;
+      background: #202b40;
     }
   }
+}
+
+.heroSection *,
+.proofStrip *,
+.capabilityGrid *,
+.systemChips *,
+.timeline *,
+.profilePanel *,
+.ctaSection * {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.profilePanel strong,
+.profilePanel span,
+.proofStrip strong,
+.proofStrip span,
+.capabilityGrid h3,
+.capabilityGrid p,
+.systemChips span,
+.timeline h3,
+.timeline p {
+  line-height: 1.35;
+  text-wrap: balance;
 }
 
 @media (max-width: 1180px) {

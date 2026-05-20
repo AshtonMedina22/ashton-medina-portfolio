@@ -501,6 +501,8 @@
     font-style: normal;
     font-weight: 600;
     text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 }
 
@@ -859,48 +861,49 @@
 }
 
 [data-theme="light"] .homePage {
-  --home-bg: #f5f7fb;
-  --home-surface: #ffffff;
-  --home-panel: #eef2f7;
-  --home-text: #0f172a;
-  --home-muted: #475569;
+  --home-bg: #0a0f18;
+  --home-surface: #121826;
+  --home-panel: #1a2233;
+  --home-text: #f8fafc;
+  --home-muted: #94a3b8;
   --home-soft: #64748b;
-  --home-border: rgba(15, 23, 42, 0.11);
-  --home-indigo: #4f46e5;
-  --home-cyan: #0891b2;
-  --home-depth: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --home-border: rgba(255, 255, 255, 0.08);
+  --home-indigo: #6366f1;
+  --home-cyan: #06b6d4;
+  --home-depth: 0 18px 48px rgba(0, 0, 0, 0.22);
 
   background:
-    radial-gradient(circle at 60% 12%, rgba(79, 70, 229, 0.13), transparent 28rem),
-    radial-gradient(circle at 84% 34%, rgba(8, 145, 178, 0.1), transparent 26rem),
-    linear-gradient(180deg, #f4f7fb 0%, #eef2f7 50%, #f8fafc 100%);
+    radial-gradient(circle at 60% 12%, rgba(99, 102, 241, 0.2), transparent 28rem),
+    radial-gradient(circle at 84% 34%, rgba(6, 182, 212, 0.1), transparent 26rem),
+    radial-gradient(circle at 14% 80%, rgba(34, 197, 94, 0.06), transparent 24rem),
+    linear-gradient(180deg, #070b12 0%, var(--home-bg) 46%, #08111d 100%);
 }
 
 [data-theme="light"] {
   .eyebrow {
-    border-color: rgba(79, 70, 229, 0.22);
-    background: rgba(79, 70, 229, 0.08);
-    color: #4f46e5;
+    border-color: rgba(99, 102, 241, 0.32);
+    background: rgba(99, 102, 241, 0.1);
+    color: #a78bfa;
   }
 
   .secondaryCta {
-    color: #0f172a !important;
+    color: var(--home-text) !important;
 
     &:hover {
-      background: #eef2f7;
+      background: #202b40;
     }
   }
 
   .opsVisual,
   .salesPlatformVisual {
-    border-color: rgba(15, 23, 42, 0.12);
+    border-color: rgba(148, 163, 184, 0.22);
     background: #121826;
     box-shadow: var(--home-depth);
   }
 
   .projectCard {
-    border-color: rgba(15, 23, 42, 0.12);
-    background: rgba(255, 255, 255, 0.94);
+    border-color: var(--home-border);
+    background: rgba(18, 24, 38, 0.72);
     box-shadow: var(--home-depth);
   }
 
@@ -920,7 +923,7 @@
   }
 
   .projectCard:hover {
-    background: #ffffff;
+    background: rgba(26, 34, 51, 0.78);
   }
 
   .projectVisual {
@@ -975,8 +978,49 @@
   }
 
   .techBanner {
-    background: #eef2f7;
+    background: rgba(8, 13, 22, 0.76);
   }
+}
+
+.opsVisual *,
+.salesPlatformVisual *,
+.projectVisual *,
+.heroStats *,
+.featuredStats *,
+.projectCardBody * {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.previewChrome,
+.previewTable div,
+.previewFooter,
+.platformRows div,
+.executionTable div,
+.recordSummary {
+  min-width: 0;
+}
+
+.previewChrome strong,
+.previewChrome span,
+.previewTable span,
+.previewTable strong,
+.previewFooter span,
+.platformRows b,
+.platformRows span,
+.platformRows em,
+.projectCardBody h3 {
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.orderMeta i,
+.platformStatus span,
+.taskStack i,
+.executionChecklist i {
+  overflow-wrap: normal;
+  text-wrap: wrap;
+  word-break: normal;
 }
 
 @media (max-width: 1180px) {

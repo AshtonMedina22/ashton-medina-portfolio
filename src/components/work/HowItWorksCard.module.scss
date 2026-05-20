@@ -25,6 +25,8 @@
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.25;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 .cardContent {
@@ -32,15 +34,16 @@
   color: var(--project-muted, #94a3b8);
   font-size: 0.88rem;
   line-height: 1.6;
+  overflow-wrap: break-word;
 }
 
 [data-theme="light"] {
   .grid {
-    border-color: rgba(15, 23, 42, 0.1);
+    border-color: var(--project-border, rgba(255, 255, 255, 0.08));
   }
 
   .card {
-    border-color: rgba(15, 23, 42, 0.1);
+    border-color: var(--project-border, rgba(255, 255, 255, 0.08));
     background: transparent;
   }
 }

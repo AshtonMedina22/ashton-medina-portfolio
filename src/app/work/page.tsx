@@ -59,8 +59,8 @@ const visualContent: Record<
     status: "Delivery ready",
     record: "SO-0842 - Meridian Group",
     related: [
-      ["Order", "Confirmed"],
-      ["Project", "Generated"],
+      ["Order", "Set"],
+      ["Project", "Made"],
       ["Vendor", "Review"],
     ],
     states: ["Sales order", "CRM sync", "Project created", "Task tree"],
@@ -83,7 +83,7 @@ const visualContent: Record<
     related: [
       ["Invoice", "Posted"],
       ["Bill", "Matched"],
-      ["Margin", "Protected"],
+      ["Margin", "Guarded"],
     ],
     states: ["Invoice issued", "Cost matched", "Margin reviewed", "Payout gated"],
     rows: [
@@ -103,7 +103,7 @@ const visualContent: Record<
     status: "Portal active",
     record: "Vendor V-221 - Compliance packet",
     related: [
-      ["Onboarding", "Active"],
+      ["Onboard", "Active"],
       ["Docs", "Review"],
       ["RFQ", "Open"],
     ],
@@ -125,8 +125,8 @@ const visualContent: Record<
     status: "Records aggregated",
     record: "Operations overview - Delivery pipeline",
     related: [
-      ["Workload", "Grouped"],
-      ["Projects", "Visible"],
+      ["Load", "Grouped"],
+      ["Projects", "Live"],
       ["Reports", "Ready"],
     ],
     states: ["Records synced", "Workload grouped", "Events attached", "Report queued"],

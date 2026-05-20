@@ -188,14 +188,14 @@ function SalesPlatformVisual() {
           <span>Confirmed order</span>
           <h3>Meridian Group</h3>
           <div className={styles.orderMeta}>
-            <i>3 services</i>
+            <i>3 svc</i>
             <i>$12.4K</i>
-            <i>Confirmed</i>
+            <i>Set</i>
           </div>
           <div className={styles.platformRows}>
-            <em><b>Opportunity</b><span>CRM linked</span></em>
-            <em><b>Customer data</b><span>65+ fields synced</span></em>
-            <em><b>Billing policy</b><span>Project controls copied</span></em>
+            <em><b>Deal</b><span>CRM linked</span></em>
+            <em><b>CRM data</b><span>65+ fields synced</span></em>
+            <em><b>Billing</b><span>Controls copied</span></em>
           </div>
         </section>
         <div className={styles.platformArrow} aria-hidden>
