@@ -527,35 +527,35 @@
 }
 
 [data-theme="light"] .aboutPage {
-  --about-bg: #0a0f18;
-  --about-surface: #121826;
-  --about-panel: #1a2233;
-  --about-text: #f8fafc;
-  --about-muted: #94a3b8;
+  --about-bg: #f4f7fb;
+  --about-surface: #ffffff;
+  --about-panel: #eef2f7;
+  --about-text: #0f172a;
+  --about-muted: #475569;
   --about-soft: #64748b;
-  --about-border: rgba(255, 255, 255, 0.08);
-  --about-indigo: #6366f1;
-  --about-cyan: #06b6d4;
-  --about-depth: 0 18px 48px rgba(0, 0, 0, 0.22);
+  --about-border: rgba(15, 23, 42, 0.1);
+  --about-indigo: #4f46e5;
+  --about-cyan: #0891b2;
+  --about-depth: 0 14px 34px rgba(15, 23, 42, 0.1);
 
   background:
-    radial-gradient(circle at 76% 13%, rgba(99, 102, 241, 0.18), transparent 24rem),
+    radial-gradient(circle at 76% 13%, rgba(99, 102, 241, 0.14), transparent 24rem),
     radial-gradient(circle at 5% 35%, rgba(6, 182, 212, 0.09), transparent 28rem),
-    radial-gradient(circle at 84% 86%, rgba(34, 197, 94, 0.06), transparent 22rem),
-    linear-gradient(180deg, #070b12 0%, var(--about-bg) 48%, #08111d 100%);
+    radial-gradient(circle at 84% 86%, rgba(34, 197, 94, 0.07), transparent 22rem),
+    linear-gradient(180deg, #f8fafc 0%, var(--about-bg) 48%, #eef2f7 100%);
 }
 
 [data-theme="light"] {
   .profilePanel,
   .ctaSection {
     border-color: var(--about-border);
-    background: rgba(18, 24, 38, 0.86);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: var(--about-depth);
   }
 
   .capabilityGrid article {
     border-color: var(--about-border);
-    background: rgba(18, 24, 38, 0.58);
+    background: rgba(255, 255, 255, 0.72);
     box-shadow: none;
   }
 
@@ -567,22 +567,22 @@
 
   .capabilityGrid article:first-child,
   .activeJourney {
-    background: rgba(26, 34, 51, 0.76);
+    background: #eef2f7;
   }
 
   .portraitCard {
-    background: #121826;
+    background: #eef2f7;
   }
 
   .timeline article > span {
-    background: #0a0f18;
+    background: #f5f7fb;
   }
 
   .secondaryCta {
     color: var(--about-text) !important;
 
     &:hover {
-      background: #202b40;
+      background: #eef2f7;
     }
   }
 }
