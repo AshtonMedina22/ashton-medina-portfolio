@@ -45,25 +45,45 @@ export function RevenueFinancialDemo() {
       <div className={styles.financeStatusStrip}>
         <span>{SALES_ORDER_ID}</span>
         <strong>Paid</strong>
-        <span>Finance view</span>
+        <span>Finance control record</span>
         <strong>Margin protected</strong>
       </div>
 
       <div className={styles.financeComposition}>
-        <section className={styles.marginHero} aria-label="Live margin governance">
+        <section className={styles.marginHero} aria-label="Margin and payment governance">
           <div className={styles.marginHeroHeader}>
             <div>
-              <p>Live margin governance</p>
-              <h2>{CLIENT_NAME} profitability is protected at paid state</h2>
+              <p>Margin and payment governance</p>
+              <h2>{CLIENT_NAME} closeout is controlled through invoices, vendor bills, payments, and approval gates</h2>
             </div>
             <span>Finance controlled</span>
           </div>
 
           <div className={styles.marginHeroGrid}>
             <div className={styles.marginPrimaryPanel}>
-              <span>Protected margin</span>
-              <strong>{MARGIN_PCT_FORMATTED}</strong>
-              <small>{MARGIN_FORMATTED} retained after actual vendor cost</small>
+              <div className={styles.financeRecordHeader}>
+                <span>Project financial record</span>
+                <strong>{SALES_ORDER_ID} · {CLIENT_NAME}</strong>
+                <small>{MARGIN_FORMATTED} retained after actual vendor cost · {MARGIN_PCT_FORMATTED} margin</small>
+              </div>
+              <div className={styles.financeRecordRows}>
+                <div>
+                  <span>Customer invoice</span>
+                  <strong>Issued and paid</strong>
+                </div>
+                <div>
+                  <span>Vendor bills</span>
+                  <strong>Matched to assignment costs</strong>
+                </div>
+                <div>
+                  <span>Margin checkpoint</span>
+                  <strong>Finance approval required before closeout</strong>
+                </div>
+                <div>
+                  <span>Payout state</span>
+                  <strong>Eligible after paid vendor bills</strong>
+                </div>
+              </div>
             </div>
 
             <div className={styles.financeMetricGrid}>
@@ -107,7 +127,7 @@ export function RevenueFinancialDemo() {
 
         <aside className={styles.financeSupportRail} aria-label="Variance and payout controls">
           <section className={styles.supportModule}>
-            <div className={styles.moduleEyebrow}>Variance preview</div>
+            <div className={styles.moduleEyebrow}>Vendor cost variance</div>
             <div className={styles.variancePreviewList}>
               {varianceRows.map((row) => (
                 <div key={row.vendor}>

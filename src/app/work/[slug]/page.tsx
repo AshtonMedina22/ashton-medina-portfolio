@@ -56,7 +56,7 @@ const projectProfiles: Record<
   },
   "operational-intelligence-platform": {
     eyebrow: "Operational Intelligence System",
-    systemType: "Executive operations dashboard",
+    systemType: "Operational reporting workspace",
     proof: [
       { value: "Live", label: "KPI visibility" },
       { value: "Auto", label: "Reporting workflow" },

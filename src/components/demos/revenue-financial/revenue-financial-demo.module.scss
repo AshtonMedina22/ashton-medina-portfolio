@@ -3,7 +3,7 @@ $ui-blue: #a78bfa;
 $ui-green: #10b981;
 $ui-green-bg: #10b98115;
 $ui-red: #dc2626;
-$ui-border: #2e1064;
+$ui-border: rgba(167, 139, 250, 0.18);
 $ui-bg: #09090b;
 $ui-card-bg: #1a1625;
 
@@ -594,7 +594,7 @@ $ui-card-bg: #1a1625;
   max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(88, 28, 135, 0.72);
+  border: 1px solid rgba(167, 139, 250, 0.2);
   border-radius: 0.75rem;
   background: #08080b;
   color: #f5f3ff;
@@ -609,7 +609,7 @@ $ui-card-bg: #1a1625;
   align-items: center;
   min-height: 3.25rem;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(88, 28, 135, 0.65);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.16);
   background: #11101a;
 
   span,
@@ -641,7 +641,7 @@ $ui-card-bg: #1a1625;
   gap: 1rem;
   padding: 1rem;
   background:
-    radial-gradient(circle at 18% 0%, rgba(167, 139, 250, 0.11), transparent 30%),
+    radial-gradient(circle at 18% 0%, rgba(167, 139, 250, 0.06), transparent 30%),
     #08080b;
 }
 
@@ -652,7 +652,7 @@ $ui-card-bg: #1a1625;
   min-width: 0;
   min-height: 30rem;
   padding: 1rem;
-  border: 1px solid rgba(167, 139, 250, 0.28);
+  border: 1px solid rgba(167, 139, 250, 0.16);
   border-radius: 0.65rem;
   background: #171421;
 }
@@ -714,16 +714,16 @@ $ui-card-bg: #1a1625;
 
 .marginPrimaryPanel {
   grid-row: span 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  align-content: start;
+  gap: 1rem;
   min-height: 22rem;
   padding: 1.25rem;
-  border-color: rgba(16, 185, 129, 0.22);
-  background:
-    radial-gradient(circle at 16% 10%, rgba(16, 185, 129, 0.14), transparent 35%),
-    rgba(8, 8, 11, 0.7);
+  border-color: rgba(148, 163, 184, 0.14);
+  background: rgba(8, 8, 11, 0.7);
+}
 
+.financeRecordHeader {
   span {
     color: #a7f3d0;
     font-size: 0.72rem;
@@ -733,11 +733,12 @@ $ui-card-bg: #1a1625;
   }
 
   strong {
+    display: block;
     margin-top: 0.65rem;
     color: #ffffff;
-    font-size: clamp(3.2rem, 6vw, 5.2rem);
-    line-height: 0.92;
-    letter-spacing: -0.075em;
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
   }
 
   small {
@@ -747,6 +748,36 @@ $ui-card-bg: #1a1625;
     color: #cbd5e1;
     font-size: 0.9rem;
     line-height: 1.45;
+  }
+}
+
+.financeRecordRows {
+  display: grid;
+  gap: 0.65rem;
+
+  div {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.65fr) minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.72rem 0.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.13);
+    border-radius: 0.45rem;
+    background: rgba(15, 23, 42, 0.58);
+  }
+
+  span {
+    color: #a1a1aa;
+    font-size: 0.66rem;
+    font-weight: 780;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: #f5f3ff;
+    font-size: 0.78rem;
+    font-weight: 650;
+    line-height: 1.35;
   }
 }
 
@@ -961,6 +992,10 @@ $ui-card-bg: #1a1625;
   }
 
   .financeSupportRail {
+    grid-template-columns: 1fr;
+  }
+
+  .financeRecordRows div {
     grid-template-columns: 1fr;
   }
 }

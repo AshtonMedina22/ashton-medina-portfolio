@@ -3,19 +3,6 @@
 import { CLIENT_NAME, SALES_ORDER_ID, CLIENT_REVENUE_FORMATTED } from "../projectData";
 import styles from "./operational-intelligence-demo.module.scss";
 
-const KPI_CARDS = [
-  { label: "Engagements this week", value: "8", tone: "violet" },
-  { label: "Active projects", value: "14", tone: "green" },
-  { label: "Overdue tasks", value: "3", tone: "red" },
-  { label: "Expected revenue", value: "$84.2K", tone: "blue" },
-] as const;
-
-const STAGE_ROWS = [
-  { label: "Confirmed delivery", value: 72, color: "green" },
-  { label: "Proposal pending", value: 18, color: "violet" },
-  { label: "At-risk follow-up", value: 10, color: "red" },
-] as const;
-
 const ENGAGEMENT_ROWS = [
   {
     id: SALES_ORDER_ID,
@@ -40,10 +27,17 @@ const ENGAGEMENT_ROWS = [
   },
 ] as const;
 
+const WORKLOAD_ROWS = [
+  { area: "Delivery workload", source: "Projects + Tasks", state: "3 overdue tasks surfaced" },
+  { area: "Sales pipeline", source: "CRM + Sales Orders", state: "Confirmed and proposal records grouped" },
+  { area: "Financial visibility", source: "Invoices + Payments", state: "Billing status available for review" },
+  { area: "Engagement activity", source: "Calendar + Events", state: "Upcoming client activity attached" },
+] as const;
+
 const REPORT_ITEMS = [
-  "Leadership report queued",
-  "Revenue rollup reconciled",
-  "At-risk work surfaced",
+  { item: "Leadership report", source: "Project, revenue, and task records", state: "Queued" },
+  { item: "Revenue rollup", source: "Sales orders and invoices", state: "Reconciled" },
+  { item: "At-risk work", source: "Overdue tasks and stalled projects", state: "Surfaced" },
 ] as const;
 
 export function OperationalIntelligenceDemo() {
@@ -59,10 +53,10 @@ export function OperationalIntelligenceDemo() {
       </div>
 
       <div className={styles.opsStatusStrip}>
-        <strong>Live operations</strong>
-        <span>This month</span>
+        <strong>Operations workspace</strong>
+        <span>CRM, sales, projects, invoices</span>
         <strong>Auto-report enabled</strong>
-        <span>Export ready</span>
+        <span>Export package ready</span>
       </div>
 
       <div className={styles.opsComposition}>
@@ -70,37 +64,32 @@ export function OperationalIntelligenceDemo() {
           <div className={styles.heroHeader}>
             <div>
               <p>Executive operational insight</p>
-              <h2>Delivery pipeline is healthy, with 3 overdue tasks needing leadership attention</h2>
+              <h2>Operational records are grouped into a single reporting view for leadership review</h2>
             </div>
             <span>Operations view</span>
           </div>
 
           <div className={styles.heroBody}>
-            <div className={styles.healthPanel}>
-              <span>Operational health</span>
-              <strong>86%</strong>
-              <small>8 engagements this week with $84.2K expected revenue</small>
+            <div className={styles.operationalSummaryPanel}>
+              <span>Reporting context</span>
+              <strong>{CLIENT_NAME}</strong>
+              <small>
+                Sales order {SALES_ORDER_ID}, project activity, invoice status, task ownership,
+                and event history are shown from one operational record set.
+              </small>
             </div>
 
-            <div className={styles.pipelinePanel}>
+            <div className={styles.workloadPanel}>
               <div className={styles.panelTitleRow}>
-                <span>Engagement stage mix</span>
-                <strong>100%</strong>
+                <span>Aggregated operational sources</span>
+                <strong>Current view</strong>
               </div>
-              <div className={styles.stageBars}>
-                {STAGE_ROWS.map((row) => (
-                  <div key={row.label} className={styles.stageRow}>
-                    <div className={styles.stageLabel}>
-                      <span>{row.label}</span>
-                      <strong>{row.value}%</strong>
-                    </div>
-                    <div className={styles.stageTrack}>
-                      <i
-                        className={styles[row.color]}
-                        style={{ inlineSize: `${row.value}%` }}
-                        aria-hidden
-                      />
-                    </div>
+              <div className={styles.workloadList}>
+                {WORKLOAD_ROWS.map((row) => (
+                  <div key={row.area}>
+                    <span>{row.area}</span>
+                    <small>{row.source}</small>
+                    <strong>{row.state}</strong>
                   </div>
                 ))}
               </div>
@@ -140,15 +129,21 @@ export function OperationalIntelligenceDemo() {
         </section>
 
         <aside className={styles.opsSupportRail} aria-label="Operational support metrics">
-          <section className={styles.kpiModule}>
-            <p className={styles.moduleEyebrow}>KPI stack</p>
-            <div className={styles.kpiStack}>
-              {KPI_CARDS.map((kpi) => (
-                <div key={kpi.label} className={`${styles.kpiCard} ${styles[kpi.tone]}`}>
-                  <span>{kpi.label}</span>
-                  <strong>{kpi.value}</strong>
-                </div>
-              ))}
+          <section className={styles.aggregationModule}>
+            <p className={styles.moduleEyebrow}>KPI aggregation</p>
+            <div className={styles.aggregationList}>
+              <div>
+                <span>Revenue KPI</span>
+                <strong>Sales order + invoice records</strong>
+              </div>
+              <div>
+                <span>Workload KPI</span>
+                <strong>Project tasks + event ownership</strong>
+              </div>
+              <div>
+                <span>Risk KPI</span>
+                <strong>Overdue tasks + stalled activity</strong>
+              </div>
             </div>
           </section>
 
@@ -157,7 +152,11 @@ export function OperationalIntelligenceDemo() {
             <strong>Weekly ops packet</strong>
             <div className={styles.reportList}>
               {REPORT_ITEMS.map((item) => (
-                <span key={item}>{item}</span>
+                <span key={item.item}>
+                  <strong>{item.item}</strong>
+                  <small>{item.source}</small>
+                  <em>{item.state}</em>
+                </span>
               ))}
             </div>
           </section>
