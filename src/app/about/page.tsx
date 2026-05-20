@@ -94,9 +94,7 @@ const systemChips = [
   "ERP & Financial Systems",
   "Workflow Automation Engines",
   "Operational Intelligence",
-  "Compliance & Governance Systems",
   "Vendor & Contract Lifecycle",
-  "Custom Business Platforms",
 ] as const;
 
 const operatingPrinciples = [
@@ -250,7 +248,7 @@ export default function About() {
         </div>
         <div className={styles.timeline}>
           {operatingPrinciples.map((item, index) => (
-            <article key={item.title} className={index === 2 ? styles.activeJourney : undefined}>
+            <article key={item.title} className={index === 0 ? styles.activeJourney : undefined}>
               <span />
               <h3>{item.title}</h3>
               <p>{item.detail}</p>
