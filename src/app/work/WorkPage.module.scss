@@ -5,18 +5,18 @@
   --work-text: #f8fafc;
   --work-muted: #94a3b8;
   --work-soft: #64748b;
-  --work-border: rgba(255, 255, 255, 0.05);
+  --work-border: rgba(255, 255, 255, 0.08);
   --work-indigo: #6366f1;
   --work-cyan: #06b6d4;
   --work-depth: 0 8px 24px rgba(0, 0, 0, 0.18);
 
   width: 100%;
   min-height: 100vh;
-  padding: clamp(6rem, 8vw, 8rem) max(1rem, calc((100vw - 1400px) / 2)) clamp(4rem, 7vw, 6rem);
+  padding: clamp(5.25rem, 7vw, 6.5rem) max(1rem, calc((100vw - 1280px) / 2)) clamp(3.5rem, 6vw, 5rem);
   color: var(--work-text);
   background:
-    radial-gradient(circle at 72% 10%, rgba(99, 102, 241, 0.08), transparent 25rem),
-    radial-gradient(circle at 12% 38%, rgba(6, 182, 212, 0.05), transparent 26rem),
+    radial-gradient(circle at 72% 10%, rgba(99, 102, 241, 0.15), transparent 25rem),
+    radial-gradient(circle at 12% 38%, rgba(6, 182, 212, 0.08), transparent 26rem),
     linear-gradient(180deg, #070b12 0%, var(--work-bg) 48%, #08111d 100%);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
 }
@@ -24,14 +24,15 @@
 .workHero,
 .featuredProject,
 .allProjectsSection {
-  width: min(100% - 2rem, 1400px);
+  width: min(100% - 2rem, 1280px);
+  box-sizing: border-box;
   margin-inline: auto;
 }
 
 .workHero {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(24rem, 0.78fr);
-  gap: clamp(2rem, 6vw, 7rem);
+  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 0.72fr);
+  gap: clamp(2rem, 4.5vw, 4.5rem);
   align-items: end;
 }
 
@@ -47,14 +48,14 @@
 }
 
 .workHero h1 {
-  max-width: 13ch;
+  max-width: 15ch;
   margin: 1rem 0 0;
   color: var(--work-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
-  font-size: clamp(3rem, 4.7vw, 4rem);
+  font-size: clamp(3.35rem, 4.9vw, 4rem);
   font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 0.95;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
   text-transform: uppercase;
 
   span {
@@ -67,24 +68,24 @@
   gap: 1.7rem;
 
   p {
-    max-width: 37rem;
+    max-width: 55ch;
     margin: 0;
     color: var(--work-muted);
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.08rem;
+    line-height: 1.65;
   }
 }
 
 .featuredProject {
   display: grid;
-  grid-template-columns: minmax(20rem, 0.78fr) minmax(32rem, 1.22fr);
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(20rem, 0.45fr) minmax(0, 0.55fr);
+  gap: clamp(1.75rem, 3vw, 3rem);
   align-items: stretch;
-  margin-top: 2.5rem;
-  padding: clamp(1.25rem, 2vw, 1.7rem);
+  margin-top: 2rem;
+  padding: clamp(1.35rem, 2vw, 1.8rem);
   border: 1px solid var(--work-border);
   border-radius: 16px;
-  background: rgba(18, 24, 38, 0.72);
+  background: rgba(18, 24, 38, 0.62);
   box-shadow: var(--work-depth);
 }
 
@@ -98,7 +99,7 @@
     margin: 0.9rem 0 0;
     color: var(--work-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-size: clamp(1.9rem, 3vw, 2.75rem);
     font-weight: 700;
     letter-spacing: -0.04em;
     line-height: 1.04;
@@ -116,28 +117,28 @@
 
 .featuredSummary {
   max-width: 38rem;
-  margin: 1.55rem 0 0;
+  margin: 1.25rem 0 0;
   color: var(--work-muted);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
 .featuredStats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2.45rem;
+  gap: 0.85rem;
+  margin-top: 2rem;
 
   div {
     min-width: 0;
-    padding-left: 0.85rem;
-    border-left: 1px solid var(--work-border);
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--work-border);
   }
 
   strong {
     display: block;
     color: var(--work-text);
-    font-size: clamp(1.25rem, 2vw, 1.8rem);
+    font-size: clamp(1.1rem, 1.6vw, 1.45rem);
     font-weight: 600;
     letter-spacing: -0.03em;
   }
@@ -166,13 +167,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-  margin-top: 2.45rem;
+  margin-top: 2rem;
 }
 
 .primaryCta,
 .secondaryCta,
 .viewAllButton {
   display: inline-flex !important;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
@@ -207,47 +209,37 @@
 }
 
 .projectVisual {
-  min-height: 15rem;
+  min-height: 17rem;
   display: grid;
-  grid-template-columns: 3rem 1fr;
   overflow: hidden;
-  border: 1px solid var(--work-border);
+  border: 1px solid rgba(148, 163, 184, 0.12);
   border-radius: 12px;
   background: #0f1726;
 }
 
-.featuredVisual {
-  min-height: 27rem;
+.salesVisual {
+  background: #0f1726;
 }
 
-.visualRail {
-  display: grid;
-  align-content: start;
-  justify-items: center;
-  gap: 0.85rem;
-  padding-top: 1rem;
-  border-right: 1px solid var(--work-border);
-  background: rgba(10, 15, 24, 0.66);
+.revenueVisual {
+  background: #111827;
+}
 
-  span,
-  i {
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid rgba(148, 163, 184, 0.28);
-    border-radius: 4px;
-  }
+.vendorVisual {
+  background: #0f1b26;
+}
 
-  span {
-    width: 2rem;
-    height: 2rem;
-    border-color: rgba(99, 102, 241, 0.55);
-    background: #6366f1;
-  }
+.opsVisual {
+  background: #101827;
+}
+
+.featuredVisual {
+  min-height: 28rem;
 }
 
 .visualCanvas {
   min-width: 0;
-  padding: 1rem;
+  padding: 1.05rem;
 }
 
 .visualTopline {
@@ -265,12 +257,14 @@
 
 .visualRecordHeader {
   display: grid;
-  gap: 0.9rem;
-  margin-top: 1rem;
-  padding: 1rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 0.95rem;
+  padding: 1rem 0;
   border: 1px solid var(--work-border);
+  border-inline: 0;
   border-radius: 10px;
-  background: rgba(26, 34, 51, 0.64);
+  background: transparent;
 
   > strong {
     color: var(--work-text);
@@ -282,36 +276,54 @@
   div {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.65rem;
+    gap: 0.55rem;
   }
 
   span {
     min-width: 0;
-    padding: 0.62rem 0.7rem;
-    border: 1px solid var(--work-border);
+    padding: 0.65rem 0.7rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
     border-radius: 8px;
-    color: var(--work-muted);
-    background: rgba(10, 15, 24, 0.3);
-    font-size: 0.7rem;
+    color: var(--work-text);
+    background: rgba(26, 34, 51, 0.58);
+    font-size: 0.74rem;
     font-weight: 600;
     line-height: 1.3;
   }
+
+  em {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--work-muted);
+    font-size: 0.64rem;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+.visualBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(11rem, 0.65fr);
+  gap: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 .visualStateTrack {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-content: start;
   gap: 0;
-  margin-top: 0.75rem;
+  margin-top: 0;
   border: 1px solid var(--work-border);
   border-radius: 10px;
-  background: rgba(26, 34, 51, 0.58);
-  padding: 1rem;
+  background: rgba(10, 15, 24, 0.26);
+  padding: 0.75rem;
 
   span {
     position: relative;
-    padding: 0 0.75rem 0 1.45rem;
-    border-right: 1px solid var(--work-border);
+    padding: 0.62rem 0 0.62rem 1.2rem;
+    border-right: 0;
+    border-top: 1px solid var(--work-border);
     color: var(--work-text);
     font-size: 0.72rem;
     font-weight: 600;
@@ -321,22 +333,22 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 0.16rem;
-      width: 0.55rem;
-      height: 0.55rem;
+      top: 0.85rem;
+      width: 0.42rem;
+      height: 0.42rem;
       border-radius: 50%;
       background: var(--work-indigo);
     }
 
-    &:last-child {
-      border-right: 0;
+    &:first-child {
+      border-top: 0;
     }
   }
 }
 
 .visualTable {
   display: grid;
-  margin-top: 0.75rem;
+  margin-top: 0;
   overflow: hidden;
   border: 1px solid var(--work-border);
   border-radius: 10px;
@@ -347,7 +359,7 @@
     grid-template-columns: 0.9fr 1.35fr 0.62fr;
     gap: 0.9rem;
     align-items: center;
-    padding: 0.72rem 0.9rem;
+    padding: 0.76rem 0.9rem;
     border-top: 1px solid var(--work-border);
     color: var(--work-muted);
     font-size: 0.72rem;
@@ -365,11 +377,11 @@
 
   strong {
     justify-self: start;
-    padding: 0.35rem 0.5rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    border-radius: 999px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
     color: var(--work-text);
-    background: rgba(99, 102, 241, 0.12);
+    background: transparent;
     font-size: 0.66rem;
     font-weight: 600;
   }
@@ -389,11 +401,11 @@
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 0.65rem;
   align-items: center;
-  margin-top: 0.75rem;
+  margin-top: 0.85rem;
 
   span {
-    padding: 0.78rem 0.75rem;
-    border: 1px solid var(--work-border);
+    padding: 0.85rem 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
     border-radius: 8px;
     color: var(--work-text);
     background: rgba(6, 182, 212, 0.08);
@@ -410,23 +422,52 @@
 }
 
 .allProjectsSection {
-  margin-top: 2rem;
+  margin-top: 2.25rem;
 }
 
 .projectGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-top: 1rem;
+  gap: 1.35rem;
+  margin-top: 1.15rem;
 }
 
 .projectCard {
   min-width: 0;
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid var(--work-border);
   border-radius: 16px;
-  background: rgba(18, 24, 38, 0.72);
+  background: rgba(18, 24, 38, 0.58);
   box-shadow: var(--work-depth);
+}
+
+.projectCard .projectVisual {
+  min-height: 18rem;
+}
+
+.projectCard .visualRecordHeader {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.projectCard .visualRecordHeader div {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.projectCard .visualBody {
+  grid-template-columns: 1fr;
+}
+
+.projectCard .visualStateTrack {
+  display: none;
+}
+
+.projectCard .visualTable > div {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.projectCard .visualTable > div span:nth-child(2) {
+  display: none;
 }
 
 .cardHeader {
@@ -434,7 +475,7 @@
   grid-template-columns: auto 1fr;
   gap: 0.85rem;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
 
   h3 {
     margin: 0;
@@ -457,11 +498,12 @@
 .cardIcon {
   display: grid;
   place-items: center;
-  width: 2.7rem;
-  height: 2.7rem;
-  border-radius: 12px;
-  background: #6366f1;
-  color: #ffffff;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #a78bfa;
 
   svg {
     width: 1.25rem;
@@ -470,7 +512,7 @@
 }
 
 .cardSummary {
-  margin: 1rem 0 0;
+  margin: 1.15rem 0 0;
   color: var(--work-muted);
   font-size: 0.91rem;
   line-height: 1.55;
@@ -480,7 +522,7 @@
   display: inline-flex !important;
   align-items: center;
   gap: 0.45rem;
-  margin-top: 1.1rem;
+  margin-top: 1.25rem;
   color: #a78bfa !important;
   text-decoration: none !important;
   font-size: 0.76rem;
@@ -490,8 +532,8 @@
 }
 
 .viewAllButton {
-  width: min(100%, 22rem);
-  margin: 2rem auto 0;
+  width: min(100%, 18rem);
+  margin: 1.75rem auto 0;
 }
 
 [data-theme="light"] .workPage {
@@ -501,38 +543,71 @@
   --work-text: #0f172a;
   --work-muted: #475569;
   --work-soft: #64748b;
-  --work-border: rgba(15, 23, 42, 0.06);
+  --work-border: rgba(15, 23, 42, 0.08);
   --work-depth: 0 6px 18px rgba(15, 23, 42, 0.06);
 
   background:
-    radial-gradient(circle at 72% 10%, rgba(79, 70, 229, 0.07), transparent 25rem),
-    radial-gradient(circle at 12% 38%, rgba(8, 145, 178, 0.05), transparent 26rem),
+    radial-gradient(circle at 72% 10%, rgba(79, 70, 229, 0.12), transparent 25rem),
+    radial-gradient(circle at 12% 38%, rgba(8, 145, 178, 0.08), transparent 26rem),
     linear-gradient(180deg, #f4f7fb 0%, #ffffff 48%, #eef2f7 100%);
 }
 
 [data-theme="light"] {
   .featuredProject,
   .projectCard {
-    background: rgba(238, 242, 247, 0.88);
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(15, 23, 42, 0.11);
   }
 
   .projectVisual {
-    background: #ffffff;
-  }
-
-  .visualRail {
-    background: rgba(238, 242, 247, 0.78);
+    border-color: rgba(15, 23, 42, 0.11);
+    background: #0f1726;
+    color: #f8fafc;
   }
 
   .visualRecordHeader,
-  .visualStateTrack,
-  .visualTable,
   .visualRelationship span {
-    background: #ffffff;
+    border-color: rgba(255, 255, 255, 0.08);
   }
 
-  .visualRecordHeader span,
+  .visualRecordHeader span {
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+    background: rgba(26, 34, 51, 0.78);
+  }
+
+  .visualStateTrack,
+  .visualTable {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(18, 24, 38, 0.82);
+  }
+
   .visualTableHead {
+    background: rgba(10, 15, 24, 0.5);
+  }
+
+  .visualTopline strong,
+  .visualRecordHeader > strong,
+  .visualTable span:first-child,
+  .visualTable strong,
+  .visualStateTrack span,
+  .visualRelationship span {
+    color: #f8fafc;
+  }
+
+  .visualTopline,
+  .visualRecordHeader em,
+  .visualTable,
+  .visualTableHead {
+    color: #94a3b8 !important;
+  }
+
+  .visualRelationship span {
+    background: rgba(6, 182, 212, 0.1);
+  }
+
+  .cardIcon {
+    border-color: rgba(15, 23, 42, 0.1);
     background: #eef2f7;
   }
 
@@ -569,11 +644,12 @@
   .workHero,
   .featuredProject,
   .allProjectsSection {
-    width: min(100% - 1.5rem, 1400px);
+    width: calc(100% - 5rem);
   }
 
   .workHero h1 {
-    font-size: clamp(2.4rem, 10.5vw, 3.55rem);
+    max-width: 10.5ch;
+    font-size: clamp(2.2rem, 9.6vw, 2.9rem);
   }
 
   .featuredStats {
@@ -591,15 +667,12 @@
 
   .projectVisual,
   .featuredVisual {
-    grid-template-columns: 1fr;
     min-height: 17rem;
   }
 
-  .visualRail {
-    display: none;
-  }
-
   .visualRecordHeader div,
+  .visualRecordHeader,
+  .visualBody,
   .visualStateTrack,
   .visualTable > div,
   .visualRelationship {
@@ -615,7 +688,7 @@
 
 @media (max-width: 430px) {
   .workHero h1 {
-    font-size: clamp(2.1rem, 10.7vw, 3rem);
+    font-size: clamp(2rem, 9.2vw, 2.45rem);
   }
 
   .featuredProject,

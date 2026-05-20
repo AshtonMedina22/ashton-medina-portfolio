@@ -48,7 +48,7 @@ const visualContent: Record<
     title: string;
     status: string;
     record: string;
-    related: string[];
+    related: Array<[string, string]>;
     states: string[];
     rows: Array<[string, string, string]>;
   }
@@ -56,8 +56,12 @@ const visualContent: Record<
   "sales-to-delivery-automation-platform": {
     title: "Sales order to delivery",
     status: "Delivery ready",
-    record: "SO-0842 · Meridian Group",
-    related: ["CRM account linked", "Project workspace generated", "Vendor tasks queued"],
+    record: "SO-0842 - Meridian Group",
+    related: [
+      ["Sales order", "Confirmed"],
+      ["Project", "Generated"],
+      ["Vendor", "Assignment pending"],
+    ],
     states: ["Confirmed", "Project created", "Task tree generated", "Ready for execution"],
     rows: [
       ["CRM sync", "Account, contacts, order terms", "Complete"],
@@ -69,8 +73,12 @@ const visualContent: Record<
   "revenue-financial-control-engine": {
     title: "Revenue financial controls",
     status: "Approval required",
-    record: "Project P-1847 · Closeout review",
-    related: ["Invoice linked", "Vendor bill matched", "Margin variance flagged"],
+    record: "Project P-1847 - Closeout review",
+    related: [
+      ["Invoice", "Posted"],
+      ["Vendor bill", "Matched"],
+      ["Margin", "Review required"],
+    ],
     states: ["Invoice issued", "Vendor cost matched", "Margin reviewed", "Payment approved"],
     rows: [
       ["Customer invoice", "INV-1048", "Issued"],
@@ -82,8 +90,12 @@ const visualContent: Record<
   "vendor-lifecycle-compliance-platform": {
     title: "Vendor lifecycle workspace",
     status: "Portal access active",
-    record: "Vendor V-221 · Compliance packet",
-    related: ["Onboarding state tracked", "RFQ response open", "Documents under review"],
+    record: "Vendor V-221 - Compliance packet",
+    related: [
+      ["Onboarding", "Active"],
+      ["RFQ", "Response open"],
+      ["Portal", "Access enabled"],
+    ],
     states: ["Invited", "Portal opened", "Documents received", "Assignment pending"],
     rows: [
       ["W-9 / tax form", "Document upload", "Received"],
@@ -95,8 +107,12 @@ const visualContent: Record<
   "operational-intelligence-platform": {
     title: "Operational reporting view",
     status: "Aggregated records",
-    record: "Operations overview · Project activity",
-    related: ["CRM records", "Sales orders", "Projects and invoices"],
+    record: "Operations overview - Project activity",
+    related: [
+      ["Workload", "Grouped by owner"],
+      ["Projects", "Status visible"],
+      ["Events", "Attached"],
+    ],
     states: ["Records synced", "Workload grouped", "Events attached", "Reports ready"],
     rows: [
       ["Project workload", "Tasks, milestones, owners", "Visible"],
@@ -129,12 +145,6 @@ function ProjectVisual({ slug, featured = false }: { slug: string; featured?: bo
 
   return (
     <div className={`${styles.projectVisual} ${styles[visualClass]} ${featured ? styles.featuredVisual : ""}`} aria-hidden>
-      <div className={styles.visualRail}>
-        <span />
-        <i />
-        <i />
-        <i />
-      </div>
       <div className={styles.visualCanvas}>
         <div className={styles.visualTopline}>
           <strong>{visual.title}</strong>
@@ -143,29 +153,34 @@ function ProjectVisual({ slug, featured = false }: { slug: string; featured?: bo
         <div className={styles.visualRecordHeader}>
           <strong>{visual.record}</strong>
           <div>
-            {visual.related.map((item) => (
-              <span key={item}>{item}</span>
+            {visual.related.map(([label, value]) => (
+              <span key={label}>
+                <em>{label}</em>
+                {value}
+              </span>
             ))}
           </div>
         </div>
-        <div className={styles.visualStateTrack}>
-          {visual.states.map((state) => (
-            <span key={state}>{state}</span>
-          ))}
-        </div>
-        <div className={styles.visualTable}>
-          <div className={styles.visualTableHead}>
-            <span>Workflow item</span>
-            <span>Record context</span>
-            <span>Status</span>
-          </div>
-          {visual.rows.map(([item, context, status]) => (
-            <div key={item}>
-              <span>{item}</span>
-              <span>{context}</span>
-              <strong>{status}</strong>
+        <div className={styles.visualBody}>
+          <div className={styles.visualTable}>
+            <div className={styles.visualTableHead}>
+              <span>Workflow item</span>
+              <span>Record context</span>
+              <span>Status</span>
             </div>
-          ))}
+            {visual.rows.map(([item, context, status]) => (
+              <div key={item}>
+                <span>{item}</span>
+                <span>{context}</span>
+                <strong>{status}</strong>
+              </div>
+            ))}
+          </div>
+          <div className={styles.visualStateTrack}>
+            {visual.states.map((state) => (
+              <span key={state}>{state}</span>
+            ))}
+          </div>
         </div>
         {featured && (
           <div className={styles.visualRelationship}>
