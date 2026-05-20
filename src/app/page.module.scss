@@ -14,8 +14,8 @@
   min-height: 100vh;
   color: var(--home-text);
   background:
-    radial-gradient(circle at 70% 8%, rgba(99, 102, 241, 0.14), transparent 28rem),
-    radial-gradient(circle at 18% 28%, rgba(6, 182, 212, 0.07), transparent 26rem),
+    radial-gradient(circle at 70% 8%, rgba(99, 102, 241, 0.08), transparent 28rem),
+    radial-gradient(circle at 18% 28%, rgba(6, 182, 212, 0.04), transparent 26rem),
     linear-gradient(180deg, #070b12 0%, var(--home-bg) 46%, #08111d 100%);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
 }
@@ -30,12 +30,13 @@
 }
 
 .heroSection {
-  min-height: min(860px, calc(100vh - 72px));
+  width: min(100% - 3rem, 1280px);
+  min-height: min(720px, calc(100vh - 72px));
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(34rem, 1.02fr);
+  grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
   align-items: center;
-  gap: clamp(2rem, 4vw, 4.5rem);
-  padding: clamp(5.5rem, 8vw, 8rem) 0 clamp(3rem, 5vw, 4.5rem);
+  gap: clamp(2rem, 3.4vw, 3.5rem);
+  padding: clamp(4rem, 6vw, 5.5rem) 0 clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .heroContent {
@@ -68,27 +69,28 @@
   color: var(--home-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
 }
 
 .heroContent h1 {
-  max-width: 10.8ch;
+  max-width: 14.5ch;
   margin-top: 1.35rem;
-  font-size: clamp(4rem, 5vw, 4.5rem);
-  line-height: 0.95;
+  font-size: clamp(3.35rem, 4.5vw, 3.75rem);
+  line-height: 0.97;
 
   span {
+    display: block;
     color: #8b5cf6;
   }
 }
 
 .heroContent p {
-  max-width: 60ch;
-  margin: 1.55rem 0 0;
+  max-width: 54ch;
+  margin: 1.35rem 0 0;
   color: var(--home-muted);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.08rem;
+  line-height: 1.65;
 }
 
 .heroActions {
@@ -101,6 +103,7 @@
 .primaryCta,
 .secondaryCta {
   display: inline-flex !important;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
@@ -147,21 +150,15 @@
 .heroStats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  max-width: 45rem;
-  margin-top: 3rem;
+  gap: 0.75rem;
+  max-width: 44rem;
+  margin-top: 2.25rem;
   border-top: 1px solid var(--home-border);
   border-bottom: 1px solid var(--home-border);
 
   div {
     min-width: 0;
-    padding: 1.1rem 1rem 1.1rem 0;
-    border-right: 1px solid var(--home-border);
-
-    &:last-child {
-      border-right: 0;
-      padding-right: 0;
-    }
+    padding: 1.05rem 0.75rem 1.05rem 0;
   }
 
   strong,
@@ -197,10 +194,11 @@
 }
 
 .opsVisual {
+  box-sizing: border-box;
   min-width: 0;
   display: grid;
-  grid-template-columns: 4.2rem 1fr;
-  min-height: 36rem;
+  grid-template-columns: 3.7rem 1fr;
+  min-height: 31rem;
   overflow: hidden;
   border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 16px;
@@ -248,7 +246,7 @@
 
 .visualMain {
   min-width: 0;
-  padding: 1.4rem;
+  padding: 1.15rem;
 }
 
 .visualTopbar,
@@ -268,12 +266,12 @@
 .recordSummary {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin-top: 1.25rem;
+  gap: 0.7rem;
+  margin-top: 1rem;
 
   div {
     min-width: 0;
-    padding: 1rem 1.05rem;
+    padding: 0.85rem 0.9rem;
     border: 1px solid var(--home-border);
     border-radius: 12px;
     background: var(--home-surface);
@@ -314,8 +312,8 @@
 .executionTable {
   display: grid;
   gap: 0.2rem;
-  margin-top: 0.85rem;
-  padding: 1rem;
+  margin-top: 0.75rem;
+  padding: 0.95rem;
 
   > div:not(.panelHeader) {
     display: grid;
@@ -342,8 +340,8 @@
 .controlPanel {
   display: grid;
   gap: 0.7rem;
-  margin-top: 0.85rem;
-  padding: 1rem;
+  margin-top: 0.75rem;
+  padding: 0.9rem;
   border: 1px solid var(--home-border);
   border-radius: 12px;
   background: var(--home-surface);
@@ -385,7 +383,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1.4rem;
-  padding: 1.35rem 0;
+  padding: 1rem 0;
   border-top: 1px solid var(--home-border);
   border-bottom: 1px solid var(--home-border);
 
@@ -401,19 +399,19 @@
 
 .featuredPlatform {
   display: grid;
-  grid-template-columns: minmax(22rem, 0.72fr) minmax(0, 1fr);
-  gap: clamp(2.5rem, 5vw, 5.5rem);
+  grid-template-columns: minmax(20rem, 0.45fr) minmax(0, 0.55fr);
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
-  padding: clamp(4rem, 7vw, 6.5rem) 0;
+  padding: clamp(3.25rem, 5vw, 4.75rem) 0;
 }
 
 .featuredCopy {
   min-width: 0;
 
   h2 {
-    max-width: 12ch;
+    max-width: 13ch;
     margin-top: 1rem;
-    font-size: clamp(2.7rem, 4.9vw, 4.8rem);
+    font-size: clamp(2.45rem, 4vw, 3.75rem);
     line-height: 0.98;
   }
 
@@ -439,8 +437,9 @@
 }
 
 .salesPlatformVisual {
+  box-sizing: border-box;
   min-width: 0;
-  padding: 1.25rem;
+  padding: 1.05rem;
   border: 1px solid var(--home-border);
   border-radius: 16px;
   background: rgba(18, 24, 38, 0.82);
@@ -449,16 +448,17 @@
 
 .platformCanvas {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 0.78fr);
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 0.9fr) auto minmax(0, 0.82fr);
+  gap: 0.75rem;
   align-items: stretch;
-  margin-top: 1rem;
+  margin-top: 0.85rem;
 }
 
 .orderPane,
-.projectPane {
+.projectPane,
+.executionPane {
   min-width: 0;
-  padding: 1.1rem;
+  padding: 1rem;
   border: 1px solid var(--home-border);
   border-radius: 12px;
   background: var(--home-surface);
@@ -503,10 +503,36 @@
 }
 
 .previewRows,
-.taskStack {
+.platformRows,
+.taskStack,
+.executionChecklist {
   display: grid;
-  gap: 0.6rem;
+  gap: 0.55rem;
   margin-top: 1rem;
+}
+
+.platformRows em {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--home-border);
+  color: var(--home-muted);
+  font-size: 0.75rem;
+  font-style: normal;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  b {
+    color: var(--home-text);
+    font-weight: 600;
+  }
+
+  span {
+    text-align: right;
+  }
 }
 
 .previewRows em {
@@ -523,7 +549,8 @@
   }
 }
 
-.taskStack i {
+.taskStack i,
+.executionChecklist i {
   padding: 0.8rem;
   border: 1px solid var(--home-border);
   border-radius: 8px;
@@ -532,6 +559,10 @@
   font-size: 0.82rem;
   font-style: normal;
   font-weight: 600;
+}
+
+.executionChecklist i {
+  background: rgba(148, 163, 184, 0.08);
 }
 
 .platformArrow {
@@ -549,7 +580,7 @@
   display: grid;
   grid-template-columns: minmax(18rem, 0.62fr) minmax(0, 1fr);
   gap: clamp(2.5rem, 5vw, 5rem);
-  padding: clamp(4rem, 7vw, 6.5rem) 0;
+  padding: clamp(3.25rem, 5vw, 4.75rem) 0;
   border-top: 1px solid var(--home-border);
 }
 
@@ -614,7 +645,7 @@
 }
 
 .workPreview {
-  padding: clamp(4rem, 7vw, 6.5rem) 0;
+  padding: clamp(3.25rem, 5vw, 4.75rem) 0;
   border-top: 1px solid var(--home-border);
 }
 
@@ -645,61 +676,108 @@
 
 .projectVisual {
   position: relative;
-  height: 11rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.7rem;
+  height: 13rem;
+  padding: 0.95rem;
   overflow: hidden;
   background: #111827;
 
-  > span {
+  &::before {
+    content: "";
     position: absolute;
-    left: 1.1rem;
-    top: 1.1rem;
-    width: 2.6rem;
-    height: 2.6rem;
-    border-radius: 12px;
-    background: var(--home-indigo);
+    inset: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+  }
+}
+
+.previewChrome,
+.previewTable,
+.previewFooter {
+  position: relative;
+  z-index: 1;
+}
+
+.previewChrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+
+  strong {
+    color: var(--home-text);
+    font-size: 0.78rem;
+    font-weight: 600;
   }
 
-  > div {
-    position: absolute;
-    left: 5rem;
-    right: 1rem;
-    bottom: 1rem;
+  span {
+    color: var(--home-muted);
+    font-size: 0.7rem;
+  }
+}
+
+.previewTable {
+  display: grid;
+  align-content: start;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  background: rgba(10, 15, 24, 0.52);
+
+  div {
     display: grid;
-    gap: 0.55rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    padding: 0.62rem 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    &:first-child {
+      border-top: 0;
+    }
   }
 
-  i {
-    display: block;
-    height: 1.35rem;
+  span {
+    color: var(--home-muted);
+    font-size: 0.72rem;
+  }
+
+  strong {
+    color: var(--home-text);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-align: right;
+  }
+}
+
+.previewFooter {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+
+  span {
+    min-width: 0;
+    padding: 0.55rem 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--home-text);
+    background: rgba(148, 163, 184, 0.08);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
   }
 }
 
 .cyan {
-  background:
-    radial-gradient(circle at 16% 18%, rgba(6, 182, 212, 0.3), transparent 13rem),
-    #0f172a;
-
-  > span {
-    background: var(--home-cyan);
-  }
+  background: #0f172a;
 }
 
 .teal {
-  background:
-    radial-gradient(circle at 16% 18%, rgba(20, 184, 166, 0.28), transparent 13rem),
-    #111827;
-
-  > span {
-    background: #14b8a6;
-  }
+  background: #111827;
 }
 
 .indigo {
-  background:
-    radial-gradient(circle at 16% 18%, rgba(99, 102, 241, 0.34), transparent 13rem),
-    #101827;
+  background: #101827;
 }
 
 .projectCardBody {
@@ -777,21 +855,21 @@
 }
 
 [data-theme="light"] .homePage {
-  --home-bg: #f4f7fb;
+  --home-bg: #f5f7fb;
   --home-surface: #ffffff;
   --home-panel: #eef2f7;
   --home-text: #0f172a;
   --home-muted: #475569;
   --home-soft: #64748b;
-  --home-border: rgba(15, 23, 42, 0.08);
+  --home-border: rgba(15, 23, 42, 0.11);
   --home-indigo: #4f46e5;
   --home-cyan: #0891b2;
-  --home-depth: 0 6px 18px rgba(15, 23, 42, 0.06);
+  --home-depth: 0 8px 24px rgba(15, 23, 42, 0.08);
 
   background:
-    radial-gradient(circle at 70% 8%, rgba(79, 70, 229, 0.11), transparent 28rem),
-    radial-gradient(circle at 18% 28%, rgba(8, 145, 178, 0.07), transparent 26rem),
-    linear-gradient(180deg, #f4f7fb 0%, #ffffff 48%, #eef2f7 100%);
+    radial-gradient(circle at 70% 8%, rgba(79, 70, 229, 0.05), transparent 28rem),
+    radial-gradient(circle at 18% 28%, rgba(8, 145, 178, 0.035), transparent 26rem),
+    linear-gradient(180deg, #f5f7fb 0%, #ffffff 46%, #eef2f7 100%);
 }
 
 [data-theme="light"] {
@@ -812,16 +890,18 @@
   .opsVisual,
   .salesPlatformVisual,
   .projectCard {
-    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(15, 23, 42, 0.12);
+    background: rgba(255, 255, 255, 0.94);
     box-shadow: var(--home-depth);
   }
 
   .visualRail {
-    background: rgba(238, 242, 247, 0.74);
+    background: #eef2f7;
   }
 
   .orderPane,
   .projectPane,
+  .executionPane,
   .recordSummary div,
   .controlPanel,
   .executionTable {
@@ -833,16 +913,29 @@
   }
 
   .projectVisual {
+    background: #dfe6f1;
+  }
+
+  .previewTable {
+    border-color: rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.78);
+
+    div {
+      border-color: rgba(15, 23, 42, 0.09);
+    }
+  }
+
+  .previewFooter span,
+  .taskStack i,
+  .executionChecklist i,
+  .platformStatus span,
+  .orderMeta i {
+    border-color: rgba(15, 23, 42, 0.1);
     background: #eef2f7;
   }
 
-  .previewRows em,
-  .projectVisual i {
-    background: rgba(15, 23, 42, 0.1);
-  }
-
   .techBanner {
-    background: rgba(238, 242, 247, 0.72);
+    background: #eef2f7;
   }
 }
 
@@ -873,17 +966,17 @@
   .featuredPlatform,
   .capabilitiesSection,
   .workPreview {
-    width: min(100% - 2rem, 1400px);
+    width: min(100% - 3rem, 1400px);
   }
 
   .heroSection {
     min-height: auto;
-    padding-top: 5.5rem;
+    padding-top: 5rem;
   }
 
   .heroContent h1 {
-    max-width: 100%;
-    font-size: clamp(2.55rem, 12.3vw, 3.7rem);
+    max-width: 10.8ch;
+    font-size: clamp(2.15rem, 9.6vw, 2.9rem);
   }
 
   .heroStats,
@@ -943,8 +1036,8 @@
 
 @media (max-width: 520px) {
   .heroContent h1 {
-    font-size: clamp(2.35rem, 11.2vw, 3.05rem);
-    letter-spacing: -0.055em;
+    font-size: clamp(2.05rem, 9vw, 2.55rem);
+    letter-spacing: -0.03em;
   }
 
   .heroContent p,

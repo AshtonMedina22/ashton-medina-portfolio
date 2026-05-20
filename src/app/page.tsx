@@ -66,6 +66,42 @@ const selectedProjects = [
   },
 ] as const;
 
+const projectPreviewRows = {
+  cyan: {
+    header: "Revenue control",
+    status: "Margin review",
+    rows: [
+      ["Invoice", "Posted"],
+      ["Vendor bill", "Matched"],
+      ["Payment", "Pending"],
+      ["Approval", "Required"],
+    ],
+    footer: ["Margin visible", "Closeout gated"],
+  },
+  teal: {
+    header: "Vendor lifecycle",
+    status: "Portal access",
+    rows: [
+      ["Onboarding", "Active"],
+      ["Compliance docs", "Verified"],
+      ["RFQ workflow", "Open"],
+      ["Assignment", "Accepted"],
+    ],
+    footer: ["Docs current", "RFQ linked"],
+  },
+  indigo: {
+    header: "Operations view",
+    status: "Workload report",
+    rows: [
+      ["Projects", "In flight"],
+      ["Tasks", "At risk"],
+      ["Invoices", "Queued"],
+      ["Events", "Scheduled"],
+    ],
+    footer: ["CRM linked", "Project rollup"],
+  },
+} as const;
+
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
@@ -95,7 +131,7 @@ function OperationsVisual() {
         <div className={styles.recordSummary}>
           <div>
             <span>Sales order</span>
-            <strong>SO-0842 · Meridian Group</strong>
+            <strong>SO-0842 - Meridian Group</strong>
           </div>
           <div>
             <span>Linked project</span>
@@ -156,10 +192,10 @@ function SalesPlatformVisual() {
             <i>$12.4K</i>
             <i>Confirmed</i>
           </div>
-          <div className={styles.previewRows}>
-            <em />
-            <em />
-            <em />
+          <div className={styles.platformRows}>
+            <em><b>Opportunity</b><span>CRM linked</span></em>
+            <em><b>Customer data</b><span>65+ fields synced</span></em>
+            <em><b>Billing policy</b><span>Project controls copied</span></em>
           </div>
         </section>
         <div className={styles.platformArrow} aria-hidden>
@@ -174,6 +210,18 @@ function SalesPlatformVisual() {
             <i>Training</i>
           </div>
         </section>
+        <div className={styles.platformArrow} aria-hidden>
+          -&gt;
+        </div>
+        <section className={styles.executionPane}>
+          <span>Execution flow</span>
+          <div className={styles.executionChecklist}>
+            <i>Vendor assignment</i>
+            <i>Task ownership</i>
+            <i>Delivery readiness</i>
+            <i>Closeout controls</i>
+          </div>
+        </section>
       </div>
       <div className={styles.platformStatus}>
         <span>CRM linked</span>
@@ -185,14 +233,27 @@ function SalesPlatformVisual() {
 }
 
 function ProjectPreview({ project }: { project: (typeof selectedProjects)[number] }) {
+  const preview = projectPreviewRows[project.accent];
+
   return (
     <article className={styles.projectCard}>
       <div className={`${styles.projectVisual} ${styles[project.accent]}`} aria-hidden>
-        <span />
-        <div>
-          <i />
-          <i />
-          <i />
+        <div className={styles.previewChrome}>
+          <strong>{preview.header}</strong>
+          <span>{preview.status}</span>
+        </div>
+        <div className={styles.previewTable}>
+          {preview.rows.map(([label, state]) => (
+            <div key={label}>
+              <span>{label}</span>
+              <strong>{state}</strong>
+            </div>
+          ))}
+        </div>
+        <div className={styles.previewFooter}>
+          {preview.footer.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
         </div>
       </div>
       <div className={styles.projectCardBody}>
