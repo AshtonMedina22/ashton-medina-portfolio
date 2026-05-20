@@ -209,37 +209,47 @@
 }
 
 .projectVisual {
-  min-height: 17rem;
+  min-height: 15rem;
   display: grid;
+  grid-template-columns: 3rem 1fr;
   overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  border: 1px solid var(--work-border);
   border-radius: 12px;
   background: #0f1726;
 }
 
-.salesVisual {
-  background: #0f1726;
-}
-
-.revenueVisual {
-  background: #111827;
-}
-
-.vendorVisual {
-  background: #0f1b26;
-}
-
-.opsVisual {
-  background: #101827;
-}
-
 .featuredVisual {
-  min-height: 28rem;
+  min-height: 27rem;
+}
+
+.visualRail {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-right: 1px solid var(--work-border);
+  background: rgba(10, 15, 24, 0.66);
+
+  span,
+  i {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 4px;
+  }
+
+  span {
+    width: 2rem;
+    height: 2rem;
+    border-color: rgba(99, 102, 241, 0.55);
+    background: #6366f1;
+  }
 }
 
 .visualCanvas {
   min-width: 0;
-  padding: 1.05rem;
+  padding: 1rem;
 }
 
 .visualTopline {
@@ -255,170 +265,118 @@
   }
 }
 
-.visualRecordHeader {
+.visualMetricRow {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: 1rem;
-  margin-top: 0.95rem;
-  padding: 1rem 0;
-  border: 1px solid var(--work-border);
-  border-inline: 0;
-  border-radius: 10px;
-  background: transparent;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
 
-  > strong {
-    color: var(--work-text);
-    font-size: clamp(1rem, 1.6vw, 1.22rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  div {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.55rem;
-  }
-
-  span {
-    min-width: 0;
-    padding: 0.65rem 0.7rem;
-    border: 1px solid rgba(148, 163, 184, 0.1);
-    border-radius: 8px;
-    color: var(--work-text);
-    background: rgba(26, 34, 51, 0.58);
-    font-size: 0.74rem;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  em {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: var(--work-muted);
-    font-size: 0.64rem;
-    font-style: normal;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  i {
+    height: 4.2rem;
+    border: 1px solid var(--work-border);
+    border-radius: 10px;
+    background: rgba(26, 34, 51, 0.82);
   }
 }
 
 .visualBody {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(11rem, 0.65fr);
-  gap: 0.8rem;
-  margin-top: 0.8rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
-.visualStateTrack {
-  display: grid;
-  align-content: start;
-  gap: 0;
-  margin-top: 0;
+.visualChart,
+.visualSignal {
+  min-height: 10rem;
   border: 1px solid var(--work-border);
   border-radius: 10px;
-  background: rgba(10, 15, 24, 0.26);
-  padding: 0.75rem;
-
-  span {
-    position: relative;
-    padding: 0.62rem 0 0.62rem 1.2rem;
-    border-right: 0;
-    border-top: 1px solid var(--work-border);
-    color: var(--work-text);
-    font-size: 0.72rem;
-    font-weight: 600;
-    line-height: 1.35;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.85rem;
-      width: 0.42rem;
-      height: 0.42rem;
-      border-radius: 50%;
-      background: var(--work-indigo);
-    }
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
+  background: rgba(26, 34, 51, 0.72);
 }
 
-.visualTable {
+.visualChart {
   display: grid;
-  margin-top: 0;
-  overflow: hidden;
-  border: 1px solid var(--work-border);
-  border-radius: 10px;
-  background: rgba(26, 34, 51, 0.62);
-
-  > div {
-    display: grid;
-    grid-template-columns: 0.9fr 1.35fr 0.62fr;
-    gap: 0.9rem;
-    align-items: center;
-    padding: 0.76rem 0.9rem;
-    border-top: 1px solid var(--work-border);
-    color: var(--work-muted);
-    font-size: 0.72rem;
-    line-height: 1.35;
-  }
-
-  > div:first-child {
-    border-top: 0;
-  }
-
-  span:first-child {
-    color: var(--work-text);
-    font-weight: 600;
-  }
-
-  strong {
-    justify-self: start;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    color: var(--work-text);
-    background: transparent;
-    font-size: 0.66rem;
-    font-weight: 600;
-  }
-}
-
-.visualTableHead {
-  color: var(--work-soft) !important;
-  background: rgba(10, 15, 24, 0.28);
-  font-size: 0.66rem !important;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.visualRelationship {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
   gap: 0.65rem;
-  align-items: center;
-  margin-top: 0.85rem;
+  padding: 1rem;
 
   span {
-    padding: 0.85rem 0.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.1);
-    border-radius: 8px;
-    color: var(--work-text);
-    background: rgba(6, 182, 212, 0.08);
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-align: center;
+    display: block;
+    border-radius: 7px 7px 3px 3px;
+    background: #6366f1;
+
+    &:nth-child(1) { height: 38%; }
+    &:nth-child(2) { height: 62%; background: #06b6d4; }
+    &:nth-child(3) { height: 48%; background: #8b5cf6; }
+    &:nth-child(4) { height: 82%; background: #22c55e; }
+  }
+}
+
+.visualSignal {
+  display: grid;
+  align-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+
+  em {
+    height: 0.7rem;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.54);
+
+    &:nth-child(1) { width: 82%; }
+    &:nth-child(2) { width: 58%; background: rgba(6, 182, 212, 0.62); }
+    &:nth-child(3) { width: 72%; background: rgba(34, 197, 94, 0.58); }
+  }
+}
+
+.salesVisual .visualChart span {
+  border-radius: 999px;
+  height: 0.75rem !important;
+}
+
+.revenueVisual .visualSignal {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  min-height: 8rem;
+  justify-self: center;
+  width: min(9rem, 100%);
+  background: conic-gradient(#22c55e 0 54%, #6366f1 54% 78%, rgba(148, 163, 184, 0.25) 78% 100%);
+
+  em {
+    display: none;
   }
 
-  i {
-    width: 1.8rem;
-    height: 1px;
-    background: rgba(148, 163, 184, 0.26);
+  &::after {
+    content: "";
+    align-self: center;
+    justify-self: center;
+    width: 48%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #0f1726;
   }
+}
+
+.vendorVisual .visualChart {
+  grid-template-columns: 1fr 0.72fr;
+
+  span {
+    height: 70% !important;
+    border-radius: 10px;
+    background: rgba(20, 184, 166, 0.55);
+  }
+
+  span:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+.opsVisual .visualChart span {
+  &:nth-child(1) { background: #60a5fa; }
+  &:nth-child(2) { background: #7c3aed; }
+  &:nth-child(3) { background: #14b8a6; }
+  &:nth-child(4) { background: #2563eb; }
 }
 
 .allProjectsSection {
@@ -565,45 +523,23 @@
     color: #f8fafc;
   }
 
-  .visualRecordHeader,
-  .visualRelationship span {
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-
-  .visualRecordHeader span {
-    border-color: rgba(255, 255, 255, 0.08);
-    color: #f8fafc;
-    background: rgba(26, 34, 51, 0.78);
-  }
-
-  .visualStateTrack,
-  .visualTable {
+  .visualMetricRow i,
+  .visualChart,
+  .visualSignal {
     border-color: rgba(255, 255, 255, 0.08);
     background: rgba(18, 24, 38, 0.82);
   }
 
-  .visualTableHead {
-    background: rgba(10, 15, 24, 0.5);
+  .revenueVisual .visualSignal::after {
+    background: #0f1726;
   }
 
-  .visualTopline strong,
-  .visualRecordHeader > strong,
-  .visualTable span:first-child,
-  .visualTable strong,
-  .visualStateTrack span,
-  .visualRelationship span {
+  .visualTopline strong {
     color: #f8fafc;
   }
 
-  .visualTopline,
-  .visualRecordHeader em,
-  .visualTable,
-  .visualTableHead {
+  .visualTopline {
     color: #94a3b8 !important;
-  }
-
-  .visualRelationship span {
-    background: rgba(6, 182, 212, 0.1);
   }
 
   .cardIcon {
@@ -667,22 +603,17 @@
 
   .projectVisual,
   .featuredVisual {
+    grid-template-columns: 1fr;
     min-height: 17rem;
   }
 
-  .visualRecordHeader div,
-  .visualRecordHeader,
   .visualBody,
-  .visualStateTrack,
-  .visualTable > div,
-  .visualRelationship {
+  .visualMetricRow {
     grid-template-columns: 1fr;
   }
 
-  .visualRelationship i {
-    width: 1px;
-    height: 1rem;
-    justify-self: center;
+  .visualRail {
+    display: none;
   }
 }
 

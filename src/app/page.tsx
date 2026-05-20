@@ -66,42 +66,6 @@ const selectedProjects = [
   },
 ] as const;
 
-const projectPreviewRows = {
-  cyan: {
-    header: "Revenue control",
-    status: "Margin review",
-    rows: [
-      ["Invoice", "Posted"],
-      ["Vendor bill", "Matched"],
-      ["Payment", "Pending"],
-      ["Approval", "Required"],
-    ],
-    footer: ["Margin visible", "Closeout gated"],
-  },
-  teal: {
-    header: "Vendor lifecycle",
-    status: "Portal access",
-    rows: [
-      ["Onboarding", "Active"],
-      ["Compliance docs", "Verified"],
-      ["RFQ workflow", "Open"],
-      ["Assignment", "Accepted"],
-    ],
-    footer: ["Docs current", "RFQ linked"],
-  },
-  indigo: {
-    header: "Operations view",
-    status: "Workload report",
-    rows: [
-      ["Projects", "In flight"],
-      ["Tasks", "At risk"],
-      ["Invoices", "Queued"],
-      ["Events", "Scheduled"],
-    ],
-    footer: ["CRM linked", "Project rollup"],
-  },
-} as const;
-
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
@@ -125,21 +89,49 @@ function OperationsVisual() {
       </div>
       <div className={styles.visualMain}>
         <div className={styles.visualTopbar}>
-          <strong>Odoo 19 Operations Workspace</strong>
-          <span>ERP workflow view</span>
+          <strong>Operational Intelligence Platform</strong>
+          <span>ERP system view</span>
         </div>
-        <div className={styles.recordSummary}>
+        <div className={styles.metricGrid}>
           <div>
-            <span>Sales order</span>
-            <strong>SO-0842 - Meridian Group</strong>
+            <span>Workflow layer</span>
+            <strong>ERP</strong>
           </div>
           <div>
-            <span>Linked project</span>
-            <strong>Delivery workspace generated</strong>
+            <span>Revenue handoff</span>
+            <strong>Sales</strong>
           </div>
           <div>
-            <span>Vendor workflow</span>
-            <strong>Portal assignment pending</strong>
+            <span>Access control</span>
+            <strong>Vendor</strong>
+          </div>
+          <div>
+            <span>Governance layer</span>
+            <strong>Finance</strong>
+          </div>
+        </div>
+        <div className={styles.visualGrid}>
+          <div className={styles.lineChart}>
+            <div className={styles.panelHeader}>Workflow activity</div>
+            <svg viewBox="0 0 360 150" role="img" aria-label="Workflow activity trend">
+              <polyline
+                points="0,110 38,86 75,94 112,64 148,88 184,56 220,72 256,47 292,58 330,22 360,8"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+          <div className={styles.statusChart}>
+            <div className={styles.panelHeader}>System status</div>
+            <div className={styles.donut} aria-hidden />
+            <ul>
+              <li><span /> Delivery ready <strong>Synced</strong></li>
+              <li><span /> Vendor review <strong>Open</strong></li>
+              <li><span /> Finance gate <strong>Queued</strong></li>
+            </ul>
           </div>
         </div>
         <div className={styles.executionTable}>
@@ -156,20 +148,6 @@ function OperationsVisual() {
               <em>{owner}</em>
             </div>
           ))}
-        </div>
-        <div className={styles.controlPanel}>
-          <div>
-            <span>Financial control</span>
-            <strong>Margin review required before closeout</strong>
-          </div>
-          <div>
-            <span>Approval state</span>
-            <strong>Operations manager review</strong>
-          </div>
-          <div>
-            <span>Reporting view</span>
-            <strong>Sales, project, invoice, and task records linked</strong>
-          </div>
         </div>
       </div>
     </div>
@@ -233,27 +211,14 @@ function SalesPlatformVisual() {
 }
 
 function ProjectPreview({ project }: { project: (typeof selectedProjects)[number] }) {
-  const preview = projectPreviewRows[project.accent];
-
   return (
     <article className={styles.projectCard}>
       <div className={`${styles.projectVisual} ${styles[project.accent]}`} aria-hidden>
-        <div className={styles.previewChrome}>
-          <strong>{preview.header}</strong>
-          <span>{preview.status}</span>
-        </div>
-        <div className={styles.previewTable}>
-          {preview.rows.map(([label, state]) => (
-            <div key={label}>
-              <span>{label}</span>
-              <strong>{state}</strong>
-            </div>
-          ))}
-        </div>
-        <div className={styles.previewFooter}>
-          {preview.footer.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
+        <span />
+        <div>
+          <i />
+          <i />
+          <i />
         </div>
       </div>
       <div className={styles.projectCardBody}>

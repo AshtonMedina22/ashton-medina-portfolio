@@ -263,6 +263,137 @@
   }
 }
 
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+
+  div {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--home-border);
+    border-radius: 12px;
+    background: var(--home-surface);
+  }
+
+  span {
+    display: block;
+    color: var(--home-muted);
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.55rem;
+    color: var(--home-text);
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+
+  div:nth-child(2) strong {
+    color: #38bdf8;
+  }
+
+  div:nth-child(4) strong {
+    color: #34d399;
+  }
+}
+
+.visualGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.85rem;
+  margin-top: 0.85rem;
+}
+
+.lineChart,
+.statusChart {
+  min-height: 12rem;
+  padding: 1rem;
+  border: 1px solid var(--home-border);
+  border-radius: 12px;
+  background: var(--home-surface);
+}
+
+.lineChart {
+  color: #818cf8;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 8rem;
+    opacity: 0.95;
+  }
+}
+
+.statusChart {
+  display: grid;
+  grid-template-columns: 7.4rem 1fr;
+  align-items: center;
+  gap: 1rem;
+
+  .panelHeader {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  ul {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--home-muted);
+    font-size: 0.72rem;
+  }
+
+  li span {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #6366f1;
+  }
+
+  li:nth-child(2) span {
+    background: #06b6d4;
+  }
+
+  li:nth-child(3) span {
+    background: #fb7185;
+  }
+
+  li strong {
+    color: var(--home-text);
+    font-weight: 600;
+  }
+}
+
+.donut {
+  width: 7rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(#6366f1 0 62%, #06b6d4 62% 84%, #fb7185 84% 100%);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 27%;
+    border-radius: inherit;
+    background: var(--home-surface);
+  }
+}
+
 .recordSummary {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -675,96 +806,35 @@
 }
 
 .projectVisual {
+  height: 12.5rem;
   position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 0.7rem;
-  height: 13rem;
-  padding: 0.95rem;
   overflow: hidden;
   background: #111827;
 
-  &::before {
-    content: "";
+  > span {
     position: absolute;
-    inset: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    pointer-events: none;
-  }
-}
-
-.previewChrome,
-.previewTable,
-.previewFooter {
-  position: relative;
-  z-index: 1;
-}
-
-.previewChrome {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-
-  strong {
-    color: var(--home-text);
-    font-size: 0.78rem;
-    font-weight: 600;
+    left: 1.25rem;
+    top: 1.25rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 12px;
+    background: #6366f1;
   }
 
-  span {
-    color: var(--home-muted);
-    font-size: 0.7rem;
-  }
-}
-
-.previewTable {
-  display: grid;
-  align-content: start;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 10px;
-  background: rgba(10, 15, 24, 0.52);
-
-  div {
+  > div {
+    position: absolute;
+    left: 5.3rem;
+    right: 1rem;
+    bottom: 1rem;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 0.8rem;
-    padding: 0.62rem 0.75rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-    &:first-child {
-      border-top: 0;
-    }
+    gap: 0.55rem;
   }
 
-  span {
-    color: var(--home-muted);
-    font-size: 0.72rem;
-  }
-
-  strong {
-    color: var(--home-text);
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-align: right;
-  }
-}
-
-.previewFooter {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.55rem;
-
-  span {
-    min-width: 0;
-    padding: 0.55rem 0.6rem;
-    border: 1px solid rgba(255, 255, 255, 0.07);
+  i {
+    display: block;
+    height: 1.45rem;
     border-radius: 8px;
-    color: var(--home-text);
-    background: rgba(148, 163, 184, 0.08);
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -909,9 +979,16 @@
   .projectPane,
   .executionPane,
   .recordSummary div,
+  .metricGrid div,
+  .lineChart,
+  .statusChart,
   .controlPanel,
   .executionTable {
     border-color: rgba(255, 255, 255, 0.08);
+    background: #1a2233;
+  }
+
+  .donut::after {
     background: #1a2233;
   }
 
@@ -1017,6 +1094,9 @@
 
   .heroStats,
   .recordSummary,
+  .metricGrid,
+  .visualGrid,
+  .statusChart,
   .controlPanel div,
   .platformCanvas,
   .orderMeta,
