@@ -1,158 +1,222 @@
 "use client";
 
 import {
+  HiOutlineBriefcase,
+  HiOutlineChartBar,
+  HiOutlineClipboardList,
+  HiOutlineCog,
+  HiOutlineCurrencyDollar,
+  HiOutlineDatabase,
+  HiOutlineDocumentText,
+  HiOutlineExternalLink,
+  HiOutlineHome,
+  HiOutlineLightningBolt,
+  HiOutlineShieldCheck,
+  HiOutlineUsers,
+} from "react-icons/hi";
+import {
   CLIENT_NAME,
   SALES_ORDER_ID,
   CLIENT_REVENUE_FORMATTED,
   ESTIMATED_COST_FORMATTED,
   MARGIN_FORMATTED,
+  MARGIN_PCT_FORMATTED,
 } from "../projectData";
 import styles from "./sales-to-delivery-demo.module.scss";
 
-const orderLines = [
-  { service: "Implementation package", qty: 1, subtotal: "$4,000" },
-  { service: "Data migration package", qty: 1, subtotal: "$4,200" },
-  { service: "Training and handoff", qty: 1, subtotal: "$4,200" },
-];
+const navItems = [
+  [HiOutlineHome, "Home"],
+  [HiOutlineUsers, "CRM"],
+  [HiOutlineDatabase, "Sales"],
+  [HiOutlineBriefcase, "Projects"],
+  [HiOutlineClipboardList, "Tasks"],
+  [HiOutlineShieldCheck, "Vendors"],
+  [HiOutlineCurrencyDollar, "Financials"],
+  [HiOutlineChartBar, "Reports"],
+  [HiOutlineCog, "Settings"],
+] as const;
+
+const workflowRows = [
+  ["Sales Order Confirmed", "Sales", "Confirmed", "Jordan Reeves", "May 21, 2026 9:12 AM"],
+  ["Project Workspace Created", "Project", "Active", "Operations Team", "May 21, 2026 9:13 AM"],
+  ["Task Template Generated", "Automation", "Completed", "System", "May 21, 2026 9:14 AM"],
+  ["Vendor Assignments", "Workflow", "In Progress", "Procurement", "May 21, 2026 9:16 AM"],
+  ["Initial Invoice Generated", "Finance", "Pending Approval", "Finance", "May 21, 2026 9:18 AM"],
+] as const;
 
 const generatedTasks = [
-  { title: "Implementation milestone", detail: "12 tasks from service line", state: "Ready" },
-  { title: "Data migration milestone", detail: "8 tasks with assigned owner", state: "Queued" },
-  { title: "Training and closeout", detail: "7 tasks plus approval gate", state: "Ready" },
-];
+  ["Implementation milestone", "12 tasks from service line", "Ready"],
+  ["Data migration milestone", "8 tasks with assigned owner", "Queued"],
+  ["Training and closeout", "7 tasks plus approval gate", "Ready"],
+] as const;
 
-const syncFields = [
-  { label: "Client revenue", value: CLIENT_REVENUE_FORMATTED },
-  { label: "Estimated cost", value: ESTIMATED_COST_FORMATTED },
-  { label: "Projected margin", value: MARGIN_FORMATTED },
-  { label: "Source link", value: SALES_ORDER_ID },
-];
+const syncedMetadata = [
+  ["Client Revenue", CLIENT_REVENUE_FORMATTED],
+  ["Estimated Cost", ESTIMATED_COST_FORMATTED],
+  ["Projected Margin", `${MARGIN_FORMATTED} (${MARGIN_PCT_FORMATTED})`],
+  ["Source Link", SALES_ORDER_ID],
+  ["Linked Records", "17"],
+] as const;
+
+const outcomeItems = [
+  "No manual re-entry",
+  "Full audit trail",
+  "Real-time visibility",
+  "Financial controls inherited",
+] as const;
+
+function StatusBadge({ state }: { state: string }) {
+  return <span className={styles[`state${state.replace(/\s+/g, "")}`]}>{state}</span>;
+}
 
 export function SalesToDeliveryDemo() {
   return (
     <div className={styles.shellWrap}>
-      <div className={styles.salesDemoShell}>
-        <div className={styles.shellTopBar}>
-          <div className={styles.windowDots} aria-hidden>
-            <span />
-            <span />
-            <span />
+      <div className={styles.erpShell}>
+        <aside className={styles.erpSidebar} aria-label="ERP navigation">
+          <div className={styles.erpLogo}>A</div>
+          <nav>
+            {navItems.map(([Icon, label]) => (
+              <span key={label} className={label === "Projects" ? styles.activeNavItem : undefined}>
+                <Icon />
+                {label}
+              </span>
+            ))}
+          </nav>
+        </aside>
+
+        <section className={styles.erpWorkspace}>
+          <header className={styles.erpTopbar}>
+            <div>
+              <strong>Sales Order {SALES_ORDER_ID}</strong>
+              <StatusBadge state="Confirmed" />
+            </div>
+            <div className={styles.erpTopbarActions}>
+              <button type="button">
+                View in CRM
+                <HiOutlineExternalLink />
+              </button>
+              <button type="button">Actions</button>
+            </div>
+          </header>
+
+          <div className={styles.erpTabs} aria-label="Sales order tabs">
+            {["Overview", "Project", "Tasks", "Vendors", "Financials", "Activity", "Documents"].map((tab) => (
+              <span key={tab} className={tab === "Overview" ? styles.activeTab : undefined}>
+                {tab}
+              </span>
+            ))}
           </div>
-          <span className={styles.shellTitle}>Sales Order to Project</span>
-        </div>
 
-        <div className={styles.salesStatusStrip}>
-          <span>{SALES_ORDER_ID}</span>
-          <span>{CLIENT_NAME}</span>
-          <strong>Confirmed</strong>
-          <strong>Project + tasks generated</strong>
-        </div>
-
-        <div className={styles.salesComposition}>
-          <section className={styles.salesHeroModule} aria-label="Confirmed order to generated project">
-            <div className={styles.salesHeroHeader}>
-              <div>
-                <p>Order-to-project automation</p>
-                <h2>Confirmed order created the project, task tree, and controls</h2>
+          <div className={styles.erpGrid}>
+            <section className={styles.orderRecordPanel}>
+              <div className={styles.moduleEyebrow}>Confirmed sales order</div>
+              <div className={styles.recordTitleRow}>
+                <h2>{SALES_ORDER_ID}</h2>
+                <StatusBadge state="Confirmed" />
               </div>
-              <span>0 manual re-entry</span>
-            </div>
+              <dl className={styles.recordDetails}>
+                <div><dt>Customer</dt><dd>{CLIENT_NAME}</dd></div>
+                <div><dt>Order date</dt><dd>May 6, 2026</dd></div>
+                <div><dt>Order value</dt><dd>{CLIENT_REVENUE_FORMATTED}</dd></div>
+                <div><dt>Sales rep</dt><dd>Jordan Reeves</dd></div>
+              </dl>
+              <button type="button" className={styles.inlineAction}>
+                View in CRM
+                <HiOutlineExternalLink />
+              </button>
+            </section>
 
-            <div className={styles.salesTransformGrid}>
-              <div className={styles.salesOrderPreview}>
-                <div className={styles.moduleEyebrow}>Confirmed sales order</div>
-                <h3>{CLIENT_NAME}</h3>
-                <div className={styles.recordMeta}>
-                  <span>Order #{SALES_ORDER_ID}</span>
-                  <span>Signed May 6, 2026</span>
-                  <span>Booked</span>
+            <section className={styles.generatedProjectPanel}>
+              <div className={styles.moduleEyebrow}>Auto-generated project</div>
+              <div className={styles.projectHeader}>
+                <div>
+                  <HiOutlineBriefcase />
+                  <h2>Delivery Workspace</h2>
                 </div>
-
-                <div className={styles.orderLinePreview}>
-                  {orderLines.map((line) => (
-                    <div key={line.service}>
-                      <span>{line.service}</span>
-                      <small>Qty {line.qty}</small>
-                      <strong>{line.subtotal}</strong>
-                    </div>
-                  ))}
-                </div>
-
-                <div className={styles.orderTotal}>
-                  <span>Total contracted value</span>
-                  <strong>{CLIENT_REVENUE_FORMATTED}</strong>
-                </div>
+                <StatusBadge state="Active" />
               </div>
+              <dl className={styles.projectDetails}>
+                <div><dt>Project ID</dt><dd>PRJ-0187</dd></div>
+                <div><dt>Workspace owner</dt><dd>Operations Team</dd></div>
+                <div><dt>Created from</dt><dd>{SALES_ORDER_ID}</dd></div>
+                <div><dt>Start date</dt><dd>May 6, 2026</dd></div>
+                <div><dt>Target delivery</dt><dd>Jun 18, 2026</dd></div>
+              </dl>
+              <button type="button" className={styles.inlineAction}>Open workspace</button>
+            </section>
 
-              <div className={styles.salesFlowIndicator} aria-hidden>
-                <span />
-                <strong>syncs</strong>
-                <span />
-              </div>
-
-              <div className={styles.salesProjectPreview}>
-                <div className={styles.moduleEyebrow}>Auto-generated project</div>
-                <h3>Project from {SALES_ORDER_ID}</h3>
-                <div className={styles.recordMeta}>
-                  <span>Client linked</span>
-                  <span>Task template generated</span>
-                  <span>Owners and vendors assigned</span>
-                </div>
-
-                <div className={styles.projectStagePreview}>
-                  <div>
-                    <span>To do</span>
-                    <strong>2</strong>
-                  </div>
-                  <div>
-                    <span>In progress</span>
-                    <strong>1</strong>
-                  </div>
-                  <div>
-                    <span>Waiting</span>
-                    <strong>1</strong>
-                  </div>
-                  <div>
-                    <span>Done</span>
-                    <strong>1</strong>
-                  </div>
-                </div>
-
-                <div className={styles.projectTrace}>
-                  Sales order, opportunity, project, vendor assignments, invoices, and margin controls share the same source ID.
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <aside className={styles.salesSupportRail} aria-label="Generated task and sync summary">
-            <section className={styles.supportModule}>
+            <aside className={styles.generatedTaskPanel}>
               <div className={styles.moduleEyebrow}>Generated task preview</div>
-              <div className={styles.taskPreviewList}>
-                {generatedTasks.map((task) => (
-                  <div key={task.title}>
-                    <span>{task.title}</span>
-                    <small>{task.detail}</small>
-                    <strong>{task.state}</strong>
+              <div className={styles.generatedTaskList}>
+                {generatedTasks.map(([title, detail, state]) => (
+                  <div key={title}>
+                    <HiOutlineClipboardList />
+                    <span>
+                      <strong>{title}</strong>
+                      <em>{detail}</em>
+                    </span>
+                    <StatusBadge state={state} />
                   </div>
                 ))}
               </div>
+              <button type="button" className={styles.inlineAction}>View full task tree</button>
+            </aside>
+
+            <section className={styles.workflowActivityPanel}>
+              <div className={styles.moduleEyebrow}>Key workflow items</div>
+              <div className={styles.workflowActivityTable}>
+                <div className={styles.workflowHead}>
+                  <span>Item</span>
+                  <span>Type</span>
+                  <span>Status</span>
+                  <span>Owner</span>
+                  <span>Updated</span>
+                </div>
+                {workflowRows.map(([item, type, status, owner, updated]) => (
+                  <div key={item}>
+                    <span>{item}</span>
+                    <em>{type}</em>
+                    <StatusBadge state={status} />
+                    <em>{owner}</em>
+                    <em>{updated}</em>
+                  </div>
+                ))}
+              </div>
+              <button type="button" className={styles.inlineAction}>View all workflow activity</button>
             </section>
 
-            <section className={styles.supportModule}>
+            <aside className={styles.syncedMetadataPanel}>
               <div className={styles.moduleEyebrow}>Synced metadata</div>
-              <div className={styles.syncFieldGrid}>
-                {syncFields.map((field) => (
-                  <div key={field.label}>
-                    <span>{field.label}</span>
-                    <strong>{field.value}</strong>
+              <div className={styles.metadataRows}>
+                {syncedMetadata.map(([label, value]) => (
+                  <div key={label}>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
                   </div>
                 ))}
               </div>
-            </section>
-          </aside>
-        </div>
+              <button type="button" className={styles.inlineAction}>View synced fields</button>
+            </aside>
+          </div>
+        </section>
       </div>
+
+      <section className={styles.systemOutcomeBar}>
+        <div>
+          <HiOutlineLightningBolt />
+          <span>System outcome</span>
+          <p>Confirmed order creates the project workspace, task tree, and CRM linkage. All records, controls, and financials synchronize automatically.</p>
+        </div>
+        <div>
+          {outcomeItems.map((item) => (
+            <span key={item}>
+              <HiOutlineShieldCheck />
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

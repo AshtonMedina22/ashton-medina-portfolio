@@ -1101,3 +1101,531 @@ $text-subtle: #64748b;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Current Sales-to-Delivery live demo mockup */
+.erpShell,
+.systemOutcomeBar {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+}
+
+.erpShell {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.34);
+  border-radius: 0.8rem;
+  background:
+    radial-gradient(circle at 82% 0%, rgba(99, 102, 241, 0.18), transparent 28rem),
+    #070b12;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.erpSidebar {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0.7rem;
+  border-right: 1px solid rgba(148, 163, 184, 0.12);
+  background: rgba(11, 18, 32, 0.82);
+
+  nav {
+    display: grid;
+    gap: 0.38rem;
+  }
+
+  span {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.55rem;
+    border-radius: 0.45rem;
+    color: #94a3b8;
+    font-size: 0.64rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
+
+.erpLogo {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-inline: auto;
+  border: 1px solid rgba(99, 102, 241, 0.46);
+  border-radius: 0.45rem;
+  color: #8b5cf6;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.activeNavItem {
+  background: rgba(99, 102, 241, 0.18);
+  color: #ffffff !important;
+}
+
+.erpWorkspace {
+  min-width: 0;
+  padding: 1.05rem;
+}
+
+.erpTopbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-width: 0;
+  }
+
+  strong {
+    min-width: 0;
+    color: #f8fafc;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+}
+
+.erpTopbarActions {
+  display: flex;
+  gap: 0.5rem;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 2rem;
+    padding: 0 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 0.42rem;
+    background: rgba(15, 23, 42, 0.72);
+    color: #f8fafc;
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    &:last-child {
+      border-color: rgba(99, 102, 241, 0.55);
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    }
+  }
+}
+
+.erpTabs {
+  display: flex;
+  gap: 1.4rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+  span {
+    padding: 0.75rem 0 0.65rem;
+    color: #94a3b8;
+    font-size: 0.66rem;
+    font-weight: 700;
+  }
+}
+
+.activeTab {
+  color: #ffffff !important;
+  box-shadow: inset 0 -2px #8b5cf6;
+}
+
+.erpGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr) minmax(0, 1.05fr);
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.orderRecordPanel,
+.generatedProjectPanel,
+.generatedTaskPanel,
+.workflowActivityPanel,
+.syncedMetadataPanel {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 0.7rem;
+  background:
+    linear-gradient(145deg, rgba(17, 24, 39, 0.92), rgba(10, 15, 24, 0.9));
+}
+
+.moduleEyebrow {
+  color: #a7b7d2;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.recordTitleRow,
+.projectHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.7rem;
+
+  h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.2rem, 2vw, 1.65rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+}
+
+.projectHeader > div {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #8b5cf6;
+  }
+}
+
+.recordDetails,
+.projectDetails {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+
+  div {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  dt,
+  dd {
+    min-width: 0;
+    margin: 0;
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  dt {
+    color: #94a3b8;
+  }
+
+  dd {
+    color: #f8fafc;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+}
+
+.projectDetails {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  div {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
+
+.inlineAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #8b5cf6;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.generatedTaskList {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+
+  div {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.65rem;
+    align-items: center;
+    padding: 0.72rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 0.55rem;
+    background: rgba(15, 23, 42, 0.72);
+  }
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    color: #8b5cf6;
+  }
+
+  span,
+  strong,
+  em {
+    min-width: 0;
+  }
+
+  span {
+    display: grid;
+    gap: 0.22rem;
+  }
+
+  strong {
+    color: #ffffff;
+    font-size: 0.74rem;
+    line-height: 1.25;
+  }
+
+  em {
+    color: #94a3b8;
+    font-size: 0.62rem;
+    font-style: normal;
+    line-height: 1.25;
+  }
+}
+
+.workflowActivityPanel {
+  grid-column: span 2;
+}
+
+.workflowActivityTable {
+  display: grid;
+  margin-top: 0.85rem;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.55rem;
+
+  > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(4rem, 0.5fr) minmax(5rem, 0.62fr) minmax(5rem, 0.7fr) minmax(7rem, 0.85fr);
+    gap: 0.75rem;
+    align-items: center;
+    min-width: 0;
+    padding: 0.58rem 0.75rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    font-size: 0.66rem;
+  }
+
+  > div:first-child {
+    border-top: 0;
+  }
+
+  span {
+    min-width: 0;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  em {
+    min-width: 0;
+    font-style: normal;
+    line-height: 1.25;
+  }
+}
+
+.workflowHead {
+  color: #64748b !important;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  span {
+    color: #94a3b8;
+  }
+}
+
+.metadataRows {
+  display: grid;
+  margin-top: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 0.55rem;
+  overflow: hidden;
+
+  div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.68rem 0.75rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    background: rgba(15, 23, 42, 0.44);
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  span {
+    color: #94a3b8;
+    font-size: 0.68rem;
+  }
+
+  strong {
+    color: #f8fafc;
+    font-size: 0.7rem;
+    text-align: right;
+  }
+}
+
+.systemOutcomeBar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 0.8rem;
+  background:
+    radial-gradient(circle at 3% 0%, rgba(99, 102, 241, 0.18), transparent 14rem),
+    rgba(15, 23, 42, 0.82);
+
+  > div:first-child {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.35rem 0.75rem;
+
+    svg {
+      grid-row: span 2;
+      width: 1.4rem;
+      height: 1.4rem;
+      color: #8b5cf6;
+    }
+
+    span {
+      color: #94a3b8;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+  }
+
+  > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  > div:last-child span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.08);
+    color: #cbd5e1;
+    font-size: 0.66rem;
+    font-weight: 700;
+    line-height: 1.15;
+
+    svg {
+      flex: 0 0 auto;
+      width: 0.82rem;
+      height: 0.82rem;
+      color: #22c55e;
+    }
+  }
+}
+
+.stateConfirmed,
+.stateActive,
+.stateCompleted,
+.stateReady {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.28rem 0.48rem;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  font-size: 0.58rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stateQueued,
+.stateInProgress,
+.statePendingApproval {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.28rem 0.48rem;
+  border-radius: 999px;
+  background: rgba(234, 179, 8, 0.12);
+  color: #facc15;
+  font-size: 0.58rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media (max-width: 1100px) {
+  .erpGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowActivityPanel {
+    grid-column: auto;
+  }
+
+  .workflowActivityTable > div {
+    grid-template-columns: 1fr;
+  }
+
+  .systemOutcomeBar,
+  .systemOutcomeBar > div:last-child {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .erpShell {
+    grid-template-columns: 1fr;
+  }
+
+  .erpSidebar {
+    display: none;
+  }
+
+  .erpTopbar,
+  .erpTopbar > div:first-child,
+  .erpTopbarActions,
+  .erpTabs {
+    flex-wrap: wrap;
+  }
+
+  .projectDetails {
+    grid-template-columns: 1fr;
+  }
+}
