@@ -100,7 +100,7 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
       <div className={styles.graphicHero}>
         <div className={styles.orderFlowMark} aria-hidden>
           <i />
-          <em>→</em>
+          <em aria-hidden />
           <i />
         </div>
         <div className={styles.flowNodeCluster} aria-hidden>
@@ -110,7 +110,7 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
         </div>
       </div>
       <div className={styles.graphicSignals}>
-        <span>Order → project</span>
+        <span>Order to project</span>
         <strong>SO-0842</strong>
         <small>3 services · $12.4K · zero re-entry</small>
       </div>

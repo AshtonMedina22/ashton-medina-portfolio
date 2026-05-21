@@ -29,7 +29,7 @@ export function SalesOrderPanel() {
             <span className={`${styles.stagePill} ${stage === "Booked" ? styles.active : styles.inactive}`}>
               {stage}
             </span>
-            {i < PIPELINE_STAGES.length - 1 && <span className={styles.stageArrow}> → </span>}
+            {i < PIPELINE_STAGES.length - 1 && <span className={styles.stageArrow} aria-hidden />}
           </span>
         ))}
       </div>

@@ -266,9 +266,22 @@ $text-subtle: #64748b;
 }
 
 .stageArrow {
-  font-size: 0.75rem;
-  color: $text-subtle;
-  font-weight: 400;
+  display: inline-block;
+  width: 1.15rem;
+  height: 1px;
+  vertical-align: middle;
+  background: rgba(148, 163, 184, 0.42);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0.34rem;
+    height: 0.34rem;
+    margin-left: auto;
+    border-top: 1px solid rgba(148, 163, 184, 0.62);
+    border-right: 1px solid rgba(148, 163, 184, 0.62);
+    transform: translateY(-45%) rotate(45deg);
+  }
 }
 
 /* Order header */
@@ -797,6 +810,7 @@ $text-subtle: #64748b;
   gap: 0.45rem;
 
   span {
+    min-width: 0;
     padding: 0.32rem 0.52rem;
     border: 1px solid rgba(99, 102, 241, 0.32);
     border-radius: 999px;
@@ -804,6 +818,8 @@ $text-subtle: #64748b;
     color: #c4b5fd;
     font-size: 0.65rem;
     font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -859,6 +875,7 @@ $text-subtle: #64748b;
     color: #a7f3d0;
     font-size: 0.72rem;
     font-weight: 700;
+    line-height: 1.25;
   }
 
   strong {
@@ -883,7 +900,10 @@ $text-subtle: #64748b;
 
   strong {
     writing-mode: vertical-rl;
-    padding: 0.5rem 0.25rem;
+    padding: 0.55rem 0.3rem;
+    border: 1px solid rgba(99, 102, 241, 0.26);
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.12);
     font-size: 0.58rem;
     font-weight: 820;
     letter-spacing: 0.12em;
@@ -973,12 +993,16 @@ $text-subtle: #64748b;
     color: $text;
     font-size: 0.78rem;
     font-weight: 760;
+    line-height: 1.22;
+    overflow-wrap: anywhere;
   }
 
   small {
     grid-column: 1;
     color: $text-muted;
     font-size: 0.68rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
   }
 
   strong {
@@ -986,6 +1010,7 @@ $text-subtle: #64748b;
     grid-row: 1 / span 2;
     color: #6ee7b7;
     font-size: 0.68rem;
+    line-height: 1.2;
   }
 }
 

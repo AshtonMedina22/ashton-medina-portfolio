@@ -57,7 +57,7 @@ const visualContent: Record<
   "sales-to-delivery-automation-platform": {
     title: "Confirmed order automation",
     status: "Project generated",
-    record: "SO-0842 - Meridian Group delivery workspace",
+    record: "SO-0842 - Atlas Group delivery workspace",
     related: [
       ["CRM", "65+ fields"],
       ["Project", "Created"],
@@ -131,7 +131,7 @@ const visualContent: Record<
     ],
     states: ["CRM aggregated", "Tasks surfaced", "Revenue rolled up", "Report exported"],
     rows: [
-      ["SO-0842", "Meridian Group delivery, owner Sarah M.", "Confirmed"],
+      ["SO-0842", "Atlas Group delivery, owner Sarah M.", "Confirmed"],
       ["SO-0887", "Acme Inc proposal, owner James K.", "Follow-up"],
       ["SO-0882", "Acme Corp contract, owner Sarah M.", "Contract sent"],
       ["Overdue delivery tasks", "Three task records need manager review", "Flagged"],

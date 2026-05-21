@@ -86,7 +86,7 @@ export function SalesToDeliveryDemo() {
 
               <div className={styles.salesFlowIndicator} aria-hidden>
                 <span />
-                <strong>creates</strong>
+                <strong>syncs</strong>
                 <span />
               </div>
 

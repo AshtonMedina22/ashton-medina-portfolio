@@ -188,7 +188,7 @@ function SalesPlatformVisual() {
           <span>Confirmed sales order</span>
           <h3>SO-0842</h3>
           <div className={styles.orderMeta}>
-            <i>Meridian Group</i>
+            <i>Atlas Group</i>
             <i>$12.4K</i>
             <i>Confirmed</i>
           </div>
@@ -198,9 +198,7 @@ function SalesPlatformVisual() {
             <em><b>Finance rules</b><span>Revenue, cost, margin copied</span></em>
           </div>
         </section>
-        <div className={styles.platformArrow} aria-hidden>
-          -&gt;
-        </div>
+        <div className={styles.platformArrow} aria-hidden />
         <section className={styles.projectPane}>
           <span>Generated project</span>
           <h3>Delivery workspace</h3>
@@ -210,9 +208,7 @@ function SalesPlatformVisual() {
             <i>Source records linked</i>
           </div>
         </section>
-        <div className={styles.platformArrow} aria-hidden>
-          -&gt;
-        </div>
+        <div className={styles.platformArrow} aria-hidden />
         <section className={styles.executionPane}>
           <span>Execution flow</span>
           <div className={styles.executionChecklist}>

@@ -7,7 +7,7 @@
  * - Work orders never appear as the top-level context of a screen; they are rows under a project.
  */
 
-export const CLIENT_NAME = "Meridian Group";
+export const CLIENT_NAME = "Atlas Group";
 
 /** Sales order = the deal/project at top level. One project is tied to one sales order. */
 export const SALES_ORDER_ID = "SO-0842";
