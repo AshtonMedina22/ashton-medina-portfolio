@@ -16,7 +16,10 @@ import {
   HiOutlineCurrencyDollar,
   HiOutlineDocumentText,
   HiOutlineLink,
+  HiOutlineLockClosed,
+  HiOutlineOfficeBuilding,
   HiOutlineShieldCheck,
+  HiOutlineTrendingUp,
   HiOutlineUsers,
 } from "react-icons/hi";
 import styles from "./ProjectPage.module.scss";
@@ -153,6 +156,51 @@ function SalesHeroPanel() {
   );
 }
 
+function RevenueHeroPanel() {
+  return (
+    <aside className={`${styles.heroPanel} ${styles.revenueHeroPanel}`} aria-label="Revenue financial control system summary">
+      <div className={styles.revenuePanelTopbar}>
+        <strong>Revenue Financial Control</strong>
+        <span>Closeout view</span>
+      </div>
+
+      <section className={styles.revenueMarginPreview}>
+        <div>
+          <span>Protected margin</span>
+          <strong>53.2%</strong>
+          <em>$6,600 retained after vendor bill reconciliation</em>
+        </div>
+        <div className={styles.revenueTrend} aria-hidden>
+          <i style={{ inlineSize: "18%" }} />
+          <i style={{ inlineSize: "35%" }} />
+          <i style={{ inlineSize: "31%" }} />
+          <i style={{ inlineSize: "52%" }} />
+          <i style={{ inlineSize: "49%" }} />
+          <i style={{ inlineSize: "72%" }} />
+        </div>
+      </section>
+
+      <div className={styles.revenueMetricGrid}>
+        <div><span>Revenue</span><strong>$12,400</strong></div>
+        <div><span>Actual cost</span><strong>$5,800</strong></div>
+        <div><span>Variance</span><strong>-$400</strong></div>
+      </div>
+
+      <div className={styles.revenueControlRows}>
+        <div><HiOutlineDocumentText /><span>Invoice paid</span><strong>INV-2301</strong></div>
+        <div><HiOutlineOfficeBuilding /><span>Vendor bills matched</span><strong>3 of 3</strong></div>
+        <div><HiOutlineTrendingUp /><span>Margin threshold met</span><strong>Passed</strong></div>
+        <div><HiOutlineLockClosed /><span>Closeout approval</span><strong>Eligible</strong></div>
+      </div>
+
+      <div className={styles.revenueOutcomeStrip}>
+        <span><HiOutlineShieldCheck />Margin protected</span>
+        <span><HiOutlineCurrencyDollar />Payout gated</span>
+      </div>
+    </aside>
+  );
+}
+
 function ProjectHeroPanel({
   slugPath,
   profile,
@@ -166,6 +214,9 @@ function ProjectHeroPanel({
 }) {
   if (slugPath === "sales-to-delivery-automation-platform") {
     return <SalesHeroPanel />;
+  }
+  if (slugPath === "revenue-financial-control-engine") {
+    return <RevenueHeroPanel />;
   }
 
   return (
