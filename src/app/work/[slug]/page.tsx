@@ -15,7 +15,9 @@ import {
   HiOutlineCheckCircle,
   HiOutlineClipboardList,
   HiOutlineCurrencyDollar,
+  HiOutlineDatabase,
   HiOutlineDocumentText,
+  HiOutlineExclamationCircle,
   HiOutlineFolder,
   HiOutlineGlobeAlt,
   HiOutlineLink,
@@ -272,6 +274,64 @@ function VendorHeroPanel() {
   );
 }
 
+function OperationalHeroPanel() {
+  const workloadRows = [
+    ["Confirmed delivery", "72%", "green"],
+    ["Proposal follow-up", "18%", "violet"],
+    ["At-risk operations", "10%", "red"],
+  ] as const;
+
+  return (
+    <aside className={`${styles.heroPanel} ${styles.opsHeroPanel}`} aria-label="Operational intelligence system summary">
+      <div className={styles.opsPanelTopbar}>
+        <strong>Operational Intelligence</strong>
+        <span>Export ready</span>
+      </div>
+
+      <section className={styles.opsInsightPreview}>
+        <div>
+          <span>Executive operational insight</span>
+          <h2>Delivery pipeline needs 3 task reviews</h2>
+          <p>CRM, project, invoice, task, and event records aggregated into one operations view.</p>
+        </div>
+        <strong>86%</strong>
+      </section>
+
+      <div className={styles.opsHeroGrid}>
+        <section className={styles.opsWorkloadMini}>
+          <div className={styles.moduleEyebrow}>Pipeline workload mix</div>
+          {workloadRows.map(([label, value, tone]) => (
+            <div key={label}>
+              <span>{label}</span>
+              <strong>{value}</strong>
+              <i className={styles[`opsBar${tone[0].toUpperCase()}${tone.slice(1)}`]} />
+            </div>
+          ))}
+        </section>
+
+        <section className={styles.opsKpiMini}>
+          <div><HiOutlineUsers /><span>Reviewed</span><strong>8</strong></div>
+          <div><HiOutlineFolder /><span>Projects</span><strong>14</strong></div>
+          <div><HiOutlineExclamationCircle /><span>Overdue</span><strong>3</strong></div>
+          <div><HiOutlineCurrencyDollar /><span>Revenue</span><strong>$84.2K</strong></div>
+        </section>
+      </div>
+
+      <section className={styles.opsRecordsMini}>
+        <div><span>SO-0842</span><strong>Atlas Group</strong><em>Confirmed</em></div>
+        <div><span>SO-0887</span><strong>Acme Inc</strong><em>Proposal sent</em></div>
+        <div><span>SO-0882</span><strong>Acme Corp</strong><em>Contract sent</em></div>
+      </section>
+
+      <div className={styles.opsOutcomeStrip}>
+        <span><HiOutlineDatabase />ERP records live</span>
+        <span><HiOutlineClipboardList />Report queued</span>
+        <span><HiOutlineCheckCircle />Export ready</span>
+      </div>
+    </aside>
+  );
+}
+
 function ProjectHeroPanel({
   slugPath,
   profile,
@@ -291,6 +351,9 @@ function ProjectHeroPanel({
   }
   if (slugPath === "vendor-lifecycle-compliance-platform") {
     return <VendorHeroPanel />;
+  }
+  if (slugPath === "operational-intelligence-platform") {
+    return <OperationalHeroPanel />;
   }
 
   return (
