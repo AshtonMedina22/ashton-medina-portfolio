@@ -1,9 +1,16 @@
 import { Column, Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
+  HiOutlineBriefcase,
+  HiOutlineCalendar,
   HiOutlineChartBar,
+  HiOutlineClipboardList,
+  HiOutlineCurrencyDollar,
+  HiOutlineDocumentText,
+  HiOutlineLink,
   HiOutlineShieldCheck,
   HiOutlineShare,
+  HiOutlineUsers,
 } from "react-icons/hi";
 import { home, about, person, baseURL, techStack } from "@/resources";
 import { TechStackMarquee } from "@/components/home/TechStackMarquee";
@@ -113,70 +120,119 @@ export async function generateMetadata() {
 }
 
 function OperationsVisual() {
+  const workflowRows = [
+    ["Sales order to project", "Complete", "SO-0842", "Automation"],
+    ["Project planning", "Complete", "PRJ-0187", "Operations"],
+    ["Vendor assignment packet", "In review", "ASN-0842", "Portal"],
+    ["Invoice control check", "Ready", "INV-2301", "Finance"],
+    ["Closeout gate", "Blocked", "PRJ-0187", "Finance"],
+  ] as const;
+
   return (
     <div className={styles.opsVisual} aria-label="Operational command-center product preview">
       <div className={styles.visualRail} aria-hidden>
         <span className={styles.logoMark}>A</span>
-        <i className={styles.activeIcon} />
-        <i />
-        <i />
-        <i />
-        <i />
+        <span className={styles.activeIcon}>Home</span>
+        <span>CRM</span>
+        <span>Projects</span>
+        <span>Vendors</span>
+        <span>Reports</span>
       </div>
       <div className={styles.visualMain}>
         <div className={styles.visualTopbar}>
           <strong>Odoo 19 Operations Workspace</strong>
           <span>ERP workflow view</span>
         </div>
-        <div className={styles.recordSummary}>
+        <div className={styles.visualMetrics}>
           <div>
-            <span>Source transaction</span>
-            <strong>SO-0842 confirmed from CRM opportunity</strong>
+            <span>Synced fields</span>
+            <strong>65+</strong>
+            <em>CRM to project</em>
           </div>
           <div>
-            <span>Automation result</span>
-            <strong>Project, tasks, and assignments generated</strong>
+            <span>Tasks generated</span>
+            <strong>27</strong>
+            <em>From templates</em>
           </div>
           <div>
-            <span>Governance state</span>
-            <strong>Finance and vendor controls inherited</strong>
+            <span>Vendors scoped</span>
+            <strong>3</strong>
+            <em>Portal access</em>
+          </div>
+          <div>
+            <span>Controls</span>
+            <strong>Ready</strong>
+            <em>Invoice + margin</em>
           </div>
         </div>
-        <div className={styles.executionTable}>
-          <div className={styles.panelHeader}>Order-to-delivery workflow trace</div>
-          {[
-            ["CRM account + contacts", "Synced", "65+ fields"],
-            ["Project workspace", "Created", "Source ID linked"],
-            ["Task template tree", "Generated", "27 tasks"],
-            ["Vendor assignment packet", "Scoped", "Portal only"],
-          ].map(([workflow, status, owner]) => (
+
+        <div className={styles.visualDashboardGrid}>
+          <section className={styles.workflowChart}>
+            <div className={styles.panelHeader}>Order-to-delivery progress</div>
+            <div className={styles.chartFrame} aria-hidden>
+              <span style={{ inlineSize: "16%" }} />
+              <span style={{ inlineSize: "34%" }} />
+              <span style={{ inlineSize: "48%" }} />
+              <span style={{ inlineSize: "67%" }} />
+              <span style={{ inlineSize: "82%" }} />
+              <span style={{ inlineSize: "94%" }} />
+            </div>
+            <div className={styles.chartLabels}>
+              <span>Confirmed</span>
+              <span>Project</span>
+              <span>Vendor</span>
+              <span>Closeout</span>
+            </div>
+          </section>
+
+          <section className={styles.workflowStatus}>
+            <div className={styles.panelHeader}>Workflow status</div>
+            <div className={styles.statusDonut} aria-hidden />
+            <div className={styles.statusLegend}>
+              <span><i className={styles.completeDot} />Complete <strong>52%</strong></span>
+              <span><i className={styles.activeDot} />In progress <strong>28%</strong></span>
+              <span><i className={styles.waitingDot} />Waiting <strong>12%</strong></span>
+              <span><i className={styles.blockedDot} />Blocked <strong>8%</strong></span>
+            </div>
+          </section>
+        </div>
+
+        <section className={styles.workflowTable}>
+          <div className={styles.panelHeader}>Recent workflow executions</div>
+          <div className={styles.tableHead}>
+            <span>Workflow</span>
+            <span>Status</span>
+            <span>Record</span>
+            <span>Owner</span>
+          </div>
+          {workflowRows.map(([workflow, status, record, owner]) => (
             <div key={workflow}>
               <span>{workflow}</span>
-              <strong>{status}</strong>
+              <strong data-state={status}>{status}</strong>
+              <em>{record}</em>
               <em>{owner}</em>
             </div>
           ))}
-        </div>
-        <div className={styles.controlPanel}>
-          <div>
-            <span>Financial control</span>
-            <strong>Invoice, bill, payment, and margin checks attached to project</strong>
-          </div>
-          <div>
-            <span>Approval state</span>
-            <strong>Closeout blocked until finance and delivery states are complete</strong>
-          </div>
-          <div>
-            <span>Reporting view</span>
-            <strong>Sales order, project, invoice, task, and vendor records roll up together</strong>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   );
 }
 
 function SalesPlatformVisual() {
+  const executionSteps = [
+    [HiOutlineBriefcase, "Vendor packet scoped", "Scope and requirements shared"],
+    [HiOutlineClipboardList, "Delivery tasks queued", "Tasks generated and assigned"],
+    [HiOutlineDocumentText, "Invoice controls active", "Billing and approvals enforced"],
+    [HiOutlineShieldCheck, "Closeout gate enforced", "Delivery and finance completion"],
+  ] as const;
+
+  const outcomeItems = [
+    [HiOutlineLink, "CRM linked", "Source ID and records connected"],
+    [HiOutlineDocumentText, "Project + tasks generated", "Workspace, milestones, and tasks created"],
+    [HiOutlineShieldCheck, "Financial controls inherited", "Revenue, cost, margin, and approvals applied"],
+  ] as const;
+
   return (
     <div className={styles.salesPlatformVisual} aria-label="Sales-to-delivery platform preview">
       <div className={styles.platformTopbar}>
@@ -188,9 +244,9 @@ function SalesPlatformVisual() {
           <span>Confirmed sales order</span>
           <h3>SO-0842</h3>
           <div className={styles.orderMeta}>
-            <i>Atlas Group</i>
-            <i>$12.4K</i>
-            <i>Confirmed</i>
+            <i><HiOutlineUsers />Atlas Group<span>Account</span></i>
+            <i><HiOutlineCurrencyDollar />$12,400<span>Order value</span></i>
+            <i><HiOutlineCalendar />May 21, 2026<span>Order date</span></i>
           </div>
           <div className={styles.platformRows}>
             <em><b>CRM source</b><span>Opportunity, contacts, terms</span></em>
@@ -202,27 +258,53 @@ function SalesPlatformVisual() {
         <section className={styles.projectPane}>
           <span>Generated project</span>
           <h3>Delivery workspace</h3>
-          <div className={styles.taskStack}>
-            <i>Milestones copied</i>
-            <i>Task owners assigned</i>
-            <i>Source records linked</i>
+          <div className={styles.projectScreenshot}>
+            <div className={styles.projectScreenshotTop}>
+              <strong>PRJ-0187 / Delivery Workspace</strong>
+              <span>Active</span>
+            </div>
+            <div className={styles.projectScreenshotBody}>
+              <div>
+                <em>Project overview</em>
+                <strong>PRJ-0187</strong>
+                <span>Operations Team</span>
+              </div>
+              <div>
+                <em>Milestones</em>
+                <span>Scope finalized</span>
+                <span>Tasks generated</span>
+                <span>Vendor packet scoped</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.projectStats}>
+            <i>5<span>Milestones copied</span></i>
+            <i>27<span>Tasks generated</span></i>
+            <i>3<span>Vendors engaged</span></i>
           </div>
         </section>
         <div className={styles.platformArrow} aria-hidden />
         <section className={styles.executionPane}>
           <span>Execution flow</span>
           <div className={styles.executionChecklist}>
-            <i>Vendor packet scoped</i>
-            <i>Delivery tasks queued</i>
-            <i>Invoice controls active</i>
-            <i>Closeout gate enforced</i>
+            {executionSteps.map(([Icon, title, text]) => (
+              <i key={title}>
+                <Icon />
+                <strong>{title}</strong>
+                <span>{text}</span>
+              </i>
+            ))}
           </div>
         </section>
       </div>
       <div className={styles.platformStatus}>
-        <span>CRM linked</span>
-        <span>Project + tasks generated</span>
-        <span>Financial controls inherited</span>
+        {outcomeItems.map(([Icon, title, text]) => (
+          <span key={title}>
+            <Icon />
+            <strong>{title}</strong>
+            <em>{text}</em>
+          </span>
+        ))}
       </div>
     </div>
   );
