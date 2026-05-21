@@ -10,6 +10,15 @@ import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorL
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
 import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
 import { Metadata } from "next";
+import {
+  HiOutlineBriefcase,
+  HiOutlineClipboardList,
+  HiOutlineCurrencyDollar,
+  HiOutlineDocumentText,
+  HiOutlineLink,
+  HiOutlineShieldCheck,
+  HiOutlineUsers,
+} from "react-icons/hi";
 import styles from "./ProjectPage.module.scss";
 
 const projectProfiles: Record<
@@ -73,6 +82,113 @@ function renderDemo(slugPath: string) {
   if (slugPath === "revenue-financial-control-engine") return <RevenueFinancialDemo />;
   if (slugPath === "operational-intelligence-platform") return <OperationalIntelligenceDemo />;
   return null;
+}
+
+function SalesHeroPanel() {
+  const workflowRows = [
+    ["CRM source", "Linked"],
+    ["Project record", "Generated"],
+    ["Task tree", "27 tasks"],
+    ["Vendor packet", "Scoped"],
+  ] as const;
+
+  return (
+    <aside className={`${styles.heroPanel} ${styles.salesHeroPanel}`} aria-label="Sales-to-delivery system summary">
+      <div className={styles.salesPanelTopbar}>
+        <strong>Sales Order to Project</strong>
+        <span>SO-0842</span>
+      </div>
+
+      <div className={styles.salesHeroGrid}>
+        <section className={styles.salesOrderCard}>
+          <div className={styles.moduleEyebrow}>Confirmed sales order</div>
+          <div className={styles.salesRecordTitle}>
+            <h2>SO-0842</h2>
+            <span>Confirmed</span>
+          </div>
+          <div className={styles.salesRecordMeta}>
+            <div><HiOutlineUsers /><strong>Atlas Group</strong><span>Account</span></div>
+            <div><HiOutlineCurrencyDollar /><strong>$12,400</strong><span>Order value</span></div>
+            <div><HiOutlineDocumentText /><strong>65+ fields</strong><span>CRM sync</span></div>
+          </div>
+        </section>
+
+        <section className={styles.salesProjectCard}>
+          <div className={styles.moduleEyebrow}>Generated project</div>
+          <div className={styles.projectWorkspacePreview}>
+            <div>
+              <HiOutlineBriefcase />
+              <strong>Delivery Workspace</strong>
+              <span>PRJ-0187</span>
+            </div>
+            <div>
+              <span>Milestones copied</span>
+              <span>Tasks generated</span>
+              <span>Owners assigned</span>
+            </div>
+          </div>
+          <div className={styles.salesProjectStats}>
+            <span><strong>5</strong> Milestones</span>
+            <span><strong>27</strong> Tasks</span>
+            <span><strong>3</strong> Vendors</span>
+          </div>
+        </section>
+      </div>
+
+      <div className={styles.salesWorkflowRows}>
+        {workflowRows.map(([label, state]) => (
+          <div key={label}>
+            <span>{label}</span>
+            <strong>{state}</strong>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.salesOutcomeStrip}>
+        <span><HiOutlineLink />CRM linked</span>
+        <span><HiOutlineClipboardList />Tasks created</span>
+        <span><HiOutlineShieldCheck />Controls inherited</span>
+      </div>
+    </aside>
+  );
+}
+
+function ProjectHeroPanel({
+  slugPath,
+  profile,
+}: {
+  slugPath: string;
+  profile: {
+    systemType: string;
+    proof: { value: string; label: string }[];
+    brief: string[];
+  };
+}) {
+  if (slugPath === "sales-to-delivery-automation-platform") {
+    return <SalesHeroPanel />;
+  }
+
+  return (
+    <aside className={styles.heroPanel} aria-label="Project system summary">
+      <div className={styles.panelTopline}>
+        <span>{profile.systemType}</span>
+        <span>Built by Ashton Medina</span>
+      </div>
+      <div className={styles.panelMetric}>
+        <span>Primary system outcome</span>
+        <strong>{profile.proof[0]?.value ?? "ERP"}</strong>
+        <em>{profile.proof[0]?.label ?? "Operational control"}</em>
+      </div>
+      <div className={styles.panelFlow}>
+        {profile.brief.map((item, index) => (
+          <div className={styles.flowItem} key={item}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{item}</strong>
+          </div>
+        ))}
+      </div>
+    </aside>
+  );
 }
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
@@ -188,25 +304,7 @@ export default async function Project({
           </div>
         </div>
 
-        <aside className={styles.heroPanel} aria-label="Project system summary">
-          <div className={styles.panelTopline}>
-            <span>{profile.systemType}</span>
-            <span>Built by Ashton Medina</span>
-          </div>
-          <div className={styles.panelMetric}>
-            <span>Primary system outcome</span>
-            <strong>{profile.proof[0]?.value ?? "ERP"}</strong>
-            <em>{profile.proof[0]?.label ?? "Operational control"}</em>
-          </div>
-          <div className={styles.panelFlow}>
-            {profile.brief.map((item, index) => (
-              <div className={styles.flowItem} key={item}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{item}</strong>
-              </div>
-            ))}
-          </div>
-        </aside>
+        <ProjectHeroPanel slugPath={slugPath} profile={profile} />
       </section>
 
       <section className={styles.proofStrip} aria-label="Project proof points">
