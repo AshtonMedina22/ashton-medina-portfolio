@@ -12,12 +12,17 @@ import { OperationalIntelligenceDemo } from "@/components/demos/operational-inte
 import { Metadata } from "next";
 import {
   HiOutlineBriefcase,
+  HiOutlineCheckCircle,
   HiOutlineClipboardList,
   HiOutlineCurrencyDollar,
   HiOutlineDocumentText,
+  HiOutlineFolder,
+  HiOutlineGlobeAlt,
   HiOutlineLink,
   HiOutlineLockClosed,
+  HiOutlineLocationMarker,
   HiOutlineOfficeBuilding,
+  HiOutlinePencilAlt,
   HiOutlineShieldCheck,
   HiOutlineTrendingUp,
   HiOutlineUsers,
@@ -201,6 +206,72 @@ function RevenueHeroPanel() {
   );
 }
 
+function VendorHeroPanel() {
+  const complianceRows = [
+    ["General liability", "Valid"],
+    ["W-9 tax form", "Valid"],
+    ["Business license", "Review"],
+  ] as const;
+
+  return (
+    <aside className={`${styles.heroPanel} ${styles.vendorHeroPanel}`} aria-label="Vendor lifecycle control system summary">
+      <div className={styles.vendorPanelTopbar}>
+        <strong>Vendor Lifecycle Control</strong>
+        <span>Portal enabled</span>
+      </div>
+
+      <section className={styles.vendorRecordPreview}>
+        <div className={styles.moduleEyebrow}>Internal vendor record</div>
+        <div className={styles.vendorRecordHeader}>
+          <h2>Elite Sound Productions</h2>
+          <span>Premier vendor</span>
+        </div>
+        <div className={styles.vendorHeroBadges}>
+          <span><HiOutlineCheckCircle />Active vendor</span>
+          <span><HiOutlineFolder />7 docs valid</span>
+          <span><HiOutlineGlobeAlt />Portal enabled</span>
+        </div>
+      </section>
+
+      <div className={styles.vendorTitleGrid}>
+        <section className={styles.vendorOverviewMini}>
+          <div><HiOutlineUsers /><span>Primary contact</span><strong>Maria Chen</strong></div>
+          <div><HiOutlineLocationMarker /><span>Service area</span><strong>Los Angeles, CA</strong></div>
+          <div><HiOutlineClipboardList /><span>Open RFQs</span><strong>3 awaiting response</strong></div>
+        </section>
+
+        <section className={styles.vendorComplianceMini}>
+          <div className={styles.moduleEyebrow}>Document compliance</div>
+          {complianceRows.map(([item, state]) => (
+            <div key={item}>
+              <span>{item}</span>
+              <strong>{state}</strong>
+            </div>
+          ))}
+        </section>
+      </div>
+
+      <section className={styles.vendorPortalMini}>
+        <div>
+          <span>Vendor portal preview</span>
+          <strong>Assignment #0842</strong>
+        </div>
+        <p>Atlas Group delivery scope, secure token, acceptance, and signature workflow.</p>
+        <div className={styles.vendorPortalActions}>
+          <span><HiOutlinePencilAlt />Awaiting acceptance</span>
+          <strong><HiOutlineLockClosed />Internal pricing hidden</strong>
+        </div>
+      </section>
+
+      <div className={styles.vendorOutcomeStrip}>
+        <span><HiOutlineDocumentText />Documents scoped</span>
+        <span><HiOutlineClipboardList />RFQ workflow</span>
+        <span><HiOutlineShieldCheck />Portal access controlled</span>
+      </div>
+    </aside>
+  );
+}
+
 function ProjectHeroPanel({
   slugPath,
   profile,
@@ -217,6 +288,9 @@ function ProjectHeroPanel({
   }
   if (slugPath === "revenue-financial-control-engine") {
     return <RevenueHeroPanel />;
+  }
+  if (slugPath === "vendor-lifecycle-compliance-platform") {
+    return <VendorHeroPanel />;
   }
 
   return (
