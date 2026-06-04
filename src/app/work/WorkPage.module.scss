@@ -80,6 +80,7 @@
 }
 
 .featuredProject {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(20rem, 0.45fr) minmax(0, 0.55fr);
   gap: clamp(1.75rem, 3vw, 3rem);
@@ -88,8 +89,20 @@
   padding: clamp(1.35rem, 2vw, 1.8rem);
   border: 1px solid var(--work-border);
   border-radius: 16px;
-  background: rgba(18, 24, 38, 0.62);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 8%, rgba(99, 102, 241, 0.2), transparent 18rem),
+    radial-gradient(circle at 12% 92%, rgba(34, 211, 238, 0.12), transparent 18rem),
+    rgba(18, 24, 38, 0.62);
   box-shadow: var(--work-depth);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.32rem;
+    background: linear-gradient(90deg, #6366f1, #22d3ee, #34d399);
+  }
 }
 
 .featuredCopy {
@@ -212,13 +225,19 @@
 }
 
 .projectVisual {
+  --visual-accent: #22d3ee;
+  --visual-accent-2: #6366f1;
+
   min-height: 15rem;
   display: grid;
   grid-template-columns: 3rem 1fr;
   overflow: hidden;
-  border: 1px solid var(--work-border);
+  border: 1px solid color-mix(in srgb, var(--visual-accent) 28%, transparent);
   border-radius: 12px;
-  background: #0f1726;
+  background:
+    radial-gradient(circle at 14% 8%, color-mix(in srgb, var(--visual-accent) 22%, transparent), transparent 11rem),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--visual-accent-2) 18%, transparent), transparent 10rem),
+    #0f1726;
 }
 
 .featuredVisual {
@@ -245,8 +264,9 @@
   span {
     width: 2rem;
     height: 2rem;
-    border-color: rgba(99, 102, 241, 0.55);
-    background: #6366f1;
+    border-color: color-mix(in srgb, var(--visual-accent) 58%, transparent);
+    background: linear-gradient(135deg, var(--visual-accent), var(--visual-accent-2));
+    box-shadow: 0 0 24px color-mix(in srgb, var(--visual-accent) 28%, transparent);
   }
 }
 
@@ -271,6 +291,8 @@
 
   span {
     flex: 0 0 auto;
+    color: color-mix(in srgb, var(--visual-accent) 66%, #ffffff);
+    font-weight: 700;
   }
 }
 
@@ -299,9 +321,9 @@
   span {
     min-width: 0;
     padding: 0.65rem 0.7rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid color-mix(in srgb, var(--visual-accent) 18%, rgba(148, 163, 184, 0.12));
     border-radius: 8px;
-    background: rgba(26, 34, 51, 0.58);
+    background: color-mix(in srgb, var(--visual-accent) 8%, rgba(26, 34, 51, 0.58));
     color: var(--work-text);
     font-size: 0.74rem;
     font-weight: 600;
@@ -365,7 +387,7 @@
 
   strong {
     min-width: 0;
-    color: #67e8f9;
+    color: color-mix(in srgb, var(--visual-accent) 72%, #ffffff);
     font-size: 0.66rem;
     font-weight: 700;
     overflow-wrap: anywhere;
@@ -388,9 +410,9 @@
   span {
     min-width: 0;
     padding: 0.8rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid color-mix(in srgb, var(--visual-accent) 18%, rgba(148, 163, 184, 0.12));
     border-radius: 10px;
-    background: rgba(10, 15, 24, 0.34);
+    background: color-mix(in srgb, var(--visual-accent) 8%, rgba(10, 15, 24, 0.34));
   }
 
   em {
@@ -422,9 +444,9 @@
   span {
     min-width: 0;
     padding: 0.62rem 0.65rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid color-mix(in srgb, var(--visual-accent) 18%, rgba(148, 163, 184, 0.12));
     border-radius: 8px;
-    background: rgba(6, 182, 212, 0.06);
+    background: color-mix(in srgb, var(--visual-accent) 10%, rgba(6, 182, 212, 0.06));
     color: var(--work-text);
     font-size: 0.66rem;
     font-weight: 600;
@@ -435,19 +457,15 @@
   }
 }
 
-.revenueVisual .visualSidePanel span:first-child,
-.opsVisual .visualSidePanel span:first-child {
-  border-color: rgba(6, 182, 212, 0.28);
-  background: rgba(6, 182, 212, 0.08);
-}
-
-.vendorVisual .visualSidePanel span:first-child {
-  border-color: rgba(20, 184, 166, 0.3);
-  background: rgba(20, 184, 166, 0.08);
-}
-
 .allProjectsSection {
   margin-top: 2rem;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 0% 8%, rgba(52, 211, 153, 0.1), transparent 18rem),
+    radial-gradient(circle at 100% 20%, rgba(244, 114, 182, 0.1), transparent 18rem),
+    rgba(15, 23, 42, 0.22);
 }
 
 .projectGrid {
@@ -458,15 +476,45 @@
 }
 
 .projectCard {
+  --card-accent: #22d3ee;
+  --card-accent-2: #f59e0b;
+
+  position: relative;
   min-width: 0;
   padding: 1.25rem;
-  border: 1px solid var(--work-border);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--card-accent) 22%, var(--work-border));
   border-radius: 16px;
-  background: rgba(18, 24, 38, 0.58);
-  box-shadow: var(--work-depth);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--card-accent) 12%, rgba(18, 24, 38, 0.76)) 0%, rgba(18, 24, 38, 0.58) 42%),
+    rgba(18, 24, 38, 0.58);
+  box-shadow:
+    var(--work-depth),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 0.3rem;
+    background: linear-gradient(90deg, var(--card-accent), var(--card-accent-2));
+  }
+}
+
+.projectCard:nth-child(2) {
+  --card-accent: #34d399;
+  --card-accent-2: #f59e0b;
+}
+
+.projectCard:nth-child(3) {
+  --card-accent: #a78bfa;
+  --card-accent-2: #f472b6;
 }
 
 .projectCard .projectVisual {
+  --visual-accent: var(--card-accent);
+  --visual-accent-2: var(--card-accent-2);
+
   min-height: 18rem;
 }
 
@@ -531,10 +579,10 @@
   place-items: center;
   width: 2.3rem;
   height: 2.3rem;
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 34%, transparent);
   border-radius: 10px;
-  background: rgba(56, 189, 248, 0.1);
-  color: #38bdf8;
+  background: color-mix(in srgb, var(--card-accent) 15%, rgba(56, 189, 248, 0.1));
+  color: var(--card-accent);
 
   svg {
     width: 1.25rem;
@@ -554,7 +602,7 @@
   align-items: center;
   gap: 0.45rem;
   margin-top: 1.25rem;
-  color: #38bdf8 !important;
+  color: var(--card-accent, #38bdf8) !important;
   text-decoration: none !important;
   font-size: 0.76rem;
   font-weight: 600;
@@ -735,6 +783,15 @@
   .visualRecordHeader div,
   .visualStateTrack {
     grid-template-columns: 1fr;
+  }
+
+  .projectCard .visualTopline {
+    display: grid;
+    gap: 0.35rem;
+
+    span {
+      white-space: normal;
+    }
   }
 
   .visualRail {

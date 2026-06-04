@@ -13,7 +13,7 @@
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  padding: clamp(5.25rem, 7vw, 6.75rem) max(1rem, calc((100vw - 1280px) / 2)) clamp(3rem, 6vw, 5rem);
+  padding: clamp(5.25rem, 7vw, 6.75rem) 0 clamp(3rem, 6vw, 5rem);
   color: var(--about-text);
   background:
     radial-gradient(circle at 76% 13%, rgba(6, 182, 212, 0.12), transparent 24rem),
@@ -45,9 +45,9 @@
 
 .heroSection {
   display: grid;
-  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+  grid-template-columns: minmax(0, 0.58fr) minmax(28rem, 0.42fr);
   align-items: center;
-  gap: clamp(2rem, 4.5vw, 4.25rem);
+  gap: clamp(3rem, 5vw, 5rem);
 }
 
 .eyebrow,
@@ -72,9 +72,9 @@
 }
 
 .heroCopy h1 {
-  max-width: 17ch;
+  max-width: 20ch;
   margin-top: 1rem;
-  font-size: clamp(2.15rem, 2.9vw, 2.5rem);
+  font-size: clamp(3rem, 5.2vw, 4.75rem);
   line-height: 1;
 
   span {
@@ -87,7 +87,7 @@
 }
 
 .heroCopy p {
-  max-width: 38rem;
+  max-width: 52rem;
   margin: 1.35rem 0 0;
   color: var(--about-muted);
   font-size: clamp(1.05rem, 1.2vw, 1.125rem);
@@ -98,7 +98,7 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  max-width: 38rem;
+  max-width: 52rem;
   margin-top: 1.5rem;
   padding: 0.85rem 0;
   border-top: 1px solid var(--about-border);
@@ -122,17 +122,17 @@
 
 .heroPortraitWrap {
   position: relative;
-  min-height: 24rem;
+  min-height: 31rem;
   display: grid;
   align-items: center;
 
   &::before {
     content: "";
     position: absolute;
-    left: 8%;
-    right: 18%;
-    top: 12%;
-    bottom: 10%;
+    left: 10%;
+    right: 0;
+    top: 8%;
+    bottom: 8%;
     border: 1px solid rgba(148, 163, 184, 0.14);
     border-radius: 18px;
     background:
@@ -145,8 +145,8 @@
 .portraitCard {
   position: relative;
   z-index: 1;
-  width: min(24rem, 72%);
-  aspect-ratio: 1.05 / 1;
+  width: min(29rem, 82%);
+  aspect-ratio: 1 / 1.04;
   overflow: hidden;
   border: 1px solid var(--about-border);
   border-radius: 14px;
@@ -163,12 +163,14 @@
 }
 
 .profilePanel {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  right: 0;
-  top: 25%;
-  width: min(15.5rem, 46%);
+  right: auto;
+  top: auto;
+  width: min(31rem, 92%);
+  margin: -3.4rem 0 0 auto;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
   overflow: hidden;
   border: 1px solid var(--about-border);
@@ -214,11 +216,11 @@
 .proofStrip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
+  gap: 1rem;
   margin-top: clamp(2.25rem, 4vw, 3.25rem);
-  overflow: hidden;
-  border-top: 1px solid var(--about-border);
-  border-bottom: 1px solid var(--about-border);
+  overflow: visible;
+  border-top: 0;
+  border-bottom: 0;
   background: transparent;
   box-shadow: none;
 
@@ -227,12 +229,14 @@
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    border-right: 1px solid var(--about-border);
+    padding: 1.15rem 1.2rem;
+    border: 1px solid var(--about-border);
+    border-radius: 12px;
+    background: rgba(18, 24, 38, 0.32);
   }
 
   article:last-child {
-    border-right: 0;
+    border-right: 1px solid var(--about-border);
   }
 
   svg {
@@ -276,7 +280,7 @@
 
 .capabilitiesSection {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(20rem, 1fr);
+  grid-template-columns: minmax(0, 0.62fr) minmax(24rem, 0.9fr);
   gap: clamp(2rem, 4vw, 4rem);
 }
 
@@ -304,7 +308,7 @@
 
   article {
     min-width: 0;
-    min-height: 9.5rem;
+    min-height: 12rem;
     padding: 1.35rem 1.45rem;
     border: 1px solid rgba(148, 163, 184, 0.12);
     border-radius: 12px;
@@ -312,11 +316,15 @@
   }
 
   article:first-child {
-    grid-column: span 2;
-    min-height: 8rem;
+    grid-column: auto;
+    min-height: 12rem;
     background:
       linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 44%),
       rgba(26, 34, 51, 0.68);
+  }
+
+  article:last-child {
+    grid-column: span 2;
   }
 
   svg {
@@ -347,34 +355,31 @@
 
 .systemsSection {
   display: grid;
-  grid-template-columns: minmax(0, 0.45fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.38fr) minmax(0, 1fr);
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
 
 .systemChips {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--about-border);
-  border-bottom: 1px solid var(--about-border);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  border-top: 0;
+  border-bottom: 0;
 
   span {
     min-width: 0;
     display: flex;
     align-items: center;
     gap: 0.65rem;
-    padding: 0.9rem 1rem;
-    border: 0;
-    border-right: 1px solid var(--about-border);
-    background: transparent;
+    padding: 1rem;
+    border: 1px solid var(--about-border);
+    border-radius: 12px;
+    background: rgba(18, 24, 38, 0.34);
     color: var(--about-text);
     font-size: 0.86rem;
     font-weight: 500;
 
-    &:nth-child(2n) {
-      border-right: 0;
-    }
   }
 
   svg {
@@ -387,7 +392,7 @@
 
 .journeyHeader {
   display: grid;
-  grid-template-columns: minmax(0, 0.45fr) minmax(20rem, 1fr);
+  grid-template-columns: minmax(0, 0.38fr) minmax(24rem, 1fr);
   gap: clamp(2rem, 4vw, 4rem);
   align-items: end;
 
@@ -402,11 +407,11 @@
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
   margin-top: 2rem;
-  border-top: 1px solid var(--about-border);
-  border-bottom: 1px solid var(--about-border);
+  border-top: 0;
+  border-bottom: 0;
 
   &::before {
     display: none;
@@ -414,13 +419,15 @@
 
   article {
     min-width: 0;
-    padding: 1.15rem 1.1rem;
-    border-top: 0;
-    border-right: 1px solid var(--about-border);
+    min-height: 11rem;
+    padding: 1.25rem 1.25rem 1.35rem;
+    border: 1px solid var(--about-border);
+    border-radius: 12px;
+    background: rgba(18, 24, 38, 0.3);
     text-align: left;
 
     &:last-child {
-      border-right: 0;
+      border-right: 1px solid var(--about-border);
     }
   }
 
@@ -448,7 +455,9 @@
 }
 
 .activeJourney {
-  background: transparent;
+  background:
+    linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 48%),
+    rgba(26, 34, 51, 0.58);
 }
 
 .ctaSection {
@@ -457,7 +466,7 @@
   justify-content: space-between;
   gap: 2rem;
   margin-top: clamp(2.75rem, 5vw, 4rem);
-  padding: 1rem 1.1rem;
+  padding: 1.25rem 1.35rem;
   border: 1px solid rgba(148, 163, 184, 0.12);
   border-radius: 14px;
   background:
@@ -478,7 +487,7 @@
   }
 
   p {
-    max-width: 48rem;
+    max-width: 56rem;
     margin: 0;
     color: var(--about-muted);
     font-size: 0.95rem;
@@ -500,10 +509,10 @@
   justify-content: center;
   gap: 0.65rem;
   min-height: 3rem;
-  padding: 0 1.15rem;
+  padding: 0 1.25rem;
   border-radius: 12px;
   text-decoration: none !important;
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -561,6 +570,14 @@
     box-shadow: none;
   }
 
+  .proofStrip article,
+  .systemChips span,
+  .timeline article {
+    border-color: var(--about-border);
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: none;
+  }
+
   .focusStrip,
   .proofStrip,
   .systemChips {
@@ -569,7 +586,9 @@
 
   .capabilityGrid article:first-child,
   .activeJourney {
-    background: #eef2f7;
+    background:
+      linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 44%),
+      rgba(255, 255, 255, 0.82);
   }
 
   .portraitCard {
@@ -622,7 +641,7 @@
   }
 
   .heroCopy h1 {
-    max-width: 12ch;
+    max-width: 18ch;
   }
 
   .heroPortraitWrap {
@@ -632,14 +651,6 @@
   .proofStrip,
   .capabilityGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .proofStrip article:nth-child(2) {
-    border-right: 0;
-  }
-
-  .proofStrip article:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--about-border);
   }
 
   .systemChips {
@@ -705,6 +716,10 @@
   }
 
   .capabilityGrid article:first-child {
+    grid-column: auto;
+  }
+
+  .capabilityGrid article:last-child {
     grid-column: auto;
   }
 

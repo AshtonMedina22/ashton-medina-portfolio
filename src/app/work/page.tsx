@@ -1,3 +1,5 @@
+import { about, baseURL, person, work } from "@/resources";
+import { getPosts } from "@/utils/utils";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
@@ -5,11 +7,9 @@ import {
   HiOutlineCube,
   HiOutlineExternalLink,
   HiOutlineLightningBolt,
-  HiOutlineShieldCheck,
   HiOutlineShare,
+  HiOutlineShieldCheck,
 } from "react-icons/hi";
-import { baseURL, about, person, work } from "@/resources";
-import { getPosts } from "@/utils/utils";
 import styles from "./WorkPage.module.scss";
 
 type ProjectPost = ReturnType<typeof getPosts>[number];
@@ -19,13 +19,6 @@ const categoryMap: Record<string, string> = {
   "revenue-financial-control-engine": "Financial control system",
   "vendor-lifecycle-compliance-platform": "Vendor lifecycle platform",
   "operational-intelligence-platform": "Operational reporting platform",
-};
-
-const visualMap: Record<string, string> = {
-  "sales-to-delivery-automation-platform": "salesVisual",
-  "revenue-financial-control-engine": "revenueVisual",
-  "vendor-lifecycle-compliance-platform": "vendorVisual",
-  "operational-intelligence-platform": "opsVisual",
 };
 
 const accentIconMap: Record<string, typeof HiOutlineCube> = {
@@ -161,11 +154,10 @@ function sortProjects(projects: ProjectPost[]) {
 }
 
 function ProjectVisual({ slug, featured = false }: { slug: string; featured?: boolean }) {
-  const visualClass = visualMap[slug] ?? "salesVisual";
   const visual = visualContent[slug] ?? visualContent["sales-to-delivery-automation-platform"];
 
   return (
-    <div className={`${styles.projectVisual} ${styles[visualClass]} ${featured ? styles.featuredVisual : ""}`} aria-hidden>
+    <div className={`${styles.projectVisual} ${featured ? styles.featuredVisual : ""}`} aria-hidden>
       <div className={styles.visualRail}>
         <span />
         <i />
@@ -276,8 +268,8 @@ export default function Work() {
         </div>
         <div className={styles.heroAside}>
           <p>
-            Four ERP, workflow, vendor, finance, and reporting systems built around
-            business operations, controls, and execution visibility.
+            Four ERP, workflow, vendor, finance, and reporting systems built around business
+            operations, controls, and execution visibility.
           </p>
         </div>
       </section>

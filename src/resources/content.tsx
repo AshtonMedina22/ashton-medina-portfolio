@@ -1,4 +1,14 @@
-import { About, Blog, Contact, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type {
+  About,
+  Blog,
+  Contact,
+  Gallery,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Column, Line, Row, Tag, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -85,8 +95,9 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `Ashton Medina - Systems & Platform Engineer | Portfolio`,
-  description: `Systems and platform engineer specializing in ERP platforms, workflow automation, vendor systems, financial controls, and operational dashboards built on Odoo 19.`,
+  title: "Ashton Medina - Systems & Platform Engineer | Portfolio",
+  description:
+    "Systems and platform engineer specializing in ERP platforms, workflow automation, vendor systems, financial controls, and operational dashboards for enterprise teams.",
   headline: <>Building enterprise systems that automate and organize business operations</>,
   featured: {
     display: false,
@@ -99,7 +110,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Ashton, a systems and platform engineer specializing in ERP platforms, workflow automation, vendor systems, financial controls, and operational dashboards built on Odoo 19.
+      I'm Ashton, a systems and platform engineer specializing in ERP platforms, workflow
+      automation, vendor systems, financial controls, and operational dashboards for enterprise
+      teams.
     </>
   ),
 };
@@ -125,7 +138,9 @@ const about: About = {
     title: "Approach",
     description: (
       <>
-        I treat technology as an operational system: platforms that standardize execution, reduce process risk, and stay maintainable as teams and requirements change. Built for real users, governed workflows, and long-term durability.
+        I treat technology as an operational system: platforms that standardize execution, reduce
+        process risk, and stay maintainable as teams and requirements change. Built for real users,
+        governed workflows, and long-term durability.
       </>
     ),
   },
@@ -139,7 +154,8 @@ const about: About = {
     areas: [
       {
         title: "Systems Architecture",
-        description: "Operational systems that connect sales, finance, vendors, projects, and delivery into one managed workflow.",
+        description:
+          "Operational systems that connect sales, finance, vendors, projects, and delivery into one managed workflow.",
         bullets: [
           "Multi-domain data modeling",
           "Cross-module workflow orchestration",
@@ -166,7 +182,8 @@ const about: About = {
       },
       {
         title: "Financial & Operational Controls",
-        description: "Invoice, payment, margin, and approval controls built directly into workflows.",
+        description:
+          "Invoice, payment, margin, and approval controls built directly into workflows.",
         bullets: [
           "Pricing authority and approval chains",
           "Vendor lifecycle management",
@@ -175,7 +192,8 @@ const about: About = {
       },
       {
         title: "Technical Leadership & Delivery",
-        description: "Leading projects from architecture, implementation, testing, and rollout through operational adoption.",
+        description:
+          "Leading projects from architecture, implementation, testing, and rollout through operational adoption.",
         bullets: [
           "Platform replacement and multi-location rollout",
           "Cross-functional technical leadership",
@@ -185,10 +203,7 @@ const about: About = {
       {
         title: "UX-Informed Engineering",
         description: "Systems built for real adoption.",
-        bullets: [
-          "Workflow usability and dashboarding",
-          "Enablement and performance reporting",
-        ],
+        bullets: ["Workflow usability and dashboarding", "Enablement and performance reporting"],
       },
     ],
   },
@@ -299,6 +314,17 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, contact, gallery, techStack, techStackLanguages, techStackPlatforms };
-
-
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  blog,
+  work,
+  contact,
+  gallery,
+  techStack,
+  techStackLanguages,
+  techStackPlatforms,
+};

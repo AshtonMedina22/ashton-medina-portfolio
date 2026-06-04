@@ -1,8 +1,6 @@
-import {
-  Meta,
-  Schema,
-  SmartLink,
-} from "@once-ui-system/core";
+import styles from "@/components/about/about.module.scss";
+import { about, baseURL, person, social } from "@/resources";
+import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
   HiOutlineBriefcase,
@@ -12,11 +10,9 @@ import {
   HiOutlineDatabase,
   HiOutlineLightningBolt,
   HiOutlineLocationMarker,
-  HiOutlineShieldCheck,
   HiOutlineShare,
+  HiOutlineShieldCheck,
 } from "react-icons/hi";
-import { baseURL, about, person, social } from "@/resources";
-import styles from "@/components/about/about.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -31,9 +27,9 @@ export async function generateMetadata() {
 const credentialCards = [
   {
     icon: HiOutlineBriefcase,
-    label: "Systems & Platform",
-    value: "Engineer",
-    detail: person.role,
+    label: "Business systems",
+    value: "Architect",
+    detail: "Systems, workflows, controls, and execution",
   },
   {
     icon: HiOutlineCollection,
@@ -104,19 +100,23 @@ const operatingPrinciples = [
   },
   {
     title: "Make System Logic Explicit",
-    detail: "Use clear data models, workflow states, permissions, and approval rules instead of informal process knowledge.",
+    detail:
+      "Use clear data models, workflow states, permissions, and approval rules instead of informal process knowledge.",
   },
   {
     title: "Reduce Manual Handoffs",
-    detail: "Automate repeatable transitions between CRM, finance, vendor, project, and reporting workflows.",
+    detail:
+      "Automate repeatable transitions between CRM, finance, vendor, project, and reporting workflows.",
   },
   {
     title: "Build For Maintainability",
-    detail: "Keep systems readable, testable, documented, and adaptable as business requirements change.",
+    detail:
+      "Keep systems readable, testable, documented, and adaptable as business requirements change.",
   },
   {
     title: "Improve Visibility",
-    detail: "Give teams useful operational context without turning every system into a noisy dashboard.",
+    detail:
+      "Give teams useful operational context without turning every system into a noisy dashboard.",
   },
 ] as const;
 
@@ -148,12 +148,13 @@ export default function About() {
         <div className={styles.heroCopy}>
           <span className={styles.eyebrow}>About me</span>
           <h1>
-            I build systems that organize complex operations and <span>improve execution.</span>
+            I build operational systems that bring structure, visibility, and{" "}
+            <span>execution discipline.</span>
           </h1>
           <p>
-            I&apos;m {person.name}, a systems and platform engineer specializing in ERP platforms,
-            workflow automation, vendor systems, financial controls, and operational dashboards
-            built on Odoo 19.
+            I&apos;m {person.name}. My work spans business systems architecture, ERP platforms,
+            workflow automation, reporting, operational controls, and process improvement
+            initiatives that help teams scale with clearer ownership and better execution.
           </p>
           <div className={styles.focusStrip}>
             <HiOutlineShieldCheck />
@@ -204,7 +205,9 @@ export default function About() {
           <h2>Architecture, workflow logic, and implementation ownership.</h2>
         </div>
         <p className={styles.sectionLead}>
-          {about.intro.display ? about.intro.description : "I partner with organizations to solve complex operational challenges through custom-built platforms, automation, and data-driven intelligence."}
+          {about.intro.display
+            ? "I treat technology as an operating framework: systems that standardize execution, reduce process risk, and make work easier to govern as organizations grow."
+            : "I partner with organizations to solve complex operational challenges through custom-built platforms, automation, and data-driven intelligence."}
         </p>
         <div className={styles.capabilityGrid}>
           {focusCards.map((area, index) => {
@@ -228,7 +231,13 @@ export default function About() {
         <div className={styles.systemChips}>
           {systemChips.map((chip, index) => (
             <span key={chip}>
-              {index % 3 === 0 ? <HiOutlineCube /> : index % 3 === 1 ? <HiOutlineShare /> : <HiOutlineShieldCheck />}
+              {index % 3 === 0 ? (
+                <HiOutlineCube />
+              ) : index % 3 === 1 ? (
+                <HiOutlineShare />
+              ) : (
+                <HiOutlineShieldCheck />
+              )}
               {chip}
             </span>
           ))}
@@ -260,7 +269,10 @@ export default function About() {
       <section className={styles.ctaSection}>
         <div>
           <HiOutlineShare />
-          <p>Well-designed systems reduce operational friction, improve visibility, and create more reliable execution.</p>
+          <p>
+            Well-designed systems reduce operational friction, improve visibility, and create more
+            reliable execution.
+          </p>
         </div>
         <div className={styles.ctaActions}>
           <SmartLink href={getContactHref()} className={styles.primaryCta}>
@@ -268,7 +280,12 @@ export default function About() {
             <HiOutlineArrowRight />
           </SmartLink>
           {linkedIn && (
-            <SmartLink href={linkedIn.link} target="_blank" rel="noopener noreferrer" className={styles.secondaryCta}>
+            <SmartLink
+              href={linkedIn.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.secondaryCta}
+            >
               LinkedIn
             </SmartLink>
           )}
