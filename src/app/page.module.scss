@@ -1377,24 +1377,37 @@
 .capabilitiesSection {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(18rem, 0.48fr) minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 4rem);
-  padding: clamp(2.75rem, 4vw, 4rem) clamp(1rem, 2vw, 1.5rem);
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(1rem, 2vw, 1.5rem);
   border-top: 1px solid var(--home-border);
   border-radius: 18px;
   background:
-    linear-gradient(90deg, rgba(6, 182, 212, 0.08), transparent 28%),
-    radial-gradient(circle at 94% 18%, rgba(244, 114, 182, 0.11), transparent 16rem);
+    radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.12), transparent 20rem),
+    radial-gradient(circle at 88% 18%, rgba(244, 114, 182, 0.1), transparent 18rem),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.32), rgba(15, 23, 42, 0.12));
 }
 
 .sectionIntro {
   min-width: 0;
+
+  .capabilitiesSection & {
+    max-width: 58rem;
+    margin-inline: auto;
+    text-align: center;
+  }
 
   h2 {
     max-width: 18ch;
     margin-top: 0.85rem;
     font-size: clamp(1.35rem, 1.9vw, 1.8rem);
     line-height: 1.06;
+
+    .capabilitiesSection & {
+      max-width: 19ch;
+      margin-inline: auto;
+      font-size: clamp(2rem, 3.8vw, 3.35rem);
+      line-height: 0.98;
+    }
 
     span {
       color: transparent;
@@ -1410,6 +1423,12 @@
     color: var(--home-muted);
     font-size: 0.98rem;
     line-height: 1.65;
+
+    .capabilitiesSection & {
+      max-width: 56rem;
+      margin-inline: auto;
+      font-size: 1.05rem;
+    }
   }
 
   > a {
@@ -1428,12 +1447,13 @@
 
 .capabilityGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.25rem;
 
   article {
     position: relative;
     min-width: 0;
+    min-height: 16rem;
     padding: 1.35rem 1.35rem 1.45rem 1.5rem;
     overflow: hidden;
     border: 1px solid rgba(148, 163, 184, 0.11);
@@ -1465,6 +1485,11 @@
       --capability-accent: #34d399;
       --capability-glow: rgba(52, 211, 153, 0.45);
     }
+
+    &:nth-child(4) {
+      --capability-accent: #f472b6;
+      --capability-glow: rgba(244, 114, 182, 0.42);
+    }
   }
 
   svg {
@@ -1480,7 +1505,7 @@
   h3 {
     margin: 1.15rem 0 0;
     color: var(--home-text);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
   }
 
@@ -1945,9 +1970,12 @@
     max-width: 64rem;
   }
 
-  .capabilityGrid,
   .projectGrid {
     grid-template-columns: 1fr;
+  }
+
+  .capabilityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1971,6 +1999,7 @@
   }
 
   .heroStats,
+  .capabilityGrid,
   .visualMetrics,
   .visualDashboardGrid,
   .workflowStatus,

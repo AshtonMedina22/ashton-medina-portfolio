@@ -20,18 +20,23 @@ const proofStrip = [
 const capabilities = [
   {
     icon: HiOutlineShare,
-    title: "Workflow Automation",
-    text: "Convert operational handoffs into governed system flows across sales, delivery, vendors, and internal teams.",
+    title: "Business Systems Architecture",
+    text: "Design the operating structure behind how teams sell, deliver, coordinate, approve, report, and scale work.",
   },
   {
     icon: HiOutlineShieldCheck,
-    title: "Financial Governance",
-    text: "Embed approval states, margin controls, access rules, and payout readiness directly into transaction records.",
+    title: "Workflow & Process Design",
+    text: "Translate scattered handoffs into clear ownership, repeatable steps, decision points, and accountable execution paths.",
   },
   {
     icon: HiOutlineChartBar,
-    title: "Operational Intelligence",
-    text: "Turn live ERP activity into readable executive views with KPIs, variance signals, and drill-down context.",
+    title: "Operational Controls",
+    text: "Build the approval logic, access rules, documentation standards, and governance checkpoints that keep work reliable.",
+  },
+  {
+    icon: HiOutlineShieldCheck,
+    title: "Visibility & Reporting",
+    text: "Create the dashboards, reporting flows, and leadership views that make performance, blockers, and accountability visible.",
   },
 ] as const;
 
@@ -414,6 +419,29 @@ export default function Home() {
           ))}
         </section>
 
+        <section className={styles.capabilitiesSection}>
+          <div className={styles.sectionIntro}>
+            <span className={styles.sectionEyebrow}>Capabilities</span>
+            <h2>Systems capability across the full operating model.</h2>
+            <p>
+              The work spans business systems architecture, process design, operational controls,
+              reporting structures, and execution frameworks that improve how organizations run.
+            </p>
+          </div>
+          <div className={styles.capabilityGrid}>
+            {capabilities.map((capability) => {
+              const Icon = capability.icon;
+              return (
+                <article key={capability.title}>
+                  <Icon />
+                  <h3>{capability.title}</h3>
+                  <p>{capability.text}</p>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
         <section className={styles.featuredPlatform}>
           <SalesPlatformVisual />
           <div className={styles.featuredCopy}>
@@ -436,29 +464,6 @@ export default function Home() {
               View Project
               <HiOutlineArrowRight />
             </SmartLink>
-          </div>
-        </section>
-
-        <section className={styles.capabilitiesSection}>
-          <div className={styles.sectionIntro}>
-            <span className={styles.sectionEyebrow}>Capabilities</span>
-            <h2>Operational systems capability.</h2>
-            <p>
-              The work is centered on ERP automation, governed workflows, financial controls, and
-              reporting views that make day-to-day execution easier to manage.
-            </p>
-          </div>
-          <div className={styles.capabilityGrid}>
-            {capabilities.map((capability) => {
-              const Icon = capability.icon;
-              return (
-                <article key={capability.title}>
-                  <Icon />
-                  <h3>{capability.title}</h3>
-                  <p>{capability.text}</p>
-                </article>
-              );
-            })}
           </div>
         </section>
 
