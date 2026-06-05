@@ -332,6 +332,7 @@
     font-size: clamp(1.35rem, 2vw, 1.75rem);
     letter-spacing: -0.04em;
     line-height: 1;
+    white-space: nowrap;
   }
 
   span {
@@ -340,8 +341,9 @@
     border-radius: 999px;
     background: rgba(34, 197, 94, 0.1);
     color: #22c55e;
-    font-size: 0.62rem;
+    font-size: 0.58rem;
     font-weight: 800;
+    white-space: nowrap;
   }
 }
 
@@ -835,10 +837,11 @@
 
   span {
     color: var(--project-muted);
-    font-size: 0.62rem;
+    font-size: 0.54rem;
     font-weight: 780;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   strong {
@@ -1149,10 +1152,11 @@
 
   span {
     color: var(--project-muted);
-    font-size: 0.62rem;
+    font-size: 0.54rem;
     font-weight: 780;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   strong {
@@ -1429,6 +1433,37 @@
 
   .heroPanel::before {
     background: rgba(226, 232, 240, 0.72);
+  }
+
+  .salesRecordMeta div,
+  .projectWorkspacePreview,
+  .salesProjectStats span,
+  .salesWorkflowRows,
+  .vendorOverviewMini div,
+  .vendorComplianceMini div:not(.moduleEyebrow),
+  .opsKpiMini div,
+  .opsRecordsMini div {
+    border-color: rgba(15, 23, 42, 0.09);
+    background: rgba(248, 250, 252, 0.88);
+  }
+
+  .salesRecordMeta strong,
+  .projectWorkspacePreview strong,
+  .salesProjectStats strong,
+  .vendorOverviewMini strong,
+  .vendorComplianceMini span,
+  .opsKpiMini strong,
+  .opsRecordsMini span {
+    color: var(--project-text);
+  }
+
+  .salesRecordMeta span,
+  .projectWorkspacePreview span,
+  .salesProjectStats span,
+  .vendorOverviewMini span,
+  .opsKpiMini span,
+  .opsRecordsMini strong {
+    color: var(--project-muted);
   }
 
   .proofStrip {

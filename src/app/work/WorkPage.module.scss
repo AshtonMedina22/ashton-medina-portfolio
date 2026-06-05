@@ -340,8 +340,9 @@
     color: var(--work-muted);
     font-size: 0.62rem;
     font-style: normal;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 }
 

@@ -85,13 +85,15 @@
 }
 
 .heroContent h1 {
-  max-width: 12ch;
+  max-width: 15.5ch;
   margin-top: 1.35rem;
-  font-size: clamp(2.75rem, 5.3vw, 5.65rem);
+  font-size: clamp(2.55rem, 4.8vw, 5rem);
   line-height: 0.94;
 
   span {
     display: block;
+    font-size: clamp(2.25rem, 4.2vw, 4.35rem);
+    line-height: 1;
     color: transparent;
     background: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
     background-clip: text;
@@ -310,7 +312,7 @@
 
 .visualMetrics {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.7rem;
   margin-top: 1rem;
 
@@ -336,9 +338,11 @@
     display: block;
     margin-top: 0.45rem;
     color: var(--home-text);
-    font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+    font-size: clamp(1.05rem, 1.35vw, 1.3rem);
     font-weight: 750;
     line-height: 1;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   em {
@@ -408,8 +412,8 @@
 
 .workflowStatus {
   display: grid;
-  grid-template-columns: minmax(6rem, 0.65fr) minmax(0, 1fr);
-  gap: 1rem;
+  grid-template-columns: minmax(5.5rem, auto) minmax(0, 1fr);
+  gap: 0.9rem;
   align-items: center;
 }
 
@@ -419,7 +423,7 @@
 }
 
 .statusDonut {
-  width: min(100%, 7.4rem);
+  width: min(100%, 6.4rem);
   aspect-ratio: 1;
   border-radius: 50%;
   background:
@@ -433,12 +437,14 @@
   gap: 0.55rem;
 
   span {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    display: flex;
     align-items: center;
     gap: 0.5rem;
     color: var(--home-muted);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
+    line-height: 1.25;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   i {
@@ -448,8 +454,10 @@
   }
 
   strong {
+    margin-left: auto;
     color: var(--home-text);
     font-weight: 650;
+    white-space: nowrap;
   }
 }
 
