@@ -50,7 +50,7 @@ const resumeHighlights = [
 const experience = [
   {
     title: "Business Systems Architect II",
-    company: "Party Time Texas",
+    company: "Event Operations & Rental Services Company",
     period: "2025 - Present",
     location: "Allen, TX",
     bullets: [
@@ -63,7 +63,7 @@ const experience = [
   },
   {
     title: "TechOps Executive & Executive Assistant to CEO",
-    company: "Logitrac",
+    company: "Automotive Technology & Operations Company",
     period: "2023 - 2025",
     location: "Dallas-Fort Worth, TX",
     bullets: [
@@ -76,7 +76,7 @@ const experience = [
   },
   {
     title: "Director of Operations",
-    company: "KRK Learning Academies",
+    company: "Multi-Site Education & Childcare Organization",
     period: "2009 - 2023",
     location: "Dallas-Fort Worth, TX",
     bullets: [
@@ -125,15 +125,15 @@ const technicalSkills = [
 const education = [
   {
     title: "Master of Business Administration (MBA)",
-    institution: "Haroun Education Ventures",
+    institution: "Business administration graduate program",
   },
 ] as const;
 
 const certifications = [
-  "ClickUp Expert Certification - ClickUp",
-  "Business Process & System Design - ProcessDriven",
-  "CMS: Website Design & Deployment - Webflow",
-  "Web Development - SheCodes",
+  "Project management platform certification",
+  "Business process and system design certification",
+  "CMS website design and deployment certification",
+  "Web development certification",
 ] as const;
 
 const portfolioLinks = [
