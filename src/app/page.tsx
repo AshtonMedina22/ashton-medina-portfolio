@@ -4,20 +4,10 @@ import { Column, Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
   HiOutlineChartBar,
-  HiOutlineClipboardList,
-  HiOutlineDocumentText,
-  HiOutlineLink,
   HiOutlineShare,
   HiOutlineShieldCheck,
 } from "react-icons/hi";
 import styles from "./page.module.scss";
-
-const proofMetrics = [
-  { value: "4", label: "Enterprise systems" },
-  { value: "65+", label: "Synced fields" },
-  { value: "Vendor portal access controls", label: "" },
-  { value: "Project-level financial controls", label: "" },
-] as const;
 
 const proofStrip = [
   "ERP Workflow Automation",
@@ -120,11 +110,11 @@ export async function generateMetadata() {
 
 function OperationsVisual() {
   const workflowRows = [
-    ["Sales order to project", "Complete", "SO-0842", "Automation"],
-    ["Project planning", "Complete", "PRJ-0187", "Operations"],
-    ["Vendor assignment packet", "In review", "ASN-0842", "Portal"],
-    ["Invoice control check", "Ready", "INV-2301", "Finance"],
-    ["Closeout gate", "Blocked", "PRJ-0187", "Finance"],
+    ["Sales-to-delivery workflow", "Controlled", "Handoff", "Operations"],
+    ["Vendor coordination", "Active", "Access", "Operations"],
+    ["Financial approval path", "Governed", "Control", "Finance"],
+    ["Reporting workflow", "Visible", "Dashboard", "Leadership"],
+    ["Closeout process", "Reviewed", "Approval", "Finance"],
   ] as const;
 
   return (
@@ -144,24 +134,24 @@ function OperationsVisual() {
         </div>
         <div className={styles.visualMetrics}>
           <div>
-            <span>Synced fields</span>
-            <strong>65+</strong>
-            <em>CRM to project</em>
+            <span>System design</span>
+            <strong>Architecture</strong>
+            <em>Business workflow logic</em>
           </div>
           <div>
-            <span>Tasks generated</span>
-            <strong>27</strong>
-            <em>From templates</em>
-          </div>
-          <div>
-            <span>Vendors scoped</span>
-            <strong>3</strong>
-            <em>Portal access</em>
+            <span>Process flow</span>
+            <strong>Automation</strong>
+            <em>Reduced manual handoffs</em>
           </div>
           <div>
             <span>Controls</span>
-            <strong>Ready</strong>
-            <em>Invoice + margin</em>
+            <strong>Governance</strong>
+            <em>Approvals and ownership</em>
+          </div>
+          <div>
+            <span>Visibility</span>
+            <strong>Reporting</strong>
+            <em>Operational context</em>
           </div>
         </div>
 
@@ -190,19 +180,19 @@ function OperationsVisual() {
             <div className={styles.statusLegend}>
               <span>
                 <i className={styles.completeDot} />
-                Complete <strong>52%</strong>
+                Standardized <strong>Ready</strong>
               </span>
               <span>
                 <i className={styles.activeDot} />
-                In progress <strong>28%</strong>
+                In progress <strong>Active</strong>
               </span>
               <span>
                 <i className={styles.waitingDot} />
-                Waiting <strong>12%</strong>
+                Review path <strong>Open</strong>
               </span>
               <span>
                 <i className={styles.blockedDot} />
-                Blocked <strong>8%</strong>
+                Exception handling <strong>Flagged</strong>
               </span>
             </div>
           </section>
@@ -213,7 +203,7 @@ function OperationsVisual() {
           <div className={styles.tableHead}>
             <span>Workflow</span>
             <span>Status</span>
-            <span>Record</span>
+            <span>Layer</span>
             <span>Owner</span>
           </div>
           {workflowRows.map(([workflow, status, record, owner]) => (
@@ -231,96 +221,106 @@ function OperationsVisual() {
 }
 
 function SalesPlatformVisual() {
-  const pipelineStages = [
-    "Order confirmed",
-    "Workspace built",
-    "Tasks queued",
-    "Controls ready",
+  const workflowColumns = [
+    {
+      title: "Sales Intake",
+      items: ["Opportunity context", "Customer terms", "Service requirements"],
+    },
+    {
+      title: "Delivery Planning",
+      items: ["Project workspace", "Milestone structure", "Internal ownership"],
+    },
+    {
+      title: "Vendor Coordination",
+      items: ["Scope packets", "Portal acceptance", "Compliance state"],
+    },
+    {
+      title: "Financial Controls",
+      items: ["Margin rules", "Invoice readiness", "Closeout approval"],
+    },
   ] as const;
 
-  const activityRows = [
-    ["CRM record linked", "Complete"],
-    ["27 delivery tasks generated", "Ready"],
-    ["Vendor scope packet created", "Scoped"],
-    ["Invoice approval gate applied", "Active"],
+  const controlRows = [
+    ["CRM to delivery handoff", "Shared source of truth", "Sales + Operations"],
+    ["Vendor assignment flow", "Scoped access and acceptance", "Operations + Vendor"],
+    ["Financial governance", "Approval and margin checkpoints", "Finance + Leadership"],
   ] as const;
 
-  const summaryCards = [
-    [HiOutlineLink, "65+", "fields synced"],
-    [HiOutlineClipboardList, "27", "tasks created"],
-    [HiOutlineShieldCheck, "0", "manual re-entry"],
+  const systemLayers = [
+    "Workflow states",
+    "Role-based ownership",
+    "Reporting visibility",
+    "Approval controls",
   ] as const;
 
   return (
     <div className={styles.salesPlatformVisual} aria-label="Sales-to-delivery platform preview">
       <div className={styles.platformTopbar}>
-        <strong>Sales-to-delivery automation</strong>
-        <span>SO-0842 synced</span>
+        <strong>Featured project mockup</strong>
+        <span>Sales-to-Delivery Platform</span>
       </div>
-      <div className={styles.platformHeroPanel}>
-        <section className={styles.platformRecord}>
-          <div className={styles.platformRecordHeader}>
+
+      <div className={styles.projectMockupShell}>
+        <aside className={styles.projectMockupSidebar}>
+          <div>
+            <strong>Sales-to-Delivery</strong>
+            <span>Operational systems workspace</span>
+          </div>
+          <nav aria-label="Mock platform modules">
+            <span>Intake</span>
+            <span>Delivery</span>
+            <span>Vendors</span>
+            <span>Finance</span>
+            <span>Reporting</span>
+          </nav>
+        </aside>
+
+        <section className={styles.projectMockupMain}>
+          <div className={styles.mockupHeader}>
             <div>
-              <span>Confirmed sales order</span>
-              <h3>SO-0842</h3>
+              <span>Business process architecture</span>
+              <h3>Sales-to-Delivery Automation Platform</h3>
             </div>
-            <strong>$12.4K</strong>
+            <strong>Structured workflow system</strong>
           </div>
 
-          <div className={styles.pipelineTrack} aria-label="Automation pipeline">
-            {pipelineStages.map((stage) => (
-              <span key={stage}>{stage}</span>
+          <div className={styles.workflowCanvas}>
+            {workflowColumns.map((column) => (
+              <article key={column.title}>
+                <h4>{column.title}</h4>
+                {column.items.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </article>
             ))}
           </div>
 
-          <div className={styles.generatedWorkspace}>
-            <div className={styles.workspaceChrome}>
-              <strong>PRJ-0187 Delivery Workspace</strong>
-              <span>Active</span>
-            </div>
-            <div className={styles.workspaceBoard}>
-              <div>
-                <em>Project owner</em>
-                <strong>Operations Team</strong>
+          <div className={styles.mockupLowerGrid}>
+            <section className={styles.controlTable}>
+              <div className={styles.controlTableHead}>
+                <span>Process layer</span>
+                <span>System behavior</span>
+                <span>Ownership</span>
               </div>
+              {controlRows.map(([layer, behavior, ownership]) => (
+                <div key={layer}>
+                  <strong>{layer}</strong>
+                  <span>{behavior}</span>
+                  <em>{ownership}</em>
+                </div>
+              ))}
+            </section>
+
+            <aside className={styles.systemLayerPanel}>
+              <span>Governance layer</span>
               <div>
-                <em>Milestones</em>
-                <strong>5 copied</strong>
+                {systemLayers.map((layer) => (
+                  <strong key={layer}>{layer}</strong>
+                ))}
               </div>
-              <div>
-                <em>Vendor packet</em>
-                <strong>Scoped</strong>
-              </div>
-              <div>
-                <em>Finance gate</em>
-                <strong>Ready</strong>
-              </div>
-            </div>
+            </aside>
           </div>
         </section>
-
-        <aside className={styles.automationQueue}>
-          <span>Automation queue</span>
-          <div>
-            {activityRows.map(([label, state]) => (
-              <i key={label}>
-                <HiOutlineDocumentText />
-                <strong>{label}</strong>
-                <em>{state}</em>
-              </i>
-            ))}
-          </div>
-        </aside>
-      </div>
-
-      <div className={styles.platformSummary}>
-        {summaryCards.map(([Icon, value, label]) => (
-          <span key={label}>
-            <Icon />
-            <strong>{value}</strong>
-            <em>{label}</em>
-          </span>
-        ))}
       </div>
     </div>
   );
@@ -385,8 +385,7 @@ export default function Home() {
           <div className={styles.heroContent}>
             <span className={styles.eyebrow}>Systems. Workflows. Outcomes.</span>
             <h1>
-              I build the systems, processes, and operational frameworks that help{" "}
-              <span>organizations scale.</span>
+              Building operational frameworks that help <span>organizations scale.</span>
             </h1>
             <p>
               My work spans ERP platforms, business systems architecture, workflow automation,
@@ -404,14 +403,6 @@ export default function Home() {
               >
                 View Architecture
               </SmartLink>
-            </div>
-            <div className={styles.heroStats}>
-              {proofMetrics.map((metric) => (
-                <div key={metric.value}>
-                  <strong>{metric.value}</strong>
-                  {metric.label && <span>{metric.label}</span>}
-                </div>
-              ))}
             </div>
           </div>
           <OperationsVisual />
@@ -434,9 +425,9 @@ export default function Home() {
               standardized controls, and automated execution.
             </p>
             <div className={styles.featuredOutcomes}>
-              <span>65+ synced fields</span>
-              <span>CRM-to-project automation</span>
-              <span>Zero manual re-entry</span>
+              <span>Shared operational visibility</span>
+              <span>Standardized workflow controls</span>
+              <span>Automated execution handoffs</span>
             </div>
             <SmartLink
               href="/work/sales-to-delivery-automation-platform"

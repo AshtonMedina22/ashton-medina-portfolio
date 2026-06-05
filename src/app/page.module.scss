@@ -572,6 +572,225 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+.projectMockupShell {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.22fr) minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 1.1rem;
+}
+
+.projectMockupSidebar,
+.projectMockupMain,
+.controlTable,
+.systemLayerPanel {
+  min-width: 0;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, rgba(18, 24, 38, 0.9), rgba(9, 14, 24, 0.84));
+}
+
+.projectMockupSidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.1rem;
+
+  strong,
+  span {
+    display: block;
+  }
+
+  strong {
+    color: var(--home-text);
+    font-size: 1rem;
+    font-weight: 750;
+    line-height: 1.15;
+  }
+
+  div > span {
+    margin-top: 0.45rem;
+    color: var(--home-muted);
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  nav {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  nav span {
+    padding: 0.62rem 0.7rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 9px;
+    color: #dbeafe;
+    background: rgba(15, 23, 42, 0.64);
+    font-size: 0.74rem;
+    font-weight: 700;
+  }
+}
+
+.projectMockupMain {
+  padding: clamp(1rem, 1.8vw, 1.45rem);
+}
+
+.mockupHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  span {
+    color: #93c5fd;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    max-width: 18ch;
+    margin: 0.45rem 0 0;
+    color: var(--home-text);
+    font-size: clamp(1.9rem, 3.2vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.96;
+    text-transform: uppercase;
+  }
+
+  > strong {
+    flex: 0 0 auto;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba(34, 197, 94, 0.24);
+    border-radius: 999px;
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.1);
+    font-size: 0.78rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+}
+
+.workflowCanvas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+
+  article {
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(56, 189, 248, 0.1), transparent 7rem),
+      rgba(15, 23, 42, 0.68);
+  }
+
+  h4 {
+    margin: 0 0 0.85rem;
+    color: var(--home-text);
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  span {
+    display: block;
+    min-height: 2.35rem;
+    padding: 0.58rem 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    color: var(--home-muted);
+    font-size: 0.74rem;
+    font-weight: 650;
+    line-height: 1.25;
+  }
+}
+
+.mockupLowerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.32fr);
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.controlTable {
+  display: grid;
+  overflow: hidden;
+
+  .controlTableHead,
+  > div:not(.controlTableHead) {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 0.85rem;
+    align-items: center;
+    padding: 0.82rem 0.95rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .controlTableHead {
+    border-top: 0;
+    color: var(--home-soft);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  strong,
+  span,
+  em {
+    min-width: 0;
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  strong {
+    color: var(--home-text);
+    font-weight: 800;
+  }
+
+  span,
+  em {
+    color: var(--home-muted);
+    font-style: normal;
+    font-weight: 650;
+  }
+}
+
+.systemLayerPanel {
+  padding: 0.95rem;
+
+  > span {
+    display: block;
+    color: #93c5fd;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  > div {
+    display: grid;
+    gap: 0.58rem;
+    margin-top: 0.85rem;
+  }
+
+  strong {
+    display: block;
+    padding: 0.68rem 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 9px;
+    color: var(--home-text);
+    background: rgba(15, 23, 42, 0.68);
+    font-size: 0.76rem;
+    font-weight: 750;
+  }
+}
+
 .platformHeroPanel {
   display: grid;
   grid-template-columns: 1fr;
@@ -1615,6 +1834,13 @@
   .panelHeader,
   .salesPlatformVisual h3,
   .salesPlatformVisual strong,
+  .mockupHeader h3,
+  .mockupHeader > strong,
+  .projectMockupSidebar strong,
+  .projectMockupSidebar nav span,
+  .workflowCanvas h4,
+  .controlTable strong,
+  .systemLayerPanel strong,
   .platformRecordHeader h3,
   .platformRecordHeader > strong,
   .pipelineTrack span,
@@ -1635,6 +1861,10 @@
   .opsVisual span,
   .opsVisual em,
   .salesPlatformVisual span,
+  .projectMockupSidebar div > span,
+  .workflowCanvas span,
+  .controlTable span,
+  .controlTable em,
   .platformRecordHeader span,
   .workspaceBoard em,
   .platformSummary em,
@@ -1645,7 +1875,8 @@
   }
 
   .workspaceChrome span,
-  .automationQueue em {
+  .automationQueue em,
+  .mockupHeader > strong {
     color: #86efac;
   }
 
@@ -1743,6 +1974,8 @@
   .visualMetrics,
   .visualDashboardGrid,
   .workflowStatus,
+  .projectMockupShell,
+  .mockupLowerGrid,
   .platformHeroPanel,
   .platformCanvas,
   .orderMeta,
@@ -1752,6 +1985,10 @@
   }
 
   .automationQueue > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflowCanvas {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1824,11 +2061,23 @@
   }
 
   .pipelineTrack,
-  .workspaceBoard {
+  .workspaceBoard,
+  .workflowCanvas,
+  .controlTable .controlTableHead,
+  .controlTable > div:not(.controlTableHead) {
     grid-template-columns: 1fr;
   }
 
   .automationQueue > div {
     grid-template-columns: 1fr;
+  }
+
+  .mockupHeader {
+    display: grid;
+  }
+
+  .mockupHeader > strong {
+    width: fit-content;
+    white-space: normal;
   }
 }
