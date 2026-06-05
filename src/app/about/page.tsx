@@ -4,13 +4,14 @@ import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
   HiOutlineBriefcase,
-  HiOutlineChip,
-  HiOutlineCollection,
-  HiOutlineCube,
-  HiOutlineDatabase,
-  HiOutlineLightningBolt,
+  HiOutlineChartBar,
+  HiOutlineClipboardCheck,
+  HiOutlineCog,
+  HiOutlineDocumentText,
+  HiOutlineExternalLink,
   HiOutlineLocationMarker,
-  HiOutlineShare,
+  HiOutlineMail,
+  HiOutlineOfficeBuilding,
   HiOutlineShieldCheck,
 } from "react-icons/hi";
 
@@ -24,99 +25,137 @@ export async function generateMetadata() {
   });
 }
 
-const credentialCards = [
-  {
-    icon: HiOutlineBriefcase,
-    label: "Business systems",
-    value: "Architect",
-    detail: "Systems, workflows, controls, and execution",
-  },
-  {
-    icon: HiOutlineCollection,
-    label: "Portfolio",
-    value: "4 systems",
-    detail: "Enterprise platforms showcased",
-  },
-  {
-    icon: HiOutlineShare,
-    label: "Workflow logic",
-    value: "Workflow automation",
-    detail: "CRM, finance, vendor, and project workflows",
-  },
+const contactItems = [
   {
     icon: HiOutlineLocationMarker,
-    label: "Based in",
+    label: "Location",
     value: person.locationLabel ?? "United States",
-    detail: "Available for opportunities",
+    href: "",
+  },
+  { icon: HiOutlineMail, label: "Email", value: person.email, href: `mailto:${person.email}` },
+  {
+    icon: HiOutlineExternalLink,
+    label: "LinkedIn",
+    value: "linkedin.com/in/ashton-medina",
+    href: "https://www.linkedin.com/in/ashton-medina",
   },
 ] as const;
 
-const proofStats = [
+const resumeHighlights = [
+  "10+ years improving operational workflows across multi-site and technology-enabled environments.",
+  "Business systems owner across ERP, CRM, vendor management, accounting, HR, reporting, and project workflows.",
+  "Experienced in requirements gathering, process mapping, KPI reporting, stakeholder management, and system implementation.",
+] as const;
+
+const experience = [
   {
-    icon: HiOutlineCube,
-    value: "Architecture",
-    label: "Platform design",
-    detail: "ERP, workflow, and operational systems",
+    title: "Business Systems Architect II",
+    company: "Party Time Texas",
+    period: "2025 - Present",
+    location: "Allen, TX",
+    bullets: [
+      "Serve as primary business systems owner for ERP systems supporting CRM, sales, vendor management, accounting, HR, reporting, project management, and business operations.",
+      "Lead requirements gathering, workflow analysis, and process mapping with leadership, stakeholders, vendors, and implementation partners.",
+      "Design and standardize workflows for vendor onboarding, compliance management, contract administration, approvals, documentation tracking, and partner lifecycle management.",
+      "Manage ERP implementation work including process validation, configuration, phased planning, testing, documentation, training, and stakeholder coordination.",
+      "Develop KPI reporting frameworks, executive dashboards, and operational reporting solutions that improve visibility and decision-making.",
+    ],
   },
   {
-    icon: HiOutlineCollection,
-    value: "4",
-    label: "Project systems",
-    detail: "ERP, finance, vendor, project, and operational systems",
+    title: "TechOps Executive & Executive Assistant to CEO",
+    company: "Logitrac",
+    period: "2023 - 2025",
+    location: "Dallas-Fort Worth, TX",
+    bullets: [
+      "Partnered with executive leadership on strategic initiatives, operational planning, process improvement, and business systems administration.",
+      "Coordinated customer onboarding, implementation, and operational readiness for national automotive OEMs and multi-location dealership organizations.",
+      "Managed integrations and operational processes involving telematics platforms, toll recovery systems, payment processors, dealership systems, and partner ecosystems.",
+      "Built implementation playbooks, onboarding programs, knowledge base content, automated help desk/chatbot workflows, process documentation, and training resources.",
+      "Created reporting structures and operational visibility tools used by leadership to monitor implementation progress, business performance, and customer satisfaction.",
+    ],
   },
   {
-    icon: HiOutlineShare,
-    value: "Workflow Automation",
-    label: "",
-    detail: "CRM, finance, vendor, and project workflows",
-  },
-  {
-    icon: HiOutlineShieldCheck,
-    value: "Enterprise",
-    label: "Focus",
-    detail: "Scale, security, governance, compliance",
+    title: "Director of Operations",
+    company: "KRK Learning Academies",
+    period: "2009 - 2023",
+    location: "Dallas-Fort Worth, TX",
+    bullets: [
+      "Directed multi-site business operations across staffing, compliance, enrollment, administration, scheduling, reporting, and organizational management.",
+      "Led process improvement and standardization through operating procedures, documentation frameworks, reporting controls, compliance programs, and governance practices.",
+      "Managed regulatory compliance, inspections, audits, documentation standards, and operational readiness in a highly regulated environment.",
+      "Oversaw billing, payroll coordination, contractor administration, vendor management, purchasing controls, and operational reporting.",
+      "Led recruitment, onboarding, workforce scheduling, performance management, employee development, and administrative support for teams of 30+ employees.",
+    ],
   },
 ] as const;
 
-const capabilityIcons = [
-  HiOutlineCube,
-  HiOutlineShare,
-  HiOutlineDatabase,
-  HiOutlineShieldCheck,
-  HiOutlineLightningBolt,
+const competencies = [
+  "Business Analysis",
+  "Requirements Gathering",
+  "Business Process Analysis",
+  "Process Mapping",
+  "Workflow Design",
+  "Gap Analysis",
+  "Stakeholder Management",
+  "Process Improvement",
+  "Operational Analysis",
+  "KPI Development",
+  "Executive Reporting",
+  "Systems Implementation",
+  "User Acceptance Testing",
+  "Vendor Management",
+  "Compliance Management",
+  "Training & Adoption",
 ] as const;
 
-const systemChips = [
-  "ERP & Financial Systems",
-  "Workflow Automation Engines",
-  "Operational Intelligence",
-  "Vendor & Contract Lifecycle",
+const technicalSkills = [
+  "Custom ERP Implementation",
+  "CRM Platforms",
+  "Reporting & Analytics",
+  "Dashboard Development",
+  "API Integrations",
+  "Workflow Automation",
+  "Systems Architecture",
+  "Software Development",
+  "Python",
+  "SQL",
+  "TypeScript",
 ] as const;
 
-const operatingPrinciples = [
+const education = [
   {
-    title: "Design Around Real Workflows",
-    detail: "Start with how teams actually sell, approve, deliver, report, and coordinate work.",
+    title: "Master of Business Administration (MBA)",
+    institution: "Haroun Education Ventures",
+  },
+] as const;
+
+const certifications = [
+  "ClickUp Expert Certification - ClickUp",
+  "Business Process & System Design - ProcessDriven",
+  "CMS: Website Design & Deployment - Webflow",
+  "Web Development - SheCodes",
+] as const;
+
+const portfolioLinks = [
+  {
+    title: "Sales-to-Delivery Automation Platform",
+    description: "Business systems initiative connecting sales, delivery, vendor, and financial workflows.",
+    href: "/work/sales-to-delivery-automation-platform",
   },
   {
-    title: "Make System Logic Explicit",
-    detail:
-      "Use clear data models, workflow states, permissions, and approval rules instead of informal process knowledge.",
+    title: "Revenue Financial Control Engine",
+    description: "Financial governance system for margin controls, approvals, vendor variance, and payout readiness.",
+    href: "/work/revenue-financial-control-engine",
   },
   {
-    title: "Reduce Manual Handoffs",
-    detail:
-      "Automate repeatable transitions between CRM, finance, vendor, project, and reporting workflows.",
+    title: "Vendor Lifecycle Compliance Platform",
+    description: "Vendor onboarding, compliance state, portal access, and assignment acceptance workflow.",
+    href: "/work/vendor-lifecycle-compliance-platform",
   },
   {
-    title: "Build For Maintainability",
-    detail:
-      "Keep systems readable, testable, documented, and adaptable as business requirements change.",
-  },
-  {
-    title: "Improve Visibility",
-    detail:
-      "Give teams useful operational context without turning every system into a noisy dashboard.",
+    title: "Operational Intelligence Platform",
+    description: "Reporting and leadership visibility across operational KPIs, activity records, and exports.",
+    href: "/work/operational-intelligence-platform",
   },
 ] as const;
 
@@ -126,7 +165,6 @@ function getContactHref() {
 
 export default function About() {
   const linkedIn = social.find((item) => item.icon === "linkedin");
-  const focusCards = about.focusAreas?.display ? about.focusAreas.areas.slice(0, 5) : [];
 
   return (
     <main className={styles.aboutPage}>
@@ -144,151 +182,222 @@ export default function About() {
         }}
       />
 
-      <section className={styles.heroSection}>
-        <div className={styles.heroCopy}>
-          <span className={styles.eyebrow}>About me</span>
-          <h1>
-            I build operational systems that bring structure, visibility, and{" "}
-            <span>execution discipline.</span>
-          </h1>
-          <p>
-            I&apos;m {person.name}. My work spans business systems architecture, ERP platforms,
-            workflow automation, reporting, operational controls, and process improvement
-            initiatives that help teams scale with clearer ownership and better execution.
-          </p>
-          <div className={styles.focusStrip}>
-            <HiOutlineShieldCheck />
-            <span>Focused on structure. Driven by outcomes. Built for scale.</span>
-          </div>
-        </div>
-
-        <div className={styles.heroPortraitWrap}>
+      <section className={styles.resumeShell}>
+        <aside className={styles.resumeSidebar}>
           <div className={styles.portraitCard}>
             <img src="/images/avatar.jpg" alt={person.name} />
           </div>
-          <aside className={styles.profilePanel} aria-label="Profile highlights">
-            {credentialCards.map((card) => {
-              const Icon = card.icon;
-              return (
-                <div key={card.label}>
+          <div className={styles.identityBlock}>
+            <span>Resume Portfolio</span>
+            <h1>{person.name}</h1>
+            <p>Business Systems Architect</p>
+          </div>
+
+          <div className={styles.contactList}>
+            {contactItems.map((item) => {
+              const Icon = item.icon;
+              const content = (
+                <>
                   <Icon />
-                  <div>
-                    <strong>{card.value}</strong>
-                    <span>{card.detail}</span>
-                  </div>
-                </div>
+                  <span>
+                    <em>{item.label}</em>
+                    <strong>{item.value}</strong>
+                  </span>
+                </>
+              );
+
+              const isExternal = item.href.startsWith("http");
+
+              return item.href ? (
+                <SmartLink
+                  key={item.label}
+                  href={item.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                >
+                  {content}
+                </SmartLink>
+              ) : (
+                <div key={item.label}>{content}</div>
               );
             })}
-          </aside>
-        </div>
-      </section>
-
-      <section className={styles.proofStrip} aria-label="Professional focus">
-        {proofStats.map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <article key={stat.label}>
-              <Icon />
-              <div>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-                <p>{stat.detail}</p>
-              </div>
-            </article>
-          );
-        })}
-      </section>
-
-      <section className={styles.capabilitiesSection}>
-        <div className={styles.sectionIntro}>
-          <span className={styles.sectionEyebrow}>What I do</span>
-          <h2>Architecture, workflow logic, and implementation ownership.</h2>
-        </div>
-        <p className={styles.sectionLead}>
-          {about.intro.display
-            ? "I treat technology as an operating framework: systems that standardize execution, reduce process risk, and make work easier to govern as organizations grow."
-            : "I partner with organizations to solve complex operational challenges through custom-built platforms, automation, and data-driven intelligence."}
-        </p>
-        <div className={styles.capabilityGrid}>
-          {focusCards.map((area, index) => {
-            const Icon = capabilityIcons[index] ?? HiOutlineChip;
-            return (
-              <article key={area.title}>
-                <Icon />
-                <h3>{area.title}</h3>
-                <p>{area.description}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className={styles.systemsSection}>
-        <div className={styles.sectionIntro}>
-          <span className={styles.sectionEyebrow}>Systems I build</span>
-          <h2>Core system areas.</h2>
-        </div>
-        <div className={styles.systemChips}>
-          {systemChips.map((chip, index) => (
-            <span key={chip}>
-              {index % 3 === 0 ? (
-                <HiOutlineCube />
-              ) : index % 3 === 1 ? (
-                <HiOutlineShare />
-              ) : (
-                <HiOutlineShieldCheck />
-              )}
-              {chip}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.journeySection}>
-        <div className={styles.journeyHeader}>
-          <div className={styles.sectionIntro}>
-            <span className={styles.sectionEyebrow}>Operating principles</span>
-            <h2>How I approach system work.</h2>
           </div>
-          <p>
-            I focus on building systems that match how operations actually work, reduce manual
-            coordination, and make business rules easier to manage.
-          </p>
-        </div>
-        <div className={styles.timeline}>
-          {operatingPrinciples.map((item, index) => (
-            <article key={item.title} className={index === 0 ? styles.activeJourney : undefined}>
-              <span />
-              <h3>{item.title}</h3>
-              <p>{item.detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
-      <section className={styles.ctaSection}>
-        <div>
-          <HiOutlineShare />
-          <p>
-            Well-designed systems reduce operational friction, improve visibility, and create more
-            reliable execution.
-          </p>
-        </div>
-        <div className={styles.ctaActions}>
-          <SmartLink href={getContactHref()} className={styles.primaryCta}>
-            Let&apos;s build something impactful
-            <HiOutlineArrowRight />
-          </SmartLink>
-          {linkedIn && (
-            <SmartLink
-              href={linkedIn.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondaryCta}
-            >
-              LinkedIn
-            </SmartLink>
-          )}
+          <div className={styles.sidebarSection}>
+            <h2>Core Skills</h2>
+            <div className={styles.skillPills}>
+              {competencies.slice(0, 8).map((skill) => (
+                <span key={skill}>{skill}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.sidebarSection}>
+            <h2>Technical</h2>
+            <div className={styles.skillPills}>
+              {technicalSkills.slice(0, 8).map((skill) => (
+                <span key={skill}>{skill}</span>
+              ))}
+            </div>
+          </div>
+        </aside>
+
+        <div className={styles.resumeMain}>
+          <section className={styles.resumeHero}>
+            <span className={styles.sectionEyebrow}>Professional Summary</span>
+            <h2>Operations leader building scalable business systems and workflow infrastructure.</h2>
+            <p>
+              Operations leader with 10+ years of experience analyzing business processes,
+              gathering requirements, improving operational workflows, supporting system
+              implementations, and driving organizational efficiency across multi-site and
+              technology-enabled environments.
+            </p>
+            <div className={styles.heroActions}>
+              <SmartLink href="/work" className={styles.primaryCta}>
+                View Portfolio
+                <HiOutlineArrowRight />
+              </SmartLink>
+              <SmartLink href={getContactHref()} className={styles.secondaryCta}>
+                Contact
+              </SmartLink>
+              {linkedIn && (
+                <SmartLink
+                  href={linkedIn.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.secondaryCta}
+                >
+                  LinkedIn
+                </SmartLink>
+              )}
+            </div>
+          </section>
+
+          <section className={styles.highlightsGrid} aria-label="Resume highlights">
+            {resumeHighlights.map((highlight, index) => {
+              const Icon = [HiOutlineBriefcase, HiOutlineCog, HiOutlineChartBar][index];
+              return (
+                <article key={highlight}>
+                  <Icon />
+                  <p>{highlight}</p>
+                </article>
+              );
+            })}
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeader}>
+              <HiOutlineOfficeBuilding />
+              <div>
+                <span className={styles.sectionEyebrow}>Experience</span>
+                <h2>Professional Experience</h2>
+              </div>
+            </div>
+            <div className={styles.experienceList}>
+              {experience.map((role) => (
+                <article key={`${role.company}-${role.title}`} className={styles.experienceItem}>
+                  <div className={styles.experienceMeta}>
+                    <span>{role.period}</span>
+                    <em>{role.location}</em>
+                  </div>
+                  <div className={styles.experienceBody}>
+                    <h3>{role.title}</h3>
+                    <strong>{role.company}</strong>
+                    <ul>
+                      {role.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeader}>
+              <HiOutlineShieldCheck />
+              <div>
+                <span className={styles.sectionEyebrow}>Capabilities</span>
+                <h2>Core Competencies</h2>
+              </div>
+            </div>
+            <div className={styles.competencyGrid}>
+              {competencies.map((skill) => (
+                <span key={skill}>{skill}</span>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeader}>
+              <HiOutlineCog />
+              <div>
+                <span className={styles.sectionEyebrow}>Technical Skills</span>
+                <h2>Systems & Tools</h2>
+              </div>
+            </div>
+            <div className={styles.competencyGrid}>
+              {technicalSkills.map((skill) => (
+                <span key={skill}>{skill}</span>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.twoColumnSection}>
+            <article className={styles.resumeSection}>
+              <div className={styles.sectionHeader}>
+                <HiOutlineDocumentText />
+                <div>
+                  <span className={styles.sectionEyebrow}>Education</span>
+                  <h2>Education</h2>
+                </div>
+              </div>
+              {education.map((item) => (
+                <div key={item.title} className={styles.simpleEntry}>
+                  <strong>{item.title}</strong>
+                  <span>{item.institution}</span>
+                </div>
+              ))}
+            </article>
+
+            <article className={styles.resumeSection}>
+              <div className={styles.sectionHeader}>
+                <HiOutlineClipboardCheck />
+                <div>
+                  <span className={styles.sectionEyebrow}>Credentials</span>
+                  <h2>Certifications</h2>
+                </div>
+              </div>
+              <ul className={styles.certList}>
+                {certifications.map((certification) => (
+                  <li key={certification}>{certification}</li>
+                ))}
+              </ul>
+            </article>
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeader}>
+              <HiOutlineExternalLink />
+              <div>
+                <span className={styles.sectionEyebrow}>Portfolio</span>
+                <h2>Relevant Systems Work</h2>
+              </div>
+            </div>
+            <div className={styles.portfolioGrid}>
+              {portfolioLinks.map((project) => (
+                <SmartLink key={project.href} href={project.href} className={styles.portfolioCard}>
+                  <strong>{project.title}</strong>
+                  <span>{project.description}</span>
+                  <em>
+                    View case study
+                    <HiOutlineArrowRight />
+                  </em>
+                </SmartLink>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
     </main>
