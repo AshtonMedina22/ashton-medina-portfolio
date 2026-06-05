@@ -15,7 +15,7 @@ const person: Person = {
   firstName: "Ashton",
   lastName: "Medina",
   name: "Ashton Medina",
-  role: "Systems & Platform Engineer",
+  role: "Business Systems Architect",
   avatar: "/images/avatar.png",
   email: "ashtonmedina22@gmail.com",
   location: "America/Chicago",
@@ -95,10 +95,10 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: "Ashton Medina - Systems & Platform Engineer | Portfolio",
+  title: "Ashton Medina - Business Systems Architect | Portfolio",
   description:
-    "Systems and platform engineer specializing in ERP platforms, workflow automation, vendor systems, financial controls, and operational dashboards for enterprise teams.",
-  headline: <>Building enterprise systems that automate and organize business operations</>,
+    "Business systems architect with experience across operations leadership, process improvement, software implementation, workflow automation, reporting, and organizational execution.",
+  headline: <>Building operational frameworks that help organizations scale</>,
   featured: {
     display: false,
     title: (
@@ -110,9 +110,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Ashton, a systems and platform engineer specializing in ERP platforms, workflow
-      automation, vendor systems, financial controls, and operational dashboards for enterprise
-      teams.
+      I'm Ashton, a business systems architect with experience across operations leadership,
+      process improvement, software implementation, workflow automation, reporting, and
+      organizational execution.
     </>
   ),
 };
@@ -121,7 +121,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About | ${person.name}`,
-  description: `${person.name} - Systems & platform engineer. Approach to scalable, governed platforms and delivery.`,
+  description: `${person.name} - Business systems architect with experience in operations, process improvement, implementation, reporting, and organizational execution.`,
   tableOfContent: {
     display: false,
     subItems: false,
@@ -138,9 +138,9 @@ const about: About = {
     title: "Approach",
     description: (
       <>
-        I treat technology as an operational system: platforms that standardize execution, reduce
-        process risk, and stay maintainable as teams and requirements change. Built for real users,
-        governed workflows, and long-term durability.
+        I approach systems work from the operating reality first: how teams communicate, where work
+        gets delayed, what needs to be documented, and which tools or reports can make execution
+        more consistent.
       </>
     ),
   },
@@ -153,57 +153,61 @@ const about: About = {
     display: true,
     areas: [
       {
-        title: "Systems Architecture",
+        title: "Operations & Process Improvement",
         description:
-          "Operational systems that connect sales, finance, vendors, projects, and delivery into one managed workflow.",
+          "Experience improving how work moves across departments, handoffs, documentation, and recurring operating routines.",
         bullets: [
-          "Multi-domain data modeling",
-          "Cross-module workflow orchestration",
-          "State-driven process enforcement",
+          "Workflow analysis and process mapping",
+          "SOP and documentation frameworks",
+          "Cross-functional handoff improvement",
         ],
       },
       {
-        title: "Backend & Workflow Engineering",
-        description: "Backend systems that govern execution, not just store data.",
+        title: "Business Systems Implementation",
+        description: "Platform implementation work grounded in requirements, testing, rollout, and adoption.",
         bullets: [
-          "Lifecycle state machines",
-          "Approval and milestone structures",
-          "Revenue-to-execution automation",
+          "Requirements gathering and configuration support",
+          "UAT, phased rollout, and training",
+          "CRM, ERP, reporting, and workflow platforms",
         ],
       },
       {
         title: "Systems Integration",
-        description: "Connecting disconnected tools into one operational system.",
+        description: "Connecting business tools so information moves with less duplicate entry and fewer gaps.",
         bullets: [
-          "API and webhook automation",
+          "API, webhook, and platform automation",
           "CRM, ERP, payments, telematics",
-          "Data sync and partner coordination",
+          "Data sync and partner system coordination",
         ],
       },
       {
-        title: "Financial & Operational Controls",
+        title: "Reporting & Operational Controls",
         description:
-          "Invoice, payment, margin, and approval controls built directly into workflows.",
+          "Reporting and governance structures that improve accountability, visibility, and decision-making.",
         bullets: [
-          "Pricing authority and approval chains",
-          "Vendor lifecycle management",
-          "Audit-aware design",
+          "KPI development and dashboarding",
+          "Approval paths and compliance controls",
+          "Finance, vendor, and operations reporting",
         ],
       },
       {
-        title: "Technical Leadership & Delivery",
+        title: "Operations Leadership",
         description:
-          "Leading projects from architecture, implementation, testing, and rollout through operational adoption.",
+          "Hands-on leadership across multi-site operations, executive coordination, staffing, compliance, and customer readiness.",
         bullets: [
-          "Platform replacement and multi-location rollout",
-          "Cross-functional technical leadership",
-          "Documentation and onboarding",
+          "Multi-site operational management",
+          "Executive stakeholder coordination",
+          "Onboarding, readiness, and training programs",
         ],
       },
       {
-        title: "UX-Informed Engineering",
-        description: "Systems built for real adoption.",
-        bullets: ["Workflow usability and dashboarding", "Enablement and performance reporting"],
+        title: "Technical Execution",
+        description: "Ability to bridge business requirements with practical technical implementation.",
+        bullets: [
+          "Software development and automation",
+          "Dashboard and data model design",
+          "Maintainable, user-aware system workflows",
+        ],
       },
     ],
   },

@@ -42,9 +42,9 @@ const contactItems = [
 ] as const;
 
 const resumeHighlights = [
-  "10+ years improving operational workflows across multi-site and technology-enabled environments.",
-  "Business systems owner across ERP, CRM, vendor management, accounting, HR, reporting, and project workflows.",
-  "Experienced in requirements gathering, process mapping, KPI reporting, stakeholder management, and system implementation.",
+  "10+ years leading operations, process improvement, system implementation, and organizational execution across multi-site and technology-enabled environments.",
+  "Experienced across operations, finance, HR, vendor management, CRM, ERP, reporting, onboarding, compliance, and customer-facing implementation workflows.",
+  "Strong background in requirements gathering, process mapping, stakeholder management, KPI development, documentation, training, and adoption.",
 ] as const;
 
 const experience = [
@@ -94,23 +94,29 @@ const competencies = [
   "Requirements Gathering",
   "Business Process Analysis",
   "Process Mapping",
+  "SOP Development",
   "Workflow Design",
   "Gap Analysis",
   "Stakeholder Management",
   "Process Improvement",
   "Operational Analysis",
+  "Operations Leadership",
   "KPI Development",
   "Executive Reporting",
   "Systems Implementation",
   "User Acceptance Testing",
+  "Change Management",
   "Vendor Management",
   "Compliance Management",
   "Training & Adoption",
 ] as const;
 
 const technicalSkills = [
-  "Custom ERP Implementation",
+  "Software Implementation",
+  "Systems Integration",
+  "Platform Administration",
   "CRM Platforms",
+  "ERP Platforms",
   "Reporting & Analytics",
   "Dashboard Development",
   "API Integrations",
@@ -222,12 +228,12 @@ export default function About() {
         <div className={styles.resumeMain}>
           <section className={styles.resumeHero}>
             <span className={styles.sectionEyebrow}>Professional Summary</span>
-            <h2>Operations leader building scalable business systems and workflow infrastructure.</h2>
+            <h2>Operations and systems leader building scalable business infrastructure.</h2>
             <p>
               Operations leader with 10+ years of experience analyzing business processes,
-              gathering requirements, improving operational workflows, supporting system
-              implementations, and driving organizational efficiency across multi-site and
-              technology-enabled environments.
+              gathering requirements, improving workflows, implementing software, building
+              reporting structures, documenting operating procedures, and driving organizational
+              efficiency across multi-site and technology-enabled environments.
             </p>
             <div className={styles.heroActions}>
               <SmartLink href="/work" className={styles.primaryCta}>

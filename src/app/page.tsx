@@ -4,39 +4,40 @@ import { Column, Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
   HiOutlineChartBar,
-  HiOutlineShare,
+  HiOutlineClipboardList,
+  HiOutlineCog,
   HiOutlineShieldCheck,
 } from "react-icons/hi";
 import styles from "./page.module.scss";
 
 const proofStrip = [
-  "ERP Workflow Automation",
-  "Financial Governance",
-  "Vendor Lifecycle Systems",
-  "Operational Intelligence",
-  "Platform Engineering",
+  "Business Analysis",
+  "Process Improvement",
+  "Systems Implementation",
+  "Operations Leadership",
+  "Reporting & Analytics",
 ] as const;
 
 const capabilities = [
   {
-    icon: HiOutlineShare,
-    title: "Business Systems Architecture",
-    text: "Design the operating structure behind how teams sell, deliver, coordinate, approve, report, and scale work.",
+    icon: HiOutlineClipboardList,
+    title: "Operations & Process Improvement",
+    text: "Analyze how work moves through teams, identify gaps, and turn informal operating habits into repeatable processes.",
   },
   {
-    icon: HiOutlineShieldCheck,
-    title: "Workflow & Process Design",
-    text: "Translate scattered handoffs into clear ownership, repeatable steps, decision points, and accountable execution paths.",
+    icon: HiOutlineCog,
+    title: "Systems Implementation",
+    text: "Support platform selection, configuration, testing, documentation, rollout, and adoption across business functions.",
   },
   {
     icon: HiOutlineChartBar,
-    title: "Operational Controls",
-    text: "Build the approval logic, access rules, documentation standards, and governance checkpoints that keep work reliable.",
+    title: "Visibility & Reporting",
+    text: "Develop KPI structures, dashboards, operating reports, and leadership views that turn activity into usable context.",
   },
   {
     icon: HiOutlineShieldCheck,
-    title: "Visibility & Reporting",
-    text: "Create the dashboards, reporting flows, and leadership views that make performance, blockers, and accountability visible.",
+    title: "Controls, Adoption & Scale",
+    text: "Establish ownership, approval paths, SOPs, training materials, and governance practices that support sustained execution.",
   },
 ] as const;
 
@@ -115,11 +116,11 @@ export async function generateMetadata() {
 
 function OperationsVisual() {
   const workflowRows = [
-    ["Sales-to-delivery workflow", "Controlled", "Handoff", "Operations"],
-    ["Vendor coordination", "Active", "Access", "Operations"],
-    ["Financial approval path", "Governed", "Control", "Finance"],
-    ["Reporting workflow", "Visible", "Dashboard", "Leadership"],
-    ["Closeout process", "Reviewed", "Approval", "Finance"],
+    ["Requirements discovery", "Mapped", "Analysis", "Stakeholders"],
+    ["Process standardization", "Documented", "Operations", "Team leads"],
+    ["Platform implementation", "Active", "Systems", "Implementation"],
+    ["Reporting cadence", "Visible", "Data", "Leadership"],
+    ["Training and adoption", "Embedded", "People", "Operators"],
   ] as const;
 
   return (
@@ -127,42 +128,42 @@ function OperationsVisual() {
       <div className={styles.visualRail} aria-hidden>
         <span className={styles.logoMark}>A</span>
         <span className={styles.activeIcon}>Home</span>
-        <span>CRM</span>
-        <span>Projects</span>
-        <span>Vendors</span>
-        <span>Reports</span>
+        <span>Strategy</span>
+        <span>Process</span>
+        <span>Systems</span>
+        <span>Reporting</span>
       </div>
       <div className={styles.visualMain}>
         <div className={styles.visualTopbar}>
-          <strong>Operations Workspace</strong>
-          <span>ERP workflow view</span>
+          <strong>Operating Model Workspace</strong>
+          <span>Business systems view</span>
         </div>
         <div className={styles.visualMetrics}>
           <div>
-            <span>System design</span>
-            <strong>Architecture</strong>
-            <em>Business workflow logic</em>
+            <span>Discovery</span>
+            <strong>Analysis</strong>
+            <em>Requirements and constraints</em>
           </div>
           <div>
-            <span>Process flow</span>
-            <strong>Automation</strong>
-            <em>Reduced manual handoffs</em>
+            <span>Execution</span>
+            <strong>Process</strong>
+            <em>Repeatable operating flow</em>
           </div>
           <div>
-            <span>Controls</span>
-            <strong>Governance</strong>
-            <em>Approvals and ownership</em>
+            <span>Delivery</span>
+            <strong>Implementation</strong>
+            <em>Tools, rollout, adoption</em>
           </div>
           <div>
-            <span>Visibility</span>
-            <strong>Reporting</strong>
-            <em>Operational context</em>
+            <span>Management</span>
+            <strong>Visibility</strong>
+            <em>KPIs and decision context</em>
           </div>
         </div>
 
         <div className={styles.visualDashboardGrid}>
           <section className={styles.workflowChart}>
-            <div className={styles.panelHeader}>Order-to-delivery progress</div>
+            <div className={styles.panelHeader}>Operating improvement path</div>
             <div className={styles.chartFrame} aria-hidden>
               <span style={{ inlineSize: "16%" }} />
               <span style={{ inlineSize: "34%" }} />
@@ -172,10 +173,10 @@ function OperationsVisual() {
               <span style={{ inlineSize: "94%" }} />
             </div>
             <div className={styles.chartLabels}>
-              <span>Confirmed</span>
-              <span>Project</span>
-              <span>Vendor</span>
-              <span>Closeout</span>
+              <span>Review</span>
+              <span>Design</span>
+              <span>Implement</span>
+              <span>Adopt</span>
             </div>
           </section>
 
@@ -204,9 +205,9 @@ function OperationsVisual() {
         </div>
 
         <section className={styles.workflowTable}>
-          <div className={styles.panelHeader}>Recent workflow executions</div>
+          <div className={styles.panelHeader}>Operating model workstreams</div>
           <div className={styles.tableHead}>
-            <span>Workflow</span>
+            <span>Workstream</span>
             <span>Status</span>
             <span>Layer</span>
             <span>Owner</span>
@@ -393,9 +394,9 @@ export default function Home() {
               Building operational frameworks that help <span>organizations scale.</span>
             </h1>
             <p>
-              My work spans ERP platforms, business systems architecture, workflow automation,
-              reporting, operational controls, and process improvement initiatives that increase
-              visibility, accountability, and execution across the organization.
+              My work spans operations leadership, business analysis, process improvement,
+              platform implementation, workflow automation, reporting, integrations, training, and
+              change management across growing organizations.
             </p>
             <div className={styles.heroActions}>
               <SmartLink href="/work" className={styles.primaryCta}>
@@ -424,8 +425,9 @@ export default function Home() {
             <span className={styles.sectionEyebrow}>Capabilities</span>
             <h2>Systems capability across the full operating model.</h2>
             <p>
-              The work spans business systems architecture, process design, operational controls,
-              reporting structures, and execution frameworks that improve how organizations run.
+              My background is not tied to one platform. It covers operational analysis, process
+              standardization, software implementation, data visibility, documentation, training,
+              and the controls needed to manage growth.
             </p>
           </div>
           <div className={styles.capabilityGrid}>
@@ -485,7 +487,7 @@ export default function Home() {
 
         {techStack.length > 0 && (
           <section className={styles.techBanner} aria-label="Technology stack">
-            <span>Technology stack behind the systems</span>
+            <span>Tools and platforms used across business systems work</span>
             <TechStackMarquee />
           </section>
         )}
