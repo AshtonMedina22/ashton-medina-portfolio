@@ -136,29 +136,6 @@ const certifications = [
   "Web development certification",
 ] as const;
 
-const portfolioLinks = [
-  {
-    title: "Sales-to-Delivery Automation Platform",
-    description: "Business systems initiative connecting sales, delivery, vendor, and financial workflows.",
-    href: "/work/sales-to-delivery-automation-platform",
-  },
-  {
-    title: "Revenue Financial Control Engine",
-    description: "Financial governance system for margin controls, approvals, vendor variance, and payout readiness.",
-    href: "/work/revenue-financial-control-engine",
-  },
-  {
-    title: "Vendor Lifecycle Compliance Platform",
-    description: "Vendor onboarding, compliance state, portal access, and assignment acceptance workflow.",
-    href: "/work/vendor-lifecycle-compliance-platform",
-  },
-  {
-    title: "Operational Intelligence Platform",
-    description: "Reporting and leadership visibility across operational KPIs, activity records, and exports.",
-    href: "/work/operational-intelligence-platform",
-  },
-] as const;
-
 function getContactHref() {
   return `mailto:${person.email}`;
 }
@@ -377,27 +354,6 @@ export default function About() {
             </article>
           </section>
 
-          <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineExternalLink />
-              <div>
-                <span className={styles.sectionEyebrow}>Portfolio</span>
-                <h2>Relevant Systems Work</h2>
-              </div>
-            </div>
-            <div className={styles.portfolioGrid}>
-              {portfolioLinks.map((project) => (
-                <SmartLink key={project.href} href={project.href} className={styles.portfolioCard}>
-                  <strong>{project.title}</strong>
-                  <span>{project.description}</span>
-                  <em>
-                    View case study
-                    <HiOutlineArrowRight />
-                  </em>
-                </SmartLink>
-              ))}
-            </div>
-          </section>
         </div>
       </section>
     </main>
