@@ -31,8 +31,8 @@
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(26rem, 0.75fr);
-  gap: clamp(2rem, 6vw, 7rem);
+  grid-template-columns: minmax(0, 1fr) minmax(26rem, 0.72fr);
+  gap: clamp(2rem, 5vw, 6rem);
   align-items: center;
 }
 
@@ -61,20 +61,20 @@
 }
 
 .heroTitle {
-  max-width: 14ch;
-  margin: 1rem 0 0;
+  max-width: 18ch;
+  margin: 0.9rem 0 0;
   color: var(--project-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
-  font-size: clamp(2.1rem, 2.9vw, 2.5rem);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  font-size: clamp(2.65rem, 4.4vw, 4.65rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
   text-transform: uppercase;
 }
 
 .heroTagline {
-  max-width: 45rem;
-  margin: 1.55rem 0 0;
+  max-width: 48rem;
+  margin: 1.35rem 0 0;
   color: var(--project-muted);
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   line-height: 1.75;
@@ -384,8 +384,8 @@
 
 .projectWorkspacePreview {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
-  gap: 0.7rem;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
   margin-top: 0.75rem;
   padding: 0.75rem;
   border: 1px solid rgba(148, 163, 184, 0.1);
@@ -399,6 +399,10 @@
     gap: 0.42rem;
   }
 
+  > div:last-child {
+    gap: 0.26rem;
+  }
+
   svg {
     width: 1.35rem;
     height: 1.35rem;
@@ -407,14 +411,14 @@
 
   strong {
     color: var(--project-text);
-    font-size: 0.82rem;
-    line-height: 1.2;
+    font-size: 0.86rem;
+    line-height: 1.12;
   }
 
   span {
     color: var(--project-muted);
-    font-size: 0.68rem;
-    line-height: 1.25;
+    font-size: 0.66rem;
+    line-height: 1.22;
   }
 }
 
@@ -426,12 +430,12 @@
 
   span {
     min-width: 0;
-    padding: 0.58rem;
+    padding: 0.58rem 0.38rem;
     border: 1px solid rgba(148, 163, 184, 0.1);
     border-radius: 9px;
     background: rgba(15, 23, 42, 0.66);
     color: var(--project-muted);
-    font-size: 0.64rem;
+    font-size: 0.58rem;
     line-height: 1.2;
     text-align: center;
   }
@@ -837,7 +841,7 @@
 
   span {
     color: var(--project-muted);
-    font-size: 0.54rem;
+    font-size: 0.5rem;
     font-weight: 780;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1161,8 +1165,9 @@
 
   strong {
     color: var(--project-text);
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     line-height: 1;
+    white-space: nowrap;
   }
 }
 
@@ -1521,7 +1526,7 @@
   }
 
   .heroTitle {
-    max-width: 13ch;
+    max-width: 18ch;
   }
 
   .sectionHeading h2 {
@@ -1558,7 +1563,8 @@
   }
 
   .heroTitle {
-    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 0.98;
   }
 
   .heroActions {
@@ -1598,7 +1604,7 @@
 
 @media (max-width: 430px) {
   .heroTitle {
-    font-size: clamp(1.75rem, 7.8vw, 2.15rem);
+    font-size: clamp(1.85rem, 10vw, 2.55rem);
   }
 
   .proofStrip {
