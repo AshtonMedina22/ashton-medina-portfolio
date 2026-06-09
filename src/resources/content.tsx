@@ -15,7 +15,7 @@ const person: Person = {
   firstName: "Ashton",
   lastName: "Medina",
   name: "Ashton Medina",
-  role: "Business Systems Architect",
+  role: "Business Operations & Implementation Manager",
   avatar: "/images/avatar.png",
   email: "ashtonmedina22@gmail.com",
   location: "America/Chicago",
@@ -95,9 +95,9 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: "Ashton Medina - Business Systems Architect | Portfolio",
+  title: "Ashton Medina - Business Operations & Implementation Manager | Portfolio",
   description:
-    "Business systems architect with experience across operations leadership, process improvement, software implementation, workflow automation, reporting, and organizational execution.",
+    "Business operations and implementation manager with experience across operations leadership, process improvement, software implementation, workflow automation, reporting, and organizational execution.",
   headline: (
     <>
       Building operational frameworks that help{" "}
@@ -121,7 +121,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About | ${person.name}`,
-  description: `${person.name} - Business systems architect with experience in operations, process improvement, implementation, reporting, and organizational execution.`,
+  description: `${person.name} - Business operations and implementation manager with experience in operations, process improvement, implementation, reporting, and organizational execution.`,
   tableOfContent: {
     display: false,
     subItems: false,
@@ -259,7 +259,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Work - ${person.name}`,
-  description: `Operational systems portfolio — ERP, workflow, vendor, finance, and reporting platforms by ${person.name}`,
+  description: `Operational systems portfolio - ERP, workflow, vendor, finance, and reporting platforms by ${person.name}`,
 };
 
 const contact: Contact = {

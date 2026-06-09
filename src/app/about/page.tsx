@@ -1,15 +1,13 @@
 import styles from "@/components/about/about.module.scss";
-import { about, baseURL, person } from "@/resources";
+import { about, baseURL, person, social } from "@/resources";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
   HiOutlineCog,
-  HiOutlineExternalLink,
-  HiOutlineLocationMarker,
-  HiOutlineMail,
   HiOutlineOfficeBuilding,
   HiOutlineShieldCheck,
 } from "react-icons/hi";
+import { FaLinkedin } from "react-icons/fa6";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -21,21 +19,7 @@ export async function generateMetadata() {
   });
 }
 
-const contactItems = [
-  {
-    icon: HiOutlineLocationMarker,
-    label: "Location",
-    value: person.locationLabel ?? "United States",
-    href: "",
-  },
-  { icon: HiOutlineMail, label: "Email", value: person.email, href: `mailto:${person.email}` },
-  {
-    icon: HiOutlineExternalLink,
-    label: "LinkedIn",
-    value: "linkedin.com/in/ashton-medina",
-    href: "https://www.linkedin.com/in/ashton-medina",
-  },
-] as const;
+const linkedIn = social.find((item) => item.icon === "linkedin");
 
 const experience = [
   {
@@ -115,10 +99,6 @@ const technicalSkills = [
   "TypeScript",
 ] as const;
 
-function getContactHref() {
-  return `mailto:${person.email}`;
-}
-
 export default function About() {
   return (
     <main className={styles.aboutPage}>
@@ -137,68 +117,51 @@ export default function About() {
       />
 
       <section className={styles.resumeShell}>
-        <aside className={styles.resumeSidebar}>
-          <div className={styles.portraitCard}>
+        <header className={styles.profileHeader}>
+          <div className={styles.profileAvatar}>
             <img src={person.avatar} alt={person.name} />
           </div>
-          <div className={styles.identityBlock}>
-            <span>Profile</span>
-            <h1>
-              {person.firstName} <span className="headingAccent">{person.lastName}</span>
-            </h1>
-            <p>Business Systems Architect</p>
-          </div>
-
-          <div className={styles.contactList}>
-            {contactItems.map((item) => {
-              const Icon = item.icon;
-              const content = (
-                <>
-                  <Icon />
-                  <span>
-                    <em>{item.label}</em>
-                    <strong>{item.value}</strong>
-                  </span>
-                </>
-              );
-
-              const isExternal = item.href.startsWith("http");
-
-              return item.href ? (
+          <div className={styles.profileInfo}>
+            <h1>{person.name}</h1>
+            <p className={styles.profileRole}>{person.role}</p>
+            {person.locationLabel && (
+              <p className={styles.profileLocation}>{person.locationLabel}</p>
+            )}
+            {linkedIn && (
+              <div className={styles.profileActions}>
                 <SmartLink
-                  key={item.label}
-                  href={item.href}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  href={linkedIn.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.profileLinkBtn}
                 >
-                  {content}
+                  <FaLinkedin />
+                  LinkedIn
                 </SmartLink>
-              ) : (
-                <div key={item.label}>{content}</div>
-              );
-            })}
+              </div>
+            )}
           </div>
-        </aside>
+        </header>
 
-        <div className={styles.resumeMain}>
+        <div className={styles.resumeContent}>
           <section className={styles.resumeHero}>
             <span className={styles.sectionEyebrow}>Resume</span>
             <h2 className={styles.sectionTitle}>
               Professional <span className="headingAccent">summary.</span>
             </h2>
             <p className={styles.summaryText}>
-              I&apos;m Ashton, a business systems architect with experience across operations
-              leadership, process improvement, software implementation, workflow automation, reporting,
-              and organizational execution.
+              I&apos;m Ashton, a business operations and implementation manager with experience
+              across operations leadership, process improvement, software implementation, workflow
+              automation, reporting, and organizational execution.
             </p>
             <p className={styles.summaryText}>
-              Business systems architect with 10+ years across multi-site operations leadership and
-              full-cycle platform implementation. Currently own ERP architecture spanning CRM, vendor
-              management, financial controls, and operational reporting.
+              10+ years across multi-site operations leadership and full-cycle platform
+              implementation. Currently own ERP architecture spanning CRM, vendor management,
+              financial controls, and operational reporting.
             </p>
             <p className={styles.summaryText}>
               Work spans requirements gathering, workflow design, rollout, documentation, KPI
-              development, and adoption — with prior experience directing regulated multi-site
+              development, and adoption - with prior experience directing regulated multi-site
               operations and executive technical coordination.
             </p>
             <div className={styles.heroActions}>
@@ -206,40 +169,16 @@ export default function About() {
                 View Work
                 <HiOutlineArrowRight />
               </SmartLink>
-              <SmartLink href={getContactHref()} className={styles.secondaryCta}>
-                Contact
-              </SmartLink>
-            </div>
-          </section>
-
-          <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineOfficeBuilding />
-              <div>
-                <span className={styles.sectionEyebrow}>Experience</span>
-                <h2 className={styles.sectionTitle}>
-                  Professional <span className="headingAccent">experience.</span>
-                </h2>
-              </div>
-            </div>
-            <div className={styles.experienceList}>
-              {experience.map((role) => (
-                <article key={`${role.company}-${role.title}`} className={styles.experienceItem}>
-                  <div className={styles.experienceMeta}>
-                    <span>{role.period}</span>
-                    <em>{role.location}</em>
-                  </div>
-                  <div className={styles.experienceBody}>
-                    <h3>{role.title}</h3>
-                    <strong>{role.company}</strong>
-                    <ul>
-                      {role.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              ))}
+              {linkedIn && (
+                <SmartLink
+                  href={linkedIn.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.secondaryCta}
+                >
+                  LinkedIn
+                </SmartLink>
+              )}
             </div>
           </section>
 
@@ -273,6 +212,37 @@ export default function About() {
             <div className={styles.competencyGrid}>
               {technicalSkills.map((skill) => (
                 <span key={skill}>{skill}</span>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeader}>
+              <HiOutlineOfficeBuilding />
+              <div>
+                <span className={styles.sectionEyebrow}>Experience</span>
+                <h2 className={styles.sectionTitle}>
+                  Professional <span className="headingAccent">experience.</span>
+                </h2>
+              </div>
+            </div>
+            <div className={styles.experienceList}>
+              {experience.map((role) => (
+                <article key={`${role.company}-${role.title}`} className={styles.experienceItem}>
+                  <div className={styles.experienceMeta}>
+                    <span>{role.period}</span>
+                    <em>{role.location}</em>
+                  </div>
+                  <div className={styles.experienceBody}>
+                    <h3>{role.title}</h3>
+                    <strong>{role.company}</strong>
+                    <ul>
+                      {role.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
               ))}
             </div>
           </section>

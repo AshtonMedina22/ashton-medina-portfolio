@@ -6,7 +6,7 @@
   
   <!-- Project info -->
   <rect x="24" y="50" width="1152" height="60" rx="8" fill="#1a1625" stroke="#2e1064" stroke-width="1"/>
-  <text x="40" y="75" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#f5f3ff">ENG-2024-0842 — TechCorp</text>
+  <text x="40" y="75" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#f5f3ff">ENG-2024-0842 - TechCorp</text>
   <text x="40" y="95" font-family="system-ui,sans-serif" font-size="11" fill="#a1a1aa">Type A • Platform Implementation</text>
   
   <!-- Financial metrics -->
