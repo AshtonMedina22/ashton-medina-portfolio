@@ -20,13 +20,13 @@
 
 .imageContainer {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     border-radius: 0;
     display: block;
-    background: #07070a;
-    min-height: 0;
-    padding: 1rem;
+    background: #070b12;
+    min-height: 15rem;
+    padding: 0;
     box-sizing: border-box;
     border-bottom: 1px solid var(--neutral-alpha-weak);
 }
@@ -549,9 +549,11 @@
     background: var(--neutral-background-medium);
 
     h2 {
-        max-width: 18ch;
+        max-width: 20ch;
         margin: 0;
         text-align: left;
+        font-size: clamp(1.5rem, 1.8vw, 2rem) !important;
+        line-height: 1.15 !important;
     }
 
     @media (max-width: 820px) {
@@ -569,9 +571,12 @@
     text-align: left;
     max-width: 34rem;
 
-    p {
+    p,
+    [class*="Text"] {
         text-align: left;
         max-width: 34rem;
+        font-size: var(--type-body) !important;
+        line-height: 1.65 !important;
     }
 }
 
@@ -586,7 +591,8 @@
 /* Primary CTA: dark purple background, light text. !important overrides Once UI utility classes (reset-button-styles, etc.) */
 .ctaLink {
     margin: 0 !important;
-    padding: 0.75rem 1.5rem !important;
+    padding: 0.875rem 1.625rem !important;
+    font-size: var(--type-cta) !important;
     background: var(--brand-solid-medium, #1e1b2e) !important;
     color: var(--brand-on-solid-strong, #fafafa) !important;
     text-decoration: none !important;

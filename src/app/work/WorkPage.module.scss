@@ -43,7 +43,7 @@
 .sectionLabel {
   display: block;
   color: #38bdf8;
-  font-size: 0.78rem;
+  font-size: var(--type-eyebrow);
   font-weight: 600;
   letter-spacing: 0.12em;
   line-height: 1;
@@ -55,17 +55,15 @@
   margin: 1rem 0 0;
   color: var(--work-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
-  font-size: clamp(2.15rem, 2.9vw, 2.5rem);
+  font-size: var(--type-hero);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1;
   text-transform: uppercase;
 
-  span {
-    color: transparent;
-    background: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
+  :global(.headingAccent) {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
   }
 }
 
@@ -77,8 +75,8 @@
     max-width: 55ch;
     margin: 0;
     color: var(--work-muted);
-    font-size: 1.02rem;
-    line-height: 1.65;
+    font-size: var(--type-body-lg);
+    line-height: 1.7;
   }
 }
 

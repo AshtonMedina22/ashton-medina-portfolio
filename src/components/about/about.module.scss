@@ -12,7 +12,7 @@
 
   width: 100%;
   min-height: 100vh;
-  padding: clamp(5.25rem, 7vw, 6.75rem) 0 clamp(3rem, 6vw, 5rem);
+  padding: clamp(5rem, 6.5vw, 6.25rem) 0 clamp(2.5rem, 5vw, 4rem);
   color: var(--about-text);
   background:
     radial-gradient(circle at 76% 13%, rgba(6, 182, 212, 0.12), transparent 24rem),
@@ -22,34 +22,29 @@
 }
 
 .resumeShell {
-  width: min(100% - 2rem, 1320px);
+  width: min(100% - 2rem, 1240px);
   display: grid;
-  grid-template-columns: minmax(18rem, 0.34fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: minmax(17rem, 20rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.25rem);
+  align-items: start;
   margin-inline: auto;
 }
 
 .resumeSidebar,
-.resumeMain,
 .resumeSection,
-.resumeHero,
-.highlightsGrid article {
+.resumeHero {
   border: 1px solid var(--about-border);
   background: rgba(18, 24, 38, 0.62);
   box-shadow: var(--about-depth);
 }
 
 .resumeSidebar {
-  position: sticky;
-  top: 5.5rem;
-  align-self: start;
-  overflow: hidden;
-  border-radius: 18px;
+  border-radius: 16px;
 }
 
 .portraitCard {
   position: relative;
-  aspect-ratio: 1 / 1.06;
+  aspect-ratio: 4 / 4.25;
   overflow: hidden;
   background: #111827;
 
@@ -71,32 +66,38 @@
 }
 
 .identityBlock {
-  padding: 1.35rem 1.35rem 1.15rem;
+  padding: 1.1rem 1.15rem 1rem;
   border-bottom: 1px solid var(--about-border);
 
   span {
     color: #38bdf8;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
+    font-size: var(--type-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   h1 {
-    margin: 0.55rem 0 0;
+    margin: 0.45rem 0 0;
     color: var(--about-text);
-    font-size: clamp(2rem, 3vw, 2.75rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 0.96;
+    font-size: clamp(1.65rem, 2vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
     text-transform: uppercase;
+
+    :global(.headingAccent) {
+      color: transparent !important;
+      -webkit-text-fill-color: transparent !important;
+    }
   }
 
   p {
-    margin: 0.65rem 0 0;
+    margin: 0.45rem 0 0;
     color: var(--about-muted);
-    font-size: 0.98rem;
-    font-weight: 650;
+    font-size: var(--type-body);
+    font-weight: 500;
+    line-height: 1.35;
   }
 }
 
@@ -109,9 +110,9 @@
     min-width: 0;
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.75rem;
+    gap: 0.65rem;
     align-items: center;
-    padding: 0.9rem 1.35rem;
+    padding: 0.75rem 1.15rem;
     border-top: 1px solid var(--about-border);
     color: var(--about-text) !important;
     text-decoration: none !important;
@@ -137,7 +138,7 @@
 
   em {
     color: var(--about-soft);
-    font-size: 0.68rem;
+    font-size: var(--type-eyebrow);
     font-style: normal;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -147,7 +148,7 @@
   strong {
     margin-top: 0.2rem;
     color: var(--about-text);
-    font-size: 0.82rem;
+    font-size: var(--type-body);
     font-weight: 650;
     line-height: 1.25;
     overflow-wrap: anywhere;
@@ -193,11 +194,6 @@
   min-width: 0;
   display: grid;
   gap: 1.25rem;
-  padding: clamp(1rem, 2vw, 1.4rem);
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at 92% 0%, rgba(99, 102, 241, 0.12), transparent 18rem),
-    rgba(18, 24, 38, 0.44);
 }
 
 .resumeHero,
@@ -206,34 +202,44 @@
 }
 
 .resumeHero {
-  padding: clamp(1.5rem, 3vw, 2.2rem);
+  padding: clamp(1.75rem, 3vw, 2.25rem);
   background:
-    linear-gradient(135deg, rgba(6, 182, 212, 0.1), transparent 42%),
+    linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 42%),
     rgba(15, 23, 42, 0.7);
+}
 
-  h2 {
-    max-width: 28ch;
-    margin: 0.75rem 0 0;
-    color: var(--about-text);
-    font-size: clamp(2.25rem, 4.4vw, 4.15rem);
-    font-weight: 800;
-    letter-spacing: -0.05em;
-    line-height: 0.96;
-    text-transform: uppercase;
+.sectionTitle {
+  max-width: 24ch;
+  margin: 0.65rem 0 0;
+  color: var(--about-text);
+  font-family: var(--font-heading), Inter, system-ui, sans-serif;
+  font-size: var(--type-section);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-transform: uppercase;
+
+  :global(.headingAccent) {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
   }
+}
 
-  p {
-    max-width: 68rem;
-    margin: 1.15rem 0 0;
-    color: var(--about-muted);
-    font-size: 1.05rem;
-    line-height: 1.7;
+.summaryText {
+  max-width: 68ch;
+  margin: 0.85rem 0 0;
+  color: var(--about-muted);
+  font-size: var(--type-body-lg);
+  line-height: 1.7;
+
+  &:first-of-type {
+    margin-top: 0.75rem;
   }
 }
 
 .sectionEyebrow {
   color: #38bdf8;
-  font-size: 0.72rem;
+  font-size: var(--type-eyebrow);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -242,8 +248,8 @@
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1.45rem;
+  gap: 0.75rem;
+  margin-top: 1.15rem;
 }
 
 .primaryCta,
@@ -256,7 +262,7 @@
   padding: 0 1.18rem;
   border-radius: 12px;
   text-decoration: none !important;
-  font-size: 0.78rem;
+  font-size: var(--type-cta);
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -274,37 +280,9 @@
   background: rgba(15, 23, 42, 0.46);
 }
 
-.highlightsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-
-  article {
-    min-width: 0;
-    display: grid;
-    align-content: start;
-    gap: 0.8rem;
-    padding: 1.1rem;
-    border-radius: 14px;
-    background: rgba(15, 23, 42, 0.62);
-  }
-
-  svg {
-    width: 1.35rem;
-    height: 1.35rem;
-    color: var(--about-cyan);
-  }
-
-  p {
-    margin: 0;
-    color: var(--about-muted);
-    font-size: 0.9rem;
-    line-height: 1.55;
-  }
-}
-
 .resumeSection {
-  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: 12px;
   background: rgba(15, 23, 42, 0.52);
 }
 
@@ -325,12 +303,7 @@
   }
 
   h2 {
-    margin: 0.25rem 0 0;
-    color: var(--about-text);
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
+    margin: 0.2rem 0 0;
   }
 }
 
@@ -360,14 +333,14 @@
 
   span {
     color: var(--about-text);
-    font-size: 0.88rem;
+    font-size: var(--type-body);
     font-weight: 800;
   }
 
   em {
     margin-top: 0.35rem;
     color: var(--about-soft);
-    font-size: 0.78rem;
+    font-size: var(--type-eyebrow);
     font-style: normal;
     font-weight: 650;
   }
@@ -377,7 +350,7 @@
   h3 {
     margin: 0;
     color: var(--about-text);
-    font-size: 1.15rem;
+    font-size: var(--type-subsection);
     font-weight: 800;
   }
 
@@ -385,7 +358,7 @@
     display: block;
     margin-top: 0.28rem;
     color: #38bdf8;
-    font-size: 0.88rem;
+    font-size: var(--type-body);
     font-weight: 800;
   }
 
@@ -398,15 +371,15 @@
 
   li {
     color: var(--about-muted);
-    font-size: 0.92rem;
-    line-height: 1.55;
+    font-size: var(--type-body);
+    line-height: 1.65;
   }
 }
 
 .competencyGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.65rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
 
   span {
     min-width: 0;
@@ -415,9 +388,9 @@
     border-radius: 10px;
     color: var(--about-text);
     background: rgba(15, 23, 42, 0.58);
-    font-size: 0.8rem;
+    font-size: var(--type-body);
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.35;
   }
 }
 
@@ -476,10 +449,8 @@
 
 [data-theme="light"] {
   .resumeSidebar,
-  .resumeMain,
   .resumeSection,
-  .resumeHero,
-  .highlightsGrid article {
+  .resumeHero {
     border-color: var(--about-border);
     background: rgba(255, 255, 255, 0.84);
     box-shadow: var(--about-depth);
@@ -505,21 +476,32 @@
   min-width: 0;
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 900px) {
   .resumeShell {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .resumeSidebar {
-    position: relative;
-    top: auto;
-    display: grid;
-    grid-template-columns: minmax(14rem, 0.32fr) minmax(0, 1fr);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .portraitCard {
-    grid-row: span 4;
-    height: 100%;
+    width: 100%;
+    max-height: 14rem;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+  }
+
+  .identityBlock {
+    border-bottom: 1px solid var(--about-border);
+    padding: 1rem 1.15rem 0.9rem;
+  }
+
+  .contactList {
+    border-bottom: 0;
   }
 
   .competencyGrid {
@@ -536,20 +518,14 @@
     width: calc(100% - 2rem);
   }
 
-  .resumeSidebar,
   .experienceItem,
-  .twoColumnSection,
-  .highlightsGrid {
+  .twoColumnSection {
     grid-template-columns: 1fr;
   }
 
   .portraitCard {
-    grid-row: auto;
-    aspect-ratio: 1.08 / 1;
-  }
-
-  .resumeHero h2 {
-    font-size: clamp(2rem, 10vw, 2.8rem);
+    max-height: 12.5rem;
+    aspect-ratio: 3 / 2;
   }
 
   .competencyGrid {

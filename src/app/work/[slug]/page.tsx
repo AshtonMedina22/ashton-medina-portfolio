@@ -10,6 +10,8 @@ import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorL
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
 import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
 import { Metadata } from "next";
+import { DemoEmbeddedFrame } from "@/components/work/DemoEmbeddedFrame";
+import { accentLastWords } from "@/utils/headingAccent";
 import styles from "./ProjectPage.module.scss";
 
 function renderDemo(slugPath: string) {
@@ -119,7 +121,7 @@ export default async function Project({
             Work / Case Study
           </SmartLink>
           <span className={styles.eyebrow}>{getProjectEyebrow(slugPath)}</span>
-          <h1 className={styles.heroTitle}>{post.metadata.title}</h1>
+          <h1 className={styles.heroTitle}>{accentLastWords(post.metadata.title, 2)}</h1>
           <p className={styles.heroTagline}>{post.metadata.summary}</p>
           {post.metadata.techStack && post.metadata.techStack.length > 0 && (
             <div className={styles.heroTech}>
@@ -132,7 +134,9 @@ export default async function Project({
       <section className={styles.articleSection} aria-labelledby="case-study-heading">
         <div className={styles.sectionHeading}>
           <span className={styles.eyebrow}>Case Study</span>
-          <h2 id="case-study-heading">Case Study</h2>
+          <h2 id="case-study-heading">
+            Case <span className="headingAccent">study.</span>
+          </h2>
         </div>
         <article className={styles.articleProse}>
           <CustomMDX source={intro} />
@@ -142,7 +146,7 @@ export default async function Project({
       {demo && (
         <section className={styles.mockupSection}>
           <div className={styles.demoSection}>
-            <div className={styles.demoFrame}>{demo}</div>
+            <DemoEmbeddedFrame>{demo}</DemoEmbeddedFrame>
           </div>
         </section>
       )}

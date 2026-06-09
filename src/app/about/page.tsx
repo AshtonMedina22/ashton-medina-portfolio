@@ -3,8 +3,6 @@ import { about, baseURL, person } from "@/resources";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
-  HiOutlineBriefcase,
-  HiOutlineChartBar,
   HiOutlineCog,
   HiOutlineExternalLink,
   HiOutlineLocationMarker,
@@ -37,12 +35,6 @@ const contactItems = [
     value: "linkedin.com/in/ashton-medina",
     href: "https://www.linkedin.com/in/ashton-medina",
   },
-] as const;
-
-const resumeHighlights = [
-  "10+ years leading multi-site operations, process improvement, and organizational execution in regulated and technology-enabled environments.",
-  "Current focus: ERP systems architecture spanning CRM, vendor management, financial controls, and operational reporting.",
-  "Strengths in requirements gathering, workflow design, implementation rollout, KPI development, and adoption.",
 ] as const;
 
 const experience = [
@@ -151,7 +143,9 @@ export default function About() {
           </div>
           <div className={styles.identityBlock}>
             <span>Profile</span>
-            <h1>{person.name}</h1>
+            <h1>
+              {person.firstName} <span className="headingAccent">{person.lastName}</span>
+            </h1>
             <p>Business Systems Architect</p>
           </div>
 
@@ -188,12 +182,24 @@ export default function About() {
 
         <div className={styles.resumeMain}>
           <section className={styles.resumeHero}>
-            <span className={styles.sectionEyebrow}>Professional Summary</span>
-            <h2>Operations and systems leader building scalable business infrastructure</h2>
-            <p>
-              I analyze how work moves through organizations, design the systems and processes that
-              support it, and build the reporting and controls that keep execution visible as teams
-              scale.
+            <span className={styles.sectionEyebrow}>Resume</span>
+            <h2 className={styles.sectionTitle}>
+              Professional <span className="headingAccent">summary.</span>
+            </h2>
+            <p className={styles.summaryText}>
+              I&apos;m Ashton, a business systems architect with experience across operations
+              leadership, process improvement, software implementation, workflow automation, reporting,
+              and organizational execution.
+            </p>
+            <p className={styles.summaryText}>
+              Business systems architect with 10+ years across multi-site operations leadership and
+              full-cycle platform implementation. Currently own ERP architecture spanning CRM, vendor
+              management, financial controls, and operational reporting.
+            </p>
+            <p className={styles.summaryText}>
+              Work spans requirements gathering, workflow design, rollout, documentation, KPI
+              development, and adoption — with prior experience directing regulated multi-site
+              operations and executive technical coordination.
             </p>
             <div className={styles.heroActions}>
               <SmartLink href="/work" className={styles.primaryCta}>
@@ -206,24 +212,14 @@ export default function About() {
             </div>
           </section>
 
-          <section className={styles.highlightsGrid} aria-label="Resume highlights">
-            {resumeHighlights.map((highlight, index) => {
-              const Icon = [HiOutlineBriefcase, HiOutlineCog, HiOutlineChartBar][index];
-              return (
-                <article key={highlight}>
-                  <Icon />
-                  <p>{highlight}</p>
-                </article>
-              );
-            })}
-          </section>
-
           <section className={styles.resumeSection}>
             <div className={styles.sectionHeader}>
               <HiOutlineOfficeBuilding />
               <div>
                 <span className={styles.sectionEyebrow}>Experience</span>
-                <h2>Professional Experience</h2>
+                <h2 className={styles.sectionTitle}>
+                  Professional <span className="headingAccent">experience.</span>
+                </h2>
               </div>
             </div>
             <div className={styles.experienceList}>
@@ -252,7 +248,9 @@ export default function About() {
               <HiOutlineShieldCheck />
               <div>
                 <span className={styles.sectionEyebrow}>Capabilities</span>
-                <h2>Core Competencies</h2>
+                <h2 className={styles.sectionTitle}>
+                  Core <span className="headingAccent">competencies.</span>
+                </h2>
               </div>
             </div>
             <div className={styles.competencyGrid}>
@@ -267,7 +265,9 @@ export default function About() {
               <HiOutlineCog />
               <div>
                 <span className={styles.sectionEyebrow}>Technical Skills</span>
-                <h2>Systems & Tools</h2>
+                <h2 className={styles.sectionTitle}>
+                  Systems <span className="headingAccent">& tools.</span>
+                </h2>
               </div>
             </div>
             <div className={styles.competencyGrid}>

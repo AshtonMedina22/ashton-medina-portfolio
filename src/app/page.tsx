@@ -1,5 +1,5 @@
+import { OperationsVisual } from "@/components/home/OperationsVisual";
 import { TechStackMarquee } from "@/components/home/TechStackMarquee";
-import { Projects } from "@/components/work/Projects";
 import { about, baseURL, home, person, techStack } from "@/resources";
 import { Column, Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
@@ -10,6 +10,14 @@ import {
   HiOutlineShieldCheck,
 } from "react-icons/hi";
 import styles from "./page.module.scss";
+
+const proofStrip = [
+  "Business Analysis",
+  "Process Improvement",
+  "Systems Implementation",
+  "Operations Leadership",
+  "Reporting & Analytics",
+] as const;
 
 const capabilities = [
   {
@@ -63,24 +71,38 @@ export default function Home() {
 
       <div className={styles.homePage}>
         <section className={styles.heroSection}>
-          <span className={styles.eyebrow}>Systems. Workflows. Outcomes.</span>
-          <h1>{home.headline}</h1>
-          <p>{home.subline}</p>
-          <div className={styles.heroActions}>
-            <SmartLink href="/work" className={styles.primaryCta}>
-              View Work
-              <HiOutlineArrowRight />
-            </SmartLink>
-            <SmartLink href={about.path} className={styles.secondaryCta}>
-              About
-            </SmartLink>
+          <div className={styles.heroContent}>
+            <span className={styles.eyebrow}>Systems. Workflows. Outcomes.</span>
+            <h1>{home.headline}</h1>
+            <p>{home.subline}</p>
+            <div className={styles.heroActions}>
+              <SmartLink href="/work" className={styles.primaryCta}>
+                Explore Work
+                <HiOutlineArrowRight />
+              </SmartLink>
+              <SmartLink href={about.path} className={styles.secondaryCta}>
+                About Me
+              </SmartLink>
+            </div>
           </div>
+          <OperationsVisual />
+        </section>
+
+        <section className={styles.proofStrip} aria-label="Operational system capabilities">
+          {proofStrip.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
         </section>
 
         <section className={styles.capabilitiesSection}>
           <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Capabilities</span>
-            <h2>Systems capability across the full operating model</h2>
+            <h2>
+              Systems capability
+              <br />
+              across the full{" "}
+              <span className="headingAccent">operating model.</span>
+            </h2>
             <p>
               My background is not tied to one platform. It covers operational analysis, process
               standardization, software implementation, data visibility, documentation, training,
@@ -99,18 +121,6 @@ export default function Home() {
               );
             })}
           </div>
-        </section>
-
-        <section className={styles.workPreview}>
-          <div className={styles.sectionIntro}>
-            <span className={styles.sectionEyebrow}>Selected work</span>
-            <h2>Recent projects</h2>
-            <SmartLink href="/work">
-              View all projects
-              <HiOutlineArrowRight />
-            </SmartLink>
-          </div>
-          <Projects />
         </section>
 
         {techStack.length > 0 && (

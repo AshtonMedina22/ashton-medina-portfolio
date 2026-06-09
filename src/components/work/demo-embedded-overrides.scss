@@ -1,0 +1,98 @@
+/* Keep embedded demos in desktop layout — viewport media queries must not collapse grids */
+
+[data-demo-embedded] {
+  /* Sales-to-delivery */
+  [class*="erpShell"] {
+    display: grid !important;
+    grid-template-columns: 5rem minmax(0, 1fr) !important;
+  }
+
+  [class*="erpSidebar"] {
+    display: grid !important;
+  }
+
+  [class*="erpGrid"] {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr) minmax(0, 1.05fr) !important;
+  }
+
+  [class*="workflowActivityPanel"] {
+    grid-column: span 2 !important;
+  }
+
+  [class*="workflowActivityTable"] > div {
+    grid-template-columns:
+      minmax(0, 1.15fr) minmax(4rem, 0.5fr) minmax(5rem, 0.62fr) minmax(5rem, 0.7fr)
+      minmax(7rem, 0.85fr) !important;
+  }
+
+  [class*="systemOutcomeBar"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) !important;
+  }
+
+  [class*="systemOutcomeBar"] > div:last-child {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  /* Revenue financial */
+  [class*="financeLayout"] {
+    grid-template-columns: minmax(0, 1.55fr) minmax(22rem, 0.85fr) !important;
+  }
+
+  [class*="financeComposition"] {
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  }
+
+  [class*="marginHero"] {
+    grid-column: span 8 !important;
+  }
+
+  [class*="financeSupportRail"] {
+    grid-column: span 4 !important;
+  }
+
+  [class*="financeMainGrid"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  [class*="marginHeroGrid"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  [class*="financeSupportRail"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+  }
+
+  /* Vendor lifecycle */
+  [class*="vendorHero"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  [class*="vendorControlGrid"],
+  [class*="vendorSupportRow"],
+  [class*="vendorOverviewGrid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Operational intelligence */
+  [class*="opsComposition"] {
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  }
+
+  [class*="executiveHero"] {
+    grid-column: 1 / span 9 !important;
+  }
+
+  [class*="opsSupportRail"] {
+    grid-column: 10 / span 3 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  [class*="heroBody"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  [class*="kpiStack"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}

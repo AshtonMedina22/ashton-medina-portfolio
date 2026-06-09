@@ -98,7 +98,12 @@ const home: Home = {
   title: "Ashton Medina - Business Systems Architect | Portfolio",
   description:
     "Business systems architect with experience across operations leadership, process improvement, software implementation, workflow automation, reporting, and organizational execution.",
-  headline: <>Building operational frameworks that help organizations scale</>,
+  headline: (
+    <>
+      Building operational frameworks that help{" "}
+      <span className="headingAccent">organizations scale.</span>
+    </>
+  ),
   featured: {
     display: false,
     title: (
@@ -108,13 +113,8 @@ const home: Home = {
     ),
     href: "/work/sales-to-delivery-automation-platform",
   },
-  subline: (
-    <>
-      I'm Ashton, a business systems architect with experience across operations leadership,
-      process improvement, software implementation, workflow automation, reporting, and
-      organizational execution.
-    </>
-  ),
+  subline:
+    "My work spans operations leadership, business analysis, process improvement, platform implementation, workflow automation, reporting, integrations, training, and change management across growing organizations.",
 };
 
 const about: About = {

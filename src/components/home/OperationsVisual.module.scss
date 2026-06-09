@@ -1,0 +1,331 @@
+.opsVisual {
+  --visual-text: #f8fafc;
+  --visual-muted: #94a3b8;
+  --visual-soft: #64748b;
+  --visual-border: rgba(255, 255, 255, 0.08);
+
+  position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4.6rem 1fr;
+  min-height: 32rem;
+  overflow: hidden;
+  border: 1px solid rgba(124, 116, 255, 0.34);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(99, 102, 241, 0.2), transparent 25rem),
+    linear-gradient(140deg, rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.96));
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.42;
+  }
+}
+
+.visualRail {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 0;
+  border-right: 1px solid var(--visual-border);
+  background: rgba(8, 13, 22, 0.72);
+
+  span,
+  .logoMark {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    min-height: 2.1rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #dbeafe;
+    font-size: 0.62rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+}
+
+.logoMark {
+  display: grid !important;
+  place-items: center;
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+  border-color: rgba(99, 102, 241, 0.55) !important;
+  color: #a5b4fc;
+  font-family: var(--font-heading), Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.activeIcon {
+  min-height: 2.7rem !important;
+  border-color: rgba(99, 102, 241, 0.58) !important;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff !important;
+  box-shadow: 0 16px 32px rgba(79, 70, 229, 0.24);
+}
+
+.visualMain {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.9rem;
+  padding: 1.35rem;
+}
+
+.visualTopbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--visual-muted);
+  font-size: 0.78rem;
+
+  strong {
+    color: var(--visual-text);
+    font-weight: 600;
+  }
+}
+
+.visualMetrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1rem;
+
+  div {
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.72), rgba(8, 13, 22, 0.76));
+  }
+
+  span {
+    display: block;
+    color: var(--visual-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    display: block;
+    margin-top: 0.45rem;
+    color: var(--visual-text);
+    font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+    font-weight: 750;
+    line-height: 1;
+  }
+
+  em {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--visual-muted);
+    font-size: 0.7rem;
+    font-style: normal;
+  }
+}
+
+.panelHeader {
+  margin-bottom: 0.9rem;
+  color: var(--visual-text);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.visualDashboardGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 0.85rem;
+}
+
+.workflowChart,
+.workflowStatus,
+.workflowTable {
+  min-width: 0;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(18, 24, 38, 0.82), rgba(8, 13, 22, 0.78));
+}
+
+.workflowChart,
+.workflowStatus {
+  padding: 1rem;
+}
+
+.chartFrame {
+  display: grid;
+  align-content: end;
+  gap: 0.58rem;
+  min-height: 8.5rem;
+  padding: 0.35rem 0.2rem 0.1rem;
+
+  span {
+    display: block;
+    height: 0.56rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #4f46e5, #8b5cf6, #38bdf8);
+    box-shadow: 0 0 22px rgba(99, 102, 241, 0.24);
+  }
+}
+
+.chartLabels {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+
+  span {
+    color: var(--visual-muted);
+    font-size: 0.68rem;
+  }
+}
+
+.workflowStatus {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.65fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.workflowStatus .panelHeader {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.statusDonut {
+  width: min(100%, 7.4rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #0b1020 0 39%, transparent 40%),
+    conic-gradient(#22c55e 0 52%, #6366f1 52% 80%, #f97316 80% 92%, #ef4444 92% 100%);
+  box-shadow: 0 0 34px rgba(99, 102, 241, 0.18);
+}
+
+.statusLegend {
+  display: grid;
+  gap: 0.55rem;
+
+  span {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--visual-muted);
+    font-size: 0.72rem;
+  }
+
+  i {
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 999px;
+  }
+
+  strong {
+    color: var(--visual-text);
+    font-weight: 650;
+  }
+}
+
+.completeDot {
+  background: #22c55e;
+}
+
+.activeDot {
+  background: #6366f1;
+}
+
+.waitingDot {
+  background: #f97316;
+}
+
+.blockedDot {
+  background: #ef4444;
+}
+
+.workflowTable {
+  display: grid;
+  padding: 0.95rem;
+
+  .tableHead,
+  > div:not(.panelHeader, .tableHead) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(5rem, 0.55fr) minmax(5.5rem, 0.6fr) minmax(5rem, 0.6fr);
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.56rem 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    color: var(--visual-muted);
+    font-size: 0.72rem;
+  }
+
+  .tableHead {
+    border-top: 0;
+    color: var(--visual-soft);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  span {
+    color: var(--visual-text);
+    font-weight: 600;
+  }
+
+  strong {
+    color: #22c55e;
+    font-weight: 700;
+  }
+
+  em {
+    font-style: normal;
+  }
+}
+
+@media (max-width: 860px) {
+  .opsVisual {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .visualRail {
+    display: none;
+  }
+
+  .visualMetrics,
+  .visualDashboardGrid,
+  .workflowStatus {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowTable .tableHead,
+  .workflowTable > div:not(.panelHeader, .tableHead) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .visualMain {
+    padding: 1rem;
+  }
+}

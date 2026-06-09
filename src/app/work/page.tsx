@@ -34,7 +34,9 @@ export default function Work() {
         <div>
           <span className={styles.eyebrow}>My work</span>
           <h1>
-            Operational systems <span>portfolio.</span>
+            Operational
+            <br />
+            systems <span className="headingAccent">portfolio.</span>
           </h1>
         </div>
         <div className={styles.heroAside}>
