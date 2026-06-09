@@ -45,24 +45,19 @@ export default TimeDisplay;
 export const Header = () => {
   const pathname = usePathname() ?? "";
 
-  // Hide floating nav on individual project pages
-  const isProjectPage = pathname.startsWith("/work/") && !pathname.endsWith("/work");
-
   return (
     <>
       <Fade s={{ hide: true }} fillWidth position="fixed" height="80" zIndex={9} />
-      {!isProjectPage && (
-        <Fade
-          hide
-          s={{ hide: false }}
-          fillWidth
-          position="fixed"
-          bottom="0"
-          to="top"
-          height="80"
-          zIndex={9}
-        />
-      )}
+      <Fade
+        hide
+        s={{ hide: false }}
+        fillWidth
+        position="fixed"
+        bottom="0"
+        to="top"
+        height="80"
+        zIndex={9}
+      />
       <Row
         fitHeight
         className={styles.position}

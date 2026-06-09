@@ -31,9 +31,9 @@
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(26rem, 0.72fr);
-  gap: clamp(2rem, 5vw, 6rem);
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
 }
 
 .heroCopy {

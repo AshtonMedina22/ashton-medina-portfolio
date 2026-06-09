@@ -258,8 +258,8 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects - ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  title: `Work - ${person.name}`,
+  description: `Operational systems portfolio — ERP, workflow, vendor, finance, and reporting platforms by ${person.name}`,
 };
 
 const contact: Contact = {

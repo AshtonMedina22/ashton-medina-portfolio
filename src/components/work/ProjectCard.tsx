@@ -3,7 +3,6 @@
 import {
   AvatarGroup,
   Column,
-  Flex,
   Heading,
   SmartLink,
   Text,
@@ -14,7 +13,6 @@ import styles from "./ProjectCard.module.scss";
 interface ProjectCardProps {
   href: string;
   priority?: boolean;
-  demoHref?: string;
   images: string[];
   title: string;
   content: string;
@@ -120,7 +118,6 @@ function ProjectThumbnail({ title, href }: { title: string; href: string }) {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
-  demoHref,
   images = [],
   title,
   content,
@@ -130,16 +127,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   techStack,
 }) => {
   return (
-    <Column fillWidth gap="m" className={styles.cardContainer}>
-      <SmartLink
-        href={demoHref ?? href}
-        {...(demoHref ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        className={styles.imageLink}
-      >
-        <Column fillWidth className={styles.imageContainer}>
-          <ProjectThumbnail title={title} href={href} />
-        </Column>
-      </SmartLink>
+    <SmartLink href={href} className={styles.cardContainer}>
+      <Column fillWidth className={styles.imageContainer}>
+        <ProjectThumbnail title={title} href={href} />
+      </Column>
       <Column
         fillWidth
         paddingX="m"
@@ -163,13 +154,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {techStack && techStack.length > 0 && (
             <ProjectCardTechStack technologies={techStack} />
           )}
-          <Flex gap="m" wrap className={styles.ctaContainer}>
-            <SmartLink className={styles.ctaLink} href={href}>
-              <Text variant="body-default-s">View Project</Text>
-            </SmartLink>
-          </Flex>
+          <Text variant="body-default-s" className={styles.ctaLink}>
+            View Project
+          </Text>
         </Column>
       </Column>
-    </Column>
+    </SmartLink>
   );
 };

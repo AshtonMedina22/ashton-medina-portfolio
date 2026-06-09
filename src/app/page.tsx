@@ -1,5 +1,7 @@
 import { TechStackMarquee } from "@/components/home/TechStackMarquee";
 import { about, baseURL, home, person, techStack } from "@/resources";
+import { getProjectAccent, getProjectCategory, type ProjectAccent } from "@/resources/projects";
+import { getPosts } from "@/utils/utils";
 import { Column, Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
@@ -41,34 +43,34 @@ const capabilities = [
   },
 ] as const;
 
-const selectedProjects = [
-  {
-    title: "Revenue Financial Control Engine",
-    description:
-      "Margin protection, approval checkpoints, vendor variance, and compensation governance.",
-    href: "/work/revenue-financial-control-engine",
-    category: "Financial governance",
-    accent: "cyan",
-  },
-  {
-    title: "Vendor Lifecycle Compliance Platform",
-    description:
-      "Controlled onboarding, compliance state, tokenized portal access, and assignment acceptance.",
-    href: "/work/vendor-lifecycle-compliance-platform",
-    category: "Vendor lifecycle",
-    accent: "teal",
-  },
-  {
-    title: "Operational Intelligence Platform",
-    description:
-      "Executive operational visibility across KPIs, reporting, engagement records, and exports.",
-    href: "/work/operational-intelligence-platform",
-    category: "Operational intelligence",
-    accent: "indigo",
-  },
-] as const;
+type HomeProjectPreview = {
+  title: string;
+  description: string;
+  href: string;
+  category: string;
+  accent: ProjectAccent;
+};
 
-const projectPreviewRows = {
+const projectPreviewRows: Record<
+  ProjectAccent,
+  {
+    header: string;
+    status: string;
+    rows: [string, string][];
+    footer: string[];
+  }
+> = {
+  sales: {
+    header: "Order to project flow",
+    status: "Project generated",
+    rows: [
+      ["CRM sync", "65+ fields"],
+      ["Project workspace", "Created"],
+      ["Task generation", "27 tasks"],
+      ["Vendor scope", "Assigned"],
+    ],
+    footer: ["Zero re-entry", "CRM linked"],
+  },
   cyan: {
     header: "Project finance control",
     status: "Closeout gate",
@@ -102,7 +104,22 @@ const projectPreviewRows = {
     ],
     footer: ["CRM rollup", "Task visibility"],
   },
-} as const;
+};
+
+function getHomeProjects(): HomeProjectPreview[] {
+  return getPosts(["src", "app", "work", "projects"])
+    .sort(
+      (a, b) =>
+        new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime(),
+    )
+    .map((post) => ({
+      title: post.metadata.title,
+      description: post.metadata.summary,
+      href: `/work/${post.slug}`,
+      category: getProjectCategory(post.slug),
+      accent: getProjectAccent(post.slug),
+    }));
+}
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -332,7 +349,7 @@ function SalesPlatformVisual() {
   );
 }
 
-function ProjectPreview({ project }: { project: (typeof selectedProjects)[number] }) {
+function ProjectPreview({ project }: { project: HomeProjectPreview }) {
   const preview = projectPreviewRows[project.accent];
 
   return (
@@ -370,6 +387,8 @@ function ProjectPreview({ project }: { project: (typeof selectedProjects)[number
 }
 
 export default function Home() {
+  const projects = getHomeProjects();
+
   return (
     <Column as="main" fillWidth horizontal="center">
       <Schema
@@ -479,7 +498,7 @@ export default function Home() {
             </SmartLink>
           </div>
           <div className={styles.projectGrid}>
-            {selectedProjects.map((project) => (
+            {projects.map((project) => (
               <ProjectPreview key={project.href} project={project} />
             ))}
           </div>

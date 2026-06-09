@@ -15,6 +15,16 @@ export {
 } from "./content";
 
 export {
+  projectCategories,
+  projectEyebrows,
+  projectAccents,
+  getProjectCategory,
+  getProjectEyebrow,
+  getProjectAccent,
+} from "./projects";
+export type { ProjectAccent } from "./projects";
+
+export {
   display,
   mailchimp,
   routes,

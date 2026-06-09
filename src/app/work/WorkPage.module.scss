@@ -22,11 +22,14 @@
 }
 
 .workHero,
-.featuredProject,
-.allProjectsSection {
+.projectsSection {
   width: min(100% - 2rem, 1280px);
   box-sizing: border-box;
   margin-inline: auto;
+}
+
+.projectsSection {
+  margin-top: 2rem;
 }
 
 .workHero {
