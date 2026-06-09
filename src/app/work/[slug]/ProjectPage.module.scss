@@ -33,17 +33,26 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
 }
 
 .heroCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 52rem;
   min-width: 0;
+  margin-inline: auto;
 }
 
 .heroBreadcrumb,
 .eyebrow {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   color: #38bdf8 !important;
   font-size: 0.78rem;
   font-weight: 600;
@@ -61,7 +70,7 @@
 }
 
 .heroTitle {
-  max-width: 18ch;
+  max-width: 24ch;
   margin: 0.9rem 0 0;
   color: var(--project-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
@@ -70,22 +79,28 @@
   letter-spacing: -0.035em;
   line-height: 0.94;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .heroTagline {
-  max-width: 48rem;
-  margin: 1.35rem 0 0;
+  max-width: 42rem;
+  margin: 1.35rem auto 0;
   color: var(--project-muted);
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   line-height: 1.75;
+  text-align: center;
 }
 
 .heroTech {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin-top: 1.65rem;
 
   > * {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.65rem;
   }
 
@@ -1282,9 +1297,12 @@
   }
 }
 
-.mockupSection,
 .articleSection {
   margin-top: clamp(3.25rem, 6vw, 6rem);
+}
+
+.mockupSection {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 .sectionHeading {

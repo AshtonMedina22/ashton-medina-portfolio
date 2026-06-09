@@ -20,6 +20,21 @@ function renderDemo(slugPath: string) {
   return null;
 }
 
+function splitContentForDemo(content: string) {
+  const closingTag = "</HowItWorksGrid>";
+  const closeIndex = content.lastIndexOf(closingTag);
+
+  if (closeIndex === -1) {
+    return { intro: content, remainder: "" };
+  }
+
+  const splitPoint = closeIndex + closingTag.length;
+  return {
+    intro: content.slice(0, splitPoint).trim(),
+    remainder: content.slice(splitPoint).trim(),
+  };
+}
+
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
   return posts.map((post) => ({
@@ -76,6 +91,7 @@ export default async function Project({
   }
 
   const demo = post.metadata.demo ? renderDemo(slugPath) : null;
+  const { intro, remainder } = splitContentForDemo(post.content);
 
   return (
     <main className={styles.pageWrap}>
@@ -113,6 +129,16 @@ export default async function Project({
         </div>
       </section>
 
+      <section className={styles.articleSection} aria-labelledby="case-study-heading">
+        <div className={styles.sectionHeading}>
+          <span className={styles.eyebrow}>Case Study</span>
+          <h2 id="case-study-heading">Case Study</h2>
+        </div>
+        <article className={styles.articleProse}>
+          <CustomMDX source={intro} />
+        </article>
+      </section>
+
       {demo && (
         <section className={styles.mockupSection}>
           <div className={styles.demoSection}>
@@ -121,15 +147,13 @@ export default async function Project({
         </section>
       )}
 
-      <section className={styles.articleSection} aria-labelledby="case-study-heading">
-        <div className={styles.sectionHeading}>
-          <span className={styles.eyebrow}>Case Study</span>
-          <h2 id="case-study-heading">Case Study</h2>
-        </div>
-        <article className={styles.articleProse}>
-          <CustomMDX source={post.content} />
-        </article>
-      </section>
+      {remainder && (
+        <section className={styles.articleSection}>
+          <article className={styles.articleProse}>
+            <CustomMDX source={remainder} />
+          </article>
+        </section>
+      )}
     </main>
   );
 }

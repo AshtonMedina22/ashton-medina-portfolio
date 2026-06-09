@@ -1,13 +1,11 @@
 import styles from "@/components/about/about.module.scss";
-import { about, baseURL, person, social } from "@/resources";
+import { about, baseURL, person } from "@/resources";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
   HiOutlineBriefcase,
   HiOutlineChartBar,
-  HiOutlineClipboardCheck,
   HiOutlineCog,
-  HiOutlineDocumentText,
   HiOutlineExternalLink,
   HiOutlineLocationMarker,
   HiOutlineMail,
@@ -42,9 +40,9 @@ const contactItems = [
 ] as const;
 
 const resumeHighlights = [
-  "10+ years leading operations, process improvement, system implementation, and organizational execution across multi-site and technology-enabled environments.",
-  "Experienced across operations, finance, HR, vendor management, CRM, ERP, reporting, onboarding, compliance, and customer-facing implementation workflows.",
-  "Strong background in requirements gathering, process mapping, stakeholder management, KPI development, documentation, training, and adoption.",
+  "10+ years leading multi-site operations, process improvement, and organizational execution in regulated and technology-enabled environments.",
+  "Current focus: ERP systems architecture spanning CRM, vendor management, financial controls, and operational reporting.",
+  "Strengths in requirements gathering, workflow design, implementation rollout, KPI development, and adoption.",
 ] as const;
 
 const experience = [
@@ -54,10 +52,9 @@ const experience = [
     period: "2025 - Present",
     location: "Allen, TX",
     bullets: [
-      "Serve as primary business systems owner for ERP systems supporting CRM, sales, vendor management, accounting, HR, reporting, project management, and business operations.",
+      "Serve as primary business systems owner for ERP systems supporting CRM, sales, vendor management, accounting, HR, reporting, and project management.",
       "Lead requirements gathering, workflow analysis, and process mapping with leadership, stakeholders, vendors, and implementation partners.",
-      "Design and standardize workflows for vendor onboarding, compliance management, contract administration, approvals, documentation tracking, and partner lifecycle management.",
-      "Manage ERP implementation work including process validation, configuration, phased planning, testing, documentation, training, and stakeholder coordination.",
+      "Design and standardize workflows for vendor onboarding, compliance management, contract administration, and partner lifecycle management.",
       "Develop KPI reporting frameworks, executive dashboards, and operational reporting solutions that improve visibility and decision-making.",
     ],
   },
@@ -68,10 +65,9 @@ const experience = [
     location: "Dallas-Fort Worth, TX",
     bullets: [
       "Partnered with executive leadership on strategic initiatives, operational planning, process improvement, and business systems administration.",
-      "Coordinated customer onboarding, implementation, and operational readiness for national automotive OEMs and multi-location dealership organizations.",
-      "Managed integrations and operational processes involving telematics platforms, toll recovery systems, payment processors, dealership systems, and partner ecosystems.",
-      "Built implementation playbooks, onboarding programs, knowledge base content, automated help desk/chatbot workflows, process documentation, and training resources.",
-      "Created reporting structures and operational visibility tools used by leadership to monitor implementation progress, business performance, and customer satisfaction.",
+      "Coordinated customer onboarding and operational readiness for national automotive OEMs and multi-location dealership organizations.",
+      "Managed integrations involving telematics platforms, toll recovery systems, payment processors, and partner ecosystems.",
+      "Built implementation playbooks, onboarding programs, process documentation, and training resources.",
     ],
   },
   {
@@ -80,11 +76,10 @@ const experience = [
     period: "2009 - 2023",
     location: "Dallas-Fort Worth, TX",
     bullets: [
-      "Directed multi-site business operations across staffing, compliance, enrollment, administration, scheduling, reporting, and organizational management.",
-      "Led process improvement and standardization through operating procedures, documentation frameworks, reporting controls, compliance programs, and governance practices.",
-      "Managed regulatory compliance, inspections, audits, documentation standards, and operational readiness in a highly regulated environment.",
-      "Oversaw billing, payroll coordination, contractor administration, vendor management, purchasing controls, and operational reporting.",
-      "Led recruitment, onboarding, workforce scheduling, performance management, employee development, and administrative support for teams of 30+ employees.",
+      "Directed multi-site business operations across staffing, compliance, enrollment, administration, scheduling, and reporting.",
+      "Led process improvement and standardization through operating procedures, documentation frameworks, and governance practices.",
+      "Managed regulatory compliance, inspections, audits, and operational readiness in a highly regulated environment.",
+      "Led recruitment, onboarding, workforce scheduling, and administrative support for teams of 30+ employees.",
     ],
   },
 ] as const;
@@ -128,27 +123,11 @@ const technicalSkills = [
   "TypeScript",
 ] as const;
 
-const education = [
-  {
-    title: "Master of Business Administration (MBA)",
-    institution: "Business administration graduate program",
-  },
-] as const;
-
-const certifications = [
-  "Project management platform certification",
-  "Business process and system design certification",
-  "CMS website design and deployment certification",
-  "Web development certification",
-] as const;
-
 function getContactHref() {
   return `mailto:${person.email}`;
 }
 
 export default function About() {
-  const linkedIn = social.find((item) => item.icon === "linkedin");
-
   return (
     <main className={styles.aboutPage}>
       <Schema
@@ -168,10 +147,10 @@ export default function About() {
       <section className={styles.resumeShell}>
         <aside className={styles.resumeSidebar}>
           <div className={styles.portraitCard}>
-            <img src="/images/avatar.jpg" alt={person.name} />
+            <img src={person.avatar} alt={person.name} />
           </div>
           <div className={styles.identityBlock}>
-            <span>Resume Portfolio</span>
+            <span>Profile</span>
             <h1>{person.name}</h1>
             <p>Business Systems Architect</p>
           </div>
@@ -205,54 +184,25 @@ export default function About() {
               );
             })}
           </div>
-
-          <div className={styles.sidebarSection}>
-            <h2>Core Skills</h2>
-            <div className={styles.skillPills}>
-              {competencies.slice(0, 8).map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.sidebarSection}>
-            <h2>Technical</h2>
-            <div className={styles.skillPills}>
-              {technicalSkills.slice(0, 8).map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
-            </div>
-          </div>
         </aside>
 
         <div className={styles.resumeMain}>
           <section className={styles.resumeHero}>
             <span className={styles.sectionEyebrow}>Professional Summary</span>
-            <h2>Operations and systems leader building scalable business infrastructure.</h2>
+            <h2>Operations and systems leader building scalable business infrastructure</h2>
             <p>
-              Operations leader with 10+ years of experience analyzing business processes,
-              gathering requirements, improving workflows, implementing software, building
-              reporting structures, documenting operating procedures, and driving organizational
-              efficiency across multi-site and technology-enabled environments.
+              I analyze how work moves through organizations, design the systems and processes that
+              support it, and build the reporting and controls that keep execution visible as teams
+              scale.
             </p>
             <div className={styles.heroActions}>
               <SmartLink href="/work" className={styles.primaryCta}>
-                View Portfolio
+                View Work
                 <HiOutlineArrowRight />
               </SmartLink>
               <SmartLink href={getContactHref()} className={styles.secondaryCta}>
                 Contact
               </SmartLink>
-              {linkedIn && (
-                <SmartLink
-                  href={linkedIn.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.secondaryCta}
-                >
-                  LinkedIn
-                </SmartLink>
-              )}
             </div>
           </section>
 
@@ -326,40 +276,6 @@ export default function About() {
               ))}
             </div>
           </section>
-
-          <section className={styles.twoColumnSection}>
-            <article className={styles.resumeSection}>
-              <div className={styles.sectionHeader}>
-                <HiOutlineDocumentText />
-                <div>
-                  <span className={styles.sectionEyebrow}>Education</span>
-                  <h2>Education</h2>
-                </div>
-              </div>
-              {education.map((item) => (
-                <div key={item.title} className={styles.simpleEntry}>
-                  <strong>{item.title}</strong>
-                  <span>{item.institution}</span>
-                </div>
-              ))}
-            </article>
-
-            <article className={styles.resumeSection}>
-              <div className={styles.sectionHeader}>
-                <HiOutlineClipboardCheck />
-                <div>
-                  <span className={styles.sectionEyebrow}>Credentials</span>
-                  <h2>Certifications</h2>
-                </div>
-              </div>
-              <ul className={styles.certList}>
-                {certifications.map((certification) => (
-                  <li key={certification}>{certification}</li>
-                ))}
-              </ul>
-            </article>
-          </section>
-
         </div>
       </section>
     </main>
