@@ -34,9 +34,13 @@
 
 .workHero {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(22rem, 0.78fr);
-  gap: clamp(1.75rem, 4vw, 4rem);
-  align-items: end;
+  grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.heroLead {
+  min-width: 0;
 }
 
 .eyebrow,
@@ -68,15 +72,17 @@
 }
 
 .heroAside {
-  display: grid;
-  gap: 1.7rem;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.25rem 0 0.5rem;
 
   p {
-    max-width: 55ch;
     margin: 0;
     color: var(--work-muted);
-    font-size: var(--type-body-lg);
-    line-height: 1.7;
+    font-size: clamp(1rem, 1.15vw, 1.1rem);
+    line-height: 1.72;
   }
 }
 
@@ -730,8 +736,19 @@
   word-break: normal;
 }
 
+@media (max-width: 900px) {
+  .workHero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .heroAside {
+    padding: 0;
+  }
+}
+
 @media (max-width: 1180px) {
-  .workHero,
   .featuredProject {
     grid-template-columns: 1fr;
   }

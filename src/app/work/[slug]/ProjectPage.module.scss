@@ -1356,6 +1356,11 @@
   box-shadow: 0 26px 70px rgba(0, 0, 0, 0.24);
 }
 
+.demoFrame {
+  min-width: 0;
+  width: 100%;
+}
+
 .articleSection {
   padding-top: clamp(1rem, 3vw, 2rem);
   border-top: 1px solid var(--project-border);

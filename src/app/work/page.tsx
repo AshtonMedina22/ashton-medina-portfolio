@@ -31,7 +31,7 @@ export default function Work() {
       />
 
       <section className={styles.workHero}>
-        <div>
+        <div className={styles.heroLead}>
           <span className={styles.eyebrow}>My work</span>
           <h1>
             Operational

@@ -10,7 +10,6 @@ import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorL
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
 import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
 import { Metadata } from "next";
-import { DemoEmbeddedFrame } from "@/components/work/DemoEmbeddedFrame";
 import { accentLastWords } from "@/utils/headingAccent";
 import styles from "./ProjectPage.module.scss";
 
@@ -146,7 +145,7 @@ export default async function Project({
       {demo && (
         <section className={styles.mockupSection}>
           <div className={styles.demoSection}>
-            <DemoEmbeddedFrame>{demo}</DemoEmbeddedFrame>
+            <div className={styles.demoFrame}>{demo}</div>
           </div>
         </section>
       )}

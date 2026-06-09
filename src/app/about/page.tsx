@@ -61,42 +61,30 @@ const experience = [
 ] as const;
 
 const competencies = [
-  "Business Analysis",
-  "Requirements Gathering",
-  "Business Process Analysis",
-  "Process Mapping",
-  "SOP Development",
-  "Workflow Design",
-  "Gap Analysis",
-  "Stakeholder Management",
-  "Process Improvement",
-  "Operational Analysis",
-  "Operations Leadership",
-  "KPI Development",
-  "Executive Reporting",
-  "Systems Implementation",
-  "User Acceptance Testing",
-  "Change Management",
-  "Vendor Management",
-  "Compliance Management",
-  "Training & Adoption",
+  "Operations & Process Improvement",
+  "Business Requirements & Analysis",
+  "ERP & Platform Implementation",
+  "Workflow Design & Automation",
+  "KPI Frameworks & Executive Reporting",
+  "Cross-Functional Stakeholder Management",
+  "Change Management & User Adoption",
+  "Vendor & Partner Lifecycle Management",
+  "Compliance & Operational Controls",
+  "Multi-Site Operations Leadership",
+  "UAT, Rollout & Release Management",
+  "Documentation & SOP Standards",
 ] as const;
 
 const technicalSkills = [
-  "Software Implementation",
-  "Systems Integration",
-  "Platform Administration",
-  "CRM Platforms",
-  "ERP Platforms",
-  "Reporting & Analytics",
-  "Dashboard Development",
-  "API Integrations",
-  "Workflow Automation",
-  "Systems Architecture",
-  "Software Development",
-  "Python",
-  "SQL",
-  "TypeScript",
+  "ERP & CRM Platforms",
+  "Workflow & Process Automation",
+  "Executive Dashboards & KPI Reporting",
+  "Financial & Vendor System Controls",
+  "API Integrations & Data Sync",
+  "SQL & Operational Data Analysis",
+  "Python for Automation & Reporting",
+  "Platform Configuration & Administration",
+  "UAT, Testing & Production Rollout",
 ] as const;
 
 export default function About() {
@@ -145,25 +133,30 @@ export default function About() {
 
         <div className={styles.resumeContent}>
           <section className={styles.resumeHero}>
-            <span className={styles.sectionEyebrow}>Resume</span>
+            <span className={styles.sectionEyebrow}>Overview</span>
             <h2 className={styles.sectionTitle}>
               Professional <span className="headingAccent">summary.</span>
             </h2>
-            <p className={styles.summaryText}>
-              I&apos;m Ashton, a business operations and implementation manager with experience
-              across operations leadership, process improvement, software implementation, workflow
-              automation, reporting, and organizational execution.
-            </p>
-            <p className={styles.summaryText}>
-              10+ years across multi-site operations leadership and full-cycle platform
-              implementation. Currently own ERP architecture spanning CRM, vendor management,
-              financial controls, and operational reporting.
-            </p>
-            <p className={styles.summaryText}>
-              Work spans requirements gathering, workflow design, rollout, documentation, KPI
-              development, and adoption - with prior experience directing regulated multi-site
-              operations and executive technical coordination.
-            </p>
+            <div className={styles.summaryBody}>
+              <p className={styles.summaryLead}>
+                I help growing organizations turn messy workflows into systems that actually run.
+                Most of my work sits between operations and technology: mapping how work moves,
+                standardizing processes, implementing platforms, and making sure teams adopt what
+                gets built.
+              </p>
+              <p className={styles.summaryText}>
+                Right now I own the business systems side of an ERP environment covering CRM, sales,
+                vendor management, finance, HR, projects, and operational reporting. That includes
+                requirements, workflow design, rollout, documentation, KPI structure, and the
+                controls needed to keep execution consistent.
+              </p>
+              <p className={styles.summaryText}>
+                My background blends multi-site operations leadership with hands-on implementation
+                work. I&apos;ve directed regulated field operations, supported executive teams on
+                technical programs, and spent years doing the detailed work of building SOPs,
+                improving handoffs, and getting adoption to stick.
+              </p>
+            </div>
             <div className={styles.heroActions}>
               <SmartLink href="/work" className={styles.primaryCta}>
                 View Work

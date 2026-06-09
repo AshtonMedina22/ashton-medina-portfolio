@@ -155,22 +155,39 @@
   line-height: 1.08;
   text-transform: uppercase;
 
+  .resumeHero & {
+    max-width: none;
+    margin-bottom: 0.15rem;
+  }
+
   :global(.headingAccent) {
     color: transparent !important;
     -webkit-text-fill-color: transparent !important;
   }
 }
 
+.summaryBody {
+  display: grid;
+  gap: 1.15rem;
+  max-width: 62ch;
+  margin-top: 1.1rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.summaryLead {
+  margin: 0;
+  color: var(--about-text);
+  font-size: clamp(1.05rem, 1.2vw, 1.14rem);
+  font-weight: 500;
+  line-height: 1.78;
+}
+
 .summaryText {
-  max-width: 68ch;
-  margin: 0.85rem 0 0;
+  margin: 0;
   color: var(--about-muted);
   font-size: var(--type-body-lg);
-  line-height: 1.7;
-
-  &:first-of-type {
-    margin-top: 0.75rem;
-  }
+  line-height: 1.72;
 }
 
 .sectionEyebrow {
@@ -185,7 +202,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.15rem;
+  margin-top: 1.5rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
 }
 
 .primaryCta,
