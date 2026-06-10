@@ -87,6 +87,9 @@
   /* Shared page layout */
   --page-max-width: 1560px;
   --page-inline-padding: max(1.25rem, calc((100vw - var(--page-max-width)) / 2));
+  --page-prose-max: 56rem;
+  --page-shell-padding-block: clamp(5rem, 6.5vw, 6.25rem) var(--page-inline-padding)
+    clamp(3.5rem, 6vw, 5rem);
 
   /* Site type scale — professional portfolio sizing */
   --type-hero: clamp(2.75rem, 4.5vw, 3.75rem);

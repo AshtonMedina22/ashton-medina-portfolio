@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   width: 100%;
-  margin: 2rem 0;
+  margin: clamp(2rem, 4vw, 3rem) 0;
 }
 
 .columnProblem,
@@ -29,7 +29,7 @@
   p {
     margin: 0 0 0.85rem;
     color: var(--project-muted, #94a3b8);
-    font-size: 0.98rem;
+    font-size: var(--type-body);
     line-height: 1.7;
     overflow-wrap: break-word;
 

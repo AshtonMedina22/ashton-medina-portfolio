@@ -25,7 +25,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Column fillWidth marginBottom="xl" paddingX="l">
+    <Column fillWidth marginBottom="xl">
       <div className={styles.projectsGrid}>
         {displayedProjects.map((post, index) => (
           <ProjectCard

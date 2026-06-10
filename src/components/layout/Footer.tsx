@@ -8,10 +8,8 @@ export const Footer = () => {
   return (
     <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
       <Row
-        className={styles.mobile}
-        maxWidth="m"
+        className={`${styles.mobile} ${styles.footerShell}`}
         paddingY="8"
-        paddingX="16"
         gap="16"
         horizontal="between"
         vertical="center"

@@ -15,7 +15,7 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   min-height: 100vh;
-  padding: clamp(5rem, 6.5vw, 6.25rem) var(--page-inline-padding) clamp(2.5rem, 5vw, 4rem);
+  padding: var(--page-shell-padding-block);
   color: var(--about-text);
   background:
     radial-gradient(circle at 76% 13%, rgba(6, 182, 212, 0.12), transparent 24rem),
@@ -45,7 +45,7 @@
   align-items: center;
   gap: clamp(1.35rem, 3vw, 2.5rem);
   padding: clamp(1.35rem, 2.5vw, 2rem);
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
 .profileAvatar {
@@ -197,7 +197,7 @@
 .sectionEyebrow {
   color: #38bdf8;
   font-size: var(--type-eyebrow);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -218,13 +218,12 @@
   justify-content: center;
   gap: 0.65rem;
   min-height: 3rem;
-  padding: 0 1.18rem;
+  padding: 0 1.5rem;
   border-radius: 12px;
   text-decoration: none !important;
   font-size: var(--type-cta);
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 .primaryCta {
@@ -241,7 +240,7 @@
 
 .resumeSection {
   padding: clamp(1.5rem, 2.5vw, 2rem);
-  border-radius: 12px;
+  border-radius: 14px;
   background: rgba(15, 23, 42, 0.52);
 }
 
@@ -438,7 +437,7 @@
   }
 
   .resumeShell {
-    width: calc(100% - 2rem);
+    width: 100%;
   }
 
   .profileHeader {

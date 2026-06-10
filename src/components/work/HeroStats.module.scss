@@ -3,9 +3,9 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   width: 100%;
-  margin: 1.5rem 0 2rem;
+  margin: clamp(1.5rem, 3vw, 2rem) 0;
   border: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
-  border-radius: 16px;
+  border-radius: 14px;
   background: rgba(18, 24, 38, 0.72);
   box-shadow: var(--project-depth, 0 8px 24px rgba(0, 0, 0, 0.18));
   overflow: hidden;

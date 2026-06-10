@@ -12,7 +12,7 @@
   background: var(--neutral-background-strong);
   border: 1px solid var(--neutral-alpha-weak);
   border-radius: 9999px;
-  font-size: 0.8125rem;
+  font-size: var(--type-label);
   font-weight: 500;
   color: var(--neutral-on-background-strong);
   white-space: nowrap;
@@ -31,6 +31,6 @@
 
   .techItem {
     padding: 0.375rem 0.625rem;
-    font-size: 0.75rem;
+    font-size: var(--type-label);
   }
 }

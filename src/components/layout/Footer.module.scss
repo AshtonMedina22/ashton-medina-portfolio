@@ -1,7 +1,14 @@
 @use "../shared/breakpoints.scss" as breakpoints;
 
+.footerShell {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-inline-padding);
+}
+
 @media (max-width: breakpoints.$s) {
-    .mobile {
-        text-align: center;
-    }
+  .mobile {
+    text-align: center;
+  }
 }

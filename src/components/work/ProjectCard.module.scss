@@ -591,19 +591,20 @@
 /* Primary CTA: dark purple background, light text. !important overrides Once UI utility classes (reset-button-styles, etc.) */
 .ctaLink {
     margin: 0 !important;
-    padding: 0.875rem 1.625rem !important;
+    min-height: 3rem;
+    padding: 0 1.5rem !important;
     font-size: var(--type-cta) !important;
     background: var(--brand-solid-medium, #1e1b2e) !important;
     color: var(--brand-on-solid-strong, #fafafa) !important;
     text-decoration: none !important;
-    border-radius: 0.5rem !important;
+    border-radius: 12px !important;
     border: 1px solid transparent !important;
     transition: background var(--transition-med), border-color var(--transition-med) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     font-weight: 600 !important;
-    letter-spacing: -0.01em !important;
+    letter-spacing: 0.03em !important;
     cursor: pointer !important;
 
     &:hover {

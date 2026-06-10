@@ -14,12 +14,12 @@
 
   @media (max-width: 768px) {
     margin: 2rem auto;
-    padding: 0 1.5rem;
+    padding: 0;
   }
 
   @media (max-width: 480px) {
     margin: 1.5rem auto;
-    padding: 0 1rem;
+    padding: 0;
   }
 }
 
@@ -37,7 +37,7 @@
   font-size: var(--type-body-lg);
   line-height: 1.75;
   color: var(--neutral-on-background-medium);
-  max-width: 56rem;
+  max-width: var(--page-prose-max);
   margin-left: auto;
   margin-right: auto;
   text-align: center;

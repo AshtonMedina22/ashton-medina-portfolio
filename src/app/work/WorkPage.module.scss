@@ -15,7 +15,7 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   min-height: 100vh;
-  padding: clamp(5.25rem, 7vw, 6.5rem) var(--page-inline-padding) clamp(3.5rem, 6vw, 5rem);
+  padding: var(--page-shell-padding-block);
   color: var(--work-text);
   background:
     radial-gradient(circle at 72% 10%, rgba(6, 182, 212, 0.12), transparent 25rem),
@@ -33,7 +33,7 @@
 }
 
 .projectsSection {
-  margin-top: 2rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .workHero {
@@ -206,13 +206,12 @@
   justify-content: center;
   gap: 0.65rem;
   min-height: 3rem;
-  padding: 0 1.2rem;
+  padding: 0 1.5rem;
   border-radius: 12px;
   text-decoration: none !important;
   font-size: var(--type-cta);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .primaryCta {
@@ -774,7 +773,7 @@
   .workHero,
   .featuredProject,
   .allProjectsSection {
-    width: calc(100% - 5rem);
+    width: 100%;
   }
 
   .workHero h1 {

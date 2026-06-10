@@ -3,14 +3,14 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
   width: 100%;
-  margin: 1.25rem 0 0;
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
 }
 
 .statBlock {
   min-width: 0;
   padding: 1rem;
   border: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
-  border-radius: 12px;
+  border-radius: 14px;
   background: rgba(26, 34, 51, 0.7);
 }
 

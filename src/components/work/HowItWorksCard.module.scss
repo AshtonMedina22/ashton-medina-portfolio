@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   width: 100%;
-  margin-top: 1.25rem;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
   border-top: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
   border-left: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
 }
@@ -21,7 +21,7 @@
 .cardTitle {
   margin: 0 0 0.65rem;
   color: var(--project-text, #f8fafc);
-  font-size: 0.98rem;
+  font-size: var(--type-body-lg);
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.25;
@@ -32,7 +32,7 @@
 .cardContent {
   margin: 0;
   color: var(--project-muted, #94a3b8);
-  font-size: 0.88rem;
+  font-size: var(--type-body);
   line-height: 1.6;
   overflow-wrap: break-word;
 }
