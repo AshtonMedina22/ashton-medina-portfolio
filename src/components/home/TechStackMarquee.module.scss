@@ -1,12 +1,13 @@
 .marqueeContainer {
   position: relative;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  padding: 0.5rem 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  padding: 0.85rem 0;
 }
 
 .marquee {
   display: flex;
+  gap: 1.35rem;
   white-space: nowrap;
 }
 
@@ -21,14 +22,14 @@
 .techItem {
   position: relative;
   flex-shrink: 0;
-  width: 5.5rem;
-  height: 4.5rem;
+  width: 7.5rem;
+  height: 6.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  border-radius: 0.75rem;
+  gap: 0.5rem;
+  border-radius: 14px;
   background: var(--scheme-brand-200);
   border: 1px solid rgba(167, 139, 250, 0.2);
   box-shadow:
@@ -79,8 +80,8 @@
 }
 
 .techIcon {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2rem;
+  height: 2rem;
   fill: currentColor;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
 
@@ -95,7 +96,7 @@
 }
 
 .techLabel {
-  font-size: 0.7rem;
+  font-size: var(--type-label);
   font-weight: 600;
   letter-spacing: 0.01em;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
@@ -107,17 +108,17 @@
 
 @media (max-width: 640px) {
   .techItem {
-    width: 4.5rem;
-    height: 4rem;
+    width: 6.25rem;
+    height: 5.25rem;
   }
 
   .techIcon {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .techLabel {
-    font-size: 0.65rem;
+    font-size: var(--type-label);
   }
 }
 

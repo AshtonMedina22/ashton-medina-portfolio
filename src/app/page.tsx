@@ -125,7 +125,10 @@ export default function Home() {
 
         {techStack.length > 0 && (
           <section className={styles.techBanner} aria-label="Technology stack">
-            <span>Tools and platforms used across business systems work</span>
+            <div className={styles.techBannerIntro}>
+              <span className={styles.sectionEyebrow}>Technology</span>
+              <h2>Tools and platforms used across business systems work</h2>
+            </div>
             <TechStackMarquee />
           </section>
         )}

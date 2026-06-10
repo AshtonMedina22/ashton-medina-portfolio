@@ -90,7 +90,8 @@
   --type-subsection: clamp(1.35rem, 2vw, 1.65rem);
   --type-body: clamp(1.05rem, 1.1vw, 1.125rem);
   --type-body-lg: clamp(1.1rem, 1.2vw, 1.2rem);
-  --type-eyebrow: 0.8125rem;
+  --type-eyebrow: 0.875rem;
+  --type-label: 0.875rem;
   --type-cta: 0.9375rem;
 
   /* Once UI display scale — sized for cards and components */

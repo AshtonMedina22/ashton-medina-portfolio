@@ -83,7 +83,6 @@ export function TechStackMarquee() {
         className={styles.marqueeContainer}
       >
         <Row
-          gap="xl"
           className={`${styles.marquee} ${styles.marqueeLeft}`}
         >
           {duplicatedLanguages.map((tech, index) => (
@@ -99,7 +98,6 @@ export function TechStackMarquee() {
         className={styles.marqueeContainer}
       >
         <Row
-          gap="xl"
           className={`${styles.marquee} ${styles.marqueeRight}`}
         >
           {duplicatedPlatforms.map((tech, index) => (

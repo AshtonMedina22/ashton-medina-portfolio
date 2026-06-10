@@ -23,7 +23,8 @@
 
 .heroSection,
 .proofStrip,
-.capabilitiesSection {
+.capabilitiesSection,
+.techBanner {
   width: 100%;
   max-width: 1560px;
   margin-inline: auto;
@@ -124,15 +125,15 @@
 
   span {
     min-width: 0;
-    padding: 0.85rem 0.75rem;
+    padding: 1rem 0.85rem;
     border: 1px solid rgba(148, 163, 184, 0.1);
     border-radius: 12px;
     color: var(--home-muted);
     background: rgba(15, 23, 42, 0.48);
-    font-size: 0.8rem;
+    font-size: var(--type-label);
     font-weight: 600;
-    letter-spacing: 0.1em;
-    line-height: 1.3;
+    letter-spacing: 0.05em;
+    line-height: 1.35;
     text-align: center;
     text-transform: uppercase;
   }
@@ -224,7 +225,7 @@
     gap: 0.55rem;
     margin-top: 1.25rem;
     color: #38bdf8 !important;
-    font-size: 0.78rem;
+    font-size: var(--type-eyebrow);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-decoration: none !important;
@@ -304,35 +305,64 @@
 }
 
 .techBanner {
-  width: 100%;
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding: 2rem 0 2.35rem;
-  border-top: 1px solid var(--home-border);
-  border-bottom: 1px solid var(--home-border);
-  background: rgba(8, 13, 22, 0.76);
+  display: grid;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  margin-top: 1rem;
+  padding: clamp(2.5rem, 4.5vw, 4.25rem) clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(99, 102, 241, 0.1), transparent 20rem),
+    radial-gradient(circle at 88% 22%, rgba(56, 189, 248, 0.08), transparent 18rem),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.32), rgba(15, 23, 42, 0.12));
+}
 
-  > span {
-    display: block;
-    margin-bottom: 1.1rem;
-    color: var(--home-muted);
-    font-size: var(--type-eyebrow);
+.techBannerIntro {
+  min-width: 0;
+  text-align: center;
+  margin-inline: auto;
+
+  h2 {
+    max-width: 42ch;
+    margin: 0.85rem auto 0;
+    color: var(--home-text);
+    font-family: var(--font-heading), Inter, system-ui, sans-serif;
+    font-size: var(--type-subsection);
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-align: center;
-    text-transform: uppercase;
+    line-height: 1.25;
+    text-wrap: balance;
   }
 }
 
 .techBanner :global([class*="TechStackMarquee_techItem"]) {
+  width: 7.5rem !important;
+  height: 6.25rem !important;
+  gap: 0.5rem !important;
+  border-radius: 14px !important;
   background: var(--home-surface) !important;
   border-color: var(--home-border) !important;
   color: var(--home-text) !important;
-  box-shadow: none !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14) !important;
+}
+
+.techBanner :global([class*="TechStackMarquee_techIcon"]) {
+  width: 2rem !important;
+  height: 2rem !important;
 }
 
 .techBanner :global([class*="TechStackMarquee_techLabel"]) {
   color: var(--home-text) !important;
+  font-size: var(--type-label) !important;
+  font-weight: 600 !important;
   text-shadow: none !important;
+}
+
+.techBanner :global([class*="TechStackMarquee_marquee"]) {
+  gap: 1.35rem !important;
+}
+
+.techBanner :global([class*="TechStackMarquee_marqueeContainer"]) {
+  padding: 0.85rem 0 !important;
 }
 
 [data-theme="light"] .homePage {
@@ -421,12 +451,22 @@
   }
 
   .techBanner {
-    background: #ffffff;
     border-color: var(--home-border);
+    background:
+      radial-gradient(circle at 14% 12%, rgba(99, 102, 241, 0.05), transparent 20rem),
+      radial-gradient(circle at 88% 22%, rgba(56, 189, 248, 0.04), transparent 18rem),
+      #ffffff;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.04);
+  }
 
-    > span {
-      color: #64748b;
-    }
+  .techBannerIntro h2 {
+    color: #0f172a;
+  }
+
+  .techBanner :global([class*="TechStackMarquee_techItem"]) {
+    background: #ffffff !important;
+    border-color: var(--home-border) !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05) !important;
   }
 }
 
