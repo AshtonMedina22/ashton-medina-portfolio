@@ -84,6 +84,10 @@
   --danger-color: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.16);
 
+  /* Shared page layout */
+  --page-max-width: 1560px;
+  --page-inline-padding: max(1.25rem, calc((100vw - var(--page-max-width)) / 2));
+
   /* Site type scale — professional portfolio sizing */
   --type-hero: clamp(2.75rem, 4.5vw, 3.75rem);
   --type-section: clamp(2rem, 3.2vw, 2.85rem);

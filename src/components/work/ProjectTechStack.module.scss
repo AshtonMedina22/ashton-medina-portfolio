@@ -1,8 +1,8 @@
 .techStackSection {
   margin: 4rem auto;
-  max-width: 900px;
+  max-width: var(--page-max-width);
   width: 100%;
-  padding: 0 2rem;
+  padding: 0;
   border-radius: 0;
   background: transparent;
   border: none;
@@ -19,7 +19,7 @@
 }
 
 .techTitle {
-  font-size: 1.75rem;
+  font-size: var(--type-subsection);
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 3rem 0;
@@ -74,7 +74,7 @@
 }
 
 .techLabel {
-  font-size: 0.9375rem;
+  font-size: var(--type-body);
   font-weight: 500;
   color: var(--neutral-on-background-medium);
   white-space: nowrap;

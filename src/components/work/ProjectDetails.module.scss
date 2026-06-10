@@ -94,7 +94,7 @@
   border-radius: 8px;
   background: rgba(99, 102, 241, 0.18);
   color: #a78bfa;
-  font-size: 0.8rem;
+  font-size: var(--type-label);
   font-weight: 700;
 }
 
@@ -103,7 +103,7 @@
 .blockTitle {
   margin: 0;
   color: var(--project-text, #f8fafc);
-  font-size: 0.98rem;
+  font-size: var(--type-body-lg);
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.25;
@@ -113,7 +113,7 @@
 .blockDescription {
   margin: 0.4rem 0 0.75rem;
   color: var(--project-muted, #94a3b8);
-  font-size: 0.85rem;
+  font-size: var(--type-body);
   line-height: 1.5;
 }
 
@@ -122,7 +122,7 @@
 .blockContent,
 .proofPointContent {
   color: var(--project-muted, #94a3b8);
-  font-size: 0.9rem;
+  font-size: var(--type-body);
   line-height: 1.6;
 
   p {
@@ -291,7 +291,7 @@
 
 .proofPointTitle {
   color: var(--project-text, #f8fafc);
-  font-size: 0.85rem;
+  font-size: var(--type-label);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -321,14 +321,14 @@
   border-radius: 999px;
   background: rgba(99, 102, 241, 0.14);
   color: var(--project-text, #f8fafc);
-  font-size: 0.76rem;
+  font-size: var(--type-label);
   font-weight: 600;
   white-space: nowrap;
 }
 
 .flowArrow {
   color: var(--project-soft, #64748b);
-  font-size: 0.75rem;
+  font-size: var(--type-label);
   font-weight: 700;
 }
 

@@ -10,9 +10,12 @@
   --project-cyan: #06b6d4;
   --project-depth: 0 18px 48px rgba(0, 0, 0, 0.2);
 
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   min-height: 100vh;
-  padding: clamp(5.25rem, 7vw, 6.75rem) max(1rem, calc((100vw - 1280px) / 2)) clamp(3.5rem, 6vw, 5rem);
+  padding: clamp(5.25rem, 7vw, 6.75rem) var(--page-inline-padding) clamp(3.5rem, 6vw, 5rem);
   color: var(--project-text);
   background:
     radial-gradient(circle at 76% 8%, rgba(6, 182, 212, 0.11), transparent 26rem),
@@ -25,7 +28,8 @@
 .proofStrip,
 .mockupSection,
 .articleSection {
-  width: min(100% - 2rem, 1280px);
+  width: 100%;
+  max-width: var(--page-max-width);
   margin-inline: auto;
 }
 
@@ -118,9 +122,9 @@
     border-radius: 999px;
     background: rgba(26, 34, 51, 0.78);
     color: var(--project-text);
-    font-size: 0.78rem;
+    font-size: var(--type-label);
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
   }
 }
 
@@ -140,9 +144,9 @@
   padding: 0 1.25rem;
   border-radius: 12px;
   text-decoration: none !important;
-  font-size: 0.78rem;
+  font-size: var(--type-cta);
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   transition:
     background 180ms ease,
@@ -1294,9 +1298,9 @@
   span {
     margin-top: 0.45rem;
     color: var(--project-muted);
-    font-size: 0.72rem;
+    font-size: var(--type-label);
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     line-height: 1.35;
     text-transform: uppercase;
   }
@@ -1341,7 +1345,7 @@
   p {
     margin: 0;
     color: var(--project-muted);
-    font-size: 1rem;
+    font-size: var(--type-body-lg);
     line-height: 1.7;
   }
 }
@@ -1588,7 +1592,8 @@
   .proofStrip,
   .mockupSection,
   .articleSection {
-    width: min(100% - 1.5rem, 1400px);
+    width: 100%;
+    max-width: var(--page-max-width);
   }
 
   .heroTitle {

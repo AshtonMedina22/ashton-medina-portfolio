@@ -32,9 +32,9 @@
 
 .statLabel {
   color: var(--project-muted, #94a3b8);
-  font-size: 0.72rem;
+  font-size: var(--type-label);
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.35;
   text-transform: uppercase;
 }

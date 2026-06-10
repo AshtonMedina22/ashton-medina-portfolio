@@ -10,9 +10,12 @@
   --work-cyan: #06b6d4;
   --work-depth: 0 8px 24px rgba(0, 0, 0, 0.18);
 
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   min-height: 100vh;
-  padding: clamp(5.25rem, 7vw, 6.5rem) max(1rem, calc((100vw - 1280px) / 2)) clamp(3.5rem, 6vw, 5rem);
+  padding: clamp(5.25rem, 7vw, 6.5rem) var(--page-inline-padding) clamp(3.5rem, 6vw, 5rem);
   color: var(--work-text);
   background:
     radial-gradient(circle at 72% 10%, rgba(6, 182, 212, 0.12), transparent 25rem),
@@ -23,7 +26,8 @@
 
 .workHero,
 .projectsSection {
-  width: min(100% - 2rem, 1280px);
+  width: 100%;
+  max-width: var(--page-max-width);
   box-sizing: border-box;
   margin-inline: auto;
 }
@@ -81,7 +85,7 @@
   p {
     margin: 0;
     color: var(--work-muted);
-    font-size: clamp(1rem, 1.15vw, 1.1rem);
+    font-size: var(--type-body-lg);
     line-height: 1.72;
   }
 }
@@ -132,9 +136,9 @@
 .projectCategory {
   margin: 0.55rem 0 0;
   color: var(--work-muted);
-  font-size: 0.78rem;
+  font-size: var(--type-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -142,7 +146,7 @@
   max-width: 38rem;
   margin: 1.25rem 0 0;
   color: var(--work-muted);
-  font-size: 1.02rem;
+  font-size: var(--type-body-lg);
   line-height: 1.65;
 }
 
@@ -178,9 +182,9 @@
     display: block;
     margin-top: 0.4rem;
     color: var(--work-muted);
-    font-size: 0.68rem;
+    font-size: var(--type-label);
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     line-height: 1.35;
     text-transform: uppercase;
   }
@@ -205,9 +209,9 @@
   padding: 0 1.2rem;
   border-radius: 12px;
   text-decoration: none !important;
-  font-size: 0.78rem;
+  font-size: var(--type-cta);
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -567,7 +571,7 @@
   h3 {
     margin: 0;
     color: var(--work-text);
-    font-size: 0.96rem;
+    font-size: var(--type-subsection);
     font-weight: 600;
     line-height: 1.25;
   }
@@ -575,9 +579,9 @@
   p {
     margin: 0.25rem 0 0;
     color: var(--work-muted);
-    font-size: 0.66rem;
+    font-size: var(--type-eyebrow);
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 }
@@ -601,7 +605,7 @@
 .cardSummary {
   margin: 1.15rem 0 0;
   color: var(--work-muted);
-  font-size: 0.91rem;
+  font-size: var(--type-body);
   line-height: 1.55;
 }
 
@@ -612,9 +616,9 @@
   margin-top: 1.25rem;
   color: var(--card-accent, #38bdf8) !important;
   text-decoration: none !important;
-  font-size: 0.76rem;
+  font-size: var(--type-cta);
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 

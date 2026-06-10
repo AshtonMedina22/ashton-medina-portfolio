@@ -1,8 +1,8 @@
 .projectSection {
   margin: 2.5rem auto;
-  max-width: 900px;
+  max-width: var(--page-max-width);
   width: 100%;
-  padding: 0 2rem;
+  padding: 0;
 
   &:first-of-type {
     margin-top: 0;
@@ -24,7 +24,7 @@
 }
 
 .sectionTitle {
-  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-size: var(--type-section);
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 1.25rem 0;
@@ -34,10 +34,10 @@
 }
 
 .sectionContent {
-  font-size: 1.0625rem;
+  font-size: var(--type-body-lg);
   line-height: 1.75;
   color: var(--neutral-on-background-medium);
-  max-width: 720px;
+  max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
