@@ -6,9 +6,13 @@
   --home-border: rgba(255, 255, 255, 0.08);
   --home-indigo: #6366f1;
 
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   min-height: 100vh;
-  padding: clamp(4.75rem, 6.5vw, 6rem) max(1rem, calc((100vw - 1500px) / 2)) clamp(3.5rem, 6vw, 5rem);
+  padding: clamp(4.75rem, 6.5vw, 6rem) max(1.25rem, calc((100vw - 1560px) / 2))
+    clamp(3.5rem, 6vw, 5rem);
   color: var(--home-text);
   background:
     radial-gradient(circle at 62% 12%, rgba(6, 182, 212, 0.13), transparent 28rem),
@@ -18,22 +22,19 @@
 }
 
 .heroSection,
-.proofStrip {
-  width: min(100% - 2rem, 1500px);
-  margin-inline: auto;
-}
-
+.proofStrip,
 .capabilitiesSection {
-  width: min(100% - 2rem, 1280px);
+  width: 100%;
+  max-width: 1560px;
   margin-inline: auto;
 }
 
 .heroSection {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: clamp(1.75rem, 3vw, 3.5rem);
+  gap: clamp(2rem, 3.2vw, 4rem);
   margin-top: clamp(0.5rem, 1.5vw, 1.25rem);
   padding: clamp(2rem, 3.5vw, 3.5rem);
   border: 1px solid rgba(124, 116, 255, 0.22);
@@ -47,33 +48,6 @@
 
 .heroContent {
   min-width: 0;
-}
-
-.heroVisualFrame {
-  container-type: inline-size;
-  position: relative;
-  width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  border-radius: 18px;
-  aspect-ratio: 1000 / 620;
-}
-
-.heroVisualScaler {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1000px;
-  transform: translateX(-50%) scale(calc(100cqw / 1000));
-  transform-origin: top center;
-  pointer-events: none;
-  user-select: none;
-
-  > * {
-    width: 1000px;
-    min-width: 1000px;
-    min-height: 620px;
-  }
 }
 
 .eyebrow,
@@ -260,14 +234,14 @@
 
 .capabilityGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2vw, 1.75rem);
 
   article {
     position: relative;
     min-width: 0;
-    min-height: 11rem;
-    padding: 1.25rem 1.2rem 1.35rem 1.35rem;
+    min-height: 0;
+    padding: 1.35rem 1.5rem 1.45rem 1.55rem;
     overflow: hidden;
     border: 1px solid rgba(148, 163, 184, 0.11);
     border-radius: 14px;
@@ -461,18 +435,9 @@
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
-
-  .capabilityGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 860px) {
-  .heroSection,
-  .proofStrip {
-    width: min(100% - 1.5rem, 1400px);
-  }
-
   .heroContent h1 {
     font-size: clamp(1.85rem, 7.5vw, 2.35rem);
   }
