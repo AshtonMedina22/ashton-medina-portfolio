@@ -362,28 +362,80 @@
 }
 
 [data-theme="light"] .homePage {
-  --home-bg: #f5f7fb;
+  --home-bg: #f8fafc;
   --home-surface: #ffffff;
   --home-text: #0f172a;
   --home-muted: #475569;
   --home-border: rgba(15, 23, 42, 0.1);
 
   background:
-    radial-gradient(circle at 62% 12%, rgba(6, 182, 212, 0.13), transparent 28rem),
-    radial-gradient(circle at 86% 34%, rgba(59, 130, 246, 0.09), transparent 26rem),
-    linear-gradient(180deg, #f8fafc 0%, var(--home-bg) 46%, #eef2f7 100%);
-}
+    radial-gradient(circle at 62% 12%, rgba(6, 182, 212, 0.08), transparent 28rem),
+    radial-gradient(circle at 86% 34%, rgba(59, 130, 246, 0.06), transparent 26rem),
+    linear-gradient(180deg, #ffffff 0%, var(--home-bg) 46%, #f1f5f9 100%);
 
-[data-theme="light"] {
-  .capabilitiesSection {
-    background: rgba(255, 255, 255, 0.92);
+  .heroSection {
+    border-color: rgba(99, 102, 241, 0.14);
+    background:
+      radial-gradient(circle at 12% 0%, rgba(56, 189, 248, 0.1), transparent 24rem),
+      radial-gradient(circle at 82% 8%, rgba(139, 92, 246, 0.07), transparent 26rem),
+      linear-gradient(145deg, #ffffff 0%, #f8fafc 52%, #f1f5f9 100%);
+    box-shadow:
+      0 24px 64px rgba(15, 23, 42, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  }
+
+  .heroContent h1 {
+    color: #0f172a;
+  }
+
+  .heroContent p {
+    color: #475569;
+  }
+
+  .secondaryCta {
+    background: #ffffff;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.14);
+
+    &:hover {
+      background: #f8fafc;
+      border-color: rgba(15, 23, 42, 0.22);
+    }
+  }
+
+  .proofStrip {
+    background: #ffffff;
     border-color: var(--home-border);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+
+    span {
+      color: #334155;
+      background: #f8fafc;
+      border-color: rgba(15, 23, 42, 0.08);
+    }
+  }
+
+  .capabilitiesSection {
+    border-color: var(--home-border);
+    background:
+      radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.06), transparent 20rem),
+      radial-gradient(circle at 88% 18%, rgba(244, 114, 182, 0.05), transparent 18rem),
+      #ffffff;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.04);
+  }
+
+  .sectionIntro h2 {
+    color: #0f172a;
+  }
+
+  .sectionIntro > p {
+    color: #475569;
   }
 
   .capabilityGrid article {
     background: #ffffff;
     border-color: var(--home-border);
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
 
     h3 {
       color: #0f172a;
@@ -395,12 +447,12 @@
   }
 
   .techBanner {
-    background: rgba(255, 255, 255, 0.88);
-  }
+    background: #ffffff;
+    border-color: var(--home-border);
 
-  .secondaryCta:hover {
-    background: rgba(15, 23, 42, 0.04);
-    border-color: rgba(15, 23, 42, 0.18);
+    > span {
+      color: #64748b;
+    }
   }
 }
 
