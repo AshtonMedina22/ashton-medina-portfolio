@@ -10,7 +10,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 4.6rem 1fr;
-  min-height: clamp(22rem, 36vw, 32rem);
+  min-height: 620px;
   overflow: hidden;
   border: 1px solid rgba(124, 116, 255, 0.34);
   border-radius: 18px;
@@ -303,23 +303,23 @@
 }
 
 @media (max-width: 860px) {
-  .opsVisual {
+  .opsVisual:not([data-hero-scaled]) {
     grid-template-columns: 1fr;
     min-height: auto;
   }
 
-  .visualRail {
+  .opsVisual:not([data-hero-scaled]) .visualRail {
     display: none;
   }
 
-  .visualMetrics,
-  .visualDashboardGrid,
-  .workflowStatus {
+  .opsVisual:not([data-hero-scaled]) .visualMetrics,
+  .opsVisual:not([data-hero-scaled]) .visualDashboardGrid,
+  .opsVisual:not([data-hero-scaled]) .workflowStatus {
     grid-template-columns: 1fr;
   }
 
-  .workflowTable .tableHead,
-  .workflowTable > div:not(.panelHeader, .tableHead) {
+  .opsVisual:not([data-hero-scaled]) .workflowTable .tableHead,
+  .opsVisual:not([data-hero-scaled]) .workflowTable > div:not(.panelHeader, .tableHead) {
     grid-template-columns: 1fr;
   }
 }

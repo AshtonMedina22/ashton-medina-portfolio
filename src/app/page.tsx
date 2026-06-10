@@ -85,7 +85,11 @@ export default function Home() {
               </SmartLink>
             </div>
           </div>
-          <OperationsVisual />
+          <div className={styles.heroVisualFrame}>
+            <div className={styles.heroVisualScaler}>
+              <OperationsVisual heroScaled />
+            </div>
+          </div>
         </section>
 
         <section className={styles.proofStrip} aria-label="Operational system capabilities">

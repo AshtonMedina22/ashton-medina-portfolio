@@ -8,9 +8,13 @@ const workflowRows = [
   ["Training and adoption", "Embedded", "People", "Operators"],
 ] as const;
 
-export function OperationsVisual() {
+export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean }) {
   return (
-    <div className={styles.opsVisual} aria-label="Operational command-center product preview">
+    <div
+      className={styles.opsVisual}
+      data-hero-scaled={heroScaled ? "" : undefined}
+      aria-label="Operational command-center product preview"
+    >
       <div className={styles.visualRail} aria-hidden>
         <span className={styles.logoMark}>A</span>
         <span className={styles.activeIcon}>Home</span>
