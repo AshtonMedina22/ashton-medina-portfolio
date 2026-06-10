@@ -100,7 +100,10 @@ const home: Home = {
     "Business operations and implementation manager with experience across operations leadership, process improvement, software implementation, workflow automation, reporting, and organizational execution.",
   headline: (
     <>
-      Building operational frameworks that help{" "}
+      Building operational
+      <br />
+      frameworks that help
+      <br />
       <span className="headingAccent">organizations scale.</span>
     </>
   ),

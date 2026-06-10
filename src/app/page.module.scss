@@ -31,12 +31,11 @@
 .heroSection {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(34rem, 1.1fr);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   align-items: center;
-  gap: clamp(2rem, 3.2vw, 4rem);
+  gap: clamp(1.75rem, 3vw, 3.5rem);
   margin-top: clamp(0.5rem, 1.5vw, 1.25rem);
   padding: clamp(2rem, 3.5vw, 3.5rem);
-  overflow: hidden;
   border: 1px solid rgba(124, 116, 255, 0.22);
   border-radius: 28px;
   background:
@@ -48,7 +47,6 @@
 
 .heroContent {
   min-width: 0;
-  max-width: 48rem;
 }
 
 .eyebrow,
@@ -81,13 +79,13 @@
 }
 
 .heroContent h1 {
-  max-width: 12ch;
   margin-top: 1.35rem;
-  font-size: clamp(2.75rem, 4.8vw, 4.85rem);
-  line-height: 0.94;
+  font-size: clamp(2.35rem, 3.6vw, 3.85rem);
+  line-height: 0.98;
+  text-wrap: balance;
 
   :global(.headingAccent) {
-    display: block;
+    display: inline;
     color: transparent !important;
     -webkit-text-fill-color: transparent !important;
   }
@@ -379,13 +377,10 @@
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1100px) {
   .heroSection {
     grid-template-columns: 1fr;
-  }
-
-  .heroContent h1 {
-    max-width: 12ch;
+    gap: 1.75rem;
   }
 
   .capabilityGrid {
@@ -400,8 +395,7 @@
   }
 
   .heroContent h1 {
-    max-width: 10.8ch;
-    font-size: clamp(1.85rem, 8vw, 2.25rem);
+    font-size: clamp(1.85rem, 7.5vw, 2.35rem);
   }
 
   .capabilityGrid {

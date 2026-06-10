@@ -10,7 +10,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 4.6rem 1fr;
-  min-height: 32rem;
+  min-height: clamp(22rem, 36vw, 32rem);
   overflow: hidden;
   border: 1px solid rgba(124, 116, 255, 0.34);
   border-radius: 18px;
