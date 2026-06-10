@@ -133,45 +133,43 @@ export default function About() {
 
         <div className={styles.resumeContent}>
           <section className={styles.resumeHero}>
-            <span className={styles.sectionEyebrow}>Overview</span>
-            <h2 className={styles.sectionTitle}>
-              Professional <span className="headingAccent">summary.</span>
-            </h2>
-            <div className={styles.summaryBody}>
-              <p className={styles.summaryLead}>
-                I help growing organizations turn messy workflows into systems that actually run.
-                Most of my work sits between operations and technology: mapping how work moves,
-                standardizing processes, implementing platforms, and making sure teams adopt what
-                gets built.
-              </p>
-              <p className={styles.summaryText}>
-                Right now I own the business systems side of an ERP environment covering CRM, sales,
-                vendor management, finance, HR, projects, and operational reporting. That includes
-                requirements, workflow design, rollout, documentation, KPI structure, and the
-                controls needed to keep execution consistent.
-              </p>
-              <p className={styles.summaryText}>
-                My background blends multi-site operations leadership with hands-on implementation
-                work. I&apos;ve directed regulated field operations, supported executive teams on
-                technical programs, and spent years doing the detailed work of building SOPs,
-                improving handoffs, and getting adoption to stick.
-              </p>
-            </div>
-            <div className={styles.heroActions}>
-              <SmartLink href="/work" className={styles.primaryCta}>
-                View Work
-                <HiOutlineArrowRight />
-              </SmartLink>
-              {linkedIn && (
-                <SmartLink
-                  href={linkedIn.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.secondaryCta}
-                >
-                  LinkedIn
-                </SmartLink>
-              )}
+            <div className={styles.summaryGrid}>
+              <div className={styles.summaryPrimary}>
+                <span className={styles.sectionEyebrow}>Overview</span>
+                <h2 className={styles.sectionTitle}>
+                  Professional <span className="headingAccent">summary.</span>
+                </h2>
+                <p className={styles.summaryLead}>
+                  I help growing organizations turn messy workflows into systems that actually run.
+                  Most of my work sits between operations and technology: mapping how work moves,
+                  standardizing processes, implementing platforms, and making sure teams adopt what
+                  gets built.
+                </p>
+              </div>
+              <div className={styles.summaryAside}>
+                <p className={styles.summaryText}>
+                  My background blends multi-site operations leadership with hands-on implementation
+                  work. I&apos;ve directed regulated field operations, supported executive teams on
+                  technical programs, and spent years doing the detailed work of building SOPs,
+                  improving handoffs, and getting adoption to stick.
+                </p>
+                <div className={styles.heroActions}>
+                  <SmartLink href="/work" className={styles.primaryCta}>
+                    View Work
+                    <HiOutlineArrowRight />
+                  </SmartLink>
+                  {linkedIn && (
+                    <SmartLink
+                      href={linkedIn.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.secondaryCta}
+                    >
+                      LinkedIn
+                    </SmartLink>
+                  )}
+                </div>
+              </div>
             </div>
           </section>
 
