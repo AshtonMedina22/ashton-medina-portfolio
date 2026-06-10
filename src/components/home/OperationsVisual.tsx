@@ -76,19 +76,23 @@ export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean 
             <div className={styles.statusLegend}>
               <span>
                 <i className={styles.completeDot} />
-                Standardized <strong>Ready</strong>
+                <em>Standardized</em>
+                <strong>Ready</strong>
               </span>
               <span>
                 <i className={styles.activeDot} />
-                In progress <strong>Active</strong>
+                <em>In progress</em>
+                <strong>Active</strong>
               </span>
               <span>
                 <i className={styles.waitingDot} />
-                Review path <strong>Open</strong>
+                <em>Review path</em>
+                <strong>Open</strong>
               </span>
               <span>
                 <i className={styles.blockedDot} />
-                Exception handling <strong>Flagged</strong>
+                <em>Exception handling</em>
+                <strong>Flagged</strong>
               </span>
             </div>
           </section>
