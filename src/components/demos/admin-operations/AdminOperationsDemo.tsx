@@ -20,32 +20,32 @@ import styles from "./admin-operations-demo.module.scss";
 
 const navItems = [
   "Command",
-  "Accounts",
+  "Enterprise",
   "Orders",
-  "Workflows",
-  "Compliance",
+  "Vendor Ops",
+  "Permitting",
   "Schedule",
   "Systems",
 ] as const;
 
 const kpis = [
   { icon: HiOutlineChartBar, label: "Revenue pipeline", value: "$642K", meta: "CRM + Supabase cache", tone: "indigo" },
-  { icon: HiOutlineLightningBolt, label: "Workflow throughput", value: "3.4K", meta: "Event API stream", tone: "amber" },
-  { icon: HiOutlineUsers, label: "Account activity", value: "94", meta: "Webhook operations queue", tone: "teal" },
-  { icon: HiOutlineShieldCheck, label: "Review risk", value: "4 flags", meta: "Policy renewal workflow", tone: "rose" },
+  { icon: HiOutlineLightningBolt, label: "Fleet telemetry", value: "2.8K", meta: "Device event stream", tone: "amber" },
+  { icon: HiOutlineUsers, label: "Order volume", value: "94", meta: "Webhook operations queue", tone: "teal" },
+  { icon: HiOutlineShieldCheck, label: "Vendor risk", value: "4 flags", meta: "COI renewal workflow", tone: "rose" },
 ] as const;
 
 const eventRows = [
-  { icon: HiOutlineCloudUpload, source: "Order webhook", detail: "Transaction #9401 validated, deduped, and routed to the fulfillment queue.", state: "Processed" },
-  { icon: HiOutlineLightningBolt, source: "Workflow event worker", detail: "SLA signal normalized into the operations stream with exception guards.", state: "Live" },
+  { icon: HiOutlineCloudUpload, source: "E-commerce webhook", detail: "Transaction #9401 validated, deduped, and routed to the fulfillment queue.", state: "Processed" },
+  { icon: HiOutlineLightningBolt, source: "Telemetry polling worker", detail: "Fleet signal normalized into the operations stream with exception guards.", state: "Live" },
   { icon: HiOutlineDatabase, source: "Supabase sync", detail: "Account ledger cache refreshed from PostgreSQL materialized view.", state: "Cached" },
-  { icon: HiOutlineClipboardCheck, source: "Compliance cron", detail: "Expiring policy record isolated and renewal draft queued.", state: "Review" },
+  { icon: HiOutlineClipboardCheck, source: "Compliance cron", detail: "Expiring COI record isolated and vendor renewal draft queued.", state: "Review" },
 ] as const;
 
 const telemetryRows = [
   ["Enterprise", "CRM", "$642K", "Pipeline sync", "Healthy"],
-  ["Operations", "SLA queue", "3.4K", "Event stream", "Watch"],
-  ["Support", "Ticket desk", "94 open", "Review queue", "Queued"],
+  ["Fleet Ops", "Device gateway", "2.8K", "Event stream", "Watch"],
+  ["Fulfillment", "Order desk", "94 open", "Review queue", "Queued"],
 ] as const;
 
 const architecture = ["REST webhooks", "Edge/API workers", "Supabase cache", "PostgreSQL records", "Typed UI rows"] as const;
@@ -75,7 +75,7 @@ export function AdminOperationsDemo() {
         <header className={styles.topbar}>
           <div className={styles.search}>
             <HiOutlineSearch />
-            <span>Search accounts, tickets, orders, workflows</span>
+            <span>Search accounts, permits, vendors, orders</span>
           </div>
           <div className={styles.topbarActions}>
             <span><HiOutlineRefresh /> Synced 2m ago</span>
@@ -86,7 +86,7 @@ export function AdminOperationsDemo() {
         <section className={styles.hero}>
           <div>
             <p>Multi-tenant enterprise operations hub</p>
-            <h2>One command surface for account workspaces, webhooks, workflows, and operational records</h2>
+            <h2>One command surface for workspaces, webhooks, telemetry, and partner ledgers</h2>
           </div>
           <div className={styles.heroBadges}>
             <span>CRM</span>
@@ -128,13 +128,13 @@ export function AdminOperationsDemo() {
 
           <article className={styles.telemetryPanel}>
             <div className={styles.panelHeader}>
-              <span>Workflow and account matrix</span>
+              <span>Telemetry and fulfillment matrix</span>
               <HiOutlineCube />
             </div>
             <div className={styles.telemetryTable}>
               <div>
                 <span>Group</span>
-                <span>System</span>
+                <span>Asset</span>
                 <span>Signal</span>
                 <span>Mode</span>
                 <span>Status</span>

@@ -17,9 +17,9 @@ import {
 import styles from "./secure-ai-gateway-demo.module.scss";
 
 const sources = [
-  { icon: HiOutlineDatabase, label: "Supabase account event", detail: "Customer response SLA crossed threshold", state: "Review" },
+  { icon: HiOutlineDatabase, label: "Supabase approval event", detail: "Permit or account review age crossed threshold", state: "Review" },
   { icon: HiOutlineTable, label: "Sheet row update", detail: "Account follow-up reminder requested", state: "Queued" },
-  { icon: HiOutlineShieldCheck, label: "Compliance review row", detail: "Policy document expires in 7 days", state: "Draft" },
+  { icon: HiOutlineShieldCheck, label: "Vendor compliance row", detail: "COI or policy document expires in 7 days", state: "Draft" },
 ] as const;
 
 const safeguards = [
@@ -79,15 +79,15 @@ export function SecureAiGatewayDemo() {
           <div className={styles.emailChrome}>
             <div className={styles.emailMeta}>
               <span>To</span>
-              <strong>account-ops@example.com</strong>
+              <strong>operations-review@example.com</strong>
               <span>Subject</span>
-              <strong>Status request for ACCT-2407 response window</strong>
+              <strong>Status request for REVIEW-2407 response window</strong>
             </div>
             <div className={styles.emailBody}>
               <p>Hello,</p>
               <p>
-                Please confirm the current response status for account ACCT-2407. Our records show
-                the request was submitted on May 28, 2026 and is now outside the expected service
+                Please confirm the current response status for review item REVIEW-2407. Our records show
+                the request was submitted on May 28, 2026 and is now outside the expected review
                 window.
               </p>
               <p>Thank you,</p>
@@ -106,7 +106,7 @@ export function SecureAiGatewayDemo() {
           </div>
           <pre>{`{
   "source": "database_event",
-  "accountId": "ACCT-2407",
+  "reviewId": "REVIEW-2407",
   "submittedAt": "2026-05-28",
   "allowedAction": "draft_only",
   "sendBlocked": true

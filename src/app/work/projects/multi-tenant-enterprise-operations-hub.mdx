@@ -40,12 +40,12 @@ techStack:
   <div>
 ## Problem
 
-Operational teams managing multiple business units, brands, regions, or client accounts spend hundreds of hours reconciling data across separate software ecosystems. Teams switch between CRM records, order systems, service queues, spreadsheets, partner portals, and reporting tools just to understand what needs attention. That fragmentation creates delayed handoffs, duplicate ledger entries, inconsistent status reporting, missed SLA risks, and compliance gaps that surface too late.
+Operational teams managing multiple business units, brands, regions, or client accounts spend hundreds of hours reconciling data across separate software ecosystems. Teams switch between CRM records, e-commerce orders, telemetry utilities, permitting or approval queues, partner directories, spreadsheets, and reporting tools just to understand what needs attention. That fragmentation creates delayed handoffs, duplicate ledger entries, untracked equipment states, missed SLA risks, and compliance gaps that surface too late.
   </div>
   <div>
 ## Solution
 
-A unified, real-time administrative operations hub aggregates transactional, workflow, account, compliance, and reporting data across distinct operating groups into one cohesive interface. The platform acts as an automated caching and middleware layer, ingesting asynchronous webhooks, enforcing typed PostgreSQL/Supabase record contracts, and keeping operational exceptions visible before they become missed handoffs.
+A unified, real-time administrative operations hub aggregates transactional, telemetry, vendor, permitting, compliance, and reporting data across distinct operating groups into one cohesive interface. The platform acts as an automated caching and middleware layer, ingesting asynchronous webhooks, enforcing typed PostgreSQL/Supabase record contracts, and keeping operational exceptions visible before they become missed handoffs.
 
 <OutcomeStats stats={[
   { value: "Typed", label: "PostgreSQL and API Payloads" },
@@ -63,19 +63,19 @@ Raw provider data is transformed into strongly typed JSON and PostgreSQL-backed 
 </HowItWorksCard>
 
 <HowItWorksCard title="Supabase Operations Store">
-Supabase tables provide the durable operating layer for account ledgers, workflow states, compliance checks, service tickets, and dashboard cache snapshots that need server-side access control.
+Supabase tables provide the durable operating layer for account ledgers, vendor compliance records, order states, workflow queues, and dashboard cache snapshots that need server-side access control.
 </HowItWorksCard>
 
 <HowItWorksCard title="Asynchronous Webhook Pipeline">
 CRM, commerce, billing, support, and third-party automation events are shaped into normalized operations rows with duplicate protection, status validation, retry handling, and append-only history.
 </HowItWorksCard>
 
-<HowItWorksCard title="System Signal Monitoring">
-Scheduled workers and event APIs monitor service health, queue volume, account activity, exception states, and server-side API boundaries before operational signals reach the dashboard UI.
+<HowItWorksCard title="Telemetry Listening">
+Scheduled workers and event APIs monitor fleet activity, equipment status, queue volume, exception states, and server-side API boundaries before operational signals reach the dashboard UI.
 </HowItWorksCard>
 
-<HowItWorksCard title="Compliance Review Loop">
-Time-driven Apps Script checks read policy, contract, document, and approval records, then route review notices through controlled Google Workspace workflows.
+<HowItWorksCard title="Vendor Compliance Loop">
+Time-driven Apps Script checks read policy, contract, COI, document, and approval records, then route review notices through controlled Google Workspace workflows.
 </HowItWorksCard>
 
 <HowItWorksCard title="Failover Design">
