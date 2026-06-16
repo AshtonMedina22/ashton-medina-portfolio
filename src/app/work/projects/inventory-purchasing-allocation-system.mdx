@@ -1,0 +1,79 @@
+---
+title: "Inventory and Purchasing Allocation System"
+publishedAt: "2024-09-15"
+summary: "An operations tool that matches project material needs against stock, purchasing requirements, vendor options, and fulfillment timing."
+demo: true
+images:
+  - "/images/projects/project-02/cover-01.svg"
+  - "/images/projects/project-02/cover-02.svg"
+  - "/images/projects/project-02/cover-03.svg"
+  - "/images/projects/project-02/cover-04.svg"
+techStack:
+  - name: "TypeScript"
+    icon: null
+  - name: "BOM Parser"
+    icon: null
+  - name: "Inventory Logic"
+    icon: null
+  - name: "REST API"
+    icon: "api"
+  - name: "Purchasing Rules"
+    icon: null
+  - name: "Data Normalization"
+    icon: null
+---
+
+<HeroStats stats={[
+  { value: "42", label: "Line Items Normalized" },
+  { value: "3", label: "Warehouses Checked" },
+  { value: "6", label: "Vendor Options Compared" },
+  { value: "100%", label: "Allocation Traceability" }
+]} />
+
+<ProblemSolutionColumns>
+  <div>
+## Problem
+
+Operations teams often know what a project needs before they know whether the business can fulfill it from stock, needs to purchase more, or should substitute equivalent items. Material lists, warehouse counts, vendor quotes, and purchasing approvals live in different places, which creates delays, overbuying, stockouts, and unclear accountability.
+  </div>
+  <div>
+## Solution
+
+An inventory and purchasing allocation system normalizes bill-of-material rows, compares required quantities against available stock, identifies purchase gaps, ranks vendor options, and produces an allocation plan the team can review before work begins.
+
+<OutcomeStats stats={[
+  { value: "Matched", label: "Requirements Against Available Stock" },
+  { value: "Ranked", label: "Vendor and Purchase Options" },
+  { value: "Clear", label: "Buy, Reserve, or Substitute Decisions" }
+]} />
+  </div>
+</ProblemSolutionColumns>
+
+## How It Works
+
+<HowItWorksGrid>
+<HowItWorksCard title="BOM Normalization">
+Parses project material rows, standardizes SKUs, cleans naming variations, and groups equivalent items into a consistent requirement list.
+</HowItWorksCard>
+
+<HowItWorksCard title="Inventory Availability Check">
+Compares required quantities against warehouse, field, and reserved stock while respecting minimum safety thresholds.
+</HowItWorksCard>
+
+<HowItWorksCard title="Purchase Gap Detection">
+Flags shortages, calculates purchase quantities, and separates items that can be fulfilled immediately from items needing procurement.
+</HowItWorksCard>
+
+<HowItWorksCard title="Vendor Option Ranking">
+Compares vendor price, lead time, minimum order quantity, reliability, and availability before recommending a purchasing path.
+</HowItWorksCard>
+
+<HowItWorksCard title="Allocation Review Queue">
+Presents every line as reserve, buy, substitute, or blocked so operations can approve the plan before committing budget.
+</HowItWorksCard>
+
+<HowItWorksCard title="Audit Trail">
+Stores the source requirement, inventory decision, vendor choice, timestamp, and approving owner for future cost and fulfillment review.
+</HowItWorksCard>
+</HowItWorksGrid>
+

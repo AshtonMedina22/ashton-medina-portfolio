@@ -5,6 +5,9 @@ export const projectCategories: Record<string, string> = {
   "operational-intelligence-platform": "Operational reporting platform",
   "multi-tenant-enterprise-operations-hub": "Enterprise operations platform",
   "event-driven-automation-secure-ai-gateway": "Secure automation gateway",
+  "business-access-software-cost-control-dashboard": "Access and cost control dashboard",
+  "calendar-document-follow-up-automation-system": "Scheduling and document automation",
+  "inventory-purchasing-allocation-system": "Inventory and purchasing system",
 };
 
 export const projectEyebrows: Record<string, string> = {
@@ -14,6 +17,9 @@ export const projectEyebrows: Record<string, string> = {
   "operational-intelligence-platform": "Operational Intelligence System",
   "multi-tenant-enterprise-operations-hub": "Multi-Tenant Operations System",
   "event-driven-automation-secure-ai-gateway": "Automation and AI Gateway",
+  "business-access-software-cost-control-dashboard": "Access and Cost Control System",
+  "calendar-document-follow-up-automation-system": "Scheduling and Document Automation",
+  "inventory-purchasing-allocation-system": "Inventory and Purchasing System",
 };
 
 export type ProjectAccent = "sales" | "cyan" | "teal" | "indigo";

@@ -1,0 +1,79 @@
+---
+title: "Business Access and Software Cost Control Dashboard"
+publishedAt: "2024-10-15"
+summary: "A plain-English control center for tracking user access, software subscriptions, domain health, monthly spend, and security review status across business systems."
+demo: true
+images:
+  - "/images/projects/project-04/cover-01.svg"
+  - "/images/projects/project-04/cover-02.svg"
+  - "/images/projects/project-04/cover-03.svg"
+  - "/images/projects/project-04/cover-04.svg"
+techStack:
+  - name: "Next.js"
+    icon: null
+  - name: "TypeScript"
+    icon: null
+  - name: "RBAC"
+    icon: null
+  - name: "OAuth"
+    icon: null
+  - name: "SaaS Ops"
+    icon: null
+  - name: "Audit Logs"
+    icon: null
+---
+
+<HeroStats stats={[
+  { value: "12", label: "Software Tools Tracked" },
+  { value: "4", label: "Access Risk Levels" },
+  { value: "$3.8K", label: "Monthly Spend Reviewed" },
+  { value: "Zero", label: "Hidden Admin Accounts" }
+]} />
+
+<ProblemSolutionColumns>
+  <div>
+## Problem
+
+Growing businesses often lose track of who can access which tools, which subscriptions are still active, which domains or services need maintenance, and where unnecessary monthly costs are hiding. Access reviews happen manually, software spend lives in scattered invoices, and security decisions depend on memory instead of a visible system of record.
+  </div>
+  <div>
+## Solution
+
+A business-facing access and software cost dashboard centralizes user roles, permission levels, subscription spend, renewal dates, domain status, and infrastructure alerts. Owners can quickly see what costs money, who has access, what needs review, and which systems require action.
+
+<OutcomeStats stats={[
+  { value: "Visible", label: "User Access and Permissions" },
+  { value: "Controlled", label: "Software Spend and Renewals" },
+  { value: "Auditable", label: "Security and Admin Reviews" }
+]} />
+  </div>
+</ProblemSolutionColumns>
+
+## How It Works
+
+<HowItWorksGrid>
+<HowItWorksCard title="Role and Permission Matrix">
+Maps users, departments, contractors, and administrators against the systems they can access. Permission levels are easy to review without digging through every SaaS admin screen.
+</HowItWorksCard>
+
+<HowItWorksCard title="Software Cost Ledger">
+Tracks active tools, owners, monthly cost, renewal dates, billing category, and business purpose so leadership can identify unused subscriptions and budget leakage.
+</HowItWorksCard>
+
+<HowItWorksCard title="Domain and Service Health">
+Monitors business-critical domains, hosting status, certificate renewal windows, and integration health in one operational view.
+</HowItWorksCard>
+
+<HowItWorksCard title="OAuth and Admin Boundary Tracking">
+Separates normal user access, delegated mailbox/calendar permissions, shared service credentials, and high-risk administrator scopes.
+</HowItWorksCard>
+
+<HowItWorksCard title="Access Review Queue">
+Flags stale users, over-permissioned accounts, departing contractors, inactive tools, and ownership gaps for scheduled review.
+</HowItWorksCard>
+
+<HowItWorksCard title="Audit-Ready Change Log">
+Creates a readable history of subscription changes, access updates, renewal decisions, and system alerts so reviews are defensible later.
+</HowItWorksCard>
+</HowItWorksGrid>
+

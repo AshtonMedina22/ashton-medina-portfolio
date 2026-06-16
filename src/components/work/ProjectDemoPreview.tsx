@@ -6,6 +6,9 @@ import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/Reven
 import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
 import { AdminOperationsDemo } from "@/components/demos/admin-operations/AdminOperationsDemo";
 import { SecureAiGatewayDemo } from "@/components/demos/secure-ai-gateway/SecureAiGatewayDemo";
+import { BusinessAccessDemo } from "@/components/demos/business-access/BusinessAccessDemo";
+import { CalendarDocumentDemo } from "@/components/demos/calendar-document/CalendarDocumentDemo";
+import { InventoryPurchasingDemo } from "@/components/demos/inventory-purchasing/InventoryPurchasingDemo";
 import styles from "./ProjectDemoPreview.module.scss";
 
 function renderDemo(slug: string) {
@@ -15,6 +18,9 @@ function renderDemo(slug: string) {
   if (slug === "operational-intelligence-platform") return <OperationalIntelligenceDemo />;
   if (slug === "multi-tenant-enterprise-operations-hub") return <AdminOperationsDemo />;
   if (slug === "event-driven-automation-secure-ai-gateway") return <SecureAiGatewayDemo />;
+  if (slug === "business-access-software-cost-control-dashboard") return <BusinessAccessDemo />;
+  if (slug === "calendar-document-follow-up-automation-system") return <CalendarDocumentDemo />;
+  if (slug === "inventory-purchasing-allocation-system") return <InventoryPurchasingDemo />;
   return null;
 }
 

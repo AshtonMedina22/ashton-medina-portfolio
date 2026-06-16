@@ -1,0 +1,79 @@
+---
+title: "Calendar, Document and Follow-Up Automation System"
+publishedAt: "2024-10-01"
+summary: "A workflow automation system that turns spreadsheet or database rows into calendar events, generated documents, Drive folders, and human-reviewed follow-up drafts."
+demo: true
+images:
+  - "/images/projects/project-03/cover-01.svg"
+  - "/images/projects/project-03/cover-02.svg"
+  - "/images/projects/project-03/cover-03.svg"
+  - "/images/projects/project-03/cover-04.svg"
+techStack:
+  - name: "Google Calendar API"
+    icon: "api"
+  - name: "Google Drive API"
+    icon: "api"
+  - name: "Apps Script"
+    icon: null
+  - name: "Document Automation"
+    icon: null
+  - name: "OAuth"
+    icon: null
+  - name: "PDF Generation"
+    icon: null
+---
+
+<HeroStats stats={[
+  { value: "3", label: "Automated Outputs" },
+  { value: "1", label: "Source Row Contract" },
+  { value: "0", label: "Duplicate Calendar Events" },
+  { value: "Human", label: "Draft Review Gate" }
+]} />
+
+<ProblemSolutionColumns>
+  <div>
+## Problem
+
+Businesses run on dates, files, approvals, and follow-ups, but those handoffs often live in spreadsheets and inboxes. A row gets updated, then someone has to create a calendar event, prepare a document, upload a PDF, organize a folder, and remember to send a reminder. Miss one step and the business loses time, trust, or revenue.
+  </div>
+  <div>
+## Solution
+
+A scheduling and document automation system reads structured workflow rows and creates the operational artifacts teams need: calendar events, reminder drafts, generated documents, PDFs, Drive folders, and status updates. Every generated item writes an ID back to the source row so automation stays idempotent and auditable.
+
+<OutcomeStats stats={[
+  { value: "Idempotent", label: "No Duplicate Event Creation" },
+  { value: "Organized", label: "Documents Routed to the Right Folder" },
+  { value: "Reviewable", label: "Follow-Up Drafts Before Sending" }
+]} />
+  </div>
+</ProblemSolutionColumns>
+
+## How It Works
+
+<HowItWorksGrid>
+<HowItWorksCard title="Structured Row Trigger">
+Spreadsheet or database rows define date, owner, customer, status, reminder need, document type, and destination folder before automation runs.
+</HowItWorksCard>
+
+<HowItWorksCard title="Calendar Event Sync">
+Creates or updates calendar events only when needed, stores the event ID, and skips rows that already have a synced event.
+</HowItWorksCard>
+
+<HowItWorksCard title="Document Assembly">
+Populates templates with business data, generates polished documents, compiles PDFs, and attaches the result to the correct workflow record.
+</HowItWorksCard>
+
+<HowItWorksCard title="Drive Folder Routing">
+Creates or finds the right customer, project, or account folder and uploads generated documents into a predictable file structure.
+</HowItWorksCard>
+
+<HowItWorksCard title="Follow-Up Draft Queue">
+Builds reminder drafts for overdue meetings, missing documents, or pending approvals while keeping final send control with a human reviewer.
+</HowItWorksCard>
+
+<HowItWorksCard title="Operational Traceability">
+Writes calendar IDs, document links, draft states, timestamps, and automation errors back to the source record for easy troubleshooting.
+</HowItWorksCard>
+</HowItWorksGrid>
+
