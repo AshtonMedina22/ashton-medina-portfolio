@@ -4,6 +4,8 @@ import { SalesToDeliveryDemo } from "@/components/demos/sales-to-delivery/SalesT
 import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorLifecycleDemo";
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
 import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
+import { AdminOperationsDemo } from "@/components/demos/admin-operations/AdminOperationsDemo";
+import { SecureAiGatewayDemo } from "@/components/demos/secure-ai-gateway/SecureAiGatewayDemo";
 import styles from "./ProjectDemoPreview.module.scss";
 
 function renderDemo(slug: string) {
@@ -11,6 +13,8 @@ function renderDemo(slug: string) {
   if (slug === "vendor-lifecycle-compliance-platform") return <VendorLifecycleDemo />;
   if (slug === "revenue-financial-control-engine") return <RevenueFinancialDemo />;
   if (slug === "operational-intelligence-platform") return <OperationalIntelligenceDemo />;
+  if (slug === "multi-tenant-enterprise-operations-hub") return <AdminOperationsDemo />;
+  if (slug === "event-driven-automation-secure-ai-gateway") return <SecureAiGatewayDemo />;
   return null;
 }
 

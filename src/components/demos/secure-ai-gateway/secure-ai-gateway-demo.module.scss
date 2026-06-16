@@ -1,0 +1,346 @@
+$surface: #070b12;
+$panel: rgba(15, 23, 42, 0.78);
+$panelStrong: rgba(17, 24, 39, 0.92);
+$border: rgba(148, 163, 184, 0.16);
+$text: #f8fafc;
+$muted: #94a3b8;
+
+.shell {
+  width: 100%;
+  max-width: 1480px;
+  min-height: 44rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(20, 184, 166, 0.18), transparent 24rem),
+    radial-gradient(circle at 88% 18%, rgba(99, 102, 241, 0.15), transparent 22rem),
+    linear-gradient(145deg, #07111c 0%, $surface 62%, #05070c 100%);
+  color: $text;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+
+.header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem;
+  border-bottom: 1px solid $border;
+  background: rgba(8, 13, 22, 0.76);
+
+  p {
+    margin: 0 0 0.45rem;
+    color: #5eead4;
+    font-size: 0.72rem;
+    font-weight: 820;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 43rem;
+    margin: 0;
+    font-size: clamp(1.65rem, 2.8vw, 2.55rem);
+    line-height: 1.1;
+    letter-spacing: -0.055em;
+  }
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 0 0 auto;
+    padding: 0.62rem 0.8rem;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    border-radius: 999px;
+    background: rgba(20, 184, 166, 0.1);
+    color: #5eead4;
+    font-size: 0.78rem;
+    font-weight: 760;
+  }
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.82fr) minmax(0, 1.25fr) minmax(19rem, 0.88fr);
+  gap: 1rem;
+  padding: 1.15rem;
+}
+
+.sourcePanel,
+.reviewPanel,
+.guardrailPanel,
+.auditRail {
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: $panel;
+}
+
+.sourcePanel,
+.reviewPanel,
+.guardrailPanel {
+  padding: 1rem;
+}
+
+.panelTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+  color: $muted;
+  font-size: 0.74rem;
+  font-weight: 820;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  svg {
+    color: #5eead4;
+  }
+}
+
+.sourceList {
+  display: grid;
+  gap: 0.65rem;
+
+  div {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.65rem;
+    align-items: center;
+    min-height: 4.65rem;
+    padding: 0.78rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.66);
+  }
+
+  svg {
+    color: #5eead4;
+  }
+
+  span {
+    display: grid;
+    gap: 0.18rem;
+  }
+
+  strong {
+    font-size: 0.86rem;
+    line-height: 1.2;
+  }
+
+  small {
+    color: $muted;
+    font-size: 0.74rem;
+    line-height: 1.3;
+  }
+
+  em {
+    padding: 0.28rem 0.48rem;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.14);
+    color: #c4b5fd;
+    font-size: 0.66rem;
+    font-style: normal;
+    font-weight: 800;
+  }
+}
+
+.selectedSource {
+  border-color: rgba(20, 184, 166, 0.38) !important;
+  background: rgba(20, 184, 166, 0.1) !important;
+}
+
+.emailChrome {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 12px;
+  background: $panelStrong;
+}
+
+.emailMeta {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 0.65rem;
+  padding: 0.9rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+  span {
+    color: #64748b;
+    font-size: 0.72rem;
+    font-weight: 820;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: #e2e8f0;
+    font-size: 0.86rem;
+    line-height: 1.25;
+  }
+}
+
+.emailBody {
+  display: grid;
+  gap: 0.85rem;
+  min-height: 15rem;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.45rem;
+    padding: 0 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 9px;
+    background: rgba(15, 23, 42, 0.8);
+    color: $text;
+    font-weight: 760;
+  }
+
+  button:last-child {
+    border-color: rgba(20, 184, 166, 0.32);
+    background: rgba(20, 184, 166, 0.16);
+    color: #5eead4;
+  }
+}
+
+.guardrailPanel {
+  pre {
+    margin: 0;
+    padding: 1rem;
+    overflow: auto;
+    border: 1px solid rgba(20, 184, 166, 0.22);
+    border-radius: 12px;
+    background: rgba(2, 6, 23, 0.72);
+    color: #d1fae5;
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+}
+
+.safeguards {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2.65rem;
+    padding: 0.62rem;
+    border: 1px solid rgba(148, 163, 184, 0.13);
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.68);
+    color: #e2e8f0;
+    font-size: 0.8rem;
+    font-weight: 720;
+    line-height: 1.2;
+
+    svg {
+      color: #5eead4;
+    }
+  }
+}
+
+.auditRail {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0 1.15rem 1.15rem;
+  padding: 0.85rem;
+
+  div {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.45rem;
+    align-items: center;
+    min-height: 3rem;
+    padding: 0.62rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.62);
+  }
+
+  svg {
+    color: #5eead4;
+  }
+
+  span {
+    color: #cbd5e1;
+    font-size: 0.76rem;
+    font-weight: 740;
+    line-height: 1.2;
+  }
+
+  i {
+    position: absolute;
+    right: -0.7rem;
+    width: 0.7rem;
+    height: 1px;
+    background: rgba(148, 163, 184, 0.28);
+  }
+}
+
+.currentStep {
+  border-color: rgba(20, 184, 166, 0.36) !important;
+  background: rgba(20, 184, 166, 0.1) !important;
+}
+
+.shell *,
+.shell *::before,
+.shell *::after {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 1120px) {
+  .workspace {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .guardrailPanel {
+    grid-column: 1 / -1;
+  }
+
+  .auditRail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .workspace,
+  .auditRail {
+    grid-template-columns: 1fr;
+  }
+
+  .auditRail i {
+    display: none;
+  }
+}
+

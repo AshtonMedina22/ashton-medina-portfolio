@@ -6,6 +6,8 @@ export async function generateStaticParams() {
     { slug: "vendor-lifecycle-compliance-platform" },
     { slug: "revenue-financial-control-engine" },
     { slug: "operational-intelligence-platform" },
+    { slug: "multi-tenant-enterprise-operations-hub" },
+    { slug: "event-driven-automation-secure-ai-gateway" },
   ];
 }
 

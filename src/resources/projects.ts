@@ -3,6 +3,8 @@ export const projectCategories: Record<string, string> = {
   "revenue-financial-control-engine": "Financial control system",
   "vendor-lifecycle-compliance-platform": "Vendor lifecycle platform",
   "operational-intelligence-platform": "Operational reporting platform",
+  "multi-tenant-enterprise-operations-hub": "Enterprise operations platform",
+  "event-driven-automation-secure-ai-gateway": "Secure automation gateway",
 };
 
 export const projectEyebrows: Record<string, string> = {
@@ -10,6 +12,8 @@ export const projectEyebrows: Record<string, string> = {
   "revenue-financial-control-engine": "Financial Governance System",
   "vendor-lifecycle-compliance-platform": "Vendor Lifecycle System",
   "operational-intelligence-platform": "Operational Intelligence System",
+  "multi-tenant-enterprise-operations-hub": "Multi-Tenant Operations System",
+  "event-driven-automation-secure-ai-gateway": "Automation and AI Gateway",
 };
 
 export type ProjectAccent = "sales" | "cyan" | "teal" | "indigo";
