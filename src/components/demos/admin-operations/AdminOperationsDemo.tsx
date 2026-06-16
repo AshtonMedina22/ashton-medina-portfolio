@@ -14,39 +14,38 @@ import {
   HiOutlineRefresh,
   HiOutlineSearch,
   HiOutlineShieldCheck,
-  HiOutlineTruck,
   HiOutlineUsers,
 } from "react-icons/hi";
 import styles from "./admin-operations-demo.module.scss";
 
 const navItems = [
   "Command",
-  "Enterprise",
-  "Retail",
-  "Vendor Ops",
-  "Permitting",
+  "Accounts",
+  "Orders",
+  "Workflows",
+  "Compliance",
   "Schedule",
   "Systems",
 ] as const;
 
 const kpis = [
-  { icon: HiOutlineChartBar, label: "B2B pipeline", value: "$642K", meta: "OpenSolar + Supabase cache", tone: "indigo" },
-  { icon: HiOutlineLightningBolt, label: "Fleet yield", value: "3.4 MW", meta: "SolarEdge / SCADA stream", tone: "amber" },
-  { icon: HiOutlineTruck, label: "Retail volume", value: "9 units", meta: "Webhook order queue", tone: "teal" },
-  { icon: HiOutlineShieldCheck, label: "Vendor risk", value: "4 flags", meta: "COI renewal workflow", tone: "rose" },
+  { icon: HiOutlineChartBar, label: "Revenue pipeline", value: "$642K", meta: "CRM + Supabase cache", tone: "indigo" },
+  { icon: HiOutlineLightningBolt, label: "Workflow throughput", value: "3.4K", meta: "Event API stream", tone: "amber" },
+  { icon: HiOutlineUsers, label: "Account activity", value: "94", meta: "Webhook operations queue", tone: "teal" },
+  { icon: HiOutlineShieldCheck, label: "Review risk", value: "4 flags", meta: "Policy renewal workflow", tone: "rose" },
 ] as const;
 
 const eventRows = [
-  { icon: HiOutlineCloudUpload, source: "WooCommerce webhook", detail: "Order #9401 validated, deduped, and routed to warehouse pull.", state: "Processed" },
-  { icon: HiOutlineLightningBolt, source: "SolarEdge polling worker", detail: "Inverter sample normalized into SCADA payload with fault guard.", state: "Live" },
-  { icon: HiOutlineDatabase, source: "Supabase sync", detail: "Partner ledger cache refreshed from PostgreSQL materialized view.", state: "Cached" },
-  { icon: HiOutlineClipboardCheck, source: "Compliance cron", detail: "Expired COI isolated and vendor renewal draft queued.", state: "Review" },
+  { icon: HiOutlineCloudUpload, source: "Order webhook", detail: "Transaction #9401 validated, deduped, and routed to the fulfillment queue.", state: "Processed" },
+  { icon: HiOutlineLightningBolt, source: "Workflow event worker", detail: "SLA signal normalized into the operations stream with exception guards.", state: "Live" },
+  { icon: HiOutlineDatabase, source: "Supabase sync", detail: "Account ledger cache refreshed from PostgreSQL materialized view.", state: "Cached" },
+  { icon: HiOutlineClipboardCheck, source: "Compliance cron", detail: "Expiring policy record isolated and renewal draft queued.", state: "Review" },
 ] as const;
 
 const telemetryRows = [
-  ["Hunt County", "SE66.6K", "1.8 MW", "Export limited", "Healthy"],
-  ["North Texas", "SE100K", "1.6 MW", "Battery support", "Watch"],
-  ["Retail Hub", "Gateway", "9 orders", "Freight queue", "Queued"],
+  ["Enterprise", "CRM", "$642K", "Pipeline sync", "Healthy"],
+  ["Operations", "SLA queue", "3.4K", "Event stream", "Watch"],
+  ["Support", "Ticket desk", "94 open", "Review queue", "Queued"],
 ] as const;
 
 const architecture = ["REST webhooks", "Edge/API workers", "Supabase cache", "PostgreSQL records", "Typed UI rows"] as const;
@@ -76,7 +75,7 @@ export function AdminOperationsDemo() {
         <header className={styles.topbar}>
           <div className={styles.search}>
             <HiOutlineSearch />
-            <span>Search entities, permits, vendors, orders</span>
+            <span>Search accounts, tickets, orders, workflows</span>
           </div>
           <div className={styles.topbarActions}>
             <span><HiOutlineRefresh /> Synced 2m ago</span>
@@ -87,12 +86,12 @@ export function AdminOperationsDemo() {
         <section className={styles.hero}>
           <div>
             <p>Multi-tenant enterprise operations hub</p>
-            <h2>One command surface for company workspaces, webhooks, telemetry, and partner ledgers</h2>
+            <h2>One command surface for account workspaces, webhooks, workflows, and operational records</h2>
           </div>
           <div className={styles.heroBadges}>
-            <span>YSP</span>
-            <span>2SK</span>
-            <span>3SK</span>
+            <span>CRM</span>
+            <span>ERP</span>
+            <span>OPS</span>
           </div>
         </section>
 
@@ -129,13 +128,13 @@ export function AdminOperationsDemo() {
 
           <article className={styles.telemetryPanel}>
             <div className={styles.panelHeader}>
-              <span>Telemetry and fulfillment matrix</span>
+              <span>Workflow and account matrix</span>
               <HiOutlineCube />
             </div>
             <div className={styles.telemetryTable}>
               <div>
-                <span>Site</span>
-                <span>Asset</span>
+                <span>Group</span>
+                <span>System</span>
                 <span>Signal</span>
                 <span>Mode</span>
                 <span>Status</span>
@@ -175,4 +174,3 @@ export function AdminOperationsDemo() {
     </div>
   );
 }
-

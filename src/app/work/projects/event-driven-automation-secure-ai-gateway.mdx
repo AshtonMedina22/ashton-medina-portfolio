@@ -36,12 +36,12 @@ techStack:
   <div>
 ## Problem
 
-Administrative logistics, permitting cycles, vendor follow-ups, and executive inbox work create repetitive correspondence that still requires precision. Directly wiring AI into email would expose too much risk: private keys could leak to the browser, generated drafts could invent timeline dates, and automated sends could bypass the human judgment needed for AHJ, vendor, and customer communications.
+Customer operations, account management, compliance reviews, approvals, and executive inbox work create repetitive correspondence that still requires precision. Directly wiring AI into email would expose too much risk: private keys could leak to the browser, generated drafts could invent timeline dates, and automated sends could bypass the human judgment needed for customer, partner, internal, and leadership communications.
   </div>
   <div>
 ## Solution
 
-An event-driven scripting trigger and secure server-side AI gateway converts database events, spreadsheet changes, and operational triggers into structured, reviewable drafts. Apps Script and Edge/Node routes pass normalized fields into a constrained prompt contract, while Gmail draft creation stays behind OAuth-controlled server code and requires a human review step before anything leaves the system.
+An event-driven scripting trigger and secure server-side AI gateway converts database events, spreadsheet changes, and operational triggers into structured, reviewable drafts. Apps Script and Edge/Node routes pass normalized fields into a constrained prompt contract, while email draft creation stays behind OAuth-controlled server code and requires a human review step before anything leaves the system.
 
 <OutcomeStats stats={[
   { value: "Server-Only", label: "Credential Storage" },
@@ -67,11 +67,11 @@ The browser never receives AI provider keys, Google private keys, OAuth refresh 
 </HowItWorksCard>
 
 <HowItWorksCard title="Deterministic Prompt Engineering">
-Raw operational fields are converted into a fixed prompt payload. Names, dates, AHJ offices, project IDs, and due dates are passed as explicit values instead of free-form context.
+Raw operational fields are converted into a fixed prompt payload. Customer names, account IDs, dates, owners, request types, and due dates are passed as explicit values instead of free-form context.
 </HowItWorksCard>
 
-<HowItWorksCard title="Gmail Draft Worker">
-The backend creates drafts through the Gmail REST API only after OAuth consent or Workspace delegation is available. Draft IDs can be written back to the workbook for traceability.
+<HowItWorksCard title="Email Draft Worker">
+The backend creates drafts through Google Workspace APIs only after OAuth consent or Workspace delegation is available. Draft IDs can be written back to the source record for traceability.
 </HowItWorksCard>
 
 <HowItWorksCard title="Human Approval Desk">

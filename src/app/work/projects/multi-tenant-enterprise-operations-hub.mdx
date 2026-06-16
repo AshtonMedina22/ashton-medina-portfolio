@@ -1,7 +1,7 @@
 ---
 title: "Multi-Tenant Enterprise Operations Hub"
 publishedAt: "2026-06-01"
-summary: "Synchronizes disparate corporate properties, real-time webhooks, and partner ledger data into high-density, isolated administrative views."
+summary: "Synchronizes account workspaces, real-time webhooks, operational records, and partner data into high-density, isolated administrative views."
 demo: true
 images:
   - "/images/projects/project-04/cover-01.svg"
@@ -25,7 +25,7 @@ techStack:
     icon: "api"
   - name: "Apps Script"
     icon: null
-  - name: "SolarEdge API"
+  - name: "Event APIs"
     icon: "api"
 ---
 
@@ -40,16 +40,16 @@ techStack:
   <div>
 ## Problem
 
-Operational teams managing multiple independent business entities spend hundreds of hours manually logging data across separate software ecosystems, switching between disconnected e-commerce storefronts, hardware monitoring utilities, permitting queues, partner directories, and workbook ledgers. That fragmentation creates delayed order processing, untracked equipment error states, duplicate ledger entries, and severe blind spots when subcontractor insurance policies or certifications expire without warning.
+Operational teams managing multiple business units, brands, regions, or client accounts spend hundreds of hours reconciling data across separate software ecosystems. Teams switch between CRM records, order systems, service queues, spreadsheets, partner portals, and reporting tools just to understand what needs attention. That fragmentation creates delayed handoffs, duplicate ledger entries, inconsistent status reporting, missed SLA risks, and compliance gaps that surface too late.
   </div>
   <div>
 ## Solution
 
-A unified, real-time administrative operations hub aggregates transactional, telemetry, vendor, and permitting data across distinct corporate properties into one cohesive interface. The platform acts as an automated caching and middleware layer, ingesting asynchronous webhooks, enforcing typed PostgreSQL/Supabase record contracts, and managing contractor compliance tables above the fold.
+A unified, real-time administrative operations hub aggregates transactional, workflow, account, compliance, and reporting data across distinct operating groups into one cohesive interface. The platform acts as an automated caching and middleware layer, ingesting asynchronous webhooks, enforcing typed PostgreSQL/Supabase record contracts, and keeping operational exceptions visible before they become missed handoffs.
 
 <OutcomeStats stats={[
   { value: "Typed", label: "PostgreSQL and API Payloads" },
-  { value: "Isolated", label: "Company-Specific Operating Views" },
+  { value: "Isolated", label: "Account-Specific Operating Views" },
   { value: "Auditable", label: "Fallback and Error States" }
 ]} />
   </div>
@@ -58,24 +58,24 @@ A unified, real-time administrative operations hub aggregates transactional, tel
 ## How It Works
 
 <HowItWorksGrid>
-<HowItWorksCard title="Multi-Company Caching Engine">
-Raw provider data is transformed into strongly typed JSON and PostgreSQL-backed records so different business entities remain isolated while still rolling up into one executive command center.
+<HowItWorksCard title="Multi-Workspace Caching Engine">
+Raw provider data is transformed into strongly typed JSON and PostgreSQL-backed records so different teams, brands, accounts, or regions remain isolated while still rolling up into one executive command center.
 </HowItWorksCard>
 
 <HowItWorksCard title="Supabase Operations Store">
-Supabase tables provide the durable operating layer for partner ledgers, vendor compliance records, retail order states, and dashboard cache snapshots that need server-side access control.
+Supabase tables provide the durable operating layer for account ledgers, workflow states, compliance checks, service tickets, and dashboard cache snapshots that need server-side access control.
 </HowItWorksCard>
 
 <HowItWorksCard title="Asynchronous Webhook Pipeline">
-WooCommerce-style order payloads and third-party automation events are shaped into fulfillment rows with SKU validation, duplicate protection, freight alerts, and append-only operational history.
+CRM, commerce, billing, support, and third-party automation events are shaped into normalized operations rows with duplicate protection, status validation, retry handling, and append-only history.
 </HowItWorksCard>
 
-<HowItWorksCard title="Hardware Telemetry Listening">
-SolarEdge and SCADA-style polling workers model equipment status, live generation, inverter faults, and server-side API-key isolation before telemetry reaches the dashboard UI.
+<HowItWorksCard title="System Signal Monitoring">
+Scheduled workers and event APIs monitor service health, queue volume, account activity, exception states, and server-side API boundaries before operational signals reach the dashboard UI.
 </HowItWorksCard>
 
-<HowItWorksCard title="Vendor Compliance Loop">
-Time-driven Apps Script checks read contractor records, flag expiring COIs, and route renewal notices through controlled Gmail and Drive workflows.
+<HowItWorksCard title="Compliance Review Loop">
+Time-driven Apps Script checks read policy, contract, document, and approval records, then route review notices through controlled Google Workspace workflows.
 </HowItWorksCard>
 
 <HowItWorksCard title="Failover Design">

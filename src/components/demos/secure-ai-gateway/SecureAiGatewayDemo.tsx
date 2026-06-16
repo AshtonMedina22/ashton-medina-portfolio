@@ -17,9 +17,9 @@ import {
 import styles from "./secure-ai-gateway-demo.module.scss";
 
 const sources = [
-  { icon: HiOutlineDatabase, label: "Supabase permit event", detail: "AHJ review age crossed threshold", state: "Review" },
-  { icon: HiOutlineTable, label: "Sheet row update", detail: "Calendar reminder requested", state: "Queued" },
-  { icon: HiOutlineShieldCheck, label: "Vendor compliance row", detail: "COI expires in 7 days", state: "Draft" },
+  { icon: HiOutlineDatabase, label: "Supabase account event", detail: "Customer response SLA crossed threshold", state: "Review" },
+  { icon: HiOutlineTable, label: "Sheet row update", detail: "Account follow-up reminder requested", state: "Queued" },
+  { icon: HiOutlineShieldCheck, label: "Compliance review row", detail: "Policy document expires in 7 days", state: "Draft" },
 ] as const;
 
 const safeguards = [
@@ -33,7 +33,7 @@ const auditSteps = [
   "Database event captured",
   "Context normalized",
   "AI draft generated",
-  "Gmail draft created",
+  "Email draft created",
   "Operator approval pending",
 ] as const;
 
@@ -43,7 +43,7 @@ export function SecureAiGatewayDemo() {
       <header className={styles.header}>
         <div>
           <p>Event-driven automation and secure AI gateway</p>
-          <h2>Database events become controlled Gmail drafts inside a human review desk</h2>
+          <h2>Database events become controlled email drafts inside a human review desk</h2>
         </div>
         <span>
           <HiOutlineShieldCheck />
@@ -74,20 +74,20 @@ export function SecureAiGatewayDemo() {
         <main className={styles.reviewPanel}>
           <div className={styles.panelTitle}>
             <HiOutlineMail />
-            <span>Human-reviewed Gmail draft</span>
+            <span>Human-reviewed email draft</span>
           </div>
           <div className={styles.emailChrome}>
             <div className={styles.emailMeta}>
               <span>To</span>
-              <strong>permits@city.gov</strong>
+              <strong>account-ops@example.com</strong>
               <span>Subject</span>
-              <strong>Status request for AHJ-2407 review window</strong>
+              <strong>Status request for ACCT-2407 response window</strong>
             </div>
             <div className={styles.emailBody}>
               <p>Hello,</p>
               <p>
-                Please confirm the current review status for project AHJ-2407. Our records show
-                the packet was submitted on May 28, 2026 and is now outside the expected review
+                Please confirm the current response status for account ACCT-2407. Our records show
+                the request was submitted on May 28, 2026 and is now outside the expected service
                 window.
               </p>
               <p>Thank you,</p>
@@ -106,7 +106,7 @@ export function SecureAiGatewayDemo() {
           </div>
           <pre>{`{
   "source": "database_event",
-  "projectId": "AHJ-2407",
+  "accountId": "ACCT-2407",
   "submittedAt": "2026-05-28",
   "allowedAction": "draft_only",
   "sendBlocked": true
@@ -134,4 +134,3 @@ export function SecureAiGatewayDemo() {
     </div>
   );
 }
-
