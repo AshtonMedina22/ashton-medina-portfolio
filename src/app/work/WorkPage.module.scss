@@ -15,6 +15,7 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   min-height: 100vh;
+  overflow-x: hidden;
   padding: var(--page-shell-padding-block);
   color: var(--work-text);
   background:
@@ -30,6 +31,8 @@
   box-sizing: border-box;
   margin-inline: auto;
   margin-top: clamp(1.75rem, 3vw, 2.5rem);
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 .workHero {
@@ -773,13 +776,23 @@
 
 @media (max-width: 760px) {
   .workPage {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-inline: 1.25rem;
     padding-top: 5.5rem;
   }
 
   .workHero,
   .featuredProject,
   .allProjectsSection {
-    width: 100%;
+    width: calc(100vw - 2.5rem);
+    max-width: calc(100vw - 2.5rem);
+  }
+
+  .projectsSection {
+    width: calc(100vw - 2.5rem);
+    max-width: calc(100vw - 2.5rem);
   }
 
   .workHero h1 {
