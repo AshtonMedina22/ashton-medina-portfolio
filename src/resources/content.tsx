@@ -262,7 +262,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Work - ${person.name}`,
-  description: `Operational systems portfolio - ERP, workflow, vendor, finance, and reporting platforms by ${person.name}`,
+  description: `Operational systems portfolio - workflow automation, enterprise platforms, financial controls, vendor lifecycle, integrations, and reporting by ${person.name}`,
 };
 
 const contact: Contact = {

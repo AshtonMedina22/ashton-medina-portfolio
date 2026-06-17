@@ -41,8 +41,9 @@ export default function Work() {
         </div>
         <div className={styles.heroAside}>
           <p>
-            Four ERP, workflow, vendor, finance, and reporting systems built around business
-            operations, controls, and execution visibility.
+            Platforms spanning workflow automation, enterprise operations, financial controls,
+            vendor lifecycle, integrations, and reporting - built around business execution,
+            controls, and visibility.
           </p>
         </div>
       </section>
