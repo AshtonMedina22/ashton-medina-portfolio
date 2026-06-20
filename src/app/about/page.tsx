@@ -28,37 +28,37 @@ const problemsSolved = [
   {
     icon: HiOutlineClipboardList,
     title: "Requests stop getting lost",
-    text: "Intake, approvals, follow-ups, and handoffs get organized into one clear operating flow.",
+    text: "Forms, emails, approvals, and follow-ups move into a clear intake and ownership process.",
   },
   {
     icon: HiOutlineUserGroup,
     title: "Owners know what to do",
-    text: "Roles, responsibilities, checklists, due dates, and escalation paths become visible to the team.",
+    text: "Responsibilities, checklists, due dates, and escalation paths become clear across the team.",
   },
   {
     icon: HiOutlineCog,
     title: "Manual work gets reduced",
-    text: "Repeatable tasks, status updates, reminders, and reporting routines are turned into structured workflows.",
+    text: "Recurring tasks, reminders, status updates, and handoffs are standardized or automated where it makes sense.",
   },
   {
     icon: HiOutlineChartBar,
     title: "Leadership gets visibility",
-    text: "Dashboards, KPI reporting, and operating summaries show what is open, blocked, completed, or trending.",
+    text: "Dashboards and operating reports show what is open, stuck, completed, trending, or ready for decision.",
   },
 ] as const;
 
 const serviceAreas = [
   {
     title: "Operations & Process Improvement",
-    text: "Workflow analysis, process mapping, SOPs, handoff cleanup, accountability structures, and operating routines.",
+    text: "Workflow analysis, process mapping, SOP development, handoff cleanup, accountability structures, and operating routines.",
   },
   {
     title: "Business Systems Implementation",
-    text: "Requirements gathering, platform configuration, ERP/CRM rollout support, UAT, training, adoption, and documentation.",
+    text: "Requirements gathering, ERP/CRM configuration, user acceptance testing, rollout planning, training, adoption, and documentation.",
   },
   {
     title: "Workflow Automation & Reporting",
-    text: "Task routing, reminders, status tracking, executive dashboards, KPI frameworks, and operational reporting.",
+    text: "Task routing, reminders, status tracking, executive dashboards, KPI frameworks, operational reporting, and data cleanup.",
   },
   {
     title: "Operational Controls & Compliance",
@@ -109,10 +109,10 @@ const experience = [
     period: "2025 - Present",
     location: "Allen, TX",
     bullets: [
-      "Own ERP and business systems across CRM, sales, vendor management, accounting, HR, reporting, and project operations.",
-      "Lead requirements gathering, workflow analysis, process mapping, stakeholder alignment, and implementation partner coordination.",
-      "Standardize vendor onboarding, compliance tracking, contract administration, and partner lifecycle workflows.",
-      "Develop KPI reporting frameworks, executive dashboards, and operational reports for better visibility and decision-making.",
+      "Own ERP/CRM administration and business systems strategy across sales, vendor management, accounting, HR, reporting, and project operations.",
+      "Lead requirements gathering, stakeholder interviews, workflow analysis, process mapping, UAT planning, rollout coordination, and implementation partner management.",
+      "Standardize vendor onboarding, compliance tracking, contract administration, approval routing, and partner lifecycle workflows to improve accountability and execution.",
+      "Build executive KPI dashboards, operational reporting views, and decision-support metrics that improve visibility into open work, bottlenecks, and business performance.",
     ],
   },
   {
@@ -121,10 +121,10 @@ const experience = [
     period: "2023 - 2025",
     location: "Dallas-Fort Worth, TX",
     bullets: [
-      "Supported executive leadership on strategic initiatives, operational planning, process improvement, and systems administration.",
-      "Coordinated onboarding and operational readiness for national automotive OEMs and multi-location dealership organizations.",
-      "Managed integrations across telematics platforms, toll recovery systems, payment processors, and partner ecosystems.",
-      "Built implementation playbooks, onboarding programs, process documentation, and training resources.",
+      "Partnered with executive leadership on strategic operations, technical programs, process improvement, business systems administration, and cross-functional execution.",
+      "Coordinated customer onboarding, implementation readiness, and operational launch support for national automotive OEMs and multi-location dealership organizations.",
+      "Managed partner integrations involving telematics platforms, toll recovery systems, payment processors, vendor workflows, and customer support operations.",
+      "Created implementation playbooks, onboarding programs, SOP documentation, training resources, and internal process standards to support adoption and repeatable delivery.",
     ],
   },
   {
@@ -133,10 +133,10 @@ const experience = [
     period: "2009 - 2023",
     location: "Dallas-Fort Worth, TX",
     bullets: [
-      "Directed multi-site operations across staffing, compliance, enrollment, administration, scheduling, and reporting.",
-      "Improved operating consistency through SOPs, documentation frameworks, recurring routines, and governance practices.",
-      "Managed regulatory compliance, inspections, audits, and operational readiness in a highly regulated environment.",
-      "Led recruitment, onboarding, workforce scheduling, training, and administrative support for teams of 30+ employees.",
+      "Directed multi-site operations across staffing, enrollment, scheduling, compliance, administration, parent communication, reporting, and daily service delivery.",
+      "Improved operational consistency through SOP development, workflow standardization, documentation frameworks, staff training, and recurring management routines.",
+      "Managed regulatory compliance, inspections, licensing requirements, audits, incident documentation, and operational readiness in a highly regulated environment.",
+      "Led recruiting, onboarding, workforce scheduling, team communication, employee support, and administrative operations for teams of 30+ employees.",
     ],
   },
 ] as const;
@@ -285,7 +285,7 @@ export default function About() {
             </div>
           </section>
 
-          <section className={styles.resumeSection}>
+          <section className={`${styles.resumeSection} ${styles.experienceSection}`}>
             <div className={styles.sectionHeader}>
               <HiOutlineOfficeBuilding />
               <div>
