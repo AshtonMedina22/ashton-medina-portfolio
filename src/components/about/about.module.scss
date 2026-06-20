@@ -7,7 +7,7 @@
   --about-soft: #64748b;
   --about-border: rgba(15, 23, 42, 0.1);
   --about-indigo: #7F95E4;
-  --about-cyan: #1AC1B9;
+  --about-cyan: #09CDCD;
   --about-depth: 0 8px 24px rgba(15, 23, 42, 0.06);
 
   min-height: 100vh;
@@ -50,8 +50,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 30% 30%, rgba(26, 193, 185, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 70% 70%, rgba(127, 149, 228, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 30% 30%, rgba(9, 205, 205, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(81, 56, 148, 0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -122,9 +122,9 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.7rem 1.35rem;
-  border: 1.5px solid var(--about-cyan);
+  border: 1.5px solid #09CDCD;
   border-radius: 10px;
-  background: var(--about-cyan);
+  background: #09CDCD;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 800;
@@ -137,8 +137,8 @@
   }
 
   &:hover {
-    background: rgba(26, 193, 185, 0.85);
-    box-shadow: 0 6px 16px rgba(26, 193, 185, 0.25);
+    background: rgba(9, 205, 205, 0.85);
+    box-shadow: 0 6px 16px rgba(9, 205, 205, 0.25);
   }
 }
 
@@ -156,7 +156,7 @@
 .resumeHero {
   padding: clamp(1.75rem, 3vw, 2.25rem);
   background:
-    linear-gradient(135deg, rgba(127, 149, 228, 0.08), transparent 42%),
+    linear-gradient(135deg, rgba(9, 205, 205, 0.08), transparent 42%),
     rgba(255, 255, 255, 0.84);
 }
 
@@ -177,7 +177,11 @@
   }
 
   :global(.headingAccent) {
+    display: inline;
     color: transparent;
+    background-image: linear-gradient(135deg, #09CDCD 0%, #81459E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
@@ -219,7 +223,7 @@
 }
 
 .sectionEyebrow {
-  color: var(--about-indigo);
+  color: #09CDCD;
   font-size: var(--type-eyebrow);
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -251,8 +255,8 @@
 }
 
 .primaryCta {
-  border: 1px solid var(--about-indigo);
-  background: var(--about-indigo);
+  border: 1px solid #09CDCD;
+  background: #09CDCD;
   color: #ffffff;
 }
 
@@ -278,10 +282,10 @@
     width: 2.2rem;
     height: 2.2rem;
     padding: 0.52rem;
-    border: 1px solid rgba(26, 193, 185, 0.28);
+    border: 1px solid rgba(9, 205, 205, 0.28);
     border-radius: 12px;
-    color: var(--about-cyan);
-    background: rgba(26, 193, 185, 0.1);
+    color: #09CDCD;
+    background: rgba(9, 205, 205, 0.1);
   }
 
   h2 {
@@ -299,7 +303,7 @@
   grid-template-columns: minmax(10rem, 0.25fr) minmax(0, 1fr);
   gap: 1.75rem;
   padding: 1.75rem 0;
-  border-top: 1px solid rgba(26, 193, 185, 0.1);
+  border-top: 1px solid rgba(9, 205, 205, 0.1);
   position: relative;
   padding-left: 1.5rem;
 
@@ -311,8 +315,8 @@
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;
-    background: var(--about-cyan);
-    box-shadow: 0 0 0 3px rgba(26, 193, 185, 0.1);
+    background: #09CDCD;
+    box-shadow: 0 0 0 3px rgba(9, 205, 205, 0.1);
   }
 
   &:first-child {
@@ -325,7 +329,7 @@
   }
 
   &:last-child {
-    border-top: 1px solid rgba(26, 193, 185, 0.1);
+    border-top: 1px solid rgba(9, 205, 205, 0.1);
   }
 }
 
@@ -341,7 +345,7 @@
   }
 
   em {
-    color: var(--about-cyan);
+    color: #09CDCD;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 700;
@@ -362,7 +366,7 @@
   > strong {
     display: block;
     margin-top: 0.35rem;
-    color: var(--about-cyan);
+    color: #09CDCD;
     font-size: 0.95rem;
     font-weight: 800;
   }
@@ -385,7 +389,7 @@
       content: '→';
       position: absolute;
       left: -1.2rem;
-      color: var(--about-cyan);
+      color: #09CDCD;
       font-weight: 800;
     }
   }
@@ -410,8 +414,8 @@
 
     &:hover {
       background: rgba(255, 255, 255, 0.85);
-      border-color: var(--about-cyan);
-      box-shadow: 0 8px 24px rgba(26, 193, 185, 0.12);
+      border-color: #09CDCD;
+      box-shadow: 0 8px 24px rgba(9, 205, 205, 0.12);
     }
   }
 }
@@ -455,9 +459,9 @@
   transition: all 160ms ease;
 
   &:hover {
-    background: rgba(26, 193, 185, 0.1);
-    border-color: var(--about-cyan);
-    color: var(--about-cyan);
+    background: rgba(9, 205, 205, 0.1);
+    border-color: #09CDCD;
+    color: #09CDCD;
   }
 }
 
