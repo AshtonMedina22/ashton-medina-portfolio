@@ -22,10 +22,10 @@
   gap: clamp(2.5rem, 4vw, 4.5rem);
   margin-top: clamp(0.5rem, 1.5vw, 1.25rem);
   padding: clamp(2rem, 3.5vw, 3.5rem);
-  border: 1px solid rgba(26, 193, 185, 0.2);
+  border: 1px solid rgba(9, 205, 205, 0.2);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 24px rgba(26, 193, 185, 0.08);
+  box-shadow: 0 8px 24px rgba(9, 205, 205, 0.08);
 }
 
 .heroContent {
@@ -36,7 +36,7 @@
 .sectionEyebrow {
   display: inline-flex;
   width: fit-content;
-  color: #1AC1B9;
+  color: #09CDCD;
   font-size: var(--type-eyebrow);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -46,9 +46,9 @@
 
 .eyebrow {
   padding: 0.55rem 0.75rem;
-  border: 1px solid rgba(26, 193, 185, 0.5);
+  border: 1px solid rgba(9, 205, 205, 0.5);
   border-radius: 999px;
-  background: rgba(26, 193, 185, 0.15);
+  background: rgba(9, 205, 205, 0.15);
 }
 
 .heroContent h1,
@@ -71,7 +71,7 @@
   :global(.headingAccent) {
     display: inline;
     color: transparent;
-    background-image: linear-gradient(92deg, #7F95E4 0%, #1AC1B9 50%, #22c55e 100%);
+    background-image: linear-gradient(92deg, #09CDCD 0%, #81459E 50%, #573894 100%);
     background-clip: text;
     -webkit-background-clip: text;
   }
@@ -79,7 +79,7 @@
 
 .sectionIntro h2 :global(.headingAccent) {
   color: transparent;
-  background-image: linear-gradient(92deg, #F9447F 0%, #FF8017 50%, #FBD160 100%);
+  background-image: linear-gradient(92deg, #81459E 0%, #573894 50%, #002D72 100%);
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -162,8 +162,8 @@
 }
 
 .primaryCta {
-  border: 1px solid #1AC1B9;
-  background: #1AC1B9;
+  border: 1px solid #09CDCD;
+  background: #09CDCD;
   color: #ffffff;
   fill: #ffffff;
 
@@ -175,8 +175,8 @@
 
   &:hover {
     transform: translateY(-1px);
-    background: #F9447F;
-    border-color: #F9447F;
+    background: #81459E;
+    border-color: #81459E;
     color: #ffffff;
   }
 }
@@ -196,9 +196,9 @@
 
   &:hover {
     background: #f1f5f9;
-    border-color: #1AC1B9;
-    color: #1AC1B9;
-    fill: #1AC1B9;
+    border-color: #09CDCD;
+    color: #09CDCD;
+    fill: #09CDCD;
   }
 }
 
