@@ -3,9 +3,12 @@ import { about, baseURL, person, social } from "@/resources";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import {
   HiOutlineArrowRight,
+  HiOutlineChartBar,
+  HiOutlineClipboardList,
   HiOutlineCog,
   HiOutlineOfficeBuilding,
   HiOutlineShieldCheck,
+  HiOutlineUserGroup,
 } from "react-icons/hi";
 import { FaLinkedin } from "react-icons/fa6";
 
@@ -21,6 +24,84 @@ export async function generateMetadata() {
 
 const linkedIn = social.find((item) => item.icon === "linkedin");
 
+const problemsSolved = [
+  {
+    icon: HiOutlineClipboardList,
+    title: "Requests stop getting lost",
+    text: "Intake, approvals, follow-ups, and handoffs get organized into one clear operating flow.",
+  },
+  {
+    icon: HiOutlineUserGroup,
+    title: "Owners know what to do",
+    text: "Roles, responsibilities, checklists, due dates, and escalation paths become visible to the team.",
+  },
+  {
+    icon: HiOutlineCog,
+    title: "Manual work gets reduced",
+    text: "Repeatable tasks, status updates, reminders, and reporting routines are turned into structured workflows.",
+  },
+  {
+    icon: HiOutlineChartBar,
+    title: "Leadership gets visibility",
+    text: "Dashboards, KPI reporting, and operating summaries show what is open, blocked, completed, or trending.",
+  },
+] as const;
+
+const serviceAreas = [
+  {
+    title: "Operations & Process Improvement",
+    text: "Workflow analysis, process mapping, SOPs, handoff cleanup, accountability structures, and operating routines.",
+  },
+  {
+    title: "Business Systems Implementation",
+    text: "Requirements gathering, platform configuration, ERP/CRM rollout support, UAT, training, adoption, and documentation.",
+  },
+  {
+    title: "Workflow Automation & Reporting",
+    text: "Task routing, reminders, status tracking, executive dashboards, KPI frameworks, and operational reporting.",
+  },
+  {
+    title: "Operational Controls & Compliance",
+    text: "Approval paths, vendor management, audit readiness, financial controls, role-based access, and repeatable governance.",
+  },
+] as const;
+
+const keywordGroups = [
+  {
+    title: "Business Operations",
+    terms: [
+      "Operations Management",
+      "Process Improvement",
+      "Business Analysis",
+      "SOP Development",
+      "Multi-Site Operations",
+      "Change Management",
+    ],
+  },
+  {
+    title: "Systems Implementation",
+    terms: [
+      "ERP Implementation",
+      "CRM Administration",
+      "Requirements Gathering",
+      "UAT Testing",
+      "Platform Rollout",
+      "User Adoption",
+    ],
+  },
+  {
+    title: "Automation & Reporting",
+    terms: [
+      "Workflow Automation",
+      "KPI Dashboards",
+      "Executive Reporting",
+      "Data Analysis",
+      "API Integrations",
+      "Operational Controls",
+    ],
+  },
+] as const;
+
 const experience = [
   {
     title: "Business Systems Architect II",
@@ -28,10 +109,10 @@ const experience = [
     period: "2025 - Present",
     location: "Allen, TX",
     bullets: [
-      "Serve as primary business systems owner for ERP systems supporting CRM, sales, vendor management, accounting, HR, reporting, and project management.",
-      "Lead requirements gathering, workflow analysis, and process mapping with leadership, stakeholders, vendors, and implementation partners.",
-      "Design and standardize workflows for vendor onboarding, compliance management, contract administration, and partner lifecycle management.",
-      "Develop KPI reporting frameworks, executive dashboards, and operational reporting solutions that improve visibility and decision-making.",
+      "Own ERP and business systems across CRM, sales, vendor management, accounting, HR, reporting, and project operations.",
+      "Lead requirements gathering, workflow analysis, process mapping, stakeholder alignment, and implementation partner coordination.",
+      "Standardize vendor onboarding, compliance tracking, contract administration, and partner lifecycle workflows.",
+      "Develop KPI reporting frameworks, executive dashboards, and operational reports for better visibility and decision-making.",
     ],
   },
   {
@@ -40,9 +121,9 @@ const experience = [
     period: "2023 - 2025",
     location: "Dallas-Fort Worth, TX",
     bullets: [
-      "Partnered with executive leadership on strategic initiatives, operational planning, process improvement, and business systems administration.",
-      "Coordinated customer onboarding and operational readiness for national automotive OEMs and multi-location dealership organizations.",
-      "Managed integrations involving telematics platforms, toll recovery systems, payment processors, and partner ecosystems.",
+      "Supported executive leadership on strategic initiatives, operational planning, process improvement, and systems administration.",
+      "Coordinated onboarding and operational readiness for national automotive OEMs and multi-location dealership organizations.",
+      "Managed integrations across telematics platforms, toll recovery systems, payment processors, and partner ecosystems.",
       "Built implementation playbooks, onboarding programs, process documentation, and training resources.",
     ],
   },
@@ -52,39 +133,12 @@ const experience = [
     period: "2009 - 2023",
     location: "Dallas-Fort Worth, TX",
     bullets: [
-      "Directed multi-site business operations across staffing, compliance, enrollment, administration, scheduling, and reporting.",
-      "Led process improvement and standardization through operating procedures, documentation frameworks, and governance practices.",
+      "Directed multi-site operations across staffing, compliance, enrollment, administration, scheduling, and reporting.",
+      "Improved operating consistency through SOPs, documentation frameworks, recurring routines, and governance practices.",
       "Managed regulatory compliance, inspections, audits, and operational readiness in a highly regulated environment.",
-      "Led recruitment, onboarding, workforce scheduling, and administrative support for teams of 30+ employees.",
+      "Led recruitment, onboarding, workforce scheduling, training, and administrative support for teams of 30+ employees.",
     ],
   },
-] as const;
-
-const competencies = [
-  "Operations & Process Improvement",
-  "Business Requirements & Analysis",
-  "ERP & Platform Implementation",
-  "Workflow Design & Automation",
-  "KPI Frameworks & Executive Reporting",
-  "Cross-Functional Stakeholder Management",
-  "Change Management & User Adoption",
-  "Vendor & Partner Lifecycle Management",
-  "Compliance & Operational Controls",
-  "Multi-Site Operations Leadership",
-  "UAT, Rollout & Release Management",
-  "Documentation & SOP Standards",
-] as const;
-
-const technicalSkills = [
-  "ERP & CRM Platforms",
-  "Workflow & Process Automation",
-  "Executive Dashboards & KPI Reporting",
-  "Financial & Vendor System Controls",
-  "API Integrations & Data Sync",
-  "SQL & Operational Data Analysis",
-  "Python for Automation & Reporting",
-  "Platform Configuration & Administration",
-  "UAT, Testing & Production Rollout",
 ] as const;
 
 export default function About() {
@@ -112,9 +166,7 @@ export default function About() {
           <div className={styles.profileInfo}>
             <h1>{person.name}</h1>
             <p className={styles.profileRole}>{person.role}</p>
-            {person.locationLabel && (
-              <p className={styles.profileLocation}>{person.locationLabel}</p>
-            )}
+            {person.locationLabel && <p className={styles.profileLocation}>{person.locationLabel}</p>}
             {linkedIn && (
               <div className={styles.profileActions}>
                 <SmartLink
@@ -137,21 +189,19 @@ export default function About() {
               <div className={styles.summaryPrimary}>
                 <span className={styles.sectionEyebrow}>Overview</span>
                 <h2 className={styles.sectionTitle}>
-                  Professional <span className="headingAccent">summary.</span>
+                  Operations, systems, and workflows that make businesses easier to run.
                 </h2>
                 <p className={styles.summaryLead}>
-                  I help growing organizations turn messy workflows into systems that actually run.
-                  Most of my work sits between operations and technology: mapping how work moves,
-                  standardizing processes, implementing platforms, and making sure teams adopt what
-                  gets built.
+                  I help growing organizations clean up messy work: scattered requests, unclear
+                  ownership, manual follow-ups, disconnected tools, weak reporting, and processes
+                  that depend too much on one person remembering every step.
                 </p>
               </div>
               <div className={styles.summaryAside}>
                 <p className={styles.summaryText}>
-                  My background blends multi-site operations leadership with hands-on implementation
-                  work. I&apos;ve directed regulated field operations, supported executive teams on
-                  technical programs, and spent years doing the detailed work of building SOPs,
-                  improving handoffs, and getting adoption to stick.
+                  My background combines business operations leadership with hands-on systems
+                  implementation. I translate what teams actually need into better workflows,
+                  clearer documentation, useful dashboards, and platforms people can adopt.
                 </p>
                 <div className={styles.heroActions}>
                   <SmartLink href="/work" className={styles.primaryCta}>
@@ -177,16 +227,21 @@ export default function About() {
             <div className={styles.sectionHeader}>
               <HiOutlineShieldCheck />
               <div>
-                <span className={styles.sectionEyebrow}>Capabilities</span>
-                <h2 className={styles.sectionTitle}>
-                  Core <span className="headingAccent">competencies.</span>
-                </h2>
+                <span className={styles.sectionEyebrow}>Business Problems</span>
+                <h2 className={styles.sectionTitle}>What I help fix.</h2>
               </div>
             </div>
-            <div className={styles.competencyGrid}>
-              {competencies.map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
+            <div className={styles.problemGrid}>
+              {problemsSolved.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <article key={item.title} className={styles.problemCard}>
+                    <Icon />
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </article>
+                );
+              })}
             </div>
           </section>
 
@@ -194,15 +249,38 @@ export default function About() {
             <div className={styles.sectionHeader}>
               <HiOutlineCog />
               <div>
-                <span className={styles.sectionEyebrow}>Technical Skills</span>
-                <h2 className={styles.sectionTitle}>
-                  Systems <span className="headingAccent">& tools.</span>
-                </h2>
+                <span className={styles.sectionEyebrow}>Services</span>
+                <h2 className={styles.sectionTitle}>Where I add value.</h2>
               </div>
             </div>
-            <div className={styles.competencyGrid}>
-              {technicalSkills.map((skill) => (
-                <span key={skill}>{skill}</span>
+            <div className={styles.serviceGrid}>
+              {serviceAreas.map((area) => (
+                <article key={area.title} className={styles.serviceCard}>
+                  <h3>{area.title}</h3>
+                  <p>{area.text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeader}>
+              <HiOutlineChartBar />
+              <div>
+                <span className={styles.sectionEyebrow}>Search Keywords</span>
+                <h2 className={styles.sectionTitle}>Relevant skills, grouped clearly.</h2>
+              </div>
+            </div>
+            <div className={styles.keywordGroups}>
+              {keywordGroups.map((group) => (
+                <article key={group.title} className={styles.keywordGroup}>
+                  <h3>{group.title}</h3>
+                  <div>
+                    {group.terms.map((term) => (
+                      <span key={term}>{term}</span>
+                    ))}
+                  </div>
+                </article>
               ))}
             </div>
           </section>
@@ -212,9 +290,7 @@ export default function About() {
               <HiOutlineOfficeBuilding />
               <div>
                 <span className={styles.sectionEyebrow}>Experience</span>
-                <h2 className={styles.sectionTitle}>
-                  Professional <span className="headingAccent">experience.</span>
-                </h2>
+                <h2 className={styles.sectionTitle}>Professional experience.</h2>
               </div>
             </div>
             <div className={styles.experienceList}>
