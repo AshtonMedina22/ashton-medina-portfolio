@@ -406,10 +406,11 @@ $muted: #94a3b8;
   line-height: 1.3;
 }
 
-.shell *,
-.shell *::before,
-.shell *::after {
+.truncateText {
   min-width: 0;
+}
+
+.wrapText {
   overflow-wrap: break-word;
 }
 
@@ -463,4 +464,3 @@ $muted: #94a3b8;
     grid-template-columns: 1fr;
   }
 }
-

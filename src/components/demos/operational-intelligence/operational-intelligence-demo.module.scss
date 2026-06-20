@@ -984,10 +984,11 @@ $blue: #3b82f6;
   text-decoration: none;
 }
 
-.opsShell *,
-.opsShell *::before,
-.opsShell *::after {
+.truncateText {
   min-width: 0;
+}
+
+.wrapText {
   overflow-wrap: break-word;
 }
 

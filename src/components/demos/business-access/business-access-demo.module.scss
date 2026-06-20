@@ -187,7 +187,8 @@ $muted: #94a3b8;
   }
 }
 
-.shell * { min-width: 0; overflow-wrap: break-word; }
+.truncateText { min-width: 0; }
+.wrapText { overflow-wrap: break-word; }
 
 @media (max-width: 1050px) {
   .shell { grid-template-columns: 1fr; }
@@ -201,4 +202,3 @@ $muted: #94a3b8;
   .kpis, .sidebar { grid-template-columns: 1fr; }
   .table div { grid-template-columns: 1fr; }
 }
-

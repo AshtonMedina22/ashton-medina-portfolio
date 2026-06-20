@@ -5,22 +5,22 @@
 
 /* Color palette definitions */
 :root {
-  /* Brand colors */
-  --scheme-brand-100: #5a6fb3;
-  --scheme-brand-200: #7F95E4;
-  --scheme-brand-300: #1AC1B9;
+  /* Brand colors - teal and barbie as primary */
+  --scheme-brand-100: #1AC1B9;
+  --scheme-brand-200: #1AC1B9;
+  --scheme-brand-300: #F9447F;
   --scheme-brand-400: #FBD160;
   --scheme-brand-500: #F9447F;
   --scheme-brand-600: #FCB8D9;
   --scheme-brand-700: #FF8017;
-  --scheme-brand-800: #ddd6fe;
-  --scheme-brand-900: #ede9fe;
-  --scheme-brand-1000: #f5f3ff;
+  --scheme-brand-800: #7F95E4;
+  --scheme-brand-900: #f0f4ff;
+  --scheme-brand-1000: #f5f8ff;
   --scheme-brand-1100: #faf5ff;
   --scheme-brand-1200: #fdf4ff;
-  --scheme-brand-600-15: rgba(127, 149, 228, 0.15);
-  --scheme-brand-600-30: rgba(127, 149, 228, 0.3);
-  --scheme-brand-600-50: rgba(127, 149, 228, 0.5);
+  --scheme-brand-600-15: rgba(26, 193, 185, 0.15);
+  --scheme-brand-600-30: rgba(26, 193, 185, 0.3);
+  --scheme-brand-600-50: rgba(26, 193, 185, 0.5);
 
   /* Accent colors */
   --scheme-accent-100: var(--scheme-brand-100);
@@ -59,15 +59,15 @@
   /* Semantic colors */
   --color-background: #ffffff;
   --color-text: #1a1a1a;
-  --color-accent: #7F95E4;
+  --color-accent: #1AC1B9;
   --success-color: #22c55e;
   --success-soft: rgba(34, 197, 94, 0.16);
   --danger-color: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.16);
 
-  /* Button colors */
-  --button-primary: #7F95E4;
-  --button-primary-hover: #1AC1B9;
+  /* Button colors - teal primary, barbie on hover/accent */
+  --button-primary: #1AC1B9;
+  --button-primary-hover: #F9447F;
 
   /* Layout tokens */
   --page-max-width: 1560px;

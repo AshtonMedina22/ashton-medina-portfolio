@@ -308,10 +308,11 @@ $muted: #94a3b8;
   background: rgba(20, 184, 166, 0.1);
 }
 
-.shell *,
-.shell *::before,
-.shell *::after {
+.truncateText {
   min-width: 0;
+}
+
+.wrapText {
   overflow-wrap: break-word;
 }
 
@@ -343,4 +344,3 @@ $muted: #94a3b8;
     display: none;
   }
 }
-

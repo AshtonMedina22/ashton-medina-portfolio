@@ -1026,10 +1026,11 @@ $ui-card-bg: #111827;
   line-height: 1.5;
 }
 
-.vendorShell *,
-.vendorShell *::before,
-.vendorShell *::after {
+.truncateText {
   min-width: 0;
+}
+
+.wrapText {
   overflow-wrap: break-word;
 }
 
