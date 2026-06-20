@@ -5,15 +5,15 @@
 
 /* Color palette definitions */
 :root {
-  /* Brand colors - using Night Blooming Jasmine palette */
-  --scheme-brand-100: #09CDCD;
-  --scheme-brand-200: #09CDCD;
-  --scheme-brand-300: #81459E;
-  --scheme-brand-400: #A0E5D9;
-  --scheme-brand-500: #81459E;
-  --scheme-brand-600: #573894;
-  --scheme-brand-700: #002D72;
-  --scheme-brand-800: #09CDCD;
+  /* Brand colors - using Night Blooming Jasmine palette (dark to light) */
+  --scheme-brand-100: #002D72;
+  --scheme-brand-200: #002D72;
+  --scheme-brand-300: #573894;
+  --scheme-brand-400: #81459E;
+  --scheme-brand-500: #573894;
+  --scheme-brand-600: #81459E;
+  --scheme-brand-700: #09CDCD;
+  --scheme-brand-800: #002D72;
   --scheme-brand-900: #f0f4ff;
   --scheme-brand-1000: #f5f8ff;
   --scheme-brand-1100: #faf5ff;
@@ -59,15 +59,15 @@
   /* Semantic colors */
   --color-background: #ffffff;
   --color-text: #1a1a1a;
-  --color-accent: #09CDCD;
+  --color-accent: #002D72;
   --success-color: #22c55e;
   --success-soft: rgba(34, 197, 94, 0.16);
   --danger-color: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.16);
 
-  /* Button colors - cyan primary, purple on hover/accent */
-  --button-primary: #09CDCD;
-  --button-primary-hover: #81459E;
+  /* Button colors - dark blue primary, dark purple on hover/accent */
+  --button-primary: #002D72;
+  --button-primary-hover: #573894;
 
   /* Layout tokens */
   --page-max-width: 1560px;
