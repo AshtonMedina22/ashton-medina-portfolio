@@ -53,22 +53,6 @@
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Light theme: cards match the page so the two rows don't read as separate dark bands */
-[data-theme="light"] .techItem {
-  background: #ffffff;
-  border: 1px solid #e4e4e7;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  color: #18181b;
-}
-
-[data-theme="light"] .techItem::after {
-  border-color: rgba(0, 0, 0, 0.04);
-}
-
-[data-theme="light"] .techItem:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.1);
-}
 
 .techIconWrap {
   display: flex;

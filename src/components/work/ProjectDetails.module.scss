@@ -332,27 +332,6 @@
   font-weight: 700;
 }
 
-[data-theme="light"] {
-  .sectionCard,
-  .proofPointsBlock,
-  .workflowDiagram {
-    background: rgba(255, 255, 255, 0.86);
-  }
-
-  .stepCard,
-  .metricCard,
-  .architectureBlock,
-  .accentColumn,
-  .calloutBox {
-    background: #ffffff;
-  }
-
-  .stepNumber,
-  .stepBox {
-    background: rgba(79, 70, 229, 0.1);
-    color: #4f46e5;
-  }
-}
 
 @media (max-width: 1024px) {
   .processGrid,

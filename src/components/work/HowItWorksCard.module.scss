@@ -37,16 +37,6 @@
   overflow-wrap: break-word;
 }
 
-[data-theme="light"] {
-  .grid {
-    border-color: var(--project-border, rgba(255, 255, 255, 0.08));
-  }
-
-  .card {
-    border-color: var(--project-border, rgba(255, 255, 255, 0.08));
-    background: transparent;
-  }
-}
 
 @media (max-width: 1024px) {
   .grid {
