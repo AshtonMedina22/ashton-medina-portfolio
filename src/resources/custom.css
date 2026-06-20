@@ -120,7 +120,28 @@
 }
 
 /* --------------------------------------------------------------------------
-   DARK THEME
+   DEFAULT (LIGHT THEME)
+   -------------------------------------------------------------------------- */
+:root {
+  --page-background: #ffffff;
+  --neutral-background-weak: #ffffff;
+  --neutral-background-medium: #f4f4f5;
+  --neutral-background-strong: #e4e4e7;
+  --neutral-on-background-strong: #18181b;
+  --neutral-on-background-medium: #3f3f46;
+  --neutral-on-background-weak: #71717a;
+  --brand-alpha-weak: rgba(127, 149, 228, 0.12);
+  --brand-alpha-medium: rgba(127, 149, 228, 0.22);
+  --brand-alpha-strong: rgba(127, 149, 228, 0.35);
+  --brand-solid-strong: var(--scheme-brand-400);
+  --brand-solid-medium: var(--scheme-brand-300);
+  --brand-solid-weak: var(--scheme-brand-200);
+  --brand-on-solid-strong: #fafafa;
+  --brand-on-solid-weak: var(--scheme-brand-1000);
+}
+
+/* --------------------------------------------------------------------------
+   DARK THEME (UNUSED - kept for reference)
    -------------------------------------------------------------------------- */
 [data-theme="dark"] {
   --page-background: #09090b;
@@ -133,7 +154,6 @@
   --brand-alpha-weak: rgba(167, 139, 250, 0.14);
   --brand-alpha-medium: rgba(167, 139, 250, 0.25);
   --brand-alpha-strong: rgba(167, 139, 250, 0.4);
-  /* Once UI primary buttons: restrained violet from the site accent set */
   --brand-solid-strong: var(--scheme-brand-300);
   --brand-solid-medium: var(--scheme-brand-200);
   --brand-solid-weak: var(--scheme-brand-100);
@@ -142,7 +162,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   LIGHT THEME
+   LIGHT THEME (explicit)
    -------------------------------------------------------------------------- */
 [data-theme="light"] {
   --page-background: #ffffff;
@@ -152,10 +172,9 @@
   --neutral-on-background-strong: #18181b;
   --neutral-on-background-medium: #3f3f46;
   --neutral-on-background-weak: #71717a;
-  --brand-alpha-weak: rgba(167, 139, 250, 0.12);
-  --brand-alpha-medium: rgba(167, 139, 250, 0.22);
-  --brand-alpha-strong: rgba(167, 139, 250, 0.35);
-  /* Once UI primary buttons: restrained violet from the site accent set */
+  --brand-alpha-weak: rgba(127, 149, 228, 0.12);
+  --brand-alpha-medium: rgba(127, 149, 228, 0.22);
+  --brand-alpha-strong: rgba(127, 149, 228, 0.35);
   --brand-solid-strong: var(--scheme-brand-400);
   --brand-solid-medium: var(--scheme-brand-300);
   --brand-solid-weak: var(--scheme-brand-200);
