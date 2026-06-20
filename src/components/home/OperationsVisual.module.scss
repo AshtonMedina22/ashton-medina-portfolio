@@ -456,9 +456,20 @@
 }
 
 @keyframes basePanelFadeIn {
+  /* Scene 1: 0-33% */
   0%, 2% { opacity: 0; }
   5%, 31% { opacity: 1; }
-  33%, 100% { opacity: 0; }
+  33% { opacity: 0; }
+
+  /* Scene 2: 33-67% */
+  33%, 35% { opacity: 0; }
+  38%, 64% { opacity: 1; }
+  67% { opacity: 0; }
+
+  /* Scene 3: 67-100% */
+  67%, 69% { opacity: 0; }
+  72%, 97% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes popoutEnter {
