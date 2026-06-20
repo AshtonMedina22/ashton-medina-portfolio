@@ -238,12 +238,14 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1.25rem, 2vw, 1.75rem);
+  max-width: 52rem;
+  margin-inline: auto;
 
   article {
     position: relative;
     min-width: 0;
     min-height: 0;
-    padding: 1.35rem 1.5rem 1.45rem 1.55rem;
+    padding: 1.15rem 1.25rem 1.25rem 1.35rem;
     overflow: hidden;
     border: 1px solid #e2e8f0;
     border-radius: 14px;
@@ -281,27 +283,28 @@
   }
 
   svg {
-    width: 2.45rem;
-    height: 2.45rem;
-    padding: 0.55rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.4rem;
     border: 1px solid var(--capability-accent, #1AC1B9);
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--capability-accent, #1AC1B9);
     background: rgba(26, 193, 185, 0.1);
   }
 
   h3 {
-    margin: 1.15rem 0 0;
+    margin: 0.85rem 0 0;
     color: #1a1a1a;
-    font-size: var(--type-subsection);
+    font-size: 0.95rem;
     font-weight: 600;
+    line-height: 1.35;
   }
 
   p {
-    margin: 0.75rem 0 0;
+    margin: 0.55rem 0 0;
     color: #475569;
-    font-size: var(--type-body);
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 
