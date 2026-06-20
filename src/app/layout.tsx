@@ -3,7 +3,6 @@ import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
 
 import classNames from "classnames";
-import { Analytics } from "@vercel/analytics/next";
 
 import {
   Background,
@@ -18,6 +17,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { RouteGuard } from "@/components/layout/RouteGuard";
 import { Providers } from "@/components/layout/Providers";
+import { SiteAnalytics } from "@/components/SiteAnalytics";
 import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
@@ -61,19 +61,6 @@ export default async function RootLayout({
       )}
     >
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V8V11G7R5" />
-        <script
-          id="google-analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-6V8V11G7R5');
-            `,
-          }}
-        />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
@@ -192,7 +179,7 @@ export default async function RootLayout({
             </Flex>
           </Flex>
           <Footer />
-          <Analytics />
+          <SiteAnalytics />
         </Column>
       </Providers>
     </Flex>
