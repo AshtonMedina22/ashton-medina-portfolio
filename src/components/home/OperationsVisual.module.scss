@@ -7,14 +7,13 @@
   --navy: #002d72;
   --ink: #06173a;
   --muted: #5d6b92;
-  --line: rgba(0, 45, 114, 0.12);
-  --slide-duration: 24s;
+  --slide-duration: 20s;
 
   position: relative;
   isolation: isolate;
   width: min(100%, 46rem);
   max-width: 46rem;
-  height: clamp(25rem, 38vw, 34rem);
+  height: clamp(26rem, 40vw, 35rem);
   margin-inline: auto;
   overflow: hidden;
   border: 1px solid rgba(160, 229, 217, 0.55);
@@ -35,7 +34,7 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 18% 16%, rgba(9, 205, 205, 0.22), transparent 15rem),
+    radial-gradient(circle at 18% 16%, rgba(9, 205, 205, 0.2), transparent 15rem),
     radial-gradient(circle at 88% 24%, rgba(129, 69, 158, 0.16), transparent 16rem),
     radial-gradient(circle at 58% 94%, rgba(160, 229, 217, 0.32), transparent 18rem);
 }
@@ -48,7 +47,7 @@
 
 .sliderTrack {
   display: flex;
-  width: 300%;
+  width: 400%;
   height: 100%;
   animation: slideTrack var(--slide-duration) cubic-bezier(0.76, 0, 0.24, 1) infinite;
   will-change: transform;
@@ -56,7 +55,7 @@
 
 .slide {
   position: relative;
-  flex: 0 0 calc(100% / 3);
+  flex: 0 0 25%;
   min-width: 0;
   height: 100%;
   padding: clamp(1.1rem, 2.4vw, 2rem);
@@ -64,11 +63,11 @@
 
 .appWindow {
   position: absolute;
-  inset: clamp(1.2rem, 3vw, 2.2rem) clamp(3.1rem, 5vw, 4.5rem) clamp(3.2rem, 5vw, 4.2rem) clamp(1.2rem, 3vw, 2rem);
+  inset: clamp(1.1rem, 2.8vw, 2rem) clamp(3rem, 5vw, 4.3rem) clamp(3.35rem, 5vw, 4.25rem) clamp(1.1rem, 3vw, 2rem);
   overflow: hidden;
   border: 1px solid rgba(0, 45, 114, 0.12);
   border-radius: 22px;
-  background: rgba(249, 247, 236, 0.82);
+  background: rgba(249, 247, 236, 0.84);
   backdrop-filter: blur(18px);
   box-shadow:
     0 20px 50px rgba(0, 45, 114, 0.13),
@@ -79,7 +78,7 @@
   display: flex;
   align-items: center;
   gap: 0.42rem;
-  height: 2.45rem;
+  height: 2.35rem;
   padding-inline: 0.92rem;
   border-bottom: 1px solid rgba(0, 45, 114, 0.08);
   background: rgba(255, 255, 255, 0.45);
@@ -102,7 +101,7 @@
   strong {
     margin-left: 0.35rem;
     color: rgba(0, 45, 114, 0.56);
-    font-size: 0.66rem;
+    font-size: 0.64rem;
     font-weight: 850;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -111,38 +110,38 @@
 
 .workspaceShell {
   display: grid;
-  grid-template-columns: minmax(6.6rem, 0.32fr) 1fr;
-  height: calc(100% - 2.45rem);
+  grid-template-columns: minmax(6.4rem, 0.3fr) 1fr;
+  height: calc(100% - 2.35rem);
   min-height: 0;
 }
 
 .sidebar {
   display: grid;
   align-content: start;
-  gap: 0.58rem;
-  padding: 0.95rem 0.75rem;
+  gap: 0.52rem;
+  padding: 0.9rem 0.72rem;
   border-right: 1px solid rgba(0, 45, 114, 0.08);
   background: rgba(0, 45, 114, 0.04);
 
   strong {
     display: grid;
     place-items: center;
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: 0.24rem;
+    width: 1.95rem;
+    height: 1.95rem;
+    margin-bottom: 0.2rem;
     border-radius: 10px;
     background: var(--navy);
     color: var(--jasmine);
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     font-weight: 900;
   }
 
   span {
     overflow: hidden;
-    padding: 0.46rem 0.55rem;
+    padding: 0.44rem 0.52rem;
     border-radius: 8px;
     color: rgba(0, 45, 114, 0.72);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 760;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -156,10 +155,10 @@
 
 .workspaceMain {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 0.9rem;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.72rem;
   min-width: 0;
-  padding: clamp(0.95rem, 2vw, 1.28rem);
+  padding: clamp(0.82rem, 1.7vw, 1.18rem);
 }
 
 .panelHeader {
@@ -171,16 +170,16 @@
   span {
     display: block;
     color: var(--purple);
-    font-size: 0.64rem;
+    font-size: 0.62rem;
     font-weight: 900;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   h3 {
-    margin: 0.25rem 0 0;
+    margin: 0.23rem 0 0;
     color: var(--navy);
-    font-size: clamp(1.18rem, 2vw, 1.55rem);
+    font-size: clamp(1.08rem, 1.8vw, 1.42rem);
     font-weight: 850;
     letter-spacing: 0;
     line-height: 1.08;
@@ -190,42 +189,77 @@
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    min-height: 1.75rem;
-    padding-inline: 0.62rem;
+    min-height: 1.65rem;
+    padding-inline: 0.58rem;
     border: 1px solid rgba(9, 205, 205, 0.32);
     border-radius: 999px;
     background: rgba(9, 205, 205, 0.11);
     color: var(--navy);
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-style: normal;
     font-weight: 850;
   }
 
   em::before {
     content: "";
-    width: 0.42rem;
-    height: 0.42rem;
+    width: 0.4rem;
+    height: 0.4rem;
     border-radius: 999px;
     background: var(--lagoon);
+  }
+}
+
+.flowRibbon {
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-width: 0;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    flex: 0 1 auto;
+    min-width: 0;
+    padding: 0.35rem 0.48rem;
+    border: 1px solid rgba(9, 205, 205, 0.24);
+    border-radius: 999px;
+    background: rgba(160, 229, 217, 0.22);
+    color: var(--navy);
+    font-size: 0.6rem;
+    font-weight: 850;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  span + span::before {
+    content: "";
+    position: absolute;
+    left: -0.32rem;
+    top: 50%;
+    width: 0.26rem;
+    height: 1px;
+    background: rgba(0, 45, 114, 0.26);
   }
 }
 
 .databaseRows {
   display: grid;
   align-content: start;
-  gap: 0.64rem;
+  gap: 0.52rem;
   min-height: 0;
 }
 
 .databaseRows > div {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(6rem, 0.72fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(5.5rem, 0.68fr) auto;
   align-items: center;
-  gap: 0.72rem;
-  min-height: 3.15rem;
-  padding: 0 0.78rem;
+  gap: 0.62rem;
+  min-height: 2.68rem;
+  padding: 0 0.68rem;
   border: 1px solid rgba(0, 45, 114, 0.08);
-  border-radius: 13px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.55);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
 
@@ -238,7 +272,7 @@
   span {
     overflow: hidden;
     color: var(--navy);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 800;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -247,7 +281,7 @@
   small {
     overflow: hidden;
     color: var(--muted);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 680;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -255,11 +289,11 @@
 
   strong {
     justify-self: end;
-    padding: 0.28rem 0.52rem;
+    padding: 0.24rem 0.48rem;
     border-radius: 999px;
     background: rgba(160, 229, 217, 0.34);
     color: var(--navy);
-    font-size: 0.66rem;
+    font-size: 0.62rem;
     font-weight: 850;
   }
 }
@@ -275,12 +309,12 @@
 .metricStrip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.7rem;
+  gap: 0.62rem;
 
   div {
-    padding: 0.82rem;
+    padding: 0.72rem;
     border: 1px solid rgba(0, 45, 114, 0.08);
-    border-radius: 14px;
+    border-radius: 13px;
     background: rgba(255, 255, 255, 0.48);
   }
 
@@ -291,14 +325,14 @@
 
   span {
     color: var(--muted);
-    font-size: 0.68rem;
+    font-size: 0.64rem;
     font-weight: 760;
   }
 
   strong {
-    margin-top: 0.24rem;
+    margin-top: 0.2rem;
     color: var(--purple);
-    font-size: 1.18rem;
+    font-size: 1.1rem;
     font-weight: 900;
     line-height: 1;
   }
@@ -313,8 +347,8 @@
 .popoutCard {
   position: absolute;
   z-index: 6;
-  width: clamp(8.9rem, 16vw, 12.25rem);
-  padding: 0.82rem;
+  width: clamp(8.75rem, 15vw, 11.75rem);
+  padding: 0.78rem;
   border: 1px solid rgba(0, 45, 114, 0.11);
   border-radius: 16px;
   background: rgba(249, 247, 236, 0.94);
@@ -330,16 +364,16 @@
   div {
     display: grid;
     place-items: center;
-    width: 1.95rem;
-    height: 1.95rem;
-    border-radius: 11px;
+    width: 1.82rem;
+    height: 1.82rem;
+    border-radius: 10px;
     background: rgba(9, 205, 205, 0.13);
     color: var(--navy);
   }
 
   svg {
-    width: 1.05rem;
-    height: 1.05rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   span,
@@ -350,9 +384,9 @@
   }
 
   span {
-    margin-top: 0.62rem;
+    margin-top: 0.56rem;
     color: var(--purple);
-    font-size: 0.58rem;
+    font-size: 0.56rem;
     font-weight: 900;
     letter-spacing: 0.1em;
     line-height: 1;
@@ -360,52 +394,48 @@
   }
 
   strong {
-    margin-top: 0.32rem;
+    margin-top: 0.3rem;
     color: var(--navy);
-    font-size: 0.88rem;
+    font-size: 0.84rem;
     font-weight: 880;
     letter-spacing: 0;
     line-height: 1.12;
   }
 
   p {
-    margin-top: 0.28rem;
+    margin-top: 0.26rem;
     color: var(--muted);
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 650;
     line-height: 1.3;
   }
 }
 
-.slide:nth-child(2) .popoutCard {
-  animation-name: popoutFloatSecond;
-}
-
-.slide:nth-child(3) .popoutCard {
-  animation-name: popoutFloatThird;
-}
+.slide:nth-child(2) .popoutCard { animation-name: popoutFloatSecond; }
+.slide:nth-child(3) .popoutCard { animation-name: popoutFloatThird; }
+.slide:nth-child(4) .popoutCard { animation-name: popoutFloatFourth; }
 
 .popoutPrimary {
   --from-x: -1.8rem;
   --from-y: 1.4rem;
   --delay: 0s;
-  left: clamp(0.6rem, 2vw, 1.2rem);
+  left: clamp(0.55rem, 1.8vw, 1.1rem);
   top: 34%;
 }
 
 .popoutSecondary {
   --from-x: 2rem;
   --from-y: -0.8rem;
-  --delay: 0.45s;
-  right: clamp(0.5rem, 2vw, 1rem);
-  top: 26%;
+  --delay: 0.35s;
+  right: clamp(0.45rem, 1.8vw, 0.95rem);
+  top: 24%;
 }
 
 .popoutTertiary {
   --from-x: 0.8rem;
   --from-y: 1.8rem;
-  --delay: 0.9s;
-  right: 9%;
+  --delay: 0.7s;
+  right: 8%;
   bottom: 9%;
 }
 
@@ -425,47 +455,50 @@
     animation: dotActive var(--slide-duration) linear infinite;
   }
 
-  span:nth-child(2) {
-    animation-delay: calc(var(--slide-duration) / 3);
-  }
-
-  span:nth-child(3) {
-    animation-delay: calc(var(--slide-duration) * 2 / 3);
-  }
+  span:nth-child(2) { animation-delay: calc(var(--slide-duration) / 4); }
+  span:nth-child(3) { animation-delay: calc(var(--slide-duration) / 2); }
+  span:nth-child(4) { animation-delay: calc(var(--slide-duration) * 3 / 4); }
 }
 
 @keyframes slideTrack {
-  0%, 27% { transform: translateX(0); }
-  33%, 60% { transform: translateX(-33.3333%); }
-  66%, 93% { transform: translateX(-66.6667%); }
+  0%, 20% { transform: translateX(0); }
+  25%, 45% { transform: translateX(-25%); }
+  50%, 70% { transform: translateX(-50%); }
+  75%, 95% { transform: translateX(-75%); }
   100% { transform: translateX(0); }
 }
 
 @keyframes popoutFloatFirst {
-  0%, 5% { opacity: 0; transform: translate3d(var(--from-x), var(--from-y), 0) scale(0.84); }
-  10%, 27% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
-  31%, 100% { opacity: 0; transform: translate3d(0, -0.35rem, 0) scale(0.96); }
+  0%, 4% { opacity: 0; transform: translate3d(var(--from-x), var(--from-y), 0) scale(0.84); }
+  8%, 20% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  23%, 100% { opacity: 0; transform: translate3d(0, -0.35rem, 0) scale(0.96); }
 }
 
 @keyframes popoutFloatSecond {
-  0%, 35% { opacity: 0; transform: translate3d(var(--from-x), var(--from-y), 0) scale(0.84); }
-  40%, 60% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
-  64%, 100% { opacity: 0; transform: translate3d(0, -0.35rem, 0) scale(0.96); }
+  0%, 29% { opacity: 0; transform: translate3d(var(--from-x), var(--from-y), 0) scale(0.84); }
+  33%, 45% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  48%, 100% { opacity: 0; transform: translate3d(0, -0.35rem, 0) scale(0.96); }
 }
 
 @keyframes popoutFloatThird {
-  0%, 68% { opacity: 0; transform: translate3d(var(--from-x), var(--from-y), 0) scale(0.84); }
-  73%, 93% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
-  97%, 100% { opacity: 0; transform: translate3d(0, -0.35rem, 0) scale(0.96); }
+  0%, 54% { opacity: 0; transform: translate3d(var(--from-x), var(--from-y), 0) scale(0.84); }
+  58%, 70% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  73%, 100% { opacity: 0; transform: translate3d(0, -0.35rem, 0) scale(0.96); }
+}
+
+@keyframes popoutFloatFourth {
+  0%, 79% { opacity: 0; transform: translate3d(var(--from-x), var(--from-y), 0) scale(0.84); }
+  83%, 95% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  98%, 100% { opacity: 0; transform: translate3d(0, -0.35rem, 0) scale(0.96); }
 }
 
 @keyframes dotActive {
-  0%, 27% {
+  0%, 20% {
     width: 1.18rem;
     background: var(--lagoon);
   }
 
-  33%, 100% {
+  25%, 100% {
     width: 0.42rem;
     background: rgba(0, 45, 114, 0.22);
   }
@@ -474,30 +507,30 @@
 @media (max-width: 900px) {
   .heroMockup {
     max-width: 42rem;
-    height: 30rem;
+    height: 31rem;
   }
 
   .appWindow {
-    inset: 1.2rem 2.4rem 4rem 1.2rem;
+    inset: 1.1rem 2.1rem 4.25rem 1.1rem;
   }
 
   .popoutCard {
-    width: 10.25rem;
+    width: 10rem;
   }
 }
 
 @media (max-width: 620px) {
   .heroMockup {
-    height: 27rem;
+    height: 28rem;
     border-radius: 22px;
   }
 
   .slide {
-    padding: 0.9rem;
+    padding: 0.82rem;
   }
 
   .appWindow {
-    inset: 0.85rem 0.85rem 5.2rem;
+    inset: 0.82rem 0.82rem 5.6rem;
     border-radius: 18px;
   }
 
@@ -510,16 +543,26 @@
   }
 
   .workspaceMain {
-    padding: 0.86rem;
+    padding: 0.78rem;
+    gap: 0.55rem;
   }
 
   .panelHeader h3 {
-    font-size: 1.08rem;
+    font-size: 1rem;
+  }
+
+  .flowRibbon {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .flowRibbon span {
+    font-size: 0.56rem;
   }
 
   .databaseRows > div {
     grid-template-columns: minmax(0, 1fr) auto;
-    min-height: 2.85rem;
+    min-height: 2.5rem;
 
     small {
       display: none;
@@ -531,20 +574,20 @@
   }
 
   .popoutCard {
-    width: 9.2rem;
-    padding: 0.72rem;
+    width: 9.15rem;
+    padding: 0.68rem;
   }
 
   .popoutPrimary {
-    left: 0.7rem;
+    left: 0.65rem;
     top: auto;
-    bottom: 1.65rem;
+    bottom: 1.7rem;
   }
 
   .popoutSecondary {
-    right: 0.75rem;
+    right: 0.7rem;
     top: auto;
-    bottom: 4.9rem;
+    bottom: 5.05rem;
   }
 
   .popoutTertiary {
