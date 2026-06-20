@@ -1,14 +1,14 @@
 .aboutPage {
-  --about-bg: #0a0f18;
-  --about-surface: #121826;
-  --about-panel: #1a2233;
-  --about-text: #f8fafc;
-  --about-muted: #94a3b8;
+  --about-bg: #f4f7fb;
+  --about-surface: #ffffff;
+  --about-panel: #eef2f7;
+  --about-text: #0f172a;
+  --about-muted: #475569;
   --about-soft: #64748b;
-  --about-border: rgba(255, 255, 255, 0.08);
-  --about-indigo: #6366f1;
-  --about-cyan: #06b6d4;
-  --about-depth: 0 24px 70px rgba(0, 0, 0, 0.24);
+  --about-border: rgba(15, 23, 42, 0.1);
+  --about-indigo: #7F95E4;
+  --about-cyan: #1AC1B9;
+  --about-depth: 0 8px 24px rgba(15, 23, 42, 0.06);
 
   width: 100vw;
   max-width: 100%;
@@ -17,10 +17,7 @@
   min-height: 100vh;
   padding: var(--page-shell-padding-block);
   color: var(--about-text);
-  background:
-    radial-gradient(circle at 76% 13%, rgba(6, 182, 212, 0.12), transparent 24rem),
-    radial-gradient(circle at 5% 35%, rgba(99, 102, 241, 0.1), transparent 28rem),
-    linear-gradient(180deg, #070b12 0%, var(--about-bg) 48%, #08111d 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--about-bg) 100%);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
 }
 
@@ -36,7 +33,7 @@
 .resumeSection,
 .resumeHero {
   border: 1px solid var(--about-border);
-  background: rgba(18, 24, 38, 0.62);
+  background: rgba(255, 255, 255, 0.84);
   box-shadow: var(--about-depth);
 }
 
@@ -53,9 +50,9 @@
   width: clamp(6.5rem, 14vw, 10rem);
   height: clamp(6.5rem, 14vw, 10rem);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--about-border);
   border-radius: 50%;
-  background: #111827;
+  background: #eef2f7;
 
   img {
     width: 100%;
@@ -104,17 +101,17 @@
 }
 
 .profileLinkBtn {
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.55rem 1rem;
   border: 1px solid var(--about-border);
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.55);
-  color: var(--about-text) !important;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--about-text);
   font-size: var(--type-body);
   font-weight: 600;
-  text-decoration: none !important;
+  text-decoration: none;
   transition:
     background 160ms ease,
     border-color 160ms ease;
@@ -125,8 +122,8 @@
   }
 
   &:hover {
-    background: rgba(30, 41, 59, 0.72);
-    border-color: rgba(255, 255, 255, 0.16);
+    background: #ffffff;
+    border-color: var(--about-indigo);
   }
 }
 
@@ -144,8 +141,8 @@
 .resumeHero {
   padding: clamp(1.75rem, 3vw, 2.25rem);
   background:
-    linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 42%),
-    rgba(15, 23, 42, 0.7);
+    linear-gradient(135deg, rgba(127, 149, 228, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.84);
 }
 
 .sectionTitle {
@@ -165,8 +162,8 @@
   }
 
   :global(.headingAccent) {
-    color: transparent !important;
-    -webkit-text-fill-color: transparent !important;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -207,7 +204,7 @@
 }
 
 .sectionEyebrow {
-  color: #38bdf8;
+  color: var(--about-indigo);
   font-size: var(--type-eyebrow);
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -225,35 +222,35 @@
 
 .primaryCta,
 .secondaryCta {
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
   min-height: 3rem;
   padding: 0 1.5rem;
   border-radius: 12px;
-  text-decoration: none !important;
+  text-decoration: none;
   font-size: var(--type-cta);
   font-weight: 600;
   letter-spacing: 0.03em;
 }
 
 .primaryCta {
-  border: 1px solid rgba(99, 102, 241, 0.75);
-  background: #6366f1;
-  color: #ffffff !important;
+  border: 1px solid var(--about-indigo);
+  background: var(--about-indigo);
+  color: #ffffff;
 }
 
 .secondaryCta {
   border: 1px solid var(--about-border);
-  color: var(--about-text) !important;
-  background: rgba(15, 23, 42, 0.46);
+  color: var(--about-text);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .resumeSection {
   padding: clamp(1.5rem, 2.5vw, 2rem);
   border-radius: 14px;
-  background: rgba(15, 23, 42, 0.52);
+  background: rgba(255, 255, 255, 0.84);
 }
 
 .sectionHeader {
@@ -266,10 +263,10 @@
     width: 2.2rem;
     height: 2.2rem;
     padding: 0.52rem;
-    border: 1px solid rgba(56, 189, 248, 0.28);
+    border: 1px solid rgba(26, 193, 185, 0.28);
     border-radius: 12px;
     color: var(--about-cyan);
-    background: rgba(56, 189, 248, 0.1);
+    background: rgba(26, 193, 185, 0.1);
   }
 
   h2 {
@@ -327,7 +324,7 @@
   > strong {
     display: block;
     margin-top: 0.28rem;
-    color: #38bdf8;
+    color: var(--about-cyan);
     font-size: var(--type-body);
     font-weight: 800;
   }
@@ -357,7 +354,7 @@
     border: 1px solid var(--about-border);
     border-radius: 10px;
     color: var(--about-text);
-    background: rgba(15, 23, 42, 0.58);
+    background: rgba(255, 255, 255, 0.72);
     font-size: var(--type-body);
     font-weight: 700;
     line-height: 1.35;
@@ -396,45 +393,6 @@
     color: var(--about-muted);
     font-size: var(--type-body);
     line-height: 1.45;
-  }
-}
-
-[data-theme="light"] .aboutPage {
-  --about-bg: #f4f7fb;
-  --about-surface: #ffffff;
-  --about-panel: #eef2f7;
-  --about-text: #0f172a;
-  --about-muted: #475569;
-  --about-soft: #64748b;
-  --about-border: rgba(15, 23, 42, 0.1);
-  --about-indigo: #4f46e5;
-  --about-cyan: #0891b2;
-  --about-depth: 0 14px 34px rgba(15, 23, 42, 0.1);
-
-  background:
-    radial-gradient(circle at 76% 13%, rgba(6, 182, 212, 0.13), transparent 24rem),
-    radial-gradient(circle at 5% 35%, rgba(59, 130, 246, 0.1), transparent 28rem),
-    linear-gradient(180deg, #f8fafc 0%, var(--about-bg) 48%, #eef2f7 100%);
-}
-
-[data-theme="light"] {
-  .profileHeader,
-  .resumeSection,
-  .resumeHero {
-    border-color: var(--about-border);
-    background: rgba(255, 255, 255, 0.84);
-    box-shadow: var(--about-depth);
-  }
-
-  .profileLinkBtn,
-  .competencyGrid span,
-  .secondaryCta {
-    border-color: var(--about-border);
-    background: rgba(255, 255, 255, 0.72);
-  }
-
-  .profileAvatar {
-    background: #eef2f7;
   }
 }
 
