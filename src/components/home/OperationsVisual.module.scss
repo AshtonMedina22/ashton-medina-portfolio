@@ -1,9 +1,11 @@
 .opsVisual {
+  --scene-duration: 18s;
+  
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  max-width: 780px;
-  min-height: clamp(24rem, 32vw, 34rem);
+  max-width: 800px;
+  height: clamp(24rem, 32vw, 34rem);
   display: grid;
   grid-template-columns: 4.8rem 1fr;
   overflow: hidden;
@@ -22,6 +24,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
   background: linear-gradient(rgba(26, 193, 185, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(26, 193, 185, 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
@@ -30,7 +33,7 @@
 
 .visualRail {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,14 +76,36 @@
   box-shadow: 0 8px 20px rgba(26, 193, 185, 0.2);
 }
 
+.sceneViewport {
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.sceneTrack {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  animation: sceneCarousel var(--scene-duration) cubic-bezier(0.78, 0, 0.22, 1) infinite;
+  will-change: transform;
+}
+
+.scene {
+  position: relative;
+  flex: 0 0 25%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .visualMain {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   min-width: 0;
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 1fr;
   gap: 0.9rem;
   padding: 1.35rem;
+  height: 100%;
 }
 
 .visualTopbar {
@@ -100,42 +125,43 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.65rem;
-  margin-top: 0.8rem;
+  min-width: 0;
 }
 
-.visualMetrics div {
+.metricCard {
   min-width: 0;
   padding: 0.85rem;
   border: 1px solid rgba(26, 193, 185, 0.12);
   border-radius: 12px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 244, 255, 0.5) 100%);
-}
+  animation: cardPopIn var(--scene-duration) ease-in-out infinite;
 
-.visualMetrics span {
-  display: block;
-  color: #64748b;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
+  span {
+    display: block;
+    color: #64748b;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
 
-.visualMetrics strong {
-  display: block;
-  margin-top: 0.45rem;
-  color: #1a1a1a;
-  font-size: clamp(0.95rem, 1.05vw, 1.1rem);
-  font-weight: 750;
-  line-height: 1;
-}
+  strong {
+    display: block;
+    margin-top: 0.45rem;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    font-weight: 750;
+    line-height: 1;
+  }
 
-.visualMetrics em {
-  display: block;
-  margin-top: 0.35rem;
-  color: #64748b;
-  font-size: 0.65rem;
-  font-style: normal;
-  line-height: 1.35;
+  em {
+    display: block;
+    margin-top: 0.35rem;
+    color: #64748b;
+    font-size: 0.65rem;
+    font-style: normal;
+    line-height: 1.35;
+  }
 }
 
 .panelHeader {
@@ -143,12 +169,7 @@
   color: #1a1a1a;
   font-size: 0.76rem;
   font-weight: 700;
-}
-
-.visualDashboardGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 0.85rem;
+  animation: slideDown var(--scene-duration) ease-in-out infinite;
 }
 
 .workflowChart,
@@ -158,18 +179,17 @@
   border: 1px solid rgba(26, 193, 185, 0.12);
   border-radius: 12px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(240, 244, 255, 0.4) 100%);
-}
-
-.workflowChart,
-.workflowStatus {
   padding: 1rem;
+  display: grid;
+  gap: 0.9rem;
+  overflow: hidden;
 }
 
 .chartFrame {
   display: grid;
   align-content: end;
   gap: 0.58rem;
-  min-height: 8.5rem;
+  min-height: 6rem;
   padding: 0.35rem 0.2rem 0.1rem;
 }
 
@@ -179,6 +199,14 @@
   border-radius: 999px;
   background: linear-gradient(90deg, #7F95E4, #1AC1B9, #F9447F);
   box-shadow: 0 0 16px rgba(26, 193, 185, 0.2);
+  animation: chartGrow var(--scene-duration) ease-in-out infinite;
+
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(5) { animation-delay: 0.5s; }
+  &:nth-child(6) { animation-delay: 0.6s; }
 }
 
 .chartLabels {
@@ -186,11 +214,11 @@
   justify-content: space-between;
   gap: 0.5rem;
   margin-top: 0.85rem;
-}
 
-.chartLabels span {
-  color: #64748b;
-  font-size: 0.68rem;
+  span {
+    color: #64748b;
+    font-size: 0.68rem;
+  }
 }
 
 .workflowStatus {
@@ -198,11 +226,6 @@
   grid-template-columns: 1fr;
   gap: 0.75rem;
   align-items: center;
-}
-
-.workflowStatus .panelHeader {
-  grid-column: 1 / -1;
-  margin-bottom: 0;
 }
 
 .statusDonut {
@@ -219,6 +242,7 @@
       #F9447F 92% 100%
     );
   box-shadow: 0 0 24px rgba(26, 193, 185, 0.15);
+  animation: donutSpin var(--scene-duration) linear infinite;
 }
 
 .statusLegend {
@@ -233,6 +257,7 @@
   align-items: center;
   gap: 0.45rem;
   min-width: 0;
+  animation: slideIn var(--scene-duration) ease-out infinite;
 }
 
 .statusLegend i {
@@ -258,28 +283,18 @@
   white-space: nowrap;
 }
 
-.completeDot {
-  background: #22c55e;
-}
-
-.activeDot {
-  background: #7F95E4;
-}
-
-.waitingDot {
-  background: #FF8017;
-}
-
-.blockedDot {
-  background: #F9447F;
-}
+.completeDot { background: #22c55e; }
+.activeDot { background: #7F95E4; }
+.waitingDot { background: #FF8017; }
+.blockedDot { background: #F9447F; }
 
 .workflowTable {
   display: grid;
   padding: 0.95rem;
+  gap: 0;
 }
 
-.workflowTable .tableHead,
+.tableHead,
 .workflowTable > div:not(.panelHeader):not(.tableHead) {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(5rem, 0.55fr) minmax(5.5rem, 0.6fr) minmax(5rem, 0.6fr);
@@ -289,9 +304,10 @@
   border-top: 1px solid rgba(26, 193, 185, 0.08);
   color: #64748b;
   font-size: 0.72rem;
+  animation: fadeIn var(--scene-duration) ease-out infinite;
 }
 
-.workflowTable .tableHead {
+.tableHead {
   border-top: 0;
   color: #94a3b8;
   font-size: 0.66rem;
@@ -314,30 +330,100 @@
   font-style: normal;
 }
 
+.sceneDots {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  pointer-events: none;
+
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: rgba(26, 193, 185, 0.3);
+    animation: dotPulse var(--scene-duration) ease-in-out infinite;
+
+    &:nth-child(1) { animation-delay: 0s; }
+    &:nth-child(2) { animation-delay: 4.5s; }
+    &:nth-child(3) { animation-delay: 9s; }
+    &:nth-child(4) { animation-delay: 13.5s; }
+  }
+}
+
+@keyframes sceneCarousel {
+  0% { transform: translateX(0); }
+  20%, 25% { transform: translateX(-25%); }
+  45%, 50% { transform: translateX(-50%); }
+  70%, 75% { transform: translateX(-75%); }
+  95%, 100% { transform: translateX(-100%); }
+}
+
+@keyframes cardPopIn {
+  0%, 20% { opacity: 0; transform: scale(0.9); }
+  25%, 95% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes slideDown {
+  0%, 20% { opacity: 0; transform: translateY(-10px); }
+  25%, 95% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes chartGrow {
+  0%, 20% { opacity: 0; width: 0%; }
+  25%, 95% { opacity: 1; width: 100%; }
+  100% { opacity: 0; width: 0%; }
+}
+
+@keyframes donutSpin {
+  0%, 20% { opacity: 0; transform: scale(0.8) rotate(-90deg); }
+  25%, 95% { opacity: 1; transform: scale(1) rotate(270deg); }
+  100% { opacity: 0; transform: scale(0.8) rotate(-90deg); }
+}
+
+@keyframes slideIn {
+  0%, 20% { opacity: 0; transform: translateX(-20px); }
+  25%, 95% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-20px); }
+}
+
+@keyframes fadeIn {
+  0%, 20% { opacity: 0; }
+  25%, 95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes dotPulse {
+  0% { background: rgba(26, 193, 185, 0.3); }
+  50% { background: rgba(26, 193, 185, 0.8); }
+  100% { background: rgba(26, 193, 185, 0.3); }
+}
+
 @media (max-width: 860px) {
   .opsVisual {
     grid-template-columns: 1fr;
-    min-height: auto;
   }
 
   .visualRail {
     display: none;
   }
 
-  .visualMetrics,
-  .visualDashboardGrid,
-  .workflowStatus {
-    grid-template-columns: 1fr;
-  }
-
-  .workflowTable .tableHead,
-  .workflowTable > div:not(.panelHeader):not(.tableHead) {
-    grid-template-columns: 1fr;
+  .visualMetrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 520px) {
   .visualMain {
     padding: 1rem;
+  }
+
+  .sceneDots {
+    bottom: 0.75rem;
+    right: 0.75rem;
   }
 }
