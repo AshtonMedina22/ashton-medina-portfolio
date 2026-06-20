@@ -72,7 +72,7 @@ const fonts: FontsConfig = {
 };
 
 const style: StyleConfig = {
-  theme: "dark", // dark | light | system
+  theme: "light", // dark | light | system
   neutral: "custom" as NeutralColor, // custom palette: bg #0B1020, text #F9FAFB (see custom.css)
   brand: "custom" as Schemes, // indigo #6366F1 → violet #A855F7
   accent: "custom" as Schemes, // neon #22D3EE
