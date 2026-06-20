@@ -70,17 +70,17 @@
   :global(.headingAccent) {
     display: inline;
     color: #ffffff;
-    background: linear-gradient(135deg, #1AC1B9 0%, #F9447F 100%);
-    padding: 0.15em 0.4em;
-    border-radius: 0.25em;
+    background: #1AC1B9;
+    padding: 0.25em 0.5em;
+    border-radius: 0.35em;
   }
 }
 
 .sectionIntro h2 :global(.headingAccent) {
   color: #ffffff;
-  background: linear-gradient(135deg, #1AC1B9 0%, #F9447F 100%);
-  padding: 0.15em 0.4em;
-  border-radius: 0.25em;
+  background: #1AC1B9;
+  padding: 0.25em 0.5em;
+  border-radius: 0.35em;
 }
 
 .heroContent p {
