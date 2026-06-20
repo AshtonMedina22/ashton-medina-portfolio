@@ -471,12 +471,13 @@
 
 @media (max-width: 760px) {
   .aboutPage {
-    width: 100vw;
-    padding: 5rem 1rem 3rem;
+    width: 100%;
+    padding: 5rem 0 3rem;
   }
 
   .resumeShell {
-    max-width: 100%;
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
   }
 
   .profileHeader {
