@@ -1,13 +1,13 @@
 .demoFrame {
-  --demo-ink: #0f172a;
+  --demo-ink: #1a1a1a;
   --demo-muted: #64748b;
   --demo-soft: #94a3b8;
-  --demo-border: rgba(15, 23, 42, 0.1);
-  --demo-panel: rgba(255, 255, 255, 0.92);
-  --demo-violet: #635bff;
-  --demo-cyan: #0891b2;
-  --demo-green: #16a34a;
-  --demo-amber: #d97706;
+  --demo-border: rgba(26, 193, 185, 0.12);
+  --demo-panel: rgba(255, 255, 255, 0.95);
+  --demo-violet: #7F95E4;
+  --demo-cyan: #1AC1B9;
+  --demo-green: #22c55e;
+  --demo-amber: #FBD160;
   --scene-duration: 24s;
 
   position: relative;
@@ -33,9 +33,9 @@
 .backgroundGlow {
   z-index: -2;
   background:
-    radial-gradient(circle at 20% 12%, rgba(99, 91, 255, 0.14), transparent 15rem),
-    radial-gradient(circle at 88% 18%, rgba(8, 145, 178, 0.14), transparent 16rem),
-    linear-gradient(135deg, #f8fafc 0%, #eef4fb 100%);
+    radial-gradient(circle at 20% 12%, rgba(127, 149, 228, 0.12), transparent 15rem),
+    radial-gradient(circle at 88% 18%, rgba(26, 193, 185, 0.12), transparent 16rem),
+    linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
 }
 
 .subtleGrid {
@@ -119,11 +119,11 @@
 
 .sourceHighlight {
   position: relative;
-  border-color: rgba(99, 91, 255, 0.42);
-  background: rgba(99, 91, 255, 0.08);
+  border-color: rgba(26, 193, 185, 0.35);
+  background: rgba(26, 193, 185, 0.08);
   box-shadow:
-    0 0 0 3px rgba(99, 91, 255, 0.08),
-    0 12px 28px rgba(99, 91, 255, 0.12);
+    0 0 0 3px rgba(26, 193, 185, 0.08),
+    0 12px 28px rgba(26, 193, 185, 0.1);
   animation: sourcePulse var(--scene-duration) ease-in-out infinite;
 }
 
@@ -133,7 +133,7 @@
   display: block;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(99, 91, 255, 0), rgba(99, 91, 255, 0.76), rgba(8, 145, 178, 0.78));
+  background: linear-gradient(90deg, rgba(127, 149, 228, 0), rgba(127, 149, 228, 0.7), rgba(26, 193, 185, 0.7));
   transform-origin: left center;
   opacity: 0;
   animation: connectorDraw var(--scene-duration) ease-in-out infinite;
@@ -145,11 +145,11 @@
 .movingTaskCard {
   position: absolute;
   z-index: 6;
-  border: 1px solid rgba(15, 23, 42, 0.09);
-  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(26, 193, 185, 0.15);
+  background: rgba(255, 255, 255, 0.97);
   box-shadow:
-    0 30px 70px rgba(15, 23, 42, 0.2),
-    0 10px 24px rgba(99, 91, 255, 0.1),
+    0 30px 70px rgba(26, 193, 185, 0.12),
+    0 10px 24px rgba(127, 149, 228, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
   transform: translate3d(var(--from-x, 0), var(--from-y, 0), 0) scale(0.72);
   opacity: 0;
