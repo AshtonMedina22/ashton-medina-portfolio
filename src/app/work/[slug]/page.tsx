@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { baseURL, about, buildProjectJsonLd, person, work } from "@/resources";
 import { getProjectEyebrow } from "@/resources/projects";
 import { CustomMDX } from "@/components/shared/mdx";
 import { TechStack } from "@/components/work/TechStack";
@@ -68,21 +68,31 @@ export async function generateMetadata({
 
   if (!post) return {};
 
+  const seoTitle = post.metadata.seoTitle || post.metadata.title;
+  const seoDescription = post.metadata.seoDescription || post.metadata.summary;
+  const image =
+    post.metadata.image ||
+    `/api/og/generate?title=${encodeURIComponent(seoTitle)}&subtitle=${encodeURIComponent(seoDescription)}`;
+
   const base = Meta.generate({
-    title: post.metadata.title,
-    description: post.metadata.summary,
+    title: seoTitle,
+    description: seoDescription,
     baseURL: baseURL,
-    image:
-      post.metadata.image ||
-      `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}&subtitle=${encodeURIComponent(post.metadata.summary)}`,
+    image,
     path: `${work.path}/${post.slug}`,
   });
   return {
     ...base,
-    title: post.metadata.title,
+    description: seoDescription,
+    keywords: post.metadata.keywords || [],
+    alternates: {
+      canonical: `${baseURL}${work.path}/${post.slug}`,
+    },
+    title: seoTitle,
     openGraph: {
       ...(typeof base?.openGraph === "object" && base.openGraph),
-      title: post.metadata.title,
+      title: seoTitle,
+      description: seoDescription,
     },
   };
 }
@@ -105,9 +115,25 @@ export default async function Project({
 
   const demo = post.metadata.demo ? renderDemo(slugPath) : null;
   const { intro, remainder } = splitContentForDemo(post.content);
+  const projectJsonLd = buildProjectJsonLd({
+    slug: post.slug,
+    title: post.metadata.seoTitle || post.metadata.title,
+    description: post.metadata.seoDescription || post.metadata.summary,
+    image: post.metadata.image || post.metadata.images?.[0],
+    publishedAt: post.metadata.publishedAt,
+    keywords: post.metadata.keywords || [],
+    techStack: post.metadata.techStack || [],
+  });
 
   return (
     <main className={styles.pageWrap}>
+      <script
+        id="project-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Schema
         as="blogPosting"
         baseURL={baseURL}
