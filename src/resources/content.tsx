@@ -93,7 +93,8 @@ const techStack: Array<{ name: string; icon: string | null }> = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image:
+    "/api/og/generate?title=Ashton%20Medina%20Portfolio&subtitle=Business%20operations%2C%20systems%20implementation%2C%20workflow%20automation%2C%20and%20operational%20reporting",
   label: "Home",
   title: "Ashton Medina - Business Operations & Implementation Manager | Portfolio",
   description:
@@ -167,7 +168,8 @@ const about: About = {
       },
       {
         title: "Business Systems Implementation",
-        description: "Platform implementation work grounded in requirements, testing, rollout, and adoption.",
+        description:
+          "Platform implementation work grounded in requirements, testing, rollout, and adoption.",
         bullets: [
           "Requirements gathering and configuration support",
           "UAT, phased rollout, and training",
@@ -176,7 +178,8 @@ const about: About = {
       },
       {
         title: "Systems Integration",
-        description: "Connecting business tools so information moves with less duplicate entry and fewer gaps.",
+        description:
+          "Connecting business tools so information moves with less duplicate entry and fewer gaps.",
         bullets: [
           "API, webhook, and platform automation",
           "CRM, ERP, payments, telematics",
@@ -205,7 +208,8 @@ const about: About = {
       },
       {
         title: "Technical Execution",
-        description: "Ability to bridge business requirements with practical technical implementation.",
+        description:
+          "Ability to bridge business requirements with practical technical implementation.",
         bullets: [
           "Software development and automation",
           "Dashboard and data model design",

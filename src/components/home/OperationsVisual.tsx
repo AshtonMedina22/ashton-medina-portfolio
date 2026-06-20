@@ -1,120 +1,308 @@
+import type { CSSProperties } from "react";
 import styles from "./OperationsVisual.module.scss";
 
-const workflowRows = [
-  ["Requirements discovery", "Mapped", "Analysis", "Stakeholders"],
-  ["Process standardization", "Documented", "Operations", "Team leads"],
-  ["Platform implementation", "Active", "Systems", "Implementation"],
-  ["Reporting cadence", "Visible", "Data", "Leadership"],
-  ["Training and adoption", "Embedded", "People", "Operators"],
-] as const;
+type PillTone = "violet" | "cyan" | "green" | "amber" | "rose";
+
+type ProductScene = {
+  kicker: string;
+  title: string;
+  nav: string[];
+  metrics: Array<{ label: string; value: string; tone: PillTone }>;
+  activity: Array<{ title: string; detail: string; status: string; tone: PillTone }>;
+  chart: number[];
+  feature: {
+    label: string;
+    title: string;
+    body: string;
+    tone: PillTone;
+  };
+  mobile: {
+    title: string;
+    value: string;
+    label: string;
+  };
+};
+
+const scenes: ProductScene[] = [
+  {
+    kicker: "SaaS Command Center",
+    title: "Live product dashboard for delivery, reporting, and integrations.",
+    nav: ["Dashboard", "Projects", "Automation", "Reports", "Integrations"],
+    metrics: [
+      { label: "Projects", value: "24", tone: "violet" },
+      { label: "Automation", value: "18", tone: "cyan" },
+      { label: "Reports", value: "42", tone: "green" },
+    ],
+    activity: [
+      {
+        title: "Data synced 2m ago",
+        detail: "CRM, tasks, and analytics connected",
+        status: "Live",
+        tone: "green",
+      },
+      {
+        title: "Integration check",
+        detail: "Webhook queue processed",
+        status: "Synced",
+        tone: "cyan",
+      },
+      {
+        title: "Dashboard refresh",
+        detail: "Weekly product KPIs updated",
+        status: "Ready",
+        tone: "violet",
+      },
+    ],
+    chart: [38, 52, 45, 68, 74, 88],
+    feature: {
+      label: "Command Center",
+      title: "One interface for projects, workflows, and reports.",
+      body: "Readable product UI for business systems, delivery tracking, and analytics.",
+      tone: "violet",
+    },
+    mobile: {
+      title: "Analytics",
+      value: "92%",
+      label: "Adoption",
+    },
+  },
+  {
+    kicker: "Workflow Automation",
+    title: "Requests move from intake to launch with automated routing.",
+    nav: ["Intake", "Review", "Build", "Launch", "Tasks"],
+    metrics: [
+      { label: "Intake", value: "12", tone: "cyan" },
+      { label: "Review", value: "7", tone: "amber" },
+      { label: "Launch", value: "5", tone: "green" },
+    ],
+    activity: [
+      {
+        title: "Auto-route request",
+        detail: "New workflow assigned by rules",
+        status: "Active",
+        tone: "cyan",
+      },
+      {
+        title: "Build handoff",
+        detail: "Tasks generated for delivery",
+        status: "Ready",
+        tone: "green",
+      },
+      {
+        title: "QA reminder",
+        detail: "Review owner notified",
+        status: "Synced",
+        tone: "violet",
+      },
+    ],
+    chart: [22, 34, 48, 62, 76, 90],
+    feature: {
+      label: "Automation Trigger",
+      title: "If request is approved, create tasks and notify owners.",
+      body: "Connector lines, status chips, and routing logic stay visible to users.",
+      tone: "cyan",
+    },
+    mobile: {
+      title: "Workflow",
+      value: "Active",
+      label: "Auto-route request",
+    },
+  },
+  {
+    kicker: "Implementation Tracker",
+    title: "Discovery, configuration, testing, and rollout in one build view.",
+    nav: ["Discovery", "Configuration", "Testing", "Rollout", "Deployments"],
+    metrics: [
+      { label: "Discovery", value: "Done", tone: "green" },
+      { label: "Testing", value: "9", tone: "violet" },
+      { label: "Rollout", value: "82%", tone: "cyan" },
+    ],
+    activity: [
+      {
+        title: "Launch readiness 82%",
+        detail: "Configuration and testing on track",
+        status: "Ready",
+        tone: "green",
+      },
+      {
+        title: "Blocker resolved",
+        detail: "CRM field mapping approved",
+        status: "Synced",
+        tone: "cyan",
+      },
+      {
+        title: "Rollout checklist",
+        detail: "Training notes prepared",
+        status: "Active",
+        tone: "violet",
+      },
+    ],
+    chart: [18, 42, 58, 64, 82, 82],
+    feature: {
+      label: "Implementation",
+      title: "Launch readiness 82% with clear blockers and owners.",
+      body: "A compact tracker keeps discovery, testing, rollout, and adoption aligned.",
+      tone: "green",
+    },
+    mobile: {
+      title: "Rollout",
+      value: "82%",
+      label: "Launch readiness",
+    },
+  },
+  {
+    kicker: "Reporting & Analytics",
+    title: "Weekly analytics translate activity into decision-ready reporting.",
+    nav: ["Analytics", "Reports", "CRM", "Tasks", "Dashboard"],
+    metrics: [
+      { label: "Cycle Time", value: "-31%", tone: "green" },
+      { label: "Adoption", value: "92%", tone: "cyan" },
+      { label: "Open Items", value: "14", tone: "amber" },
+    ],
+    activity: [
+      {
+        title: "Weekly report generated",
+        detail: "Leadership summary ready",
+        status: "Ready",
+        tone: "green",
+      },
+      {
+        title: "Analytics refresh",
+        detail: "Cycle Time and Adoption updated",
+        status: "Live",
+        tone: "cyan",
+      },
+      {
+        title: "Open Items review",
+        detail: "Priority tasks grouped by owner",
+        status: "Active",
+        tone: "amber",
+      },
+    ],
+    chart: [34, 46, 62, 58, 78, 94],
+    feature: {
+      label: "Report Summary",
+      title: "Weekly report generated from live workflow data.",
+      body: "Clean analytics panels make project health and adoption easy to scan.",
+      tone: "cyan",
+    },
+    mobile: {
+      title: "Reports",
+      value: "Live",
+      label: "Weekly report generated",
+    },
+  },
+];
+
+const toneClass: Record<PillTone, string> = {
+  violet: styles.toneViolet,
+  cyan: styles.toneCyan,
+  green: styles.toneGreen,
+  amber: styles.toneAmber,
+  rose: styles.toneRose,
+};
 
 export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean }) {
   return (
     <div
-      className={styles.opsVisual}
+      className={styles.productVisual}
       data-hero-scaled={heroScaled ? "" : undefined}
-      aria-label="Operational command-center product preview"
+      aria-label="Animated SaaS product demo preview"
     >
-      <div className={styles.visualRail} aria-hidden>
-        <span className={styles.logoMark}>A</span>
-        <span className={styles.activeIcon}>Home</span>
-        <span>Strategy</span>
-        <span>Process</span>
-        <span>Systems</span>
-        <span>Reporting</span>
+      <div className={styles.frameGlow} aria-hidden />
+      <div className={styles.productShell}>
+        <div className={styles.windowBar} aria-hidden>
+          <span />
+          <span />
+          <span />
+        </div>
+
+        <div className={styles.sceneViewport}>
+          <div className={styles.sceneTrack}>
+            {scenes.map((scene) => (
+              <section className={styles.scene} key={scene.kicker} aria-label={scene.kicker}>
+                <aside className={styles.miniRail} aria-label={`${scene.kicker} navigation`}>
+                  <div className={styles.railMark}>AM</div>
+                  {scene.nav.map((item, index) => (
+                    <span key={item} className={index === 0 ? styles.activeNavItem : undefined}>
+                      {item}
+                    </span>
+                  ))}
+                </aside>
+
+                <div className={styles.appCanvas}>
+                  <header className={styles.appHeader}>
+                    <div>
+                      <span className={styles.sceneKicker}>{scene.kicker}</span>
+                      <h3>{scene.title}</h3>
+                    </div>
+                    <span className={styles.liveBadge}>Live</span>
+                  </header>
+
+                  <div className={styles.metricGrid}>
+                    {scene.metrics.map((metric) => (
+                      <div className={styles.metricCard} key={`${scene.kicker}-${metric.label}`}>
+                        <span>{metric.label}</span>
+                        <strong className={toneClass[metric.tone]}>{metric.value}</strong>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className={styles.workspaceGrid}>
+                    <div className={styles.activityPanel}>
+                      <div className={styles.panelTitle}>Activity</div>
+                      {scene.activity.map((item) => (
+                        <div className={styles.activityRow} key={`${scene.kicker}-${item.title}`}>
+                          <div>
+                            <strong>{item.title}</strong>
+                            <span>{item.detail}</span>
+                          </div>
+                          <em className={toneClass[item.tone]}>{item.status}</em>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className={styles.chartPanel}>
+                      <div className={styles.panelTitle}>Trend</div>
+                      <div className={styles.chartBars} aria-hidden>
+                        {scene.chart.map((height, index) => (
+                          <span
+                            key={`${scene.kicker}-bar-${index}`}
+                            style={{ "--bar-height": `${height}%` } as CSSProperties}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`${styles.featureCard} ${toneClass[scene.feature.tone]}`}>
+                    <span>{scene.feature.label}</span>
+                    <strong>{scene.feature.title}</strong>
+                    <p>{scene.feature.body}</p>
+                  </div>
+
+                  <div className={styles.mobileCard}>
+                    <span>{scene.mobile.title}</span>
+                    <strong>{scene.mobile.value}</strong>
+                    <em>{scene.mobile.label}</em>
+                  </div>
+
+                  <div className={styles.connectorLayer} aria-hidden>
+                    <span className={styles.connectorOne} />
+                    <span className={styles.connectorTwo} />
+                    <span className={styles.connectorDot} />
+                  </div>
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className={styles.visualMain}>
-        <div className={styles.visualTopbar}>
-          <strong>Operating Model Workspace</strong>
-          <span>Business systems view</span>
-        </div>
-        <div className={styles.visualMetrics}>
-          <div>
-            <span>Discovery</span>
-            <strong>Analysis</strong>
-            <em>Requirements and constraints</em>
-          </div>
-          <div>
-            <span>Execution</span>
-            <strong>Process</strong>
-            <em>Repeatable operating flow</em>
-          </div>
-          <div>
-            <span>Delivery</span>
-            <strong>Implementation</strong>
-            <em>Tools, rollout, adoption</em>
-          </div>
-          <div>
-            <span>Management</span>
-            <strong>Visibility</strong>
-            <em>KPIs and decision context</em>
-          </div>
-        </div>
 
-        <div className={styles.visualDashboardGrid}>
-          <section className={styles.workflowChart}>
-            <div className={styles.panelHeader}>Operating improvement path</div>
-            <div className={styles.chartFrame} aria-hidden>
-              <span style={{ inlineSize: "16%" }} />
-              <span style={{ inlineSize: "34%" }} />
-              <span style={{ inlineSize: "48%" }} />
-              <span style={{ inlineSize: "67%" }} />
-              <span style={{ inlineSize: "82%" }} />
-              <span style={{ inlineSize: "94%" }} />
-            </div>
-            <div className={styles.chartLabels}>
-              <span>Review</span>
-              <span>Design</span>
-              <span>Implement</span>
-              <span>Adopt</span>
-            </div>
-          </section>
-
-          <section className={styles.workflowStatus}>
-            <div className={styles.panelHeader}>Workflow status</div>
-            <div className={styles.statusDonut} aria-hidden />
-            <div className={styles.statusLegend}>
-              <span>
-                <i className={styles.completeDot} />
-                <em>Standardized</em>
-                <strong>Ready</strong>
-              </span>
-              <span>
-                <i className={styles.activeDot} />
-                <em>In progress</em>
-                <strong>Active</strong>
-              </span>
-              <span>
-                <i className={styles.waitingDot} />
-                <em>Review path</em>
-                <strong>Open</strong>
-              </span>
-              <span>
-                <i className={styles.blockedDot} />
-                <em>Exception handling</em>
-                <strong>Flagged</strong>
-              </span>
-            </div>
-          </section>
-        </div>
-
-        <section className={styles.workflowTable}>
-          <div className={styles.panelHeader}>Operating model workstreams</div>
-          <div className={styles.tableHead}>
-            <span>Workstream</span>
-            <span>Status</span>
-            <span>Layer</span>
-            <span>Owner</span>
-          </div>
-          {workflowRows.map(([workflow, status, record, owner]) => (
-            <div key={workflow}>
-              <span>{workflow}</span>
-              <strong data-state={status}>{status}</strong>
-              <em>{record}</em>
-              <em>{owner}</em>
-            </div>
-          ))}
-        </section>
+      <div className={styles.sceneDots} aria-hidden>
+        {scenes.map((scene, index) => (
+          <span key={scene.kicker} style={{ "--dot-index": index } as CSSProperties} />
+        ))}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export async function generateMetadata() {
     title: gallery.title,
     description: gallery.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(gallery.title)}`,
+    image: `/api/og/generate?title=${encodeURIComponent(gallery.title)}&subtitle=${encodeURIComponent(gallery.description)}`,
     path: gallery.path,
   });
 }
@@ -15,21 +15,24 @@ export async function generateMetadata() {
 export default function Gallery() {
   return (
     <Flex maxWidth="l">
-      <div className="sectionHue" style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title={gallery.title}
-        description={gallery.description}
-        path={gallery.path}
-        image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${gallery.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <GalleryView />
+      <div
+        className="sectionHue"
+        style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
+        <Schema
+          as="webPage"
+          baseURL={baseURL}
+          title={gallery.title}
+          description={gallery.description}
+          path={gallery.path}
+          image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}&subtitle=${encodeURIComponent(gallery.description)}`}
+          author={{
+            name: person.name,
+            url: `${baseURL}${gallery.path}`,
+            image: `${baseURL}${person.avatar}`,
+          }}
+        />
+        <GalleryView />
       </div>
     </Flex>
   );
