@@ -110,51 +110,54 @@
 
   span {
     min-width: 0;
-    padding: 1rem 0.85rem;
-    border: 2px solid;
-    border-radius: 12px;
-    font-size: var(--type-label);
-    font-weight: 700;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #1a1a1a;
+    background: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
     letter-spacing: 0.05em;
-    line-height: 1.35;
+    line-height: 1.3;
     text-align: center;
     text-transform: uppercase;
-    transition: all 200ms ease;
+    transition: all 160ms ease;
+    position: relative;
 
-    &:nth-child(1) {
-      color: #1AC1B9;
-      border-color: #1AC1B9;
-      background: rgba(26, 193, 185, 0.08);
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background: transparent;
+      box-shadow: 0 0 0 0px transparent;
+      transition: all 160ms ease;
+      pointer-events: none;
     }
 
-    &:nth-child(2) {
-      color: #F9447F;
-      border-color: #F9447F;
-      background: rgba(249, 68, 127, 0.08);
+    &:nth-child(1)::before {
+      box-shadow: inset 0 0 16px rgba(26, 193, 185, 0.12);
     }
 
-    &:nth-child(3) {
-      color: #7F95E4;
-      border-color: #7F95E4;
-      background: rgba(127, 149, 228, 0.08);
+    &:nth-child(2)::before {
+      box-shadow: inset 0 0 16px rgba(249, 68, 127, 0.12);
     }
 
-    &:nth-child(4) {
-      color: #FBD160;
-      border-color: #FBD160;
-      background: rgba(251, 209, 96, 0.08);
+    &:nth-child(3)::before {
+      box-shadow: inset 0 0 16px rgba(127, 149, 228, 0.12);
     }
 
-    &:nth-child(5) {
-      color: #FF8017;
-      border-color: #FF8017;
-      background: rgba(255, 128, 23, 0.08);
+    &:nth-child(4)::before {
+      box-shadow: inset 0 0 16px rgba(251, 209, 96, 0.12);
+    }
+
+    &:nth-child(5)::before {
+      box-shadow: inset 0 0 16px rgba(255, 128, 23, 0.12);
     }
 
     &:hover {
-      background-color: inherit;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px currentColor;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
     }
   }
 }
