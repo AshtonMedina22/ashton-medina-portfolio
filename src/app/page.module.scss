@@ -70,7 +70,7 @@
   :global(.headingAccent) {
     display: inline;
     color: transparent;
-    background-image: linear-gradient(92deg, #7F95E4 0%, #1AC1B9 33%, #F9447F 66%, #FBD160 100%);
+    background-image: linear-gradient(92deg, #7F95E4 0%, #1AC1B9 45%, #22c55e 50%, #F9447F 55%, #FF8017 75%, #FBD160 100%);
     background-clip: text;
     -webkit-background-clip: text;
   }
@@ -78,7 +78,7 @@
 
 .sectionIntro h2 :global(.headingAccent) {
   color: transparent;
-  background-image: linear-gradient(92deg, #7F95E4 0%, #1AC1B9 33%, #F9447F 66%, #FBD160 100%);
+  background-image: linear-gradient(92deg, #7F95E4 0%, #1AC1B9 45%, #22c55e 50%, #F9447F 55%, #FF8017 75%, #FBD160 100%);
   background-clip: text;
   -webkit-background-clip: text;
 }
