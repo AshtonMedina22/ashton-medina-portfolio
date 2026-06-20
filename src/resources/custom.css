@@ -1,27 +1,27 @@
 /* ==========================================================================
-   Modern minimal palette — clean, professional
-   - Slate/neutral base with restrained violet, blue, cyan, and green accents
-   - Gradients are reserved for major emphasis text and key product moments
-   - Page depth comes from surfaces and hierarchy, not a purple background wash
+   Jasmine Lagoon palette — focused, high-contrast portfolio theme
+   - Cream, sea-glass teal, lagoon cyan, violet, and deep navy
+   - Gradients stay inside this palette instead of mixing unrelated accent sets
+   - Page depth comes from surfaces and hierarchy, not a rainbow background wash
    ========================================================================== */
 
 /* Custom palette (data-neutral/brand/accent=custom) */
 :root {
-  --scheme-brand-100: #0f0a1e;
-  --scheme-brand-200: #1e1b2e;
-  --scheme-brand-300: #2e1064;
-  --scheme-brand-400: #5b21b6;
-  --scheme-brand-500: #7c3aed;
-  --scheme-brand-600: #a78bfa;
-  --scheme-brand-700: #c4b5fd;
-  --scheme-brand-800: #ddd6fe;
-  --scheme-brand-900: #ede9fe;
-  --scheme-brand-1000: #f5f3ff;
-  --scheme-brand-1100: #faf5ff;
-  --scheme-brand-1200: #fdf4ff;
-  --scheme-brand-600-15: rgba(167, 139, 250, 0.15);
-  --scheme-brand-600-30: rgba(167, 139, 250, 0.3);
-  --scheme-brand-600-50: rgba(167, 139, 250, 0.5);
+  --scheme-brand-100: #020a1d;
+  --scheme-brand-200: #06173a;
+  --scheme-brand-300: #002d72;
+  --scheme-brand-400: #573894;
+  --scheme-brand-500: #81459e;
+  --scheme-brand-600: #09cdcd;
+  --scheme-brand-700: #a0e5d9;
+  --scheme-brand-800: #c6f0e8;
+  --scheme-brand-900: #e4f5f1;
+  --scheme-brand-1000: #f9f7ec;
+  --scheme-brand-1100: #fbfaf2;
+  --scheme-brand-1200: #ffffff;
+  --scheme-brand-600-15: rgba(9, 205, 205, 0.15);
+  --scheme-brand-600-30: rgba(9, 205, 205, 0.3);
+  --scheme-brand-600-50: rgba(9, 205, 205, 0.5);
 
   --scheme-accent-100: var(--scheme-brand-100);
   --scheme-accent-200: var(--scheme-brand-200);
@@ -39,46 +39,45 @@
   --scheme-accent-600-30: var(--scheme-brand-600-30);
   --scheme-accent-600-50: var(--scheme-brand-600-50);
 
-  /* Neutrals: zinc/slate-style for modern minimal */
-  --scheme-neutral-100: #09090b;
-  --scheme-neutral-200: #18181b;
-  --scheme-neutral-300: #27272a;
-  --scheme-neutral-400: #3f3f46;
-  --scheme-neutral-500: #52525b;
-  --scheme-neutral-600: #71717a;
-  --scheme-neutral-700: #a1a1aa;
-  --scheme-neutral-800: #d4d4d8;
-  --scheme-neutral-900: #e4e4e7;
-  --scheme-neutral-1000: #f4f4f5;
-  --scheme-neutral-1100: #fafafa;
-  --scheme-neutral-1200: #fcfcfc;
-  --scheme-neutral-600-15: rgba(113, 113, 122, 0.15);
-  --scheme-neutral-600-30: rgba(113, 113, 122, 0.3);
-  --scheme-neutral-600-50: rgba(113, 113, 122, 0.5);
+  /* Neutrals: navy-tinted for a cohesive dark theme */
+  --scheme-neutral-100: #020a1d;
+  --scheme-neutral-200: #06173a;
+  --scheme-neutral-300: #0a2252;
+  --scheme-neutral-400: #28406f;
+  --scheme-neutral-500: #4d5f88;
+  --scheme-neutral-600: #7280a0;
+  --scheme-neutral-700: #a7b0c7;
+  --scheme-neutral-800: #d8f2ee;
+  --scheme-neutral-900: #e4f5f1;
+  --scheme-neutral-1000: #f9f7ec;
+  --scheme-neutral-1100: #fbfaf2;
+  --scheme-neutral-1200: #ffffff;
+  --scheme-neutral-600-15: rgba(114, 128, 160, 0.15);
+  --scheme-neutral-600-30: rgba(114, 128, 160, 0.3);
+  --scheme-neutral-600-50: rgba(114, 128, 160, 0.5);
 
-  --color-background: #09090b;
-  --color-text: #fafafa;
-  --color-accent: #38bdf8;
-  --color-violet: #8b5cf6;
-  --color-blue: #3b82f6;
-  --color-cyan: #38bdf8;
-  --color-green: #22c55e;
-  --accent-gradient: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
+  --color-background: #020a1d;
+  --color-text: #f9f7ec;
+  --color-accent: #09cdcd;
+  --color-violet: #81459e;
+  --color-blue: #002d72;
+  --color-cyan: #09cdcd;
+  --color-green: #a0e5d9;
+  --accent-gradient: linear-gradient(92deg, #002d72 0%, #573894 46%, #09cdcd 100%);
 
-  /* Primary action: restrained violet from the multi-accent system */
-  --button-primary: var(--scheme-brand-200);
-  --button-primary-hover: var(--scheme-brand-300);
-  /* Kept for demos / optional tints only; not used for CTAs */
-  --accent-soft: rgba(167, 139, 250, 0.16);
-  --accent-soft-strong: rgba(167, 139, 250, 0.28);
-  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.14);
-  --shadow-subtle: 0 1px 1px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.28);
+  /* Primary action: lagoon cyan against the navy system */
+  --button-primary: #09cdcd;
+  --button-primary-hover: #08b8b8;
+  --accent-soft: rgba(9, 205, 205, 0.16);
+  --accent-soft-strong: rgba(129, 69, 158, 0.26);
+  --shadow-soft: 0 1px 2px rgba(2, 10, 29, 0.08), 0 8px 24px rgba(2, 10, 29, 0.14);
+  --shadow-subtle: 0 1px 1px rgba(2, 10, 29, 0.06), 0 0 0 1px rgba(2, 10, 29, 0.28);
   --transition-fast: 0.16s ease-out;
   --transition-med: 0.22s ease-out;
 
   /* Success / positive (demos: Booked, Margin, project-created) */
-  --success-color: #22c55e;
-  --success-soft: rgba(34, 197, 94, 0.16);
+  --success-color: #09cdcd;
+  --success-soft: rgba(9, 205, 205, 0.16);
 
   /* Danger / negative (over-budget variance, errors) */
   --danger-color: #dc2626;
@@ -123,44 +122,42 @@
    DARK THEME
    -------------------------------------------------------------------------- */
 [data-theme="dark"] {
-  --page-background: #09090b;
-  --neutral-background-weak: #09090b;
-  --neutral-background-medium: #18181b;
-  --neutral-background-strong: #27272a;
-  --neutral-on-background-strong: #fafafa;
-  --neutral-on-background-medium: #d4d4d8;
-  --neutral-on-background-weak: #a1a1aa;
-  --brand-alpha-weak: rgba(167, 139, 250, 0.14);
-  --brand-alpha-medium: rgba(167, 139, 250, 0.25);
-  --brand-alpha-strong: rgba(167, 139, 250, 0.4);
-  /* Once UI primary buttons: restrained violet from the site accent set */
-  --brand-solid-strong: var(--scheme-brand-300);
-  --brand-solid-medium: var(--scheme-brand-200);
-  --brand-solid-weak: var(--scheme-brand-100);
-  --brand-on-solid-strong: #fafafa;
-  --brand-on-solid-weak: var(--scheme-brand-800);
+  --page-background: #020a1d;
+  --neutral-background-weak: #020a1d;
+  --neutral-background-medium: #06173a;
+  --neutral-background-strong: #0a2252;
+  --neutral-on-background-strong: #f9f7ec;
+  --neutral-on-background-medium: #d8f2ee;
+  --neutral-on-background-weak: #a0e5d9;
+  --brand-alpha-weak: rgba(9, 205, 205, 0.14);
+  --brand-alpha-medium: rgba(9, 205, 205, 0.25);
+  --brand-alpha-strong: rgba(129, 69, 158, 0.38);
+  --brand-solid-strong: #09cdcd;
+  --brand-solid-medium: #a0e5d9;
+  --brand-solid-weak: #573894;
+  --brand-on-solid-strong: #00163a;
+  --brand-on-solid-weak: #f9f7ec;
 }
 
 /* --------------------------------------------------------------------------
    LIGHT THEME
    -------------------------------------------------------------------------- */
 [data-theme="light"] {
-  --page-background: #ffffff;
-  --neutral-background-weak: #ffffff;
-  --neutral-background-medium: #f4f4f5;
-  --neutral-background-strong: #e4e4e7;
-  --neutral-on-background-strong: #18181b;
-  --neutral-on-background-medium: #3f3f46;
-  --neutral-on-background-weak: #71717a;
-  --brand-alpha-weak: rgba(167, 139, 250, 0.12);
-  --brand-alpha-medium: rgba(167, 139, 250, 0.22);
-  --brand-alpha-strong: rgba(167, 139, 250, 0.35);
-  /* Once UI primary buttons: restrained violet from the site accent set */
-  --brand-solid-strong: var(--scheme-brand-400);
-  --brand-solid-medium: var(--scheme-brand-300);
-  --brand-solid-weak: var(--scheme-brand-200);
-  --brand-on-solid-strong: #fafafa;
-  --brand-on-solid-weak: var(--scheme-brand-1000);
+  --page-background: #f9f7ec;
+  --neutral-background-weak: #f9f7ec;
+  --neutral-background-medium: #eef8f5;
+  --neutral-background-strong: #d8f2ee;
+  --neutral-on-background-strong: #002d72;
+  --neutral-on-background-medium: #28406f;
+  --neutral-on-background-weak: #573894;
+  --brand-alpha-weak: rgba(9, 205, 205, 0.12);
+  --brand-alpha-medium: rgba(9, 205, 205, 0.22);
+  --brand-alpha-strong: rgba(129, 69, 158, 0.32);
+  --brand-solid-strong: #002d72;
+  --brand-solid-medium: #573894;
+  --brand-solid-weak: #a0e5d9;
+  --brand-on-solid-strong: #f9f7ec;
+  --brand-on-solid-weak: #002d72;
 }
 
 [data-theme="dark"] body,
@@ -231,7 +228,7 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   Heading gradient accent — purple → blue → green emphasis on key phrase
+   Heading gradient accent — navy -> violet -> lagoon emphasis
    -------------------------------------------------------------------------- */
 .headingAccent,
 h1 .headingAccent,
@@ -247,14 +244,14 @@ h3 .headingAccent {
 }
 
 /* --------------------------------------------------------------------------
-   Primary CTAs & buttons — single violet, site-wide (professional)
+   Primary CTAs & buttons — lagoon cyan, site-wide
    -------------------------------------------------------------------------- */
 [data-variant="primary"],
 .ctaGradient,
 a.ctaGradient,
 button.ctaGradient {
   background: var(--button-primary) !important;
-  color: #fff !important;
+  color: #00163a !important;
   border: none;
   transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
