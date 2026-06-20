@@ -229,3 +229,11 @@
   .sectionTitle { max-width: 13.5ch; }
   .summaryPrimary, .summaryAside { width: 100%; }
 }
+
+@media (max-width: 760px) {
+  .resumeShell { width: calc(100vw - 1.5rem); max-width: calc(100vw - 1.5rem); }
+}
+
+@media (max-width: 420px) {
+  .resumeShell { width: calc(100vw - 1.25rem); max-width: calc(100vw - 1.25rem); }
+}
