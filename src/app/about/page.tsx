@@ -75,17 +75,21 @@ const competencies = [
   "Documentation & SOP Standards",
 ] as const;
 
-const technicalSkills = [
-  "ERP & CRM Platforms",
-  "Workflow & Process Automation",
-  "Executive Dashboards & KPI Reporting",
-  "Financial & Vendor System Controls",
-  "API Integrations & Data Sync",
-  "SQL & Operational Data Analysis",
-  "Python for Automation & Reporting",
-  "Platform Configuration & Administration",
-  "UAT, Testing & Production Rollout",
+const technicalSkillGroups = [
+  {
+    label: "Business Systems",
+    skills: ["ERP & CRM Platforms", "Financial & Vendor System Controls", "Platform Configuration & Administration"],
+  },
+  {
+    label: "Automation & Data",
+    skills: ["Workflow & Process Automation", "API Integrations & Data Sync", "SQL & Operational Data Analysis", "Python for Automation & Reporting"],
+  },
+  {
+    label: "Delivery & Rollout",
+    skills: ["Executive Dashboards & KPI Reporting", "UAT, Testing & Production Rollout"],
+  },
 ] as const;
+
 
 export default function About() {
   return (
@@ -111,7 +115,7 @@ export default function About() {
           </div>
           <div className={styles.profileInfo}>
             <h1>{person.name}</h1>
-            <p className={styles.profileRole}>{person.role}</p>
+            <p className={styles.profileRole}>TechOps Director</p>
             {person.locationLabel && (
               <p className={styles.profileLocation}>{person.locationLabel}</p>
             )}
@@ -200,9 +204,16 @@ export default function About() {
                 </h2>
               </div>
             </div>
-            <div className={styles.competencyGrid}>
-              {technicalSkills.map((skill) => (
-                <span key={skill}>{skill}</span>
+            <div className={styles.skillsGroupContainer}>
+              {technicalSkillGroups.map((group) => (
+                <div key={group.label} className={styles.skillGroup}>
+                  <h3 className={styles.skillGroupLabel}>{group.label}</h3>
+                  <div className={styles.skillChips}>
+                    {group.skills.map((skill) => (
+                      <span key={skill} className={styles.skillChip}>{skill}</span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </section>
