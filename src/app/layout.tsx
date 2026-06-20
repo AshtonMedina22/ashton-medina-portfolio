@@ -19,7 +19,7 @@ import { Footer } from "@/components/layout/Footer";
 import { RouteGuard } from "@/components/layout/RouteGuard";
 import { Providers } from "@/components/layout/Providers";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+import { baseURL, buildSiteJsonLd, effects, fonts, seoKeywords, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
   const base = Meta.generate({
@@ -35,6 +35,14 @@ export async function generateMetadata() {
     title: {
       default: base?.title && typeof base.title === "string" ? base.title : home.title,
       template: "%s | Ashton Medina",
+    },
+    description: home.description,
+    keywords: seoKeywords,
+    creator: "Ashton Medina",
+    publisher: "Ashton Medina",
+    authors: [{ name: "Ashton Medina", url: baseURL }],
+    alternates: {
+      canonical: baseURL,
     },
     icons: {
       icon: "/favicon.ico",
@@ -62,6 +70,13 @@ export default async function RootLayout({
       )}
     >
       <head>
+        <script
+          id="site-json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(buildSiteJsonLd()).replace(/</g, "\\u003c"),
+          }}
+        />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
