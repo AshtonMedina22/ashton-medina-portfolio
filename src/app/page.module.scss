@@ -17,9 +17,9 @@
 .heroSection {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: clamp(2rem, 3.2vw, 4rem);
+  gap: clamp(2.5rem, 4vw, 4.5rem);
   margin-top: clamp(0.5rem, 1.5vw, 1.25rem);
   padding: clamp(2rem, 3.5vw, 3.5rem);
   border: 1px solid rgba(26, 193, 185, 0.2);
@@ -63,8 +63,8 @@
 
 .heroContent h1 {
   margin-top: 1.35rem;
-  font-size: clamp(2.35rem, 3.6vw, 3.85rem);
-  line-height: 0.98;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  line-height: 1;
   text-wrap: balance;
 
   :global(.headingAccent) {
@@ -96,6 +96,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: flex-start;
 }
 
 .proofStrip {
