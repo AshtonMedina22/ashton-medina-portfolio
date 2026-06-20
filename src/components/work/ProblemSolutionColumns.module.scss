@@ -1,23 +1,23 @@
 .root {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
-  margin: clamp(2rem, 4vw, 3rem) 0;
+  margin: clamp(1.5rem, 3vw, 2.5rem) 0;
 }
 
 .columnProblem,
 .columnSolution {
   min-width: 0;
-  padding: clamp(1.1rem, 2vw, 1.5rem);
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border: 1px solid rgba(0, 45, 114, 0.12);
   border-radius: 14px;
-  background: rgba(18, 24, 38, 0.48);
-  box-shadow: none;
+  background: rgba(240, 244, 255, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 45, 114, 0.04);
 
   h2 {
     margin: 0 0 1rem;
-    color: var(--project-text, #f8fafc);
+    color: var(--project-text, #0f172a);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
     font-size: clamp(1.45rem, 2.5vw, 2rem);
     font-weight: 700;
@@ -28,7 +28,7 @@
 
   p {
     margin: 0 0 0.85rem;
-    color: var(--project-muted, #94a3b8);
+    color: var(--project-muted, #475569);
     font-size: var(--type-body);
     line-height: 1.7;
     overflow-wrap: break-word;
@@ -40,14 +40,14 @@
 }
 
 .columnProblem {
-  border-left-color: rgba(148, 163, 184, 0.34);
+  border-left: 3px solid #002D72;
 }
 
 .columnSolution {
-  border-left-color: var(--project-cyan, #06b6d4);
+  border-left: 3px solid #09CDCD;
   background:
-    linear-gradient(135deg, rgba(6, 182, 212, 0.06), transparent 48%),
-    rgba(18, 24, 38, 0.56);
+    linear-gradient(135deg, rgba(9, 205, 205, 0.08), transparent 48%),
+    rgba(240, 244, 255, 0.7);
 }
 
 

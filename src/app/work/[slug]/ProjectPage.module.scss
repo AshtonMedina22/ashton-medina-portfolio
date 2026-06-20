@@ -5,10 +5,11 @@
   --project-text: #0f172a;
   --project-muted: #475569;
   --project-soft: #64748b;
-  --project-border: rgba(15, 23, 42, 0.1);
-  --project-indigo: #7F95E4;
-  --project-cyan: #1AC1B9;
-  --project-depth: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --project-border: rgba(0, 45, 114, 0.1);
+  --project-primary: #002D72;
+  --project-secondary: #573894;
+  --project-accent: #09CDCD;
+  --project-depth: 0 8px 24px rgba(0, 45, 114, 0.06);
 
   min-height: 100vh;
   padding: var(--page-shell-padding-block);
@@ -49,7 +50,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #7F95E4;
+  color: var(--project-primary);
   font-size: var(--type-eyebrow);
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -78,7 +79,11 @@
   text-align: center;
 
   :global(.headingAccent) {
+    display: inline;
     color: transparent;
+    background-image: linear-gradient(92deg, var(--project-primary) 0%, var(--project-secondary) 50%, var(--project-accent) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
@@ -139,7 +144,7 @@
 }
 
 .accentColumn {
-  border-left: 3px solid var(--project-indigo);
+  border-left: 3px solid var(--project-primary);
   padding-left: 1.5rem;
 }
 
@@ -166,14 +171,14 @@
 }
 
 .primaryCta {
-  border: 1px solid var(--project-indigo);
-  background: var(--project-indigo);
+  border: 1px solid var(--project-primary);
+  background: var(--project-primary);
   color: #ffffff;
 
   &:hover {
     transform: translateY(-1px);
-    background: var(--project-cyan);
-    border-color: var(--project-cyan);
+    background: var(--project-secondary);
+    border-color: var(--project-secondary);
   }
 }
 
@@ -184,7 +189,7 @@
 
   &:hover {
     background: var(--project-panel);
-    border-color: var(--project-indigo);
+    border-color: var(--project-primary);
   }
 }
 
@@ -200,7 +205,7 @@
   min-width: 0;
 
   :global(h2) {
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     color: var(--project-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
@@ -216,7 +221,7 @@
   }
 
   :global(h3) {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.85rem;
     color: var(--project-text);
     font-size: clamp(1.25rem, 2vw, 1.7rem);
