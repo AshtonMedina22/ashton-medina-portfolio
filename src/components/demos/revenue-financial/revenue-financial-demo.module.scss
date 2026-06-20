@@ -322,8 +322,8 @@ $ui-card-bg: #111827;
   }
 }
 
-.varianceGreen { color: var(--success-color, $ui-green) !important; font-weight: 600; }
-.varianceRed { color: var(--danger-color, $ui-red) !important; font-weight: 600; }
+.varianceGreen { color: var(--success-color, $ui-green); font-weight: 600; }
+.varianceRed { color: var(--danger-color, $ui-red); font-weight: 600; }
 
 .statusPill {
   display: inline-block;
@@ -1226,7 +1226,7 @@ $ui-card-bg: #111827;
 }
 
 .summaryHead {
-  color: #94a3b8 !important;
+  color: #94a3b8;
   font-size: 0.66rem;
   font-weight: 820;
   letter-spacing: 0.12em;
@@ -1426,8 +1426,8 @@ $ui-card-bg: #111827;
 }
 
 .currentStep {
-  border-color: rgba(34, 197, 94, 0.34) !important;
-  background: rgba(34, 197, 94, 0.1) !important;
+  border-color: rgba(34, 197, 94, 0.34);
+  background: rgba(34, 197, 94, 0.1);
 }
 
 .lockedStep {

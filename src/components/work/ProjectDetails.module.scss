@@ -199,8 +199,8 @@
 }
 
 .sectionCard:has(.accentColumn) > div:has(.accentColumn) {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -351,7 +351,7 @@
   .metricsGrid,
   .contentGrid3,
   .sectionCard:has(.accentColumn) > div:has(.accentColumn) {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 
   .proofPoint {

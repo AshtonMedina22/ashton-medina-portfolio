@@ -393,8 +393,8 @@ $text-subtle: #64748b;
 }
 
 .totalValue {
-  text-align: right !important;
-  font-weight: 700 !important;
+  text-align: right;
+  font-weight: 700;
 }
 
 .triggerBadge {
@@ -1175,7 +1175,7 @@ $text-subtle: #64748b;
 
 .activeNavItem {
   background: rgba(99, 102, 241, 0.18);
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 .erpWorkspace {
@@ -1243,7 +1243,7 @@ $text-subtle: #64748b;
 }
 
 .activeTab {
-  color: #ffffff !important;
+  color: #ffffff;
   box-shadow: inset 0 -2px #8b5cf6;
 }
 
@@ -1448,7 +1448,7 @@ $text-subtle: #64748b;
 }
 
 .workflowHead {
-  color: #64748b !important;
+  color: #64748b;
   font-weight: 800;
   letter-spacing: 0.09em;
   text-transform: uppercase;

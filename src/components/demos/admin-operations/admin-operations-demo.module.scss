@@ -77,9 +77,9 @@ $muted: #94a3b8;
 }
 
 .activeNav {
-  border-color: rgba(99, 102, 241, 0.34) !important;
+  border-color: rgba(99, 102, 241, 0.34);
   background: rgba(99, 102, 241, 0.14);
-  color: $text !important;
+  color: $text;
 }
 
 .sidebarFooter {
