@@ -1,5 +1,5 @@
 .heroMockup {
-  --scene-duration: 20s;
+  --scene-duration: 30s;
   --popout-offset: 2rem;
 
   position: relative;
@@ -37,6 +37,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:nth-child(1) {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(240, 244, 255, 0.8) 100%);
+  }
+
+  &:nth-child(2) {
+    background: linear-gradient(135deg, rgba(240, 244, 255, 0.95) 0%, rgba(248, 250, 252, 0.8) 100%);
+  }
+
+  &:nth-child(3) {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.98) 0%, rgba(240, 244, 255, 0.85) 100%);
+  }
 }
 
 .basePanel {
@@ -438,41 +450,41 @@
     animation: dotPulse var(--scene-duration) ease-in-out infinite;
 
     &:nth-child(1) { animation-delay: 0s; }
-    &:nth-child(2) { animation-delay: 5.33s; }
-    &:nth-child(3) { animation-delay: 10.66s; }
+    &:nth-child(2) { animation-delay: 10s; }
+    &:nth-child(3) { animation-delay: 20s; }
   }
 }
 
 @keyframes basePanelFadeIn {
-  0%, 3% { opacity: 0; }
-  8%, 32% { opacity: 1; }
-  34%, 100% { opacity: 0; }
+  0%, 2% { opacity: 0; }
+  5%, 31% { opacity: 1; }
+  33%, 100% { opacity: 0; }
 }
 
 @keyframes popoutEnter {
-  0% {
+  0%, 3% {
     opacity: 0;
     transform: var(--popout-start, translate(-100px, 0)) scale(0.8);
   }
-  50% {
+  10% {
     opacity: 1;
     transform: var(--popout-end, translate(0, 0)) scale(1);
   }
-  85% {
+  30% {
     opacity: 1;
     transform: var(--popout-end, translate(0, 0)) scale(1);
   }
-  100% {
+  34%, 100% {
     opacity: 0;
     transform: var(--popout-end, translate(0, 0)) scale(0.8);
   }
 }
 
 @keyframes sceneCarousel {
-  0%, 2% { transform: translateX(0); }
-  32%, 34% { transform: translateX(-100%); }
-  64%, 66% { transform: translateX(-200%); }
-  98%, 100% { transform: translateX(0); }
+  0%, 1% { transform: translateX(0); }
+  33%, 34% { transform: translateX(-100%); }
+  67%, 68% { transform: translateX(-200%); }
+  99%, 100% { transform: translateX(0); }
 }
 
 @keyframes dotPulse {
