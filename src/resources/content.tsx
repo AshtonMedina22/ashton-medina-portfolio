@@ -15,7 +15,7 @@ const person: Person = {
   firstName: "Ashton",
   lastName: "Medina",
   name: "Ashton Medina",
-  role: "Business Operations & Implementation Manager",
+  role: "Business Operations & Systems Implementation Manager",
   avatar: "/images/avatar.png",
   email: "ashtonmedina22@gmail.com",
   location: "America/Chicago",
@@ -124,8 +124,8 @@ const home: Home = {
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About | ${person.name}`,
-  description: `${person.name} - Business operations and implementation manager with experience in operations, process improvement, implementation, reporting, and organizational execution.`,
+  title: `About ${person.name} | Operations, Systems Implementation & Workflow Automation`,
+  description: `${person.name} helps growing organizations improve operations, implement business systems, automate workflows, build KPI reporting, and standardize processes for better execution.`,
   tableOfContent: {
     display: false,
     subItems: false,
