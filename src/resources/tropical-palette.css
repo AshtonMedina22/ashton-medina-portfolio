@@ -1,5 +1,5 @@
 /* Tropical Beauty palette tokens
-   Primary accents: Teal Beams + Bright Barbie. Blue Daises is supporting only. */
+   Gradient rule: keep cool and warm families separate. */
 :root {
   --color-teal-beams: #1ac1b9;
   --color-bright-barbie: #f9447f;
@@ -9,16 +9,23 @@
   --color-golden-gold: #fbd160;
 
   --color-accent: var(--color-teal-beams);
-  --color-violet: var(--color-bright-barbie);
+  --color-violet: var(--color-blue-daises);
   --color-blue: var(--color-blue-daises);
   --color-cyan: var(--color-teal-beams);
   --color-green: var(--color-teal-beams);
-  --accent-gradient: linear-gradient(
+
+  --accent-gradient-cool: linear-gradient(
     92deg,
-    var(--color-teal-beams) 0%,
-    var(--color-bright-barbie) 54%,
-    var(--color-clementine-hobby) 100%
+    var(--color-blue-daises) 0%,
+    var(--color-teal-beams) 100%
   );
+  --accent-gradient-warm: linear-gradient(
+    92deg,
+    var(--color-bright-barbie) 0%,
+    var(--color-clementine-hobby) 58%,
+    var(--color-golden-gold) 100%
+  );
+  --accent-gradient: var(--accent-gradient-cool);
 
   --button-primary: var(--color-teal-beams);
   --button-primary-hover: #149f99;
