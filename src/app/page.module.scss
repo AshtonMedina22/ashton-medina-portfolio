@@ -69,18 +69,18 @@
 
   :global(.headingAccent) {
     display: inline;
-    color: #ffffff;
-    background: #1AC1B9;
-    padding: 0.25em 0.5em;
-    border-radius: 0.35em;
+    color: transparent;
+    background-image: linear-gradient(92deg, #7F95E4 0%, #1AC1B9 33%, #F9447F 66%, #FBD160 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 }
 
 .sectionIntro h2 :global(.headingAccent) {
-  color: #ffffff;
-  background: #1AC1B9;
-  padding: 0.25em 0.5em;
-  border-radius: 0.35em;
+  color: transparent;
+  background-image: linear-gradient(92deg, #7F95E4 0%, #1AC1B9 33%, #F9447F 66%, #FBD160 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .heroContent p {
