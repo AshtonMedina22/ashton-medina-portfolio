@@ -1,0 +1,51 @@
+/* Tropical Beauty palette tokens
+   Primary accents: Teal Beams + Bright Barbie. Blue Daises is supporting only. */
+:root {
+  --color-teal-beams: #1ac1b9;
+  --color-bright-barbie: #f9447f;
+  --color-blue-daises: #7f95e4;
+  --color-basic-pink: #fcb8d9;
+  --color-clementine-hobby: #ff8017;
+  --color-golden-gold: #fbd160;
+
+  --color-accent: var(--color-teal-beams);
+  --color-violet: var(--color-bright-barbie);
+  --color-blue: var(--color-blue-daises);
+  --color-cyan: var(--color-teal-beams);
+  --color-green: var(--color-teal-beams);
+  --accent-gradient: linear-gradient(
+    92deg,
+    var(--color-teal-beams) 0%,
+    var(--color-bright-barbie) 54%,
+    var(--color-clementine-hobby) 100%
+  );
+
+  --button-primary: var(--color-teal-beams);
+  --button-primary-hover: #149f99;
+  --accent-soft: rgba(26, 193, 185, 0.16);
+  --accent-soft-strong: rgba(249, 68, 127, 0.22);
+  --success-color: var(--color-teal-beams);
+  --success-soft: rgba(26, 193, 185, 0.16);
+}
+
+[data-theme="dark"] {
+  --brand-alpha-weak: rgba(26, 193, 185, 0.14);
+  --brand-alpha-medium: rgba(26, 193, 185, 0.25);
+  --brand-alpha-strong: rgba(249, 68, 127, 0.34);
+  --brand-solid-strong: #149f99;
+  --brand-solid-medium: var(--color-teal-beams);
+  --brand-solid-weak: #0f706c;
+  --brand-on-solid-strong: #ffffff;
+  --brand-on-solid-weak: #eefafa;
+}
+
+[data-theme="light"] {
+  --brand-alpha-weak: rgba(249, 68, 127, 0.1);
+  --brand-alpha-medium: rgba(26, 193, 185, 0.2);
+  --brand-alpha-strong: rgba(249, 68, 127, 0.32);
+  --brand-solid-strong: #149f99;
+  --brand-solid-medium: var(--color-teal-beams);
+  --brand-solid-weak: #0f706c;
+  --brand-on-solid-strong: #ffffff;
+  --brand-on-solid-weak: #eefafa;
+}
