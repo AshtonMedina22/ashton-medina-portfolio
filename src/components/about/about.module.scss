@@ -231,9 +231,14 @@
 }
 
 @media (max-width: 760px) {
-  .resumeShell { width: calc(100vw - 1.5rem); max-width: calc(100vw - 1.5rem); }
+  .aboutPage { width: 100vw; max-width: 100vw; }
+  .resumeShell { width: calc(100vw - 3rem); max-width: calc(100vw - 3rem); }
+  .summaryLead, .summaryText, .problemCard p, .serviceCard p { max-width: 31ch; }
+  .sectionTitle { max-width: 15ch; }
 }
 
 @media (max-width: 420px) {
-  .resumeShell { width: calc(100vw - 1.25rem); max-width: calc(100vw - 1.25rem); }
+  .resumeShell { width: calc(100vw - 2.5rem); max-width: calc(100vw - 2.5rem); }
+  .summaryLead, .summaryText, .problemCard p, .serviceCard p { max-width: 29ch; }
+  .sectionTitle { max-width: 13ch; }
 }
