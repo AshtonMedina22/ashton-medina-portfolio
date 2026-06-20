@@ -119,11 +119,11 @@
 
 .sourceHighlight {
   position: relative;
-  border-color: rgba(99, 91, 255, 0.42) !important;
-  background: rgba(99, 91, 255, 0.08) !important;
+  border-color: rgba(99, 91, 255, 0.42);
+  background: rgba(99, 91, 255, 0.08);
   box-shadow:
     0 0 0 3px rgba(99, 91, 255, 0.08),
-    0 12px 28px rgba(99, 91, 255, 0.12) !important;
+    0 12px 28px rgba(99, 91, 255, 0.12);
   animation: sourcePulse var(--scene-duration) ease-in-out infinite;
 }
 
@@ -649,11 +649,11 @@
   .movingTaskCard,
   .chartPanel span,
   .sceneDots span {
-    animation: none !important;
+    animation: none;
   }
 
   .sceneTrack {
-    transform: translateX(0) !important;
+    transform: translateX(0);
   }
 
   .basePanel,

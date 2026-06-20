@@ -238,12 +238,12 @@ h1 .headingAccent,
 h2 .headingAccent,
 h3 .headingAccent {
   display: inline;
-  color: transparent !important;
-  -webkit-text-fill-color: transparent !important;
-  background-image: var(--accent-gradient) !important;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-image: var(--accent-gradient);
   background-size: 100%;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 /* --------------------------------------------------------------------------
@@ -253,8 +253,8 @@ h3 .headingAccent {
 .ctaGradient,
 a.ctaGradient,
 button.ctaGradient {
-  background: var(--button-primary) !important;
-  color: #fff !important;
+  background: var(--button-primary);
+  color: #fff;
   border: none;
   transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -263,7 +263,7 @@ button.ctaGradient {
 .ctaGradient:hover,
 a.ctaGradient:hover,
 button.ctaGradient:hover {
-  background: var(--button-primary-hover) !important;
+  background: var(--button-primary-hover);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 [data-variant="primary"]:focus-visible,
@@ -275,7 +275,6 @@ button.ctaGradient:hover {
 [data-variant="primary"] svg,
 .ctaGradient span,
 .ctaGradient svg {
-  color: inherit !important;
-  fill: currentColor !important;
+  color: inherit;
+  fill: currentColor;
 }
-
