@@ -1,21 +1,56 @@
-$s: 768px;
-$m: 1024px;
-$l: 1440px;
+@use "sass:map";
+
+$xs: 430px;
+$sm: 520px;
+$md: 760px;
+$md-plus: 860px;
+$lg: 1024px;
+$xl: 1100px;
+$xxl: 1180px;
+$wide: 1440px;
+
+// Backward-compatible aliases used by existing modules.
+$s: $md;
+$m: $lg;
+$l: $wide;
+
+$breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  md-plus: $md-plus,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+  wide: $wide,
+);
+
+@mixin down($name) {
+  @media (max-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin custom-down($width) {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
 
 @mixin s {
-  @media (max-width: #{$s}) {
+  @include down(md) {
     @content;
   }
 }
 
 @mixin m {
-  @media (max-width: #{$m}) {
+  @include down(lg) {
     @content;
   }
 }
 
 @mixin l {
-  @media (max-width: #{$l}) {
+  @include down(wide) {
     @content;
   }
 }
