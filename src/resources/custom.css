@@ -7,21 +7,21 @@
 
 /* Custom palette (data-neutral/brand/accent=custom) */
 :root {
-  --scheme-brand-100: #0f0a1e;
-  --scheme-brand-200: #1e1b2e;
-  --scheme-brand-300: #2e1064;
-  --scheme-brand-400: #5b21b6;
-  --scheme-brand-500: #7c3aed;
-  --scheme-brand-600: #a78bfa;
-  --scheme-brand-700: #c4b5fd;
+  --scheme-brand-100: #5a6fb3;
+  --scheme-brand-200: #7F95E4;
+  --scheme-brand-300: #1AC1B9;
+  --scheme-brand-400: #FBD160;
+  --scheme-brand-500: #F9447F;
+  --scheme-brand-600: #FCB8D9;
+  --scheme-brand-700: #FF8017;
   --scheme-brand-800: #ddd6fe;
   --scheme-brand-900: #ede9fe;
   --scheme-brand-1000: #f5f3ff;
   --scheme-brand-1100: #faf5ff;
   --scheme-brand-1200: #fdf4ff;
-  --scheme-brand-600-15: rgba(167, 139, 250, 0.15);
-  --scheme-brand-600-30: rgba(167, 139, 250, 0.3);
-  --scheme-brand-600-50: rgba(167, 139, 250, 0.5);
+  --scheme-brand-600-15: rgba(127, 149, 228, 0.15);
+  --scheme-brand-600-30: rgba(127, 149, 228, 0.3);
+  --scheme-brand-600-50: rgba(127, 149, 228, 0.5);
 
   --scheme-accent-100: var(--scheme-brand-100);
   --scheme-accent-200: var(--scheme-brand-200);
@@ -56,9 +56,9 @@
   --scheme-neutral-600-30: rgba(113, 113, 122, 0.3);
   --scheme-neutral-600-50: rgba(113, 113, 122, 0.5);
 
-  --color-background: #09090b;
-  --color-text: #fafafa;
-  --color-accent: #38bdf8;
+  --color-background: #ffffff;
+  --color-text: #1a1a1a;
+  --color-accent: #7F95E4;
   --color-violet: #8b5cf6;
   --color-blue: #3b82f6;
   --color-cyan: #38bdf8;
@@ -66,8 +66,8 @@
   --accent-gradient: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
 
   /* Primary action: restrained violet from the multi-accent system */
-  --button-primary: var(--scheme-brand-200);
-  --button-primary-hover: var(--scheme-brand-300);
+  --button-primary: #7F95E4;
+  --button-primary-hover: #1AC1B9;
   /* Kept for demos / optional tints only; not used for CTAs */
   --accent-soft: rgba(167, 139, 250, 0.16);
   --accent-soft-strong: rgba(167, 139, 250, 0.28);
