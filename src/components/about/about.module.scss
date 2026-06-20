@@ -205,16 +205,16 @@
   .resumeShell { width: calc(100% - 1.25rem); max-width: calc(100% - 1.25rem); }
   .profileHeader { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 1rem; border-radius: 1.35rem; padding: 1.05rem; }
   .profileInfo { order: 2; align-items: center; text-align: center; width: 100%; }
-  .profileInfo h1 { font-size: clamp(1.9rem, 9.4vw, 2.45rem); line-height: 1.04; }
-  .profileRole { font-size: clamp(0.96rem, 4.4vw, 1.12rem); }
+  .profileInfo h1 { max-width: 7ch; font-size: clamp(1.9rem, 9.2vw, 2.35rem); line-height: 1.02; }
+  .profileRole { max-width: 18rem; font-size: clamp(0.94rem, 4vw, 1.05rem); }
   .profileAvatar { order: 1; width: clamp(7.25rem, 34vw, 9.5rem); }
   .profileActions, .heroActions { justify-content: center; }
   .resumeHero, .resumeSection { border-radius: 1.15rem; padding: 1rem 0.9rem; }
   .resumeHero::before, .resumeSection::before { width: 0.25rem; }
   .summaryGrid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
   .sectionHeader { grid-template-columns: 1fr; gap: 0.65rem; }
-  .sectionTitle { font-size: clamp(1.38rem, 6.7vw, 1.78rem); line-height: 1.12; }
-  .summaryLead, .summaryText { font-size: 0.94rem; }
+  .sectionTitle { font-size: clamp(1.32rem, 5.9vw, 1.56rem); line-height: 1.14; }
+  .summaryLead, .summaryText { font-size: 0.9rem; }
   .problemGrid, .serviceGrid, .keywordGroups { grid-template-columns: 1fr; }
   .problemCard { min-height: auto; }
   .experienceItem, .experienceBody ul { grid-template-columns: 1fr; }
@@ -223,4 +223,9 @@
 @media (max-width: 420px) {
   .resumeShell { width: calc(100% - 1rem); max-width: calc(100% - 1rem); }
   .profileActions, .heroActions, .profileLinkBtn, .primaryCta, .secondaryCta { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .sectionTitle { max-width: 13.5ch; }
+  .summaryPrimary, .summaryAside { width: 100%; }
 }
