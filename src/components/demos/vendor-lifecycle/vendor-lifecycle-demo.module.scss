@@ -1,13 +1,13 @@
 /* Vendor Lifecycle - ERP + Portal style, violet accent */
-$ui-blue: #6366f1;
-$ui-cyan: #3b82f6;
-$ui-green: #22c55e;
-$ui-green-bg: #22c55e1f;
+$ui-primary: #002D72;
+$ui-secondary: #573894;
+$ui-accent: #09CDCD;
+$ui-accent-bg: #09CDCD1f;
 $ui-yellow: #fbbf24;
 $ui-yellow-bg: #fbbf2415;
 $ui-red: #dc2626;
 $ui-red-bg: #dc262615;
-$ui-border: rgba(99, 102, 241, 0.38);
+$ui-border: rgba(0, 45, 114, 0.38);
 $ui-bg: #070b12;
 $ui-card-bg: #111827;
 
@@ -52,7 +52,7 @@ $ui-card-bg: #111827;
       background: #eab308;
     }
     &:nth-child(3) {
-      background: #22c55e;
+      background: #09CDCD;
     }
   }
 }
@@ -208,8 +208,8 @@ $ui-card-bg: #111827;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 600;
-  background: var(--success-soft, $ui-green-bg);
-  color: var(--success-color, $ui-green);
+  background: var(--success-soft, $ui-accent-bg);
+  color: var(--success-color, $ui-accent);
   border: 1px solid rgba(34, 197, 94, 0.42);
 }
 
@@ -233,9 +233,9 @@ $ui-card-bg: #111827;
   padding: 0.35rem 0.7rem;
   font-size: 0.78rem;
   font-weight: 500;
-  color: $ui-blue;
-  background: rgba($ui-blue, 0.1);
-  border: 1px solid rgba($ui-blue, 0.3);
+  color: $ui-primary;
+  background: rgba($ui-primary, 0.1);
+  border: 1px solid rgba($ui-primary, 0.3);
   border-radius: 9999px;
   cursor: default;
 }
@@ -261,9 +261,9 @@ $ui-card-bg: #111827;
 }
 
 .tagPrimary {
-  background: rgba($ui-blue, 0.15);
-  color: $ui-blue;
-  border-color: rgba($ui-blue, 0.3);
+  background: rgba($ui-primary, 0.15);
+  color: $ui-primary;
+  border-color: rgba($ui-primary, 0.3);
   min-width: 3.5rem;
 }
 
@@ -340,8 +340,8 @@ $ui-card-bg: #111827;
 }
 
 .statusGreen {
-  background: var(--success-soft, $ui-green-bg);
-  color: var(--success-color, $ui-green);
+  background: var(--success-soft, $ui-accent-bg);
+  color: var(--success-color, $ui-accent);
 }
 
 .statusYellow {
@@ -395,15 +395,15 @@ $ui-card-bg: #111827;
 }
 
 .summaryCardSuccess {
-  background: var(--success-soft, $ui-green-bg);
+  background: var(--success-soft, $ui-accent-bg);
   border-color: rgba(34, 197, 94, 0.46);
-  .summaryCardIcon { color: var(--success-color, $ui-green); }
+  .summaryCardIcon { color: var(--success-color, $ui-accent); }
 }
 
 .summaryCardAccent {
-  background: rgba($ui-blue, 0.12);
-  border-color: rgba($ui-blue, 0.35);
-  .summaryCardIcon { color: $ui-blue; }
+  background: rgba($ui-primary, 0.12);
+  border-color: rgba($ui-primary, 0.35);
+  .summaryCardIcon { color: $ui-primary; }
 }
 
 .portalPanelHeader {
@@ -457,7 +457,7 @@ $ui-card-bg: #111827;
   font-weight: 600;
   line-height: 1.25;
   color: #09090b;
-  background: var(--success-color, $ui-green);
+  background: var(--success-color, $ui-accent);
   border: none;
   border-radius: 9999px;
   cursor: default;

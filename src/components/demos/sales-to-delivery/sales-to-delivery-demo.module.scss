@@ -1,14 +1,14 @@
 /* Sales-to-Delivery - Modern ERP interface, platform-agnostic */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-$blue: #6366f1;
-$blue-light: #8b5cf6;
-$blue-bg: #6366f120;
-$blue-border: #6366f166;
-$green: #22c55e;
-$green-bg: #22c55e1f;
-$green-border: #22c55e3d;
-$border: rgba(99, 102, 241, 0.38);
+$primary: #002D72;
+$primary-light: #573894;
+$primary-bg: #002D7220;
+$primary-border: #002D7266;
+$accent: #09CDCD;
+$accent-bg: #09CDCD1f;
+$accent-border: #09CDCD3d;
+$border: rgba(0, 45, 114, 0.38);
 $border-light: rgba(148, 163, 184, 0.18);
 $bg: #070b12;
 $card-bg: #111827;
@@ -71,7 +71,7 @@ $text-subtle: #64748b;
       background: #eab308;
     }
     &:nth-child(3) {
-      background: #22c55e;
+      background: #09CDCD;
     }
   }
 }
@@ -167,7 +167,7 @@ $text-subtle: #64748b;
 .flowArrow {
   font-size: 1.1rem;
   font-weight: 700;
-  color: $blue;
+  color: $primary;
   line-height: 1;
 
   @media (max-width: 1024px) {
@@ -253,8 +253,8 @@ $text-subtle: #64748b;
   transition: all 0.15s ease;
 
   &.active {
-    background: var(--success-soft, $green-bg);
-    color: var(--success-color, $green);
+    background: var(--success-soft, $accent-bg);
+    color: var(--success-color, $accent);
     border: 1px solid rgba(34, 197, 94, 0.42);
   }
 
@@ -318,9 +318,9 @@ $text-subtle: #64748b;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 600;
-  background: $blue-bg;
-  color: $blue;
-  border: 1px solid $blue-border;
+  background: $primary-bg;
+  color: $primary;
+  border: 1px solid $primary-border;
 }
 
 /* Table — compact so it fits in fixed viewport without scroll */
@@ -407,9 +407,9 @@ $text-subtle: #64748b;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  background: $blue-bg;
-  color: $blue;
-  border: 1px solid $blue-border;
+  background: $primary-bg;
+  color: $primary;
+  border: 1px solid $primary-border;
   flex-shrink: 0;
 }
 
@@ -419,11 +419,11 @@ $text-subtle: #64748b;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: var(--success-soft, $green-bg);
+  background: var(--success-soft, $accent-bg);
   border: 1px solid rgba(34, 197, 94, 0.42);
   border-radius: 0.5rem;
   font-size: 0.8125rem;
-  color: var(--success-color, $green);
+  color: var(--success-color, $accent);
 }
 
 .systemStatusIcon {
@@ -433,7 +433,7 @@ $text-subtle: #64748b;
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 50%;
-  background: var(--success-color, $green);
+  background: var(--success-color, $accent);
   color: $bg;
   font-size: 0.75rem;
   font-weight: 700;
@@ -461,22 +461,22 @@ $text-subtle: #64748b;
   padding: 0.5rem 1rem;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: $blue;
-  background: $blue-bg;
-  border: 1px solid $blue-border;
+  color: $primary;
+  background: $primary-bg;
+  border: 1px solid $primary-border;
   border-radius: 9999px;
   cursor: default;
   transition: background 0.15s ease, border-color 0.15s ease;
 
   &:hover {
-    background: rgba($blue, 0.2);
-    border-color: rgba($blue, 0.5);
+    background: rgba($primary, 0.2);
+    border-color: rgba($primary, 0.5);
   }
 }
 
 .smartBtnActive {
-  background: rgba($blue, 0.28);
-  border-color: rgba($blue, 0.5);
+  background: rgba($primary, 0.28);
+  border-color: rgba($primary, 0.5);
   color: $text;
 }
 
@@ -505,11 +505,11 @@ $text-subtle: #64748b;
   background: $card-bg;
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 1px rgba($blue, 0.15);
+  box-shadow: 0 0 0 1px rgba($primary, 0.15);
   transition: box-shadow 0.15s ease;
 
   &:hover {
-    box-shadow: 0 0 0 1px rgba($blue, 0.3);
+    box-shadow: 0 0 0 1px rgba($primary, 0.3);
   }
 }
 
@@ -587,8 +587,8 @@ $text-subtle: #64748b;
   min-width: 0;
 
   &:hover {
-    border-color: $blue-border;
-    box-shadow: 0 0 0 1px rgba($blue, 0.3);
+    border-color: $primary-border;
+    box-shadow: 0 0 0 1px rgba($primary, 0.3);
   }
 }
 
@@ -621,8 +621,8 @@ $text-subtle: #64748b;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  background: $blue-bg;
-  color: $blue;
+  background: $primary-bg;
+  color: $primary;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -734,7 +734,7 @@ $text-subtle: #64748b;
 
   p {
     margin: 0 0 0.35rem;
-    color: $blue-light;
+    color: $primary-light;
     font-size: 0.65rem;
     font-weight: 760;
     letter-spacing: 0.1em;
@@ -890,7 +890,7 @@ $text-subtle: #64748b;
   grid-template-rows: 1fr auto 1fr;
   align-items: center;
   justify-items: center;
-  color: $blue-light;
+  color: $primary-light;
 
   span {
     width: 1px;
@@ -1168,7 +1168,7 @@ $text-subtle: #64748b;
   margin-inline: auto;
   border: 1px solid rgba(99, 102, 241, 0.46);
   border-radius: 0.45rem;
-  color: #8b5cf6;
+  color: #573894;
   font-size: 1rem;
   font-weight: 800;
 }
@@ -1244,7 +1244,7 @@ $text-subtle: #64748b;
 
 .activeTab {
   color: #ffffff;
-  box-shadow: inset 0 -2px #8b5cf6;
+  box-shadow: inset 0 -2px #573894;
 }
 
 .erpGrid {
@@ -1300,7 +1300,7 @@ $text-subtle: #64748b;
   svg {
     width: 1.25rem;
     height: 1.25rem;
-    color: #8b5cf6;
+    color: #573894;
   }
 }
 
@@ -1353,7 +1353,7 @@ $text-subtle: #64748b;
   padding: 0;
   border: 0;
   background: transparent;
-  color: #8b5cf6;
+  color: #573894;
   font-size: 0.68rem;
   font-weight: 800;
 }
@@ -1377,7 +1377,7 @@ $text-subtle: #64748b;
   svg {
     width: 1.15rem;
     height: 1.15rem;
-    color: #8b5cf6;
+    color: #573894;
   }
 
   span,
@@ -1512,7 +1512,7 @@ $text-subtle: #64748b;
       grid-row: span 2;
       width: 1.4rem;
       height: 1.4rem;
-      color: #8b5cf6;
+      color: #573894;
     }
 
     span {
@@ -1556,7 +1556,7 @@ $text-subtle: #64748b;
       flex: 0 0 auto;
       width: 0.82rem;
       height: 0.82rem;
-      color: #22c55e;
+      color: #09CDCD;
     }
   }
 }
@@ -1570,7 +1570,7 @@ $text-subtle: #64748b;
   padding: 0.28rem 0.48rem;
   border-radius: 999px;
   background: rgba(34, 197, 94, 0.12);
-  color: #22c55e;
+  color: #09CDCD;
   font-size: 0.58rem;
   font-weight: 800;
   line-height: 1;
