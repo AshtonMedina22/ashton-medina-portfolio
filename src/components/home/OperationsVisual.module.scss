@@ -53,12 +53,6 @@
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(26, 193, 185, 0.08);
   animation: basePanelFadeIn var(--scene-duration) ease-out infinite;
-
-  @keyframes basePanelFadeIn {
-    0%, 10% { opacity: 0; }
-    15%, 85% { opacity: 1; }
-    95%, 100% { opacity: 0; }
-  }
 }
 
 .panelHeader {
@@ -292,25 +286,6 @@
   --popout-index: 1;
   animation: popoutEnter var(--scene-duration) cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
 
-  @keyframes popoutEnter {
-    0%, 10% {
-      opacity: 0;
-      transform: var(--popout-start, translate(-100px, 0)) scale(0.8);
-    }
-    calc(10% + var(--popout-index) * 3%) {
-      opacity: 1;
-      transform: var(--popout-end, translate(0, 0)) scale(1);
-    }
-    calc(10% + var(--popout-index) * 3% + 70%) {
-      opacity: 1;
-      transform: var(--popout-end, translate(0, 0)) scale(1);
-    }
-    90%, 100% {
-      opacity: 0;
-      transform: var(--popout-end, translate(0, 0)) scale(0.8);
-    }
-  }
-
   &:nth-child(1) {
     --popout-start: translate(-120px, 60px);
     --popout-end: translate(60px, 60px);
@@ -463,6 +438,31 @@
     &:nth-child(1) { animation-delay: 0s; }
     &:nth-child(2) { animation-delay: 5.33s; }
     &:nth-child(3) { animation-delay: 10.66s; }
+  }
+}
+
+@keyframes basePanelFadeIn {
+  0%, 10% { opacity: 0; }
+  15%, 85% { opacity: 1; }
+  95%, 100% { opacity: 0; }
+}
+
+@keyframes popoutEnter {
+  0%, 10% {
+    opacity: 0;
+    transform: var(--popout-start, translate(-100px, 0)) scale(0.8);
+  }
+  15% {
+    opacity: 1;
+    transform: var(--popout-end, translate(0, 0)) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: var(--popout-end, translate(0, 0)) scale(1);
+  }
+  90%, 100% {
+    opacity: 0;
+    transform: var(--popout-end, translate(0, 0)) scale(0.8);
   }
 }
 
