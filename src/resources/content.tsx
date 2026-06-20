@@ -96,9 +96,10 @@ const home: Home = {
   image:
     "/api/og/generate?title=Ashton%20Medina%20Portfolio&subtitle=Business%20operations%2C%20systems%20implementation%2C%20workflow%20automation%2C%20and%20operational%20reporting",
   label: "Home",
-  title: "Ashton Medina - Business Operations & Implementation Manager | Portfolio",
+  title:
+    "Ashton Medina | Business Operations, Workflow Automation & Systems Implementation",
   description:
-    "Business operations and implementation manager with experience across operations leadership, process improvement, software implementation, workflow automation, reporting, and organizational execution.",
+    "Dallas-Fort Worth business operations and systems implementation portfolio focused on process improvement, workflow automation, ERP and CRM rollout support, KPI dashboards, reporting, SOP development, and operational controls.",
   headline: (
     <>
       Building operational frameworks
@@ -118,14 +119,14 @@ const home: Home = {
     href: "/work/sales-to-delivery-automation-platform",
   },
   subline:
-    "My work spans operations leadership, business analysis, process improvement, platform implementation, workflow automation, reporting, integrations, training, and change management across growing organizations.",
+    "My work spans business operations, requirements gathering, process improvement, platform implementation, workflow automation, KPI reporting, integrations, SOP documentation, training, and change management across growing organizations.",
 };
 
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About ${person.name} | Operations, Systems Implementation & Workflow Automation`,
-  description: `${person.name} helps growing organizations improve operations, implement business systems, automate workflows, build KPI reporting, and standardize processes for better execution.`,
+  title: `${person.name} | Business Operations, Process Improvement & Systems Implementation`,
+  description: `${person.name} is a Dallas-Fort Worth business operations and systems implementation manager focused on process improvement, workflow automation, ERP and CRM rollout support, KPI reporting, SOP development, UAT, and user adoption.`,
   tableOfContent: {
     display: false,
     subItems: false,
@@ -258,29 +259,29 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: `Operations, Workflow Automation & Systems Implementation Notes - ${person.name}`,
+  description: `Articles and notes from ${person.name} on business operations, process improvement, workflow automation, systems implementation, reporting, documentation, and adoption.`,
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Work - ${person.name}`,
-  description: `Operational systems portfolio - workflow automation, enterprise platforms, financial controls, vendor lifecycle, integrations, and reporting by ${person.name}`,
+  title: `Business Systems & Workflow Automation Portfolio - ${person.name}`,
+  description: `Case studies by ${person.name} covering workflow automation, business systems implementation, ERP and CRM operations, financial controls, vendor lifecycle management, KPI dashboards, integrations, and operational reporting.`,
 };
 
 const contact: Contact = {
   path: "/contact",
   label: "Contact",
-  title: `Contact - ${person.name}`,
-  description: `Get in touch with ${person.name}`,
+  title: `Contact ${person.name} | Business Operations & Systems Implementation`,
+  description: `Contact ${person.name} for business operations, workflow automation, process improvement, systems implementation, reporting, documentation, and operational controls work.`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery - ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  title: `Gallery - ${person.name}`,
+  description: `Visual collection and portfolio media from ${person.name}.`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
