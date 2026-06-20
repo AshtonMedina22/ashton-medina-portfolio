@@ -149,11 +149,19 @@
   border: 1px solid #1AC1B9;
   background: #1AC1B9;
   color: #ffffff;
+  fill: #ffffff;
+
+  &,
+  &:link,
+  &:visited {
+    color: #ffffff;
+  }
 
   &:hover {
     transform: translateY(-1px);
     background: #F9447F;
     border-color: #F9447F;
+    color: #ffffff;
   }
 }
 
@@ -161,12 +169,20 @@
   border: 2px solid #1a1a1a;
   background: transparent;
   color: #1a1a1a;
+  fill: #1a1a1a;
   font-weight: 600;
+
+  &,
+  &:link,
+  &:visited {
+    color: #1a1a1a;
+  }
 
   &:hover {
     background: #f1f5f9;
     border-color: #1AC1B9;
     color: #1AC1B9;
+    fill: #1AC1B9;
   }
 }
 
