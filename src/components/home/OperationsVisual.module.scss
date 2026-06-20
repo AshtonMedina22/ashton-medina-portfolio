@@ -1,4 +1,4 @@
-.demoFrame {
+.demoShell {
   --demo-ink: #0f172a;
   --demo-muted: #64748b;
   --demo-soft: #94a3b8;
@@ -8,7 +8,7 @@
   --demo-cyan: #0891b2;
   --demo-green: #16a34a;
   --demo-amber: #d97706;
-  --scene-duration: 24s;
+  --scene-duration: 20s;
 
   position: relative;
   isolation: isolate;
@@ -18,9 +18,12 @@
   min-width: 0;
   margin-inline: auto;
   overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 28px;
   color: var(--demo-ink);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
   perspective: 1200px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .backgroundGlow,
@@ -47,35 +50,25 @@
   mask-image: radial-gradient(circle at 50% 44%, black, transparent 78%);
 }
 
-.sceneViewport {
+.scene {
+  --phase: 0s;
+
   position: absolute;
   inset: 0;
-  overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.48);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.sceneTrack {
-  display: flex;
-  width: 400%;
-  height: 100%;
-  animation: sceneCarousel var(--scene-duration) cubic-bezier(0.78, 0, 0.22, 1) infinite;
-  will-change: transform;
-}
-
-.scene {
-  position: relative;
-  flex: 0 0 25%;
-  height: 100%;
   padding: clamp(1.05rem, 2vw, 1.35rem);
   overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  animation: sceneActive var(--scene-duration) linear infinite;
+  animation-delay: var(--phase);
 }
+
+.sceneRouting { --phase: 5s; }
+.sceneApprovals { --phase: 10s; }
+.sceneReporting { --phase: 15s; }
 
 .basePanel {
   position: absolute;
-  inset: 13% 14% 13% 7%;
   z-index: 2;
   overflow: hidden;
   border: 1px solid var(--demo-border);
@@ -84,8 +77,16 @@
   box-shadow:
     0 18px 46px rgba(15, 23, 42, 0.09),
     inset 0 1px 0 rgba(255, 255, 255, 0.94);
+  opacity: 0;
+  transform: translate3d(0, 0.8rem, -20px) scale(0.985);
   animation: baseIn var(--scene-duration) ease-in-out infinite;
+  animation-delay: var(--phase);
 }
+
+.sceneInquiry .basePanel { inset: 12% 12% 14% 6%; }
+.sceneRouting .basePanel { inset: 13% 10% 14% 6%; }
+.sceneApprovals .basePanel { inset: 13% 14% 14% 6%; }
+.sceneReporting .basePanel { inset: 12% 14% 13% 7%; }
 
 .panelHeader {
   display: flex;
@@ -125,6 +126,7 @@
     0 0 0 3px rgba(99, 91, 255, 0.08),
     0 12px 28px rgba(99, 91, 255, 0.12) !important;
   animation: sourcePulse var(--scene-duration) ease-in-out infinite;
+  animation-delay: var(--phase);
 }
 
 .connectorLine {
@@ -134,9 +136,11 @@
   height: 2px;
   border-radius: 999px;
   background: linear-gradient(90deg, rgba(99, 91, 255, 0), rgba(99, 91, 255, 0.76), rgba(8, 145, 178, 0.78));
-  transform-origin: left center;
   opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
   animation: connectorDraw var(--scene-duration) ease-in-out infinite;
+  animation-delay: var(--phase);
 }
 
 .popoutCard,
@@ -151,9 +155,10 @@
     0 30px 70px rgba(15, 23, 42, 0.2),
     0 10px 24px rgba(99, 91, 255, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  transform: translate3d(var(--from-x, 0), var(--from-y, 0), 0) scale(0.72);
   opacity: 0;
+  transform: translate3d(var(--from-x, 0), var(--from-y, 0), -40px) scale(0.72);
   animation: popoutFromSource var(--scene-duration) cubic-bezier(0.18, 0.9, 0.2, 1) infinite;
+  animation-delay: var(--phase);
 }
 
 .popoutCard {
@@ -217,61 +222,99 @@
   }
 }
 
-.inboxList {
+.inquiryLayout {
   display: grid;
-  gap: 0.58rem;
-  padding: 0.9rem;
+  grid-template-columns: 0.62fr 1fr 0.72fr;
+  gap: 0.7rem;
+  height: calc(100% - 3.35rem);
+  padding: 0.82rem;
 }
 
-.inboxRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.85rem;
-  min-height: 2.65rem;
-  padding: 0 0.8rem;
+.sourceChannels,
+.inquiryList {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.sourceChannels {
+  align-content: start;
+
+  span {
+    display: block;
+    padding: 0.62rem;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: 12px;
+    background: #f8fafc;
+    color: var(--demo-muted);
+    font-size: 0.68rem;
+    font-weight: 800;
+  }
+}
+
+.inquiryRow,
+.inquiryDetail {
   border: 1px solid rgba(15, 23, 42, 0.07);
   border-radius: 13px;
   background: #ffffff;
+}
 
-  span {
+.inquiryRow {
+  display: grid;
+  align-content: center;
+  gap: 0.24rem;
+  min-height: 2.8rem;
+  padding: 0 0.75rem;
+
+  strong {
     color: var(--demo-ink);
-    font-size: 0.82rem;
-    font-weight: 780;
+    font-size: 0.78rem;
+    font-weight: 820;
   }
 
   em {
     color: var(--demo-muted);
-    font-size: 0.67rem;
+    font-size: 0.64rem;
     font-style: normal;
     font-weight: 760;
   }
 }
 
-.connectorInquiry {
-  left: 36%;
-  top: 42%;
-  width: 24%;
+.inquiryDetail {
+  align-self: start;
+  padding: 0.8rem;
+
+  span,
+  strong,
+  em {
+    display: block;
+  }
+
+  span {
+    color: var(--demo-cyan);
+    font-size: 0.64rem;
+    font-weight: 850;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    margin-top: 0.45rem;
+    font-size: 0.86rem;
+  }
+
+  em {
+    margin-top: 0.55rem;
+    color: var(--demo-green);
+    font-size: 0.72rem;
+    font-style: normal;
+    font-weight: 850;
+  }
 }
 
-.popoutInquiry {
-  --from-x: -8rem;
-  --from-y: 1.6rem;
-  right: 8%;
-  top: 29%;
-}
-
-.assignmentChip {
-  --from-x: -5rem;
-  --from-y: 0.6rem;
-  right: 13%;
-  top: 58%;
-}
-
-.sceneInquiry .statusToast {
-  right: 7%;
-  bottom: 14%;
-}
+.connectorInquiry { left: 39%; top: 43%; width: 22%; }
+.popoutInquiry { --from-x: -8rem; --from-y: 1.4rem; right: 7%; top: 29%; }
+.assignmentChip { --from-x: -5rem; --from-y: 0.6rem; right: 13%; top: 58%; }
+.sceneInquiry .statusToast { right: 7%; bottom: 14%; }
 
 .kanbanBoard {
   display: grid;
@@ -321,23 +364,9 @@
   animation-name: taskMove;
 }
 
-.connectorRouting {
-  left: 45%;
-  top: 48%;
-  width: 21%;
-}
-
-.popoutRouting {
-  --from-x: -6rem;
-  --from-y: 0;
-  right: 7%;
-  top: 34%;
-}
-
-.sceneRouting .statusToast {
-  right: 12%;
-  bottom: 17%;
-}
+.connectorRouting { left: 45%; top: 48%; width: 21%; }
+.popoutRouting { --from-x: -6rem; --from-y: 0; right: 7%; top: 34%; }
+.dueDateChip { right: 12%; bottom: 17%; }
 
 .timelinePanel {
   position: relative;
@@ -383,32 +412,10 @@
   }
 }
 
-.connectorApproval {
-  left: 33%;
-  top: 43%;
-  width: 26%;
-  transform: rotate(-9deg) scaleX(0);
-}
-
-.popoutReminder {
-  --from-x: -7rem;
-  --from-y: 2rem;
-  right: 9%;
-  top: 22%;
-}
-
-.popoutApproval {
-  --from-x: -3rem;
-  --from-y: -3rem;
-  right: 5%;
-  bottom: 17%;
-  animation-delay: 0.45s;
-}
-
-.sceneApprovals .statusChip {
-  right: 25%;
-  bottom: 9%;
-}
+.connectorApproval { left: 33%; top: 43%; width: 26%; transform: rotate(-9deg) scaleX(0); }
+.popoutReminder { --from-x: -7rem; --from-y: 2rem; right: 9%; top: 22%; }
+.popoutApproval { --from-x: -3rem; --from-y: -3rem; right: 5%; bottom: 17%; animation-delay: calc(var(--phase) + 0.45s); }
+.handoffChip { right: 25%; bottom: 9%; }
 
 .reportingGrid {
   display: grid;
@@ -433,8 +440,9 @@
     min-height: 2rem;
     border-radius: 999px 999px 8px 8px;
     background: linear-gradient(180deg, #67e8f9, #635bff);
-    animation: barGrow var(--scene-duration) ease-in-out infinite;
     transform-origin: bottom;
+    animation: barGrow var(--scene-duration) ease-in-out infinite;
+    animation-delay: var(--phase);
   }
 }
 
@@ -467,36 +475,11 @@
   }
 }
 
-.connectorReport {
-  left: 43%;
-  top: 45%;
-  width: 20%;
-}
-
-.popoutReport {
-  --from-x: -7rem;
-  --from-y: 1.6rem;
-  right: 8%;
-  top: 30%;
-}
-
-.kpiCard {
-  --from-x: -5rem;
-  --from-y: -1rem;
-  right: 17%;
-  bottom: 15%;
-  width: 8.5rem;
-
-  strong {
-    font-size: 1.7rem;
-    color: var(--demo-green);
-  }
-}
-
-.sceneReporting .statusToast {
-  right: 7%;
-  bottom: 8%;
-}
+.connectorReport { left: 43%; top: 45%; width: 20%; }
+.popoutReport { --from-x: -7rem; --from-y: 1.6rem; right: 8%; top: 30%; }
+.kpiCard { --from-x: -5rem; --from-y: -1rem; right: 17%; bottom: 15%; width: 8.5rem; }
+.kpiCard strong { font-size: 1.7rem; color: var(--demo-green); }
+.sceneReporting .statusToast { right: 7%; bottom: 8%; }
 
 .sceneDots {
   position: absolute;
@@ -514,17 +497,14 @@
     animation: dotActive var(--scene-duration) linear infinite;
   }
 
-  span:nth-child(2) { animation-delay: 6s; }
-  span:nth-child(3) { animation-delay: 12s; }
-  span:nth-child(4) { animation-delay: 18s; }
+  span:nth-child(2) { animation-delay: 5s; }
+  span:nth-child(3) { animation-delay: 10s; }
+  span:nth-child(4) { animation-delay: 15s; }
 }
 
-@keyframes sceneCarousel {
-  0%, 20% { transform: translateX(0%); }
-  25%, 45% { transform: translateX(-25%); }
-  50%, 70% { transform: translateX(-50%); }
-  75%, 95% { transform: translateX(-75%); }
-  100% { transform: translateX(0%); }
+@keyframes sceneActive {
+  0%, 23% { opacity: 1; }
+  25%, 100% { opacity: 0; }
 }
 
 @keyframes baseIn {
@@ -576,13 +556,9 @@
 }
 
 @media (max-width: 900px) {
-  .demoFrame {
+  .demoShell {
     max-width: 39rem;
     height: 25rem;
-  }
-
-  .basePanel {
-    inset: 15% 12% 15% 6%;
   }
 
   .popoutCard {
@@ -591,7 +567,7 @@
 }
 
 @media (max-width: 620px) {
-  .demoFrame {
+  .demoShell {
     width: 100%;
     height: 24rem;
   }
@@ -600,7 +576,10 @@
     padding: 0.8rem;
   }
 
-  .basePanel {
+  .sceneInquiry .basePanel,
+  .sceneRouting .basePanel,
+  .sceneApprovals .basePanel,
+  .sceneReporting .basePanel {
     inset: 14% 5% 22% 5%;
   }
 
@@ -608,13 +587,19 @@
     padding: 0.72rem 0.78rem;
   }
 
-  .kanbanBoard {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .contentGrid,
+  .inquiryLayout,
   .reportingGrid {
     grid-template-columns: 1fr;
+  }
+
+  .sourceChannels,
+  .inquiryDetail,
+  .statusRows {
+    display: none;
+  }
+
+  .kanbanBoard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .popoutCard {
@@ -629,17 +614,10 @@
   .popoutReport {
     right: 5%;
   }
-
-  .kpiCard,
-  .assignmentChip,
-  .statusChip,
-  .statusToast {
-    transform: scale(0.92);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sceneTrack,
+  .scene,
   .basePanel,
   .sourceHighlight,
   .connectorLine,
@@ -652,10 +630,7 @@
     animation: none !important;
   }
 
-  .sceneTrack {
-    transform: translateX(0) !important;
-  }
-
+  .sceneInquiry,
   .basePanel,
   .connectorLine,
   .popoutCard,
@@ -663,6 +638,12 @@
   .statusToast,
   .movingTaskCard {
     opacity: 1;
+  }
+
+  .sceneRouting,
+  .sceneApprovals,
+  .sceneReporting {
+    opacity: 0;
   }
 
   .connectorLine {
