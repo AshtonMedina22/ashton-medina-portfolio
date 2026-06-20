@@ -1,8 +1,4 @@
 .homePage {
-  width: 100vw;
-  max-width: 100%;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   min-height: 100vh;
   padding: var(--page-shell-padding-block);
   color: #1a1a1a;
@@ -14,8 +10,7 @@
 .proofStrip,
 .capabilitiesSection,
 .techBanner {
-  width: 100%;
-  max-width: var(--page-max-width);
+  width: min(100%, var(--page-max-width));
   margin-inline: auto;
 }
 

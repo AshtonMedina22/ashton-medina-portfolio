@@ -10,10 +10,6 @@
   --about-cyan: #1AC1B9;
   --about-depth: 0 8px 24px rgba(15, 23, 42, 0.06);
 
-  width: 100vw;
-  max-width: 100%;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   min-height: 100vh;
   padding: var(--page-shell-padding-block);
   color: var(--about-text);
