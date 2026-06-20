@@ -19,6 +19,9 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords?: string[];
   techStack?: Array<{ name: string; icon: string | null }>;
   highlights?: Array<{ value: string; label: string }>;
   performance?: number;
@@ -57,6 +60,9 @@ function readMDXFile(filePath: string) {
     tag: data.tag || [],
     team: data.team || [],
     link: data.link || "",
+    seoTitle: data.seoTitle || "",
+    seoDescription: data.seoDescription || "",
+    keywords: data.keywords || [],
     techStack: data.techStack || [],
     highlights: data.highlights || [],
     performance: data.performance,
