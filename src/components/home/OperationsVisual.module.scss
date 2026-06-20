@@ -1,15 +1,15 @@
 .demoShell {
-  --demo-ink: #1d1d24;
-  --demo-muted: #64748b;
-  --demo-soft: #94a3b8;
-  --demo-border: rgba(29, 29, 36, 0.1);
-  --demo-panel: rgba(255, 255, 255, 0.92);
-  --demo-blue-daises: #7f95e4;
-  --demo-teal: #1ac1b9;
-  --demo-gold: #fbd160;
-  --demo-barbie: #f9447f;
-  --demo-pink: #fcb8d9;
-  --demo-clementine: #ff8017;
+  --demo-ink: #002d72;
+  --demo-muted: #573894;
+  --demo-soft: #a0e5d9;
+  --demo-border: rgba(0, 45, 114, 0.12);
+  --demo-panel: rgba(249, 247, 236, 0.94);
+  --demo-jasmine: #f9f7ec;
+  --demo-sea-glass: #a0e5d9;
+  --demo-lagoon: #09cdcd;
+  --demo-purple: #81459e;
+  --demo-empress: #573894;
+  --demo-navy: #002d72;
   --scene-duration: 20s;
 
   position: relative;
@@ -20,12 +20,12 @@
   min-width: 0;
   margin-inline: auto;
   overflow: hidden;
-  border: 1px solid rgba(29, 29, 36, 0.1);
+  border: 1px solid rgba(0, 45, 114, 0.12);
   border-radius: 28px;
   color: var(--demo-ink);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
   perspective: 1200px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 1px 0 rgba(249, 247, 236, 0.9);
 }
 
 .backgroundGlow,
@@ -38,17 +38,17 @@
 .backgroundGlow {
   z-index: -2;
   background:
-    radial-gradient(circle at 18% 12%, rgba(26, 193, 185, 0.18), transparent 15rem),
-    radial-gradient(circle at 88% 18%, rgba(249, 68, 127, 0.16), transparent 16rem),
-    radial-gradient(circle at 72% 84%, rgba(252, 184, 217, 0.22), transparent 15rem),
-    linear-gradient(135deg, #fff8fb 0%, #eefafa 100%);
+    radial-gradient(circle at 18% 12%, rgba(9, 205, 205, 0.2), transparent 15rem),
+    radial-gradient(circle at 88% 18%, rgba(129, 69, 158, 0.16), transparent 16rem),
+    radial-gradient(circle at 72% 84%, rgba(160, 229, 217, 0.28), transparent 15rem),
+    linear-gradient(135deg, #f9f7ec 0%, #e4f5f1 100%);
 }
 
 .subtleGrid {
   z-index: -1;
   background:
-    linear-gradient(rgba(29, 29, 36, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(29, 29, 36, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(0, 45, 114, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 45, 114, 0.035) 1px, transparent 1px);
   background-size: 34px 34px;
   mask-image: radial-gradient(circle at 50% 44%, black, transparent 78%);
 }
@@ -78,8 +78,8 @@
   border-radius: 22px;
   background: var(--demo-panel);
   box-shadow:
-    0 18px 46px rgba(29, 29, 36, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.94);
+    0 18px 46px rgba(0, 45, 114, 0.1),
+    inset 0 1px 0 rgba(249, 247, 236, 0.94);
   opacity: 0;
   transform: translate3d(0, 0.8rem, -20px) scale(0.985);
   animation: baseIn var(--scene-duration) ease-in-out infinite;
@@ -97,8 +97,8 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1rem;
-  border-bottom: 1px solid rgba(29, 29, 36, 0.08);
-  background: rgba(255, 248, 251, 0.78);
+  border-bottom: 1px solid rgba(0, 45, 114, 0.08);
+  background: rgba(249, 247, 236, 0.82);
 
   span,
   strong {
@@ -106,7 +106,7 @@
   }
 
   span {
-    color: var(--demo-teal);
+    color: var(--demo-lagoon);
     font-size: 0.66rem;
     font-weight: 850;
     letter-spacing: 0.1em;
@@ -123,11 +123,11 @@
 
 .sourceHighlight {
   position: relative;
-  border-color: rgba(249, 68, 127, 0.42) !important;
-  background: rgba(249, 68, 127, 0.08) !important;
+  border-color: rgba(129, 69, 158, 0.42) !important;
+  background: rgba(129, 69, 158, 0.08) !important;
   box-shadow:
-    0 0 0 3px rgba(249, 68, 127, 0.08),
-    0 12px 28px rgba(249, 68, 127, 0.12) !important;
+    0 0 0 3px rgba(129, 69, 158, 0.08),
+    0 12px 28px rgba(129, 69, 158, 0.12) !important;
   animation: sourcePulse var(--scene-duration) ease-in-out infinite;
   animation-delay: var(--phase);
 }
@@ -138,7 +138,7 @@
   display: block;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(249, 68, 127, 0), rgba(249, 68, 127, 0.78), rgba(26, 193, 185, 0.82));
+  background: linear-gradient(90deg, rgba(129, 69, 158, 0), rgba(129, 69, 158, 0.78), rgba(9, 205, 205, 0.82));
   opacity: 0;
   transform: scaleX(0);
   transform-origin: left center;
@@ -152,12 +152,12 @@
 .movingTaskCard {
   position: absolute;
   z-index: 6;
-  border: 1px solid rgba(29, 29, 36, 0.09);
-  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 45, 114, 0.09);
+  background: rgba(249, 247, 236, 0.96);
   box-shadow:
-    0 30px 70px rgba(29, 29, 36, 0.2),
-    0 10px 24px rgba(249, 68, 127, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    0 30px 70px rgba(0, 45, 114, 0.2),
+    0 10px 24px rgba(129, 69, 158, 0.12),
+    inset 0 1px 0 rgba(249, 247, 236, 0.95);
   opacity: 0;
   transform: translate3d(var(--from-x, 0), var(--from-y, 0), -40px) scale(0.72);
   animation: popoutFromSource var(--scene-duration) cubic-bezier(0.18, 0.9, 0.2, 1) infinite;
@@ -177,7 +177,7 @@
   }
 
   span {
-    color: var(--demo-barbie);
+    color: var(--demo-purple);
     font-size: 0.66rem;
     font-weight: 850;
     letter-spacing: 0.1em;
@@ -210,7 +210,7 @@
   min-height: 2.1rem;
   padding: 0 0.72rem;
   border-radius: 999px;
-  color: var(--demo-teal);
+  color: var(--demo-lagoon);
   font-size: 0.74rem;
   font-weight: 850;
   animation-name: toastIn;
@@ -220,8 +220,8 @@
     width: 0.48rem;
     height: 0.48rem;
     border-radius: 999px;
-    background: var(--demo-teal);
-    box-shadow: 0 0 0 0.28rem rgba(26, 193, 185, 0.12);
+    background: var(--demo-lagoon);
+    box-shadow: 0 0 0 0.28rem rgba(9, 205, 205, 0.12);
   }
 }
 
@@ -245,9 +245,9 @@
   span {
     display: block;
     padding: 0.62rem;
-    border: 1px solid rgba(29, 29, 36, 0.07);
+    border: 1px solid rgba(0, 45, 114, 0.07);
     border-radius: 12px;
-    background: #fff8fb;
+    background: #f9f7ec;
     color: var(--demo-muted);
     font-size: 0.68rem;
     font-weight: 800;
@@ -256,7 +256,7 @@
 
 .inquiryRow,
 .inquiryDetail {
-  border: 1px solid rgba(29, 29, 36, 0.07);
+  border: 1px solid rgba(0, 45, 114, 0.07);
   border-radius: 13px;
   background: #ffffff;
 }
@@ -293,7 +293,7 @@
   }
 
   span {
-    color: var(--demo-teal);
+    color: var(--demo-lagoon);
     font-size: 0.64rem;
     font-weight: 850;
     letter-spacing: 0.09em;
@@ -307,7 +307,7 @@
 
   em {
     margin-top: 0.55rem;
-    color: var(--demo-teal);
+    color: var(--demo-lagoon);
     font-size: 0.72rem;
     font-style: normal;
     font-weight: 850;
@@ -330,9 +330,9 @@
 .kanbanColumn {
   min-width: 0;
   padding: 0.6rem;
-  border: 1px solid rgba(29, 29, 36, 0.06);
+  border: 1px solid rgba(0, 45, 114, 0.06);
   border-radius: 14px;
-  background: rgba(255, 248, 251, 0.76);
+  background: rgba(249, 247, 236, 0.76);
 
   > span {
     color: var(--demo-muted);
@@ -344,7 +344,7 @@
     min-height: 3.5rem;
     margin-top: 0.55rem;
     padding: 0.65rem;
-    border: 1px dashed rgba(29, 29, 36, 0.1);
+    border: 1px dashed rgba(0, 45, 114, 0.1);
     border-radius: 12px;
     color: var(--demo-ink);
     font-size: 0.72rem;
@@ -384,7 +384,7 @@
     bottom: 1.25rem;
     left: 1.6rem;
     width: 2px;
-    background: rgba(26, 193, 185, 0.18);
+    background: rgba(9, 205, 205, 0.18);
   }
 }
 
@@ -397,7 +397,7 @@
   gap: 0.75rem;
   min-height: 2.65rem;
   padding: 0 0.8rem 0 0.2rem;
-  border: 1px solid rgba(29, 29, 36, 0.07);
+  border: 1px solid rgba(0, 45, 114, 0.07);
   border-radius: 13px;
   background: #ffffff;
 
@@ -405,7 +405,7 @@
     width: 0.74rem;
     height: 0.74rem;
     border-radius: 999px;
-    background: var(--demo-pink);
+    background: var(--demo-sea-glass);
   }
 
   span {
@@ -434,7 +434,7 @@
   align-items: end;
   gap: 0.7rem;
   padding: 1.1rem;
-  border: 1px solid rgba(29, 29, 36, 0.07);
+  border: 1px solid rgba(0, 45, 114, 0.07);
   border-radius: 16px;
   background: #ffffff;
 
@@ -442,7 +442,7 @@
     display: block;
     min-height: 2rem;
     border-radius: 999px 999px 8px 8px;
-    background: linear-gradient(180deg, var(--demo-teal), var(--demo-barbie));
+    background: linear-gradient(180deg, var(--demo-lagoon), var(--demo-purple));
     transform-origin: bottom;
     animation: barGrow var(--scene-duration) ease-in-out infinite;
     animation-delay: var(--phase);
@@ -459,7 +459,7 @@
     justify-content: space-between;
     gap: 0.65rem;
     padding: 0.7rem;
-    border: 1px solid rgba(29, 29, 36, 0.07);
+    border: 1px solid rgba(0, 45, 114, 0.07);
     border-radius: 13px;
     background: #ffffff;
   }
@@ -481,7 +481,7 @@
 .connectorReport { left: 43%; top: 45%; width: 20%; }
 .popoutReport { --from-x: -7rem; --from-y: 1.6rem; right: 8%; top: 30%; }
 .kpiCard { --from-x: -5rem; --from-y: -1rem; right: 17%; bottom: 15%; width: 8.5rem; }
-.kpiCard strong { font-size: 1.7rem; color: var(--demo-teal); }
+.kpiCard strong { font-size: 1.7rem; color: var(--demo-lagoon); }
 .sceneReporting .statusToast { right: 7%; bottom: 8%; }
 
 .sceneDots {
@@ -496,7 +496,7 @@
     width: 0.42rem;
     height: 0.42rem;
     border-radius: 999px;
-    background: rgba(29, 29, 36, 0.22);
+    background: rgba(0, 45, 114, 0.22);
     animation: dotActive var(--scene-duration) linear infinite;
   }
 
@@ -554,8 +554,8 @@
 }
 
 @keyframes dotActive {
-  0%, 24% { width: 1.15rem; background: var(--demo-barbie); }
-  25%, 100% { width: 0.42rem; background: rgba(29, 29, 36, 0.22); }
+  0%, 24% { width: 1.15rem; background: var(--demo-purple); }
+  25%, 100% { width: 0.42rem; background: rgba(0, 45, 114, 0.22); }
 }
 
 @media (max-width: 900px) {
