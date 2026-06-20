@@ -24,6 +24,8 @@ export {
 } from "./projects";
 export type { ProjectAccent } from "./projects";
 
+export { seoKeywords, primaryServices, buildSiteJsonLd, buildProjectJsonLd } from "./seo";
+
 export {
   display,
   mailchimp,
