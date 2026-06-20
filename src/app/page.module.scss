@@ -158,13 +158,15 @@
 }
 
 .secondaryCta {
-  border: 1px solid #cbd5e1;
+  border: 2px solid #1a1a1a;
   background: transparent;
   color: #1a1a1a;
+  font-weight: 600;
 
   &:hover {
     background: #f1f5f9;
     border-color: #1AC1B9;
+    color: #1AC1B9;
   }
 }
 
