@@ -97,10 +97,13 @@ export default async function RootLayout({
                     return themeValue;
                   };
                   
-                  // Apply saved theme
+                  // Apply saved theme (or default if none saved)
                   const savedTheme = localStorage.getItem('data-theme');
                   const resolvedTheme = resolveTheme(savedTheme || defaultTheme);
                   root.setAttribute('data-theme', resolvedTheme);
+
+                  // For now, always use light theme by clearing any saved preference
+                  localStorage.removeItem('data-theme');
                   
                   // Apply any saved style overrides
                   const styleKeys = Object.keys(config);
@@ -112,7 +115,7 @@ export default async function RootLayout({
                   });
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
                 }
               })();
             `,
