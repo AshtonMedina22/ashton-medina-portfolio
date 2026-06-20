@@ -8,7 +8,7 @@
   --demo-cyan: #1AC1B9;
   --demo-green: #22c55e;
   --demo-amber: #FBD160;
-  --scene-duration: 24s;
+  --scene-duration: 20s;
 
   position: relative;
   isolation: isolate;
@@ -75,15 +75,15 @@
 
 .basePanel {
   position: absolute;
-  inset: 13% 14% 13% 7%;
+  inset: 12% 12% 12% 8%;
   z-index: 2;
   overflow: hidden;
   border: 1px solid var(--demo-border);
-  border-radius: 22px;
+  border-radius: 20px;
   background: var(--demo-panel);
   box-shadow:
-    0 8px 20px rgba(26, 193, 185, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+    0 6px 16px rgba(26, 193, 185, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   animation: baseIn var(--scene-duration) ease-in-out infinite;
 }
 
@@ -92,9 +92,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 1rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(248, 250, 252, 0.78);
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid rgba(26, 193, 185, 0.08);
+  background: rgba(255, 255, 255, 0.5);
 
   span,
   strong {
@@ -103,17 +103,17 @@
 
   span {
     color: var(--demo-cyan);
-    font-size: 0.66rem;
-    font-weight: 850;
-    letter-spacing: 0.1em;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
   strong {
     color: var(--demo-ink);
-    font-size: 0.92rem;
-    font-weight: 850;
-    letter-spacing: -0.02em;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
   }
 }
 
@@ -228,23 +228,23 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.85rem;
-  min-height: 2.65rem;
-  padding: 0 0.8rem;
-  border: 1px solid rgba(15, 23, 42, 0.07);
-  border-radius: 13px;
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgba(26, 193, 185, 0.08);
+  border-radius: 12px;
   background: #ffffff;
 
   span {
     color: var(--demo-ink);
-    font-size: 0.82rem;
-    font-weight: 780;
+    font-size: 0.8rem;
+    font-weight: 700;
   }
 
   em {
     color: var(--demo-muted);
-    font-size: 0.67rem;
+    font-size: 0.66rem;
     font-style: normal;
-    font-weight: 760;
+    font-weight: 600;
   }
 }
 
@@ -283,15 +283,15 @@
 
 .kanbanColumn {
   min-width: 0;
-  padding: 0.6rem;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: 14px;
-  background: rgba(248, 250, 252, 0.86);
+  padding: 0.65rem;
+  border: 1px solid rgba(26, 193, 185, 0.08);
+  border-radius: 13px;
+  background: rgba(248, 250, 252, 0.6);
 
   > span {
     color: var(--demo-muted);
-    font-size: 0.66rem;
-    font-weight: 850;
+    font-size: 0.65rem;
+    font-weight: 700;
   }
 
   > div {
