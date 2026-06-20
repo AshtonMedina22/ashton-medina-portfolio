@@ -1,297 +1,247 @@
 import type { CSSProperties } from "react";
 import styles from "./OperationsVisual.module.scss";
 
-type PillTone = "violet" | "cyan" | "green" | "amber" | "rose";
+type Accent = "violet" | "cyan" | "green" | "amber";
 
-type ProductScene = {
-  kicker: string;
+type WorkflowScene = {
   title: string;
-  nav: string[];
-  metrics: Array<{ label: string; value: string; tone: PillTone }>;
-  activity: Array<{ title: string; detail: string; status: string; tone: PillTone }>;
-  chart: number[];
-  feature: {
-    label: string;
-    title: string;
-    body: string;
-    tone: PillTone;
-  };
-  mobile: {
-    title: string;
-    value: string;
-    label: string;
-  };
+  eyebrow: string;
+  item: string;
+  summary: string;
+  activeStep: number;
+  chips: Array<{ label: string; accent: Accent }>;
+  cards: Array<{ label: string; title: string; meta: string; accent: Accent }>;
+  report: Array<{ label: string; value: string; accent: Accent }>;
 };
 
-const scenes: ProductScene[] = [
+const flowSteps = [
+  "New Inquiry",
+  "Assigned to Owner",
+  "Tasks Created",
+  "Follow-Up Scheduled",
+  "Status Updated",
+  "Report Generated",
+] as const;
+
+const scenes: WorkflowScene[] = [
   {
-    kicker: "SaaS Command Center",
-    title: "Live product dashboard for delivery, reporting, and integrations.",
-    nav: ["Dashboard", "Projects", "Automation", "Reports", "Integrations"],
-    metrics: [
-      { label: "Projects", value: "24", tone: "violet" },
-      { label: "Automation", value: "18", tone: "cyan" },
-      { label: "Reports", value: "42", tone: "green" },
+    title: "Inquiry Capture",
+    eyebrow: "Messy request captured",
+    item: "Customer follow-up request",
+    summary:
+      "A new inquiry is logged, labeled, and made visible before it gets lost in email or chat.",
+    activeStep: 0,
+    chips: [
+      { label: "New Inquiry", accent: "violet" },
+      { label: "Needs Follow-Up", accent: "amber" },
+      { label: "Assigned", accent: "green" },
     ],
-    activity: [
+    cards: [
       {
-        title: "Data synced 2m ago",
-        detail: "CRM, tasks, and analytics connected",
-        status: "Live",
-        tone: "green",
+        label: "Source",
+        title: "Website form",
+        meta: "Captured today",
+        accent: "cyan",
       },
       {
-        title: "Integration check",
-        detail: "Webhook queue processed",
-        status: "Synced",
-        tone: "cyan",
-      },
-      {
-        title: "Dashboard refresh",
-        detail: "Weekly product KPIs updated",
-        status: "Ready",
-        tone: "violet",
+        label: "Priority",
+        title: "Needs follow-up",
+        meta: "Owner required",
+        accent: "amber",
       },
     ],
-    chart: [38, 52, 45, 68, 74, 88],
-    feature: {
-      label: "Command Center",
-      title: "One interface for projects, workflows, and reports.",
-      body: "Readable product UI for business systems, delivery tracking, and analytics.",
-      tone: "violet",
-    },
-    mobile: {
-      title: "Analytics",
-      value: "92%",
-      label: "Adoption",
-    },
+    report: [
+      { label: "New", value: "12", accent: "violet" },
+      { label: "Unassigned", value: "3", accent: "amber" },
+      { label: "Visible", value: "100%", accent: "green" },
+    ],
   },
   {
-    kicker: "Workflow Automation",
-    title: "Requests move from intake to launch with automated routing.",
-    nav: ["Intake", "Review", "Build", "Launch", "Tasks"],
-    metrics: [
-      { label: "Intake", value: "12", tone: "cyan" },
-      { label: "Review", value: "7", tone: "amber" },
-      { label: "Launch", value: "5", tone: "green" },
+    title: "Task Routing",
+    eyebrow: "Work gets assigned",
+    item: "Implementation checklist",
+    summary: "The inquiry becomes assigned tasks with a clear owner, due date, and next action.",
+    activeStep: 2,
+    chips: [
+      { label: "Owner Assigned", accent: "green" },
+      { label: "Tasks Created", accent: "violet" },
+      { label: "Due Date Set", accent: "cyan" },
     ],
-    activity: [
+    cards: [
       {
-        title: "Auto-route request",
-        detail: "New workflow assigned by rules",
-        status: "Active",
-        tone: "cyan",
+        label: "Owner",
+        title: "Operations lead",
+        meta: "Accountable person set",
+        accent: "green",
       },
       {
-        title: "Build handoff",
-        detail: "Tasks generated for delivery",
-        status: "Ready",
-        tone: "green",
-      },
-      {
-        title: "QA reminder",
-        detail: "Review owner notified",
-        status: "Synced",
-        tone: "violet",
+        label: "Next step",
+        title: "Prepare follow-up",
+        meta: "Due tomorrow",
+        accent: "violet",
       },
     ],
-    chart: [22, 34, 48, 62, 76, 90],
-    feature: {
-      label: "Automation Trigger",
-      title: "If request is approved, create tasks and notify owners.",
-      body: "Connector lines, status chips, and routing logic stay visible to users.",
-      tone: "cyan",
-    },
-    mobile: {
-      title: "Workflow",
-      value: "Active",
-      label: "Auto-route request",
-    },
+    report: [
+      { label: "Tasks", value: "8", accent: "violet" },
+      { label: "Owners", value: "4", accent: "green" },
+      { label: "Due", value: "2", accent: "cyan" },
+    ],
   },
   {
-    kicker: "Implementation Tracker",
-    title: "Discovery, configuration, testing, and rollout in one build view.",
-    nav: ["Discovery", "Configuration", "Testing", "Rollout", "Deployments"],
-    metrics: [
-      { label: "Discovery", value: "Done", tone: "green" },
-      { label: "Testing", value: "9", tone: "violet" },
-      { label: "Rollout", value: "82%", tone: "cyan" },
+    title: "Work Tracking",
+    eyebrow: "Status stays clear",
+    item: "Open customer tasks",
+    summary:
+      "Tasks move through a simple status board so waiting items and ready work are easy to see.",
+    activeStep: 4,
+    chips: [
+      { label: "In Progress", accent: "cyan" },
+      { label: "Waiting", accent: "amber" },
+      { label: "Ready", accent: "violet" },
+      { label: "Complete", accent: "green" },
     ],
-    activity: [
+    cards: [
       {
-        title: "Launch readiness 82%",
-        detail: "Configuration and testing on track",
-        status: "Ready",
-        tone: "green",
+        label: "In Progress",
+        title: "Confirm requirements",
+        meta: "Owner active",
+        accent: "cyan",
       },
       {
-        title: "Blocker resolved",
-        detail: "CRM field mapping approved",
-        status: "Synced",
-        tone: "cyan",
-      },
-      {
-        title: "Rollout checklist",
-        detail: "Training notes prepared",
-        status: "Active",
-        tone: "violet",
+        label: "Waiting",
+        title: "Approval needed",
+        meta: "Reminder scheduled",
+        accent: "amber",
       },
     ],
-    chart: [18, 42, 58, 64, 82, 82],
-    feature: {
-      label: "Implementation",
-      title: "Launch readiness 82% with clear blockers and owners.",
-      body: "A compact tracker keeps discovery, testing, rollout, and adoption aligned.",
-      tone: "green",
-    },
-    mobile: {
-      title: "Rollout",
-      value: "82%",
-      label: "Launch readiness",
-    },
+    report: [
+      { label: "In Progress", value: "9", accent: "cyan" },
+      { label: "Waiting", value: "4", accent: "amber" },
+      { label: "Complete", value: "18", accent: "green" },
+    ],
   },
   {
-    kicker: "Reporting & Analytics",
-    title: "Weekly analytics translate activity into decision-ready reporting.",
-    nav: ["Analytics", "Reports", "CRM", "Tasks", "Dashboard"],
-    metrics: [
-      { label: "Cycle Time", value: "-31%", tone: "green" },
-      { label: "Adoption", value: "92%", tone: "cyan" },
-      { label: "Open Items", value: "14", tone: "amber" },
+    title: "Reporting Visibility",
+    eyebrow: "Leadership can see status",
+    item: "Weekly status summary",
+    summary:
+      "Completed work, open items, and follow-ups roll into a readable report without manual rebuilding.",
+    activeStep: 5,
+    chips: [
+      { label: "Report Generated", accent: "green" },
+      { label: "Open Items", accent: "amber" },
+      { label: "Follow-Ups", accent: "cyan" },
+      { label: "Completed Work", accent: "violet" },
     ],
-    activity: [
+    cards: [
       {
+        label: "Summary",
         title: "Weekly report generated",
-        detail: "Leadership summary ready",
-        status: "Ready",
-        tone: "green",
+        meta: "Ready for leadership",
+        accent: "green",
       },
       {
-        title: "Analytics refresh",
-        detail: "Cycle Time and Adoption updated",
-        status: "Live",
-        tone: "cyan",
-      },
-      {
-        title: "Open Items review",
-        detail: "Priority tasks grouped by owner",
-        status: "Active",
-        tone: "amber",
+        label: "Focus",
+        title: "Follow-ups due",
+        meta: "Prioritized by owner",
+        accent: "cyan",
       },
     ],
-    chart: [34, 46, 62, 58, 78, 94],
-    feature: {
-      label: "Report Summary",
-      title: "Weekly report generated from live workflow data.",
-      body: "Clean analytics panels make project health and adoption easy to scan.",
-      tone: "cyan",
-    },
-    mobile: {
-      title: "Reports",
-      value: "Live",
-      label: "Weekly report generated",
-    },
+    report: [
+      { label: "Open Items", value: "14", accent: "amber" },
+      { label: "Follow-Ups", value: "7", accent: "cyan" },
+      { label: "Completed Work", value: "28", accent: "green" },
+    ],
   },
 ];
 
-const toneClass: Record<PillTone, string> = {
-  violet: styles.toneViolet,
-  cyan: styles.toneCyan,
-  green: styles.toneGreen,
-  amber: styles.toneAmber,
-  rose: styles.toneRose,
+const accentClass: Record<Accent, string> = {
+  violet: styles.violet,
+  cyan: styles.cyan,
+  green: styles.green,
+  amber: styles.amber,
 };
 
 export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean }) {
   return (
     <div
-      className={styles.productVisual}
+      className={styles.workflowVisual}
       data-hero-scaled={heroScaled ? "" : undefined}
-      aria-label="Animated SaaS product demo preview"
+      aria-label="Animated business workflow solutions loop"
     >
-      <div className={styles.frameGlow} aria-hidden />
-      <div className={styles.productShell}>
-        <div className={styles.windowBar} aria-hidden>
-          <span />
-          <span />
-          <span />
-        </div>
+      <div className={styles.visualGlow} aria-hidden />
+      <div className={styles.workflowShell}>
+        <header className={styles.shellHeader}>
+          <div>
+            <span>Business Workflow Solutions Loop</span>
+            <strong>Organize the work before it gets missed.</strong>
+          </div>
+          <em>Live status</em>
+        </header>
 
         <div className={styles.sceneViewport}>
           <div className={styles.sceneTrack}>
             {scenes.map((scene) => (
-              <section className={styles.scene} key={scene.kicker} aria-label={scene.kicker}>
-                <aside className={styles.miniRail} aria-label={`${scene.kicker} navigation`}>
-                  <div className={styles.railMark}>AM</div>
-                  {scene.nav.map((item, index) => (
-                    <span key={item} className={index === 0 ? styles.activeNavItem : undefined}>
-                      {item}
-                    </span>
-                  ))}
-                </aside>
+              <section className={styles.scene} key={scene.title} aria-label={scene.title}>
+                <div className={styles.sceneIntro}>
+                  <span>{scene.eyebrow}</span>
+                  <h3>{scene.title}</h3>
+                  <p>{scene.summary}</p>
+                </div>
 
-                <div className={styles.appCanvas}>
-                  <header className={styles.appHeader}>
-                    <div>
-                      <span className={styles.sceneKicker}>{scene.kicker}</span>
-                      <h3>{scene.title}</h3>
+                <div className={styles.flowRow} aria-label="Workflow from inquiry to report">
+                  {flowSteps.map((step, index) => (
+                    <div
+                      className={`${styles.flowStep} ${index <= scene.activeStep ? styles.flowStepActive : ""}`}
+                      key={`${scene.title}-${step}`}
+                    >
+                      <span>{index + 1}</span>
+                      <strong>{step}</strong>
                     </div>
-                    <span className={styles.liveBadge}>Live</span>
-                  </header>
+                  ))}
+                </div>
 
-                  <div className={styles.metricGrid}>
-                    {scene.metrics.map((metric) => (
-                      <div className={styles.metricCard} key={`${scene.kicker}-${metric.label}`}>
-                        <span>{metric.label}</span>
-                        <strong className={toneClass[metric.tone]}>{metric.value}</strong>
-                      </div>
+                <div className={styles.contentGrid}>
+                  <article className={styles.inquiryCard}>
+                    <span>Business item</span>
+                    <strong>{scene.item}</strong>
+                    <div className={styles.chipRow}>
+                      {scene.chips.map((chip) => (
+                        <em
+                          className={accentClass[chip.accent]}
+                          key={`${scene.title}-${chip.label}`}
+                        >
+                          {chip.label}
+                        </em>
+                      ))}
+                    </div>
+                  </article>
+
+                  <div className={styles.taskStack}>
+                    {scene.cards.map((card) => (
+                      <article
+                        className={`${styles.taskCard} ${accentClass[card.accent]}`}
+                        key={`${scene.title}-${card.title}`}
+                      >
+                        <span>{card.label}</span>
+                        <strong>{card.title}</strong>
+                        <p>{card.meta}</p>
+                      </article>
                     ))}
                   </div>
 
-                  <div className={styles.workspaceGrid}>
-                    <div className={styles.activityPanel}>
-                      <div className={styles.panelTitle}>Activity</div>
-                      {scene.activity.map((item) => (
-                        <div className={styles.activityRow} key={`${scene.kicker}-${item.title}`}>
-                          <div>
-                            <strong>{item.title}</strong>
-                            <span>{item.detail}</span>
-                          </div>
-                          <em className={toneClass[item.tone]}>{item.status}</em>
+                  <article className={styles.reportCard}>
+                    <span>Report snapshot</span>
+                    <div className={styles.reportMetrics}>
+                      {scene.report.map((metric) => (
+                        <div key={`${scene.title}-${metric.label}`}>
+                          <strong className={accentClass[metric.accent]}>{metric.value}</strong>
+                          <em>{metric.label}</em>
                         </div>
                       ))}
                     </div>
-
-                    <div className={styles.chartPanel}>
-                      <div className={styles.panelTitle}>Trend</div>
-                      <div className={styles.chartBars} aria-hidden>
-                        {scene.chart.map((height, index) => (
-                          <span
-                            key={`${scene.kicker}-bar-${index}`}
-                            style={{ "--bar-height": `${height}%` } as CSSProperties}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className={`${styles.featureCard} ${toneClass[scene.feature.tone]}`}>
-                    <span>{scene.feature.label}</span>
-                    <strong>{scene.feature.title}</strong>
-                    <p>{scene.feature.body}</p>
-                  </div>
-
-                  <div className={styles.mobileCard}>
-                    <span>{scene.mobile.title}</span>
-                    <strong>{scene.mobile.value}</strong>
-                    <em>{scene.mobile.label}</em>
-                  </div>
-
-                  <div className={styles.connectorLayer} aria-hidden>
-                    <span className={styles.connectorOne} />
-                    <span className={styles.connectorTwo} />
-                    <span className={styles.connectorDot} />
-                  </div>
+                    <p>Status updated and ready to share.</p>
+                  </article>
                 </div>
               </section>
             ))}
@@ -301,7 +251,7 @@ export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean 
 
       <div className={styles.sceneDots} aria-hidden>
         {scenes.map((scene, index) => (
-          <span key={scene.kicker} style={{ "--dot-index": index } as CSSProperties} />
+          <span key={scene.title} style={{ "--dot-index": index } as CSSProperties} />
         ))}
       </div>
     </div>
