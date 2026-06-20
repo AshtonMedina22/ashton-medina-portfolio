@@ -22,19 +22,19 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    label: "Request Intake",
-    title: "Requests stop getting lost.",
-    nav: ["Inbox", "Forms", "Requests"],
-    flow: ["Request Received", "Needs Review", "Assigned"],
+    label: "New Requests",
+    title: "Everything lands in one place.",
+    nav: ["Inbox", "Emails", "Forms"],
+    flow: ["Request comes in", "Checked", "Assigned"],
     rows: [
-      { title: "New Request", meta: "Website form", status: "Needs Review" },
-      { title: "Vendor Update", meta: "Email received", status: "Open" },
-      { title: "Internal Request", meta: "Team note", status: "Queued" },
+      { title: "Website form", meta: "New customer question", status: "Check" },
+      { title: "Email request", meta: "Needs a reply", status: "Open" },
+      { title: "Staff note", meta: "Internal ask", status: "Queued" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "New Request", title: "Request Received", detail: "Captured from intake", icon: <HiOutlineDocumentText /> },
-      { className: styles.popoutSecondary, label: "Review", title: "Needs Review", detail: "Priority and owner needed", icon: <HiOutlineClipboardList /> },
-      { className: styles.popoutTertiary, label: "Assigned", title: "Owner selected", detail: "Nothing falls through", icon: <HiOutlineUserGroup /> },
+      { className: styles.popoutPrimary, label: "New", title: "Request saved", detail: "No more scattered messages", icon: <HiOutlineDocumentText /> },
+      { className: styles.popoutSecondary, label: "Check", title: "Needs a reply", detail: "Priority is clear", icon: <HiOutlineClipboardList /> },
+      { className: styles.popoutTertiary, label: "Assigned", title: "Someone owns it", detail: "Nothing gets missed", icon: <HiOutlineUserGroup /> },
     ],
     stats: [
       { label: "New", value: "12" },
@@ -42,65 +42,65 @@ const slides: Slide[] = [
     ],
   },
   {
-    label: "Auto-Routing",
-    title: "Work routes to the right owner.",
-    nav: ["Rules", "Owners", "Tasks"],
-    flow: ["Auto-Routed", "Owner Matched", "Tasks Created"],
+    label: "Smart Sorting",
+    title: "The right person gets the work.",
+    nav: ["Rules", "People", "Tasks"],
+    flow: ["Sort request", "Pick owner", "Make checklist"],
     rows: [
-      { title: "Auto-route request", meta: "Rule matched", status: "Live" },
-      { title: "Owner matched", meta: "Ops lead", status: "Assigned" },
-      { title: "Tasks created", meta: "Checklist added", status: "Ready" },
+      { title: "Sort request", meta: "Matched by type", status: "Done" },
+      { title: "Pick owner", meta: "Best person selected", status: "Assigned" },
+      { title: "Make checklist", meta: "Steps added", status: "Ready" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "Rule fired", title: "Auto-Routed", detail: "Manual sorting removed", icon: <HiOutlineSparkles /> },
-      { className: styles.popoutSecondary, label: "Owner", title: "Owner Notified", detail: "Next step is clear", icon: <HiOutlineUserGroup /> },
-      { className: styles.popoutTertiary, label: "Task", title: "Tasks Created", detail: "Checklist attached", icon: <HiOutlineClipboardList /> },
+      { className: styles.popoutPrimary, label: "Sorted", title: "Sent to the right person", detail: "Less manual follow-up", icon: <HiOutlineSparkles /> },
+      { className: styles.popoutSecondary, label: "Owner", title: "Person notified", detail: "They know what to do", icon: <HiOutlineUserGroup /> },
+      { className: styles.popoutTertiary, label: "Checklist", title: "Next steps added", detail: "The work is repeatable", icon: <HiOutlineClipboardList /> },
     ],
     stats: [
-      { label: "Routed", value: "18" },
+      { label: "Sorted", value: "18" },
       { label: "Matched", value: "96%" },
     ],
   },
   {
-    label: "Work Tracking",
-    title: "Everyone can see status.",
+    label: "Work Tracker",
+    title: "Everyone can see what is happening.",
     nav: ["Board", "Status", "Alerts"],
-    flow: ["In Progress", "Ready", "Blocked", "Complete"],
+    flow: ["Working", "Waiting", "Stuck", "Done"],
     rows: [
-      { title: "In Progress", meta: "Owner working", status: "Active" },
-      { title: "Ready", meta: "Waiting on review", status: "Next" },
-      { title: "Blocked", meta: "Needs approval", status: "Flagged" },
-      { title: "Complete", meta: "Closed this week", status: "Done" },
+      { title: "Working", meta: "Owner is active", status: "Active" },
+      { title: "Waiting", meta: "Needs review", status: "Next" },
+      { title: "Stuck", meta: "Needs approval", status: "Flag" },
+      { title: "Done", meta: "Closed this week", status: "Done" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "Tracker", title: "Status Updated", detail: "Live board, no guessing", icon: <HiOutlineCheckCircle /> },
-      { className: styles.popoutSecondary, label: "Reminder", title: "Owner Notified", detail: "Follow-up sent", icon: <HiOutlineCalendar /> },
-      { className: styles.popoutTertiary, label: "Blocked", title: "Approval Needed", detail: "Issue surfaced early", icon: <HiOutlineDocumentText /> },
+      { className: styles.popoutPrimary, label: "Status", title: "Updated automatically", detail: "No guessing where it stands", icon: <HiOutlineCheckCircle /> },
+      { className: styles.popoutSecondary, label: "Reminder", title: "Follow-up sent", detail: "Owners stay on track", icon: <HiOutlineCalendar /> },
+      { className: styles.popoutTertiary, label: "Stuck", title: "Problem flagged", detail: "Issues show up early", icon: <HiOutlineDocumentText /> },
     ],
     stats: [
       { label: "Active", value: "8" },
-      { label: "Blocked", value: "2" },
+      { label: "Stuck", value: "2" },
     ],
   },
   {
-    label: "Reporting Visibility",
-    title: "Leadership gets usable reporting.",
-    nav: ["Reports", "KPIs", "Archive"],
-    flow: ["Status Updated", "Report Generated", "Repeatable Workflow"],
+    label: "Weekly Summary",
+    title: "You know what needs attention.",
+    nav: ["Summary", "Numbers", "History"],
+    flow: ["Update status", "Make report", "Repeat next week"],
     rows: [
-      { title: "Weekly report generated", meta: "Shared view", status: "Sent" },
-      { title: "Open Items", meta: "Needs attention", status: "14" },
-      { title: "Adoption", meta: "Team usage", status: "92%" },
-      { title: "Cycle Time", meta: "Average close", status: "3.2d" },
+      { title: "Weekly summary", meta: "Ready to share", status: "Sent" },
+      { title: "Open items", meta: "Needs attention", status: "14" },
+      { title: "Team usage", meta: "People using it", status: "92%" },
+      { title: "Time to finish", meta: "Average close", status: "3.2d" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "Report", title: "Report Generated", detail: "Clean leadership summary", icon: <HiOutlineChartBar /> },
-      { className: styles.popoutSecondary, label: "Visibility", title: "Open Items", detail: "Risks are clear", icon: <HiOutlineDocumentText /> },
-      { className: styles.popoutTertiary, label: "Loop", title: "Repeatable Workflow", detail: "The process can scale", icon: <HiOutlineSparkles /> },
+      { className: styles.popoutPrimary, label: "Summary", title: "Weekly report ready", detail: "Clear view of the work", icon: <HiOutlineChartBar /> },
+      { className: styles.popoutSecondary, label: "Attention", title: "Open items listed", detail: "Know what to fix first", icon: <HiOutlineDocumentText /> },
+      { className: styles.popoutTertiary, label: "Repeat", title: "Same process next week", detail: "The system keeps working", icon: <HiOutlineSparkles /> },
     ],
     stats: [
-      { label: "Adoption", value: "92%" },
-      { label: "Cycle Time", value: "3.2d" },
+      { label: "Team usage", value: "92%" },
+      { label: "Avg. close", value: "3.2d" },
     ],
   },
 ];
@@ -112,7 +112,7 @@ function AppChrome({ slide }: { slide: Slide }) {
         <span />
         <span />
         <span />
-        <strong>Workflow System</strong>
+        <strong>Work System</strong>
       </div>
       <div className={styles.workspaceShell}>
         <aside className={styles.sidebar}>
@@ -176,7 +176,7 @@ export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean 
     <div
       className={styles.heroMockup}
       data-hero-scaled={heroScaled ? "" : undefined}
-      aria-label="Animated Business Workflow Solutions Loop"
+      aria-label="Animated business work system loop"
     >
       <div className={styles.glowField} aria-hidden />
       <div className={styles.sliderViewport}>
