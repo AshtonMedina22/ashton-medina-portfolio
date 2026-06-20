@@ -207,12 +207,12 @@
   padding: 0.35rem 0.85rem;
   border-radius: 8px;
   color: #ffffff;
-  background: var(--demo-cyan);
+  background: #7F95E4;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   animation-name: toastIn;
-  box-shadow: 0 4px 12px rgba(26, 193, 185, 0.25);
+  box-shadow: 0 4px 12px rgba(127, 149, 228, 0.25);
 
   &::before {
     content: "";

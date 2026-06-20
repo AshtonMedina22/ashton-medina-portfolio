@@ -60,16 +60,25 @@ export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean 
                         <>
                           <div className={`${styles.kanbanCard} ${styles.sourceHighlight}`}>Tasks Created</div>
                           <div className={styles.kanbanCard}>Follow-up</div>
+                          <div className={styles.kanbanCard}>Review</div>
                         </>
                       )}
                       {idx === 1 && (
                         <>
                           <div className={styles.kanbanCard}>Owner Assigned</div>
+                          <div className={styles.kanbanCard}>In Review</div>
                         </>
                       )}
                       {idx === 2 && (
                         <>
                           <div className={styles.kanbanCard}>Ready</div>
+                          <div className={styles.kanbanCard}>Approved</div>
+                        </>
+                      )}
+                      {idx === 3 && (
+                        <>
+                          <div className={styles.kanbanCard}>Completed</div>
+                          <div className={styles.kanbanCard}>Archived</div>
                         </>
                       )}
                     </div>
