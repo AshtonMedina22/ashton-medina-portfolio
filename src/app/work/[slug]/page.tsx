@@ -144,12 +144,6 @@ export default async function Project({
       </section>
 
       <section className={styles.articleSection} aria-labelledby="case-study-heading">
-        <div className={styles.sectionHeading}>
-          <span className={styles.eyebrow}>Case Study</span>
-          <h2 id="case-study-heading">
-            Case <span className="headingAccent">study.</span>
-          </h2>
-        </div>
         <article className={styles.articleProse}>
           <CustomMDX source={intro} />
         </article>

@@ -8,12 +8,12 @@ $primary-border: #002D7266;
 $accent: #09CDCD;
 $accent-bg: #09CDCD1f;
 $accent-border: #09CDCD3d;
-$border: rgba(0, 45, 114, 0.12);
-$border-light: rgba(0, 45, 114, 0.06);
-$bg: #f8fafc;
-$card-bg: #ffffff;
-$text: #0f172a;
-$text-muted: #475569;
+$border: rgba(0, 45, 114, 0.38);
+$border-light: rgba(148, 163, 184, 0.18);
+$bg: #070b12;
+$card-bg: #111827;
+$text: #f8fafc;
+$text-muted: #94a3b8;
 $text-subtle: #64748b;
 
 /* Wrapper: subtle vignette and padding for product shot */
@@ -49,7 +49,7 @@ $text-subtle: #64748b;
   gap: 0.75rem;
   padding: 0.4rem 0.75rem;
   font-size: 0.7rem;
-  background: linear-gradient(180deg, rgba(240, 244, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(12, 18, 31, 0.98) 100%);
   border-bottom: 1px solid $border;
 }
 

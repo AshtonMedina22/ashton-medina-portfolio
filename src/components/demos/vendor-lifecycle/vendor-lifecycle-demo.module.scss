@@ -7,9 +7,9 @@ $ui-yellow: #fbbf24;
 $ui-yellow-bg: #fbbf2415;
 $ui-red: #dc2626;
 $ui-red-bg: #dc262615;
-$ui-border: rgba(0, 45, 114, 0.12);
-$ui-bg: #f8fafc;
-$ui-card-bg: #ffffff;
+$ui-border: rgba(0, 45, 114, 0.38);
+$ui-bg: #070b12;
+$ui-card-bg: #111827;
 
 /* App shell — fixed product shot, no scrollbars */
 .shell {
@@ -30,7 +30,7 @@ $ui-card-bg: #ffffff;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0.9rem;
-  background: linear-gradient(180deg, rgba(240, 244, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(12, 18, 31, 0.98) 100%);
   border-bottom: 1px solid $ui-border;
 }
 
