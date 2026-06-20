@@ -30,25 +30,16 @@ export default function Work() {
         }}
       />
 
-      <section className={styles.workHero}>
-        <div className={styles.heroLead}>
-          <span className={styles.eyebrow}>My work</span>
-          <h1>
-            Operational
-            <br />
-            systems <span className="headingAccent">portfolio.</span>
-          </h1>
-        </div>
-        <div className={styles.heroAside}>
+      <section className={styles.workShell} aria-labelledby="selected-work-title">
+        <div className={styles.sectionIntro}>
+          <span className={styles.eyebrow}>Portfolio</span>
+          <h1 id="selected-work-title">Selected Work</h1>
           <p>
-            Platforms spanning workflow automation, enterprise operations, financial controls,
-            vendor lifecycle, integrations, and reporting - built around business execution,
-            controls, and visibility.
+            A curated collection of workflow automation, reporting, and business systems projects
+            built to make work easier to route, track, and understand.
           </p>
         </div>
-      </section>
 
-      <section className={styles.projectsSection}>
         <Projects />
       </section>
     </main>
