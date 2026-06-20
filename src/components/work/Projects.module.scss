@@ -1,42 +1,24 @@
+@use "../shared/breakpoints";
+@use "../shared/style-utils";
+
 .projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-    width: 100%;
-    min-width: 0;
-    margin: 0 auto;
-    overflow-x: hidden;
+  @include style-utils.fill-width;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+  margin: 0 auto;
 }
 
-@media (max-width: 1180px) {
-    .projectsGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+@include breakpoints.down(xxl) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 900px) {
-    .projectsGrid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-.hover {
-    transition: var(--transition-micro-medium);
-
-    &:hover {
-        transform: translateX(var(--static-space-8));
-
-        .indicator {
-            transform: rotate(0);
-        }
-    }
-}
-
-.indicator {
-    transform: rotate(-90deg);
-    left: -2rem;
-    transition: var(--transition-micro-medium);
+@include breakpoints.down(lg) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    max-width: 27rem;
+  }
 }
