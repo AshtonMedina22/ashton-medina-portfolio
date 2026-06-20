@@ -1,3 +1,6 @@
+@use "../../components/shared/breakpoints";
+@use "../../components/shared/style-utils";
+
 .workPage {
   --work-page-bg: #f8fafc;
   --work-shell-bg: rgba(255, 255, 255, 0.9);
@@ -54,16 +57,11 @@
 }
 
 .eyebrow {
+  @include style-utils.uppercase-label(0.72rem, var(--work-accent));
   display: block;
-  color: var(--work-accent);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  text-transform: uppercase;
 }
 
-@media (max-width: 980px) {
+@include breakpoints.down(lg) {
   .workShell {
     width: min(100%, 46rem);
     padding: 1.25rem;
@@ -71,7 +69,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@include breakpoints.down(sm) {
   .workPage {
     padding: 4.75rem 0.85rem 3rem;
   }
