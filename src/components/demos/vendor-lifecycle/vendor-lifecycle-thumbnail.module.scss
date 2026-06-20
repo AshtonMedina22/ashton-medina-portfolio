@@ -1,0 +1,129 @@
+.thumbnailShell {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+  border: 1px solid rgba(0, 45, 114, 0.12);
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 45, 114, 0.08);
+  padding-bottom: 1rem;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #002D72;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(9, 205, 205, 0.12);
+  color: #09CDCD;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(9, 205, 205, 0.3);
+
+  &::before {
+    content: '';
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: #09CDCD;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.stageNumber {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #002D72, #573894);
+  color: #ffffff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.stageLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.stageSub {
+  font-size: 0.65rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.connector {
+  width: 0.5rem;
+  height: 0.2rem;
+  background: rgba(9, 205, 205, 0.4);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  border-top: 1px solid rgba(0, 45, 114, 0.08);
+  padding-top: 1rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #002D72;
+  letter-spacing: -0.02em;
+}
+
+.label {
+  font-size: 0.65rem;
+  color: #64748b;
+  font-weight: 500;
+}

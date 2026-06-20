@@ -1,5 +1,7 @@
 "use client";
 
+import { SalesToDeliveryThumbnail } from "@/components/demos/sales-to-delivery/SalesToDeliveryThumbnail";
+import { VendorLifecycleThumbnail } from "@/components/demos/vendor-lifecycle/VendorLifecycleThumbnail";
 import { SalesToDeliveryDemo } from "@/components/demos/sales-to-delivery/SalesToDeliveryDemo";
 import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorLifecycleDemo";
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
@@ -12,8 +14,8 @@ import { InventoryPurchasingDemo } from "@/components/demos/inventory-purchasing
 import styles from "./ProjectDemoPreview.module.scss";
 
 function renderDemo(slug: string) {
-  if (slug === "sales-to-delivery-automation-platform") return <SalesToDeliveryDemo />;
-  if (slug === "vendor-lifecycle-compliance-platform") return <VendorLifecycleDemo />;
+  if (slug === "sales-to-delivery-automation-platform") return <SalesToDeliveryThumbnail />;
+  if (slug === "vendor-lifecycle-compliance-platform") return <VendorLifecycleThumbnail />;
   if (slug === "revenue-financial-control-engine") return <RevenueFinancialDemo />;
   if (slug === "operational-intelligence-platform") return <OperationalIntelligenceDemo />;
   if (slug === "multi-tenant-enterprise-operations-hub") return <AdminOperationsDemo />;

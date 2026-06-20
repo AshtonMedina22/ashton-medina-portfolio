@@ -270,7 +270,7 @@ $text-subtle: #64748b;
   width: 1.15rem;
   height: 1px;
   vertical-align: middle;
-  background: rgba(148, 163, 184, 0.42);
+  background: rgba(0, 45, 114, 0.08);
 
   &::after {
     content: "";
@@ -287,7 +287,7 @@ $text-subtle: #64748b;
 /* Order header */
 .orderHeader {
   padding: 1rem 1.125rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 45, 114, 0.06);
   border: 1px solid $border;
   border-radius: 0.5rem;
   text-align: left;
@@ -382,7 +382,7 @@ $text-subtle: #64748b;
   padding-top: 0.6rem;
   padding-bottom: 0.5rem;
   border-top: 2px solid $border;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 45, 114, 0.06);
   font-weight: 600;
   color: $text;
   font-size: 0.75rem;
@@ -579,7 +579,7 @@ $text-subtle: #64748b;
 
 .kanbanCard {
   padding: 0.625rem 0.75rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 45, 114, 0.06);
   border: 1px solid $border;
   border-radius: 0.5rem;
   cursor: pointer;
