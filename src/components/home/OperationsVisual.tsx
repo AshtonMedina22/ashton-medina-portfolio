@@ -1,258 +1,152 @@
-import type { CSSProperties } from "react";
 import styles from "./OperationsVisual.module.scss";
 
-type Accent = "violet" | "cyan" | "green" | "amber";
-
-type WorkflowScene = {
-  title: string;
-  eyebrow: string;
-  item: string;
-  summary: string;
-  activeStep: number;
-  chips: Array<{ label: string; accent: Accent }>;
-  cards: Array<{ label: string; title: string; meta: string; accent: Accent }>;
-  report: Array<{ label: string; value: string; accent: Accent }>;
-};
-
-const flowSteps = [
-  "New Inquiry",
-  "Assigned to Owner",
-  "Tasks Created",
-  "Follow-Up Scheduled",
-  "Status Updated",
-  "Report Generated",
-] as const;
-
-const scenes: WorkflowScene[] = [
-  {
-    title: "Inquiry Capture",
-    eyebrow: "Messy request captured",
-    item: "Customer follow-up request",
-    summary:
-      "A new inquiry is logged, labeled, and made visible before it gets lost in email or chat.",
-    activeStep: 0,
-    chips: [
-      { label: "New Inquiry", accent: "violet" },
-      { label: "Needs Follow-Up", accent: "amber" },
-      { label: "Assigned", accent: "green" },
-    ],
-    cards: [
-      {
-        label: "Source",
-        title: "Website form",
-        meta: "Captured today",
-        accent: "cyan",
-      },
-      {
-        label: "Priority",
-        title: "Needs follow-up",
-        meta: "Owner required",
-        accent: "amber",
-      },
-    ],
-    report: [
-      { label: "New", value: "12", accent: "violet" },
-      { label: "Unassigned", value: "3", accent: "amber" },
-      { label: "Visible", value: "100%", accent: "green" },
-    ],
-  },
-  {
-    title: "Task Routing",
-    eyebrow: "Work gets assigned",
-    item: "Implementation checklist",
-    summary: "The inquiry becomes assigned tasks with a clear owner, due date, and next action.",
-    activeStep: 2,
-    chips: [
-      { label: "Owner Assigned", accent: "green" },
-      { label: "Tasks Created", accent: "violet" },
-      { label: "Due Date Set", accent: "cyan" },
-    ],
-    cards: [
-      {
-        label: "Owner",
-        title: "Operations lead",
-        meta: "Accountable person set",
-        accent: "green",
-      },
-      {
-        label: "Next step",
-        title: "Prepare follow-up",
-        meta: "Due tomorrow",
-        accent: "violet",
-      },
-    ],
-    report: [
-      { label: "Tasks", value: "8", accent: "violet" },
-      { label: "Owners", value: "4", accent: "green" },
-      { label: "Due", value: "2", accent: "cyan" },
-    ],
-  },
-  {
-    title: "Work Tracking",
-    eyebrow: "Status stays clear",
-    item: "Open customer tasks",
-    summary:
-      "Tasks move through a simple status board so waiting items and ready work are easy to see.",
-    activeStep: 4,
-    chips: [
-      { label: "In Progress", accent: "cyan" },
-      { label: "Waiting", accent: "amber" },
-      { label: "Ready", accent: "violet" },
-      { label: "Complete", accent: "green" },
-    ],
-    cards: [
-      {
-        label: "In Progress",
-        title: "Confirm requirements",
-        meta: "Owner active",
-        accent: "cyan",
-      },
-      {
-        label: "Waiting",
-        title: "Approval needed",
-        meta: "Reminder scheduled",
-        accent: "amber",
-      },
-    ],
-    report: [
-      { label: "In Progress", value: "9", accent: "cyan" },
-      { label: "Waiting", value: "4", accent: "amber" },
-      { label: "Complete", value: "18", accent: "green" },
-    ],
-  },
-  {
-    title: "Reporting Visibility",
-    eyebrow: "Leadership can see status",
-    item: "Weekly status summary",
-    summary:
-      "Completed work, open items, and follow-ups roll into a readable report without manual rebuilding.",
-    activeStep: 5,
-    chips: [
-      { label: "Report Generated", accent: "green" },
-      { label: "Open Items", accent: "amber" },
-      { label: "Follow-Ups", accent: "cyan" },
-      { label: "Completed Work", accent: "violet" },
-    ],
-    cards: [
-      {
-        label: "Summary",
-        title: "Weekly report generated",
-        meta: "Ready for leadership",
-        accent: "green",
-      },
-      {
-        label: "Focus",
-        title: "Follow-ups due",
-        meta: "Prioritized by owner",
-        accent: "cyan",
-      },
-    ],
-    report: [
-      { label: "Open Items", value: "14", accent: "amber" },
-      { label: "Follow-Ups", value: "7", accent: "cyan" },
-      { label: "Completed Work", value: "28", accent: "green" },
-    ],
-  },
-];
-
-const accentClass: Record<Accent, string> = {
-  violet: styles.violet,
-  cyan: styles.cyan,
-  green: styles.green,
-  amber: styles.amber,
-};
+const inboxRows = ["Customer Question", "Event Request", "Vendor Update", "Internal Follow-Up"];
+const boardColumns = ["To Do", "In Progress", "Ready", "Complete"];
+const timelineItems = ["Follow-Up Scheduled", "Approval Needed", "Waiting on Review", "Handoff Ready"];
+const reportRows = ["Open Items", "Follow-Ups", "Completed Work"];
 
 export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean }) {
   return (
     <div
-      className={styles.workflowVisual}
+      className={styles.demoFrame}
       data-hero-scaled={heroScaled ? "" : undefined}
-      aria-label="Animated business workflow solutions loop"
+      aria-label="Animated business workflow product demo"
     >
-      <div className={styles.visualGlow} aria-hidden />
-      <div className={styles.workflowShell}>
-        <header className={styles.shellHeader}>
-          <div>
-            <span>Business Workflow Solutions Loop</span>
-            <strong>Organize the work before it gets missed.</strong>
-          </div>
-          <em>Live status</em>
-        </header>
+      <div className={styles.backgroundGlow} aria-hidden />
+      <div className={styles.subtleGrid} aria-hidden />
 
-        <div className={styles.sceneViewport}>
-          <div className={styles.sceneTrack}>
-            {scenes.map((scene) => (
-              <section className={styles.scene} key={scene.title} aria-label={scene.title}>
-                <div className={styles.sceneIntro}>
-                  <span>{scene.eyebrow}</span>
-                  <h3>{scene.title}</h3>
-                  <p>{scene.summary}</p>
+      <div className={styles.sceneViewport}>
+        <div className={styles.sceneTrack}>
+          <section className={`${styles.scene} ${styles.sceneInquiry}`} aria-label="Inquiry Capture">
+            <div className={styles.basePanel}>
+              <div className={styles.panelHeader}>
+                <span>Inquiry Capture</span>
+                <strong>Intake Inbox</strong>
+              </div>
+              <div className={styles.inboxList}>
+                {inboxRows.map((row) => (
+                  <div
+                    className={`${styles.inboxRow} ${row === "Customer Question" ? styles.sourceHighlight : ""}`}
+                    key={row}
+                  >
+                    <span>{row}</span>
+                    <em>{row === "Customer Question" ? "New Inquiry" : "Open"}</em>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <span className={`${styles.connectorLine} ${styles.connectorInquiry}`} aria-hidden />
+            <article className={`${styles.popoutCard} ${styles.popoutInquiry}`}>
+              <span>New Inquiry</span>
+              <strong>Customer Question</strong>
+              <p>Needs Follow-Up</p>
+            </article>
+            <div className={`${styles.statusChip} ${styles.assignmentChip}`}>Assigned</div>
+            <div className={styles.statusToast}>Assigned</div>
+          </section>
+
+          <section className={`${styles.scene} ${styles.sceneRouting}`} aria-label="Task Routing">
+            <div className={styles.basePanel}>
+              <div className={styles.panelHeader}>
+                <span>Task Routing</span>
+                <strong>Workflow Board</strong>
+              </div>
+              <div className={styles.kanbanBoard}>
+                {boardColumns.map((column) => (
+                  <div className={styles.kanbanColumn} key={column}>
+                    <span>{column}</span>
+                    <div className={column === "To Do" ? styles.sourceHighlight : ""}>
+                      {column === "To Do" ? "Tasks Created" : column === "In Progress" ? "Owner Assigned" : ""}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <span className={`${styles.movingTaskCard} ${styles.sourceHighlight}`}>Tasks Created</span>
+            <span className={`${styles.connectorLine} ${styles.connectorRouting}`} aria-hidden />
+            <article className={`${styles.popoutCard} ${styles.popoutRouting}`}>
+              <span>Routing Rule</span>
+              <strong>Owner Assigned</strong>
+              <p>Due Date Set</p>
+            </article>
+            <div className={styles.statusToast}>Owner Assigned</div>
+          </section>
+
+          <section className={`${styles.scene} ${styles.sceneApprovals}`} aria-label="Follow-Up and Approvals">
+            <div className={styles.basePanel}>
+              <div className={styles.panelHeader}>
+                <span>Follow-Up & Approvals</span>
+                <strong>Timeline</strong>
+              </div>
+              <div className={styles.timelinePanel}>
+                {timelineItems.map((item) => (
+                  <div
+                    className={`${styles.timelineRow} ${item === "Follow-Up Scheduled" ? styles.sourceHighlight : ""}`}
+                    key={item}
+                  >
+                    <em />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <span className={`${styles.connectorLine} ${styles.connectorApproval}`} aria-hidden />
+            <article className={`${styles.popoutCard} ${styles.popoutReminder}`}>
+              <span>Reminder Sent</span>
+              <strong>Follow-Up Scheduled</strong>
+              <p>Waiting on Review</p>
+            </article>
+            <article className={`${styles.popoutCard} ${styles.popoutApproval}`}>
+              <span>Approval Needed</span>
+              <strong>Handoff Ready</strong>
+              <p>Checklist attached</p>
+            </article>
+            <div className={styles.statusChip}>Handoff Ready</div>
+          </section>
+
+          <section className={`${styles.scene} ${styles.sceneReporting}`} aria-label="Reporting Visibility">
+            <div className={styles.basePanel}>
+              <div className={styles.panelHeader}>
+                <span>Reporting Visibility</span>
+                <strong>Weekly Summary</strong>
+              </div>
+              <div className={styles.reportingGrid}>
+                <div className={`${styles.chartPanel} ${styles.sourceHighlight}`}>
+                  <span style={{ height: "42%" }} />
+                  <span style={{ height: "68%" }} />
+                  <span style={{ height: "54%" }} />
+                  <span style={{ height: "82%" }} />
                 </div>
-
-                <div className={styles.flowRow} aria-label="Workflow from inquiry to report">
-                  {flowSteps.map((step, index) => (
-                    <div
-                      className={`${styles.flowStep} ${index <= scene.activeStep ? styles.flowStepActive : ""}`}
-                      key={`${scene.title}-${step}`}
-                    >
-                      <span>{index + 1}</span>
-                      <strong>{step}</strong>
+                <div className={styles.statusRows}>
+                  {reportRows.map((row) => (
+                    <div key={row}>
+                      <span>{row}</span>
+                      <em>{row === "Completed Work" ? "28" : row === "Follow-Ups" ? "7" : "14"}</em>
                     </div>
                   ))}
                 </div>
-
-                <div className={styles.contentGrid}>
-                  <article className={styles.inquiryCard}>
-                    <span>Business item</span>
-                    <strong>{scene.item}</strong>
-                    <div className={styles.chipRow}>
-                      {scene.chips.map((chip) => (
-                        <em
-                          className={accentClass[chip.accent]}
-                          key={`${scene.title}-${chip.label}`}
-                        >
-                          {chip.label}
-                        </em>
-                      ))}
-                    </div>
-                  </article>
-
-                  <div className={styles.taskStack}>
-                    {scene.cards.map((card) => (
-                      <article
-                        className={`${styles.taskCard} ${accentClass[card.accent]}`}
-                        key={`${scene.title}-${card.title}`}
-                      >
-                        <span>{card.label}</span>
-                        <strong>{card.title}</strong>
-                        <p>{card.meta}</p>
-                      </article>
-                    ))}
-                  </div>
-
-                  <article className={styles.reportCard}>
-                    <span>Report snapshot</span>
-                    <div className={styles.reportMetrics}>
-                      {scene.report.map((metric) => (
-                        <div key={`${scene.title}-${metric.label}`}>
-                          <strong className={accentClass[metric.accent]}>{metric.value}</strong>
-                          <em>{metric.label}</em>
-                        </div>
-                      ))}
-                    </div>
-                    <p>Status updated and ready to share.</p>
-                  </article>
-                </div>
-              </section>
-            ))}
-          </div>
+              </div>
+            </div>
+            <span className={`${styles.connectorLine} ${styles.connectorReport}`} aria-hidden />
+            <article className={`${styles.popoutCard} ${styles.popoutReport}`}>
+              <span>Report Generated</span>
+              <strong>Weekly Summary</strong>
+              <p>Status Updated</p>
+            </article>
+            <article className={`${styles.kpiCard} ${styles.popoutCard}`}>
+              <span>Completed Work</span>
+              <strong>28</strong>
+            </article>
+            <div className={styles.statusToast}>Status Updated</div>
+          </section>
         </div>
       </div>
 
       <div className={styles.sceneDots} aria-hidden>
-        {scenes.map((scene, index) => (
-          <span key={scene.title} style={{ "--dot-index": index } as CSSProperties} />
-        ))}
+        <span />
+        <span />
+        <span />
+        <span />
       </div>
     </div>
   );
