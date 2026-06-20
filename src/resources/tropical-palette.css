@@ -1,58 +1,75 @@
-/* Tropical Beauty palette tokens
-   Gradient rule: keep cool and warm families separate. */
+/* Jasmine Lagoon palette tokens
+   Keep the brand system focused: cream, teal, lagoon, purple, and navy. */
 :root {
-  --color-teal-beams: #1ac1b9;
-  --color-bright-barbie: #f9447f;
-  --color-blue-daises: #7f95e4;
-  --color-basic-pink: #fcb8d9;
-  --color-clementine-hobby: #ff8017;
-  --color-golden-gold: #fbd160;
+  --color-night-blooming-jasmine: #f9f7ec;
+  --color-sea-glass-teal: #a0e5d9;
+  --color-neon-lagoon: #09cdcd;
+  --color-purple-pleasures: #81459e;
+  --color-ruthless-empress: #573894;
+  --color-blue-jinns: #002d72;
 
-  --color-accent: var(--color-teal-beams);
-  --color-violet: var(--color-blue-daises);
-  --color-blue: var(--color-blue-daises);
-  --color-cyan: var(--color-teal-beams);
-  --color-green: var(--color-teal-beams);
+  --color-background: var(--color-blue-jinns);
+  --color-text: var(--color-night-blooming-jasmine);
+  --color-accent: var(--color-neon-lagoon);
+  --color-violet: var(--color-purple-pleasures);
+  --color-blue: var(--color-blue-jinns);
+  --color-cyan: var(--color-neon-lagoon);
+  --color-green: var(--color-sea-glass-teal);
 
   --accent-gradient-cool: linear-gradient(
     92deg,
-    var(--color-blue-daises) 0%,
-    var(--color-teal-beams) 100%
+    var(--color-blue-jinns) 0%,
+    var(--color-ruthless-empress) 46%,
+    var(--color-neon-lagoon) 100%
   );
-  --accent-gradient-warm: linear-gradient(
+  --accent-gradient-soft: linear-gradient(
     92deg,
-    var(--color-bright-barbie) 0%,
-    var(--color-clementine-hobby) 58%,
-    var(--color-golden-gold) 100%
+    var(--color-night-blooming-jasmine) 0%,
+    var(--color-sea-glass-teal) 52%,
+    var(--color-neon-lagoon) 100%
   );
   --accent-gradient: var(--accent-gradient-cool);
 
-  --button-primary: var(--color-teal-beams);
-  --button-primary-hover: #149f99;
-  --accent-soft: rgba(26, 193, 185, 0.16);
-  --accent-soft-strong: rgba(249, 68, 127, 0.22);
-  --success-color: var(--color-teal-beams);
-  --success-soft: rgba(26, 193, 185, 0.16);
+  --button-primary: var(--color-neon-lagoon);
+  --button-primary-hover: #08b8b8;
+  --accent-soft: rgba(9, 205, 205, 0.16);
+  --accent-soft-strong: rgba(129, 69, 158, 0.26);
+  --success-color: var(--color-neon-lagoon);
+  --success-soft: rgba(9, 205, 205, 0.16);
 }
 
 [data-theme="dark"] {
-  --brand-alpha-weak: rgba(26, 193, 185, 0.14);
-  --brand-alpha-medium: rgba(26, 193, 185, 0.25);
-  --brand-alpha-strong: rgba(249, 68, 127, 0.34);
-  --brand-solid-strong: #149f99;
-  --brand-solid-medium: var(--color-teal-beams);
-  --brand-solid-weak: #0f706c;
-  --brand-on-solid-strong: #ffffff;
-  --brand-on-solid-weak: #eefafa;
+  --page-background: #020a1d;
+  --neutral-background-weak: #020a1d;
+  --neutral-background-medium: #06173a;
+  --neutral-background-strong: #0a2252;
+  --neutral-on-background-strong: var(--color-night-blooming-jasmine);
+  --neutral-on-background-medium: #d8f2ee;
+  --neutral-on-background-weak: #a0e5d9;
+  --brand-alpha-weak: rgba(9, 205, 205, 0.14);
+  --brand-alpha-medium: rgba(9, 205, 205, 0.25);
+  --brand-alpha-strong: rgba(129, 69, 158, 0.38);
+  --brand-solid-strong: var(--color-neon-lagoon);
+  --brand-solid-medium: var(--color-sea-glass-teal);
+  --brand-solid-weak: var(--color-ruthless-empress);
+  --brand-on-solid-strong: #00163a;
+  --brand-on-solid-weak: var(--color-night-blooming-jasmine);
 }
 
 [data-theme="light"] {
-  --brand-alpha-weak: rgba(249, 68, 127, 0.1);
-  --brand-alpha-medium: rgba(26, 193, 185, 0.2);
-  --brand-alpha-strong: rgba(249, 68, 127, 0.32);
-  --brand-solid-strong: #149f99;
-  --brand-solid-medium: var(--color-teal-beams);
-  --brand-solid-weak: #0f706c;
-  --brand-on-solid-strong: #ffffff;
-  --brand-on-solid-weak: #eefafa;
+  --page-background: var(--color-night-blooming-jasmine);
+  --neutral-background-weak: var(--color-night-blooming-jasmine);
+  --neutral-background-medium: #eef8f5;
+  --neutral-background-strong: #d8f2ee;
+  --neutral-on-background-strong: var(--color-blue-jinns);
+  --neutral-on-background-medium: #28406f;
+  --neutral-on-background-weak: var(--color-ruthless-empress);
+  --brand-alpha-weak: rgba(9, 205, 205, 0.12);
+  --brand-alpha-medium: rgba(9, 205, 205, 0.22);
+  --brand-alpha-strong: rgba(129, 69, 158, 0.32);
+  --brand-solid-strong: var(--color-blue-jinns);
+  --brand-solid-medium: var(--color-ruthless-empress);
+  --brand-solid-weak: var(--color-sea-glass-teal);
+  --brand-on-solid-strong: var(--color-night-blooming-jasmine);
+  --brand-on-solid-weak: var(--color-blue-jinns);
 }
