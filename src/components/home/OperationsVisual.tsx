@@ -52,11 +52,26 @@ export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean 
                 <strong>Workflow Board</strong>
               </div>
               <div className={styles.kanbanBoard}>
-                {boardColumns.map((column) => (
+                {boardColumns.map((column, idx) => (
                   <div className={styles.kanbanColumn} key={column}>
                     <span>{column}</span>
-                    <div className={column === "To Do" ? styles.sourceHighlight : ""}>
-                      {column === "To Do" ? "Tasks Created" : column === "In Progress" ? "Owner Assigned" : ""}
+                    <div className={styles.kanbanCards}>
+                      {idx === 0 && (
+                        <>
+                          <div className={`${styles.kanbanCard} ${styles.sourceHighlight}`}>Tasks Created</div>
+                          <div className={styles.kanbanCard}>Follow-up</div>
+                        </>
+                      )}
+                      {idx === 1 && (
+                        <>
+                          <div className={styles.kanbanCard}>Owner Assigned</div>
+                        </>
+                      )}
+                      {idx === 2 && (
+                        <>
+                          <div className={styles.kanbanCard}>Ready</div>
+                        </>
+                      )}
                     </div>
                   </div>
                 ))}
