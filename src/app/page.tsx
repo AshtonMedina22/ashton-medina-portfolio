@@ -114,8 +114,10 @@ export default function Home() {
               const Icon = capability.icon;
               return (
                 <article key={capability.title}>
-                  <Icon />
-                  <h3>{capability.title}</h3>
+                  <h3>
+                    <Icon />
+                    {capability.title}
+                  </h3>
                   <p>{capability.text}</p>
                 </article>
               );
