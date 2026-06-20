@@ -1,12 +1,11 @@
 /* ==========================================================================
-   Modern minimal palette — clean, professional
-   - Slate/neutral base with restrained violet, blue, cyan, and green accents
-   - Gradients are reserved for major emphasis text and key product moments
-   - Page depth comes from surfaces and hierarchy, not a purple background wash
+   Custom palette and theme tokens
+   Light theme only - no global style overrides
    ========================================================================== */
 
-/* Custom palette (data-neutral/brand/accent=custom) */
+/* Color palette definitions */
 :root {
+  /* Brand colors */
   --scheme-brand-100: #5a6fb3;
   --scheme-brand-200: #7F95E4;
   --scheme-brand-300: #1AC1B9;
@@ -23,6 +22,7 @@
   --scheme-brand-600-30: rgba(127, 149, 228, 0.3);
   --scheme-brand-600-50: rgba(127, 149, 228, 0.5);
 
+  /* Accent colors */
   --scheme-accent-100: var(--scheme-brand-100);
   --scheme-accent-200: var(--scheme-brand-200);
   --scheme-accent-300: var(--scheme-brand-300);
@@ -39,7 +39,7 @@
   --scheme-accent-600-30: var(--scheme-brand-600-30);
   --scheme-accent-600-50: var(--scheme-brand-600-50);
 
-  /* Neutrals: zinc/slate-style for modern minimal */
+  /* Neutral/gray colors */
   --scheme-neutral-100: #09090b;
   --scheme-neutral-200: #18181b;
   --scheme-neutral-300: #27272a;
@@ -56,42 +56,26 @@
   --scheme-neutral-600-30: rgba(113, 113, 122, 0.3);
   --scheme-neutral-600-50: rgba(113, 113, 122, 0.5);
 
+  /* Semantic colors */
   --color-background: #ffffff;
   --color-text: #1a1a1a;
   --color-accent: #7F95E4;
-  --color-violet: #8b5cf6;
-  --color-blue: #3b82f6;
-  --color-cyan: #38bdf8;
-  --color-green: #22c55e;
-  --accent-gradient: linear-gradient(92deg, #8b5cf6 0%, #38bdf8 52%, #22c55e 100%);
-
-  /* Primary action: restrained violet from the multi-accent system */
-  --button-primary: #7F95E4;
-  --button-primary-hover: #1AC1B9;
-  /* Kept for demos / optional tints only; not used for CTAs */
-  --accent-soft: rgba(167, 139, 250, 0.16);
-  --accent-soft-strong: rgba(167, 139, 250, 0.28);
-  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.14);
-  --shadow-subtle: 0 1px 1px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.28);
-  --transition-fast: 0.16s ease-out;
-  --transition-med: 0.22s ease-out;
-
-  /* Success / positive (demos: Booked, Margin, project-created) */
   --success-color: #22c55e;
   --success-soft: rgba(34, 197, 94, 0.16);
-
-  /* Danger / negative (over-budget variance, errors) */
   --danger-color: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.16);
 
-  /* Shared page layout */
+  /* Button colors */
+  --button-primary: #7F95E4;
+  --button-primary-hover: #1AC1B9;
+
+  /* Layout tokens */
   --page-max-width: 1560px;
   --page-inline-padding: max(1.25rem, calc((100vw - var(--page-max-width)) / 2));
   --page-prose-max: 56rem;
-  --page-shell-padding-block: clamp(5rem, 6.5vw, 6.25rem) var(--page-inline-padding)
-    clamp(3.5rem, 6vw, 5rem);
+  --page-shell-padding-block: clamp(5rem, 6.5vw, 6.25rem) var(--page-inline-padding) clamp(3.5rem, 6vw, 5rem);
 
-  /* Site type scale — professional portfolio sizing */
+  /* Typography scale */
   --type-hero: clamp(2.75rem, 4.5vw, 3.75rem);
   --type-section: clamp(2rem, 3.2vw, 2.85rem);
   --type-subsection: clamp(1.35rem, 2vw, 1.65rem);
@@ -101,7 +85,7 @@
   --type-label: 0.875rem;
   --type-cta: 0.9375rem;
 
-  /* Once UI display scale — sized for cards and components */
+  /* Display scale */
   --font-size-display-xl: 2.125rem;
   --font-size-display-l: 1.875rem;
   --font-size-display-m: 1.625rem;
@@ -112,108 +96,53 @@
   --line-height-display-m: 1.2;
   --line-height-display-s: 1.25;
   --line-height-display-xs: 1.3;
-}
 
-[data-theme="dark"],
-[data-theme="light"] {
+  /* Light theme tokens */
+  --page-background: #ffffff;
+  --neutral-background-weak: #ffffff;
+  --neutral-background-medium: #f4f4f5;
+  --neutral-background-strong: #e4e4e7;
+  --neutral-on-background-strong: #18181b;
+  --neutral-on-background-medium: #3f3f46;
+  --neutral-on-background-weak: #71717a;
+  --brand-alpha-weak: rgba(127, 149, 228, 0.12);
+  --brand-alpha-medium: rgba(127, 149, 228, 0.22);
+  --brand-alpha-strong: rgba(127, 149, 228, 0.35);
+  --brand-solid-strong: var(--scheme-brand-400);
+  --brand-solid-medium: var(--scheme-brand-300);
+  --brand-solid-weak: var(--scheme-brand-200);
+  --brand-on-solid-strong: #fafafa;
+  --brand-on-solid-weak: var(--scheme-brand-1000);
+
+  /* Misc */
   --brand-medium: var(--brand-solid-medium);
+  --transition-fast: 0.16s ease-out;
+  --transition-med: 0.22s ease-out;
+  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.14);
+  --shadow-subtle: 0 1px 1px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.28);
 }
 
 /* --------------------------------------------------------------------------
-   DEFAULT (LIGHT THEME)
+   MINIMAL RESETS - layout and box model only
    -------------------------------------------------------------------------- */
-:root {
-  --page-background: #ffffff;
-  --neutral-background-weak: #ffffff;
-  --neutral-background-medium: #f4f4f5;
-  --neutral-background-strong: #e4e4e7;
-  --neutral-on-background-strong: #18181b;
-  --neutral-on-background-medium: #3f3f46;
-  --neutral-on-background-weak: #71717a;
-  --brand-alpha-weak: rgba(127, 149, 228, 0.12);
-  --brand-alpha-medium: rgba(127, 149, 228, 0.22);
-  --brand-alpha-strong: rgba(127, 149, 228, 0.35);
-  --brand-solid-strong: var(--scheme-brand-400);
-  --brand-solid-medium: var(--scheme-brand-300);
-  --brand-solid-weak: var(--scheme-brand-200);
-  --brand-on-solid-strong: #fafafa;
-  --brand-on-solid-weak: var(--scheme-brand-1000);
+html {
+  box-sizing: border-box;
+  font-size: 17px;
 }
 
-/* --------------------------------------------------------------------------
-   DARK THEME (UNUSED - kept for reference)
-   -------------------------------------------------------------------------- */
-[data-theme="dark"] {
-  --page-background: #09090b;
-  --neutral-background-weak: #09090b;
-  --neutral-background-medium: #18181b;
-  --neutral-background-strong: #27272a;
-  --neutral-on-background-strong: #fafafa;
-  --neutral-on-background-medium: #d4d4d8;
-  --neutral-on-background-weak: #a1a1aa;
-  --brand-alpha-weak: rgba(167, 139, 250, 0.14);
-  --brand-alpha-medium: rgba(167, 139, 250, 0.25);
-  --brand-alpha-strong: rgba(167, 139, 250, 0.4);
-  --brand-solid-strong: var(--scheme-brand-300);
-  --brand-solid-medium: var(--scheme-brand-200);
-  --brand-solid-weak: var(--scheme-brand-100);
-  --brand-on-solid-strong: #fafafa;
-  --brand-on-solid-weak: var(--scheme-brand-800);
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-/* --------------------------------------------------------------------------
-   LIGHT THEME (explicit)
-   -------------------------------------------------------------------------- */
-[data-theme="light"] {
-  --page-background: #ffffff;
-  --neutral-background-weak: #ffffff;
-  --neutral-background-medium: #f4f4f5;
-  --neutral-background-strong: #e4e4e7;
-  --neutral-on-background-strong: #18181b;
-  --neutral-on-background-medium: #3f3f46;
-  --neutral-on-background-weak: #71717a;
-  --brand-alpha-weak: rgba(127, 149, 228, 0.12);
-  --brand-alpha-medium: rgba(127, 149, 228, 0.22);
-  --brand-alpha-strong: rgba(127, 149, 228, 0.35);
-  --brand-solid-strong: var(--scheme-brand-400);
-  --brand-solid-medium: var(--scheme-brand-300);
-  --brand-solid-weak: var(--scheme-brand-200);
-  --brand-on-solid-strong: #fafafa;
-  --brand-on-solid-weak: var(--scheme-brand-1000);
-}
-
-[data-theme="dark"] body,
-[data-theme="light"] body {
+body {
   background-color: var(--page-background);
 }
 
-/* Link visibility in content (nav/footer keep component styles) */
-main a[href]:not([class*="Button"]):not([class*="ToggleButton"]),
-.introDescription a[href],
-.focusAreaCard a[href],
-.technicalCardContent a[href],
-[class*="articleProse"] a[href],
-[class*="prose"] a[href] {
-  color: var(--brand-solid-medium);
-  text-decoration: none;
-  border-bottom: 1px solid var(--brand-alpha-medium);
-  transition: color var(--transition-fast), border-color var(--transition-fast);
-}
-main a[href]:not([class*="Button"]):not([class*="ToggleButton"]):hover,
-.introDescription a[href]:hover,
-.focusAreaCard a[href]:hover,
-.technicalCardContent a[href]:hover,
-[class*="articleProse"] a[href]:hover,
-[class*="prose"] a[href]:hover {
-  color: var(--brand-solid-strong);
-  border-bottom-color: var(--brand-solid-medium);
-}
-a[href]:focus-visible {
-  outline: 2px solid var(--brand-solid-medium);
-  outline-offset: 2px;
-}
-
-/* Content width consistency */
+/* --------------------------------------------------------------------------
+   UTILITY CLASSES - optional, not required
+   -------------------------------------------------------------------------- */
 .content-width {
   width: 100%;
   max-width: var(--responsive-width-m, 720px);
@@ -221,79 +150,18 @@ a[href]:focus-visible {
   margin-right: auto;
 }
 
-/* Base sizing for predictable layout */
-html {
-  box-sizing: border-box;
-  font-size: 17px;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-/* --------------------------------------------------------------------------
-   Section wrapper — layout only, NO overlay (clean background)
-   -------------------------------------------------------------------------- */
 .sectionHue {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
+
 .sectionHue::before {
   content: none;
   display: none;
 }
+
 .sectionHue > * {
   position: relative;
   z-index: 1;
-}
-
-/* --------------------------------------------------------------------------
-   Heading gradient accent — purple → blue → green emphasis on key phrase
-   -------------------------------------------------------------------------- */
-.headingAccent,
-h1 .headingAccent,
-h2 .headingAccent,
-h3 .headingAccent {
-  display: inline;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  background-image: var(--accent-gradient);
-  background-size: 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-
-/* --------------------------------------------------------------------------
-   Primary CTAs & buttons — single violet, site-wide (professional)
-   -------------------------------------------------------------------------- */
-[data-variant="primary"],
-.ctaGradient,
-a.ctaGradient,
-button.ctaGradient {
-  background: var(--button-primary);
-  color: #fff;
-  border: none;
-  transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-[data-variant="primary"]:hover,
-.ctaGradient:hover,
-a.ctaGradient:hover,
-button.ctaGradient:hover {
-  background: var(--button-primary-hover);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-[data-variant="primary"]:focus-visible,
-.ctaGradient:focus-visible {
-  outline: 2px solid var(--button-primary);
-  outline-offset: 2px;
-}
-[data-variant="primary"] span,
-[data-variant="primary"] svg,
-.ctaGradient span,
-.ctaGradient svg {
-  color: inherit;
-  fill: currentColor;
 }
