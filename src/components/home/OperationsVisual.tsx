@@ -1,165 +1,167 @@
+import type { ReactNode } from "react";
+import {
+  HiOutlineCalendar,
+  HiOutlineChartBar,
+  HiOutlineCheckCircle,
+  HiOutlineClipboardList,
+  HiOutlineDocumentText,
+  HiOutlineSparkles,
+  HiOutlineUserGroup,
+} from "react-icons/hi";
 import styles from "./OperationsVisual.module.scss";
 
-const sourceChannels = ["Customer Inquiry", "Vendor Update", "Internal Request"];
-const inquiryRows = ["Customer Inquiry", "Vendor Update", "Internal Request", "Needs Follow-Up"];
-const boardColumns = ["To Do", "In Progress", "Ready", "Complete"];
-const timelineRows = ["Follow-Up Scheduled", "Approval Needed", "Waiting on Review", "Handoff Ready"];
-const reportRows = ["Open Items", "Follow-Ups", "Completed Work"];
+type Slide = {
+  label: string;
+  title: string;
+  nav: string[];
+  rows: Array<{ title: string; meta: string; status: string }>;
+  popouts: Array<{ className: string; label: string; title: string; detail: string; icon: ReactNode }>;
+  stats: Array<{ label: string; value: string }>;
+};
 
-function BasePanel({ children, label, title }: { children: React.ReactNode; label: string; title: string }) {
+const slides: Slide[] = [
+  {
+    label: "Intake System",
+    title: "Client Requests",
+    nav: ["Inbox", "Vendors", "Tasks"],
+    rows: [
+      { title: "Customer Inquiry", meta: "New request", status: "Assign" },
+      { title: "Vendor Update", meta: "Docs received", status: "Review" },
+      { title: "Internal Request", meta: "Ops queue", status: "Route" },
+    ],
+    popouts: [
+      { className: styles.popoutPrimary, label: "Captured", title: "Customer Inquiry", detail: "Auto-tagged and routed", icon: <HiOutlineDocumentText /> },
+      { className: styles.popoutSecondary, label: "Owner", title: "Assigned", detail: "Follow-up due today", icon: <HiOutlineUserGroup /> },
+      { className: styles.popoutTertiary, label: "Status", title: "Ready for reply", detail: "No manual sorting", icon: <HiOutlineCheckCircle /> },
+    ],
+    stats: [
+      { label: "Open", value: "14" },
+      { label: "Assigned", value: "9" },
+    ],
+  },
+  {
+    label: "Workflow Board",
+    title: "Operations Pipeline",
+    nav: ["Board", "Rules", "Calendar"],
+    rows: [
+      { title: "Requirements", meta: "Completed", status: "Done" },
+      { title: "Configuration", meta: "Owner active", status: "Live" },
+      { title: "Implementation", meta: "Due Jun 15", status: "Next" },
+    ],
+    popouts: [
+      { className: styles.popoutPrimary, label: "Rule fired", title: "Task Created", detail: "Checklist attached", icon: <HiOutlineClipboardList /> },
+      { className: styles.popoutSecondary, label: "Schedule", title: "Due Date Set", detail: "Calendar synced", icon: <HiOutlineCalendar /> },
+      { className: styles.popoutTertiary, label: "Automation", title: "No handoff gap", detail: "Status pushed forward", icon: <HiOutlineSparkles /> },
+    ],
+    stats: [
+      { label: "Active", value: "8" },
+      { label: "On track", value: "92%" },
+    ],
+  },
+  {
+    label: "Reporting View",
+    title: "Weekly Summary",
+    nav: ["Reports", "Health", "Archive"],
+    rows: [
+      { title: "Open Items", meta: "Needs attention", status: "14" },
+      { title: "Follow-Ups", meta: "Scheduled", status: "7" },
+      { title: "Completed Work", meta: "This week", status: "28" },
+    ],
+    popouts: [
+      { className: styles.popoutPrimary, label: "Generated", title: "Weekly Summary", detail: "Metrics refreshed", icon: <HiOutlineChartBar /> },
+      { className: styles.popoutSecondary, label: "Health", title: "94% clear", detail: "Exceptions surfaced", icon: <HiOutlineCheckCircle /> },
+      { className: styles.popoutTertiary, label: "Export", title: "Ready to send", detail: "Leadership view", icon: <HiOutlineDocumentText /> },
+    ],
+    stats: [
+      { label: "Closed", value: "28" },
+      { label: "Blocked", value: "2" },
+    ],
+  },
+];
+
+function AppChrome({ slide }: { slide: Slide }) {
   return (
-    <div className={styles.basePanel}>
-      <div className={styles.panelHeader}>
-        <span>{label}</span>
-        <strong>{title}</strong>
+    <div className={styles.appWindow}>
+      <div className={styles.windowBar}>
+        <span />
+        <span />
+        <span />
+        <strong>Workspace</strong>
       </div>
-      {children}
+      <div className={styles.workspaceShell}>
+        <aside className={styles.sidebar}>
+          <strong>AM</strong>
+          {slide.nav.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </aside>
+        <main className={styles.workspaceMain}>
+          <div className={styles.panelHeader}>
+            <div>
+              <span>{slide.label}</span>
+              <h3>{slide.title}</h3>
+            </div>
+            <em>Live</em>
+          </div>
+
+          <div className={styles.databaseRows}>
+            {slide.rows.map((row, index) => (
+              <div className={index === 0 ? styles.rowActive : ""} key={row.title}>
+                <span>{row.title}</span>
+                <small>{row.meta}</small>
+                <strong>{row.status}</strong>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.metricStrip}>
+            {slide.stats.map((stat) => (
+              <div key={stat.label}>
+                <span>{stat.label}</span>
+                <strong>{stat.value}</strong>
+              </div>
+            ))}
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
 
-function PopoutCard({ className = "", label, title, detail }: { className?: string; label: string; title: string; detail?: string }) {
+function PopoutCard({ card }: { card: Slide["popouts"][number] }) {
   return (
-    <article className={`${styles.popoutCard} ${className}`}>
-      <span>{label}</span>
-      <strong>{title}</strong>
-      {detail && <p>{detail}</p>}
+    <article className={`${styles.popoutCard} ${card.className}`}>
+      <div>{card.icon}</div>
+      <span>{card.label}</span>
+      <strong>{card.title}</strong>
+      <p>{card.detail}</p>
     </article>
-  );
-}
-
-function ConnectorLine({ className }: { className: string }) {
-  return <span className={`${styles.connectorLine} ${className}`} aria-hidden />;
-}
-
-function StatusChip({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`${styles.statusChip} ${className}`}>{children}</div>;
-}
-
-function InquiryScene() {
-  return (
-    <section className={`${styles.scene} ${styles.sceneInquiry}`} aria-label="Inquiry Capture">
-      <BasePanel label="Inquiry Capture" title="Intake Inbox">
-        <div className={styles.inquiryLayout}>
-          <aside className={styles.sourceChannels}>
-            {sourceChannels.map((channel) => (
-              <span key={channel}>{channel}</span>
-            ))}
-          </aside>
-          <div className={styles.inquiryList}>
-            {inquiryRows.map((row) => (
-              <div className={`${styles.inquiryRow} ${row === "Customer Inquiry" ? styles.sourceHighlight : ""}`} key={row}>
-                <strong>{row}</strong>
-                <em>{row === "Customer Inquiry" ? "Needs Follow-Up" : "Open"}</em>
-              </div>
-            ))}
-          </div>
-          <div className={styles.inquiryDetail}>
-            <span>Selected</span>
-            <strong>Customer Inquiry</strong>
-            <em>Assigned</em>
-          </div>
-        </div>
-      </BasePanel>
-      <ConnectorLine className={styles.connectorInquiry} />
-      <PopoutCard className={styles.popoutInquiry} label="Customer Inquiry" title="Needs Follow-Up" detail="Assigned" />
-      <StatusChip className={styles.assignmentChip}>Assigned</StatusChip>
-      <div className={styles.statusToast}>Assigned</div>
-    </section>
-  );
-}
-
-function RoutingScene() {
-  return (
-    <section className={`${styles.scene} ${styles.sceneRouting}`} aria-label="Task Routing">
-      <BasePanel label="Task Routing" title="Work Board">
-        <div className={styles.kanbanBoard}>
-          {boardColumns.map((column) => (
-            <div className={styles.kanbanColumn} key={column}>
-              <span>{column}</span>
-              <div className={column === "To Do" ? styles.sourceHighlight : ""}>
-                {column === "To Do" ? "Tasks Created" : column === "In Progress" ? "Owner Assigned" : column === "Ready" ? "Ready" : "Complete"}
-              </div>
-            </div>
-          ))}
-        </div>
-      </BasePanel>
-      <span className={`${styles.movingTaskCard} ${styles.sourceHighlight}`}>Tasks Created</span>
-      <ConnectorLine className={styles.connectorRouting} />
-      <PopoutCard className={styles.popoutRouting} label="Routing Rule" title="Owner Assigned" detail="Due Date Set" />
-      <StatusChip className={styles.dueDateChip}>Due Date Set</StatusChip>
-    </section>
-  );
-}
-
-function ApprovalScene() {
-  return (
-    <section className={`${styles.scene} ${styles.sceneApprovals}`} aria-label="Follow-Up and Approvals">
-      <BasePanel label="Follow-Up & Approvals" title="Timeline">
-        <div className={styles.timelinePanel}>
-          {timelineRows.map((row) => (
-            <div className={`${styles.timelineRow} ${row === "Follow-Up Scheduled" ? styles.sourceHighlight : ""}`} key={row}>
-              <em />
-              <span>{row}</span>
-            </div>
-          ))}
-        </div>
-      </BasePanel>
-      <ConnectorLine className={styles.connectorApproval} />
-      <PopoutCard className={styles.popoutReminder} label="Reminder Sent" title="Follow-Up Scheduled" detail="Waiting on Review" />
-      <PopoutCard className={styles.popoutApproval} label="Approval Needed" title="Handoff Ready" detail="Review complete" />
-      <StatusChip className={styles.handoffChip}>Handoff Ready</StatusChip>
-    </section>
-  );
-}
-
-function ReportingScene() {
-  return (
-    <section className={`${styles.scene} ${styles.sceneReporting}`} aria-label="Reporting Visibility">
-      <BasePanel label="Reporting Visibility" title="Weekly Summary">
-        <div className={styles.reportingGrid}>
-          <div className={`${styles.chartPanel} ${styles.sourceHighlight}`}>
-            <span style={{ height: "42%" }} />
-            <span style={{ height: "68%" }} />
-            <span style={{ height: "54%" }} />
-            <span style={{ height: "82%" }} />
-          </div>
-          <div className={styles.statusRows}>
-            {reportRows.map((row) => (
-              <div key={row}>
-                <span>{row}</span>
-                <em>{row === "Completed Work" ? "28" : row === "Follow-Ups" ? "7" : "14"}</em>
-              </div>
-            ))}
-          </div>
-        </div>
-      </BasePanel>
-      <ConnectorLine className={styles.connectorReport} />
-      <PopoutCard className={styles.popoutReport} label="Report Generated" title="Weekly Summary" detail="Status Updated" />
-      <article className={`${styles.kpiCard} ${styles.popoutCard}`}>
-        <span>Completed Work</span>
-        <strong>28</strong>
-      </article>
-      <div className={styles.statusToast}>Report Generated</div>
-    </section>
   );
 }
 
 export function OperationsVisual({ heroScaled = false }: { heroScaled?: boolean }) {
   return (
     <div
-      className={styles.demoShell}
+      className={styles.heroMockup}
       data-hero-scaled={heroScaled ? "" : undefined}
-      aria-label="Animated business workflow product demo"
+      aria-label="Animated Notion-style operations dashboard slider"
     >
-      <div className={styles.backgroundGlow} aria-hidden />
-      <div className={styles.subtleGrid} aria-hidden />
-      <InquiryScene />
-      <RoutingScene />
-      <ApprovalScene />
-      <ReportingScene />
+      <div className={styles.glowField} aria-hidden />
+      <div className={styles.sliderViewport}>
+        <div className={styles.sliderTrack}>
+          {slides.map((slide) => (
+            <section className={styles.slide} key={slide.title}>
+              <AppChrome slide={slide} />
+              <div className={styles.popoutLayer}>
+                {slide.popouts.map((card) => (
+                  <PopoutCard card={card} key={`${slide.title}-${card.title}`} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </div>
       <div className={styles.sceneDots} aria-hidden>
-        <span />
         <span />
         <span />
         <span />
