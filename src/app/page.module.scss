@@ -127,15 +127,15 @@
 
 .primaryCta,
 .secondaryCta {
-  display: inline-flex;
+  display: inline-flex !important;
   box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
   gap: 0.7rem;
   min-height: 3rem;
   padding: 0 1.5rem;
   border-radius: 12px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: var(--type-cta);
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -151,25 +151,25 @@
 }
 
 .primaryCta {
-  border: 1px solid #7F95E4;
-  background: #7F95E4;
-  color: #ffffff;
+  border: 1px solid #7F95E4 !important;
+  background: #7F95E4 !important;
+  color: #ffffff !important;
 
   &:hover {
     transform: translateY(-1px);
-    background: #1AC1B9;
-    border-color: #1AC1B9;
+    background: #1AC1B9 !important;
+    border-color: #1AC1B9 !important;
   }
 }
 
 .secondaryCta {
-  border: 1px solid #cbd5e1;
-  background: transparent;
-  color: #1a1a1a;
+  border: 1px solid #cbd5e1 !important;
+  background: transparent !important;
+  color: #1a1a1a !important;
 
   &:hover {
-    background: #f1f5f9;
-    border-color: #7F95E4;
+    background: #f1f5f9 !important;
+    border-color: #7F95E4 !important;
   }
 }
 

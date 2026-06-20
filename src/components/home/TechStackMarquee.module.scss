@@ -30,14 +30,12 @@
   justify-content: center;
   gap: 0.5rem;
   border-radius: 14px;
-  background: var(--scheme-brand-200);
-  border: 1px solid rgba(167, 139, 250, 0.2);
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   text-align: center;
   transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
-  color: var(--neutral-on-background-strong);
+  color: #18181b;
 }
 
 .techItem::after {
@@ -45,14 +43,14 @@
   position: absolute;
   inset: 1px;
   border-radius: 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   pointer-events: none;
 }
 
 .techItem:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(167, 139, 250, 0.15);
-  border-color: rgba(167, 139, 250, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Light theme: cards match the page so the two rows don't read as separate dark bands */
@@ -83,7 +81,7 @@
   width: 2rem;
   height: 2rem;
   fill: currentColor;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
 
   /* Force brand color through; some react-icons use hardcoded path fills */
   path {
@@ -91,18 +89,10 @@
   }
 }
 
-[data-theme="light"] .techIcon {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
-}
-
 .techLabel {
   font-size: var(--type-label);
   font-weight: 600;
   letter-spacing: 0.01em;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
-}
-
-[data-theme="light"] .techLabel {
   text-shadow: none;
 }
 
