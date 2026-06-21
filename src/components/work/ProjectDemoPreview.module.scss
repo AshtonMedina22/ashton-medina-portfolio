@@ -1,40 +1,221 @@
-@use "../shared/breakpoints";
-
-.previewViewport {
+.thumbnailStage {
   position: relative;
+  display: grid;
   width: 100%;
   height: 100%;
   min-height: 0;
+  place-items: center;
   overflow: hidden;
+  isolation: isolate;
   background:
-    linear-gradient(135deg, rgba(248, 250, 252, 0.94), rgba(226, 232, 240, 0.78)),
-    #f8fafc;
+    radial-gradient(circle at 16% 18%, rgba(87, 56, 148, 0.16), transparent 8rem),
+    radial-gradient(circle at 88% 24%, rgba(9, 205, 205, 0.05), transparent 7rem),
+    linear-gradient(135deg, #ffffff 0%, #ffffff 56%, #ffffff 100%);
 }
 
-.previewScaler {
+.thumbnailGlow {
   position: absolute;
-  top: 0.35rem;
-  left: 50%;
-  width: 1280px;
-  transform: translateX(-50%) scale(0.24);
-  transform-origin: top center;
-  pointer-events: none;
-  user-select: none;
+  inset: 13% 9%;
+  z-index: -1;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(0, 45, 114, 0.14), rgba(87, 56, 148, 0.12), rgba(9, 205, 205, 0.12));
+  filter: blur(18px);
 }
 
-.previewScaler :global([class*="shellWrap"]) {
-  padding: 0.65rem;
+.thumbnailCard {
+  display: grid;
+  gap: clamp(0.42rem, 1vw, 0.72rem);
+  width: min(82%, 22rem);
+  min-height: 0;
+  padding: clamp(0.72rem, 1.8vw, 1rem);
+  border: 1px solid rgba(0, 45, 114, 0.14);
+  border-radius: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9)),
+    #ffffff;
+  box-shadow:
+    0 0.9rem 2rem rgba(0, 45, 114, 0.14),
+    0 0.25rem 0.8rem rgba(87, 56, 148, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-@include breakpoints.down(lg) {
-  .previewScaler {
-    transform: translateX(-50%) scale(0.22);
+.thumbnailHeader,
+.thumbnailFooter,
+.vendorSnapshot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.thumbnailHeader strong {
+  min-width: 0;
+  color: #002d72;
+  font-size: clamp(0.88rem, 1.35vw, 1.04rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-align: right;
+}
+
+.thumbnailBadge {
+  flex: 0 0 auto;
+  border: 1px solid rgba(160, 229, 217, 0.62);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #002d72, #573894);
+  color: #ffffff;
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 0.32rem 0.48rem;
+  text-transform: uppercase;
+}
+
+.thumbnailFlow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.36rem;
+  padding: 0.42rem;
+  border: 1px solid rgba(87, 56, 148, 0.12);
+  border-radius: 0.82rem;
+  background: rgba(160, 229, 217, 0.14);
+}
+
+.thumbnailFlow span {
+  min-width: 0;
+  border-radius: 0.62rem;
+  background: #ffffff;
+  color: #002d72;
+  font-size: 0.58rem;
+  font-weight: 850;
+  line-height: 1;
+  padding: 0.48rem 0.32rem;
+  text-align: center;
+}
+
+.thumbnailFlow i {
+  display: block;
+  width: 0.8rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #573894, #09cdcd);
+}
+
+.vendorSnapshot {
+  justify-content: flex-start;
+  padding: 0.48rem;
+  border: 1px solid rgba(87, 56, 148, 0.12);
+  border-radius: 0.82rem;
+  background: rgba(160, 229, 217, 0.14);
+}
+
+.vendorSnapshot span,
+.vendorSnapshot small,
+.thumbnailFooter small,
+.thumbnailFooter strong {
+  display: block;
+}
+
+.vendorSnapshot span {
+  color: #002d72;
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.vendorSnapshot small,
+.thumbnailFooter small {
+  margin-top: 0.14rem;
+  color: #573894;
+  font-size: 0.54rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.vendorMark {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.78rem;
+  background: linear-gradient(135deg, #002d72, #573894);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 950;
+}
+
+.thumbnailFooter {
+  padding-top: 0.12rem;
+}
+
+.thumbnailFooter strong {
+  color: #002d72;
+  font-size: 0.86rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.miniProgress {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr 0.55fr;
+  gap: 0.28rem;
+  width: min(46%, 6rem);
+}
+
+.miniProgress span {
+  height: 0.42rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #002d72, #573894);
+}
+
+.miniProgress span:nth-child(2) {
+  background: linear-gradient(90deg, #573894, #81459e);
+}
+
+.miniProgress span:nth-child(3) {
+  background: #09cdcd;
+}
+
+@media (max-width: 640px) {
+  .thumbnailCard {
+    width: min(86%, 18rem);
+    gap: 0.42rem;
+    padding: 0.68rem;
+    border-radius: 0.9rem;
   }
-}
 
-@include breakpoints.down(sm) {
-  .previewScaler {
-    top: 0.25rem;
-    transform: translateX(-50%) scale(0.2);
+  .thumbnailHeader strong {
+    font-size: 0.84rem;
+  }
+
+  .thumbnailBadge {
+    font-size: 0.52rem;
+    padding: 0.28rem 0.42rem;
+  }
+
+  .thumbnailFlow {
+    gap: 0.26rem;
+    padding: 0.34rem;
+  }
+
+  .thumbnailFlow span {
+    font-size: 0.52rem;
+    padding: 0.38rem 0.24rem;
+  }
+
+  .vendorSnapshot span {
+    font-size: 0.66rem;
+  }
+
+  .vendorMark {
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 0.68rem;
   }
 }
