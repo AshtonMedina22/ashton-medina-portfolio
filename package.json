@@ -7,7 +7,8 @@
     "build": "next build",
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "resolve:theme-conflicts": "bash scripts/resolve-theme-refresh-conflicts.sh"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

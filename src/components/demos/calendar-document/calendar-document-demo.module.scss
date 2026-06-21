@@ -1,8 +1,8 @@
-$bg: #070b12;
-$panel: rgba(15, 23, 42, 0.82);
-$border: rgba(148, 163, 184, 0.16);
-$text: #f8fafc;
-$muted: #94a3b8;
+$bg: #ffffff;
+$panel: rgba(255, 255, 255, 0.86);
+$border: rgba(129, 69, 158, 0.16);
+$text: #002d72;
+$muted: #573894;
 
 .shell {
   width: 100%;
@@ -10,9 +10,9 @@ $muted: #94a3b8;
   min-height: 42rem;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(20, 184, 166, 0.3);
+  border: 1px solid rgba(9, 205, 205, 0.3);
   border-radius: 16px;
-  background: radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.18), transparent 24rem), $bg;
+  background: radial-gradient(circle at 12% 0%, rgba(9, 205, 205, 0.18), transparent 24rem), $bg;
   color: $text;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -23,11 +23,11 @@ $muted: #94a3b8;
   gap: 1rem;
   padding: 1.35rem;
   border-bottom: 1px solid $border;
-  background: rgba(8, 13, 22, 0.76);
+  background: rgba(255, 255, 255, 0.78);
 
-  p { margin: 0 0 0.45rem; color: #5eead4; font-size: 0.72rem; font-weight: 820; letter-spacing: 0.14em; text-transform: uppercase; }
+  p { margin: 0 0 0.45rem; color: #573894; font-size: 0.72rem; font-weight: 820; letter-spacing: 0.14em; text-transform: uppercase; }
   h2 { max-width: 43rem; margin: 0; font-size: clamp(1.65rem, 2.8vw, 2.55rem); line-height: 1.1; letter-spacing: -0.055em; }
-  > span { display: inline-flex; align-items: center; gap: 0.45rem; height: fit-content; padding: 0.62rem 0.8rem; border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 999px; color: #5eead4; font-size: 0.78rem; font-weight: 760; }
+  > span { display: inline-flex; align-items: center; gap: 0.45rem; height: fit-content; padding: 0.62rem 0.8rem; border: 1px solid rgba(9, 205, 205, 0.3); border-radius: 999px; color: #573894; font-size: 0.78rem; font-weight: 760; }
 }
 
 .pipeline {
@@ -48,8 +48,8 @@ $muted: #94a3b8;
     text-align: center;
   }
 
-  svg { width: 1.5rem; height: 1.5rem; color: #5eead4; }
-  span { color: #e2e8f0; font-size: 0.82rem; font-weight: 780; }
+  svg { width: 1.5rem; height: 1.5rem; color: #573894; }
+  span { color: #28406f; font-size: 0.82rem; font-weight: 780; }
 }
 
 .grid {
@@ -82,24 +82,24 @@ $muted: #94a3b8;
   grid-template-columns: 1fr 0.8fr auto;
   gap: 0.65rem;
   padding: 0.8rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  border-top: 1px solid rgba(0, 45, 114, 0.1);
   font-size: 0.82rem;
 
   span { color: $muted; }
-  em { color: #5eead4; font-style: normal; font-weight: 780; }
+  em { color: #573894; font-style: normal; font-weight: 780; }
 }
 
 .page {
   min-height: 18rem;
   padding: 1.25rem;
   border-radius: 12px;
-  background: #f8fafc;
-  color: #0f172a;
+  background: #002d72;
+  color: #f7fbfc;
 
-  span { color: #64748b; font-size: 0.7rem; font-weight: 850; letter-spacing: 0.14em; }
+  span { color: #28406f; font-size: 0.7rem; font-weight: 850; letter-spacing: 0.14em; }
   strong { display: block; margin-top: 1rem; font-size: 1.65rem; line-height: 1; }
-  p { max-width: 24rem; color: #475569; line-height: 1.55; }
-  small { display: block; margin-top: 2rem; color: #0f766e; font-weight: 800; }
+  p { max-width: 24rem; color: #28406f; line-height: 1.55; }
+  small { display: block; margin-top: 2rem; color: #573894; font-weight: 800; }
 }
 
 .statusPanel {
@@ -111,10 +111,10 @@ $muted: #94a3b8;
     display: flex;
     gap: 0.5rem;
     padding: 0.72rem;
-    border: 1px solid rgba(20, 184, 166, 0.2);
+    border: 1px solid rgba(9, 205, 205, 0.2);
     border-radius: 10px;
-    background: rgba(20, 184, 166, 0.08);
-    color: #cbd5e1;
+    background: rgba(9, 205, 205, 0.08);
+    color: #28406f;
     font-size: 0.8rem;
     font-weight: 720;
   }

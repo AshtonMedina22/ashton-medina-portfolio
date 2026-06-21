@@ -1,7 +1,6 @@
 import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
-import "@/resources/tropical-palette.css";
 
 import classNames from "classnames";
 
@@ -84,7 +83,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'dark';
+                  const defaultTheme = ${JSON.stringify(style.theme)};
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -113,9 +112,17 @@ export default async function RootLayout({
                     return themeValue;
                   };
                   
-                  // Apply saved theme
+                  // Force the refreshed site to start from the configured light theme.
+                  // Older visitors may still have a stale dark preference saved from the
+                  // previous dark-first build; clear that once so the site no longer boots dark.
+                  const themeMigrationKey = 'ashton-theme-default-light-v1';
                   const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme || defaultTheme);
+                  if (localStorage.getItem(themeMigrationKey) !== 'true') {
+                    localStorage.setItem('data-theme', defaultTheme);
+                    localStorage.setItem(themeMigrationKey, 'true');
+                  }
+                  const migratedTheme = localStorage.getItem('data-theme') || savedTheme;
+                  const resolvedTheme = resolveTheme(migratedTheme || defaultTheme);
                   root.setAttribute('data-theme', resolvedTheme);
                   
                   // Apply any saved style overrides
@@ -128,7 +135,7 @@ export default async function RootLayout({
                   });
                 } catch (e) {
                   console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.documentElement.setAttribute('data-theme', ${JSON.stringify(style.theme)});
                 }
               })();
             `,

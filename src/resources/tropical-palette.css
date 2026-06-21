@@ -1,7 +1,7 @@
 /* Jasmine Lagoon palette tokens
    Keep the brand system focused: cream, teal, lagoon, purple, and navy. */
 :root {
-  --color-night-blooming-jasmine: #f9f7ec;
+  --color-night-blooming-jasmine: #ffffff;
   --color-sea-glass-teal: #a0e5d9;
   --color-neon-lagoon: #09cdcd;
   --color-purple-pleasures: #81459e;
@@ -59,7 +59,7 @@
 [data-theme="light"] {
   --page-background: var(--color-night-blooming-jasmine);
   --neutral-background-weak: var(--color-night-blooming-jasmine);
-  --neutral-background-medium: #eef8f5;
+  --neutral-background-medium: #f7fbfc;
   --neutral-background-strong: #d8f2ee;
   --neutral-on-background-strong: var(--color-blue-jinns);
   --neutral-on-background-medium: #28406f;

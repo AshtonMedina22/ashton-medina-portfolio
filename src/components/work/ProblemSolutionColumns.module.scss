@@ -10,14 +10,14 @@
 .columnSolution {
   min-width: 0;
   padding: clamp(1.1rem, 2vw, 1.5rem);
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(0, 45, 114, 0.1);
   border-radius: 14px;
-  background: rgba(18, 24, 38, 0.48);
+  background: rgba(255, 255, 255, 0.84);
   box-shadow: none;
 
   h2 {
     margin: 0 0 1rem;
-    color: var(--project-text, #f8fafc);
+    color: var(--project-text, #002d72);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
     font-size: clamp(1.45rem, 2.5vw, 2rem);
     font-weight: 700;
@@ -28,7 +28,7 @@
 
   p {
     margin: 0 0 0.85rem;
-    color: var(--project-muted, #94a3b8);
+    color: var(--project-muted, #28406f);
     font-size: var(--type-body);
     line-height: 1.7;
     overflow-wrap: break-word;
@@ -40,26 +40,26 @@
 }
 
 .columnProblem {
-  border-left-color: rgba(148, 163, 184, 0.34);
+  border-left-color: rgba(87, 56, 148, 0.28);
 }
 
 .columnSolution {
-  border-left-color: var(--project-cyan, #06b6d4);
+  border-left-color: var(--project-cyan, #09cdcd);
   background:
-    linear-gradient(135deg, rgba(6, 182, 212, 0.06), transparent 48%),
-    rgba(18, 24, 38, 0.56);
+    linear-gradient(135deg, rgba(9, 205, 205, 0.08), transparent 48%),
+    rgba(255, 255, 255, 0.9);
 }
 
 [data-theme="light"] {
   .columnProblem,
   .columnSolution {
-    border-color: var(--project-border, rgba(15, 23, 42, 0.1));
+    border-color: var(--project-border, rgba(0, 45, 114, 0.1));
     background: rgba(255, 255, 255, 0.84);
   }
 
   .columnSolution {
     background:
-      linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 48%),
+      linear-gradient(135deg, rgba(9, 205, 205, 0.1), transparent 48%),
       rgba(255, 255, 255, 0.9);
   }
 }
