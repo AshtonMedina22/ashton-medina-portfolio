@@ -9,14 +9,14 @@
 .statBlock {
   min-width: 0;
   padding: 1rem;
-  border: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
   border-radius: 14px;
-  background: rgba(26, 34, 51, 0.7);
+  background: #ffffff;
 }
 
 .statValue {
   margin-bottom: 0.45rem;
-  color: var(--project-cyan, #06b6d4);
+  color: var(--project-soft, #573894);
   font-size: clamp(1.25rem, 2vw, 1.65rem);
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -24,14 +24,14 @@
 }
 
 .statLabel {
-  color: var(--project-muted, #94a3b8);
+  color: var(--project-muted, #28406f);
   font-size: var(--type-label);
   font-weight: 600;
   line-height: 1.4;
 }
 
 [data-theme="light"] .statBlock {
-  background: #f8fafc;
+  background: #ffffff;
 }
 
 @media (max-width: 760px) {

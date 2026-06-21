@@ -28,7 +28,7 @@ const routes: RoutesConfig = {
 const display: DisplayConfig = {
   location: false,
   time: false,
-  themeSwitcher: true,
+  themeSwitcher: false,
 };
 
 const protectedRoutes: ProtectedRoutesConfig = {
@@ -72,8 +72,8 @@ const fonts: FontsConfig = {
 };
 
 const style: StyleConfig = {
-  theme: "dark", // dark | light | system
-  neutral: "custom" as NeutralColor, // custom palette: bg #0B1020, text #F9FAFB (see custom.css)
+  theme: "light", // dark | light | system
+  neutral: "custom" as NeutralColor, // custom palette tokens live in custom.css
   brand: "custom" as Schemes, // indigo #6366F1 → violet #A855F7
   accent: "custom" as Schemes, // neon #22D3EE
   solid: "contrast", // color | contrast

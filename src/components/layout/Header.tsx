@@ -48,16 +48,6 @@ export const Header = () => {
   return (
     <>
       <Fade s={{ hide: true }} fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade
-        hide
-        s={{ hide: false }}
-        fillWidth
-        position="fixed"
-        bottom="0"
-        to="top"
-        height="80"
-        zIndex={9}
-      />
       <Row
         fitHeight
         className={styles.position}
@@ -77,6 +67,7 @@ export const Header = () => {
         </Row>
         <Row fillWidth horizontal="center">
           <Row
+            className={styles.navigationShell}
             background="page"
             border="neutral-alpha-weak"
             radius="m-4"

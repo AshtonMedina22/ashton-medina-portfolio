@@ -14,6 +14,7 @@ import { SecureAiGatewayDemo } from "@/components/demos/secure-ai-gateway/Secure
 import { BusinessAccessDemo } from "@/components/demos/business-access/BusinessAccessDemo";
 import { CalendarDocumentDemo } from "@/components/demos/calendar-document/CalendarDocumentDemo";
 import { InventoryPurchasingDemo } from "@/components/demos/inventory-purchasing/InventoryPurchasingDemo";
+import { ProjectMockupViewport } from "@/components/work/ProjectMockupViewport";
 import { Metadata } from "next";
 import { accentLastWords } from "@/utils/headingAccent";
 import styles from "./ProjectPage.module.scss";
@@ -184,7 +185,9 @@ export default async function Project({
       {demo && (
         <section className={styles.mockupSection}>
           <div className={styles.demoSection}>
-            <div className={styles.demoFrame}>{demo}</div>
+            <div className={styles.demoFrame}>
+              <ProjectMockupViewport>{demo}</ProjectMockupViewport>
+            </div>
           </div>
         </section>
       )}
