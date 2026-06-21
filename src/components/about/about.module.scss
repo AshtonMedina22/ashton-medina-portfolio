@@ -94,9 +94,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.42rem;
-  min-width: 0;
-  max-width: 100%;
+  justify-content: flex-start;
+  gap: 0.65rem;
   text-align: left;
 }
 
@@ -556,8 +555,8 @@
 
 @property --avatar-ring-angle {
   syntax: "<angle>";
-  inherits: false;
   initial-value: 0deg;
+  inherits: false;
 }
 
 @keyframes avatarRingSpin {
