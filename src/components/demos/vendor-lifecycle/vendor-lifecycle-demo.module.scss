@@ -1,15 +1,15 @@
 /* Vendor Lifecycle - ERP + Portal style, violet accent */
-$ui-blue: #6366f1;
-$ui-cyan: #3b82f6;
-$ui-green: #22c55e;
-$ui-green-bg: #22c55e1f;
-$ui-yellow: #fbbf24;
-$ui-yellow-bg: #fbbf2415;
+$ui-blue: #81459e;
+$ui-cyan: #09cdcd;
+$ui-green: #09cdcd;
+$ui-green-bg: #09cdcd1f;
+$ui-yellow: #a0e5d9;
+$ui-yellow-bg: #a0e5d915;
 $ui-red: #dc2626;
-$ui-red-bg: #dc262615;
-$ui-border: rgba(99, 102, 241, 0.38);
-$ui-bg: #070b12;
-$ui-card-bg: #111827;
+$ui-red-bg: rgba(220, 38, 38, 0.15);
+$ui-border: rgba(129, 69, 158, 0.24);
+$ui-bg: #f9f7ec;
+$ui-card-bg: #ffffff;
 
 /* App shell — fixed product shot, no scrollbars */
 .shell {
@@ -30,7 +30,7 @@ $ui-card-bg: #111827;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0.9rem;
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(12, 18, 31, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(238, 248, 245, 0.96) 100%);
   border-bottom: 1px solid $ui-border;
 }
 
@@ -46,13 +46,13 @@ $ui-card-bg: #111827;
     display: block;
 
     &:nth-child(1) {
-      background: #ef4444;
+      background: #dc2626;
     }
     &:nth-child(2) {
-      background: #eab308;
+      background: #a0e5d9;
     }
     &:nth-child(3) {
-      background: #22c55e;
+      background: #09cdcd;
     }
   }
 }
@@ -62,7 +62,7 @@ $ui-card-bg: #111827;
   text-align: left;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #a1a1aa;
+  color: #573894;
 }
 
 .content {
@@ -92,7 +92,7 @@ $ui-card-bg: #111827;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #a1a1aa;
+  color: #573894;
   margin-bottom: 0.75rem;
 }
 
@@ -114,7 +114,7 @@ $ui-card-bg: #111827;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #a1a1aa;
+  color: #573894;
   background: $ui-card-bg;
   border-bottom: 1px solid $ui-border;
 }
@@ -129,7 +129,7 @@ $ui-card-bg: #111827;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #a1a1aa;
+  color: #573894;
   background: $ui-card-bg;
   border-bottom: 1px solid $ui-border;
   display: flex;
@@ -140,7 +140,7 @@ $ui-card-bg: #111827;
 .sectionDividerSub {
   font-size: 0.6875rem;
   font-weight: 500;
-  color: #8b5cf6;
+  color: #81459e;
   text-transform: none;
   letter-spacing: 0.02em;
 }
@@ -168,21 +168,21 @@ $ui-card-bg: #111827;
 .panelTitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #f5f3ff;
+  color: #f9f7ec;
   letter-spacing: -0.02em;
   margin: 0 0 0.25rem 0;
 }
 
 .panelSubtitle {
   font-size: 0.875rem;
-  color: #a1a1aa;
+  color: #573894;
   margin: 0;
 }
 
 .sectionHeading {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #f5f3ff;
+  color: #f9f7ec;
   margin: 0.75rem 0 0.4rem 0;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid $ui-border;
@@ -210,7 +210,7 @@ $ui-card-bg: #111827;
   font-weight: 600;
   background: var(--success-soft, $ui-green-bg);
   color: var(--success-color, $ui-green);
-  border: 1px solid rgba(34, 197, 94, 0.42);
+  border: 1px solid rgba(9, 205, 205, 0.42);
 }
 
 .panelHeaderRow {
@@ -241,12 +241,12 @@ $ui-card-bg: #111827;
 }
 
 .detailLabel {
-  color: #71717a;
+  color: #573894;
   font-size: 0.8rem;
 }
 
 .detailValue {
-  color: #f5f3ff;
+  color: #f9f7ec;
 }
 
 .tag {
@@ -255,9 +255,9 @@ $ui-card-bg: #111827;
   text-align: center;
   border-radius: 9999px;
   font-size: 0.72rem;
-  background: #18181b;
-  color: #a1a1aa;
-  border: 1px solid #3f3f46;
+  background: #ffffff;
+  color: #573894;
+  border: 1px solid #28406f;
 }
 
 .tagPrimary {
@@ -293,7 +293,7 @@ $ui-card-bg: #111827;
     text-align: left;
     padding: 0.5rem 0.6rem;
     font-weight: 600;
-    color: #71717a;
+    color: #573894;
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -311,8 +311,8 @@ $ui-card-bg: #111827;
 
   td {
     padding: 0.5rem 0.6rem;
-    border-bottom: 1px solid #27272a;
-    color: #f5f3ff;
+    border-bottom: 1px solid #28406f;
+    color: #f9f7ec;
     vertical-align: middle;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -382,21 +382,21 @@ $ui-card-bg: #111827;
 .summaryCardLabel {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #f5f3ff;
+  color: #f9f7ec;
   line-height: 1.3;
   min-width: 0;
   word-break: break-word;
 }
 
 .summaryCardWarning {
-  background: #fbbf2415;
-  border-color: rgba(251, 191, 36, 0.4);
-  .summaryCardIcon { color: #fbbf24; }
+  background: #a0e5d915;
+  border-color: rgba(160, 229, 217, 0.4);
+  .summaryCardIcon { color: #a0e5d9; }
 }
 
 .summaryCardSuccess {
   background: var(--success-soft, $ui-green-bg);
-  border-color: rgba(34, 197, 94, 0.46);
+  border-color: rgba(9, 205, 205, 0.46);
   .summaryCardIcon { color: var(--success-color, $ui-green); }
 }
 
@@ -421,7 +421,7 @@ $ui-card-bg: #111827;
 .workOrderTitle {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #f5f3ff;
+  color: #f9f7ec;
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
 }
@@ -456,7 +456,7 @@ $ui-card-bg: #111827;
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1.25;
-  color: #09090b;
+  color: #002d72;
   background: var(--success-color, $ui-green);
   border: none;
   border-radius: 9999px;
@@ -476,10 +476,10 @@ $ui-card-bg: #111827;
 }
 
 .signatureLine {
-  border-top: 1px dashed #3f3f46;
+  border-top: 1px dashed #28406f;
   padding-top: 0.75rem;
   font-size: 0.8125rem;
-  color: #71717a;
+  color: #573894;
 }
 
 .signatureRow {
@@ -496,7 +496,7 @@ $ui-card-bg: #111827;
 .signatureLabel {
   font-weight: 600;
   font-size: 0.8125rem;
-  color: #a1a1aa;
+  color: #573894;
   flex-shrink: 0;
   min-width: 4.5rem;
 }
@@ -504,7 +504,7 @@ $ui-card-bg: #111827;
 .signatureBlock {
   flex: 1;
   min-width: 80px;
-  border-bottom: 1px dashed #52525b;
+  border-bottom: 1px dashed #573894;
   min-height: 1.25rem;
 }
 
@@ -513,10 +513,10 @@ $ui-card-bg: #111827;
   max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(99, 102, 241, 0.42);
+  border: 1px solid rgba(129, 69, 158, 0.42);
   border-radius: 0.75rem;
-  background: #070b12;
-  color: #f5f3ff;
+  background: #f9f7ec;
+  color: #f9f7ec;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -528,18 +528,18 @@ $ui-card-bg: #111827;
   align-items: center;
   min-height: 3.25rem;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(99, 102, 241, 0.34);
-  background: #0b1220;
+  border-bottom: 1px solid rgba(129, 69, 158, 0.34);
+  background: #eef8f5;
 
   span,
   strong {
     min-width: 0;
     padding: 0.4rem 0.65rem;
     overflow: hidden;
-    border: 1px solid rgba(148, 163, 184, 0.16);
+    border: 1px solid rgba(0, 45, 114, 0.16);
     border-radius: 0.45rem;
-    background: rgba(15, 23, 42, 0.74);
-    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.78);
+    color: #28406f;
     font-size: 0.72rem;
     line-height: 1.2;
     text-overflow: ellipsis;
@@ -547,29 +547,29 @@ $ui-card-bg: #111827;
   }
 
   strong {
-    border-color: rgba(34, 197, 94, 0.36);
-    background: rgba(34, 197, 94, 0.12);
-    color: #6ee7b7;
+    border-color: rgba(9, 205, 205, 0.36);
+    background: rgba(9, 205, 205, 0.12);
+    color: #a0e5d9;
     font-weight: 760;
   }
 
   > :nth-child(1) {
-    border-color: rgba(99, 102, 241, 0.52);
-    background: rgba(99, 102, 241, 0.18);
-    color: #c4b5fd;
+    border-color: rgba(129, 69, 158, 0.52);
+    background: rgba(129, 69, 158, 0.18);
+    color: #573894;
   }
 
   > :nth-child(2) {
-    border-color: rgba(59, 130, 246, 0.5);
-    background: rgba(59, 130, 246, 0.16);
-    color: #93c5fd;
+    border-color: rgba(160, 229, 217, 0.5);
+    background: rgba(160, 229, 217, 0.16);
+    color: #a0e5d9;
   }
 
   > :nth-child(3),
   > :nth-child(4) {
-    border-color: rgba(34, 197, 94, 0.42);
-    background: rgba(34, 197, 94, 0.14);
-    color: #86efac;
+    border-color: rgba(9, 205, 205, 0.42);
+    background: rgba(9, 205, 205, 0.14);
+    color: #09cdcd;
   }
 }
 
@@ -578,9 +578,9 @@ $ui-card-bg: #111827;
   gap: 1rem;
   padding: 1rem;
   background:
-    radial-gradient(circle at 22% 0%, rgba(99, 102, 241, 0.16), transparent 30%),
-    radial-gradient(circle at 88% 28%, rgba(59, 130, 246, 0.08), transparent 26%),
-    #070b12;
+    radial-gradient(circle at 22% 0%, rgba(129, 69, 158, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 28%, rgba(160, 229, 217, 0.08), transparent 26%),
+    #f9f7ec;
 }
 
 .vendorHero {
@@ -594,9 +594,9 @@ $ui-card-bg: #111827;
 .portalPane,
 .supportCard {
   min-width: 0;
-  border: 1px solid rgba(99, 102, 241, 0.32);
+  border: 1px solid rgba(129, 69, 158, 0.32);
   border-radius: 0.65rem;
-  background: #111827;
+  background: #ffffff;
 }
 
 .internalPane,
@@ -608,7 +608,7 @@ $ui-card-bg: #111827;
 }
 
 .portalPane {
-  background: #101827;
+  background: #ffffff;
 }
 
 .paneHeader {
@@ -617,11 +617,11 @@ $ui-card-bg: #111827;
   justify-content: space-between;
   gap: 1rem;
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  border-bottom: 1px solid rgba(0, 45, 114, 0.14);
 
   p {
     margin: 0 0 0.35rem;
-    color: #c4b5fd;
+    color: #573894;
     font-size: 0.65rem;
     font-weight: 780;
     letter-spacing: 0.1em;
@@ -630,7 +630,7 @@ $ui-card-bg: #111827;
 
   h2 {
     margin: 0;
-    color: #f5f3ff;
+    color: #f9f7ec;
     font-size: clamp(1.15rem, 1.8vw, 1.55rem);
     line-height: 1.12;
     letter-spacing: -0.035em;
@@ -639,10 +639,10 @@ $ui-card-bg: #111827;
   > span {
     flex-shrink: 0;
     padding: 0.4rem 0.65rem;
-    border: 1px solid rgba(99, 102, 241, 0.32);
+    border: 1px solid rgba(129, 69, 158, 0.32);
     border-radius: 999px;
-    background: rgba(99, 102, 241, 0.14);
-    color: #c4b5fd;
+    background: rgba(129, 69, 158, 0.14);
+    color: #573894;
     font-size: 0.72rem;
     font-weight: 760;
   }
@@ -655,10 +655,10 @@ $ui-card-bg: #111827;
 
   span {
     padding: 0.4rem 0.65rem;
-    border: 1px solid rgba(34, 197, 94, 0.36);
+    border: 1px solid rgba(9, 205, 205, 0.36);
     border-radius: 999px;
-    background: rgba(34, 197, 94, 0.12);
-    color: #6ee7b7;
+    background: rgba(9, 205, 205, 0.12);
+    color: #a0e5d9;
     font-size: 0.72rem;
     font-weight: 760;
   }
@@ -676,7 +676,7 @@ $ui-card-bg: #111827;
 .assignmentCard,
 .portalVisibilityNote {
   min-width: 0;
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  border: 1px solid rgba(0, 45, 114, 0.14);
   border-radius: 0.55rem;
   background: rgba(8, 8, 11, 0.68);
 }
@@ -689,14 +689,14 @@ $ui-card-bg: #111827;
 
   div {
     padding: 0.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(0, 45, 114, 0.12);
     border-radius: 0.45rem;
-    background: rgba(15, 23, 42, 0.72);
+    background: rgba(255, 255, 255, 0.74);
   }
 
   span {
     display: block;
-    color: #a1a1aa;
+    color: #573894;
     font-size: 0.64rem;
     font-weight: 760;
     letter-spacing: 0.08em;
@@ -706,13 +706,13 @@ $ui-card-bg: #111827;
   strong {
     display: block;
     margin-top: 0.25rem;
-    color: #f5f3ff;
+    color: #f9f7ec;
     font-size: 0.95rem;
   }
 }
 
 .moduleEyebrow {
-  color: #a1a1aa;
+  color: #573894;
   font-size: 0.62rem;
   font-weight: 780;
   letter-spacing: 0.12em;
@@ -731,33 +731,33 @@ $ui-card-bg: #111827;
     gap: 0.2rem 0.75rem;
     align-items: center;
     padding: 0.65rem 0.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(0, 45, 114, 0.12);
     border-radius: 0.45rem;
-    background: rgba(15, 23, 42, 0.72);
+    background: rgba(255, 255, 255, 0.74);
   }
 
   span {
-    color: #f5f3ff;
+    color: #f9f7ec;
     font-size: 0.78rem;
     font-weight: 760;
   }
 
   small {
     grid-column: 1;
-    color: #a1a1aa;
+    color: #573894;
     font-size: 0.68rem;
   }
 
   strong {
     grid-column: 2;
     grid-row: 1 / span 2;
-    color: #6ee7b7;
+    color: #a0e5d9;
     font-size: 0.7rem;
   }
 }
 
 .reviewState {
-  color: #fbbf24 !important;
+  color: #a0e5d9 !important;
 }
 
 .assignmentCard {
@@ -767,7 +767,7 @@ $ui-card-bg: #111827;
 
   h3 {
     margin: 0;
-    color: #f5f3ff;
+    color: #f9f7ec;
     font-size: clamp(1rem, 1.45vw, 1.25rem);
     line-height: 1.15;
     letter-spacing: -0.03em;
@@ -780,10 +780,10 @@ $ui-card-bg: #111827;
 
   span {
     padding: 0.55rem 0.65rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(0, 45, 114, 0.12);
     border-radius: 0.45rem;
     background: rgba(39, 39, 42, 0.7);
-    color: #cbd5e1;
+    color: #28406f;
     font-size: 0.72rem;
     font-weight: 700;
   }
@@ -806,22 +806,22 @@ $ui-card-bg: #111827;
   }
 
   strong {
-    border: 1px solid rgba(34, 197, 94, 0.42);
-    background: rgba(34, 197, 94, 0.16);
-    color: #6ee7b7;
+    border: 1px solid rgba(9, 205, 205, 0.42);
+    background: rgba(9, 205, 205, 0.16);
+    color: #a0e5d9;
   }
 
   span {
-    border: 1px solid rgba(148, 163, 184, 0.16);
-    background: rgba(15, 23, 42, 0.72);
-    color: #cbd5e1;
+    border: 1px solid rgba(0, 45, 114, 0.16);
+    background: rgba(255, 255, 255, 0.74);
+    color: #28406f;
   }
 }
 
 .portalVisibilityNote {
   margin-top: auto;
   padding: 0.85rem;
-  color: #cbd5e1;
+  color: #28406f;
   font-size: 0.75rem;
   line-height: 1.45;
 }
@@ -845,14 +845,14 @@ $ui-card-bg: #111827;
   div {
     min-width: 0;
     padding: 0.75rem;
-    border: 1px solid rgba(148, 163, 184, 0.14);
+    border: 1px solid rgba(0, 45, 114, 0.14);
     border-radius: 0.45rem;
-    background: rgba(15, 23, 42, 0.72);
+    background: rgba(255, 255, 255, 0.74);
   }
 
   span {
     display: block;
-    color: #a1a1aa;
+    color: #573894;
     font-size: 0.62rem;
     font-weight: 760;
     letter-spacing: 0.08em;
@@ -862,7 +862,7 @@ $ui-card-bg: #111827;
   strong {
     display: block;
     margin-top: 0.25rem;
-    color: #f5f3ff;
+    color: #f9f7ec;
     font-size: 1.25rem;
   }
 }
@@ -872,23 +872,23 @@ $ui-card-bg: #111827;
   gap: 0.3rem;
   margin-top: 0.85rem;
   padding: 0.85rem;
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  border: 1px solid rgba(0, 45, 114, 0.14);
   border-radius: 0.45rem;
-  background: rgba(15, 23, 42, 0.72);
+  background: rgba(255, 255, 255, 0.74);
 
   span {
-    color: #a1a1aa;
+    color: #573894;
     font-size: 0.7rem;
     font-weight: 760;
   }
 
   strong {
-    color: #6ee7b7;
+    color: #a0e5d9;
     font-size: 1rem;
   }
 
   small {
-    color: #cbd5e1;
+    color: #28406f;
     font-size: 0.75rem;
     line-height: 1.4;
   }
@@ -946,14 +946,14 @@ $ui-card-bg: #111827;
   max-width: 1480px;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(99, 102, 241, 0.32);
+  border: 1px solid rgba(129, 69, 158, 0.32);
   border-radius: 16px;
   background:
-    radial-gradient(circle at 8% 0%, rgba(99, 102, 241, 0.2), transparent 22rem),
-    radial-gradient(circle at 94% 20%, rgba(34, 197, 94, 0.12), transparent 26rem),
-    linear-gradient(145deg, #08111d 0%, #070b12 58%, #05070c 100%);
+    radial-gradient(circle at 8% 0%, rgba(129, 69, 158, 0.2), transparent 22rem),
+    radial-gradient(circle at 94% 20%, rgba(9, 205, 205, 0.12), transparent 26rem),
+    linear-gradient(145deg, #eef8f5 0%, #f9f7ec 58%, #ffffff 100%);
   box-shadow:
-    0 30px 90px rgba(0, 0, 0, 0.34),
+    0 30px 90px rgba(0, 45, 114, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.045);
 }
 
@@ -962,7 +962,7 @@ $ui-card-bg: #111827;
   grid-template-columns: 1.2fr 0.82fr 0.82fr 0.92fr;
   gap: 0.85rem;
   padding: 1rem 1.15rem 0.75rem;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  border-bottom: 1px solid rgba(0, 45, 114, 0.12);
 
   span {
     display: inline-flex;
@@ -971,10 +971,10 @@ $ui-card-bg: #111827;
     min-width: 0;
     min-height: 3.1rem;
     padding: 0.75rem 1rem;
-    border: 1px solid rgba(148, 163, 184, 0.13);
+    border: 1px solid rgba(0, 45, 114, 0.13);
     border-radius: 10px;
-    background: rgba(15, 23, 42, 0.62);
-    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.68);
+    color: #002d72;
     font-size: clamp(0.82rem, 1.05vw, 0.98rem);
     font-weight: 760;
     line-height: 1.2;
@@ -985,24 +985,24 @@ $ui-card-bg: #111827;
     flex: 0 0 auto;
     width: 1.15rem;
     height: 1.15rem;
-    color: #818cf8;
+    color: #81459e;
   }
 }
 
 .statusToneBlue {
-  color: #7dd3fc !important;
-  border-color: rgba(59, 130, 246, 0.34) !important;
-  background: rgba(59, 130, 246, 0.13) !important;
+  color: #09cdcd !important;
+  border-color: rgba(160, 229, 217, 0.34) !important;
+  background: rgba(160, 229, 217, 0.13) !important;
 }
 
 .statusToneGreen {
-  color: #4ade80 !important;
-  border-color: rgba(34, 197, 94, 0.34) !important;
-  background: rgba(34, 197, 94, 0.12) !important;
+  color: #09cdcd !important;
+  border-color: rgba(9, 205, 205, 0.34) !important;
+  background: rgba(9, 205, 205, 0.12) !important;
 }
 
 .statusToneNeutral {
-  color: #f8fafc !important;
+  color: #002d72 !important;
 }
 
 .vendorComposition {
@@ -1021,11 +1021,11 @@ $ui-card-bg: #111827;
 .portalPane,
 .supportCard {
   min-width: 0;
-  border: 1px solid rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(0, 45, 114, 0.15);
   border-radius: 14px;
   background:
-    radial-gradient(circle at 8% 0%, rgba(59, 130, 246, 0.1), transparent 18rem),
-    rgba(15, 23, 42, 0.58);
+    radial-gradient(circle at 8% 0%, rgba(160, 229, 217, 0.1), transparent 18rem),
+    rgba(255, 255, 255, 0.64);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
 
@@ -1045,7 +1045,7 @@ $ui-card-bg: #111827;
 
   p {
     margin: 0 0 0.55rem;
-    color: #c4b5fd;
+    color: #573894;
     font-size: clamp(0.64rem, 0.72vw, 0.74rem);
     font-weight: 820;
     letter-spacing: 0.16em;
@@ -1054,7 +1054,7 @@ $ui-card-bg: #111827;
 
   h2 {
     margin: 0;
-    color: #f8fafc;
+    color: #002d72;
     font-size: clamp(1.35rem, 2vw, 2rem);
     line-height: 1.05;
     letter-spacing: -0.045em;
@@ -1067,10 +1067,10 @@ $ui-card-bg: #111827;
     flex: 0 0 auto;
     max-width: 12rem;
     padding: 0.55rem 0.8rem;
-    border: 1px solid rgba(139, 92, 246, 0.46);
+    border: 1px solid rgba(129, 69, 158, 0.46);
     border-radius: 999px;
-    background: rgba(99, 102, 241, 0.16);
-    color: #c4b5fd;
+    background: rgba(129, 69, 158, 0.16);
+    color: #573894;
     font-size: 0.76rem;
     font-weight: 780;
     line-height: 1.1;
@@ -1092,10 +1092,10 @@ $ui-card-bg: #111827;
     gap: 0.45rem;
     min-height: 2.35rem;
     padding: 0 0.8rem;
-    border: 1px solid rgba(34, 197, 94, 0.34);
+    border: 1px solid rgba(9, 205, 205, 0.34);
     border-radius: 9px;
-    background: rgba(34, 197, 94, 0.1);
-    color: #6ee7b7;
+    background: rgba(9, 205, 205, 0.1);
+    color: #a0e5d9;
     font-size: 0.78rem;
     font-weight: 780;
     line-height: 1.15;
@@ -1119,7 +1119,7 @@ $ui-card-bg: #111827;
 .portalAssignmentCard,
 .portalVisibilityNote {
   min-width: 0;
-  border: 1px solid rgba(148, 163, 184, 0.13);
+  border: 1px solid rgba(0, 45, 114, 0.13);
   border-radius: 12px;
   background: rgba(4, 9, 16, 0.64);
 }
@@ -1133,7 +1133,7 @@ $ui-card-bg: #111827;
 }
 
 .moduleEyebrow {
-  color: #aab8cc;
+  color: #a0e5d9;
   font-size: 0.7rem;
   font-weight: 820;
   letter-spacing: 0.14em;
@@ -1147,11 +1147,11 @@ $ui-card-bg: #111827;
   align-items: center;
   gap: 0.8rem;
   padding: 0.85rem;
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(0, 45, 114, 0.12);
   border-radius: 10px;
   background:
-    linear-gradient(135deg, rgba(59, 130, 246, 0.08), transparent 55%),
-    rgba(15, 23, 42, 0.72);
+    linear-gradient(135deg, rgba(160, 229, 217, 0.08), transparent 55%),
+    rgba(255, 255, 255, 0.74);
 }
 
 .vendorInfoCard {
@@ -1160,13 +1160,13 @@ $ui-card-bg: #111827;
   > svg {
     width: 1.35rem;
     height: 1.35rem;
-    color: #8b5cf6;
+    color: #81459e;
   }
 
   span,
   small {
     display: block;
-    color: #94a3b8;
+    color: #573894;
     line-height: 1.35;
   }
 
@@ -1180,7 +1180,7 @@ $ui-card-bg: #111827;
   strong {
     display: block;
     margin-top: 0.18rem;
-    color: #f8fafc;
+    color: #002d72;
     font-size: clamp(0.88rem, 1vw, 1rem);
     line-height: 1.22;
   }
@@ -1197,12 +1197,12 @@ $ui-card-bg: #111827;
   > svg {
     width: 1.45rem;
     height: 1.45rem;
-    color: #38bdf8;
+    color: #09cdcd;
   }
 
   strong {
     display: block;
-    color: #f8fafc;
+    color: #002d72;
     font-size: clamp(0.82rem, 0.95vw, 0.94rem);
     line-height: 1.18;
   }
@@ -1210,24 +1210,24 @@ $ui-card-bg: #111827;
   small {
     display: block;
     margin-top: 0.2rem;
-    color: #94a3b8;
+    color: #573894;
     font-size: 0.75rem;
     line-height: 1.35;
   }
 
   > span {
-    color: #6ee7b7;
+    color: #a0e5d9;
     font-size: 0.76rem;
     font-weight: 820;
   }
 }
 
 .stateValid {
-  color: #4ade80 !important;
+  color: #09cdcd !important;
 }
 
 .stateReview {
-  color: #f59e0b !important;
+  color: #a0e5d9 !important;
 }
 
 .portalAssignmentCard {
@@ -1235,7 +1235,7 @@ $ui-card-bg: #111827;
 
   h3 {
     margin: 0;
-    color: #f8fafc;
+    color: #002d72;
     font-size: clamp(1.15rem, 1.65vw, 1.65rem);
     line-height: 1.08;
     letter-spacing: -0.04em;
@@ -1253,10 +1253,10 @@ $ui-card-bg: #111827;
     gap: 0.7rem;
     min-width: 0;
     padding: 0.7rem 0.78rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(0, 45, 114, 0.12);
     border-radius: 9px;
-    background: rgba(30, 41, 59, 0.72);
-    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.84);
+    color: #002d72;
     font-size: 0.84rem;
     font-weight: 650;
     line-height: 1.2;
@@ -1264,7 +1264,7 @@ $ui-card-bg: #111827;
 
   svg {
     flex: 0 0 auto;
-    color: #8b5cf6;
+    color: #81459e;
   }
 }
 
@@ -1290,21 +1290,21 @@ $ui-card-bg: #111827;
   }
 
   strong {
-    border: 1px solid rgba(34, 197, 94, 0.46);
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.28), rgba(34, 197, 94, 0.12));
-    color: #bbf7d0;
+    border: 1px solid rgba(9, 205, 205, 0.46);
+    background: linear-gradient(135deg, rgba(9, 205, 205, 0.28), rgba(9, 205, 205, 0.12));
+    color: #a0e5d9;
   }
 
   span {
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    background: rgba(15, 23, 42, 0.7);
-    color: #e2e8f0;
+    border: 1px solid rgba(0, 45, 114, 0.22);
+    background: rgba(255, 255, 255, 0.74);
+    color: #28406f;
   }
 }
 
 .portalVisibilityNote {
   padding: 1rem;
-  color: #cbd5e1;
+  color: #28406f;
   font-size: 0.82rem;
   line-height: 1.55;
 }
@@ -1328,21 +1328,21 @@ $ui-card-bg: #111827;
   div {
     min-width: 0;
     padding: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(0, 45, 114, 0.12);
     border-radius: 10px;
-    background: rgba(15, 23, 42, 0.68);
+    background: rgba(255, 255, 255, 0.72);
   }
 
   svg {
     width: 1.25rem;
     height: 1.25rem;
-    color: #8b5cf6;
+    color: #81459e;
   }
 
   strong {
     display: block;
     margin-top: 0.7rem;
-    color: #f8fafc;
+    color: #002d72;
     font-size: clamp(1.55rem, 2vw, 2rem);
     line-height: 0.95;
     letter-spacing: -0.04em;
@@ -1351,7 +1351,7 @@ $ui-card-bg: #111827;
   span {
     display: block;
     margin-top: 0.35rem;
-    color: #cbd5e1;
+    color: #28406f;
     font-size: 0.84rem;
     line-height: 1.25;
   }
@@ -1371,7 +1371,7 @@ $ui-card-bg: #111827;
     left: 9%;
     right: 9%;
     height: 1px;
-    background: linear-gradient(90deg, rgba(34, 197, 94, 0.7), rgba(99, 102, 241, 0.65), rgba(148, 163, 184, 0.28));
+    background: linear-gradient(90deg, rgba(9, 205, 205, 0.7), rgba(129, 69, 158, 0.65), rgba(0, 45, 114, 0.28));
   }
 
   article {
@@ -1389,19 +1389,19 @@ $ui-card-bg: #111827;
     height: 2rem;
     padding: 0.45rem;
     border-radius: 9px;
-    background: rgba(99, 102, 241, 0.16);
-    color: #8b5cf6;
+    background: rgba(129, 69, 158, 0.16);
+    color: #81459e;
   }
 
   strong {
     margin-top: 0.45rem;
-    color: #f8fafc;
+    color: #002d72;
     font-size: 0.78rem;
     line-height: 1.18;
   }
 
   span {
-    color: #94a3b8;
+    color: #573894;
     font-size: 0.72rem;
     line-height: 1.25;
   }
@@ -1412,10 +1412,10 @@ $ui-card-bg: #111827;
     width: 1.55rem;
     height: 1.55rem;
     margin-top: 0.5rem;
-    border: 1px solid rgba(148, 163, 184, 0.32);
+    border: 1px solid rgba(0, 45, 114, 0.32);
     border-radius: 50%;
-    background: #08111d;
-    color: #cbd5e1;
+    background: #eef8f5;
+    color: #28406f;
     font-size: 0.72rem;
     font-style: normal;
     font-weight: 820;
@@ -1423,13 +1423,13 @@ $ui-card-bg: #111827;
 }
 
 .timelineStateDone i {
-  border-color: rgba(34, 197, 94, 0.75);
-  color: #4ade80;
+  border-color: rgba(9, 205, 205, 0.75);
+  color: #09cdcd;
 }
 
 .timelineStateActive i {
-  border-color: rgba(139, 92, 246, 0.75);
-  color: #c4b5fd;
+  border-color: rgba(129, 69, 158, 0.75);
+  color: #573894;
 }
 
 .timelineStateLocked {
@@ -1439,7 +1439,7 @@ $ui-card-bg: #111827;
 .assignmentSummaryText {
   margin: 0.85rem 0 0;
   max-width: 68ch;
-  color: #cbd5e1;
+  color: #28406f;
   font-size: 0.84rem;
   line-height: 1.5;
 }

@@ -1,44 +1,110 @@
 "use client";
 
-import { SalesToDeliveryDemo } from "@/components/demos/sales-to-delivery/SalesToDeliveryDemo";
-import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorLifecycleDemo";
-import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
-import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
-import { AdminOperationsDemo } from "@/components/demos/admin-operations/AdminOperationsDemo";
-import { SecureAiGatewayDemo } from "@/components/demos/secure-ai-gateway/SecureAiGatewayDemo";
-import { BusinessAccessDemo } from "@/components/demos/business-access/BusinessAccessDemo";
-import { CalendarDocumentDemo } from "@/components/demos/calendar-document/CalendarDocumentDemo";
-import { InventoryPurchasingDemo } from "@/components/demos/inventory-purchasing/InventoryPurchasingDemo";
 import styles from "./ProjectDemoPreview.module.scss";
-
-function renderDemo(slug: string) {
-  if (slug === "sales-to-delivery-automation-platform") return <SalesToDeliveryDemo />;
-  if (slug === "vendor-lifecycle-compliance-platform") return <VendorLifecycleDemo />;
-  if (slug === "revenue-financial-control-engine") return <RevenueFinancialDemo />;
-  if (slug === "operational-intelligence-platform") return <OperationalIntelligenceDemo />;
-  if (slug === "multi-tenant-enterprise-operations-hub") return <AdminOperationsDemo />;
-  if (slug === "event-driven-automation-secure-ai-gateway") return <SecureAiGatewayDemo />;
-  if (slug === "business-access-software-cost-control-dashboard") return <BusinessAccessDemo />;
-  if (slug === "calendar-document-follow-up-automation-system") return <CalendarDocumentDemo />;
-  if (slug === "inventory-purchasing-allocation-system") return <InventoryPurchasingDemo />;
-  return null;
-}
 
 function slugFromHref(href: string) {
   return href.replace(/^\/work\//, "").replace(/\/$/, "");
 }
 
-export function ProjectDemoPreview({ href }: { href: string }) {
-  const slug = slugFromHref(href);
-  const demo = renderDemo(slug);
-
-  if (!demo) {
-    return null;
-  }
-
+function SalesExecutionThumbnail() {
   return (
-    <div className={styles.previewViewport} aria-hidden>
-      <div className={styles.previewScaler}>{demo}</div>
+    <div className={styles.thumbnailStage}>
+      <div className={styles.orbPrimary} />
+      <div className={styles.orbAccent} />
+      <section className={`${styles.thumbnailWindow} ${styles.salesWindow}`}>
+        <div className={styles.windowBar}>
+          <span />
+          <span />
+          <span />
+          <p>Sales to Execution</p>
+        </div>
+        <div className={styles.salesLayout}>
+          <div className={styles.pipelinePanel}>
+            <div className={styles.panelHeader}>
+              <span>Confirmed order</span>
+              <strong>$18.4K</strong>
+            </div>
+            <div className={styles.pipelineTrack}>
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className={styles.orderRows}>
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+          <div className={styles.executionPanel}>
+            <div className={styles.statusPill}>Ready</div>
+            <h3>Project handoff</h3>
+            <div className={styles.taskStack}>
+              <span>Scope synced</span>
+              <span>Team assigned</span>
+              <span>Vendor tasks routed</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
+}
+
+function VendorManagementThumbnail() {
+  return (
+    <div className={styles.thumbnailStage}>
+      <div className={styles.orbPrimary} />
+      <div className={styles.orbAccent} />
+      <section className={`${styles.thumbnailWindow} ${styles.vendorWindow}`}>
+        <div className={styles.windowBar}>
+          <span />
+          <span />
+          <span />
+          <p>Vendor Management</p>
+        </div>
+        <div className={styles.vendorLayout}>
+          <div className={styles.vendorProfile}>
+            <div className={styles.vendorAvatar}>VM</div>
+            <div>
+              <strong>Premier vendor</strong>
+              <span>Compliant · Active</span>
+            </div>
+          </div>
+          <div className={styles.complianceGrid}>
+            <article>
+              <small>COI</small>
+              <strong>Valid</strong>
+            </article>
+            <article>
+              <small>RFQs</small>
+              <strong>12</strong>
+            </article>
+            <article>
+              <small>Rating</small>
+              <strong>4.8</strong>
+            </article>
+          </div>
+          <div className={styles.vendorTimeline}>
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export function ProjectDemoPreview({ href }: { href: string }) {
+  const slug = slugFromHref(href);
+
+  if (slug === "sales-to-delivery-automation-platform") {
+    return <SalesExecutionThumbnail />;
+  }
+
+  if (slug === "vendor-lifecycle-compliance-platform") {
+    return <VendorManagementThumbnail />;
+  }
+
+  return null;
 }
