@@ -1,0 +1,19 @@
+.viewport {
+  position: relative;
+  width: 100%;
+  min-height: 40rem;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.mockup {
+  width: 1280px;
+  max-width: none;
+  transform-origin: top left;
+}
+
+@media (max-width: 720px) {
+  .viewport {
+    min-height: 32rem;
+  }
+}

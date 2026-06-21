@@ -15,6 +15,7 @@ interface ProjectCardProps {
   avatars: { src: string }[];
   link: string;
   techStack?: Array<{ name: string; icon: string | null }>;
+  featured?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -22,14 +23,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   techStack,
+  featured = false,
 }) => {
   const visibleTech = techStack?.slice(0, 3);
 
   return (
-    <SmartLink href={href} className={styles.cardContainer}>
-      <Column fillWidth className={styles.imageContainer}>
-        <ProjectDemoPreview href={href} />
-      </Column>
+    <SmartLink
+      href={href}
+      className={`${styles.cardContainer} ${featured ? styles.featuredCard : styles.standardCard}`}
+    >
+      {featured && (
+        <Column fillWidth className={styles.imageContainer}>
+          <ProjectDemoPreview href={href} />
+        </Column>
+      )}
       <Column fillWidth className={styles.cardContent}>
         {title && (
           <Heading as="h2" wrap="balance" variant="heading-strong-xl">
