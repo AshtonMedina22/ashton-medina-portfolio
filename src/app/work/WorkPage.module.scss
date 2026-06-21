@@ -2,20 +2,20 @@
 @use "../../components/shared/style-utils";
 
 .workPage {
-  --work-page-bg: #f8fafc;
+  --work-page-bg: #ffffff;
   --work-shell-bg: rgba(255, 255, 255, 0.9);
-  --work-card-border: rgba(15, 23, 42, 0.08);
-  --work-text: #0f172a;
-  --work-muted: #64748b;
-  --work-accent: #635bff;
-  --work-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+  --work-card-border: rgba(0, 45, 114, 0.1);
+  --work-text: #002d72;
+  --work-muted: #28406f;
+  --work-accent: #81459e;
+  --work-shadow: 0 18px 48px rgba(0, 45, 114, 0.08);
 
   min-height: 100vh;
   padding: clamp(5.25rem, 8vw, 6.75rem) clamp(1rem, 3vw, 2rem) clamp(3.5rem, 6vw, 5rem);
   background:
-    radial-gradient(circle at 12% 6%, rgba(99, 91, 255, 0.08), transparent 18rem),
-    radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.1), transparent 20rem),
-    linear-gradient(180deg, #ffffff 0%, var(--work-page-bg) 46%, #f1f5f9 100%);
+    radial-gradient(circle at 12% 6%, rgba(129, 69, 158, 0.1), transparent 18rem),
+    radial-gradient(circle at 88% 12%, rgba(9, 205, 205, 0.025), transparent 20rem),
+    linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f7fbfc 100%);
   color: var(--work-text);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
 }

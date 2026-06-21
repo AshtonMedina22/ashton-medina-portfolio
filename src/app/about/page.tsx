@@ -160,10 +160,8 @@ export default function About() {
 
       <section className={styles.resumeShell}>
         <header className={styles.profileHeader}>
-          <div className={styles.profileAvatar}>
-            <img src={person.avatar} alt={person.name} />
-          </div>
           <div className={styles.profileInfo}>
+            <span className={styles.profileEyebrow}>Professional Profile</span>
             <h1>{person.name}</h1>
             <p className={styles.profileRole}>{person.role}</p>
             {person.locationLabel && <p className={styles.profileLocation}>{person.locationLabel}</p>}
@@ -180,6 +178,9 @@ export default function About() {
                 </SmartLink>
               </div>
             )}
+          </div>
+          <div className={styles.profileAvatar}>
+            <img src={person.avatar} alt={person.name} />
           </div>
         </header>
 

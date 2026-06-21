@@ -4,9 +4,9 @@
   gap: 0;
   width: 100%;
   margin: clamp(1.5rem, 3vw, 2rem) 0;
-  border: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
   border-radius: 14px;
-  background: rgba(18, 24, 38, 0.72);
+  background: rgba(255, 255, 255, 0.86);
   box-shadow: var(--project-depth, 0 8px 24px rgba(0, 0, 0, 0.18));
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
 .statBlock {
   min-width: 0;
   padding: 1.25rem 1.4rem;
-  border-right: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
+  border-right: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
 
   &:last-child {
     border-right: 0;
@@ -23,7 +23,7 @@
 
 .statValue {
   margin-bottom: 0.45rem;
-  color: var(--project-text, #f8fafc);
+  color: var(--project-text, #002d72);
   font-size: clamp(1.45rem, 2.2vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.035em;
@@ -31,7 +31,7 @@
 }
 
 .statLabel {
-  color: var(--project-muted, #94a3b8);
+  color: var(--project-muted, #28406f);
   font-size: var(--type-label);
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -53,7 +53,7 @@
   }
 
   .statBlock:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
+    border-bottom: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
   }
 }
 
@@ -64,7 +64,7 @@
 
   .statBlock {
     border-right: 0;
-    border-bottom: 1px solid var(--project-border, rgba(255, 255, 255, 0.08));
+    border-bottom: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
 
     &:last-child {
       border-bottom: 0;

@@ -1,8 +1,8 @@
-$bg: #070b12;
-$panel: rgba(15, 23, 42, 0.82);
-$border: rgba(148, 163, 184, 0.16);
-$text: #f8fafc;
-$muted: #94a3b8;
+$bg: #f9f7ec;
+$panel: rgba(255, 255, 255, 0.86);
+$border: rgba(129, 69, 158, 0.16);
+$text: #002d72;
+$muted: #573894;
 
 .shell {
   display: grid;
@@ -12,9 +12,9 @@ $muted: #94a3b8;
   min-height: 42rem;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(99, 102, 241, 0.32);
+  border: 1px solid rgba(129, 69, 158, 0.32);
   border-radius: 16px;
-  background: radial-gradient(circle at 12% 0%, rgba(99, 102, 241, 0.18), transparent 24rem), $bg;
+  background: radial-gradient(circle at 12% 0%, rgba(129, 69, 158, 0.18), transparent 24rem), $bg;
   color: $text;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -25,7 +25,7 @@ $muted: #94a3b8;
   gap: 0.55rem;
   padding: 1rem;
   border-right: 1px solid $border;
-  background: rgba(8, 13, 22, 0.78);
+  background: rgba(255, 255, 255, 0.78);
 
   span {
     padding: 0.68rem 0.75rem;
@@ -43,12 +43,12 @@ $muted: #94a3b8;
   margin-bottom: 0.7rem;
   font-weight: 820;
 
-  svg { color: #8b5cf6; }
+  svg { color: #81459e; }
 }
 
 .active {
-  border: 1px solid rgba(99, 102, 241, 0.34);
-  background: rgba(99, 102, 241, 0.14);
+  border: 1px solid rgba(129, 69, 158, 0.34);
+  background: rgba(129, 69, 158, 0.14);
   color: $text !important;
 }
 
@@ -70,7 +70,7 @@ $muted: #94a3b8;
 
   p {
     margin: 0 0 0.45rem;
-    color: #c4b5fd;
+    color: #573894;
     font-size: 0.72rem;
     font-weight: 820;
     letter-spacing: 0.14em;
@@ -91,9 +91,9 @@ $muted: #94a3b8;
     gap: 0.45rem;
     height: fit-content;
     padding: 0.62rem 0.8rem;
-    border: 1px solid rgba(34, 197, 94, 0.28);
+    border: 1px solid rgba(9, 205, 205, 0.28);
     border-radius: 999px;
-    color: #86efac;
+    color: #09cdcd;
     font-size: 0.78rem;
     font-weight: 760;
   }
@@ -112,10 +112,10 @@ $muted: #94a3b8;
     padding: 1rem;
     border: 1px solid $border;
     border-radius: 14px;
-    background: rgba(17, 24, 39, 0.88);
+    background: rgba(255, 255, 255, 0.88);
   }
 
-  svg { color: #a78bfa; }
+  svg { color: #81459e; }
   span { color: $muted; font-size: 0.76rem; font-weight: 780; text-transform: uppercase; }
   strong { font-size: 1.85rem; line-height: 1; }
 }
@@ -145,13 +145,13 @@ $muted: #94a3b8;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  svg { color: #a78bfa; }
+  svg { color: #81459e; }
 }
 
 .table {
   display: grid;
   overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.11);
+  border: 1px solid rgba(0, 45, 114, 0.11);
   border-radius: 10px;
 
   div {
@@ -159,13 +159,13 @@ $muted: #94a3b8;
     grid-template-columns: 1fr 0.65fr 0.75fr 0.85fr;
     gap: 0.6rem;
     padding: 0.75rem;
-    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    border-top: 1px solid rgba(0, 45, 114, 0.1);
     font-size: 0.78rem;
     &:first-child { border-top: 0; }
   }
 
   span { color: $muted; }
-  em { color: #86efac; font-style: normal; font-weight: 760; }
+  em { color: #09cdcd; font-style: normal; font-weight: 760; }
 }
 
 .audit {
@@ -178,10 +178,10 @@ $muted: #94a3b8;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem;
-    border: 1px solid rgba(34, 197, 94, 0.18);
+    border: 1px solid rgba(9, 205, 205, 0.18);
     border-radius: 10px;
-    background: rgba(34, 197, 94, 0.08);
-    color: #cbd5e1;
+    background: rgba(9, 205, 205, 0.08);
+    color: #28406f;
     font-size: 0.8rem;
     font-weight: 720;
   }

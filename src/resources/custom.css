@@ -1,27 +1,35 @@
 /* ==========================================================================
-   Jasmine Lagoon palette — focused, high-contrast portfolio theme
-   - Cream, sea-glass teal, lagoon cyan, violet, and deep navy
-   - Gradients stay inside this palette instead of mixing unrelated accent sets
-   - Page depth comes from surfaces and hierarchy, not a rainbow background wash
+   Jasmine Lagoon tokens
+   --------------------------------------------------------------------------
+   Keep this file intentionally small: define reusable design tokens only.
+   Page/component styling should live in CSS modules so future layout and style
+   updates do not have to fight broad global selectors or !important rules.
    ========================================================================== */
 
-/* Custom palette (data-neutral/brand/accent=custom) */
 :root {
-  --scheme-brand-100: #020a1d;
-  --scheme-brand-200: #06173a;
-  --scheme-brand-300: #002d72;
-  --scheme-brand-400: #573894;
-  --scheme-brand-500: #81459e;
-  --scheme-brand-600: #09cdcd;
-  --scheme-brand-700: #a0e5d9;
-  --scheme-brand-800: #c6f0e8;
-  --scheme-brand-900: #e4f5f1;
-  --scheme-brand-1000: #f9f7ec;
-  --scheme-brand-1100: #fbfaf2;
-  --scheme-brand-1200: #ffffff;
-  --scheme-brand-600-15: rgba(9, 205, 205, 0.15);
-  --scheme-brand-600-30: rgba(9, 205, 205, 0.3);
-  --scheme-brand-600-50: rgba(9, 205, 205, 0.5);
+  --color-night-blooming-jasmine: #f9f7ec;
+  --color-sea-glass-teal: #a0e5d9;
+  --color-neon-lagoon: #09cdcd;
+  --color-purple-pleasures: #81459e;
+  --color-ruthless-empress: #573894;
+  --color-blue-jinns: #002d72;
+
+  /* Once UI custom palettes */
+  --scheme-brand-100: #f9f7ec;
+  --scheme-brand-200: #f7fbfc;
+  --scheme-brand-300: #d8f2ee;
+  --scheme-brand-400: #a0e5d9;
+  --scheme-brand-500: #09cdcd;
+  --scheme-brand-600: #81459e;
+  --scheme-brand-700: #573894;
+  --scheme-brand-800: #28406f;
+  --scheme-brand-900: #002d72;
+  --scheme-brand-1000: #06173a;
+  --scheme-brand-1100: #020a1d;
+  --scheme-brand-1200: #010611;
+  --scheme-brand-600-15: rgba(129, 69, 158, 0.15);
+  --scheme-brand-600-30: rgba(129, 69, 158, 0.3);
+  --scheme-brand-600-50: rgba(129, 69, 158, 0.5);
 
   --scheme-accent-100: var(--scheme-brand-100);
   --scheme-accent-200: var(--scheme-brand-200);
@@ -39,58 +47,68 @@
   --scheme-accent-600-30: var(--scheme-brand-600-30);
   --scheme-accent-600-50: var(--scheme-brand-600-50);
 
-  /* Neutrals: navy-tinted for a cohesive dark theme */
-  --scheme-neutral-100: #020a1d;
-  --scheme-neutral-200: #06173a;
-  --scheme-neutral-300: #0a2252;
-  --scheme-neutral-400: #28406f;
-  --scheme-neutral-500: #4d5f88;
+  --scheme-neutral-100: #ffffff;
+  --scheme-neutral-200: #fbfaf2;
+  --scheme-neutral-300: #ffffff;
+  --scheme-neutral-400: #f7fbfc;
+  --scheme-neutral-500: #d8f2ee;
   --scheme-neutral-600: #7280a0;
-  --scheme-neutral-700: #a7b0c7;
-  --scheme-neutral-800: #d8f2ee;
-  --scheme-neutral-900: #e4f5f1;
-  --scheme-neutral-1000: #f9f7ec;
-  --scheme-neutral-1100: #fbfaf2;
-  --scheme-neutral-1200: #ffffff;
+  --scheme-neutral-700: #4d5f88;
+  --scheme-neutral-800: #28406f;
+  --scheme-neutral-900: #0a2252;
+  --scheme-neutral-1000: #06173a;
+  --scheme-neutral-1100: #020a1d;
+  --scheme-neutral-1200: #010611;
   --scheme-neutral-600-15: rgba(114, 128, 160, 0.15);
   --scheme-neutral-600-30: rgba(114, 128, 160, 0.3);
   --scheme-neutral-600-50: rgba(114, 128, 160, 0.5);
 
-  --color-background: #020a1d;
-  --color-text: #f9f7ec;
-  --color-accent: #09cdcd;
-  --color-violet: #81459e;
-  --color-blue: #002d72;
-  --color-cyan: #09cdcd;
-  --color-green: #a0e5d9;
+  /* Light is the default site theme. */
+  --page-background: #ffffff;
+  --neutral-background-weak: #ffffff;
+  --neutral-background-medium: #f7fbfc;
+  --neutral-background-strong: #f7fbfc;
+  --neutral-on-background-strong: var(--color-blue-jinns);
+  --neutral-on-background-medium: #28406f;
+  --neutral-on-background-weak: var(--color-ruthless-empress);
+  --brand-alpha-weak: rgba(9, 205, 205, 0.06);
+  --brand-alpha-medium: rgba(87, 56, 148, 0.14);
+  --brand-alpha-strong: rgba(129, 69, 158, 0.32);
+  --brand-solid-strong: var(--color-blue-jinns);
+  --brand-solid-medium: var(--color-ruthless-empress);
+  --brand-solid-weak: var(--color-sea-glass-teal);
+  --brand-on-solid-strong: #ffffff;
+  --brand-on-solid-weak: var(--color-blue-jinns);
+  --brand-medium: var(--brand-solid-medium);
+
+  --color-background: var(--page-background);
+  --color-text: var(--neutral-on-background-strong);
+  --color-accent: var(--color-neon-lagoon);
+  --color-violet: var(--color-purple-pleasures);
+  --color-blue: var(--color-blue-jinns);
+  --color-cyan: var(--color-neon-lagoon);
+  --color-green: var(--color-sea-glass-teal);
   --accent-gradient: linear-gradient(92deg, #002d72 0%, #573894 46%, #09cdcd 100%);
 
-  /* Primary action: lagoon cyan against the navy system */
-  --button-primary: #09cdcd;
-  --button-primary-hover: #08b8b8;
+  --button-primary: linear-gradient(135deg, var(--color-blue-jinns) 0%, var(--color-ruthless-empress) 64%, var(--color-purple-pleasures) 100%);
+  --button-primary-hover: linear-gradient(135deg, var(--color-ruthless-empress) 0%, var(--color-purple-pleasures) 62%, var(--color-blue-jinns) 100%);
   --accent-soft: rgba(9, 205, 205, 0.16);
   --accent-soft-strong: rgba(129, 69, 158, 0.26);
   --shadow-soft: 0 1px 2px rgba(2, 10, 29, 0.08), 0 8px 24px rgba(2, 10, 29, 0.14);
-  --shadow-subtle: 0 1px 1px rgba(2, 10, 29, 0.06), 0 0 0 1px rgba(2, 10, 29, 0.28);
+  --shadow-subtle: 0 1px 1px rgba(2, 10, 29, 0.06), 0 0 0 1px rgba(2, 10, 29, 0.12);
   --transition-fast: 0.16s ease-out;
   --transition-med: 0.22s ease-out;
-
-  /* Success / positive (demos: Booked, Margin, project-created) */
-  --success-color: #09cdcd;
+  --success-color: var(--color-neon-lagoon);
   --success-soft: rgba(9, 205, 205, 0.16);
-
-  /* Danger / negative (over-budget variance, errors) */
   --danger-color: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.16);
 
-  /* Shared page layout */
   --page-max-width: 1560px;
   --page-inline-padding: max(1.25rem, calc((100vw - var(--page-max-width)) / 2));
   --page-prose-max: 56rem;
   --page-shell-padding-block: clamp(5rem, 6.5vw, 6.25rem) var(--page-inline-padding)
     clamp(3.5rem, 6vw, 5rem);
 
-  /* Site type scale — professional portfolio sizing */
   --type-hero: clamp(2.75rem, 4.5vw, 3.75rem);
   --type-section: clamp(2rem, 3.2vw, 2.85rem);
   --type-subsection: clamp(1.35rem, 2vw, 1.65rem);
@@ -100,7 +118,6 @@
   --type-label: 0.875rem;
   --type-cta: 0.9375rem;
 
-  /* Once UI display scale — sized for cards and components */
   --font-size-display-xl: 2.125rem;
   --font-size-display-l: 1.875rem;
   --font-size-display-m: 1.625rem;
@@ -113,14 +130,20 @@
   --line-height-display-xs: 1.3;
 }
 
-[data-theme="dark"],
 [data-theme="light"] {
-  --brand-medium: var(--brand-solid-medium);
+  color-scheme: light;
+  --page-background: #ffffff;
+  --neutral-background-weak: #ffffff;
+  --neutral-background-medium: #f7fbfc;
+  --neutral-background-strong: #f7fbfc;
+  --neutral-on-background-strong: var(--color-blue-jinns);
+  --neutral-on-background-medium: #28406f;
+  --neutral-on-background-weak: var(--color-ruthless-empress);
+  --brand-on-solid-strong: #ffffff;
+  --color-background: #ffffff;
+  --color-text: var(--neutral-on-background-strong);
 }
 
-/* --------------------------------------------------------------------------
-   DARK THEME
-   -------------------------------------------------------------------------- */
 [data-theme="dark"] {
   --page-background: #020a1d;
   --neutral-background-weak: #020a1d;
@@ -129,69 +152,33 @@
   --neutral-on-background-strong: #f9f7ec;
   --neutral-on-background-medium: #d8f2ee;
   --neutral-on-background-weak: #a0e5d9;
-  --brand-alpha-weak: rgba(9, 205, 205, 0.14);
+  --brand-alpha-weak: rgba(9, 205, 205, 0.05);
   --brand-alpha-medium: rgba(9, 205, 205, 0.25);
   --brand-alpha-strong: rgba(129, 69, 158, 0.38);
-  --brand-solid-strong: #09cdcd;
-  --brand-solid-medium: #a0e5d9;
-  --brand-solid-weak: #573894;
+  --brand-solid-strong: var(--color-neon-lagoon);
+  --brand-solid-medium: var(--color-sea-glass-teal);
+  --brand-solid-weak: var(--color-ruthless-empress);
   --brand-on-solid-strong: #00163a;
-  --brand-on-solid-weak: #f9f7ec;
+  --brand-on-solid-weak: var(--color-night-blooming-jasmine);
+  --color-background: var(--page-background);
+  --color-text: var(--neutral-on-background-strong);
 }
 
-/* --------------------------------------------------------------------------
-   LIGHT THEME
-   -------------------------------------------------------------------------- */
-[data-theme="light"] {
-  --page-background: #f9f7ec;
-  --neutral-background-weak: #f9f7ec;
-  --neutral-background-medium: #eef8f5;
-  --neutral-background-strong: #d8f2ee;
-  --neutral-on-background-strong: #002d72;
-  --neutral-on-background-medium: #28406f;
-  --neutral-on-background-weak: #573894;
-  --brand-alpha-weak: rgba(9, 205, 205, 0.12);
-  --brand-alpha-medium: rgba(9, 205, 205, 0.22);
-  --brand-alpha-strong: rgba(129, 69, 158, 0.32);
-  --brand-solid-strong: #002d72;
-  --brand-solid-medium: #573894;
-  --brand-solid-weak: #a0e5d9;
-  --brand-on-solid-strong: #f9f7ec;
-  --brand-on-solid-weak: #002d72;
+html {
+  box-sizing: border-box;
+  font-size: 17px;
 }
 
-[data-theme="dark"] body,
-[data-theme="light"] body {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
   background-color: var(--page-background);
 }
 
-/* Link visibility in content (nav/footer keep component styles) */
-main a[href]:not([class*="Button"]):not([class*="ToggleButton"]),
-.introDescription a[href],
-.focusAreaCard a[href],
-.technicalCardContent a[href],
-[class*="articleProse"] a[href],
-[class*="prose"] a[href] {
-  color: var(--brand-solid-medium);
-  text-decoration: none;
-  border-bottom: 1px solid var(--brand-alpha-medium);
-  transition: color var(--transition-fast), border-color var(--transition-fast);
-}
-main a[href]:not([class*="Button"]):not([class*="ToggleButton"]):hover,
-.introDescription a[href]:hover,
-.focusAreaCard a[href]:hover,
-.technicalCardContent a[href]:hover,
-[class*="articleProse"] a[href]:hover,
-[class*="prose"] a[href]:hover {
-  color: var(--brand-solid-strong);
-  border-bottom-color: var(--brand-solid-medium);
-}
-a[href]:focus-visible {
-  outline: 2px solid var(--brand-solid-medium);
-  outline-offset: 2px;
-}
-
-/* Content width consistency */
 .content-width {
   width: 100%;
   max-width: var(--responsive-width-m, 720px);
@@ -199,80 +186,43 @@ a[href]:focus-visible {
   margin-right: auto;
 }
 
-/* Base sizing for predictable layout */
-html {
-  box-sizing: border-box;
-  font-size: 17px;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-/* --------------------------------------------------------------------------
-   Section wrapper — layout only, NO overlay (clean background)
-   -------------------------------------------------------------------------- */
-.sectionHue {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-.sectionHue::before {
-  content: none;
-  display: none;
-}
-.sectionHue > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* --------------------------------------------------------------------------
-   Heading gradient accent — navy -> violet -> lagoon emphasis
-   -------------------------------------------------------------------------- */
 .headingAccent,
 h1 .headingAccent,
 h2 .headingAccent,
 h3 .headingAccent {
   display: inline;
   color: transparent !important;
-  -webkit-text-fill-color: transparent !important;
   background-image: var(--accent-gradient) !important;
   background-size: 100%;
   background-clip: text !important;
   -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
-/* --------------------------------------------------------------------------
-   Primary CTAs & buttons — lagoon cyan, site-wide
-   -------------------------------------------------------------------------- */
-[data-variant="primary"],
-.ctaGradient,
-a.ctaGradient,
-button.ctaGradient {
-  background: var(--button-primary) !important;
-  color: #00163a !important;
+@media (max-width: 760px) {
+  :root {
+    --page-shell-padding-block: clamp(4.5rem, 12vw, 5.25rem) var(--page-inline-padding)
+      calc(6.75rem + env(safe-area-inset-bottom));
+    --type-hero: clamp(2rem, 10vw, 2.65rem);
+    --type-section: clamp(1.55rem, 7vw, 2.05rem);
+    --type-body: 0.98rem;
+    --type-body-lg: 1rem;
+  }
+
+  body {
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+.ctaGradient {
+  background: var(--button-primary);
+  color: #ffffff;
   border: none;
   transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-[data-variant="primary"]:hover,
-.ctaGradient:hover,
-a.ctaGradient:hover,
-button.ctaGradient:hover {
-  background: var(--button-primary-hover) !important;
+
+.ctaGradient:hover {
+  background: var(--button-primary-hover);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
-[data-variant="primary"]:focus-visible,
-.ctaGradient:focus-visible {
-  outline: 2px solid var(--button-primary);
-  outline-offset: 2px;
-}
-[data-variant="primary"] span,
-[data-variant="primary"] svg,
-.ctaGradient span,
-.ctaGradient svg {
-  color: inherit !important;
-  fill: currentColor !important;
-}
-
