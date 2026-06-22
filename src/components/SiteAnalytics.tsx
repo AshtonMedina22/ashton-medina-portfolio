@@ -233,6 +233,9 @@ function initPostHog() {
       client.capture("posthog_ready", {
         portfolio_site: true,
         host: window.location.hostname,
+      }, {
+        send_instantly: true,
+        transport: "fetch",
       });
     },
   });
@@ -254,7 +257,10 @@ function sendPostHogEvent(
     Object.entries(params).filter(([, value]) => value !== undefined),
   );
 
-  posthog.capture(name, cleanParams);
+  posthog.capture(name, cleanParams, {
+    send_instantly: true,
+    transport: "fetch",
+  });
 }
 
 function SiteAnalyticsInner() {
