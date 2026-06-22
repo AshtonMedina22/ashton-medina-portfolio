@@ -8,6 +8,9 @@
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
     "lint": "next lint",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:ui": "playwright test --ui",
     "resolve:theme-conflicts": "bash scripts/resolve-theme-refresh-conflicts.sh"
   },
   "dependencies": {
@@ -29,6 +32,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@playwright/test": "^1.61.0",
     "@types/cookie": "^0.6.0",
     "@types/node": "^20.17.30",
     "@types/react": "^19.0.10",
