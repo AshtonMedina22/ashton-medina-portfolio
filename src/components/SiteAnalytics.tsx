@@ -223,6 +223,7 @@ function initPostHog() {
     capture_pageview: false,
     capture_pageleave: true,
     autocapture: true,
+    request_batching: false,
     persistence: "localStorage+cookie",
     person_profiles: "identified_only",
     loaded: (client) => {
