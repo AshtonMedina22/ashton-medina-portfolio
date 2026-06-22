@@ -229,6 +229,10 @@ function initPostHog() {
       if (localStorage.getItem(DEBUG_STORAGE_KEY) === "true") {
         client.debug();
       }
+      client.capture("posthog_ready", {
+        portfolio_site: true,
+        host: window.location.hostname,
+      });
     },
   });
 
