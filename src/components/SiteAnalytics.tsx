@@ -10,6 +10,7 @@ import { Analytics, type BeforeSendEvent } from "@vercel/analytics/next";
 const GA_MEASUREMENT_ID = "G-FS1ES2HXQ0";
 const INTERNAL_TRAFFIC_STORAGE_KEY = "portfolio_traffic_type";
 const DEBUG_STORAGE_KEY = "portfolio_ga_debug";
+const INTERNAL_POSTHOG_DISTINCT_ID = "ashton-medina-internal";
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
 
@@ -238,10 +239,16 @@ function getPostHogDistinctId() {
   }
 }
 
+function getPostHogEventDistinctId(
+  params: Record<string, string | number | boolean | null | undefined>,
+) {
+  return params.traffic_type === "internal" ? INTERNAL_POSTHOG_DISTINCT_ID : getPostHogDistinctId();
+}
+
 function sendPostHogDirectEvent(
   name: string,
   params: Record<string, string | number | boolean | null | undefined>,
-  distinctId = getPostHogDistinctId(),
+  distinctId = getPostHogEventDistinctId(params),
 ) {
   if (!POSTHOG_KEY || typeof window === "undefined") {
     return;
@@ -259,6 +266,15 @@ function sendPostHogDirectEvent(
       $current_url: window.location.href,
       $host: window.location.hostname,
       $lib: "portfolio-direct",
+      ...(distinctId === INTERNAL_POSTHOG_DISTINCT_ID
+        ? {
+            $set: {
+              name: "Ashton Medina",
+              traffic_type: "internal",
+              site_role: "owner",
+            },
+          }
+        : {}),
     },
   };
   const endpoint = `${POSTHOG_HOST.replace(/\/$/, "")}/capture/`;
@@ -278,6 +294,20 @@ function sendPostHogDirectEvent(
     keepalive: true,
   }).catch(() => {
     // Analytics should never break portfolio navigation.
+  });
+}
+
+function identifyInternalPostHogTraffic(trafficType: string) {
+  if (!POSTHOG_KEY || typeof window === "undefined" || trafficType !== "internal") {
+    return;
+  }
+
+  initPostHog();
+
+  posthog.identify(INTERNAL_POSTHOG_DISTINCT_ID, {
+    name: "Ashton Medina",
+    traffic_type: "internal",
+    site_role: "owner",
   });
 }
 
@@ -374,6 +404,7 @@ function SiteAnalyticsInner() {
       portfolio_section: portfolioSection,
       route_label: routeLabel,
     });
+    identifyInternalPostHogTraffic(trafficType);
 
     sendGaEvent("page_view", {
       page_path: pagePath,
