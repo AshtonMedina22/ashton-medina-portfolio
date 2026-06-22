@@ -3,12 +3,17 @@
 import { Suspense, useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
+import posthog from "posthog-js";
 import { track } from "@vercel/analytics";
 import { Analytics, type BeforeSendEvent } from "@vercel/analytics/next";
 
 const GA_MEASUREMENT_ID = "G-6V8V11G7R5";
 const INTERNAL_TRAFFIC_STORAGE_KEY = "portfolio_traffic_type";
 const DEBUG_STORAGE_KEY = "portfolio_ga_debug";
+const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
+
+let postHogInitialized = false;
 
 declare global {
   interface Window {
@@ -186,6 +191,46 @@ function sendGaEvent(name: string, params: Record<string, string | number | bool
   window.gtag?.("event", name, cleanParams);
 }
 
+function initPostHog() {
+  if (typeof window === "undefined" || postHogInitialized || !POSTHOG_KEY) {
+    return;
+  }
+
+  posthog.init(POSTHOG_KEY, {
+    api_host: POSTHOG_HOST,
+    defaults: "2026-01-30",
+    capture_pageview: false,
+    capture_pageleave: true,
+    autocapture: true,
+    persistence: "localStorage+cookie",
+    person_profiles: "identified_only",
+    loaded: (client) => {
+      if (localStorage.getItem(DEBUG_STORAGE_KEY) === "true") {
+        client.debug();
+      }
+    },
+  });
+
+  postHogInitialized = true;
+}
+
+function sendPostHogEvent(
+  name: string,
+  params: Record<string, string | number | boolean | null | undefined>,
+) {
+  if (!POSTHOG_KEY) {
+    return;
+  }
+
+  initPostHog();
+
+  const cleanParams = Object.fromEntries(
+    Object.entries(params).filter(([, value]) => value !== undefined),
+  );
+
+  posthog.capture(name, cleanParams);
+}
+
 function SiteAnalyticsInner() {
   const [canTrack, setCanTrack] = useState(false);
   const pathname = usePathname();
@@ -194,6 +239,14 @@ function SiteAnalyticsInner() {
   useEffect(() => {
     setCanTrack(shouldTrackAnalytics());
   }, []);
+
+  useEffect(() => {
+    if (!canTrack) {
+      return;
+    }
+
+    initPostHog();
+  }, [canTrack]);
 
   useEffect(() => {
     if (!canTrack || !pathname) {
@@ -212,9 +265,24 @@ function SiteAnalyticsInner() {
       console.info("[Portfolio Analytics] GA debug mode is enabled for this browser.");
     }
 
+    posthog.register({
+      traffic_type: trafficType,
+      portfolio_section: portfolioSection,
+    });
+
     sendGaEvent("page_view", {
       page_path: pagePath,
       page_location: window.location.href,
+      page_title: document.title,
+      portfolio_section: portfolioSection,
+      project_slug: projectSlug,
+      traffic_type: trafficType,
+      debug_mode: debugMode,
+    });
+
+    sendPostHogEvent("$pageview", {
+      $current_url: window.location.href,
+      page_path: pagePath,
       page_title: document.title,
       portfolio_section: portfolioSection,
       project_slug: projectSlug,
@@ -228,10 +296,22 @@ function SiteAnalyticsInner() {
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
+
+      sendPostHogEvent("view_project", {
+        project_slug: projectSlug,
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
     }
 
     if (portfolioSection === "project_demo") {
       sendGaEvent("view_project_demo", {
+        project_slug: projectSlug,
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
+
+      sendPostHogEvent("view_project_demo", {
         project_slug: projectSlug,
         traffic_type: trafficType,
         debug_mode: debugMode,
@@ -273,10 +353,28 @@ function SiteAnalyticsInner() {
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
+
+      sendPostHogEvent("portfolio_scroll_depth", {
+        scroll_depth: threshold,
+        page_path: window.location.pathname,
+        portfolio_section: getPortfolioSection(window.location.pathname),
+        project_slug: getProjectSlug(window.location.pathname),
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
     };
 
     const engagementTimer = window.setTimeout(() => {
       sendGaEvent("portfolio_engaged_session", {
+        engagement_seconds: 30,
+        page_path: window.location.pathname,
+        portfolio_section: getPortfolioSection(window.location.pathname),
+        project_slug: getProjectSlug(window.location.pathname),
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
+
+      sendPostHogEvent("portfolio_engaged_session", {
         engagement_seconds: 30,
         page_path: window.location.pathname,
         portfolio_section: getPortfolioSection(window.location.pathname),
@@ -310,6 +408,14 @@ function SiteAnalyticsInner() {
       section: getPortfolioSection(pathname),
       projectSlug: getProjectSlug(pathname) || null,
       trafficType,
+    });
+
+    sendPostHogEvent("portfolio_page_view", {
+      path: pathname,
+      section: getPortfolioSection(pathname),
+      project_slug: getProjectSlug(pathname),
+      traffic_type: trafficType,
+      debug_mode: debugMode,
     });
 
     window.gtag?.("set", {
@@ -360,7 +466,27 @@ function SiteAnalyticsInner() {
         debug_mode: debugMode,
       });
 
+      sendPostHogEvent("portfolio_link_click", {
+        link_category: category,
+        link_url: href,
+        link_text: label,
+        page_path: window.location.pathname,
+        portfolio_section: getPortfolioSection(window.location.pathname),
+        project_slug: projectSlug,
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
+
       sendGaEvent("select_content", {
+        content_type: category,
+        item_id: href,
+        item_name: label,
+        portfolio_section: getPortfolioSection(window.location.pathname),
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
+
+      sendPostHogEvent("select_content", {
         content_type: category,
         item_id: href,
         item_name: label,
@@ -377,7 +503,22 @@ function SiteAnalyticsInner() {
           debug_mode: debugMode,
         });
 
+        sendPostHogEvent("generate_lead", {
+          method: category,
+          link_url: href,
+          traffic_type: trafficType,
+          debug_mode: debugMode,
+        });
+
         sendGaEvent("contact_intent", {
+          contact_method: category,
+          link_url: href,
+          page_path: window.location.pathname,
+          traffic_type: trafficType,
+          debug_mode: debugMode,
+        });
+
+        sendPostHogEvent("contact_intent", {
           contact_method: category,
           link_url: href,
           page_path: window.location.pathname,
