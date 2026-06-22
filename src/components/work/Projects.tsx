@@ -19,8 +19,6 @@ const workPageProjectOrder = [
   "event-driven-automation-secure-ai-gateway",
 ];
 
-const featuredProjectSlugs = new Set(workPageProjectOrder.slice(0, 2));
-
 export function Projects({ range, exclude }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
@@ -52,7 +50,6 @@ export function Projects({ range, exclude }: ProjectsProps) {
             avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
             link={post.metadata.link || ""}
             techStack={post.metadata.techStack}
-            featured={featuredProjectSlugs.has(post.slug)}
           />
         ))}
       </div>
