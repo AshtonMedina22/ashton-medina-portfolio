@@ -212,6 +212,75 @@ function sendGaEvent(name: string, params: Record<string, string | number | bool
   window.gtag?.("event", name, cleanParams);
 }
 
+function getPostHogDistinctId() {
+  try {
+    const distinctId = posthog.get_distinct_id();
+    if (distinctId) {
+      return distinctId;
+    }
+  } catch {
+    // Fall through to the local fallback ID.
+  }
+
+  try {
+    const storageKey = "portfolio_posthog_distinct_id";
+    const existingId = localStorage.getItem(storageKey);
+
+    if (existingId) {
+      return existingId;
+    }
+
+    const fallbackId = crypto.randomUUID();
+    localStorage.setItem(storageKey, fallbackId);
+    return fallbackId;
+  } catch {
+    return "portfolio-anonymous";
+  }
+}
+
+function sendPostHogDirectEvent(
+  name: string,
+  params: Record<string, string | number | boolean | null | undefined>,
+  distinctId = getPostHogDistinctId(),
+) {
+  if (!POSTHOG_KEY || typeof window === "undefined") {
+    return;
+  }
+
+  const cleanParams = Object.fromEntries(
+    Object.entries(params).filter(([, value]) => value !== undefined),
+  );
+  const payload = {
+    api_key: POSTHOG_KEY,
+    event: name,
+    properties: {
+      ...cleanParams,
+      distinct_id: distinctId,
+      $current_url: window.location.href,
+      $host: window.location.hostname,
+      $lib: "portfolio-direct",
+    },
+  };
+  const endpoint = `${POSTHOG_HOST.replace(/\/$/, "")}/capture/`;
+  const body = JSON.stringify(payload);
+
+  if (navigator.sendBeacon) {
+    const sent = navigator.sendBeacon(endpoint, new Blob([body], { type: "application/json" }));
+    if (sent) {
+      return;
+    }
+  }
+
+  void fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body,
+    keepalive: true,
+  }).catch(() => {
+    // Analytics should never break portfolio navigation.
+  });
+}
+
 function initPostHog() {
   if (typeof window === "undefined" || postHogInitialized || !POSTHOG_KEY) {
     return;
@@ -237,6 +306,10 @@ function initPostHog() {
         send_instantly: true,
         transport: "fetch",
       });
+      sendPostHogDirectEvent("posthog_ready", {
+        portfolio_site: true,
+        host: window.location.hostname,
+      }, client.get_distinct_id());
     },
   });
 
@@ -257,10 +330,7 @@ function sendPostHogEvent(
     Object.entries(params).filter(([, value]) => value !== undefined),
   );
 
-  posthog.capture(name, cleanParams, {
-    send_instantly: true,
-    transport: "fetch",
-  });
+  sendPostHogDirectEvent(name, cleanParams);
 }
 
 function SiteAnalyticsInner() {
