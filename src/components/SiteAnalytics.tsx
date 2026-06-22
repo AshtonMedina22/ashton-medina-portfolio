@@ -12,6 +12,7 @@ const DEBUG_STORAGE_KEY = "portfolio_ga_debug";
 
 declare global {
   interface Window {
+    dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
   }
 }
@@ -162,7 +163,22 @@ function getAnalyticsFlags(searchParams: URLSearchParams | null | undefined) {
   };
 }
 
+function ensureGtagQueue() {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag(...args: unknown[]) {
+      window.dataLayer?.push(args);
+    };
+}
+
 function sendGaEvent(name: string, params: Record<string, string | number | boolean | undefined>) {
+  ensureGtagQueue();
+
   const cleanParams = Object.fromEntries(
     Object.entries(params).filter(([, value]) => value !== undefined),
   );
@@ -184,11 +200,17 @@ function SiteAnalyticsInner() {
       return;
     }
 
+    ensureGtagQueue();
+
     const queryString = searchParams?.toString();
     const pagePath = queryString ? `${pathname}?${queryString}` : pathname;
     const { debugMode, trafficType } = getAnalyticsFlags(searchParams);
     const portfolioSection = getPortfolioSection(pathname);
     const projectSlug = getProjectSlug(pathname);
+
+    if (debugMode) {
+      console.info("[Portfolio Analytics] GA debug mode is enabled for this browser.");
+    }
 
     sendGaEvent("page_view", {
       page_path: pagePath,
@@ -385,7 +407,7 @@ function SiteAnalyticsInner() {
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          window.gtag = window.gtag || function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
         `}
