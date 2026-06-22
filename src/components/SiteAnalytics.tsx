@@ -7,7 +7,7 @@ import posthog from "posthog-js";
 import { track } from "@vercel/analytics";
 import { Analytics, type BeforeSendEvent } from "@vercel/analytics/next";
 
-const GA_MEASUREMENT_ID = "G-6V8V11G7R5";
+const GA_MEASUREMENT_ID = "G-FS1ES2HXQ0";
 const INTERNAL_TRAFFIC_STORAGE_KEY = "portfolio_traffic_type";
 const DEBUG_STORAGE_KEY = "portfolio_ga_debug";
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
