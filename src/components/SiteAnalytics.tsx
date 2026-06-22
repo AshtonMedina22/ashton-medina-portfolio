@@ -132,8 +132,10 @@ function getPortfolioSection(pathname: string) {
   if (pathname === "/work") return "work_index";
   if (pathname.startsWith("/work/") && pathname.endsWith("/demo")) return "project_demo";
   if (pathname.startsWith("/work/")) return "project_detail";
-  if (pathname.startsWith("/blog")) return "blog";
-  if (pathname.startsWith("/gallery")) return "gallery";
+  if (pathname === "/blog") return "blog_index";
+  if (pathname.startsWith("/blog/")) return "blog_post";
+  if (pathname === "/gallery") return "gallery";
+  if (pathname === "/contact") return "contact";
 
   return "other";
 }
@@ -141,6 +143,25 @@ function getPortfolioSection(pathname: string) {
 function getProjectSlug(pathname: string) {
   const match = pathname.match(/^\/work\/([^/]+)/);
   return match?.[1] || undefined;
+}
+
+function getBlogSlug(pathname: string) {
+  const match = pathname.match(/^\/blog\/([^/]+)/);
+  return match?.[1] || undefined;
+}
+
+function getRouteLabel(pathname: string) {
+  const portfolioSection = getPortfolioSection(pathname);
+
+  if (portfolioSection === "project_detail" || portfolioSection === "project_demo") {
+    return getProjectSlug(pathname) || portfolioSection;
+  }
+
+  if (portfolioSection === "blog_post") {
+    return getBlogSlug(pathname) || portfolioSection;
+  }
+
+  return portfolioSection;
 }
 
 function getAnalyticsFlags(searchParams: URLSearchParams | null | undefined) {
@@ -260,6 +281,8 @@ function SiteAnalyticsInner() {
     const { debugMode, trafficType } = getAnalyticsFlags(searchParams);
     const portfolioSection = getPortfolioSection(pathname);
     const projectSlug = getProjectSlug(pathname);
+    const blogSlug = getBlogSlug(pathname);
+    const routeLabel = getRouteLabel(pathname);
 
     if (debugMode) {
       console.info("[Portfolio Analytics] GA debug mode is enabled for this browser.");
@@ -268,6 +291,7 @@ function SiteAnalyticsInner() {
     posthog.register({
       traffic_type: trafficType,
       portfolio_section: portfolioSection,
+      route_label: routeLabel,
     });
 
     sendGaEvent("page_view", {
@@ -276,6 +300,8 @@ function SiteAnalyticsInner() {
       page_title: document.title,
       portfolio_section: portfolioSection,
       project_slug: projectSlug,
+      blog_slug: blogSlug,
+      route_label: routeLabel,
       traffic_type: trafficType,
       debug_mode: debugMode,
     });
@@ -286,6 +312,8 @@ function SiteAnalyticsInner() {
       page_title: document.title,
       portfolio_section: portfolioSection,
       project_slug: projectSlug,
+      blog_slug: blogSlug,
+      route_label: routeLabel,
       traffic_type: trafficType,
       debug_mode: debugMode,
     });
@@ -293,12 +321,14 @@ function SiteAnalyticsInner() {
     if (portfolioSection === "project_detail") {
       sendGaEvent("view_project", {
         project_slug: projectSlug,
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
 
       sendPostHogEvent("view_project", {
         project_slug: projectSlug,
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -307,12 +337,30 @@ function SiteAnalyticsInner() {
     if (portfolioSection === "project_demo") {
       sendGaEvent("view_project_demo", {
         project_slug: projectSlug,
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
 
       sendPostHogEvent("view_project_demo", {
         project_slug: projectSlug,
+        route_label: routeLabel,
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
+    }
+
+    if (portfolioSection === "blog_post") {
+      sendGaEvent("view_blog_post", {
+        blog_slug: blogSlug,
+        route_label: routeLabel,
+        traffic_type: trafficType,
+        debug_mode: debugMode,
+      });
+
+      sendPostHogEvent("view_blog_post", {
+        blog_slug: blogSlug,
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -350,6 +398,8 @@ function SiteAnalyticsInner() {
         page_path: window.location.pathname,
         portfolio_section: getPortfolioSection(window.location.pathname),
         project_slug: getProjectSlug(window.location.pathname),
+        blog_slug: getBlogSlug(window.location.pathname),
+        route_label: getRouteLabel(window.location.pathname),
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -359,6 +409,8 @@ function SiteAnalyticsInner() {
         page_path: window.location.pathname,
         portfolio_section: getPortfolioSection(window.location.pathname),
         project_slug: getProjectSlug(window.location.pathname),
+        blog_slug: getBlogSlug(window.location.pathname),
+        route_label: getRouteLabel(window.location.pathname),
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -370,6 +422,8 @@ function SiteAnalyticsInner() {
         page_path: window.location.pathname,
         portfolio_section: getPortfolioSection(window.location.pathname),
         project_slug: getProjectSlug(window.location.pathname),
+        blog_slug: getBlogSlug(window.location.pathname),
+        route_label: getRouteLabel(window.location.pathname),
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -379,6 +433,8 @@ function SiteAnalyticsInner() {
         page_path: window.location.pathname,
         portfolio_section: getPortfolioSection(window.location.pathname),
         project_slug: getProjectSlug(window.location.pathname),
+        blog_slug: getBlogSlug(window.location.pathname),
+        route_label: getRouteLabel(window.location.pathname),
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -414,6 +470,8 @@ function SiteAnalyticsInner() {
       path: pathname,
       section: getPortfolioSection(pathname),
       project_slug: getProjectSlug(pathname),
+      blog_slug: getBlogSlug(pathname),
+      route_label: getRouteLabel(pathname),
       traffic_type: trafficType,
       debug_mode: debugMode,
     });
@@ -445,6 +503,8 @@ function SiteAnalyticsInner() {
       const label = anchor.innerText.trim().replace(/\s+/g, " ").slice(0, 80) || href;
       const { debugMode, trafficType } = getAnalyticsFlags(new URLSearchParams(window.location.search));
       const projectSlug = getProjectSlug(window.location.pathname);
+      const blogSlug = getBlogSlug(window.location.pathname);
+      const routeLabel = getRouteLabel(window.location.pathname);
 
       track("portfolio_link_click", {
         category,
@@ -452,6 +512,8 @@ function SiteAnalyticsInner() {
         label,
         path: window.location.pathname,
         projectSlug: projectSlug || null,
+        blogSlug: blogSlug || null,
+        routeLabel,
         trafficType,
       });
 
@@ -462,6 +524,8 @@ function SiteAnalyticsInner() {
         page_path: window.location.pathname,
         portfolio_section: getPortfolioSection(window.location.pathname),
         project_slug: projectSlug,
+        blog_slug: blogSlug,
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -473,6 +537,8 @@ function SiteAnalyticsInner() {
         page_path: window.location.pathname,
         portfolio_section: getPortfolioSection(window.location.pathname),
         project_slug: projectSlug,
+        blog_slug: blogSlug,
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -482,6 +548,7 @@ function SiteAnalyticsInner() {
         item_id: href,
         item_name: label,
         portfolio_section: getPortfolioSection(window.location.pathname),
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -491,6 +558,7 @@ function SiteAnalyticsInner() {
         item_id: href,
         item_name: label,
         portfolio_section: getPortfolioSection(window.location.pathname),
+        route_label: routeLabel,
         traffic_type: trafficType,
         debug_mode: debugMode,
       });
@@ -515,6 +583,7 @@ function SiteAnalyticsInner() {
           link_url: href,
           page_path: window.location.pathname,
           traffic_type: trafficType,
+          route_label: routeLabel,
           debug_mode: debugMode,
         });
 
@@ -523,6 +592,7 @@ function SiteAnalyticsInner() {
           link_url: href,
           page_path: window.location.pathname,
           traffic_type: trafficType,
+          route_label: routeLabel,
           debug_mode: debugMode,
         });
       }
