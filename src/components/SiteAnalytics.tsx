@@ -3,7 +3,6 @@
 import { Suspense, useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
-import posthog from "posthog-js";
 import { track } from "@vercel/analytics";
 import { Analytics, type BeforeSendEvent } from "@vercel/analytics/next";
 
@@ -14,8 +13,6 @@ const INTERNAL_POSTHOG_DISTINCT_ID = "ashton-medina-internal";
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
 
-let postHogInitialized = false;
-
 declare global {
   interface Window {
     dataLayer?: unknown[];
@@ -23,79 +20,13 @@ declare global {
   }
 }
 
-function isBuilderPreviewUrl(url: URL) {
-  if (url.pathname.includes("__builder_editing__")) {
-    return true;
-  }
-
-  const builderParamNames = [
-    "__builder_editing__",
-    "builder.editing",
-    "builder.frameEditing",
-    "builder.preview",
-    "builder.space",
-    "builder.cachebust",
-    "builder.overrides",
-  ];
-
-  return builderParamNames.some((param) => url.searchParams.has(param));
-}
-
-function isBuilderContext() {
-  if (typeof window === "undefined") {
-    return false;
-  }
-
-  const currentUrl = new URL(window.location.href);
-
-  if (isBuilderPreviewUrl(currentUrl)) {
-    return true;
-  }
-
-  if (document.referrer) {
-    try {
-      const referrerUrl = new URL(document.referrer);
-      if (referrerUrl.hostname === "builder.io" || referrerUrl.hostname.endsWith(".builder.io")) {
-        return true;
-      }
-    } catch {
-      // Ignore malformed referrers.
-    }
-  }
-
-  const ancestorOrigins = window.location.ancestorOrigins;
-  if (ancestorOrigins) {
-    for (let index = 0; index < ancestorOrigins.length; index += 1) {
-      try {
-        const ancestorUrl = new URL(ancestorOrigins[index]);
-        if (ancestorUrl.hostname === "builder.io" || ancestorUrl.hostname.endsWith(".builder.io")) {
-          return true;
-        }
-      } catch {
-        // Ignore non-URL ancestor values.
-      }
-    }
-  }
-
-  return false;
-}
-
 function shouldTrackAnalytics() {
-  return process.env.NODE_ENV === "production" && !isBuilderContext();
+  return process.env.NODE_ENV === "production";
 }
 
 function beforeSend(event: BeforeSendEvent) {
   if (!shouldTrackAnalytics()) {
     return null;
-  }
-
-  try {
-    const eventUrl = new URL(event.url);
-    if (isBuilderPreviewUrl(eventUrl)) {
-      return null;
-    }
-  } catch {
-    // Keep the event if Vercel changes the URL shape unexpectedly.
   }
 
   return event;
@@ -215,15 +146,6 @@ function sendGaEvent(name: string, params: Record<string, string | number | bool
 
 function getPostHogDistinctId() {
   try {
-    const distinctId = posthog.get_distinct_id();
-    if (distinctId) {
-      return distinctId;
-    }
-  } catch {
-    // Fall through to the local fallback ID.
-  }
-
-  try {
     const storageKey = "portfolio_posthog_distinct_id";
     const existingId = localStorage.getItem(storageKey);
 
@@ -297,55 +219,6 @@ function sendPostHogDirectEvent(
   });
 }
 
-function identifyInternalPostHogTraffic(trafficType: string) {
-  if (!POSTHOG_KEY || typeof window === "undefined" || trafficType !== "internal") {
-    return;
-  }
-
-  initPostHog();
-
-  posthog.identify(INTERNAL_POSTHOG_DISTINCT_ID, {
-    name: "Ashton Medina",
-    traffic_type: "internal",
-    site_role: "owner",
-  });
-}
-
-function initPostHog() {
-  if (typeof window === "undefined" || postHogInitialized || !POSTHOG_KEY) {
-    return;
-  }
-
-  posthog.init(POSTHOG_KEY, {
-    api_host: POSTHOG_HOST,
-    defaults: "2026-01-30",
-    capture_pageview: false,
-    capture_pageleave: true,
-    autocapture: true,
-    request_batching: false,
-    persistence: "localStorage+cookie",
-    person_profiles: "identified_only",
-    loaded: (client) => {
-      if (localStorage.getItem(DEBUG_STORAGE_KEY) === "true") {
-        client.debug();
-      }
-      client.capture("posthog_ready", {
-        portfolio_site: true,
-        host: window.location.hostname,
-      }, {
-        send_instantly: true,
-        transport: "fetch",
-      });
-      sendPostHogDirectEvent("posthog_ready", {
-        portfolio_site: true,
-        host: window.location.hostname,
-      }, client.get_distinct_id());
-    },
-  });
-
-  postHogInitialized = true;
-}
-
 function sendPostHogEvent(
   name: string,
   params: Record<string, string | number | boolean | null | undefined>,
@@ -353,8 +226,6 @@ function sendPostHogEvent(
   if (!POSTHOG_KEY) {
     return;
   }
-
-  initPostHog();
 
   const cleanParams = Object.fromEntries(
     Object.entries(params).filter(([, value]) => value !== undefined),
@@ -373,11 +244,14 @@ function SiteAnalyticsInner() {
   }, []);
 
   useEffect(() => {
-    if (!canTrack) {
+    if (!canTrack || !POSTHOG_KEY) {
       return;
     }
 
-    initPostHog();
+    sendPostHogDirectEvent("posthog_ready", {
+      portfolio_site: true,
+      host: window.location.hostname,
+    });
   }, [canTrack]);
 
   useEffect(() => {
@@ -398,13 +272,6 @@ function SiteAnalyticsInner() {
     if (debugMode) {
       console.info("[Portfolio Analytics] GA debug mode is enabled for this browser.");
     }
-
-    posthog.register({
-      traffic_type: trafficType,
-      portfolio_section: portfolioSection,
-      route_label: routeLabel,
-    });
-    identifyInternalPostHogTraffic(trafficType);
 
     sendGaEvent("page_view", {
       page_path: pagePath,
