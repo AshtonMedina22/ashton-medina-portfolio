@@ -17,6 +17,30 @@
   width: 1280px;
   max-width: none;
   transform-origin: top left;
+  filter: contrast(1.14) saturate(1.12);
+  color: #002d72;
+  text-rendering: geometricPrecision;
+}
+
+.mockup :global(p),
+.mockup :global(span),
+.mockup :global(small),
+.mockup :global(strong),
+.mockup :global(em),
+.mockup :global(td),
+.mockup :global(th),
+.mockup :global(button),
+.mockup :global(a),
+.mockup :global(label) {
+  opacity: 1;
+  text-shadow: 0 0 0.01px currentColor;
+}
+
+.mockup :global(small),
+.mockup :global(em),
+.mockup :global(td),
+.mockup :global(th) {
+  font-weight: 760;
 }
 
 .mobileSummary,

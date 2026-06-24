@@ -18,3 +18,41 @@
   color: var(--work-text);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
 }
+
+.workShell {
+  width: min(100%, 92rem);
+  margin-inline: auto;
+}
+
+.sectionIntro {
+  max-width: 58rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.35rem);
+
+  h1 {
+    margin: 0.25rem 0 0.5rem;
+    color: var(--work-text);
+    font-family: var(--font-heading), Inter, system-ui, sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 0.98;
+  }
+
+  p {
+    max-width: 54rem;
+    margin: 0;
+    color: #12336f;
+    font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+    font-weight: 680;
+    line-height: 1.5;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  color: #087b83;
+  font-size: 0.86rem;
+  font-weight: 850;
+  line-height: 1.2;
+}

@@ -71,7 +71,7 @@ export function SalesOrderPanel() {
                     )}
                   </span>
                 </td>
-                <td style={{ color: "#64748b" }}>{row.tier}</td>
+                <td style={{ color: "#28406f", fontWeight: 760 }}>{row.tier}</td>
                 <td style={{ textAlign: "right" }}>{row.qty}</td>
                 <td style={{ textAlign: "right" }}>{row.hours}</td>
                 <td style={{ textAlign: "right" }}>${row.unitPrice.toLocaleString()}</td>

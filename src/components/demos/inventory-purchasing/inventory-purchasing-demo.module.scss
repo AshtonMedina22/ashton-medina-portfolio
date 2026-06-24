@@ -16,3 +16,144 @@ $muted: #573894;
   color: $text;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.6rem 1.6rem 1rem;
+
+  p {
+    margin: 0 0 0.35rem;
+    color: $muted;
+    font-size: 0.92rem;
+    font-weight: 850;
+  }
+
+  h2 {
+    max-width: 54rem;
+    margin: 0;
+    color: $text;
+    font-size: 2.15rem;
+    font-weight: 900;
+    line-height: 1.08;
+  }
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid rgba(9, 205, 205, 0.32);
+    border-radius: 999px;
+    background: rgba(160, 229, 217, 0.2);
+    color: $text;
+    padding: 0.55rem 0.8rem;
+    font-weight: 850;
+    white-space: nowrap;
+  }
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding: 0 1.6rem 1.1rem;
+
+  article {
+    display: grid;
+    gap: 0.35rem;
+    min-height: 8rem;
+    border: 1px solid $border;
+    border-radius: 14px;
+    background: $panel;
+    padding: 1rem;
+  }
+
+  svg {
+    color: $muted;
+    font-size: 1.35rem;
+  }
+
+  span {
+    color: #28406f;
+    font-weight: 750;
+  }
+
+  strong {
+    color: $text;
+    font-size: 1.7rem;
+    font-weight: 950;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) 0.86fr;
+  gap: 1rem;
+  padding: 0 1.6rem 1.6rem;
+}
+
+.panel,
+.decisionPanel {
+  min-width: 0;
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 1rem;
+}
+
+.panelTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+  color: $text;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.table {
+  display: grid;
+  gap: 0.55rem;
+
+  div {
+    display: grid;
+    grid-template-columns: minmax(9rem, 1.3fr) 0.75fr 0.75fr 1fr;
+    align-items: center;
+    gap: 0.55rem;
+    border: 1px solid rgba(0, 45, 114, 0.1);
+    border-radius: 10px;
+    padding: 0.75rem;
+    color: #28406f;
+    font-weight: 720;
+  }
+
+  strong {
+    color: $text;
+    font-weight: 900;
+  }
+
+  em {
+    color: $muted;
+    font-style: normal;
+    font-weight: 850;
+  }
+}
+
+.decisionPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  > span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(9, 205, 205, 0.24);
+    border-radius: 10px;
+    padding: 0.8rem;
+    color: $text;
+    font-weight: 850;
+  }
+}

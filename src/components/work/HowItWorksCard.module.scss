@@ -4,26 +4,27 @@
   gap: 0;
   width: 100%;
   margin-top: clamp(1.5rem, 3vw, 2rem);
-  border-top: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
-  border-left: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
+  border-top: 1px solid rgba(0, 45, 114, 0.2);
+  border-left: 1px solid rgba(0, 45, 114, 0.2);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .card {
   min-width: 0;
-  padding: 1.15rem 1.25rem;
+  padding: clamp(1.2rem, 1.8vw, 1.65rem);
   border: 0;
-  border-right: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
-  border-bottom: 1px solid var(--project-border, rgba(0, 45, 114, 0.1));
+  border-right: 1px solid rgba(0, 45, 114, 0.18);
+  border-bottom: 1px solid rgba(0, 45, 114, 0.18);
   border-radius: 0;
   background: transparent;
 }
 
 .cardTitle {
   margin: 0 0 0.65rem;
-  color: var(--project-text, #002d72);
-  font-size: var(--type-body-lg);
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  color: #00245f;
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  font-weight: 850;
+  letter-spacing: 0;
   line-height: 1.25;
   overflow-wrap: break-word;
   text-wrap: balance;
@@ -31,8 +32,9 @@
 
 .cardContent {
   margin: 0;
-  color: var(--project-muted, #28406f);
-  font-size: var(--type-body);
+  color: #18376d;
+  font-size: clamp(0.98rem, 1.05vw, 1.08rem);
+  font-weight: 570;
   line-height: 1.6;
   overflow-wrap: break-word;
 }

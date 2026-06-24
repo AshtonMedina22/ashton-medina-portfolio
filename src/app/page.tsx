@@ -99,6 +99,7 @@ export default function Home() {
             <span className={styles.sectionEyebrow}>Capabilities</span>
             <h2>
               Systems capability
+              {" "}
               <br />
               across the full{" "}
               <span className="headingAccent">operating model.</span>

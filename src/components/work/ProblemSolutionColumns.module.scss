@@ -9,27 +9,28 @@
 .columnProblem,
 .columnSolution {
   min-width: 0;
-  padding: clamp(1.1rem, 2vw, 1.5rem);
-  border: 1px solid rgba(0, 45, 114, 0.1);
+  padding: clamp(1.35rem, 2.4vw, 2rem);
+  border: 1px solid rgba(0, 45, 114, 0.18);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: none;
 
   h2 {
     margin: 0 0 1rem;
-    color: var(--project-text, #002d72);
+    color: #00245f;
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(1.45rem, 2.5vw, 2rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    font-weight: 900;
+    letter-spacing: 0;
     line-height: 1.05;
     text-transform: uppercase;
   }
 
   p {
     margin: 0 0 0.85rem;
-    color: var(--project-muted, #28406f);
-    font-size: var(--type-body);
+    color: #18376d;
+    font-size: clamp(1rem, 1.1vw, 1.12rem);
+    font-weight: 570;
     line-height: 1.7;
     overflow-wrap: break-word;
 
@@ -53,8 +54,8 @@
 [data-theme="light"] {
   .columnProblem,
   .columnSolution {
-    border-color: var(--project-border, rgba(0, 45, 114, 0.1));
-    background: rgba(255, 255, 255, 0.84);
+    border-color: rgba(0, 45, 114, 0.18);
+    background: rgba(255, 255, 255, 0.96);
   }
 
   .columnSolution {

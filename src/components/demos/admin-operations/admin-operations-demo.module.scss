@@ -24,3 +24,309 @@ $muted: #573894;
     0 30px 90px rgba(0, 45, 114, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.045);
 }
+
+.sidebar {
+  width: 14rem;
+  padding: 1.35rem 1rem;
+  background: linear-gradient(180deg, #06173a, #1f2f55);
+  color: #ffffff;
+
+  nav {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  nav span,
+  .brand,
+  .sidebarFooter {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    border-radius: 10px;
+    padding: 0.72rem 0.8rem;
+    font-weight: 850;
+  }
+
+  nav span {
+    color: rgba(255, 255, 255, 0.76);
+  }
+}
+
+.brand {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.02rem;
+}
+
+.activeNav {
+  background: rgba(160, 229, 217, 0.16);
+  color: #ffffff !important;
+}
+
+.sidebarFooter {
+  margin-top: 1.2rem;
+  border: 1px solid rgba(160, 229, 217, 0.22);
+  color: #d8f2ee;
+  font-size: 0.88rem;
+}
+
+.workspace {
+  min-width: 0;
+  padding: 1.35rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search,
+.topbarActions span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(0, 45, 114, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: $text;
+  padding: 0.55rem 0.8rem;
+  font-weight: 820;
+}
+
+.search {
+  min-width: min(32rem, 100%);
+  justify-content: flex-start;
+}
+
+.topbarActions {
+  display: flex;
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0 0 0.35rem;
+    color: $muted;
+    font-size: 0.88rem;
+    font-weight: 900;
+  }
+
+  h2 {
+    max-width: 50rem;
+    margin: 0;
+    color: $text;
+    font-size: 2.25rem;
+    font-weight: 950;
+    line-height: 1.05;
+  }
+}
+
+.heroBadges {
+  display: flex;
+  gap: 0.45rem;
+
+  span {
+    border: 1px solid rgba(9, 205, 205, 0.34);
+    border-radius: 999px;
+    background: rgba(9, 205, 205, 0.12);
+    color: $text;
+    padding: 0.42rem 0.58rem;
+    font-size: 0.78rem;
+    font-weight: 950;
+  }
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.kpiCard {
+  display: grid;
+  gap: 0.32rem;
+  min-height: 8rem;
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: $panelStrong;
+  padding: 0.9rem;
+
+  svg {
+    color: $muted;
+    font-size: 1.25rem;
+  }
+
+  span,
+  small {
+    color: #28406f;
+    font-weight: 760;
+  }
+
+  strong {
+    color: $text;
+    font-size: 1.55rem;
+    font-weight: 950;
+  }
+}
+
+.indigo { border-color: rgba(129, 69, 158, 0.28); }
+.amber { border-color: rgba(160, 229, 217, 0.38); }
+.teal { border-color: rgba(9, 205, 205, 0.34); }
+.rose { border-color: rgba(220, 38, 38, 0.24); }
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 0.78fr;
+  gap: 1rem;
+}
+
+.streamPanel,
+.telemetryPanel,
+.archPanel {
+  min-width: 0;
+  border: 1px solid $border;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 1rem;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
+  color: $text;
+
+  span {
+    color: $muted;
+    font-size: 0.82rem;
+    font-weight: 950;
+    text-transform: uppercase;
+  }
+
+  strong {
+    font-size: 1.05rem;
+    font-weight: 950;
+  }
+}
+
+.streamList {
+  display: grid;
+  gap: 0.55rem;
+
+  > div {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.65rem;
+    border: 1px solid rgba(0, 45, 114, 0.1);
+    border-radius: 10px;
+    padding: 0.72rem;
+  }
+
+  svg {
+    color: $muted;
+  }
+
+  strong,
+  small {
+    display: block;
+  }
+
+  strong {
+    color: $text;
+    font-weight: 900;
+  }
+
+  small {
+    color: #28406f;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  em {
+    color: $muted;
+    font-style: normal;
+    font-weight: 900;
+  }
+}
+
+.telemetryTable {
+  display: grid;
+  gap: 0.42rem;
+
+  > div {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 0.75fr 1fr 0.75fr;
+    align-items: center;
+    gap: 0.45rem;
+    border-bottom: 1px solid rgba(0, 45, 114, 0.1);
+    padding: 0.58rem 0;
+    color: #28406f;
+    font-size: 0.88rem;
+    font-weight: 750;
+  }
+
+  > div:first-child {
+    color: $muted;
+    font-size: 0.74rem;
+    font-weight: 950;
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: $text;
+    font-weight: 900;
+  }
+
+  em {
+    color: $muted;
+    font-style: normal;
+    font-weight: 900;
+  }
+}
+
+.archStack {
+  display: grid;
+  gap: 0.45rem;
+
+  > div {
+    display: grid;
+    gap: 0.36rem;
+    color: $text;
+    font-weight: 900;
+  }
+
+  i {
+    display: block;
+    width: 2px;
+    height: 1rem;
+    margin-left: 0.6rem;
+    background: rgba(9, 205, 205, 0.48);
+  }
+}
+
+.warning {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 10px;
+  background: rgba(220, 38, 38, 0.06);
+  color: #0a2252;
+  padding: 0.8rem;
+  font-weight: 780;
+  line-height: 1.35;
+}

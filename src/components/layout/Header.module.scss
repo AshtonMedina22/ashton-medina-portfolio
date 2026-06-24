@@ -1,5 +1,9 @@
 @use "../shared/breakpoints.scss" as breakpoints;
 
+.position {
+    top: 0;
+}
+
 .mask {
     pointer-events: none;
     backdrop-filter: blur(0.5rem);
@@ -40,13 +44,13 @@
 
 @media (max-width: breakpoints.$s) {
     .position {
-        top: auto;
-        bottom: calc(var(--static-space-16) + env(safe-area-inset-bottom));
+        top: calc(var(--static-space-8) + env(safe-area-inset-top));
+        bottom: auto;
     }
 
     .mask {
-        transform: rotate(180deg);
-        bottom: 0;
+        top: 0;
+        bottom: auto;
     }
 
     .navigationShell {

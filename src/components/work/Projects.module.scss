@@ -5,15 +5,11 @@
   @include style-utils.fill-width;
 
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1rem, 1.8vw, 1.35rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.5rem);
   margin: 0 auto;
-}
-
-@include breakpoints.down(xxl) {
-  .projectsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  max-width: 92rem;
+  align-items: stretch;
 }
 
 @include breakpoints.down(lg) {

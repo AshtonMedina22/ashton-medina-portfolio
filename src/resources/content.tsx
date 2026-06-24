@@ -103,8 +103,10 @@ const home: Home = {
   headline: (
     <>
       Building operational frameworks
+      {" "}
       <br />
       that help
+      {" "}
       <br />
       <span className="headingAccent">organizations scale.</span>
     </>

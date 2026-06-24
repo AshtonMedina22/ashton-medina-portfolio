@@ -64,3 +64,142 @@
     box-shadow: 0 26px 70px rgba(0, 45, 114, 0.12);
   }
 }
+
+.hero,
+.articleSection,
+.mockupSection {
+  width: min(100%, 92rem);
+  margin-inline: auto;
+}
+
+.hero {
+  padding: clamp(1.25rem, 3vw, 2.25rem) 0 clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.heroCopy {
+  max-width: 68rem;
+}
+
+.heroBreadcrumb,
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--project-purple);
+  font-size: 0.86rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.heroBreadcrumb {
+  margin-right: 0.2rem;
+  color: #087b83;
+}
+
+.eyebrow {
+  color: var(--project-text);
+}
+
+.heroTitle {
+  margin: 0.2rem 0 0.45rem;
+  color: var(--project-text);
+  font-family: var(--font-heading), Inter, system-ui, sans-serif;
+  font-size: clamp(2.6rem, 5vw, 5.35rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.heroTagline {
+  max-width: 76rem;
+  margin: 0;
+  color: #12336f;
+  font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+  font-weight: 680;
+  line-height: 1.5;
+}
+
+.heroTech {
+  margin-top: 1rem;
+
+  :global(span),
+  :global(a),
+  :global(div) {
+    color: var(--project-text);
+  }
+}
+
+.sectionHeading {
+  margin: 0 0 clamp(1.25rem, 2.5vw, 2rem);
+
+  h2 {
+    margin: 0.2rem 0 0;
+    color: var(--project-text);
+    font-family: var(--font-heading), Inter, system-ui, sans-serif;
+    font-size: clamp(2rem, 3.6vw, 3.4rem);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+}
+
+.articleSection {
+  padding: 0 0 clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.articleProse {
+  color: var(--project-text);
+
+  :global(.mdx-paragraph),
+  p {
+    color: var(--project-muted) !important;
+    font-size: clamp(1rem, 1.1vw, 1.12rem);
+    font-weight: 560;
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: var(--project-text);
+  }
+}
+
+.mockupSection {
+  padding: 0 0 clamp(3rem, 6vw, 5.25rem);
+}
+
+.demoSection {
+  overflow: hidden;
+  border: 1px solid rgba(0, 45, 114, 0.16);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(9, 205, 205, 0.12), transparent 26rem),
+    radial-gradient(circle at 92% 0%, rgba(87, 56, 148, 0.14), transparent 24rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(247, 251, 252, 0.96));
+  box-shadow: var(--project-depth);
+}
+
+.demoFrame {
+  padding: clamp(0.7rem, 1.6vw, 1.2rem);
+}
+
+@media (max-width: 760px) {
+  .hero,
+  .articleSection,
+  .mockupSection {
+    width: 100%;
+  }
+
+  .hero {
+    padding-top: 0.5rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.15rem, 12vw, 3.4rem);
+  }
+
+  .demoSection {
+    border-radius: 18px;
+  }
+}
