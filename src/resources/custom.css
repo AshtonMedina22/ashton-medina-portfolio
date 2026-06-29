@@ -13,6 +13,10 @@
   --color-purple-pleasures: #81459e;
   --color-ruthless-empress: #573894;
   --color-blue-jinns: #002d72;
+  --color-deep-teal: #087b83;
+  --color-text-strong: #0f172a;
+  --color-text-medium: #475569;
+  --color-text-muted: #64748b;
 
   /* Once UI custom palettes */
   --scheme-brand-100: #ffffff;
@@ -68,9 +72,9 @@
   --neutral-background-weak: #ffffff;
   --neutral-background-medium: #f7fbfc;
   --neutral-background-strong: #f7fbfc;
-  --neutral-on-background-strong: var(--color-blue-jinns);
-  --neutral-on-background-medium: #28406f;
-  --neutral-on-background-weak: var(--color-ruthless-empress);
+  --neutral-on-background-strong: var(--color-text-strong);
+  --neutral-on-background-medium: var(--color-text-medium);
+  --neutral-on-background-weak: var(--color-text-muted);
   --brand-alpha-weak: rgba(9, 205, 205, 0.06);
   --brand-alpha-medium: rgba(87, 56, 148, 0.14);
   --brand-alpha-strong: rgba(129, 69, 158, 0.32);
@@ -83,15 +87,15 @@
 
   --color-background: var(--page-background);
   --color-text: var(--neutral-on-background-strong);
-  --color-accent: var(--color-neon-lagoon);
+  --color-accent: var(--color-deep-teal);
   --color-violet: var(--color-purple-pleasures);
   --color-blue: var(--color-blue-jinns);
   --color-cyan: var(--color-neon-lagoon);
   --color-green: var(--color-sea-glass-teal);
-  --accent-gradient: linear-gradient(92deg, #002d72 0%, #573894 46%, #09cdcd 100%);
+  --accent-gradient: linear-gradient(92deg, #002d72 0%, #573894 52%, #087b83 100%);
 
-  --button-primary: linear-gradient(135deg, var(--color-blue-jinns) 0%, var(--color-ruthless-empress) 64%, var(--color-purple-pleasures) 100%);
-  --button-primary-hover: linear-gradient(135deg, var(--color-ruthless-empress) 0%, var(--color-purple-pleasures) 62%, var(--color-blue-jinns) 100%);
+  --button-primary: var(--color-blue-jinns);
+  --button-primary-hover: var(--color-ruthless-empress);
   --accent-soft: rgba(9, 205, 205, 0.16);
   --accent-soft-strong: rgba(129, 69, 158, 0.26);
   --shadow-soft: 0 1px 2px rgba(2, 10, 29, 0.08), 0 8px 24px rgba(2, 10, 29, 0.14);
@@ -136,9 +140,9 @@
   --neutral-background-weak: #ffffff;
   --neutral-background-medium: #f7fbfc;
   --neutral-background-strong: #f7fbfc;
-  --neutral-on-background-strong: var(--color-blue-jinns);
-  --neutral-on-background-medium: #28406f;
-  --neutral-on-background-weak: var(--color-ruthless-empress);
+  --neutral-on-background-strong: var(--color-text-strong);
+  --neutral-on-background-medium: var(--color-text-medium);
+  --neutral-on-background-weak: var(--color-text-muted);
   --brand-on-solid-strong: #ffffff;
   --color-background: #ffffff;
   --color-text: var(--neutral-on-background-strong);
@@ -219,10 +223,10 @@ h3 .headingAccent {
   color: #ffffff;
   border: none;
   transition: background-color var(--transition-fast), box-shadow var(--transition-med), transform var(--transition-med);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 45, 114, 0.18);
 }
 
 .ctaGradient:hover {
   background: var(--button-primary-hover);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(87, 56, 148, 0.22);
 }

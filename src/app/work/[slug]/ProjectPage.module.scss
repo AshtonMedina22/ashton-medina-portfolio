@@ -2,14 +2,14 @@
   --project-bg: #ffffff;
   --project-surface: #ffffff;
   --project-panel: #f7fbfc;
-  --project-text: #002d72;
-  --project-muted: #28406f;
+  --project-text: #0f172a;
+  --project-muted: #475569;
   --project-soft: #573894;
-  --project-border: rgba(0, 45, 114, 0.1);
+  --project-border: rgba(15, 23, 42, 0.1);
   --project-indigo: #81459e;
   --project-purple: #573894;
-  --project-cyan: #09cdcd;
-  --project-depth: 0 18px 48px rgba(0, 45, 114, 0.12);
+  --project-cyan: #087b83;
+  --project-depth: 0 18px 48px rgba(15, 23, 42, 0.1);
 
   width: 100vw;
   max-width: 100%;
@@ -17,8 +17,8 @@
   padding: var(--page-shell-padding-block);
   color: var(--project-text);
   background:
-    radial-gradient(circle at 76% 8%, rgba(9, 205, 205, 0.025), transparent 26rem),
-    radial-gradient(circle at 10% 28%, rgba(129, 69, 158, 0.1), transparent 24rem),
+    radial-gradient(circle at 76% 8%, rgba(8, 123, 131, 0.025), transparent 26rem),
+    radial-gradient(circle at 10% 28%, rgba(129, 69, 158, 0.055), transparent 24rem),
     radial-gradient(circle at 82% 88%, rgba(160, 229, 217, 0.035), transparent 22rem),
     linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f7fbfc 100%);
   font-family: var(--font-body), Inter, system-ui, sans-serif;
@@ -28,30 +28,32 @@
   --project-bg: #ffffff;
   --project-surface: #ffffff;
   --project-panel: #f7fbfc;
-  --project-text: #002d72;
-  --project-muted: #28406f;
+  --project-text: #0f172a;
+  --project-muted: #475569;
   --project-soft: #573894;
-  --project-border: rgba(0, 45, 114, 0.1);
+  --project-border: rgba(15, 23, 42, 0.1);
   --project-indigo: #81459e;
   --project-purple: #573894;
-  --project-cyan: #09cdcd;
-  --project-depth: 0 18px 48px rgba(0, 45, 114, 0.12);
+  --project-cyan: #087b83;
+  --project-depth: 0 18px 48px rgba(15, 23, 42, 0.1);
 
   background:
-    radial-gradient(circle at 76% 8%, rgba(9, 205, 205, 0.025), transparent 26rem),
-    radial-gradient(circle at 10% 28%, rgba(129, 69, 158, 0.1), transparent 24rem),
+    radial-gradient(circle at 76% 8%, rgba(8, 123, 131, 0.025), transparent 26rem),
+    radial-gradient(circle at 10% 28%, rgba(129, 69, 158, 0.055), transparent 24rem),
     radial-gradient(circle at 82% 88%, rgba(160, 229, 217, 0.035), transparent 22rem),
     linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f7fbfc 100%);
 }
 
 [data-theme="light"] {
   .secondaryCta {
-    background: linear-gradient(135deg, var(--project-purple), var(--project-indigo));
-    color: #ffffff !important;
-    border-color: rgba(160, 229, 217, 0.58);
+    background: #ffffff;
+    color: var(--project-text) !important;
+    border-color: rgba(15, 23, 42, 0.18);
 
     &:hover {
-      background: linear-gradient(135deg, var(--project-indigo), var(--project-purple));
+      background: #f8fafc;
+      border-color: rgba(0, 45, 114, 0.32);
+      color: #002d72 !important;
     }
   }
 
@@ -61,7 +63,7 @@
       radial-gradient(circle at 16% 12%, rgba(9, 205, 205, 0.045), transparent 24rem),
       radial-gradient(circle at 86% 4%, rgba(129, 69, 158, 0.12), transparent 24rem),
       linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.92));
-    box-shadow: 0 26px 70px rgba(0, 45, 114, 0.12);
+    box-shadow: 0 26px 70px rgba(15, 23, 42, 0.1);
   }
 }
 
@@ -97,7 +99,7 @@
 }
 
 .eyebrow {
-  color: var(--project-text);
+  color: #002d72;
 }
 
 .heroTitle {
@@ -114,7 +116,7 @@
 .heroTagline {
   max-width: 76rem;
   margin: 0;
-  color: #12336f;
+  color: var(--project-muted);
   font-size: clamp(1.02rem, 1.28vw, 1.22rem);
   font-weight: 500;
   line-height: 1.5;
@@ -174,8 +176,8 @@
   border: 1px solid rgba(0, 45, 114, 0.16);
   border-radius: 24px;
   background:
-    radial-gradient(circle at 16% 8%, rgba(9, 205, 205, 0.12), transparent 26rem),
-    radial-gradient(circle at 92% 0%, rgba(87, 56, 148, 0.14), transparent 24rem),
+    radial-gradient(circle at 16% 8%, rgba(8, 123, 131, 0.08), transparent 26rem),
+    radial-gradient(circle at 92% 0%, rgba(87, 56, 148, 0.08), transparent 24rem),
     linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(247, 251, 252, 0.96));
   box-shadow: var(--project-depth);
 }

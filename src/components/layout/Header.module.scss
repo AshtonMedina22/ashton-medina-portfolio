@@ -13,32 +13,32 @@
 }
 
 .navigationShell {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid rgba(0, 45, 114, 0.16) !important;
-    box-shadow: 0 0.9rem 2.2rem rgba(0, 45, 114, 0.12) !important;
-    backdrop-filter: blur(18px) saturate(1.16);
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 0.75rem 1.8rem rgba(15, 23, 42, 0.12) !important;
+    backdrop-filter: blur(18px) saturate(1.08);
 
     :global(.button) {
-        color: #ffffff !important;
-        border-color: rgba(255, 255, 255, 0.22) !important;
-        background: linear-gradient(135deg, #002d72 0%, #573894 100%) !important;
-        box-shadow: 0 0.35rem 0.85rem rgba(0, 45, 114, 0.18);
-        font-weight: 750;
+        color: #1f2937 !important;
+        border-color: transparent !important;
+        background: transparent !important;
+        box-shadow: none;
+        font-weight: 650;
     }
 
     :global(.button:hover),
     :global(.button:focus-visible) {
-        color: #ffffff !important;
-        background: linear-gradient(135deg, #573894 0%, #81459e 62%, #002d72 100%) !important;
-        border-color: rgba(9, 205, 205, 0.55) !important;
-        box-shadow: 0 0.45rem 1rem rgba(87, 56, 148, 0.22);
+        color: #002d72 !important;
+        background: rgba(0, 45, 114, 0.08) !important;
+        border-color: rgba(0, 45, 114, 0.1) !important;
+        box-shadow: none;
     }
 
     :global(.button[class*="selected"]) {
-        color: #ffffff !important;
-        background: linear-gradient(135deg, #002d72 0%, #573894 52%, #81459e 100%) !important;
-        border-color: rgba(160, 229, 217, 0.78) !important;
-        box-shadow: 0 0.45rem 1rem rgba(0, 45, 114, 0.24);
+        color: #0f172a !important;
+        background: rgba(15, 23, 42, 0.1) !important;
+        border-color: rgba(15, 23, 42, 0.08) !important;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
     }
 }
 
@@ -55,14 +55,14 @@
 
     .navigationShell {
         padding: 0.2rem !important;
-        box-shadow: 0 0.65rem 1.35rem rgba(0, 45, 114, 0.14) !important;
+        box-shadow: 0 0.55rem 1.2rem rgba(15, 23, 42, 0.12) !important;
 
         :global(.button) {
             min-height: 2.2rem !important;
             padding-inline: 0.68rem !important;
             border-radius: 0.7rem !important;
             font-size: 0.76rem !important;
-            box-shadow: 0 0.24rem 0.58rem rgba(0, 45, 114, 0.14);
+            box-shadow: none;
         }
     }
 }
