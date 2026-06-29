@@ -110,8 +110,8 @@
   --page-max-width: 1560px;
   --page-inline-padding: max(1.25rem, calc((100vw - var(--page-max-width)) / 2));
   --page-prose-max: 56rem;
-  --page-shell-padding-block: clamp(5rem, 6.5vw, 6.25rem) var(--page-inline-padding)
-    clamp(3.5rem, 6vw, 5rem);
+  --page-shell-padding-block: clamp(3rem, 4vw, 3.85rem) var(--page-inline-padding)
+    clamp(3rem, 5vw, 4.25rem);
 
   --type-hero: clamp(2.35rem, 4vw, 4.25rem);
   --type-section: clamp(1.75rem, 2.75vw, 2.65rem);
@@ -205,8 +205,8 @@ h3 .headingAccent {
 
 @media (max-width: 760px) {
   :root {
-    --page-shell-padding-block: clamp(4.5rem, 12vw, 5.25rem) var(--page-inline-padding)
-      calc(6.75rem + env(safe-area-inset-bottom));
+    --page-shell-padding-block: clamp(4.1rem, 10vw, 4.75rem) var(--page-inline-padding)
+      calc(5.75rem + env(safe-area-inset-bottom));
     --type-hero: clamp(2rem, 9vw, 2.45rem);
     --type-section: clamp(1.45rem, 6vw, 1.9rem);
     --type-body: 0.98rem;

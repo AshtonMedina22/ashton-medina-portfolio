@@ -13,7 +13,7 @@
   isolation: isolate;
   width: min(100%, 46rem);
   max-width: 46rem;
-  height: clamp(26rem, 40vw, 35rem);
+  height: clamp(23rem, 34vw, 31rem);
   margin-inline: auto;
   overflow: hidden;
   border: 1px solid rgba(160, 229, 217, 0.55);
@@ -508,7 +508,7 @@
 @media (max-width: 900px) {
   .heroMockup {
     max-width: 42rem;
-    height: 31rem;
+    height: 28rem;
   }
 
   .appWindow {
@@ -522,7 +522,7 @@
 
 @media (max-width: 620px) {
   .heroMockup {
-    height: 28rem;
+    height: 24rem;
     border-radius: 22px;
   }
 

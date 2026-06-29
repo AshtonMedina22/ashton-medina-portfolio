@@ -36,16 +36,16 @@
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: clamp(2rem, 3.2vw, 4rem);
-  margin-top: clamp(0.5rem, 1.5vw, 1.25rem);
-  padding: clamp(2rem, 3.5vw, 3.5rem);
+  gap: clamp(1.5rem, 3vw, 3.25rem);
+  margin-top: 0;
+  padding: clamp(1.55rem, 2.8vw, 2.75rem);
   border: 1px solid rgba(0, 45, 114, 0.16);
-  border-radius: 24px;
+  border-radius: 20px;
   background:
     radial-gradient(circle at 12% 0%, rgba(9, 205, 205, 0.035), transparent 24rem),
     radial-gradient(circle at 82% 8%, rgba(129, 69, 158, 0.07), transparent 26rem),
     linear-gradient(145deg, #ffffff 0%, #ffffff 58%, #f7fbfc 100%);
-  box-shadow: 0 24px 64px rgba(0, 45, 114, 0.1);
+  box-shadow: 0 18px 46px rgba(0, 45, 114, 0.08);
 }
 
 .heroContent {
@@ -82,8 +82,8 @@
 }
 
 .heroContent h1 {
-  margin-top: 1.35rem;
-  font-size: clamp(2.6rem, 4.25vw, 4.55rem);
+  margin-top: 1.05rem;
+  font-size: clamp(2.35rem, 3.8vw, 4rem);
   line-height: 1.04;
   text-wrap: balance;
 
@@ -101,7 +101,7 @@
 
 .heroContent p {
   max-width: 58ch;
-  margin: 1.35rem 0 0;
+  margin: 1.1rem 0 0;
   color: var(--home-muted);
   font-size: clamp(1.02rem, 1.18vw, 1.16rem);
   font-weight: 500;
@@ -112,14 +112,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.45rem;
 }
 
 .proofStrip {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.75rem;
-  margin-top: clamp(2rem, 4vw, 3rem);
+  margin-top: clamp(1.35rem, 2.5vw, 2rem);
   padding: 0.85rem;
   border: 1px solid var(--home-border);
   border-radius: 20px;
@@ -192,9 +192,9 @@
 
 .capabilitiesSection {
   display: grid;
-  gap: clamp(1.75rem, 3vw, 2.5rem);
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding: clamp(2.5rem, 4.5vw, 4.25rem) 0;
+  gap: clamp(1.35rem, 2.4vw, 2rem);
+  margin-top: clamp(1.5rem, 3vw, 2.35rem);
+  padding: clamp(2rem, 3.5vw, 3.25rem) 0;
   border: 1px solid rgba(0, 45, 114, 0.15);
   border-radius: 24px;
   background:
@@ -312,9 +312,9 @@
 
 .techBanner {
   display: grid;
-  gap: clamp(1.75rem, 3vw, 2.5rem);
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding: clamp(2.5rem, 4.5vw, 4.25rem) 0;
+  gap: clamp(1.35rem, 2.4vw, 2rem);
+  margin-top: clamp(1.5rem, 3vw, 2.35rem);
+  padding: clamp(2rem, 3.5vw, 3.25rem) 0;
   border: 1px solid rgba(0, 45, 114, 0.15);
   border-radius: 24px;
   background:
@@ -499,7 +499,13 @@
 
 @media (max-width: 760px) {
   .homePage {
-    padding-top: 5.5rem;
+    padding-top: 4.25rem;
+  }
+
+  .heroSection {
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 18px;
   }
 }
 
