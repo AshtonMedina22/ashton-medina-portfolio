@@ -57,7 +57,7 @@
   width: fit-content;
   color: #573894;
   font-size: var(--type-eyebrow);
-  font-weight: 850;
+  font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
@@ -75,15 +75,15 @@
   margin: 0;
   color: var(--home-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0;
   text-transform: none;
 }
 
 .heroContent h1 {
   margin-top: 1.35rem;
-  font-size: clamp(3rem, 5.1vw, 5.35rem);
-  line-height: 0.98;
+  font-size: clamp(2.6rem, 4.25vw, 4.55rem);
+  line-height: 1.04;
   text-wrap: balance;
 
   :global(.headingAccent) {
@@ -102,8 +102,8 @@
   max-width: 58ch;
   margin: 1.35rem 0 0;
   color: #12336f;
-  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
-  font-weight: 680;
+  font-size: clamp(1.02rem, 1.18vw, 1.16rem);
+  font-weight: 500;
   line-height: 1.55;
 }
 
@@ -132,7 +132,7 @@
     color: #12336f;
     background: rgba(255, 255, 255, 0.92);
     font-size: var(--type-label);
-    font-weight: 820;
+    font-weight: 700;
     letter-spacing: 0.04em;
     line-height: 1.35;
     text-align: center;
@@ -152,7 +152,7 @@
   border-radius: 12px;
   text-decoration: none !important;
   font-size: var(--type-cta);
-  font-weight: 850;
+  font-weight: 700;
   letter-spacing: 0.03em;
   transition:
     transform 160ms ease,
@@ -217,7 +217,7 @@
     margin: 1rem auto 0;
     color: #18376d;
     font-size: var(--type-body-lg);
-    font-weight: 580;
+    font-weight: 500;
     line-height: 1.7;
   }
 
@@ -228,7 +228,7 @@
     margin-top: 1.25rem;
     color: #573894 !important;
     font-size: var(--type-eyebrow);
-    font-weight: 850;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-decoration: none !important;
     text-transform: uppercase;
@@ -295,14 +295,14 @@
     margin: 1.15rem 0 0;
     color: var(--home-text);
     font-size: var(--type-subsection);
-    font-weight: 900;
+    font-weight: 700;
   }
 
   p {
     margin: 0.75rem 0 0;
     color: #18376d;
     font-size: var(--type-body);
-    font-weight: 570;
+    font-weight: 500;
     line-height: 1.6;
   }
 }
@@ -331,7 +331,7 @@
     color: var(--home-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
     font-size: var(--type-subsection);
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.25;
     text-wrap: balance;
   }
@@ -356,7 +356,7 @@
 .techBanner :global([class*="TechStackMarquee_techLabel"]) {
   color: var(--home-text) !important;
   font-size: var(--type-label) !important;
-  font-weight: 850 !important;
+  font-weight: 700 !important;
   text-shadow: none !important;
 }
 
@@ -488,7 +488,7 @@
 
 @media (max-width: 860px) {
   .heroContent h1 {
-    font-size: clamp(1.85rem, 7.5vw, 2.35rem);
+    font-size: clamp(2.05rem, 7.25vw, 2.7rem);
   }
 
   .capabilityGrid {
@@ -511,7 +511,7 @@
 
 @media (max-width: 520px) {
   .heroContent h1 {
-    font-size: clamp(1.75rem, 7.8vw, 2.1rem);
+    font-size: clamp(1.9rem, 8vw, 2.35rem);
     letter-spacing: 0;
   }
 

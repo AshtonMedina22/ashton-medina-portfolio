@@ -32,18 +32,18 @@
     margin: 0.25rem 0 0.5rem;
     color: var(--work-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(2.6rem, 5vw, 4.8rem);
-    font-weight: 900;
+    font-size: clamp(2.35rem, 4.1vw, 4.15rem);
+    font-weight: 800;
     letter-spacing: 0;
-    line-height: 0.98;
+    line-height: 1.04;
   }
 
   p {
     max-width: 54rem;
     margin: 0;
     color: #12336f;
-    font-size: clamp(1.05rem, 1.45vw, 1.28rem);
-    font-weight: 680;
+    font-size: clamp(1.02rem, 1.2vw, 1.16rem);
+    font-weight: 500;
     line-height: 1.5;
   }
 }
@@ -53,6 +53,6 @@
   align-items: center;
   color: #087b83;
   font-size: 0.86rem;
-  font-weight: 850;
+  font-weight: 700;
   line-height: 1.2;
 }

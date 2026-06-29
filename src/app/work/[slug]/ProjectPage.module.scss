@@ -86,7 +86,7 @@
   align-items: center;
   color: var(--project-purple);
   font-size: 0.86rem;
-  font-weight: 850;
+  font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
 }
@@ -104,10 +104,10 @@
   margin: 0.2rem 0 0.45rem;
   color: var(--project-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
-  font-size: clamp(2.6rem, 5vw, 5.35rem);
-  font-weight: 900;
+  font-size: clamp(2.35rem, 4.25vw, 4.55rem);
+  font-weight: 800;
   letter-spacing: 0;
-  line-height: 0.98;
+  line-height: 1.04;
   text-wrap: balance;
 }
 
@@ -115,8 +115,8 @@
   max-width: 76rem;
   margin: 0;
   color: #12336f;
-  font-size: clamp(1.05rem, 1.6vw, 1.4rem);
-  font-weight: 680;
+  font-size: clamp(1.02rem, 1.28vw, 1.22rem);
+  font-weight: 500;
   line-height: 1.5;
 }
 
@@ -137,10 +137,10 @@
     margin: 0.2rem 0 0;
     color: var(--project-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(2rem, 3.6vw, 3.4rem);
-    font-weight: 900;
+    font-size: clamp(1.75rem, 2.9vw, 2.75rem);
+    font-weight: 800;
     letter-spacing: 0;
-    line-height: 1;
+    line-height: 1.08;
   }
 }
 
@@ -155,7 +155,7 @@
   p {
     color: var(--project-muted) !important;
     font-size: clamp(1rem, 1.1vw, 1.12rem);
-    font-weight: 560;
+    font-weight: 500;
   }
 
   h2,
@@ -196,7 +196,7 @@
   }
 
   .heroTitle {
-    font-size: clamp(2.15rem, 12vw, 3.4rem);
+    font-size: clamp(2.05rem, 9.5vw, 2.9rem);
   }
 
   .demoSection {

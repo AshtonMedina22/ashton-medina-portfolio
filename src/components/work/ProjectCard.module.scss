@@ -81,10 +81,10 @@
     max-width: 32ch;
     margin: 0;
     color: #002d72;
-    font-size: clamp(1.14rem, 1.35vw, 1.42rem) !important;
-    font-weight: 900 !important;
+    font-size: clamp(1.08rem, 1.18vw, 1.26rem) !important;
+    font-weight: 700 !important;
     letter-spacing: 0;
-    line-height: 1.12 !important;
+    line-height: 1.18 !important;
     text-align: left;
   }
 
@@ -97,8 +97,8 @@
     margin: 0 !important;
     color: #002d72 !important;
     opacity: 0.96;
-    font-size: clamp(0.95rem, 1vw, 1.05rem) !important;
-    font-weight: 650 !important;
+    font-size: clamp(0.92rem, 0.96vw, 1rem) !important;
+    font-weight: 500 !important;
     line-height: 1.45 !important;
     text-align: left;
   }
@@ -126,7 +126,7 @@
     padding: 0.78rem 0.85rem 0.9rem !important;
 
     h2 {
-      font-size: 0.95rem !important;
+      font-size: 0.96rem !important;
     }
 
     p,

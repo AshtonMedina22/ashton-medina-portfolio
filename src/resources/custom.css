@@ -109,9 +109,9 @@
   --page-shell-padding-block: clamp(5rem, 6.5vw, 6.25rem) var(--page-inline-padding)
     clamp(3.5rem, 6vw, 5rem);
 
-  --type-hero: clamp(2.75rem, 4.5vw, 3.75rem);
-  --type-section: clamp(2rem, 3.2vw, 2.85rem);
-  --type-subsection: clamp(1.35rem, 2vw, 1.65rem);
+  --type-hero: clamp(2.35rem, 4vw, 4.25rem);
+  --type-section: clamp(1.75rem, 2.75vw, 2.65rem);
+  --type-subsection: clamp(1.2rem, 1.65vw, 1.45rem);
   --type-body: clamp(1.05rem, 1.1vw, 1.125rem);
   --type-body-lg: clamp(1.1rem, 1.2vw, 1.2rem);
   --type-eyebrow: 0.875rem;
@@ -203,8 +203,8 @@ h3 .headingAccent {
   :root {
     --page-shell-padding-block: clamp(4.5rem, 12vw, 5.25rem) var(--page-inline-padding)
       calc(6.75rem + env(safe-area-inset-bottom));
-    --type-hero: clamp(2rem, 10vw, 2.65rem);
-    --type-section: clamp(1.55rem, 7vw, 2.05rem);
+    --type-hero: clamp(2rem, 9vw, 2.45rem);
+    --type-section: clamp(1.45rem, 6vw, 1.9rem);
     --type-body: 0.98rem;
     --type-body-lg: 1rem;
   }
