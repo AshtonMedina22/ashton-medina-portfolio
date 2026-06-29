@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <rect width="1200" height="600" fill="#f7fbfc"/>
+  <rect x="70" y="55" width="1060" height="490" rx="18" fill="#ffffff" stroke="#d8ddeb"/>
+  <text x="105" y="108" font-family="system-ui,sans-serif" font-size="30" font-weight="900" fill="#002d72">Vendor comparison</text>
+  <text x="105" y="140" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#573894">Price, lead time, reliability, and minimum order rules ranked together</text>
+  <rect x="105" y="185" width="990" height="58" rx="12" fill="#06173a"/>
+  <text x="135" y="221" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">VENDOR</text>
+  <text x="395" y="221" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">PRICE</text>
+  <text x="590" y="221" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">LEAD TIME</text>
+  <text x="800" y="221" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffffff">RECOMMENDATION</text>
+  <rect x="105" y="265" width="990" height="70" rx="12" fill="#ffffff" stroke="#d8ddeb"/>
+  <text x="135" y="307" font-family="system-ui,sans-serif" font-size="18" font-weight="900" fill="#002d72">Vendor A</text>
+  <text x="395" y="307" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#002d72">$4,280</text>
+  <text x="590" y="307" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#002d72">5 days</text>
+  <rect x="800" y="286" width="128" height="32" rx="16" fill="#09cdcd1f"/>
+  <text x="826" y="307" font-family="system-ui,sans-serif" font-size="14" font-weight="900" fill="#573894">Best value</text>
+  <rect x="105" y="355" width="990" height="70" rx="12" fill="#ffffff" stroke="#d8ddeb"/>
+  <text x="135" y="397" font-family="system-ui,sans-serif" font-size="18" font-weight="900" fill="#002d72">Vendor B</text>
+  <text x="395" y="397" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#002d72">$4,110</text>
+  <text x="590" y="397" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#002d72">12 days</text>
+  <rect x="800" y="376" width="84" height="32" rx="16" fill="#81459e1f"/>
+  <text x="826" y="397" font-family="system-ui,sans-serif" font-size="14" font-weight="900" fill="#573894">Slow</text>
+  <rect x="105" y="445" width="990" height="70" rx="12" fill="#ffffff" stroke="#d8ddeb"/>
+  <text x="135" y="487" font-family="system-ui,sans-serif" font-size="18" font-weight="900" fill="#002d72">Vendor C</text>
+  <text x="395" y="487" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#002d72">$4,460</text>
+  <text x="590" y="487" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#002d72">2 days</text>
+  <rect x="800" y="466" width="98" height="32" rx="16" fill="#a0e5d92e"/>
+  <text x="826" y="487" font-family="system-ui,sans-serif" font-size="14" font-weight="900" fill="#573894">Fastest</text>
+</svg>

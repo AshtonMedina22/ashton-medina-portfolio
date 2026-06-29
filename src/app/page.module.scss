@@ -335,6 +335,15 @@
     line-height: 1.25;
     text-wrap: balance;
   }
+
+  p {
+    max-width: var(--page-prose-max);
+    margin: 0.75rem auto 0;
+    color: #28406f;
+    font-size: var(--type-body);
+    font-weight: 500;
+    line-height: 1.6;
+  }
 }
 
 .techBanner :global([class*="TechStackMarquee_techItem"]) {
@@ -464,6 +473,10 @@
 
   .techBannerIntro h2 {
     color: #002d72;
+  }
+
+  .techBannerIntro p {
+    color: #28406f;
   }
 
   .techBanner :global([class*="TechStackMarquee_techItem"]) {

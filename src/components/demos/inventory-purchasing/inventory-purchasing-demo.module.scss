@@ -5,16 +5,65 @@ $text: #002d72;
 $muted: #573894;
 
 .shell {
+  display: grid;
+  grid-template-columns: auto 1fr;
   width: 100%;
   max-width: 1480px;
   min-height: 42rem;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(160, 229, 217, 0.32);
+  border: 1px solid rgba(129, 69, 158, 0.32);
   border-radius: 16px;
-  background: radial-gradient(circle at 10% 0%, rgba(160, 229, 217, 0.16), transparent 24rem), $bg;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(129, 69, 158, 0.16), transparent 24rem),
+    radial-gradient(circle at 88% 10%, rgba(9, 205, 205, 0.11), transparent 22rem),
+    linear-gradient(145deg, #f7fbfc 0%, #ffffff 58%, #ffffff 100%);
   color: $text;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow: 0 30px 90px rgba(0, 45, 114, 0.12);
+}
+
+.sidebar {
+  width: 13.5rem;
+  padding: 1.35rem 1rem;
+  background: linear-gradient(180deg, #06173a, #1f2f55);
+  color: #ffffff;
+
+  span,
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.45rem;
+    border-radius: 10px;
+    padding: 0 0.8rem;
+    font-weight: 800;
+  }
+
+  span {
+    margin-top: 0.35rem;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  svg {
+    flex: 0 0 auto;
+  }
+}
+
+.brand {
+  margin-bottom: 1.1rem;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.active {
+  background: rgba(160, 229, 217, 0.16);
+  color: #ffffff !important;
+}
+
+.workspace {
+  min-width: 0;
+  padding: 1.35rem;
 }
 
 .header {
@@ -22,7 +71,7 @@ $muted: #573894;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.6rem 1.6rem 1rem;
+  margin-bottom: 1rem;
 
   p {
     margin: 0 0 0.35rem;
@@ -32,12 +81,13 @@ $muted: #573894;
   }
 
   h2 {
-    max-width: 54rem;
+    max-width: 48rem;
     margin: 0;
     color: $text;
-    font-size: 2.15rem;
+    font-size: clamp(1.85rem, 2.8vw, 2.45rem);
     font-weight: 900;
-    line-height: 1.08;
+    letter-spacing: 0;
+    line-height: 1.1;
   }
 
   > span {
@@ -54,11 +104,50 @@ $muted: #573894;
   }
 }
 
+.statusStrip {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 1fr 1.25fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 3.05rem;
+    min-width: 0;
+    border: 1px solid rgba(0, 45, 114, 0.14);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.74);
+    color: $text;
+    padding: 0 0.85rem;
+    font-size: 0.86rem;
+    font-weight: 820;
+    line-height: 1.15;
+  }
+
+  svg {
+    flex: 0 0 auto;
+    color: $muted;
+    font-size: 1.1rem;
+  }
+
+  i {
+    margin-left: auto;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg);
+    opacity: 0.68;
+  }
+}
+
 .kpis {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.85rem;
-  padding: 0 1.6rem 1.1rem;
+  margin-bottom: 1rem;
 
   article {
     display: grid;
@@ -89,18 +178,59 @@ $muted: #573894;
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) 0.86fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.88fr) minmax(16rem, 0.76fr);
   gap: 1rem;
-  padding: 0 1.6rem 1.6rem;
 }
 
 .panel,
+.allocationPanel,
 .decisionPanel {
   min-width: 0;
   border: 1px solid $border;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.92);
   padding: 1rem;
+}
+
+.allocationPanel {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+  }
+
+  th {
+    padding: 0 0.7rem 0.7rem 0;
+    color: #28406f;
+    font-size: 0.68rem;
+    font-weight: 860;
+    letter-spacing: 0.08em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 0.76rem 0.7rem 0.76rem 0;
+    border-top: 1px solid rgba(0, 45, 114, 0.12);
+    color: $text;
+    font-weight: 720;
+    line-height: 1.2;
+  }
+
+  td:first-child {
+    font-weight: 900;
+  }
+
+  td span {
+    display: inline-flex;
+    border-radius: 999px;
+    background: rgba(9, 205, 205, 0.12);
+    color: $muted;
+    padding: 0.28rem 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 880;
+    white-space: nowrap;
+  }
 }
 
 .panelTitle {
@@ -119,25 +249,29 @@ $muted: #573894;
 
   div {
     display: grid;
-    grid-template-columns: minmax(9rem, 1.3fr) 0.75fr 0.75fr 1fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 0.55rem;
+    gap: 0.38rem 0.75rem;
     border: 1px solid rgba(0, 45, 114, 0.1);
     border-radius: 10px;
     padding: 0.75rem;
     color: #28406f;
+    font-size: 0.9rem;
     font-weight: 720;
   }
 
   strong {
+    grid-column: 1 / -1;
     color: $text;
     font-weight: 900;
   }
 
   em {
+    grid-column: 1 / -1;
     color: $muted;
     font-style: normal;
     font-weight: 850;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -155,5 +289,102 @@ $muted: #573894;
     padding: 0.8rem;
     color: $text;
     font-weight: 850;
+    line-height: 1.2;
+  }
+}
+
+.shell *,
+.shell *::before,
+.shell *::after {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 1100px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .statusStrip,
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .workspace {
+    padding: 0.85rem;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header h2 {
+    font-size: 1.35rem;
+  }
+
+  .statusStrip,
+  .kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .allocationPanel {
+    table,
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    tr {
+      padding: 0.7rem;
+      border: 1px solid rgba(0, 45, 114, 0.14);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    td {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.24rem 0;
+      border-top: 0;
+      text-align: right;
+    }
+
+    td::before {
+      color: #28406f;
+      font-size: 0.68rem;
+      font-weight: 860;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      content: "";
+    }
+
+    td:nth-child(1)::before { content: "Item"; }
+    td:nth-child(2)::before { content: "Req"; }
+    td:nth-child(3)::before { content: "Stock"; }
+    td:nth-child(4)::before { content: "Decision"; }
+    td:nth-child(5)::before { content: "Review"; }
   }
 }

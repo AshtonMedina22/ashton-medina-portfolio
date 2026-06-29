@@ -321,7 +321,10 @@
 
 .problemGrid,
 .serviceGrid,
-.keywordGroups {
+.keywordGroups,
+.proofGrid,
+.methodGrid,
+.certGrid {
   position: relative;
   z-index: 1;
   display: grid;
@@ -340,10 +343,24 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.proofGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.methodGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.certGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .problemCard,
 .serviceCard,
 .keywordGroup,
-.experienceItem {
+.experienceItem,
+.proofCard,
+.methodCard {
   border: 1px solid var(--about-border);
   background: var(--about-card-strong);
   box-shadow: var(--about-shadow-soft);
@@ -351,10 +368,59 @@
 
 .problemCard,
 .serviceCard,
-.keywordGroup {
+.keywordGroup,
+.proofCard,
+.methodCard {
   min-width: 0;
   border-radius: 1.05rem;
   padding: 1rem;
+}
+
+.proofCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 8.2rem;
+  border-top: 4px solid var(--about-teal);
+}
+
+.proofCard:nth-child(2n) {
+  border-top-color: var(--about-purple);
+}
+
+.proofCard:nth-child(3n) {
+  border-top-color: var(--about-navy);
+}
+
+.proofCard strong {
+  color: var(--about-navy);
+  font-size: clamp(1.2rem, 2.25vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.proofCard p,
+.methodCard p {
+  margin: 0;
+  color: var(--about-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.methodCard {
+  border-top: 4px solid var(--about-navy);
+}
+
+.methodCard:nth-child(even) {
+  border-top-color: var(--about-purple);
+}
+
+.methodCard h3 {
+  margin: 0 0 0.65rem;
+  color: var(--about-navy);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .problemCard {
@@ -424,7 +490,8 @@
   margin-top: 0.7rem;
 }
 
-.keywordGroup span {
+.keywordGroup span,
+.certGrid span {
   display: inline-flex;
   border: 1px solid rgba(0, 45, 114, 0.08);
   border-radius: 999px;
@@ -434,6 +501,14 @@
   font-weight: 800;
   line-height: 1;
   padding: 0.45rem 0.62rem;
+}
+
+.certGrid span {
+  align-items: center;
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.94);
+  font-size: 0.86rem;
+  line-height: 1.35;
 }
 
 .experienceSection {
@@ -577,8 +652,14 @@
   }
 
   .keywordGroups,
+  .proofGrid,
+  .certGrid,
   .summaryGrid {
     grid-template-columns: 1fr;
+  }
+
+  .methodGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -660,6 +741,9 @@
   .problemGrid,
   .serviceGrid,
   .keywordGroups,
+  .proofGrid,
+  .methodGrid,
+  .certGrid,
   .experienceItem,
   .experienceBody ul {
     grid-template-columns: minmax(0, 1fr);

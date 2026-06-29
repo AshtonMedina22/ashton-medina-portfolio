@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <rect width="1200" height="600" fill="#ffffff"/>
+  <rect x="70" y="60" width="1060" height="480" rx="18" fill="#f7fbfc" stroke="#d8ddeb"/>
+  <text x="105" y="118" font-family="system-ui,sans-serif" font-size="30" font-weight="900" fill="#002d72">Approval trail</text>
+  <text x="105" y="150" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#573894">Every reserve, buy, substitute, and blocked decision is logged for review</text>
+  <line x1="180" y1="250" x2="1020" y2="250" stroke="#d8ddeb" stroke-width="4"/>
+  <circle cx="180" cy="250" r="36" fill="#002d72"/>
+  <text x="180" y="257" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="900" fill="#ffffff">1</text>
+  <text x="120" y="322" font-family="system-ui,sans-serif" font-size="16" font-weight="900" fill="#002d72">Normalize</text>
+  <text x="113" y="350" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#28406f">Material list cleaned</text>
+  <circle cx="460" cy="250" r="36" fill="#573894"/>
+  <text x="460" y="257" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="900" fill="#ffffff">2</text>
+  <text x="410" y="322" font-family="system-ui,sans-serif" font-size="16" font-weight="900" fill="#002d72">Compare</text>
+  <text x="390" y="350" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#28406f">Stock and vendors checked</text>
+  <circle cx="740" cy="250" r="36" fill="#81459e"/>
+  <text x="740" y="257" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="900" fill="#ffffff">3</text>
+  <text x="700" y="322" font-family="system-ui,sans-serif" font-size="16" font-weight="900" fill="#002d72">Decide</text>
+  <text x="674" y="350" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#28406f">Buy, reserve, substitute</text>
+  <circle cx="1020" cy="250" r="36" fill="#09cdcd"/>
+  <text x="1020" y="257" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="900" fill="#002d72">4</text>
+  <text x="985" y="322" font-family="system-ui,sans-serif" font-size="16" font-weight="900" fill="#002d72">Approve</text>
+  <text x="955" y="350" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#28406f">Owner and timestamp saved</text>
+  <rect x="290" y="415" width="620" height="58" rx="14" fill="#ffffff" stroke="#d8ddeb"/>
+  <text x="325" y="451" font-family="system-ui,sans-serif" font-size="16" font-weight="850" fill="#002d72">Reviewable plan before spend or fulfillment begins</text>
+</svg>

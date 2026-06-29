@@ -14,6 +14,7 @@ const workPageProjectOrder = [
   "multi-tenant-enterprise-operations-hub",
   "revenue-financial-control-engine",
   "operational-intelligence-platform",
+  "inventory-purchasing-allocation-system",
   "business-access-software-cost-control-dashboard",
   "calendar-document-follow-up-automation-system",
   "event-driven-automation-secure-ai-gateway",

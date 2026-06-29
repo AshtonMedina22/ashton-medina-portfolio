@@ -1,6 +1,6 @@
 # Ashton Medina Portfolio
 
-Portfolio website showcasing work as a Full-Stack Platform Engineer.
+Portfolio website showcasing work across operations leadership, business systems implementation, workflow automation, reporting, and operational controls.
 
 ## About
 

@@ -15,7 +15,7 @@ const person: Person = {
   firstName: "Ashton",
   lastName: "Medina",
   name: "Ashton Medina",
-  role: "Business Operations & Systems Implementation Manager",
+  role: "Operations & Business Systems Leader",
   avatar: "/images/avatar.png",
   email: "ashtonmedina22@gmail.com",
   location: "America/Chicago",
@@ -45,45 +45,33 @@ const social: Social = [
 ];
 
 const techStackLanguages: Array<{ name: string; icon: string | null }> = [
+  { name: "Python", icon: "python" },
   { name: "JavaScript", icon: "javascript" },
   { name: "TypeScript", icon: "typescript" },
-  { name: "Python", icon: "python" },
-  { name: "Go", icon: "go" },
-  { name: "Java", icon: "java" },
+  { name: "SQL", icon: "sql" },
   { name: "HTML", icon: "html" },
   { name: "CSS", icon: "css" },
   { name: "SCSS", icon: "scss" },
-  { name: "Tailwind", icon: "tailwind" },
-  { name: "Bootstrap", icon: "bootstrap" },
-  { name: "SQL", icon: "sql" },
-  { name: "GraphQL", icon: "graphql" },
-  { name: "JSON", icon: "json" },
+  { name: "REST APIs", icon: "restapi" },
+  { name: "Webhooks", icon: "api" },
+  { name: "Google Apps Script", icon: null },
 ];
 
 const techStackPlatforms: Array<{ name: string; icon: string | null }> = [
+  { name: "Odoo ERP/CRM", icon: null },
   { name: "React", icon: "react" },
   { name: "Next.js", icon: "nextjs" },
   { name: "Node.js", icon: "nodejs" },
-  { name: "Express", icon: "express" },
-  { name: "FastAPI", icon: "fastapi" },
-  { name: "Kubernetes", icon: "kubernetes" },
-  { name: "Terraform", icon: "terraform" },
-  { name: "Vercel", icon: "vercel" },
   { name: "PostgreSQL", icon: "postgresql" },
-  { name: "MongoDB", icon: "mongodb" },
   { name: "Supabase", icon: "supabase" },
-  { name: "Redis", icon: "redis" },
-  { name: "AWS", icon: "aws" },
-  { name: "Auth0", icon: "auth0" },
-  { name: "Keycloak", icon: "keycloak" },
-  { name: "Okta", icon: "okta" },
-  { name: "Clerk", icon: "clerk" },
-  { name: "REST API", icon: "restapi" },
-  { name: "Middleware", icon: "middleware" },
-  { name: "Docker", icon: "docker" },
-  { name: "Nginx", icon: "nginx" },
-  { name: "Jest", icon: "jest" },
-  { name: "Git", icon: "git" },
+  { name: "GitHub", icon: "github" },
+  { name: "Vercel", icon: "vercel" },
+  { name: "ClickUp", icon: null },
+  { name: "Intercom", icon: null },
+  { name: "Zapier", icon: null },
+  { name: "Make", icon: null },
+  { name: "Google Workspace", icon: null },
+  { name: "Microsoft 365", icon: null },
 ];
 
 const techStack: Array<{ name: string; icon: string | null }> = [
@@ -102,13 +90,13 @@ const home: Home = {
     "Dallas-Fort Worth business operations and systems implementation portfolio focused on process improvement, workflow automation, ERP and CRM rollout support, KPI dashboards, reporting, SOP development, and operational controls.",
   headline: (
     <>
-      Building operational frameworks
+      Turning messy
       {" "}
       <br />
-      that help
+      operations into
       {" "}
       <br />
-      <span className="headingAccent">organizations scale.</span>
+      <span className="headingAccent">systems teams can run.</span>
     </>
   ),
   featured: {
@@ -121,7 +109,7 @@ const home: Home = {
     href: "/work/sales-to-delivery-automation-platform",
   },
   subline:
-    "My work spans business operations, requirements gathering, process improvement, platform implementation, workflow automation, KPI reporting, integrations, SOP documentation, training, and change management across growing organizations.",
+    "I help teams turn scattered requests, manual handoffs, disconnected tools, and weak reporting into repeatable workflows, usable systems, and clearer operating controls.",
 };
 
 const about: About = {

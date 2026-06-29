@@ -12,33 +12,33 @@ import {
 import styles from "./page.module.scss";
 
 const proofStrip = [
-  "Business Analysis",
-  "Process Improvement",
-  "Systems Implementation",
-  "Operations Leadership",
-  "Reporting & Analytics",
+  "15+ Years",
+  "25+ Tools Consolidated",
+  "5,500+ Users Supported",
+  "3,000+ SaaS Customers",
+  "100% Audit Readiness",
 ] as const;
 
 const capabilities = [
   {
     icon: HiOutlineClipboardList,
-    title: "Operations & Process Improvement",
-    text: "Analyze how work moves through teams, identify gaps, and turn informal operating habits into repeatable processes.",
+    title: "Map the Work",
+    text: "Understand requests, approvals, handoffs, exceptions, ownership gaps, and reporting needs before changing the system.",
   },
   {
     icon: HiOutlineCog,
-    title: "Systems Implementation",
-    text: "Support platform selection, configuration, testing, documentation, rollout, and adoption across business functions.",
+    title: "Build the System",
+    text: "Configure or create ERP, CRM, automation, support, and reporting workflows around the process teams actually use.",
   },
   {
     icon: HiOutlineChartBar,
-    title: "Visibility & Reporting",
-    text: "Develop KPI structures, dashboards, operating reports, and leadership views that turn activity into usable context.",
+    title: "Create Visibility",
+    text: "Turn daily activity into dashboards, KPIs, status views, exception reports, and leadership-ready operating context.",
   },
   {
     icon: HiOutlineShieldCheck,
-    title: "Controls, Adoption & Scale",
-    text: "Establish ownership, approval paths, SOPs, training materials, and governance practices that support sustained execution.",
+    title: "Make It Stick",
+    text: "Document SOPs, train teams, define controls, and support adoption so the process keeps working after launch.",
   },
 ] as const;
 
@@ -98,16 +98,16 @@ export default function Home() {
           <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Capabilities</span>
             <h2>
-              Systems capability
+              One operating method
               {" "}
               <br />
-              across the full{" "}
-              <span className="headingAccent">operating model.</span>
+              across different{" "}
+              <span className="headingAccent">industries.</span>
             </h2>
             <p>
-              My background is not tied to one platform. It covers operational analysis, process
-              standardization, software implementation, data visibility, documentation, training,
-              and the controls needed to manage growth.
+              My work starts with how the business actually runs, then turns that into
+              requirements, workflows, system logic, reporting, documentation, and adoption plans
+              that teams can keep using.
             </p>
           </div>
           <div className={styles.capabilityGrid}>
@@ -128,7 +128,11 @@ export default function Home() {
           <section className={styles.techBanner} aria-label="Technology stack">
             <div className={styles.techBannerIntro}>
               <span className={styles.sectionEyebrow}>Technology</span>
-              <h2>Tools and platforms used across business systems work</h2>
+              <h2>Tools used to build, connect, and manage business systems</h2>
+              <p>
+                The stack changes by company, but the work stays consistent: connect data,
+                automate handoffs, improve visibility, and make processes easier to run.
+              </p>
             </div>
             <TechStackMarquee />
           </section>
