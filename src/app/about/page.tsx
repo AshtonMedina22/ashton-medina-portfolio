@@ -1,15 +1,6 @@
 import styles from "@/components/about/about.module.scss";
 import { about, baseURL, person, social } from "@/resources";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
-import {
-  HiOutlineArrowRight,
-  HiOutlineChartBar,
-  HiOutlineClipboardList,
-  HiOutlineCog,
-  HiOutlineOfficeBuilding,
-  HiOutlineShieldCheck,
-  HiOutlineUserGroup,
-} from "react-icons/hi";
 import { FaLinkedin } from "react-icons/fa6";
 
 export async function generateMetadata() {
@@ -24,127 +15,43 @@ export async function generateMetadata() {
 
 const linkedIn = social.find((item) => item.icon === "linkedin");
 
-const problemsSolved = [
-  {
-    icon: HiOutlineClipboardList,
-    title: "Requests stop getting lost",
-    text: "Forms, emails, approvals, and follow-ups move into a clear intake and ownership process.",
-  },
-  {
-    icon: HiOutlineUserGroup,
-    title: "Owners know what to do",
-    text: "Responsibilities, checklists, due dates, and escalation paths become clear across the team.",
-  },
-  {
-    icon: HiOutlineCog,
-    title: "Manual work gets reduced",
-    text: "Recurring tasks, reminders, status updates, and handoffs are standardized or automated where it makes sense.",
-  },
-  {
-    icon: HiOutlineChartBar,
-    title: "Leadership gets visibility",
-    text: "Dashboards and operating reports show what is open, stuck, completed, trending, or ready for decision.",
-  },
+const summaryBullets = [
+  "Operations and business systems leader with 15+ years across multi-site operations, SaaS implementation, process improvement, workflow automation, reporting, and controls.",
+  "Experienced translating messy business workflows into clear requirements, system configuration, SOPs, dashboards, user roles, and adoption plans.",
+  "Strong fit for roles spanning business operations, business analysis, systems implementation, operations technology, workflow automation, and reporting.",
 ] as const;
 
-const serviceAreas = [
-  {
-    title: "Operations & Process Improvement",
-    text: "Workflow analysis, process mapping, SOP development, handoff cleanup, accountability structures, and operating routines.",
-  },
-  {
-    title: "Business Systems Implementation",
-    text: "Requirements gathering, ERP/CRM configuration, user acceptance testing, rollout planning, training, adoption, and documentation.",
-  },
-  {
-    title: "Workflow Automation & Reporting",
-    text: "Task routing, reminders, status tracking, executive dashboards, KPI frameworks, operational reporting, and data cleanup.",
-  },
-  {
-    title: "Operational Controls & Compliance",
-    text: "Approval paths, vendor management, audit readiness, financial controls, role-based access, and repeatable governance.",
-  },
+const competencies = [
+  "Operations Management",
+  "Business Analysis",
+  "Process Improvement",
+  "Systems Implementation",
+  "Requirements Gathering",
+  "Workflow Automation",
+  "ERP / CRM Configuration",
+  "KPI Reporting",
+  "SOP Development",
+  "User Training",
+  "Vendor Management",
+  "Operational Controls",
 ] as const;
 
-const proofMetrics = [
+const impactMetrics = [
   {
     value: "15+",
-    label: "Years across operations, systems, and implementation",
+    label: "years across operations, systems, implementation, and process improvement",
   },
   {
     value: "25+",
-    label: "Disconnected tools consolidated into one operating platform",
-  },
-  {
-    value: "600+ to 1,500+",
-    label: "Annual event capacity planned without added headcount",
+    label: "tools consolidated into one operating platform across core business functions",
   },
   {
     value: "5,500+",
-    label: "Enterprise user accounts supported across national programs",
+    label: "enterprise user accounts supported across national technology programs",
   },
   {
     value: "3,000+",
-    label: "SaaS customer organizations supported through implementation",
-  },
-  {
-    value: "100%",
-    label: "Audit readiness maintained across recurring inspections",
-  },
-] as const;
-
-const operatingMethod = [
-  {
-    title: "Understand the operating reality",
-    text: "Map how work actually moves through teams, tools, approvals, handoffs, exceptions, and reporting gaps.",
-  },
-  {
-    title: "Translate work into system requirements",
-    text: "Turn messy workflows into requirements, process maps, data fields, user roles, controls, and acceptance criteria.",
-  },
-  {
-    title: "Build or configure the operating system",
-    text: "Implement ERP, CRM, reporting, automation, support, and work-management layers that match the business process.",
-  },
-  {
-    title: "Make adoption repeatable",
-    text: "Document SOPs, train users, create dashboards, and reinforce governance so the process does not depend on memory.",
-  },
-] as const;
-
-const keywordGroups = [
-  {
-    title: "Business Operations",
-    terms: [
-      "Operations Management",
-      "Process Improvement",
-      "Business Analysis",
-      "SOP Development",
-      "Multi-Site Operations",
-      "Change Management",
-    ],
-  },
-  {
-    title: "Systems Implementation",
-    terms: [
-      "ERP Implementation",
-      "CRM Administration",
-      "Requirements Gathering",
-      "UAT Testing",
-      "Platform Rollout",
-      "User Adoption",
-    ],
-  },
-  {
-    title: "Automation & Reporting",
-    terms: [
-      "Workflow Automation",
-      "KPI Dashboards",
-      "Executive Reporting",
-      "Data Analysis",
-      "API Integrations",
-      "Operational Controls",
-    ],
+    label: "SaaS customer organizations supported through implementation and onboarding",
   },
 ] as const;
 
@@ -155,10 +62,10 @@ const experience = [
     period: "2025 - Present",
     location: "Allen, TX",
     bullets: [
-      "Designed and built a custom ERP/CRM operating platform that consolidated 25+ disconnected tools across CRM, sales, accounting, payroll, recruitment, procurement, marketing, and project operations.",
-      "Mapped 450+ workflow steps, 14 SOP templates, and 338 automated tasks that generate operational timelines after sales confirmation.",
+      "Designed a custom ERP/CRM operating platform consolidating 25+ disconnected tools across sales, accounting, payroll, recruitment, procurement, marketing, and project operations.",
+      "Mapped 450+ workflow steps, 14 SOP templates, and 338 automated tasks to generate operational timelines after sales confirmation.",
+      "Built KPI dashboards, vendor compliance workflows, financial controls, payment infrastructure, and training materials to support adoption.",
       "Expanded operating capacity from 600+ annual events toward a 1,500+ event ceiling without adding headcount.",
-      "Built KPI dashboards, financial controls, vendor compliance workflows, payment infrastructure, and training materials to support adoption across the business.",
     ],
   },
   {
@@ -170,7 +77,7 @@ const experience = [
       "Supported national automotive technology programs across 443+ client entities and 5,500+ enterprise user accounts.",
       "Connected telematics, dealership software, toll networks, CRM, support, payment, and internal operating systems to reduce fragmented work.",
       "Built ClickUp into a central operating system for CRM, sales, onboarding, support, customer lifecycle work, OKRs, and capacity planning.",
-      "Designed Intercom support workflows that reduced customer time-to-value by 40% and inbound ticket volume by 35%.",
+      "Designed support workflows that reduced customer time-to-value by 40% and inbound ticket volume by 35%.",
     ],
   },
   {
@@ -181,8 +88,7 @@ const experience = [
     bullets: [
       "Supported implementation and onboarding across a shared global portfolio of 3,000+ SaaS customer organizations.",
       "Led data migrations, schema mapping, environment configuration, onboarding workflows, usage dashboards, and permission setup.",
-      "Built reusable configuration playbooks across rosters, relationship structures, and multi-state enrollment requirements, reducing implementation cycles by 30%.",
-      "Created lifecycle communication flows and account-health reporting to improve adoption, retention, and recurring revenue visibility.",
+      "Built reusable configuration playbooks for rosters, relationship structures, and multi-state enrollment requirements, reducing implementation cycles by 30%.",
     ],
   },
   {
@@ -193,9 +99,23 @@ const experience = [
     bullets: [
       "Directed 4 locations over a 14-year tenure, supporting 500+ active families annually and a workforce of 100+ employees.",
       "Owned P&L, staffing, scheduling, compliance, vendor procurement, billing, payroll, facilities, and operational reporting.",
-      "Standardized playbooks, checklists, logistics procedures, enrollment pipelines, and tour-conversion systems across all locations.",
-      "Maintained 100% audit readiness across 8+ annual state inspections through rigorous safety, licensing, and care-profile tracking.",
+      "Maintained 100% audit readiness across recurring state inspections through safety, licensing, documentation, and care-profile controls.",
     ],
+  },
+] as const;
+
+const skillGroups = [
+  {
+    title: "Systems & Tools",
+    terms: ["Odoo", "ClickUp", "Intercom", "HubSpot", "Salesforce", "Google Workspace", "Microsoft 365"],
+  },
+  {
+    title: "Technical",
+    terms: ["Python", "PostgreSQL", "SQL", "JavaScript", "TypeScript", "REST APIs", "JSON-RPC", "Google Apps Script"],
+  },
+  {
+    title: "Business",
+    terms: ["SOPs", "UAT", "Dashboards", "Data Migration", "Access Controls", "Vendor Compliance", "Financial Controls"],
   },
 ] as const;
 
@@ -227,80 +147,62 @@ export default function About() {
 
       <section className={styles.resumeShell}>
         <header className={styles.profileHeader}>
+          <div className={styles.profileAvatar}>
+            <img src={person.avatar} alt={person.name} />
+          </div>
           <div className={styles.profileInfo}>
-            <span className={styles.profileEyebrow}>Professional Profile</span>
+            <span className={styles.profileEyebrow}>Resume Profile</span>
             <h1>{person.name}</h1>
             <p className={styles.profileRole}>{person.role}</p>
-            {person.locationLabel && <p className={styles.profileLocation}>{person.locationLabel}</p>}
-            {linkedIn && (
-              <div className={styles.profileActions}>
+            <div className={styles.profileMeta}>
+              {person.locationLabel && <span>{person.locationLabel}</span>}
+              {linkedIn && (
                 <SmartLink
                   href={linkedIn.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.profileLinkBtn}
+                  className={styles.profileTextLink}
                 >
                   <FaLinkedin />
                   LinkedIn
                 </SmartLink>
-              </div>
-            )}
-          </div>
-          <div className={styles.profileAvatar}>
-            <img src={person.avatar} alt={person.name} />
+              )}
+            </div>
           </div>
         </header>
 
         <div className={styles.resumeContent}>
           <section className={styles.resumeHero}>
-            <div className={styles.summaryGrid}>
-              <div className={styles.summaryPrimary}>
-                <span className={styles.sectionEyebrow}>Overview</span>
-                <h2 className={styles.sectionTitle}>
-                  Operations, systems, and workflows that make businesses easier to run.
-                </h2>
-                <p className={styles.summaryLead}>
-                  I work across operations, business analysis, systems implementation, workflow
-                  automation, and reporting. My background is useful because I have both run the
-                  operations and built the systems that support them.
-                </p>
-              </div>
-              <div className={styles.summaryAside}>
-                <p className={styles.summaryText}>
-                  I translate messy work into clear requirements, process maps, automations, user
-                  roles, dashboards, SOPs, and controls so teams can execute consistently across
-                  industries and tool stacks.
-                </p>
-                <div className={styles.heroActions}>
-                  <SmartLink href="/work" className={styles.primaryCta}>
-                    View Work
-                    <HiOutlineArrowRight />
-                  </SmartLink>
-                  {linkedIn && (
-                    <SmartLink
-                      href={linkedIn.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.secondaryCta}
-                    >
-                      LinkedIn
-                    </SmartLink>
-                  )}
-                </div>
-              </div>
+            <div className={styles.sectionHeaderCompact}>
+              <span className={styles.sectionEyebrow}>Professional Summary</span>
+              <h2 className={styles.sectionTitle}>Operations, systems, and workflow implementation.</h2>
+            </div>
+            <ul className={styles.summaryList}>
+              {summaryBullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeaderCompact}>
+              <span className={styles.sectionEyebrow}>Core Competencies</span>
+              <h2 className={styles.sectionTitle}>Relevant strengths.</h2>
+            </div>
+            <div className={styles.competencyGrid}>
+              {competencies.map((competency) => (
+                <span key={competency}>{competency}</span>
+              ))}
             </div>
           </section>
 
           <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineChartBar />
-              <div>
-                <span className={styles.sectionEyebrow}>Proof of Scale</span>
-                <h2 className={styles.sectionTitle}>Operating scale across industries.</h2>
-              </div>
+            <div className={styles.sectionHeaderCompact}>
+              <span className={styles.sectionEyebrow}>Selected Impact</span>
+              <h2 className={styles.sectionTitle}>Scale and measurable outcomes.</h2>
             </div>
             <div className={styles.proofGrid}>
-              {proofMetrics.map((metric) => (
+              {impactMetrics.map((metric) => (
                 <article key={metric.label} className={styles.proofCard}>
                   <strong>{metric.value}</strong>
                   <p>{metric.label}</p>
@@ -309,93 +211,10 @@ export default function About() {
             </div>
           </section>
 
-          <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineShieldCheck />
-              <div>
-                <span className={styles.sectionEyebrow}>Business Problems</span>
-                <h2 className={styles.sectionTitle}>What I help fix.</h2>
-              </div>
-            </div>
-            <div className={styles.problemGrid}>
-              {problemsSolved.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <article key={item.title} className={styles.problemCard}>
-                    <Icon />
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </article>
-                );
-              })}
-            </div>
-          </section>
-
-          <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineCog />
-              <div>
-                <span className={styles.sectionEyebrow}>How I Work</span>
-                <h2 className={styles.sectionTitle}>One method across different industries.</h2>
-              </div>
-            </div>
-            <div className={styles.methodGrid}>
-              {operatingMethod.map((step) => (
-                <article key={step.title} className={styles.methodCard}>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineCog />
-              <div>
-                <span className={styles.sectionEyebrow}>Services</span>
-                <h2 className={styles.sectionTitle}>Where I add value.</h2>
-              </div>
-            </div>
-            <div className={styles.serviceGrid}>
-              {serviceAreas.map((area) => (
-                <article key={area.title} className={styles.serviceCard}>
-                  <h3>{area.title}</h3>
-                  <p>{area.text}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineChartBar />
-              <div>
-                <span className={styles.sectionEyebrow}>Search Keywords</span>
-                <h2 className={styles.sectionTitle}>Relevant skills, grouped clearly.</h2>
-              </div>
-            </div>
-            <div className={styles.keywordGroups}>
-              {keywordGroups.map((group) => (
-                <article key={group.title} className={styles.keywordGroup}>
-                  <h3>{group.title}</h3>
-                  <div>
-                    {group.terms.map((term) => (
-                      <span key={term}>{term}</span>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
           <section className={`${styles.resumeSection} ${styles.experienceSection}`}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineOfficeBuilding />
-              <div>
-                <span className={styles.sectionEyebrow}>Experience</span>
-                <h2 className={styles.sectionTitle}>Professional experience.</h2>
-              </div>
+            <div className={styles.sectionHeaderCompact}>
+              <span className={styles.sectionEyebrow}>Experience</span>
+              <h2 className={styles.sectionTitle}>Professional experience.</h2>
             </div>
             <div className={styles.experienceList}>
               {experience.map((role) => (
@@ -419,12 +238,28 @@ export default function About() {
           </section>
 
           <section className={styles.resumeSection}>
-            <div className={styles.sectionHeader}>
-              <HiOutlineClipboardList />
-              <div>
-                <span className={styles.sectionEyebrow}>Education & Certifications</span>
-                <h2 className={styles.sectionTitle}>Business, systems, automation, and support training.</h2>
-              </div>
+            <div className={styles.sectionHeaderCompact}>
+              <span className={styles.sectionEyebrow}>Tools & Skills</span>
+              <h2 className={styles.sectionTitle}>Systems, technical, and business skills.</h2>
+            </div>
+            <div className={styles.keywordGroups}>
+              {skillGroups.map((group) => (
+                <article key={group.title} className={styles.keywordGroup}>
+                  <h3>{group.title}</h3>
+                  <div>
+                    {group.terms.map((term) => (
+                      <span key={term}>{term}</span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.resumeSection}>
+            <div className={styles.sectionHeaderCompact}>
+              <span className={styles.sectionEyebrow}>Education & Certifications</span>
+              <h2 className={styles.sectionTitle}>Business, systems, automation, and support training.</h2>
             </div>
             <div className={styles.certGrid}>
               {educationCertifications.map((credential) => (
