@@ -21,7 +21,7 @@ $muted: #573894;
 .sidebar {
   width: 13.5rem;
   padding: 1.35rem 1rem;
-  background: linear-gradient(180deg, #06173a, #1f2f55);
+  background: #06173a;
   color: #ffffff;
 
   span,
@@ -52,7 +52,7 @@ $muted: #573894;
 }
 
 .active {
-  background: rgba(160, 229, 217, 0.16);
+  background: #244766;
   color: #ffffff !important;
 }
 

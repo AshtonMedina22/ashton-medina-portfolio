@@ -70,16 +70,16 @@
 .hero,
 .articleSection,
 .mockupSection {
-  width: min(100%, 92rem);
+  width: min(100%, 72rem);
   margin-inline: auto;
 }
 
 .hero {
-  padding: clamp(0.4rem, 1.8vw, 1.25rem) 0 clamp(1.15rem, 2.6vw, 2.1rem);
+  padding: clamp(0.25rem, 1.4vw, 0.9rem) 0 clamp(0.9rem, 2vw, 1.5rem);
 }
 
 .heroCopy {
-  max-width: 68rem;
+  max-width: 56rem;
 }
 
 .heroBreadcrumb,
@@ -106,7 +106,7 @@
   margin: 0.2rem 0 0.45rem;
   color: var(--project-text);
   font-family: var(--font-heading), Inter, system-ui, sans-serif;
-  font-size: clamp(2.15rem, 3.55vw, 3.85rem);
+  font-size: clamp(2rem, 3vw, 3.1rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
@@ -114,10 +114,10 @@
 }
 
 .heroTagline {
-  max-width: 68rem;
+  max-width: 56rem;
   margin: 0;
   color: var(--project-muted);
-  font-size: clamp(1.02rem, 1.28vw, 1.22rem);
+  font-size: clamp(0.98rem, 1.08vw, 1.1rem);
   font-weight: 500;
   line-height: 1.5;
 }
@@ -133,13 +133,13 @@
 }
 
 .sectionHeading {
-  margin: 0 0 clamp(1rem, 2vw, 1.55rem);
+  margin: 0 0 clamp(0.8rem, 1.6vw, 1.2rem);
 
   h2 {
     margin: 0.2rem 0 0;
     color: var(--project-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(1.55rem, 2.35vw, 2.25rem);
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
     font-weight: 800;
     letter-spacing: 0;
     line-height: 1.08;
@@ -147,7 +147,7 @@
 }
 
 .articleSection {
-  padding: 0 0 clamp(2rem, 4vw, 3.5rem);
+  padding: 0 0 clamp(1.45rem, 3vw, 2.5rem);
 }
 
 .articleProse {
@@ -156,7 +156,7 @@
   :global(.mdx-paragraph),
   p {
     color: var(--project-muted) !important;
-    font-size: clamp(1rem, 1.1vw, 1.12rem);
+    font-size: clamp(0.98rem, 1vw, 1.05rem);
     font-weight: 500;
   }
 
@@ -168,7 +168,7 @@
 }
 
 .mockupSection {
-  padding: 0 0 clamp(2.25rem, 4.75vw, 4rem);
+  padding: 0 0 clamp(1.6rem, 3.6vw, 2.8rem);
 }
 
 .demoSection {
@@ -183,7 +183,7 @@
 }
 
 .demoFrame {
-  padding: clamp(0.7rem, 1.6vw, 1.2rem);
+  padding: clamp(0.55rem, 1.2vw, 0.9rem);
 }
 
 @media (max-width: 760px) {

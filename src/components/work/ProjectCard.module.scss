@@ -9,10 +9,10 @@
   position: relative;
   grid-template-rows: auto 1fr;
   align-items: stretch;
-  min-height: clamp(13rem, 15vw, 15.5rem);
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 14px;
+  border-radius: 16px;
   background: #ffffff;
   color: inherit;
   text-decoration: none !important;
@@ -21,12 +21,7 @@
     0 14px 34px rgba(15, 23, 42, 0.07);
 
   &::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto 0 0;
-    z-index: 2;
-    width: 0.16rem;
-    background: #002d72;
+    content: none;
   }
 
   &:hover {
@@ -42,20 +37,21 @@
 }
 
 .standardCard {
-  grid-template-rows: 1fr;
+  grid-template-rows: auto 1fr;
 
   .cardContent {
     min-height: 100%;
-    padding: clamp(1.25rem, 1.8vw, 1.65rem) !important;
+    padding: clamp(1rem, 1.45vw, 1.25rem) !important;
   }
 }
 
 .imageContainer {
   @include style-utils.fill-width;
 
+  position: relative;
   display: block;
   box-sizing: border-box;
-  aspect-ratio: 16 / 5.8;
+  aspect-ratio: 16 / 8.5;
   min-height: 0;
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 45, 114, 0.08);
@@ -63,6 +59,34 @@
     radial-gradient(circle at 18% 18%, rgba(87, 56, 148, 0.08), transparent 10rem),
     linear-gradient(135deg, #ffffff, #ffffff);
   padding: 0;
+
+  > figure {
+    height: 100%;
+    transition: transform 220ms ease;
+  }
+}
+
+.cardContainer:hover .imageContainer > figure {
+  transform: scale(1.015);
+}
+
+.cardCategory {
+  position: absolute;
+  left: 0.78rem;
+  bottom: 0.72rem;
+  max-width: calc(100% - 1.56rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #002d72;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.42rem 0.58rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 0.45rem 1rem rgba(15, 23, 42, 0.12);
 }
 
 .cardContent {
@@ -71,9 +95,9 @@
   display: grid;
   box-sizing: border-box;
   align-content: start;
-  gap: 0.68rem;
+  gap: 0.72rem;
   min-height: 0;
-  padding: 0.9rem 1rem 1rem !important;
+  padding: 1rem 1.05rem 1.1rem !important;
   background: #ffffff;
   text-align: left;
 
@@ -81,7 +105,7 @@
     max-width: 32ch;
     margin: 0;
     color: #002d72;
-    font-size: clamp(1.08rem, 1.18vw, 1.26rem) !important;
+    font-size: clamp(1rem, 1.1vw, 1.15rem) !important;
     font-weight: 700 !important;
     letter-spacing: 0;
     line-height: 1.18 !important;
@@ -97,7 +121,7 @@
     margin: 0 !important;
     color: #475569 !important;
     opacity: 0.96;
-    font-size: clamp(0.92rem, 0.96vw, 1rem) !important;
+    font-size: clamp(0.9rem, 0.94vw, 0.98rem) !important;
     font-weight: 500 !important;
     line-height: 1.45 !important;
     text-align: left;
@@ -106,7 +130,7 @@
 
 @include breakpoints.down(lg) {
   .imageContainer {
-    aspect-ratio: 16 / 5.8;
+    aspect-ratio: 16 / 8;
   }
 }
 
@@ -117,13 +141,13 @@
   }
 
   .imageContainer {
-    aspect-ratio: 16 / 5.2;
-    max-height: 8.4rem;
+    aspect-ratio: 16 / 7.6;
+    max-height: 10.5rem;
   }
 
   .cardContent {
-    gap: 0.42rem;
-    padding: 0.78rem 0.85rem 0.9rem !important;
+    gap: 0.46rem;
+    padding: 0.85rem 0.9rem 0.95rem !important;
 
     h2 {
       font-size: 0.96rem !important;

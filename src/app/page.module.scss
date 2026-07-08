@@ -36,9 +36,9 @@
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: clamp(1.5rem, 3vw, 3.25rem);
+  gap: clamp(1.25rem, 2.4vw, 2.25rem);
   margin-top: 0;
-  padding: clamp(1.55rem, 2.8vw, 2.75rem);
+  padding: clamp(1.25rem, 2.2vw, 2rem);
   border: 1px solid rgba(0, 45, 114, 0.16);
   border-radius: 20px;
   background:
@@ -82,9 +82,9 @@
 }
 
 .heroContent h1 {
-  margin-top: 1.05rem;
-  font-size: clamp(2.35rem, 3.8vw, 4rem);
-  line-height: 1.04;
+  margin-top: 0.85rem;
+  font-size: clamp(2.05rem, 3.15vw, 3.25rem);
+  line-height: 1.07;
   text-wrap: balance;
 
   :global(.headingAccent) {
@@ -100,10 +100,10 @@
 }
 
 .heroContent p {
-  max-width: 58ch;
-  margin: 1.1rem 0 0;
+  max-width: 54ch;
+  margin: 0.9rem 0 0;
   color: var(--home-muted);
-  font-size: clamp(1.02rem, 1.18vw, 1.16rem);
+  font-size: clamp(0.98rem, 1.05vw, 1.08rem);
   font-weight: 500;
   line-height: 1.55;
 }
@@ -112,22 +112,22 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1.45rem;
+  margin-top: 1.15rem;
 }
 
 .proofStrip {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.75rem;
-  margin-top: clamp(1.35rem, 2.5vw, 2rem);
-  padding: 0.85rem;
+  margin-top: clamp(1rem, 2vw, 1.45rem);
+  padding: 0.65rem;
   border: 1px solid var(--home-border);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.9);
 
   span {
     min-width: 0;
-    padding: 1rem 0.85rem;
+    padding: 0.72rem 0.7rem;
     border: 1px solid rgba(0, 45, 114, 0.16);
     border-radius: 12px;
     color: #334155;
@@ -192,9 +192,9 @@
 
 .capabilitiesSection {
   display: grid;
-  gap: clamp(1.35rem, 2.4vw, 2rem);
-  margin-top: clamp(1.5rem, 3vw, 2.35rem);
-  padding: clamp(2rem, 3.5vw, 3.25rem) 0;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1.15rem, 2.4vw, 1.75rem);
+  padding: clamp(1.5rem, 2.8vw, 2.35rem) 0;
   border: 1px solid rgba(0, 45, 114, 0.15);
   border-radius: 24px;
   background:
@@ -210,14 +210,14 @@
 
   h2 {
     max-width: 24ch;
-    margin: 0.85rem auto 0;
+    margin: 0.65rem auto 0;
     font-size: var(--type-section);
-    line-height: 1.06;
+    line-height: 1.1;
   }
 
   > p {
     max-width: var(--page-prose-max);
-    margin: 1rem auto 0;
+    margin: 0.75rem auto 0;
     color: var(--home-muted);
     font-size: var(--type-body-lg);
     font-weight: 500;
@@ -241,13 +241,13 @@
 .capabilityGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.25rem, 2vw, 1.75rem);
+  gap: clamp(0.9rem, 1.5vw, 1.25rem);
 
   article {
     position: relative;
     min-width: 0;
     min-height: 0;
-    padding: 1.35rem 1.5rem 1.45rem 1.55rem;
+    padding: 1.05rem 1.15rem 1.15rem 1.25rem;
     overflow: hidden;
     border: 1px solid rgba(0, 45, 114, 0.16);
     border-radius: 14px;
@@ -312,9 +312,9 @@
 
 .techBanner {
   display: grid;
-  gap: clamp(1.35rem, 2.4vw, 2rem);
-  margin-top: clamp(1.5rem, 3vw, 2.35rem);
-  padding: clamp(2rem, 3.5vw, 3.25rem) 0;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1.15rem, 2.4vw, 1.75rem);
+  padding: clamp(1.5rem, 2.8vw, 2.35rem) 0;
   border: 1px solid rgba(0, 45, 114, 0.15);
   border-radius: 24px;
   background:

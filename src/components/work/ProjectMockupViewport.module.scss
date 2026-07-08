@@ -8,7 +8,7 @@
 .viewport {
   position: relative;
   width: 100%;
-  min-height: 40rem;
+  min-height: 32rem;
   overflow: hidden;
   border-radius: 16px;
 }
@@ -17,9 +17,13 @@
   width: 1280px;
   max-width: none;
   transform-origin: top left;
-  filter: contrast(1.14) saturate(1.12);
   color: #002d72;
   text-rendering: geometricPrecision;
+}
+
+.mockup :global(*) {
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .mockup :global(p),
@@ -33,7 +37,8 @@
 .mockup :global(a),
 .mockup :global(label) {
   opacity: 1;
-  text-shadow: 0 0 0.01px currentColor;
+  overflow-wrap: anywhere;
+  text-shadow: none;
 }
 
 .mockup :global(small),
@@ -41,6 +46,54 @@
 .mockup :global(td),
 .mockup :global(th) {
   font-weight: 760;
+}
+
+.mockup :global(h1),
+.mockup :global(h2),
+.mockup :global(h3),
+.mockup :global(h4) {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.mockup :global([class*="activeTab"]),
+.mockup :global([class*="recordTitleRow"] h2),
+.mockup :global([class*="projectHeader"] h2),
+.mockup :global([class*="generatedTaskList"] strong),
+.mockup :global([class*="workflowActivityTable"] span),
+.mockup :global([class*="orderTotal"] strong),
+.mockup :global([class*="thumbnailHeader"] strong),
+.mockup :global([class*="thumbnailFooter"] strong) {
+  color: #002d72 !important;
+}
+
+.mockup :global([class*="erpSidebar"] span),
+.mockup :global([class*="appSidebar"] span),
+.mockup :global([class*="sidebar"] span) {
+  color: rgba(255, 255, 255, 0.76);
+  overflow-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mockup :global([class*="erpSidebar"] [class*="active"]),
+.mockup :global([class*="appSidebar"] [class*="active"]),
+.mockup :global([class*="sidebar"] [class*="active"]) {
+  color: #ffffff !important;
+}
+
+.mockup :global([class*="salesOrderPreview"]),
+.mockup :global([class*="salesProjectPreview"]),
+.mockup :global([class*="supportModule"]),
+.mockup :global([class*="orderLinePreview"] div),
+.mockup :global([class*="vendorPortalPreview"]),
+.mockup :global([class*="workflowPreview"]) {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.mockup :global([class*="badge"]),
+.mockup :global([class*="state"]) {
+  white-space: nowrap;
 }
 
 .mobileSummary,
@@ -81,7 +134,7 @@
   }
 
   .viewport {
-    min-height: 24rem;
+    min-height: 20rem;
     overflow: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;

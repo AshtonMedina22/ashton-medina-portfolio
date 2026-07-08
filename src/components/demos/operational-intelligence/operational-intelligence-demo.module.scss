@@ -968,7 +968,10 @@ $blue: #09cdcd;
   }
 }
 
-.reportPreview {
+.reportPreview,
+.reportPreview:visited,
+.reportPreview:hover,
+.reportPreview:focus {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -977,8 +980,8 @@ $blue: #09cdcd;
   padding: 0.9rem 1rem;
   border: 1px solid rgba(129, 69, 158, 0.28);
   border-radius: 10px;
-  background: rgba(129, 69, 158, 0.1);
-  color: #81459e;
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #002d72 !important;
   font-size: 0.84rem;
   font-weight: 760;
   text-decoration: none;

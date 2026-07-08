@@ -702,7 +702,7 @@ $ui-card-bg: #ffffff;
   h2 {
     max-width: 28rem;
     margin: 0;
-    color: #ffffff;
+    color: #002d72;
     font-size: clamp(1.15rem, 1.8vw, 1.55rem);
     line-height: 1.14;
     letter-spacing: -0.035em;
@@ -1080,12 +1080,11 @@ $ui-card-bg: #ffffff;
   padding: 1.35rem;
   border: 1px solid rgba(9, 205, 205, 0.32);
   border-radius: 0.75rem;
-  background:
-    radial-gradient(circle at 80% 46%, rgba(9, 205, 205, 0.24), transparent 12rem),
-    rgba(4, 11, 18, 0.78);
+  background-color: #06173a;
+  background-image: radial-gradient(circle at 80% 46%, rgba(9, 205, 205, 0.24), transparent 12rem);
 
   > span {
-    color: #573894;
+    color: #d8f2ee;
     font-size: 0.72rem;
     font-weight: 820;
     letter-spacing: 0.12em;
@@ -1104,7 +1103,7 @@ $ui-card-bg: #ffffff;
   small {
     display: block;
     margin-top: 1.2rem;
-    color: #28406f;
+    color: #d8f2ee;
     font-size: 0.92rem;
     line-height: 1.45;
   }
@@ -1176,8 +1175,11 @@ $ui-card-bg: #ffffff;
   strong {
     display: block;
     margin-top: 0.45rem;
-    color: #573894;
-    font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+    color: #002d72;
+    font-size: clamp(1rem, 1.45vw, 1.25rem);
+    line-height: 1.1;
+    overflow-wrap: normal;
+    white-space: nowrap;
   }
 
   div:first-child strong {
@@ -1298,7 +1300,7 @@ $ui-card-bg: #ffffff;
   }
 
   strong {
-    color: #ffffff;
+    color: #002d72;
     font-size: 0.88rem;
   }
 
@@ -1393,7 +1395,7 @@ $ui-card-bg: #ffffff;
   }
 
   strong {
-    color: #ffffff;
+    color: #002d72;
     font-size: 0.78rem;
     line-height: 1.2;
   }

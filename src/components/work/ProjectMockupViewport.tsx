@@ -62,7 +62,7 @@ export function ProjectMockupViewport({ children }: { children: React.ReactNode 
         <div
           ref={mockupRef}
           className={styles.mockup}
-          style={{ filter: "contrast(1.14) saturate(1.12)", transform: `scale(${frame.scale})` }}
+          style={{ transform: `scale(${frame.scale})` }}
         >
           {children}
         </div>

@@ -2,7 +2,6 @@
 
 import { Column, Heading, SmartLink, Text } from "@once-ui-system/core";
 import { ProjectCardTechStack } from "./ProjectCardTechStack";
-import { ProjectDemoPreview } from "./ProjectDemoPreview";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
@@ -20,6 +19,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
+  images,
   title,
   description,
   techStack,
@@ -32,11 +32,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       href={href}
       className={`${styles.cardContainer} ${featured ? styles.featuredCard : styles.standardCard}`}
     >
-      {featured && (
-        <Column fillWidth className={styles.imageContainer}>
-          <ProjectDemoPreview href={href} />
-        </Column>
-      )}
       <Column fillWidth className={styles.cardContent}>
         {title && (
           <Heading as="h2" wrap="balance" variant="heading-strong-xl">

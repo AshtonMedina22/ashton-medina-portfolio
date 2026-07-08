@@ -21,7 +21,7 @@ test("work page cards render without project thumbnails and keep equal row sizin
   }
 
   const cards = page.locator('a[href^="/work/"]:not([href$="/demo"])');
-  await expect(cards).toHaveCount(8);
+  await expect(cards).toHaveCount(9);
 
   const boxes = await cards.evaluateAll((elements) =>
     elements.map((element) => {

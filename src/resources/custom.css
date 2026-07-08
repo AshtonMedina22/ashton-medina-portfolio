@@ -107,17 +107,17 @@
   --danger-color: #dc2626;
   --danger-soft: rgba(220, 38, 38, 0.16);
 
-  --page-max-width: 1560px;
+  --page-max-width: 1180px;
   --page-inline-padding: max(1.25rem, calc((100vw - var(--page-max-width)) / 2));
-  --page-prose-max: 56rem;
-  --page-shell-padding-block: clamp(3rem, 4vw, 3.85rem) var(--page-inline-padding)
-    clamp(3rem, 5vw, 4.25rem);
+  --page-prose-max: 48rem;
+  --page-shell-padding-block: clamp(2.35rem, 3.4vw, 3rem) var(--page-inline-padding)
+    clamp(2.5rem, 4vw, 3.35rem);
 
-  --type-hero: clamp(2.35rem, 4vw, 4.25rem);
-  --type-section: clamp(1.75rem, 2.75vw, 2.65rem);
-  --type-subsection: clamp(1.2rem, 1.65vw, 1.45rem);
-  --type-body: clamp(1.05rem, 1.1vw, 1.125rem);
-  --type-body-lg: clamp(1.1rem, 1.2vw, 1.2rem);
+  --type-hero: clamp(2.1rem, 3.25vw, 3.35rem);
+  --type-section: clamp(1.55rem, 2.25vw, 2.1rem);
+  --type-subsection: clamp(1.08rem, 1.35vw, 1.28rem);
+  --type-body: clamp(0.98rem, 1vw, 1.05rem);
+  --type-body-lg: clamp(1rem, 1.08vw, 1.1rem);
   --type-eyebrow: 0.875rem;
   --type-label: 0.875rem;
   --type-cta: 0.9375rem;
@@ -170,7 +170,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 *,

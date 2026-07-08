@@ -35,8 +35,8 @@ export default function Work() {
           <span className={styles.eyebrow}>Portfolio</span>
           <h1 id="selected-work-title">Selected Work</h1>
           <p>
-            Selected systems that turn messy handoffs, disconnected tools, and manual tracking
-            into repeatable workflows, controls, dashboards, and adoption-ready operations.
+            A curated collection of systems, dashboards, automations, and workflow platforms
+            built as professional portfolio case studies.
           </p>
         </div>
 

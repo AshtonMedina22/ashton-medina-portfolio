@@ -1115,7 +1115,7 @@ $text-subtle: #28406f;
 
 .erpShell {
   display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
+  grid-template-columns: 7rem minmax(0, 1fr);
   overflow: hidden;
   border: 1px solid rgba(129, 69, 158, 0.34);
   border-radius: 0.8rem;
@@ -1133,7 +1133,7 @@ $text-subtle: #28406f;
   gap: 1rem;
   padding: 1.1rem 0.7rem;
   border-right: 1px solid rgba(0, 45, 114, 0.12);
-  background: rgba(11, 18, 32, 0.82);
+  background: #06173a;
 
   nav {
     display: grid;
@@ -1148,10 +1148,14 @@ $text-subtle: #28406f;
     gap: 0.45rem;
     padding: 0.55rem 0.55rem;
     border-radius: 0.45rem;
-    color: #573894;
+    color: rgba(255, 255, 255, 0.78);
     font-size: 0.64rem;
     font-weight: 600;
     line-height: 1;
+    overflow: hidden;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   svg {
@@ -1168,13 +1172,14 @@ $text-subtle: #28406f;
   margin-inline: auto;
   border: 1px solid rgba(129, 69, 158, 0.46);
   border-radius: 0.45rem;
-  color: #81459e;
+  background: #1d335c;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 800;
 }
 
 .activeNavItem {
-  background: rgba(129, 69, 158, 0.18);
+  background: rgba(160, 229, 217, 0.18);
   color: #ffffff !important;
 }
 

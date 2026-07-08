@@ -10,7 +10,7 @@
   --work-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
 
   min-height: 100vh;
-  padding: clamp(3.15rem, 4.2vw, 3.85rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 5vw, 4.25rem);
+  padding: clamp(2.45rem, 3.6vw, 3rem) clamp(1rem, 3vw, 1.5rem) clamp(2.5rem, 4vw, 3.35rem);
   background:
     radial-gradient(circle at 12% 6%, rgba(129, 69, 158, 0.055), transparent 18rem),
     radial-gradient(circle at 88% 12%, rgba(9, 205, 205, 0.025), transparent 20rem),
@@ -20,29 +20,32 @@
 }
 
 .workShell {
-  width: min(100%, 92rem);
+  width: min(100%, 72rem);
   margin-inline: auto;
 }
 
 .sectionIntro {
-  max-width: 58rem;
-  margin-bottom: clamp(1.25rem, 2.4vw, 1.85rem);
+  max-width: 48rem;
+  margin-bottom: clamp(1rem, 2vw, 1.45rem);
+  margin-inline: auto;
+  text-align: center;
 
   h1 {
     margin: 0.25rem 0 0.5rem;
     color: var(--work-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(2.2rem, 3.6vw, 3.75rem);
+    font-size: clamp(2rem, 3vw, 3.05rem);
     font-weight: 800;
     letter-spacing: 0;
     line-height: 1.04;
   }
 
   p {
-    max-width: 54rem;
+    max-width: 42rem;
     margin: 0;
+    margin-inline: auto;
     color: var(--work-muted);
-    font-size: clamp(1.02rem, 1.2vw, 1.16rem);
+    font-size: clamp(0.98rem, 1.05vw, 1.06rem);
     font-weight: 500;
     line-height: 1.5;
   }
@@ -57,7 +60,7 @@
     margin-bottom: 1.2rem;
 
     h1 {
-      font-size: clamp(2rem, 10vw, 2.55rem);
+      font-size: clamp(1.9rem, 8.5vw, 2.2rem);
     }
   }
 }
