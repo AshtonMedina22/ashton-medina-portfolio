@@ -3,8 +3,7 @@ set -euo pipefail
 
 # Resolve the known theme-refresh merge conflicts by keeping the PR branch
 # version ("ours") for the visual cleanup files. This is intended for the
-# flow: git checkout codex/create-branch-from-main-for-css-review-y0z6yl &&
-#       git merge origin/main
+# flow: git checkout your-feature-branch && git merge origin/main
 
 if ! git rev-parse --git-dir >/dev/null 2>&1; then
   echo "This script must be run inside the repository." >&2
@@ -29,7 +28,7 @@ files=(
   "src/components/demos/operational-intelligence/operational-intelligence-demo.module.scss"
   "src/components/demos/revenue-financial/revenue-financial-demo.module.scss"
   "src/components/demos/sales-to-delivery/sales-to-delivery-demo.module.scss"
-  "src/components/demos/secure-ai-gateway/secure-ai-gateway-demo.module.scss"
+  "src/components/demos/secure-review-gateway/secure-review-gateway-demo.module.scss"
   "src/components/demos/vendor-lifecycle/vendor-lifecycle-demo.module.scss"
   "src/components/work/OutcomeStats.module.scss"
   "src/components/work/ProjectCard.module.scss"

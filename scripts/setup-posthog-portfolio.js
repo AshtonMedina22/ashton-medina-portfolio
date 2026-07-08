@@ -4,7 +4,7 @@ const appHost = process.env.POSTHOG_APP_HOST || "https://us.posthog.com";
 const projectId = process.env.POSTHOG_PROJECT_ID || "481442";
 const personalApiKey = process.env.POSTHOG_PERSONAL_API_KEY;
 
-const tags = ["portfolio", "recruiter-intent", "codex-managed"];
+const tags = ["portfolio", "recruiter-intent", "portfolio-managed"];
 
 const actions = [
   {

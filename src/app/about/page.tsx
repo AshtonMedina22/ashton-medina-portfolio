@@ -124,7 +124,6 @@ const educationCertifications = [
   "Business Operational & System Design - ProcessDriven Foundations",
   "ClickUp Verified Power User - Top 10% of users globally",
   "Intercom Certified - Conversational Support Framework Design",
-  "Complete Artificial Intelligence & ChatGPT Course - Haroun Education Ventures",
   "Advanced Python Development and Web Development - SheCodes",
 ] as const;
 

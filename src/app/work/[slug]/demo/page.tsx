@@ -7,7 +7,7 @@ export async function generateStaticParams() {
     { slug: "revenue-financial-control-engine" },
     { slug: "operational-intelligence-platform" },
     { slug: "multi-tenant-enterprise-operations-hub" },
-    { slug: "event-driven-automation-secure-ai-gateway" },
+    { slug: "event-driven-automation-secure-review-gateway" },
     { slug: "business-access-software-cost-control-dashboard" },
     { slug: "calendar-document-follow-up-automation-system" },
     { slug: "inventory-purchasing-allocation-system" },

@@ -31,9 +31,7 @@ const display: DisplayConfig = {
   themeSwitcher: false,
 };
 
-const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
-};
+const protectedRoutes: ProtectedRoutesConfig = {};
 
 import { Open_Sans, Fira_Code } from "next/font/google";
 

@@ -10,7 +10,7 @@ import { VendorLifecycleDemo } from "@/components/demos/vendor-lifecycle/VendorL
 import { RevenueFinancialDemo } from "@/components/demos/revenue-financial/RevenueFinancialDemo";
 import { OperationalIntelligenceDemo } from "@/components/demos/operational-intelligence/OperationalIntelligenceDemo";
 import { AdminOperationsDemo } from "@/components/demos/admin-operations/AdminOperationsDemo";
-import { SecureAiGatewayDemo } from "@/components/demos/secure-ai-gateway/SecureAiGatewayDemo";
+import { SecureReviewGatewayDemo } from "@/components/demos/secure-review-gateway/SecureReviewGatewayDemo";
 import { BusinessAccessDemo } from "@/components/demos/business-access/BusinessAccessDemo";
 import { CalendarDocumentDemo } from "@/components/demos/calendar-document/CalendarDocumentDemo";
 import { InventoryPurchasingDemo } from "@/components/demos/inventory-purchasing/InventoryPurchasingDemo";
@@ -25,7 +25,7 @@ function renderDemo(slugPath: string) {
   if (slugPath === "revenue-financial-control-engine") return <RevenueFinancialDemo />;
   if (slugPath === "operational-intelligence-platform") return <OperationalIntelligenceDemo />;
   if (slugPath === "multi-tenant-enterprise-operations-hub") return <AdminOperationsDemo />;
-  if (slugPath === "event-driven-automation-secure-ai-gateway") return <SecureAiGatewayDemo />;
+  if (slugPath === "event-driven-automation-secure-review-gateway") return <SecureReviewGatewayDemo />;
   if (slugPath === "business-access-software-cost-control-dashboard") return <BusinessAccessDemo />;
   if (slugPath === "calendar-document-follow-up-automation-system") return <CalendarDocumentDemo />;
   if (slugPath === "inventory-purchasing-allocation-system") return <InventoryPurchasingDemo />;

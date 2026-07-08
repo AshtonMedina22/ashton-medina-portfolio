@@ -17,7 +17,7 @@ const workPageProjectOrder = [
   "inventory-purchasing-allocation-system",
   "business-access-software-cost-control-dashboard",
   "calendar-document-follow-up-automation-system",
-  "event-driven-automation-secure-ai-gateway",
+  "event-driven-automation-secure-review-gateway",
 ];
 
 export function Projects({ range, exclude }: ProjectsProps) {

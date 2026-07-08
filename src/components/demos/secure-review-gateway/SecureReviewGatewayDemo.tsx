@@ -11,10 +11,9 @@ import {
   HiOutlineMail,
   HiOutlinePencilAlt,
   HiOutlineShieldCheck,
-  HiOutlineSparkles,
   HiOutlineTable,
 } from "react-icons/hi";
-import styles from "./secure-ai-gateway-demo.module.scss";
+import styles from "./secure-review-gateway-demo.module.scss";
 
 const sources = [
   { icon: HiOutlineDatabase, label: "Supabase approval event", detail: "Permit or account review age crossed threshold", state: "Review" },
@@ -25,24 +24,24 @@ const sources = [
 const safeguards = [
   { icon: HiOutlineKey, label: "Server-only keys" },
   { icon: HiOutlineLockClosed, label: "OAuth mailbox boundary" },
-  { icon: HiOutlineCode, label: "Typed prompt payload" },
+  { icon: HiOutlineCode, label: "Typed field payload" },
   { icon: HiOutlineCheckCircle, label: "Human approval required" },
 ] as const;
 
 const auditSteps = [
   "Database event captured",
   "Context normalized",
-  "AI draft generated",
+  "Draft packet prepared",
   "Email draft created",
   "Operator approval pending",
 ] as const;
 
-export function SecureAiGatewayDemo() {
+export function SecureReviewGatewayDemo() {
   return (
     <div className={styles.shell}>
       <header className={styles.header}>
         <div>
-          <p>Event-driven automation and secure AI gateway</p>
+          <p>Event-driven automation and secure review gateway</p>
           <h2>Database events become controlled email drafts inside a human review desk</h2>
         </div>
         <span>
@@ -101,8 +100,8 @@ export function SecureAiGatewayDemo() {
 
         <aside className={styles.guardrailPanel}>
           <div className={styles.panelTitle}>
-            <HiOutlineSparkles />
-            <span>Prompt contract</span>
+            <HiOutlineCode />
+            <span>Draft contract</span>
           </div>
           <pre>{`{
   "source": "database_event",

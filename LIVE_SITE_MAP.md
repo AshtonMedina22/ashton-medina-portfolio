@@ -78,22 +78,13 @@ These are **not** rendered on any of the routes above (or only in a path that ha
 
 ---
 
-## 5. Template / builder docs (not app code)
+## 5. Template reference docs (not app code)
 
-These are markdown/docs from the original template or builder. They don’t run on the site; they’re for your reference or cleanup.
+These are markdown/docs from the original template. They don’t run on the site; they’re for your reference or cleanup.
 
-**Moved to `docs/archive/`** (template/builder docs — not app code):
+**Moved to `docs/archive/`** (template reference docs — not app code):
 
-- `BEST_TOOL_FOR_ALL_VISUALS.md`
-- `BUILDER_CURSOR_CLEANUP.md`
-- `BUILDER_IO_INSTALL_COMMAND.txt`
-- `BUILDER_IO_MOCKUP_PROMPTS.md`
-- `EXACT_IMAGE_PROMPTS.md`
-- `IMAGE_CREATION_PLAN.md`
-- `IMAGE_GUIDE.md`
-- `PRODUCTION_READINESS.md`
 - `TEMPLATE_IMAGES_REPORT.md`
-- `VISILY_AI_PROMPTS.md`
 
 **In `docs/`** (planning / verification — still in use if you reference them):
 
