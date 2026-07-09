@@ -22,8 +22,16 @@ import { Metadata } from "next";
 import React from "react";
 import { Posts } from "@/components/blog/Posts";
 import { ShareSection } from "@/components/blog/ShareSection";
+import fs from "fs";
+import path from "path";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const postsDir = path.join(process.cwd(), "src", "app", "blog", "posts");
+
+  if (!fs.existsSync(postsDir)) {
+    return [];
+  }
+
   const posts = getPosts(["src", "app", "blog", "posts"]);
   return posts.map((post) => ({
     slug: post.slug,
