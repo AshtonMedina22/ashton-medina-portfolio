@@ -1,68 +1,28 @@
 $bg: #ffffff;
-$panel: rgba(255, 255, 255, 0.86);
-$border: rgba(129, 69, 158, 0.16);
+$panel: rgba(255, 255, 255, 0.9);
+$border: rgba(0, 45, 114, 0.14);
 $text: #002d72;
 $muted: #573894;
+$cyan: #09cdcd;
 
 .shell {
-  display: grid;
-  grid-template-columns: auto 1fr;
   width: 100%;
   max-width: 1480px;
   min-height: 42rem;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(129, 69, 158, 0.32);
+  border: 1px solid rgba(129, 69, 158, 0.28);
   border-radius: 16px;
   background:
-    radial-gradient(circle at 12% 0%, rgba(129, 69, 158, 0.16), transparent 24rem),
-    radial-gradient(circle at 88% 10%, rgba(9, 205, 205, 0.11), transparent 22rem),
-    linear-gradient(145deg, #f7fbfc 0%, #ffffff 58%, #ffffff 100%);
+    linear-gradient(90deg, rgba(0, 45, 114, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(0, 45, 114, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 8% 0%, rgba(9, 205, 205, 0.14), transparent 24rem),
+    radial-gradient(circle at 92% 8%, rgba(129, 69, 158, 0.14), transparent 22rem),
+    linear-gradient(145deg, #f7fbfc 0%, #ffffff 62%, #f8fbff 100%);
+  background-size: 38px 38px, 38px 38px, auto, auto, auto;
   color: $text;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   box-shadow: 0 30px 90px rgba(0, 45, 114, 0.12);
-}
-
-.sidebar {
-  width: 13.5rem;
-  padding: 1.35rem 1rem;
-  background: #06173a;
-  color: #ffffff;
-
-  span,
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-height: 2.45rem;
-    border-radius: 10px;
-    padding: 0 0.8rem;
-    font-weight: 800;
-  }
-
-  span {
-    margin-top: 0.35rem;
-    color: rgba(255, 255, 255, 0.72);
-  }
-
-  svg {
-    flex: 0 0 auto;
-  }
-}
-
-.brand {
-  margin-bottom: 1.1rem;
-  color: #ffffff;
-  font-size: 1rem;
-}
-
-.active {
-  background: #244766;
-  color: #ffffff !important;
-}
-
-.workspace {
-  min-width: 0;
   padding: 1.35rem;
 }
 
@@ -70,226 +30,368 @@ $muted: #573894;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-bottom: 1rem;
+}
+
+.headerCopy {
+  display: flex;
+  gap: 1rem;
+  min-width: 0;
 
   p {
     margin: 0 0 0.35rem;
     color: $muted;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 850;
+    text-transform: uppercase;
   }
 
   h2 {
-    max-width: 48rem;
+    max-width: 50rem;
     margin: 0;
     color: $text;
-    font-size: clamp(1.85rem, 2.8vw, 2.45rem);
-    font-weight: 900;
+    font-size: clamp(1.8rem, 2.7vw, 2.4rem);
+    font-weight: 940;
     letter-spacing: 0;
-    line-height: 1.1;
-  }
-
-  > span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    border: 1px solid rgba(9, 205, 205, 0.32);
-    border-radius: 999px;
-    background: rgba(160, 229, 217, 0.2);
-    color: $text;
-    padding: 0.55rem 0.8rem;
-    font-weight: 850;
-    white-space: nowrap;
+    line-height: 1.08;
   }
 }
 
-.statusStrip {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr 1fr 1.25fr;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-
-  span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    min-height: 3.05rem;
-    min-width: 0;
-    border: 1px solid rgba(0, 45, 114, 0.14);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.74);
-    color: $text;
-    padding: 0 0.85rem;
-    font-size: 0.86rem;
-    font-weight: 820;
-    line-height: 1.15;
-  }
-
-  svg {
-    flex: 0 0 auto;
-    color: $muted;
-    font-size: 1.1rem;
-  }
-
-  i {
-    margin-left: auto;
-    width: 0.42rem;
-    height: 0.42rem;
-    border-right: 1px solid currentColor;
-    border-bottom: 1px solid currentColor;
-    transform: rotate(45deg);
-    opacity: 0.68;
-  }
+.eyebrow,
+.readyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex: 0 0 auto;
+  border: 1px solid rgba(9, 205, 205, 0.32);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: $text;
+  padding: 0.58rem 0.78rem;
+  font-size: 0.78rem;
+  font-weight: 860;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.kpis {
+.readyBadge {
+  background: #06173a;
+  color: #ffffff;
+}
+
+.metricStrip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.85rem;
+  gap: 0.75rem;
   margin-bottom: 1rem;
 
   article {
     display: grid;
-    gap: 0.35rem;
-    min-height: 8rem;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.3rem 0.65rem;
+    min-height: 5.4rem;
     border: 1px solid $border;
-    border-radius: 14px;
-    background: $panel;
-    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.82);
+    padding: 0.85rem;
   }
 
   svg {
+    grid-row: span 2;
     color: $muted;
     font-size: 1.35rem;
   }
 
   span {
     color: #28406f;
-    font-weight: 750;
+    font-size: 0.76rem;
+    font-weight: 820;
+    line-height: 1.15;
   }
 
   strong {
     color: $text;
-    font-size: 1.7rem;
+    font-size: 1.45rem;
     font-weight: 950;
+    line-height: 1;
   }
 }
 
-.grid {
+.board {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.88fr) minmax(16rem, 0.76fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr) minmax(17rem, 0.72fr);
+  grid-template-areas:
+    "requirements stock approval"
+    "requirements procurement approval";
   gap: 1rem;
 }
 
-.panel,
-.allocationPanel,
-.decisionPanel {
+.requirementsPanel,
+.stockPanel,
+.procurementPanel,
+.approvalPanel {
   min-width: 0;
   border: 1px solid $border;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.92);
+  background: $panel;
   padding: 1rem;
+  box-shadow: 0 16px 44px rgba(0, 45, 114, 0.08);
 }
 
-.allocationPanel {
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.86rem;
-  }
+.requirementsPanel {
+  grid-area: requirements;
+}
 
-  th {
-    padding: 0 0.7rem 0.7rem 0;
-    color: #28406f;
-    font-size: 0.68rem;
-    font-weight: 860;
-    letter-spacing: 0.08em;
-    text-align: left;
-    text-transform: uppercase;
-  }
+.stockPanel {
+  grid-area: stock;
+}
 
-  td {
-    padding: 0.76rem 0.7rem 0.76rem 0;
-    border-top: 1px solid rgba(0, 45, 114, 0.12);
-    color: $text;
-    font-weight: 720;
-    line-height: 1.2;
-  }
+.procurementPanel {
+  grid-area: procurement;
+}
 
-  td:first-child {
-    font-weight: 900;
-  }
-
-  td span {
-    display: inline-flex;
-    border-radius: 999px;
-    background: rgba(9, 205, 205, 0.12);
-    color: $muted;
-    padding: 0.28rem 0.5rem;
-    font-size: 0.78rem;
-    font-weight: 880;
-    white-space: nowrap;
-  }
+.approvalPanel {
+  grid-area: approval;
 }
 
 .panelTitle {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  margin-bottom: 0.9rem;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
   color: $text;
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 0.98rem;
+  font-weight: 920;
+
+  svg {
+    color: $muted;
+  }
 }
 
-.table {
+.materialList {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.75rem;
 
-  div {
+  article {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(9rem, 1fr) minmax(8rem, 0.85fr) auto;
+    gap: 0.65rem;
     align-items: center;
-    gap: 0.38rem 0.75rem;
-    border: 1px solid rgba(0, 45, 114, 0.1);
-    border-radius: 10px;
-    padding: 0.75rem;
-    color: #28406f;
-    font-size: 0.9rem;
-    font-weight: 720;
+    border: 1px solid rgba(0, 45, 114, 0.12);
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 0.8rem;
   }
 
   strong {
-    grid-column: 1 / -1;
+    display: block;
     color: $text;
-    font-weight: 900;
+    font-size: 0.94rem;
+    font-weight: 920;
+  }
+
+  small {
+    display: block;
+    margin-top: 0.25rem;
+    color: #28406f;
+    font-size: 0.76rem;
+    font-weight: 760;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35rem;
+    margin: 0;
+  }
+
+  dl div {
+    border-radius: 8px;
+    background: rgba(0, 45, 114, 0.045);
+    padding: 0.42rem;
+    text-align: center;
+  }
+
+  dt {
+    color: #28406f;
+    font-size: 0.62rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0.16rem 0 0;
+    color: $text;
+    font-size: 0.92rem;
+    font-weight: 930;
   }
 
   em {
-    grid-column: 1 / -1;
-    color: $muted;
+    justify-self: end;
+    border-radius: 999px;
+    background: rgba(9, 205, 205, 0.13);
+    color: $text;
+    padding: 0.42rem 0.6rem;
+    font-size: 0.78rem;
     font-style: normal;
-    font-weight: 850;
-    overflow-wrap: anywhere;
+    font-weight: 900;
+    white-space: nowrap;
   }
 }
 
-.decisionPanel {
+.quantityBar {
+  position: relative;
+  height: 0.62rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(0, 45, 114, 0.1);
+
+  i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $cyan, #573894);
+  }
+}
+
+.stockMap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+
+  article {
+    display: grid;
+    gap: 0.38rem;
+    min-height: 8rem;
+    border-radius: 12px;
+    padding: 0.8rem;
+  }
+
+  span,
+  small {
+    color: #28406f;
+    font-size: 0.74rem;
+    font-weight: 800;
+    line-height: 1.22;
+  }
+
+  strong {
+    color: $text;
+    font-size: 1.65rem;
+    font-weight: 950;
+    line-height: 1;
+  }
+}
+
+.good {
+  border: 1px solid rgba(9, 205, 205, 0.32);
+  background: rgba(9, 205, 205, 0.1);
+}
+
+.watch {
+  border: 1px solid rgba(129, 69, 158, 0.28);
+  background: rgba(129, 69, 158, 0.09);
+}
+
+.risk {
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  background: rgba(220, 38, 38, 0.06);
+}
+
+.allocationFlow {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+
+  span {
+    border-radius: 999px;
+    background: #06173a;
+    color: #ffffff;
+    padding: 0.45rem 0.58rem;
+    font-size: 0.68rem;
+    font-weight: 850;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  i {
+    height: 1px;
+    background: rgba(0, 45, 114, 0.22);
+  }
+}
+
+.procurementCards {
+  display: grid;
+  gap: 0.62rem;
+
+  article {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 0.65rem;
+    border: 1px solid rgba(0, 45, 114, 0.12);
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 0.72rem;
+  }
+
+  strong {
+    display: block;
+    color: $text;
+    font-size: 0.88rem;
+    font-weight: 920;
+  }
+
+  small {
+    display: block;
+    margin-top: 0.16rem;
+    color: #28406f;
+    font-size: 0.72rem;
+    font-weight: 760;
+  }
+
+  span,
+  em {
+    color: $text;
+    font-size: 0.82rem;
+    font-style: normal;
+    font-weight: 880;
+    white-space: nowrap;
+  }
+}
+
+.recommended {
+  border-color: rgba(9, 205, 205, 0.4) !important;
+  background: rgba(9, 205, 205, 0.08) !important;
+}
+
+.approvalPanel {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.7rem;
 
   > span {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    border: 1px solid rgba(9, 205, 205, 0.24);
+    gap: 0.55rem;
+    border: 1px solid rgba(129, 69, 158, 0.18);
     border-radius: 10px;
-    padding: 0.8rem;
+    background: #ffffff;
     color: $text;
+    padding: 0.72rem;
+    font-size: 0.84rem;
     font-weight: 850;
-    line-height: 1.2;
+    line-height: 1.18;
+  }
+
+  svg {
+    flex: 0 0 auto;
+    color: $muted;
   }
 }
 
@@ -297,94 +399,58 @@ $muted: #573894;
 .shell *::before,
 .shell *::after {
   min-width: 0;
+  box-sizing: border-box;
   overflow-wrap: break-word;
 }
 
 @media (max-width: 1100px) {
-  .shell {
-    grid-template-columns: 1fr;
+  .header,
+  .headerCopy {
+    flex-direction: column;
   }
 
-  .sidebar {
-    display: none;
-  }
-
-  .statusStrip,
-  .kpis {
+  .metricStrip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .grid {
+  .board {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "requirements"
+      "stock"
+      "procurement"
+      "approval";
   }
 }
 
 @media (max-width: 620px) {
-  .workspace {
+  .shell {
     padding: 0.85rem;
   }
 
-  .header {
-    flex-direction: column;
-  }
-
-  .header h2 {
+  .headerCopy h2 {
     font-size: 1.35rem;
   }
 
-  .statusStrip,
-  .kpis {
+  .metricStrip,
+  .stockMap {
     grid-template-columns: 1fr;
   }
 
-  .allocationPanel {
-    table,
-    tbody,
-    tr,
-    td {
-      display: block;
-      width: 100%;
-    }
+  .materialList article,
+  .procurementCards article {
+    grid-template-columns: 1fr;
+  }
 
-    thead {
+  .materialList em {
+    justify-self: start;
+  }
+
+  .allocationFlow {
+    grid-template-columns: 1fr;
+
+    i {
       display: none;
     }
-
-    tbody {
-      display: grid;
-      gap: 0.65rem;
-    }
-
-    tr {
-      padding: 0.7rem;
-      border: 1px solid rgba(0, 45, 114, 0.14);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    td {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      padding: 0.24rem 0;
-      border-top: 0;
-      text-align: right;
-    }
-
-    td::before {
-      color: #28406f;
-      font-size: 0.68rem;
-      font-weight: 860;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      content: "";
-    }
-
-    td:nth-child(1)::before { content: "Item"; }
-    td:nth-child(2)::before { content: "Req"; }
-    td:nth-child(3)::before { content: "Stock"; }
-    td:nth-child(4)::before { content: "Decision"; }
-    td:nth-child(5)::before { content: "Review"; }
   }
 }
