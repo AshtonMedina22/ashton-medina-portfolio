@@ -51,7 +51,7 @@ const closeoutSteps = [
   [HiOutlineDocumentText, "Invoice paid", "INV-2301", "Paid"],
   [HiOutlineClipboardCheck, "Vendor bills matched", "3 of 3", "Matched"],
   [HiOutlineTrendingUp, "Margin threshold met", MARGIN_PCT_FORMATTED, "Passed"],
-  [HiOutlineCheck, "Closeout eligible", "Ready for approval", "Current"],
+  [HiOutlineCheck, "Closeout eligible", "All control gates passed", "Current"],
   [HiOutlineLockClosed, "Closeout approved", "Awaiting authorization", "Locked"],
 ] as const;
 
@@ -62,22 +62,22 @@ export function RevenueFinancialDemo() {
         <span>{SALES_ORDER_ID}</span>
         <strong>Paid</strong>
         <strong>Closeout view</strong>
-        <strong>Margin protected</strong>
+        <strong>Margin protected: AI-ready telemetry</strong>
       </div>
 
       <div className={styles.financeLayout}>
-        <section className={styles.financeMainPanel} aria-label="Project-level financial governance">
+        <section className={styles.financeMainPanel} aria-label="AI-ready financial governance">
           <div className={styles.financeHeader}>
             <div>
-              <p>Project-level financial governance</p>
-              <h2>Closeout is gated by invoice, bill, payment, and margin logic</h2>
+              <p>AI-ready financial governance and closeout engine</p>
+              <h2>Closeout is gated by automated invoice, bill, payment, and margin logic</h2>
             </div>
-            <span>Finance controlled <HiOutlineLockClosed /></span>
+            <span>Governed telemetry <HiOutlineLockClosed /></span>
           </div>
 
           <div className={styles.financeMainGrid}>
             <div className={styles.marginCard}>
-              <span>Protected margin</span>
+              <span>Protected margin telemetry</span>
               <strong>{MARGIN_PCT_FORMATTED}</strong>
               <div className={styles.marginTrend} aria-hidden>
                 <i style={{ inlineSize: "12%" }} />
@@ -90,7 +90,7 @@ export function RevenueFinancialDemo() {
                 <i style={{ inlineSize: "78%" }} />
               </div>
               <small>{MARGIN_FORMATTED} retained after vendor bills are reconciled</small>
-              <em><HiOutlineShieldCheck />Margin threshold enforced | Closeout approval required</em>
+              <em><HiOutlineShieldCheck />Governed margin signal | Closeout approval required</em>
             </div>
 
             <div className={styles.financeMetricCards}>
@@ -101,7 +101,7 @@ export function RevenueFinancialDemo() {
 
             <div className={styles.financialSummaryTable}>
               <div className={styles.summaryHead}>
-                <span>Financial summary</span>
+                <span>AI-ready financial summary</span>
                 <span>Amount</span>
               </div>
               {financialSummary.map(([label, value]) => (
@@ -118,7 +118,7 @@ export function RevenueFinancialDemo() {
           <section className={styles.reconciliationPanel}>
             <div className={styles.sideHeader}>
               <HiOutlineOfficeBuilding />
-              <span>Vendor cost reconciliation</span>
+              <span>Variance signals</span>
             </div>
             {varianceRows.map((row) => (
               <div className={styles.vendorVarianceRow} key={row.vendor}>
@@ -137,7 +137,7 @@ export function RevenueFinancialDemo() {
           <section className={styles.approvalPanel}>
             <div className={styles.sideHeader}>
               <HiOutlineShieldCheck />
-              <span>Closeout approval logic</span>
+              <span>Automated closeout logic & governance</span>
             </div>
             <div className={styles.eligibleState}>
               <strong>Eligible</strong>

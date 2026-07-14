@@ -22,8 +22,8 @@ import styles from "./vendor-lifecycle-demo.module.scss";
 const statusCards = [
   { icon: HiOutlineBriefcase, label: "Elite Sound Productions", tone: "neutral" },
   { icon: HiOutlineCheckCircle, label: "Active", tone: "blue" },
-  { icon: HiOutlineCheckCircle, label: "7 docs valid", tone: "green" },
-  { icon: HiOutlineGlobeAlt, label: "Portal enabled", tone: "green" },
+  { icon: HiOutlineCheckCircle, label: "AI-ready data", tone: "green" },
+  { icon: HiOutlineGlobeAlt, label: "Governed portal", tone: "green" },
 ] as const;
 
 const vendorOverview = [
@@ -84,7 +84,7 @@ const assignmentTimeline = [
   { icon: HiOutlinePaperAirplane, label: "Assignment sent", detail: "May 26, 2026", state: "done" },
   { icon: HiOutlineFolder, label: "Documents shared", detail: "7 documents", state: "done" },
   { icon: HiOutlinePencilAlt, label: "Vendor acceptance", detail: "Pending", state: "active" },
-  { icon: HiOutlineLockClosed, label: "Assignment active", detail: "On acceptance", state: "locked" },
+  { icon: HiOutlineLockClosed, label: "Governed assignment", detail: "On acceptance", state: "locked" },
 ] as const;
 
 export function VendorLifecycleDemo() {
@@ -104,7 +104,7 @@ export function VendorLifecycleDemo() {
           <div className={styles.internalPane}>
             <div className={styles.paneHeader}>
               <div>
-                <p>Internal vendor record</p>
+                <p>Internal vendor record (AI-governed)</p>
                 <h2>Elite Sound Productions</h2>
               </div>
               <span>Premier vendor</span>
@@ -112,7 +112,7 @@ export function VendorLifecycleDemo() {
 
             <div className={styles.vendorStateRow}>
               <span><HiOutlineCheckCircle />Active vendor</span>
-              <span><HiOutlineFolder />Documents scoped</span>
+              <span><HiOutlineFolder />AI-ready compliance</span>
               <span><HiOutlineGlobeAlt />Portal enabled</span>
             </div>
 
@@ -132,7 +132,7 @@ export function VendorLifecycleDemo() {
               </div>
 
               <div className={styles.documentComplianceCard}>
-                <div className={styles.moduleEyebrow}>Document compliance</div>
+                <div className={styles.moduleEyebrow}>AI-ready document compliance</div>
                 {complianceRows.map(({ icon: Icon, item, detail, state }) => (
                   <article className={styles.documentRow} key={item}>
                     <Icon />
@@ -150,14 +150,14 @@ export function VendorLifecycleDemo() {
           <div className={styles.portalPane}>
             <div className={styles.paneHeader}>
               <div>
-                <p>Vendor portal preview</p>
+                <p>Vendor portal preview (governed access)</p>
                 <h2>Assignment #{ASSIGNMENT_REF}</h2>
               </div>
               <span><HiOutlineLockClosed />Secure token</span>
             </div>
 
             <div className={styles.portalAssignmentCard}>
-              <div className={styles.moduleEyebrow}>Awaiting vendor acceptance</div>
+              <div className={styles.moduleEyebrow}>AI-orchestrated workflow</div>
               <h3>{CLIENT_NAME} delivery scope</h3>
               <div className={styles.assignmentDetailRows}>
                 {assignmentMeta.map(({ icon: Icon, label }) => (
@@ -172,14 +172,14 @@ export function VendorLifecycleDemo() {
 
             <div className={styles.portalVisibilityNote}>
               Portal exposes assigned scope, required documents, quote requests, signature, and messaging.
-              Customer pricing and margin stay internal.
+              Customer pricing and margin stay internal under strict AI governance controls.
             </div>
           </div>
         </section>
 
         <section className={styles.vendorSupportRow}>
           <div className={styles.supportCard}>
-            <div className={styles.moduleEyebrow}>Compliance summary</div>
+            <div className={styles.moduleEyebrow}>AI compliance summary</div>
             <div className={styles.supportMetricGrid}>
               {complianceSummary.map(({ icon: Icon, value, label }) => (
                 <div key={label}>
@@ -192,7 +192,7 @@ export function VendorLifecycleDemo() {
           </div>
 
           <div className={styles.supportCard}>
-            <div className={styles.moduleEyebrow}>Assignment action summary</div>
+            <div className={styles.moduleEyebrow}>MLOps workflow traceability</div>
             <div className={styles.assignmentTimeline}>
               {assignmentTimeline.map(({ icon: Icon, label, detail, state }, index) => (
                 <article className={styles[`timelineState${state[0].toUpperCase()}${state.slice(1)}`]} key={label}>
@@ -204,7 +204,7 @@ export function VendorLifecycleDemo() {
               ))}
             </div>
             <p className={styles.assignmentSummaryText}>
-              Vendor can accept, decline, upload documents, sign, and message without staff handoff.
+              Vendor can accept, decline, upload documents, sign, and message inside auditable governance controls without staff handoff.
             </p>
           </div>
         </section>

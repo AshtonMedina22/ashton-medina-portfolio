@@ -18,22 +18,22 @@ import styles from "./secure-review-gateway-demo.module.scss";
 const sources = [
   { icon: HiOutlineDatabase, label: "Supabase approval event", detail: "Permit or account review age crossed threshold", state: "Review" },
   { icon: HiOutlineTable, label: "Sheet row update", detail: "Account follow-up reminder requested", state: "Queued" },
-  { icon: HiOutlineShieldCheck, label: "Vendor compliance row", detail: "COI or policy document expires in 7 days", state: "Draft" },
+  { icon: HiOutlineShieldCheck, label: "Vendor compliance row", detail: "COI or policy document expires in 7 days", state: "AI draft" },
 ] as const;
 
 const safeguards = [
-  { icon: HiOutlineKey, label: "Server-only keys" },
+  { icon: HiOutlineKey, label: "Server-only AI keys" },
   { icon: HiOutlineLockClosed, label: "OAuth mailbox boundary" },
   { icon: HiOutlineCode, label: "Typed field payload" },
-  { icon: HiOutlineCheckCircle, label: "Human approval required" },
+  { icon: HiOutlineCheckCircle, label: "HITL approval required" },
 ] as const;
 
 const auditSteps = [
   "Database event captured",
   "Context normalized",
-  "Draft packet prepared",
-  "Email draft created",
-  "Operator approval pending",
+  "AI draft packet prepared",
+  "Email draft created server-side",
+  "HITL approval pending",
 ] as const;
 
 export function SecureReviewGatewayDemo() {
@@ -41,12 +41,12 @@ export function SecureReviewGatewayDemo() {
     <div className={styles.shell}>
       <header className={styles.header}>
         <div>
-          <p>Event-driven automation and secure review gateway</p>
-          <h2>Database events become controlled email drafts inside a human review desk</h2>
+          <p>Event-driven AI-assisted communications with a secure review gateway</p>
+          <h2>Operational events become AI-assisted, human-reviewed email drafts</h2>
         </div>
         <span>
           <HiOutlineShieldCheck />
-          Credentials isolated
+          AgentOps guardrails
         </span>
       </header>
 
@@ -73,7 +73,7 @@ export function SecureReviewGatewayDemo() {
         <main className={styles.reviewPanel}>
           <div className={styles.panelTitle}>
             <HiOutlineMail />
-            <span>Human-reviewed email draft</span>
+            <span>AI-assisted draft (review required)</span>
           </div>
           <div className={styles.emailChrome}>
             <div className={styles.emailMeta}>
@@ -94,14 +94,14 @@ export function SecureReviewGatewayDemo() {
           </div>
           <div className={styles.actions}>
             <button type="button"><HiOutlinePencilAlt /> Revise</button>
-            <button type="button"><HiOutlineCheckCircle /> Approve draft</button>
+            <button type="button"><HiOutlineCheckCircle /> Approve AI draft</button>
           </div>
         </main>
 
         <aside className={styles.guardrailPanel}>
           <div className={styles.panelTitle}>
             <HiOutlineCode />
-            <span>Draft contract</span>
+            <span>Typed draft contract</span>
           </div>
           <pre>{`{
   "source": "database_event",

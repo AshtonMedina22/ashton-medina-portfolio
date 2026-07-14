@@ -1,10 +1,15 @@
 ---
 title: "Secure Communications Review Desk"
 publishedAt: "2026-05-15"
-summary: "Converts database and spreadsheet events into controlled communication drafts through secure server-side APIs and mandatory human approval."
-seoTitle: "Secure Communications Review Desk | Review Queues, Drafts & Approval Workflows"
-seoDescription: "Case study for communications review, event-driven automation, secure API workflows, database triggers, spreadsheet triggers, review queues, asynchronous communications, draft preparation, and human approval controls."
+summary: "Event-driven AI-assisted review gateway that turns data events into structured communication drafts with secure APIs and human-in-the-loop approval."
+seoTitle: "Secure Communications Review Desk | AI-Assisted Drafts, AgentOps & HITL"
+seoDescription: "Case study for AgentOps-style communication workflows, LLM-ready prompt orchestration, secure API automation, database triggers, review queues, draft preparation, and human-in-the-loop approval controls."
 keywords:
+  - AgentOps
+  - human-in-the-loop
+  - AI-assisted workflows
+  - responsible AI
+  - LLM prompt engineering
   - event-driven automation
   - secure API workflow
   - database triggers
@@ -20,13 +25,17 @@ images:
   - "/images/projects/project-03/cover-03.svg"
   - "/images/projects/project-03/cover-04.svg"
 techStack:
+  - name: "AgentOps"
+    icon: null
+  - name: "HITL Review"
+    icon: null
   - name: "Node.js"
     icon: null
   - name: "Google APIs"
     icon: "api"
   - name: "OAuth 2.0"
     icon: null
-  - name: "Workflow Rules"
+  - name: "Agentic Workflows"
     icon: null
   - name: "Edge Routes"
     icon: null
@@ -37,9 +46,9 @@ techStack:
 ---
 
 <HeroStats stats={[
-  { value: "4", label: "Automation Queues" },
+  { value: "4", label: "AI-Assisted Queues" },
   { value: "OAuth", label: "Mailbox Boundary" },
-  { value: "Human", label: "Approval Required" },
+  { value: "HITL", label: "Approval Required" },
   { value: "0", label: "Client-Side API Keys" }
 ]} />
 
@@ -47,17 +56,31 @@ techStack:
   <div>
 ## Problem
 
-Customer operations, account management, permitting or approval cycles, vendor follow-ups, compliance reviews, and executive inbox work create repetitive correspondence that still requires precision. Directly wiring automated email sends into operational records would expose too much risk: private keys could leak to the browser, draft details could miss source context, and automated sends could bypass the human judgment needed for customer, partner, internal, and leadership communications.
+Customer operations, account management, permitting cycles, vendor follow-ups, compliance reviews, and executive inbox work all generate repetitive but high-risk correspondence.
+
+Teams want to use LLMs and AI assistants to draft this communication, but directly wiring AI or automated email sends into operational records creates unacceptable risk:
+
+- Credentials and keys could leak to the browser or client-side scripts.
+- AI-generated drafts could miss critical source context or reference the wrong records.
+- Fully automated sends could bypass the human judgment required for customer, partner, internal, and leadership communications.
+
+The organization needed a secure AI-assisted communication pipeline with server-side controls, human-in-the-loop review, and operational governance, not fire-and-forget automation.
   </div>
   <div>
 ## Solution
 
-An event-driven scripting trigger and secure server-side review gateway converts database events, spreadsheet changes, and operational triggers into structured, reviewable drafts. Apps Script and Edge/Node routes pass normalized fields into a constrained draft contract, while email draft creation stays behind OAuth-controlled server code and requires a human review step before anything leaves the system.
+I designed an event-driven AI-assisted review gateway that turns database events, spreadsheet changes, and operational triggers into structured, reviewable email drafts behind a secure server boundary.
+
+- Apps Script and Edge/Node routes normalize source data into a strict draft contract that can be passed into an LLM-powered drafting step or rule-based generator.
+- AI/automation work and email draft creation run server-side behind OAuth-controlled service accounts and mailbox boundaries.
+- Every draft flows into a human-in-the-loop review desk where operators compare AI-assisted copy against the source record and decide whether to send, revise, or discard.
+
+The result is a secure AI-assisted communication pipeline with AgentOps-style guardrails: event-driven automation, server-side security, and mandatory human approval.
 
 <OutcomeStats stats={[
   { value: "Server-Only", label: "Credential Storage" },
-  { value: "Deterministic", label: "Field Mapping" },
-  { value: "Reviewable", label: "Draft Queue Before Send" }
+  { value: "Typed", label: "Draft Contract" },
+  { value: "HITL", label: "Review Before Send" }
 ]} />
   </div>
 </ProblemSolutionColumns>
@@ -66,26 +89,26 @@ An event-driven scripting trigger and secure server-side review gateway converts
 
 <HowItWorksGrid>
 <HowItWorksCard title="Installable Spreadsheet Triggers">
-Apps Script watches specific row and status changes, then sends structured metadata to the platform backend instead of embedding privileged workflow logic in the sheet.
+Apps Script watches specific row and status changes, then sends normalized metadata to the platform backend instead of embedding privileged workflow or AI logic in the sheet. This keeps AI-assisted drafting and decision logic out of end-user spreadsheets and inside a controlled backend.
 </HowItWorksCard>
 
 <HowItWorksCard title="Database Event Triggers">
-Supabase and PostgreSQL-style event hooks can move operational records into the same review pipeline, giving spreadsheet and database sources a shared automation contract.
+Supabase and PostgreSQL-style event hooks stream operational records into the same AI-assisted review pipeline, giving spreadsheets and databases a shared automation and AI contract. Both sources feed a consistent event-to-normalize-to-draft-to-review lifecycle that can extend into broader MLOps and AgentOps orchestration.
 </HowItWorksCard>
 
 <HowItWorksCard title="Server-Side Access Isolation">
-The browser never receives Google private keys, OAuth refresh tokens, Workspace impersonation settings, or privileged service credentials. All sensitive work happens in Edge or Node server routes.
+The browser never receives Google private keys, OAuth refresh tokens, Workspace impersonation settings, or privileged service credentials. All sensitive work, including LLM calls, AI-assisted drafting, and email draft creation, happens in Edge or Node server routes while enforcing mailbox and tenant boundaries.
 </HowItWorksCard>
 
-<HowItWorksCard title="Deterministic Draft Rules">
-Raw operational fields are converted into a fixed draft payload. Customer names, account IDs, dates, owners, request types, and due dates are passed as explicit values instead of free-form context.
+<HowItWorksCard title="Deterministic Draft Contract">
+Raw operational fields are converted into a typed draft payload. Customer names, account IDs, dates, owners, request types, and due dates are passed as explicit fields, not free-form text. This contract becomes the input schema for AI or rule-based generators, improving prompt reliability, traceability, and safety.
 </HowItWorksCard>
 
 <HowItWorksCard title="Email Draft Worker">
-The backend creates drafts through Google Workspace APIs only after OAuth consent or Workspace delegation is available. Draft IDs can be written back to the source record for traceability.
+The backend creates drafts through Google Workspace APIs only after OAuth consent or Workspace delegation is available. Draft IDs and metadata are written back to the source record for traceability into who triggered what, when, and with which context.
 </HowItWorksCard>
 
-<HowItWorksCard title="Human Approval Desk">
-System output is treated as a draft, not an action. Operators review the prepared copy, compare it against source fields, and decide whether to send, revise, or discard it.
+<HowItWorksCard title="Human-in-the-Loop Review Desk">
+System output is always treated as a draft, never an automatic send. Operators review the AI-assisted copy against the source fields, then choose to send, revise, or discard, creating a human-in-the-loop control layer for AI-generated communications.
 </HowItWorksCard>
 </HowItWorksGrid>

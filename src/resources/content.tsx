@@ -15,7 +15,7 @@ const person: Person = {
   firstName: "Ashton",
   lastName: "Medina",
   name: "Ashton Medina",
-  role: "Operations & Business Systems Leader",
+  role: "AI Solutions & Automation Architect",
   avatar: "/images/avatar.png",
   email: "ashtonmedina22@gmail.com",
   location: "America/Chicago",
@@ -45,6 +45,8 @@ const social: Social = [
 ];
 
 const techStackLanguages: Array<{ name: string; icon: string | null }> = [
+  { name: "AI Prompting", icon: null },
+  { name: "Human Review", icon: null },
   { name: "Python", icon: "python" },
   { name: "JavaScript", icon: "javascript" },
   { name: "TypeScript", icon: "typescript" },
@@ -58,6 +60,9 @@ const techStackLanguages: Array<{ name: string; icon: string | null }> = [
 ];
 
 const techStackPlatforms: Array<{ name: string; icon: string | null }> = [
+  { name: "Orchestration", icon: null },
+  { name: "Telemetry", icon: null },
+  { name: "Data Pipelines", icon: null },
   { name: "Odoo ERP/CRM", icon: null },
   { name: "React", icon: "react" },
   { name: "Next.js", icon: "nextjs" },
@@ -82,21 +87,21 @@ const techStack: Array<{ name: string; icon: string | null }> = [
 const home: Home = {
   path: "/",
   image:
-    "/api/og/generate?title=Ashton%20Medina%20Portfolio&subtitle=Business%20operations%2C%20systems%20implementation%2C%20workflow%20automation%2C%20and%20operational%20reporting",
+    "/api/og/generate?title=Ashton%20Medina%20Portfolio&subtitle=AI%20solutions%2C%20workflow%20automation%2C%20data%20pipelines%2C%20and%20operational%20intelligence",
   label: "Home",
   title:
-    "Ashton Medina | Business Operations, Workflow Automation & Systems Implementation",
+    "Ashton Medina | AI Solutions, Automation & Operational Intelligence",
   description:
-    "Dallas-Fort Worth business operations and systems implementation portfolio focused on process improvement, workflow automation, ERP and CRM rollout support, KPI dashboards, reporting, SOP development, and operational controls.",
+    "Dallas-Fort Worth AI solutions and automation portfolio focused on intelligent workflows, data pipelines, AgentOps-style orchestration, operational reporting, governance, and adoption.",
   headline: (
     <>
-      Turning messy
+      Operationalizing AI
       {" "}
       <br />
-      operations into
+      into systems
       {" "}
       <br />
-      <span className="headingAccent">systems teams can run.</span>
+      <span className="headingAccent">teams can run.</span>
     </>
   ),
   featured: {
@@ -109,14 +114,14 @@ const home: Home = {
     href: "/work/sales-to-delivery-automation-platform",
   },
   subline:
-    "I help teams turn scattered requests, manual handoffs, disconnected tools, and weak reporting into repeatable workflows, usable systems, and clearer operating controls.",
+    "I help teams turn scattered data, manual handoffs, disconnected tools, and weak reporting into intelligent workflows, observable systems, and AI-ready operating controls.",
 };
 
 const about: About = {
   path: "/about",
   label: "About",
-  title: `${person.name} | Business Operations, Process Improvement & Systems Implementation`,
-  description: `${person.name} is a Dallas-Fort Worth business operations and systems implementation manager focused on process improvement, workflow automation, ERP and CRM rollout support, KPI reporting, SOP development, UAT, and user adoption.`,
+  title: `${person.name} | AI Solutions, Automation Architecture & AgentOps`,
+  description: `${person.name} is a Dallas-Fort Worth AI solutions and automation architect focused on intelligent workflows, data readiness, AgentOps-style orchestration, observability, governance, and production system adoption.`,
   tableOfContent: {
     display: false,
     subItems: false,
@@ -256,8 +261,8 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Business Systems & Workflow Automation Portfolio - ${person.name}`,
-  description: `Case studies by ${person.name} covering workflow automation, business systems implementation, ERP and CRM operations, financial controls, vendor lifecycle management, KPI dashboards, integrations, and operational reporting.`,
+  title: `AI Solutions & Automation Portfolio - ${person.name}`,
+  description: `Case studies by ${person.name} covering AgentOps-style workflows, MLOps data pipelines, AI-ready automation, observability dashboards, governance platforms, secure integrations, and operational intelligence.`,
 };
 
 const contact: Contact = {

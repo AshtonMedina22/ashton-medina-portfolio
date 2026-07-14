@@ -22,11 +22,12 @@ export const Footer = () => {
         <Text variant="body-default-s" onBackground="neutral-strong">
           © {currentYear} {person.name}
         </Text>
-        <Row gap="16" vertical="center">
+        <Row className={styles.socialLinks} gap="8" vertical="center">
           {social
             .filter((item) => (item.name === "LinkedIn" || item.name === "Email") && item.link)
             .map((item) => (
               <SmartLink
+                className={styles.socialLink}
                 key={item.name}
                 href={item.link}
                 aria-label={item.name}

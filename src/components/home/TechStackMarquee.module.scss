@@ -22,8 +22,10 @@
 .techItem {
   position: relative;
   flex-shrink: 0;
+  box-sizing: border-box;
   width: 7.5rem;
   height: 6.25rem;
+  padding: 0.55rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,10 +98,15 @@
 }
 
 .techLabel {
+  display: block;
+  max-width: 100%;
   font-size: var(--type-label);
   font-weight: 600;
   letter-spacing: 0.01em;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  white-space: normal;
 }
 
 [data-theme="light"] .techLabel {

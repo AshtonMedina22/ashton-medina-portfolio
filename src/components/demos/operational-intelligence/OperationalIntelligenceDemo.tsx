@@ -18,16 +18,16 @@ import { CLIENT_NAME, SALES_ORDER_ID, CLIENT_REVENUE_FORMATTED } from "../projec
 import styles from "./operational-intelligence-demo.module.scss";
 
 const KPI_CARDS = [
-  { icon: HiOutlineUsers, label: "Engagements reviewed", value: "8", tone: "violet" },
-  { icon: HiOutlineFolder, label: "Active delivery projects", value: "14", tone: "blue" },
-  { icon: HiOutlineExclamationCircle, label: "Overdue tasks", value: "3", tone: "red" },
-  { icon: HiOutlineCash, label: "Expected revenue", value: "$84.2K", tone: "green" },
+  { icon: HiOutlineUsers, label: "Agent flows reviewed", value: "8", tone: "violet" },
+  { icon: HiOutlineFolder, label: "Live delivery signals", value: "14", tone: "blue" },
+  { icon: HiOutlineExclamationCircle, label: "AI-flagged tasks", value: "3", tone: "red" },
+  { icon: HiOutlineCash, label: "Revenue impact", value: "$84.2K", tone: "green" },
 ] as const;
 
 const STAGE_ROWS = [
   { label: "Confirmed delivery", value: 72, color: "green" },
   { label: "Proposal follow-up", value: 18, color: "violet" },
-  { label: "At-risk operations", value: 10, color: "red" },
+  { label: "AI-flagged risk", value: 10, color: "red" },
 ] as const;
 
 const ENGAGEMENT_ROWS = [
@@ -58,15 +58,15 @@ const ENGAGEMENT_ROWS = [
 ] as const;
 
 const REPORT_ITEMS = [
-  { icon: HiOutlineClipboardList, label: "Leadership report queued" },
+  { icon: HiOutlineClipboardList, label: "AI leadership report queued" },
   { icon: HiOutlineDatabase, label: "Revenue rollup reconciled" },
-  { icon: HiOutlineExclamationCircle, label: "Overdue project tasks surfaced" },
+  { icon: HiOutlineExclamationCircle, label: "Anomaly tasks surfaced" },
 ] as const;
 
 const STATUS_FILTERS = [
-  { icon: HiOutlineDatabase, label: "ERP records live", tone: "violet" },
+  { icon: HiOutlineDatabase, label: "AI telemetry live", tone: "violet" },
   { icon: HiOutlineCalendar, label: "May 2026", tone: "blue" },
-  { icon: HiOutlineCheckCircle, label: "Auto-report queued", tone: "green" },
+  { icon: HiOutlineCheckCircle, label: "Anomaly scan queued", tone: "green" },
   { icon: HiOutlineDownload, label: "Export ready", tone: "green" },
 ] as const;
 
@@ -75,7 +75,7 @@ export function OperationalIntelligenceDemo() {
     <div className={styles.opsShell}>
       <div className={styles.shellTopBar}>
         <HiOutlineClipboardList />
-        <span className={styles.shellTitle}>Operational Intelligence</span>
+        <span className={styles.shellTitle}>AI/MLOps Operational Intelligence</span>
       </div>
 
       <div className={styles.opsStatusStrip}>
@@ -89,22 +89,22 @@ export function OperationalIntelligenceDemo() {
       </div>
 
       <div className={styles.opsComposition}>
-        <section className={styles.executiveHero} aria-label="Executive operational insight">
+        <section className={styles.executiveHero} aria-label="AI observability and executive insight">
           <div className={styles.heroHeader}>
             <div>
-              <p>Executive operational insight</p>
-              <h2>Delivery pipeline is healthy, with 3 overdue tasks requiring manager review</h2>
-              <small>Real-time visibility across CRM, projects, tasks, invoices, and events.</small>
+              <p>AI observability and decision support</p>
+              <h2>Delivery pipeline is healthy, with 3 AI-flagged tasks requiring manager review</h2>
+              <small>Live telemetry across CRM, projects, tasks, invoices, events, and agent workflows.</small>
             </div>
-            <span>Operations view <HiOutlineExternalLink /></span>
+            <span>Observability view <HiOutlineExternalLink /></span>
           </div>
 
           <div className={styles.heroBody}>
             <div className={styles.healthPanel}>
-              <span>Operational health</span>
+              <span>AI/MLOps operational health</span>
               <strong>86%</strong>
               <em>Healthy</em>
-              <small>Calculated from CRM, project, task, invoice, and event records</small>
+              <small>Calculated from AI-ready CRM, project, task, invoice, and event records</small>
               <div className={styles.healthSparkline} aria-hidden>
                 <i />
                 <i />
@@ -116,7 +116,7 @@ export function OperationalIntelligenceDemo() {
 
             <div className={styles.pipelinePanel}>
               <div className={styles.panelTitleRow}>
-                <span>Pipeline workload mix</span>
+                <span>AI-driven pipeline workload mix</span>
                 <strong>100%</strong>
               </div>
               <div className={styles.stageBars}>
@@ -140,7 +140,7 @@ export function OperationalIntelligenceDemo() {
 
             <div className={styles.engagementPreview}>
               <div className={styles.panelTitleRow}>
-                <span>Priority operational records</span>
+                <span>Priority telemetry records</span>
                 <strong>3 shown</strong>
                 <a>View all records</a>
               </div>
@@ -176,9 +176,9 @@ export function OperationalIntelligenceDemo() {
           </div>
         </section>
 
-        <aside className={styles.opsSupportRail} aria-label="Operational support metrics">
+        <aside className={styles.opsSupportRail} aria-label="AI observability support metrics">
           <section className={styles.kpiModule}>
-            <p className={styles.moduleEyebrow}>KPI stack</p>
+            <p className={styles.moduleEyebrow}>AI/MLOps KPI stack</p>
             <div className={styles.kpiStack}>
               {KPI_CARDS.map(({ icon: Icon, label, value, tone }) => (
                 <div key={label} className={`${styles.kpiCard} ${styles[tone]}`}>
@@ -192,7 +192,7 @@ export function OperationalIntelligenceDemo() {
 
           <section className={styles.reportModule}>
             <p className={styles.moduleEyebrow}>Report readiness</p>
-            <strong>Weekly ops packet</strong>
+            <strong>Weekly observability packet</strong>
             <div className={styles.reportList}>
               {REPORT_ITEMS.map(({ icon: Icon, label }) => (
                 <span key={label}>

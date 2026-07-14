@@ -19,6 +19,8 @@
     backdrop-filter: blur(18px) saturate(1.08);
 
     :global(.button) {
+        min-height: 2.25rem !important;
+        padding-inline: 0.78rem !important;
         color: #1f2937 !important;
         border-color: transparent !important;
         background: transparent !important;
@@ -58,7 +60,7 @@
         box-shadow: 0 0.55rem 1.2rem rgba(15, 23, 42, 0.12) !important;
 
         :global(.button) {
-            min-height: 2.2rem !important;
+            min-height: 2.4rem !important;
             padding-inline: 0.68rem !important;
             border-radius: 0.7rem !important;
             font-size: 0.76rem !important;

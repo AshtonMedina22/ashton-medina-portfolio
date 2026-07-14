@@ -37,17 +37,17 @@ const navItems = [
 ] as const;
 
 const workflowRows = [
-  ["Sales Order Confirmed", "Sales", "Confirmed", "Jordan Reeves", "May 21, 2026 9:12 AM"],
-  ["Project Workspace Created", "Project", "Active", "Operations Team", "May 21, 2026 9:13 AM"],
-  ["Task Template Generated", "Automation", "Completed", "System", "May 21, 2026 9:14 AM"],
-  ["Vendor Assignments", "Workflow", "In Progress", "Procurement", "May 21, 2026 9:16 AM"],
-  ["Initial Invoice Generated", "Finance", "Pending Approval", "Finance", "May 21, 2026 9:18 AM"],
+  ["Sales Order Validated", "Data Gate", "Confirmed", "Jordan Reeves", "May 21, 2026 9:12 AM"],
+  ["Project Workspace Provisioned", "Pipeline", "Active", "Operations Team", "May 21, 2026 9:13 AM"],
+  ["Task Template Orchestrated", "Workflow", "Completed", "System", "May 21, 2026 9:14 AM"],
+  ["Vendor Assignments Synced", "Workflow", "In Progress", "Procurement", "May 21, 2026 9:16 AM"],
+  ["Financial Controls Inherited", "Governance", "Pending Approval", "Finance", "May 21, 2026 9:18 AM"],
 ] as const;
 
 const generatedTasks = [
-  ["Implementation milestone", "12 tasks from service line", "Ready"],
+  ["Implementation milestone", "12 tasks from validated service line", "Ready"],
   ["Data migration milestone", "8 tasks with assigned owner", "Queued"],
-  ["Training and closeout", "7 tasks plus approval gate", "Ready"],
+  ["Training and closeout", "7 tasks plus governance gate", "Ready"],
 ] as const;
 
 const syncedMetadata = [
@@ -59,10 +59,10 @@ const syncedMetadata = [
 ] as const;
 
 const outcomeItems = [
-  "No manual re-entry",
-  "Full audit trail",
+  "AI-ready data",
+  "Full traceability",
   "Real-time visibility",
-  "Financial controls inherited",
+  "Validation controls inherited",
 ] as const;
 
 function StatusBadge({ state }: { state: string }) {
@@ -110,7 +110,7 @@ export function SalesToDeliveryDemo() {
 
           <div className={styles.erpGrid}>
             <section className={styles.orderRecordPanel}>
-              <div className={styles.moduleEyebrow}>Confirmed sales order</div>
+              <div className={styles.moduleEyebrow}>Confirmed sales order (data validated)</div>
               <div className={styles.recordTitleRow}>
                 <h2>{SALES_ORDER_ID}</h2>
                 <StatusBadge state="Confirmed" />
@@ -128,7 +128,7 @@ export function SalesToDeliveryDemo() {
             </section>
 
             <section className={styles.generatedProjectPanel}>
-              <div className={styles.moduleEyebrow}>Auto-generated project</div>
+              <div className={styles.moduleEyebrow}>Auto-generated project (MLOps-orchestrated)</div>
               <div className={styles.projectHeader}>
                 <div>
                   <HiOutlineBriefcase />
@@ -147,7 +147,7 @@ export function SalesToDeliveryDemo() {
             </section>
 
             <aside className={styles.generatedTaskPanel}>
-              <div className={styles.moduleEyebrow}>Generated task preview</div>
+              <div className={styles.moduleEyebrow}>Generated task preview (dynamic workflow)</div>
               <div className={styles.generatedTaskList}>
                 {generatedTasks.map(([title, detail, state]) => (
                   <div key={title}>
@@ -164,7 +164,7 @@ export function SalesToDeliveryDemo() {
             </aside>
 
             <section className={styles.workflowActivityPanel}>
-              <div className={styles.moduleEyebrow}>Key workflow items</div>
+              <div className={styles.moduleEyebrow}>MLOps workflow traceability</div>
               <div className={styles.workflowActivityTable}>
                 <div className={styles.workflowHead}>
                   <span>Item</span>
@@ -187,7 +187,7 @@ export function SalesToDeliveryDemo() {
             </section>
 
             <aside className={styles.syncedMetadataPanel}>
-              <div className={styles.moduleEyebrow}>Synced metadata</div>
+              <div className={styles.moduleEyebrow}>AI-ready synced metadata</div>
               <div className={styles.metadataRows}>
                 {syncedMetadata.map(([label, value]) => (
                   <div key={label}>
@@ -205,8 +205,8 @@ export function SalesToDeliveryDemo() {
       <section className={styles.systemOutcomeBar}>
         <div>
           <HiOutlineLightningBolt />
-          <span>System outcome</span>
-          <p>Confirmed order creates the project workspace, task tree, and CRM linkage. All records, controls, and financials synchronize automatically.</p>
+          <span>System outcome: MLOps-ready project provisioning</span>
+          <p>Confirmed order triggers a traceable data pipeline that provisions the project workspace, task tree, CRM linkage, and financial controls with AI-ready data integrity.</p>
         </div>
         <div>
           {outcomeItems.map((item) => (

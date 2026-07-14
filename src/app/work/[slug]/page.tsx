@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
 import { getPosts } from "@/utils/utils";
 import { Meta, Schema, SmartLink } from "@once-ui-system/core";
 import { baseURL, about, buildProjectJsonLd, person, work } from "@/resources";
@@ -46,6 +47,63 @@ function splitContentForDemo(content: string) {
     remainder: content.slice(splitPoint).trim(),
   };
 }
+
+const caseStudyHeadings: Record<string, ReactNode> = {
+  "event-driven-automation-secure-review-gateway": (
+    <>
+      Operationalizing AI-assisted communications with{" "}
+      <span className="headingAccent">human-in-the-loop controls.</span>
+    </>
+  ),
+  "sales-to-delivery-automation-platform": (
+    <>
+      Building an MLOps-ready data and workflow orchestration pipeline to{" "}
+      <span className="headingAccent">eliminate sales-to-delivery gaps.</span>
+    </>
+  ),
+  "vendor-lifecycle-compliance-platform": (
+    <>
+      Building an enterprise platform for AI governance and{" "}
+      <span className="headingAccent">automated operational compliance.</span>
+    </>
+  ),
+  "revenue-financial-control-engine": (
+    <>
+      Operationalizing AI-ready financial governance with automated controls, traceability, and{" "}
+      <span className="headingAccent">MLOps-style rigor.</span>
+    </>
+  ),
+  "multi-tenant-enterprise-operations-hub": (
+    <>
+      Architecting a secure, multi-tenant AI/MLOps orchestration and{" "}
+      <span className="headingAccent">observability platform.</span>
+    </>
+  ),
+  "operational-intelligence-platform": (
+    <>
+      Building a real-time AI/MLOps observability layer for{" "}
+      <span className="headingAccent">production intelligence systems.</span>
+    </>
+  ),
+  "business-access-software-cost-control-dashboard": (
+    <>
+      Centralizing RBAC, cloud governance, and software-cost controls into{" "}
+      <span className="headingAccent">one auditable command surface.</span>
+    </>
+  ),
+  "inventory-purchasing-allocation-system": (
+    <>
+      Turning stock, vendor, and purchasing signals into{" "}
+      <span className="headingAccent">reviewable allocation decisions.</span>
+    </>
+  ),
+  "calendar-document-follow-up-automation-system": (
+    <>
+      Transforming spreadsheet rows into agentic scheduling, document, and{" "}
+      <span className="headingAccent">follow-up workflows.</span>
+    </>
+  ),
+};
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -174,7 +232,11 @@ export default async function Project({
         <div className={styles.sectionHeading}>
           <span className={styles.eyebrow}>Case Study</span>
           <h2 id="case-study-heading">
-            Case <span className="headingAccent">study.</span>
+            {caseStudyHeadings[slugPath] ?? (
+              <>
+                Case <span className="headingAccent">study.</span>
+              </>
+            )}
           </h2>
         </div>
         <article className={styles.articleProse}>

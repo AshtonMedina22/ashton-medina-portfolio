@@ -22,19 +22,19 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    label: "New Requests",
-    title: "Everything lands in one place.",
-    nav: ["Inbox", "Emails", "Forms"],
-    flow: ["Request comes in", "Checked", "Assigned"],
+    label: "Intelligent Ingestion",
+    title: "Data and requests land in one place.",
+    nav: ["Inputs", "Email", "API"],
+    flow: ["Capture input", "Classify context", "Prepare data"],
     rows: [
-      { title: "Website form", meta: "New customer question", status: "Check" },
-      { title: "Email request", meta: "Needs a reply", status: "Open" },
-      { title: "Staff note", meta: "Internal ask", status: "Queued" },
+      { title: "AI prompt", meta: "User intent captured", status: "Check" },
+      { title: "Email request", meta: "Semi-structured data", status: "Open" },
+      { title: "Staff note", meta: "Knowledge captured", status: "Queued" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "New", title: "Request saved", detail: "No more scattered messages", icon: <HiOutlineDocumentText /> },
-      { className: styles.popoutSecondary, label: "Check", title: "Needs a reply", detail: "Priority is clear", icon: <HiOutlineClipboardList /> },
-      { className: styles.popoutTertiary, label: "Assigned", title: "Someone owns it", detail: "Nothing gets missed", icon: <HiOutlineUserGroup /> },
+      { className: styles.popoutPrimary, label: "Ingested", title: "Input saved", detail: "Data starts clean", icon: <HiOutlineDocumentText /> },
+      { className: styles.popoutSecondary, label: "Context", title: "Intent is clear", detail: "Ready for routing", icon: <HiOutlineClipboardList /> },
+      { className: styles.popoutTertiary, label: "Unified", title: "Sources connected", detail: "No scattered inputs", icon: <HiOutlineUserGroup /> },
     ],
     stats: [
       { label: "New", value: "12" },
@@ -42,19 +42,19 @@ const slides: Slide[] = [
     ],
   },
   {
-    label: "Smart Sorting",
-    title: "The right person gets the work.",
-    nav: ["Rules", "People", "Tasks"],
-    flow: ["Sort request", "Pick owner", "Make checklist"],
+    label: "Dynamic Orchestration",
+    title: "The right agent or person gets the work.",
+    nav: ["Rules", "Agents", "Tasks"],
+    flow: ["Analyze context", "Route work", "Generate steps"],
     rows: [
-      { title: "Sort request", meta: "Matched by type", status: "Done" },
-      { title: "Pick owner", meta: "Best person selected", status: "Assigned" },
-      { title: "Make checklist", meta: "Steps added", status: "Ready" },
+      { title: "Analyze input", meta: "Matched by signal", status: "Done" },
+      { title: "Pick owner", meta: "Agent or human selected", status: "Assigned" },
+      { title: "Make checklist", meta: "Steps generated", status: "Ready" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "Sorted", title: "Sent to the right person", detail: "Less manual follow-up", icon: <HiOutlineSparkles /> },
-      { className: styles.popoutSecondary, label: "Owner", title: "Person notified", detail: "They know what to do", icon: <HiOutlineUserGroup /> },
-      { className: styles.popoutTertiary, label: "Checklist", title: "Next steps added", detail: "The work is repeatable", icon: <HiOutlineClipboardList /> },
+      { className: styles.popoutPrimary, label: "Routed", title: "Sent to the right path", detail: "Less manual triage", icon: <HiOutlineSparkles /> },
+      { className: styles.popoutSecondary, label: "Owner", title: "Human review set", detail: "Judgment stays clear", icon: <HiOutlineUserGroup /> },
+      { className: styles.popoutTertiary, label: "Checklist", title: "Next steps generated", detail: "The workflow repeats", icon: <HiOutlineClipboardList /> },
     ],
     stats: [
       { label: "Sorted", value: "18" },
@@ -62,20 +62,20 @@ const slides: Slide[] = [
     ],
   },
   {
-    label: "Work Tracker",
-    title: "Everyone can see what is happening.",
+    label: "Real-Time Observability",
+    title: "System health stays visible.",
     nav: ["Board", "Status", "Alerts"],
-    flow: ["Working", "Waiting", "Stuck", "Done"],
+    flow: ["Active", "Review", "Anomaly", "Resolved"],
     rows: [
-      { title: "Working", meta: "Owner is active", status: "Active" },
-      { title: "Waiting", meta: "Needs review", status: "Next" },
-      { title: "Stuck", meta: "Needs approval", status: "Flag" },
-      { title: "Done", meta: "Closed this week", status: "Done" },
+      { title: "Model active", meta: "Workflow running", status: "Active" },
+      { title: "Pending review", meta: "Human check needed", status: "Next" },
+      { title: "Anomaly detected", meta: "Needs attention", status: "Flag" },
+      { title: "Outcome achieved", meta: "Closed this week", status: "Done" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "Status", title: "Updated automatically", detail: "No guessing where it stands", icon: <HiOutlineCheckCircle /> },
-      { className: styles.popoutSecondary, label: "Reminder", title: "Follow-up sent", detail: "Owners stay on track", icon: <HiOutlineCalendar /> },
-      { className: styles.popoutTertiary, label: "Stuck", title: "Problem flagged", detail: "Issues show up early", icon: <HiOutlineDocumentText /> },
+      { className: styles.popoutPrimary, label: "Status", title: "Updated automatically", detail: "No guessing", icon: <HiOutlineCheckCircle /> },
+      { className: styles.popoutSecondary, label: "Alert", title: "Follow-up sent", detail: "Owners stay on track", icon: <HiOutlineCalendar /> },
+      { className: styles.popoutTertiary, label: "Anomaly", title: "Issue flagged", detail: "Problems show early", icon: <HiOutlineDocumentText /> },
     ],
     stats: [
       { label: "Active", value: "8" },
@@ -83,20 +83,20 @@ const slides: Slide[] = [
     ],
   },
   {
-    label: "Weekly Summary",
-    title: "You know what needs attention.",
-    nav: ["Summary", "Numbers", "History"],
-    flow: ["Update status", "Make report", "Repeat next week"],
+    label: "Operational Intelligence",
+    title: "You know what to improve next.",
+    nav: ["Summary", "Signals", "History"],
+    flow: ["Analyze signals", "Report impact", "Improve loop"],
     rows: [
-      { title: "Weekly summary", meta: "Ready to share", status: "Sent" },
-      { title: "Open items", meta: "Needs attention", status: "14" },
-      { title: "Team usage", meta: "People using it", status: "92%" },
-      { title: "Time to finish", meta: "Average close", status: "3.2d" },
+      { title: "Impact summary", meta: "Ready to share", status: "Sent" },
+      { title: "Critical alerts", meta: "Needs attention", status: "14" },
+      { title: "System adoption", meta: "People using it", status: "92%" },
+      { title: "Time to resolution", meta: "Average close", status: "3.2d" },
     ],
     popouts: [
-      { className: styles.popoutPrimary, label: "Summary", title: "Weekly report ready", detail: "Clear view of the work", icon: <HiOutlineChartBar /> },
-      { className: styles.popoutSecondary, label: "Attention", title: "Open items listed", detail: "Know what to fix first", icon: <HiOutlineDocumentText /> },
-      { className: styles.popoutTertiary, label: "Repeat", title: "Same process next week", detail: "The system keeps working", icon: <HiOutlineSparkles /> },
+      { className: styles.popoutPrimary, label: "Summary", title: "Impact report ready", detail: "Clear operating view", icon: <HiOutlineChartBar /> },
+      { className: styles.popoutSecondary, label: "Attention", title: "Alerts prioritized", detail: "Know what to fix first", icon: <HiOutlineDocumentText /> },
+      { className: styles.popoutTertiary, label: "Improve", title: "Loop refined", detail: "The system gets better", icon: <HiOutlineSparkles /> },
     ],
     stats: [
       { label: "Team usage", value: "92%" },
@@ -112,7 +112,7 @@ function AppChrome({ slide }: { slide: Slide }) {
         <span />
         <span />
         <span />
-        <strong>Work System</strong>
+        <strong>AI Work System</strong>
       </div>
       <div className={styles.workspaceShell}>
         <aside className={styles.sidebar}>

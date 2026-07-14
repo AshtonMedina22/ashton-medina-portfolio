@@ -1,25 +1,25 @@
 export const projectCategories: Record<string, string> = {
-  "sales-to-delivery-automation-platform": "Workflow automation platform",
-  "revenue-financial-control-engine": "Financial control system",
-  "vendor-lifecycle-compliance-platform": "Vendor lifecycle platform",
-  "operational-intelligence-platform": "Operational reporting platform",
-  "multi-tenant-enterprise-operations-hub": "Enterprise operations platform",
-  "event-driven-automation-secure-review-gateway": "Secure review gateway",
-  "business-access-software-cost-control-dashboard": "Access and cost control dashboard",
-  "calendar-document-follow-up-automation-system": "Scheduling and document automation",
-  "inventory-purchasing-allocation-system": "Inventory and purchasing system",
+  "event-driven-automation-secure-review-gateway": "AgentOps review desk",
+  "sales-to-delivery-automation-platform": "MLOps data pipeline",
+  "vendor-lifecycle-compliance-platform": "Automated governance platform",
+  "operational-intelligence-platform": "AI observability dashboard",
+  "calendar-document-follow-up-automation-system": "Agentic workflow automation",
+  "inventory-purchasing-allocation-system": "Optimization engine",
+  "multi-tenant-enterprise-operations-hub": "Secure multi-tenant AI data hub",
+  "revenue-financial-control-engine": "Automated financial guardrails",
+  "business-access-software-cost-control-dashboard": "RBAC and cloud governance",
 };
 
 export const projectEyebrows: Record<string, string> = {
-  "sales-to-delivery-automation-platform": "Sales-to-Delivery System",
-  "revenue-financial-control-engine": "Financial Governance System",
-  "vendor-lifecycle-compliance-platform": "Vendor Lifecycle System",
-  "operational-intelligence-platform": "Operational Intelligence System",
-  "multi-tenant-enterprise-operations-hub": "Multi-Tenant Operations System",
-  "event-driven-automation-secure-review-gateway": "Secure Review Gateway",
-  "business-access-software-cost-control-dashboard": "Access and Cost Control System",
-  "calendar-document-follow-up-automation-system": "Scheduling and Document Automation",
-  "inventory-purchasing-allocation-system": "Inventory and Purchasing System",
+  "event-driven-automation-secure-review-gateway": "AgentOps + Human Review",
+  "sales-to-delivery-automation-platform": "MLOps Data Pipeline",
+  "vendor-lifecycle-compliance-platform": "Automated Governance",
+  "operational-intelligence-platform": "AI Observability",
+  "calendar-document-follow-up-automation-system": "Agentic Workflow",
+  "inventory-purchasing-allocation-system": "Optimization Engine",
+  "multi-tenant-enterprise-operations-hub": "Secure AI Data Platform",
+  "revenue-financial-control-engine": "Financial AI Guardrails",
+  "business-access-software-cost-control-dashboard": "RBAC + Cloud Governance",
 };
 
 export type ProjectAccent = "sales" | "cyan" | "teal" | "indigo";

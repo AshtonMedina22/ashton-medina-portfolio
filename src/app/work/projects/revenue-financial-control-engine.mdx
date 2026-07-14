@@ -1,10 +1,15 @@
 ---
-title: "Revenue Control & Governance"
+title: "AI-Ready Financial Governance System"
 publishedAt: "2024-11-20"
-summary: "Protects margin through project-level invoice, vendor bill, payment, pricing, approval, compensation, and closeout controls."
-seoTitle: "Revenue Control & Governance | Financial Controls, Margins & Approvals"
-seoDescription: "Case study for revenue control, financial governance, margin tracking, invoice and vendor bill workflows, payment eligibility, pricing controls, approval routing, compensation automation, and operational closeout reporting."
+summary: "Revenue control and governance system with AI-ready financial controls, real-time margin telemetry, traceability, and automated closeout guardrails."
+seoTitle: "AI-Ready Financial Governance System | Revenue Controls & MLOps Rigor"
+seoDescription: "Case study for AI-ready financial governance, automated revenue controls, margin telemetry, anomaly signals, invoice and vendor bill workflows, payment eligibility, pricing guardrails, approval routing, compensation automation, and operational closeout reporting."
 keywords:
+  - AI-ready financial governance
+  - financial automation
+  - anomaly detection
+  - automated guardrails
+  - margin telemetry
   - financial controls
   - margin tracking
   - approval workflows
@@ -20,6 +25,10 @@ images:
   - "/images/projects/project-03/cover-03.svg"
   - "/images/projects/project-03/cover-04.svg"
 techStack:
+  - name: "Guardrails"
+    icon: null
+  - name: "Anomaly Logic"
+    icon: null
   - name: "Python"
     icon: "python"
   - name: "PostgreSQL"
@@ -35,7 +44,7 @@ techStack:
 <HeroStats stats={[
   { value: "7-Tier", label: "Compensation Rate Table" },
   { value: "5", label: "Governed Financial States" },
-  { value: "Real-Time", label: "Margin Computation" },
+  { value: "Real-Time", label: "Margin Telemetry" },
   { value: "Zero", label: "Unauthorized Pricing" }
 ]} />
 
@@ -43,15 +52,21 @@ techStack:
   <div>
 ## Problem
 
-Revenue leakage rarely announces itself. It accumulates through unauthorized discounts, informal approvals, unvalidated pricing, and no real-time visibility into margin. By the time finance sees the numbers, the damage is done. Profitability can't be protected after the fact. It has to be enforced at the point of every transaction.
+Revenue leakage rarely announces itself. It accumulates through unauthorized discounts, informal approvals, unvalidated pricing, and no real-time visibility into margin. For AI-driven forecasting, anomaly detection, or decision support to be trustworthy, the underlying financial data must be accurate, governed, and traceable. In this environment:
+
+- Discounts and approvals were not consistently logged.
+- Pricing logic lived in spreadsheets and tribal knowledge.
+- Margin was only visible after the month closed.
+
+Profitability and AI insights cannot be protected after the fact; they have to be enforced and observed at the point of every transaction.
   </div>
   <div>
 ## Solution
 
-Profitability is protected through system-enforced governance. Every discount, approval, cost, and payout controlled, logged, and traceable from pipeline to delivery.
+I designed a financial governance engine that applies MLOps-style operational rigor to revenue, cost, and margin. Profitability is protected through system-enforced controls: every discount, approval, cost, and payout is validated, logged, and traceable from pipeline to delivery. The result is an AI-ready financial backbone where every transaction passes through automated control gates, margin is computed in real time, and structured data can support AI models, anomaly detection, and intelligent decision support.
 
 <OutcomeStats stats={[
-  { value: "Real-Time", label: "Per-Engagement Margin Visibility" },
+  { value: "Real-Time", label: "Margin Telemetry" },
   { value: "Full", label: "Budget-to-Actual Traceability" },
   { value: "Automated", label: "Compensation Processing" }
 ]} />
@@ -61,39 +76,39 @@ Profitability is protected through system-enforced governance. Every discount, a
 ## How It Works
 
 <HowItWorksGrid>
-<HowItWorksCard title="Live Margin Computation">
-Client revenue, estimated vendor costs, actual costs, dollar variance, and margin percentage computed automatically on every project. Updated in real time, not end-of-month.
+<HowItWorksCard title="Live Margin Computation & Telemetry">
+Client revenue, estimated vendor costs, actual costs, dollar variance, and margin percentage are computed automatically on every project and updated in real time, creating continuous financial telemetry for AI models, anomaly detectors, or optimization agents.
 </HowItWorksCard>
 
-<HowItWorksCard title="Pricing Bands & Floor Enforcement">
-Min and max price-per-unit defined on both sell and cost side. Line-item quantity floors trigger inline warnings before a quote is finalized. Reps operate within guardrails, not open negotiation.
+<HowItWorksCard title="Pricing Bands, Guardrails & Floor Enforcement">
+Min and max price-per-unit are defined on both sell and cost sides. Line-item quantity floors trigger inline warnings before a quote is finalized, creating machine-readable pricing logic for AI pricing assistants or recommendation engines.
 </HowItWorksCard>
 
-<HowItWorksCard title="Financial Lifecycle States">
-Every monetary record moves through governed states with transitions enforced by business rules. No record skips a checkpoint. Every state change logs a timestamped audit entry with user and previous state.
+<HowItWorksCard title="Governed Financial Lifecycle & Audit Trail">
+Every monetary record moves through governed states with transitions enforced by business rules. Each state change logs a timestamped audit entry with user and previous state for explainability, compliance reviews, and anomaly investigations.
 </HowItWorksCard>
 
 <HowItWorksCard title="Role-Based Financial Permissions">
-Read, write, create, and delete permissions defined per model per security group. Sensitive data - margins, costs, and compensation - is hidden from unauthorized roles including external portal users.
+Read, write, create, and delete permissions are defined per model and security group. Sensitive data such as margins, costs, and compensation is hidden from unauthorized roles so AI-enabled workflows operate inside strict access boundaries.
 </HowItWorksCard>
 
-<HowItWorksCard title="Post-Delivery Cost Accountability">
-Every vendor assignment tracks estimated vs. actual cost with auto-computed variance. Overruns surface on the assignment, the project, and the live margin calculation simultaneously.
+<HowItWorksCard title="Post-Delivery Cost Accountability & Variance Signals">
+Every vendor assignment tracks estimated vs. actual cost with auto-computed variance. Overruns surface on the assignment, project, and live margin calculation, forming signals for anomaly detection and forecasting error analysis.
 </HowItWorksCard>
 
-<HowItWorksCard title="Budget-to-Actual Chain">
-Budget captured at pipeline, priced on the sales order, measured against actuals at delivery. Leadership sees what the client said they'd spend, what was quoted, and what it cost to deliver, across connected records.
+<HowItWorksCard title="End-to-End Budget-to-Actual Chain">
+Budget is captured at pipeline, priced on the sales order, and measured against actuals at delivery. This linked financial lineage supports AI forecasting models, profitability analysis, and scenario planning.
 </HowItWorksCard>
 
-<HowItWorksCard title="Payment Eligibility Gate">
-Four conditions must be cleared before any payout processes: delivery confirmed, all customer invoices paid, all vendor bills paid, and margin threshold met. No exceptions at the system level.
+<HowItWorksCard title="Automated Payment Eligibility Gate">
+Four conditions must clear before any payout processes: delivery confirmed, all customer invoices paid, all vendor bills paid, and margin threshold met. This control gate prevents AI or rule-based automations from triggering payouts outside governance rules.
 </HowItWorksCard>
 
 <HowItWorksCard title="7-Tier Compensation Engine">
-Rates scale with gross margin performance from 0% below the floor to maximum rate at high-margin delivery. Formula: (Revenue x Attribution %) x Margin Tier Rate. Payout reflects deal quality directly.
+Rates scale with gross margin performance from 0% below the floor to maximum rate at high-margin delivery. The formula, (Revenue x Attribution %) x Margin Tier Rate, is codified for incentive simulation, payout forecasting, and behavior analysis.
 </HowItWorksCard>
 
-<HowItWorksCard title="Automated Compensation Records">
-Draft purchase orders auto-generated monthly per stakeholder. Line-level tracking codes link each payout to its source project. Multi-stakeholder attribution supports primary, secondary, and referral splits with a declining referral structure auto-computed from relationship start date.
+<HowItWorksCard title="Automated Compensation Records & Traceability">
+Draft purchase orders are auto-generated monthly per stakeholder, with line-level tracking codes linking each payout to its source project. This creates a traceable compensation dataset for performance analytics and incentive optimization.
 </HowItWorksCard>
 </HowItWorksGrid>

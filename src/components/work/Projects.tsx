@@ -9,15 +9,15 @@ interface ProjectsProps {
 }
 
 const workPageProjectOrder = [
+  "event-driven-automation-secure-review-gateway",
   "sales-to-delivery-automation-platform",
   "vendor-lifecycle-compliance-platform",
   "multi-tenant-enterprise-operations-hub",
-  "revenue-financial-control-engine",
   "operational-intelligence-platform",
-  "inventory-purchasing-allocation-system",
+  "revenue-financial-control-engine",
   "business-access-software-cost-control-dashboard",
+  "inventory-purchasing-allocation-system",
   "calendar-document-follow-up-automation-system",
-  "event-driven-automation-secure-review-gateway",
 ];
 
 export function Projects({ range, exclude }: ProjectsProps) {

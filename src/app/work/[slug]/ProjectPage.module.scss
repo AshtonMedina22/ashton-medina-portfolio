@@ -94,8 +94,15 @@
 }
 
 .heroBreadcrumb {
+  min-height: 2rem;
   margin-right: 0.2rem;
-  color: #087b83;
+  padding: 0.35rem 0.2rem 0.35rem 0;
+  color: #087b83 !important;
+}
+
+.heroBreadcrumb:hover,
+.heroBreadcrumb:focus-visible {
+  color: #002d72 !important;
 }
 
 .eyebrow {

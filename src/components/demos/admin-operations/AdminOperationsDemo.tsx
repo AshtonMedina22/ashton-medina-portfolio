@@ -30,16 +30,16 @@ const navItems = [
 
 const kpis = [
   { icon: HiOutlineChartBar, label: "Revenue pipeline", value: "$642K", meta: "CRM + Supabase cache", tone: "indigo" },
-  { icon: HiOutlineLightningBolt, label: "Fleet telemetry", value: "2.8K", meta: "Device event stream", tone: "amber" },
-  { icon: HiOutlineUsers, label: "Order volume", value: "94", meta: "Webhook operations queue", tone: "teal" },
-  { icon: HiOutlineShieldCheck, label: "Vendor risk", value: "4 flags", meta: "COI renewal workflow", tone: "rose" },
+  { icon: HiOutlineLightningBolt, label: "AI/MLOps telemetry", value: "2.8K", meta: "Device event stream", tone: "amber" },
+  { icon: HiOutlineUsers, label: "Event queue", value: "94", meta: "Webhook operations queue", tone: "teal" },
+  { icon: HiOutlineShieldCheck, label: "Governance risk", value: "4 flags", meta: "COI renewal workflow", tone: "rose" },
 ] as const;
 
 const eventRows = [
-  { icon: HiOutlineCloudUpload, source: "E-commerce webhook", detail: "Transaction #9401 validated, deduped, and routed to the fulfillment queue.", state: "Processed" },
-  { icon: HiOutlineLightningBolt, source: "Telemetry polling worker", detail: "Fleet signal normalized into the operations stream with exception guards.", state: "Live" },
-  { icon: HiOutlineDatabase, source: "Supabase sync", detail: "Account ledger cache refreshed from PostgreSQL materialized view.", state: "Cached" },
-  { icon: HiOutlineClipboardCheck, source: "Compliance cron", detail: "Expiring COI record isolated and vendor renewal draft queued.", state: "Review" },
+  { icon: HiOutlineCloudUpload, source: "E-commerce webhook (AI-ready event)", detail: "Transaction #9401 validated, deduped, and routed to the fulfillment queue.", state: "Processed" },
+  { icon: HiOutlineLightningBolt, source: "AI/MLOps telemetry worker", detail: "Fleet signal normalized into the operations stream with exception guards.", state: "Live" },
+  { icon: HiOutlineDatabase, source: "Supabase sync (governed AI data)", detail: "Account ledger cache refreshed from PostgreSQL materialized view.", state: "Cached" },
+  { icon: HiOutlineClipboardCheck, source: "Compliance cron (AI governance)", detail: "Expiring COI record isolated and vendor renewal draft queued.", state: "Review" },
 ] as const;
 
 const telemetryRows = [
@@ -48,7 +48,7 @@ const telemetryRows = [
   ["Fulfillment", "Order desk", "94 open", "Review queue", "Queued"],
 ] as const;
 
-const architecture = ["REST webhooks", "Edge/API workers", "Supabase cache", "PostgreSQL records", "Typed UI rows"] as const;
+const architecture = ["REST webhooks", "Edge/API workers", "Supabase cache", "PostgreSQL contracts", "Typed AI-ready rows"] as const;
 
 export function AdminOperationsDemo() {
   return (
@@ -67,7 +67,7 @@ export function AdminOperationsDemo() {
         </nav>
         <div className={styles.sidebarFooter}>
           <HiOutlineShieldCheck />
-          <span>Tenant isolation active</span>
+          <span>AI-ready tenant isolation active</span>
         </div>
       </aside>
 
@@ -85,8 +85,8 @@ export function AdminOperationsDemo() {
 
         <section className={styles.hero}>
           <div>
-            <p>Multi-tenant enterprise operations hub</p>
-            <h2>One command surface for workspaces, webhooks, telemetry, and partner ledgers</h2>
+            <p>Multi-tenant AI / MLOps operations hub</p>
+            <h2>One command surface for secure AI orchestration, telemetry, and partner ledgers</h2>
           </div>
           <div className={styles.heroBadges}>
             <span>CRM</span>
@@ -109,7 +109,7 @@ export function AdminOperationsDemo() {
         <section className={styles.mainGrid}>
           <article className={styles.streamPanel}>
             <div className={styles.panelHeader}>
-              <span>Global operations stream</span>
+              <span>AI/MLOps global operations stream</span>
               <strong>Live event bus</strong>
             </div>
             <div className={styles.streamList}>
@@ -153,7 +153,7 @@ export function AdminOperationsDemo() {
 
           <aside className={styles.archPanel}>
             <div className={styles.panelHeader}>
-              <span>Production data path</span>
+              <span>Production data path for AI/MLOps</span>
               <HiOutlineDatabase />
             </div>
             <div className={styles.archStack}>
@@ -166,7 +166,7 @@ export function AdminOperationsDemo() {
             </div>
             <div className={styles.warning}>
               <HiOutlineExclamation />
-              Provider errors fall back to cached rows with visible sync warnings.
+              Provider errors fall back to cached rows with visible sync warnings for MLOps resilience.
             </div>
           </aside>
         </section>

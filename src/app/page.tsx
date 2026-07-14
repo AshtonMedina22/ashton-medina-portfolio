@@ -13,32 +13,32 @@ import styles from "./page.module.scss";
 
 const proofStrip = [
   "15+ Years",
-  "25+ Tools Consolidated",
+  "AI-Ready Workflows",
+  "25+ Tools Connected",
   "5,500+ Users Supported",
-  "3,000+ SaaS Customers",
   "100% Audit Readiness",
 ] as const;
 
 const capabilities = [
   {
     icon: HiOutlineClipboardList,
-    title: "Map the Work",
-    text: "Understand requests, approvals, handoffs, exceptions, ownership gaps, and reporting needs before changing the system.",
+    title: "Strategize AI Solutions",
+    text: "Map business goals, data sources, process gaps, risk points, and adoption needs before deciding what should be automated or AI-enabled.",
   },
   {
     icon: HiOutlineCog,
-    title: "Build the System",
-    text: "Configure or create ERP, CRM, automation, support, and reporting workflows around the process teams actually use.",
+    title: "Orchestrate Workflows",
+    text: "Build practical automation layers that connect tools, route tasks, prepare data, and keep humans in the loop where judgment or review matters.",
   },
   {
     icon: HiOutlineChartBar,
-    title: "Create Visibility",
-    text: "Turn daily activity into dashboards, KPIs, status views, exception reports, and leadership-ready operating context.",
+    title: "Create Observability",
+    text: "Turn workflow activity, system events, and operating data into dashboards, alerts, exception reports, and leadership-ready context.",
   },
   {
     icon: HiOutlineShieldCheck,
-    title: "Make It Stick",
-    text: "Document SOPs, train teams, define controls, and support adoption so the process keeps working after launch.",
+    title: "Govern and Improve",
+    text: "Document controls, train teams, define runbooks, and refine the system so AI-assisted work remains explainable, auditable, and useful.",
   },
 ] as const;
 
@@ -72,7 +72,7 @@ export default function Home() {
       <div className={styles.homePage}>
         <section className={styles.heroSection}>
           <div className={styles.heroContent}>
-            <span className={styles.eyebrow}>Systems. Workflows. Outcomes.</span>
+            <span className={styles.eyebrow}>AI Solutions. Automation. Outcomes.</span>
             <h1>{home.headline}</h1>
             <p>{home.subline}</p>
             <div className={styles.heroActions}>
@@ -98,16 +98,16 @@ export default function Home() {
           <div className={styles.sectionIntro}>
             <span className={styles.sectionEyebrow}>Capabilities</span>
             <h2>
-              One operating method
+              One practical method
               {" "}
               <br />
-              across different{" "}
-              <span className="headingAccent">industries.</span>
+              for AI-enabled{" "}
+              <span className="headingAccent">operations.</span>
             </h2>
             <p>
-              My work starts with how the business actually runs, then turns that into
-              requirements, workflows, system logic, reporting, documentation, and adoption plans
-              that teams can keep using.
+              My work starts with how the business actually runs, then turns that operating reality
+              into requirements, workflow logic, data readiness, visibility, controls, and adoption
+              plans that make intelligent systems usable in production.
             </p>
           </div>
           <div className={styles.capabilityGrid}>
@@ -128,10 +128,11 @@ export default function Home() {
           <section className={styles.techBanner} aria-label="Technology stack">
             <div className={styles.techBannerIntro}>
               <span className={styles.sectionEyebrow}>Technology</span>
-              <h2>Tools used to build, connect, and manage business systems</h2>
+              <h2>Tools used to build, connect, and operate AI-ready systems</h2>
               <p>
-                The stack changes by company, but the work stays consistent: connect data,
-                automate handoffs, improve visibility, and make processes easier to run.
+                The stack changes by company, but the work stays consistent: connect data, automate
+                handoffs, add human-in-the-loop controls, improve observability, and make processes
+                easier to run.
               </p>
             </div>
             <TechStackMarquee />

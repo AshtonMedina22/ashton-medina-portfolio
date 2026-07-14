@@ -1,10 +1,16 @@
 ---
 title: "Operations Intelligence Dashboard"
 publishedAt: "2024-11-01"
-summary: "Aggregates CRM, sales, project, finance, task, and event data into role-based KPI dashboards with exports and scheduled leadership snapshots."
-seoTitle: "Operations Intelligence Dashboard | KPI Reporting, Metrics & Executive Visibility"
-seoDescription: "Case study for operations intelligence, KPI dashboards, operational reporting, executive visibility, CRM and project data aggregation, live business metrics, exportable reports, and scheduled leadership snapshot automation."
+summary: "Real-time AI/MLOps observability and decision-support dashboards for operational telemetry, anomaly signals, exports, and scheduled leadership snapshots."
+seoTitle: "Operations Intelligence Dashboard | AI/MLOps Observability Platform"
+seoDescription: "Case study for a real-time AI and MLOps observability dashboard that aggregates CRM, project, finance, task, and event data into role-based KPI views, anomaly signals, telemetry-ready reporting, executive visibility, exports, and scheduled leadership snapshot automation."
 keywords:
+  - AI observability
+  - MLOps dashboard
+  - AgentOps monitoring
+  - anomaly detection
+  - telemetry
+  - performance monitoring
   - KPI dashboards
   - executive reporting
   - operational reporting
@@ -20,6 +26,10 @@ images:
   - "/images/projects/project-04/cover-03.svg"
   - "/images/projects/project-04/cover-04.svg"
 techStack:
+  - name: "AI Observability"
+    icon: null
+  - name: "MLOps Telemetry"
+    icon: null
   - name: "Python"
     icon: "python"
   - name: "JavaScript"
@@ -34,30 +44,34 @@ techStack:
     icon: null
   - name: "xlsxwriter"
     icon: null
+  - name: "Data Visualization"
+    icon: null
 ---
 
 <HeroStats stats={[
-  { value: "4,600+", label: "Lines of Dashboard Logic" },
-  { value: "7+", label: "Chart Types" },
-  { value: "5", label: "Aggregated Modules" },
-  { value: "3", label: "Export Formats" }
+  { value: "4,600+", label: "Lines of Observability Logic" },
+  { value: "7+", label: "Interactive Chart Types" },
+  { value: "5", label: "Aggregated Data Modules" },
+  { value: "3", label: "Executive Export Formats" }
 ]} />
 
 <ProblemSolutionColumns>
   <div>
 ## Problem
 
-Business data lived in silos. Sales metrics in CRM, project timelines in the PM tool, vendor costs in procurement, revenue in accounting. A unified performance view meant exporting CSVs, building pivot tables, and emailing spreadsheets. Reports were stale before they were assembled. When a number looked wrong, leadership couldn't drill in. They had to request another report and wait.
+Operationalizing AI models, automated agents, and intelligent workflows requires real-time visibility into performance, data quality, and downstream business impact. The operational data needed for that visibility was fragmented across CRM, project, procurement, finance, task, and event systems. Unified reporting required CSV exports, manual pivot tables, and emailed spreadsheets, which made reports stale before anyone could act on them.
+
+When an AI-driven metric or critical operational KPI looked wrong, leadership could not drill into the underlying record path directly. That created a gap for monitoring system health, investigating anomaly signals, and understanding whether automated workflows were improving or degrading performance.
   </div>
   <div>
 ## Solution
 
-Leadership operates with real-time operational intelligence. Configurable by role, exportable on demand, and delivered on schedule without anyone logging in.
+I designed and built a real-time AI/MLOps observability dashboard that aggregates operational records into configurable, role-based KPI views. The platform turns fragmented business systems into a single intelligence layer for monitoring AI system performance, detecting operational anomalies, and giving leadership current decision support without requiring manual report assembly.
 
 <OutcomeStats stats={[
-  { value: "Real-Time", label: "Operational Data on Every Load" },
+  { value: "Real-Time", label: "Telemetry on Every Load" },
   { value: "Zero", label: "Manual Report Assembly" },
-  { value: "Full", label: "Cross-Module Visibility in One View" }
+  { value: "Unified", label: "AI-Ready Cross-Module Visibility" }
 ]} />
   </div>
 </ProblemSolutionColumns>
@@ -65,39 +79,39 @@ Leadership operates with real-time operational intelligence. Configurable by rol
 ## How It Works
 
 <HowItWorksGrid>
-<HowItWorksCard title="Cross-Module Aggregation">
-CRM, Sales, Projects, Vendor Management, and Accounting queried through a single data layer. No manual exports, no stale imports. One unified query surface across all five modules.
+<HowItWorksCard title="Cross-Module Aggregation for AI-Ready Data">
+CRM, Sales, Projects, Vendor Management, and Accounting records are queried through a unified data layer, creating a cohesive dataset for MLOps-style monitoring without manual exports or stale imports.
 </HowItWorksCard>
 
-<HowItWorksCard title="ORM-Level Computation">
-Metrics computed at the database layer using dynamic domain filtering. Performance stays consistent regardless of data volume. No client-side number crunching.
+<HowItWorksCard title="Server-Side Metric Computation">
+Metrics are computed at the database and ORM layer using dynamic domain filtering, which keeps performance consistent while supporting real-time AI model, agent workflow, and operational KPI views.
 </HowItWorksCard>
 
-<HowItWorksCard title="Seven Purpose-Built Views">
-Personal tasks, team workload, upcoming engagements, pipeline health, vendor operations, revenue metrics, and a fully customizable canvas. Each scoped to its operational domain.
+<HowItWorksCard title="Purpose-Built Observability Views">
+Personal tasks, team workload, upcoming engagements, pipeline health, vendor operations, revenue metrics, and a customizable canvas each expose a focused view into human and AI-driven process performance.
 </HowItWorksCard>
 
-<HowItWorksCard title="7+ Interactive Chart Types">
-Line, bar, doughnut, pie, radar, scatter, and geographic map visualizations powered by AmCharts 5. Clicking any KPI tile or chart segment drills directly into the underlying live business records.
+<HowItWorksCard title="Interactive Anomaly Drill-Down">
+Line, bar, doughnut, pie, radar, scatter, and geographic map visualizations let users click KPI tiles or chart segments and drill directly into live records for root cause analysis.
 </HowItWorksCard>
 
-<HowItWorksCard title="Drag-and-Drop Layout">
-Widgets repositioned freely via GridStack.js. Layout, filters, and widget configuration saved independently per user. Each role owns their own view.
+<HowItWorksCard title="Role-Based Layouts">
+GridStack.js powers drag-and-drop dashboards where layout, filters, and widget configuration are saved per user, letting each role monitor the AI, agent, and operational signals they own.
 </HowItWorksCard>
 
-<HowItWorksCard title="Date Range & Filter Presets">
-Saved filter presets allow instant time-window switching without rebuilding reports. All widgets query live operational data on every load.
+<HowItWorksCard title="Dynamic Time-Window Analysis">
+Saved filter presets allow teams to switch date ranges instantly, compare periods, inspect trend shifts, and investigate anomaly patterns without rebuilding reports.
 </HowItWorksCard>
 
 <HowItWorksCard title="Scheduled Intelligence Delivery">
-Dashboards auto-email chart snapshots to defined recipients on a recurring schedule. Leadership receives operational intelligence without logging in.
+Dashboards auto-email chart snapshots to defined recipients on a recurring schedule, giving leadership proactive operational intelligence without requiring a dashboard login.
 </HowItWorksCard>
 
-<HowItWorksCard title="3-Format Export Engine">
-One-click export to PDF via html2canvas and jsPDF, Excel via xlsxwriter, and PNG for presentations. Outputs formatted for executive consumption without manual formatting.
+<HowItWorksCard title="Multi-Format Reporting Engine">
+One-click export to PDF, Excel, and PNG produces executive-ready outputs for AI performance reviews, operational reviews, and MLOps reporting without manual formatting.
 </HowItWorksCard>
 
-<HowItWorksCard title="Modular & Migration-Safe Architecture">
-New KPI widgets added without modifying core infrastructure. Automated migration scripts handle security rule and data structure updates on every module upgrade. Full test coverage for data integrity and access control.
+<HowItWorksCard title="Modular Architecture for Scaling Insights">
+New KPI widgets and AI-driven insight modules can be added without modifying core infrastructure, while migration scripts and tests protect data integrity, security rules, and access control.
 </HowItWorksCard>
 </HowItWorksGrid>

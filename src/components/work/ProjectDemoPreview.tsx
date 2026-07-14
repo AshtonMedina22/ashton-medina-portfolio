@@ -13,7 +13,7 @@ function SalesExecutionThumbnail() {
       <section className={styles.thumbnailCard} aria-label="Sales to execution thumbnail">
         <div className={styles.thumbnailHeader}>
           <span className={styles.thumbnailBadge}>Sales</span>
-          <strong>Order → Execution</strong>
+          <strong>Order to Execution</strong>
         </div>
         <div className={styles.thumbnailFlow}>
           <span>Signed</span>
