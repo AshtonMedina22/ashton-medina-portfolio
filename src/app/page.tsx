@@ -1,4 +1,5 @@
 import { OperationsVisual } from "@/components/home/OperationsVisual";
+import { TechStackMarquee } from "@/components/home/TechStackMarquee";
 import { about, baseURL, home, person } from "@/resources";
 import { Column, Meta, Schema, SmartLink } from "@once-ui-system/core";
 import { HiOutlineArrowRight } from "react-icons/hi";
@@ -159,6 +160,17 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className={styles.techBanner} aria-label="Technology stack">
+          <div className={styles.techBannerIntro}>
+            <span className={styles.sectionEyebrow}>Technology stack</span>
+            <h2>Core tools across AI workflows, automation, data, and production platforms</h2>
+            <p>
+              A working stack for designing, connecting, and operating production-grade systems.
+            </p>
+          </div>
+          <TechStackMarquee />
         </section>
 
       </div>

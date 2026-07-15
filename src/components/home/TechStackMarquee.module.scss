@@ -115,8 +115,8 @@
 
 @media (max-width: 640px) {
   .techItem {
-    width: 6.25rem;
-    height: 5.25rem;
+    width: 8.1rem;
+    height: 5.6rem;
   }
 
   .techIcon {
@@ -125,7 +125,9 @@
   }
 
   .techLabel {
-    font-size: var(--type-label);
+    font-size: 0.72rem;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 }
 
