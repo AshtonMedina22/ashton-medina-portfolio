@@ -51,45 +51,6 @@ const featuredProjects = [
   },
 ] as const;
 
-const skillsGroups = [
-  {
-    title: "AI / Automation / AgentOps",
-    items: [
-      "LLM prompt engineering",
-      "AI-assisted workflows & agents",
-      "Automated triage & routing",
-      "Human-in-the-loop review flows",
-    ],
-  },
-  {
-    title: "MLOps / Platform Engineering",
-    items: [
-      "CI/CD pipelines (Odoo.sh, Git/GitHub)",
-      "Workflow orchestration (450-step pipelines)",
-      "Data pipelines & ETL (PostgreSQL)",
-      "Runbooks, SRE practices & observability",
-    ],
-  },
-  {
-    title: "Cloud, Integrations & Data",
-    items: [
-      "REST APIs, JSON-RPC, Webhooks, OAuth 2.0",
-      "PostgreSQL schema design & multi-tenant isolation",
-      "Third-party SaaS integrations (Salesforce, HubSpot, Zoho, QuickBooks, Intercom)",
-      "KPI dashboards, telemetry & executive reporting",
-    ],
-  },
-  {
-    title: "Languages, Tools & Leadership",
-    items: [
-      "Python, JavaScript (ES6+), TypeScript, SQL, XML",
-      "Odoo custom modules, OWL, Google Apps Script",
-      "Jira, ClickUp, Notion, Git/GitHub",
-      "Technical strategy, onboarding frameworks, documentation",
-    ],
-  },
-] as const;
-
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
@@ -144,13 +105,15 @@ export default function Home() {
 
         <section className={styles.rolesProjectsSection}>
           <div className={styles.openRolesCard}>
-            <span className={styles.openRolesLabel}>Open to roles</span>
-            <h2>AI Solutions, MLOps &amp; Automation</h2>
-            <ul>
-              {openRoleItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <div className={styles.openRolesCopy}>
+              <span className={styles.openRolesLabel}>Open to roles</span>
+              <h2>AI Solutions, MLOps &amp; Automation</h2>
+              <ul>
+                {openRoleItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
             <div className={styles.targetRolesBox}>
               <span>Target roles</span>
               <p>
@@ -198,28 +161,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.skillsSection} aria-label="Skills stack">
-          <div className={styles.skillsHeader}>
-            <span className={styles.sectionEyebrow}>Skills stack</span>
-            <h2>From cloud architecture to agents in production</h2>
-            <p>
-              A practical toolkit for designing, shipping, and operating AI systems end-to-end.
-            </p>
-          </div>
-
-          <div className={styles.skillsGrid}>
-            {skillsGroups.map((group) => (
-              <article key={group.title} className={styles.skillsCard}>
-                <h3>{group.title}</h3>
-                <ul>
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
       </div>
     </Column>
   );

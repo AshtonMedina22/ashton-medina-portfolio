@@ -26,7 +26,6 @@
 .proofStrip,
 .capabilitiesSection,
 .rolesProjectsSection,
-.skillsSection,
 .techBanner {
   width: 100%;
   max-width: var(--page-max-width);
@@ -329,10 +328,18 @@
 }
 
 .openRolesCard {
-  max-width: 34rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.72fr);
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  max-width: none;
   padding: clamp(1.25rem, 2.4vw, 2rem);
   border-left: 4px solid var(--home-teal);
   color: var(--home-text);
+}
+
+.openRolesCopy {
+  min-width: 0;
 
   h2 {
     max-width: 24ch;
@@ -375,7 +382,7 @@
 }
 
 .targetRolesBox {
-  margin-top: 1.45rem;
+  margin-top: 0;
   padding: 1rem 1.05rem;
   border: 1px solid var(--home-border);
   border-radius: 14px;
@@ -545,95 +552,6 @@
     font-size: 0.78rem;
     font-weight: 500;
     line-height: 1.2;
-  }
-}
-
-.skillsSection {
-  display: grid;
-  gap: clamp(1.2rem, 2.4vw, 2rem);
-  margin-top: clamp(1.15rem, 2.4vw, 1.75rem);
-  padding: clamp(1.35rem, 2.5vw, 2.1rem);
-  border: 1px solid var(--home-border);
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 8% 0%, rgba(9, 205, 205, 0.025), transparent 26rem),
-    radial-gradient(circle at 96% 12%, rgba(129, 69, 158, 0.05), transparent 24rem),
-    #ffffff;
-  box-shadow: 0 14px 38px rgba(0, 45, 114, 0.06);
-}
-
-.skillsHeader {
-  max-width: 54rem;
-
-  .sectionEyebrow {
-    color: var(--home-teal);
-  }
-
-  h2 {
-    margin: 1rem 0 0;
-    color: var(--home-text);
-    font-family: var(--font-heading), Inter, system-ui, sans-serif;
-    font-size: clamp(1.55rem, 2.2vw, 2rem);
-    font-weight: 800;
-    line-height: 1.18;
-    text-wrap: balance;
-  }
-
-  p {
-    max-width: 64ch;
-    margin: 1rem 0 0;
-    color: var(--home-muted);
-    font-size: clamp(0.98rem, 1.12vw, 1.05rem);
-    font-weight: 500;
-    line-height: 1.65;
-  }
-}
-
-.skillsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.9rem, 1.5vw, 1.15rem);
-}
-
-.skillsCard {
-  min-width: 0;
-  min-height: 16.5rem;
-  padding: clamp(1rem, 1.7vw, 1.3rem);
-  border: 1px solid var(--home-border);
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 10px 26px rgba(0, 45, 114, 0.06);
-
-  h3 {
-    margin: 0;
-    color: var(--home-text);
-    font-size: clamp(1rem, 1.3vw, 1.14rem);
-    font-weight: 800;
-    line-height: 1.35;
-    text-wrap: balance;
-  }
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin: 1rem 0 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    display: inline-flex;
-    align-items: center;
-    min-height: 1.9rem;
-    padding: 0.34rem 0.72rem;
-    border: 1px solid rgba(0, 45, 114, 0.16);
-    border-radius: 999px;
-    color: #334155;
-    background: #f8fafc;
-    font-size: clamp(0.78rem, 0.9vw, 0.86rem);
-    font-weight: 600;
-    line-height: 1.28;
   }
 }
 
@@ -826,10 +744,6 @@
   .featuredGrid {
     grid-template-columns: 1fr;
   }
-
-  .skillsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 760px) {
@@ -863,18 +777,13 @@
     padding: 1rem;
   }
 
-  .skillsSection {
-    padding: 1rem;
-    border-radius: 20px;
-  }
-
-  .skillsGrid {
+  .openRolesCard {
     grid-template-columns: 1fr;
+    gap: 1.1rem;
   }
 
-  .skillsCard {
-    min-height: 0;
-    padding: 1rem;
+  .targetRolesBox {
+    margin-top: 0.35rem;
   }
 
   .proofStrip {
