@@ -319,25 +319,25 @@
   gap: clamp(1.2rem, 2.4vw, 2rem);
   margin-top: clamp(1.15rem, 2.4vw, 1.75rem);
   padding: clamp(1.2rem, 2vw, 1.6rem);
-  border: 1px solid rgba(0, 45, 114, 0.18);
+  border: 1px solid var(--home-border);
   border-radius: 24px;
   background:
-    radial-gradient(circle at 0% 0%, rgba(8, 123, 131, 0.24), transparent 24rem),
-    radial-gradient(circle at 92% 8%, rgba(87, 56, 148, 0.14), transparent 26rem),
-    linear-gradient(145deg, #10283a 0%, #071022 44%, #070b16 100%);
-  box-shadow: 0 22px 54px rgba(7, 16, 34, 0.16);
+    radial-gradient(circle at 8% 0%, rgba(9, 205, 205, 0.035), transparent 24rem),
+    radial-gradient(circle at 92% 8%, rgba(129, 69, 158, 0.055), transparent 24rem),
+    #ffffff;
+  box-shadow: 0 14px 38px rgba(0, 45, 114, 0.06);
 }
 
 .openRolesCard {
   max-width: 34rem;
   padding: clamp(1.25rem, 2.4vw, 2rem);
-  border-left: 2px solid rgba(56, 189, 248, 0.7);
-  color: #e5e7eb;
+  border-left: 4px solid var(--home-teal);
+  color: var(--home-text);
 
   h2 {
     max-width: 24ch;
     margin: 1.2rem 0 0;
-    color: #f8fafc;
+    color: var(--home-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
     font-size: clamp(1.8rem, 3vw, 2.55rem);
     font-weight: 800;
@@ -354,7 +354,7 @@
   }
 
   li {
-    color: #b8c2d2;
+    color: var(--home-muted);
     font-size: clamp(1rem, 1.4vw, 1.15rem);
     font-weight: 500;
     line-height: 1.55;
@@ -365,10 +365,10 @@
   display: inline-flex;
   width: fit-content;
   padding: 0.32rem 0.82rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  border: 1px solid rgba(87, 56, 148, 0.24);
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.64);
-  color: #dbeafe;
+  background: rgba(160, 229, 217, 0.22);
+  color: var(--home-teal);
   font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.2;
@@ -377,17 +377,17 @@
 .targetRolesBox {
   margin-top: 1.45rem;
   padding: 1rem 1.05rem;
-  border: 1px solid rgba(148, 163, 184, 0.44);
+  border: 1px solid var(--home-border);
   border-radius: 14px;
-  background: rgba(9, 13, 28, 0.76);
+  background: #f8fafc;
 
   span {
     display: inline-flex;
     width: fit-content;
     padding: 0.32rem 0.76rem;
     border-radius: 999px;
-    background: rgba(14, 116, 144, 0.52);
-    color: #38bdf8;
+    background: rgba(8, 123, 131, 0.08);
+    color: var(--home-teal);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -397,7 +397,7 @@
 
   p {
     margin: 0.8rem 0 0;
-    color: #f8fafc;
+    color: var(--home-text);
     font-size: clamp(1rem, 1.3vw, 1.12rem);
     font-weight: 500;
     line-height: 1.55;
@@ -408,9 +408,9 @@
   display: grid;
   gap: clamp(1rem, 2vw, 1.35rem);
   padding: clamp(1.1rem, 2.2vw, 1.65rem);
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  border: 1px solid rgba(0, 45, 114, 0.12);
   border-radius: 20px;
-  background: rgba(7, 11, 22, 0.58);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .featuredHeader {
@@ -418,7 +418,7 @@
 
   h2 {
     margin: 0;
-    color: #f8fafc;
+    color: var(--home-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
     font-size: clamp(1.55rem, 2.25vw, 2.1rem);
     font-weight: 800;
@@ -429,7 +429,7 @@
   p {
     max-width: 60ch;
     margin: 1rem 0 0;
-    color: #aeb8c8;
+    color: var(--home-muted);
     font-size: clamp(0.98rem, 1.15vw, 1.06rem);
     font-weight: 500;
     line-height: 1.65;
@@ -454,10 +454,10 @@
     flex-direction: column;
     min-height: 100%;
     padding: clamp(1rem, 1.7vw, 1.35rem);
-    border: 1px solid rgba(148, 163, 184, 0.22);
+    border: 1px solid var(--home-border);
     border-radius: 16px;
-    background: rgba(7, 12, 26, 0.78);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    background: #ffffff;
+    box-shadow: 0 10px 26px rgba(0, 45, 114, 0.07);
     transition:
       border-color 160ms ease,
       transform 160ms ease,
@@ -466,14 +466,14 @@
 
   &:hover article,
   &:focus-visible article {
-    border-color: rgba(56, 189, 248, 0.46);
-    background: rgba(12, 21, 42, 0.9);
+    border-color: rgba(8, 123, 131, 0.34);
+    background: #f8fafc;
     transform: translateY(-2px);
   }
 
   h3 {
     margin: 0;
-    color: #f8fafc;
+    color: var(--home-text);
     font-size: clamp(1.04rem, 1.35vw, 1.18rem);
     font-weight: 800;
     line-height: 1.35;
@@ -483,7 +483,7 @@
 
 .projectStackLabel {
   margin: 1rem 0 0;
-  color: #9aa7ba;
+  color: #64748b;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -493,7 +493,7 @@
 
 .projectDescription {
   margin: 1rem 0 0;
-  color: #b8c2d2;
+  color: var(--home-muted);
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.62;
@@ -509,7 +509,7 @@
   }
 
   dt {
-    color: #9aa7ba;
+    color: #64748b;
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -519,7 +519,7 @@
 
   dd {
     margin: 0.48rem 0 0;
-    color: #f1f5f9;
+    color: var(--home-text);
     font-size: 0.92rem;
     font-weight: 650;
     line-height: 1.55;
@@ -538,9 +538,10 @@
     align-items: center;
     min-height: 1.65rem;
     padding: 0.22rem 0.62rem;
-    border: 1px solid rgba(148, 163, 184, 0.48);
+    border: 1px solid rgba(0, 45, 114, 0.16);
     border-radius: 999px;
-    color: #cbd5e1;
+    color: #334155;
+    background: #f8fafc;
     font-size: 0.78rem;
     font-weight: 500;
     line-height: 1.2;
@@ -552,25 +553,25 @@
   gap: clamp(1.2rem, 2.4vw, 2rem);
   margin-top: clamp(1.15rem, 2.4vw, 1.75rem);
   padding: clamp(1.35rem, 2.5vw, 2.1rem);
-  border: 1px solid rgba(15, 23, 42, 0.18);
+  border: 1px solid var(--home-border);
   border-radius: 24px;
   background:
-    radial-gradient(circle at 8% 0%, rgba(14, 165, 233, 0.12), transparent 26rem),
-    radial-gradient(circle at 96% 12%, rgba(87, 56, 148, 0.12), transparent 24rem),
-    #060b18;
-  box-shadow: 0 22px 54px rgba(7, 16, 34, 0.14);
+    radial-gradient(circle at 8% 0%, rgba(9, 205, 205, 0.025), transparent 26rem),
+    radial-gradient(circle at 96% 12%, rgba(129, 69, 158, 0.05), transparent 24rem),
+    #ffffff;
+  box-shadow: 0 14px 38px rgba(0, 45, 114, 0.06);
 }
 
 .skillsHeader {
   max-width: 54rem;
 
   .sectionEyebrow {
-    color: #38bdf8;
+    color: var(--home-teal);
   }
 
   h2 {
     margin: 1rem 0 0;
-    color: #f8fafc;
+    color: var(--home-text);
     font-family: var(--font-heading), Inter, system-ui, sans-serif;
     font-size: clamp(1.55rem, 2.2vw, 2rem);
     font-weight: 800;
@@ -581,7 +582,7 @@
   p {
     max-width: 64ch;
     margin: 1rem 0 0;
-    color: #aeb8c8;
+    color: var(--home-muted);
     font-size: clamp(0.98rem, 1.12vw, 1.05rem);
     font-weight: 500;
     line-height: 1.65;
@@ -598,13 +599,14 @@
   min-width: 0;
   min-height: 16.5rem;
   padding: clamp(1rem, 1.7vw, 1.3rem);
-  border: 1px solid rgba(148, 163, 184, 0.24);
+  border: 1px solid var(--home-border);
   border-radius: 16px;
-  background: rgba(8, 13, 28, 0.78);
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(0, 45, 114, 0.06);
 
   h3 {
     margin: 0;
-    color: #f8fafc;
+    color: var(--home-text);
     font-size: clamp(1rem, 1.3vw, 1.14rem);
     font-weight: 800;
     line-height: 1.35;
@@ -625,10 +627,10 @@
     align-items: center;
     min-height: 1.9rem;
     padding: 0.34rem 0.72rem;
-    border: 1px solid rgba(148, 163, 184, 0.58);
+    border: 1px solid rgba(0, 45, 114, 0.16);
     border-radius: 999px;
-    color: #f1f5f9;
-    background: rgba(15, 23, 42, 0.62);
+    color: #334155;
+    background: #f8fafc;
     font-size: clamp(0.78rem, 0.9vw, 0.86rem);
     font-weight: 600;
     line-height: 1.28;

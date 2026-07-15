@@ -618,31 +618,36 @@
 
 .experienceSection,
 .skillsStackSection {
-  border-color: rgba(148, 163, 184, 0.2);
+  border-color: var(--about-border);
   background:
-    radial-gradient(circle at 8% 0%, rgba(14, 165, 233, 0.12), transparent 26rem),
-    radial-gradient(circle at 96% 12%, rgba(87, 56, 148, 0.12), transparent 24rem),
-    #060b18;
-  color: #e5e7eb;
-  box-shadow: 0 22px 54px rgba(7, 16, 34, 0.14);
+    radial-gradient(circle at 8% 0%, rgba(160, 229, 217, 0.035), transparent 22rem),
+    radial-gradient(circle at 92% 8%, rgba(129, 69, 158, 0.055), transparent 20rem),
+    #ffffff;
+  color: var(--about-text);
+  box-shadow: var(--about-shadow);
 
   &::before {
-    content: none;
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0.38rem;
+    background: linear-gradient(180deg, var(--about-navy), var(--about-purple), var(--about-teal));
+    opacity: 0.96;
   }
 
   .sectionEyebrow {
-    color: #38bdf8;
+    color: var(--about-purple);
   }
 
   .sectionTitle {
     max-width: 30ch;
-    color: #f8fafc;
+    color: var(--about-text);
     font-size: clamp(1.55rem, 2.6vw, 2.45rem);
     line-height: 1.35;
   }
 
   .sectionLead {
-    color: #aeb8c8;
+    color: var(--about-muted);
   }
 }
 
@@ -654,7 +659,7 @@
   gap: 0;
   margin-left: 0.9rem;
   padding-left: 2rem;
-  border-left: 1px solid rgba(148, 163, 184, 0.22);
+  border-left: 1px solid rgba(0, 45, 114, 0.14);
 }
 
 .experienceItem {
@@ -679,14 +684,14 @@
   left: calc(-2rem - 0.77rem);
   width: 1.55rem;
   height: 1.55rem;
-  border: 0.34rem solid rgba(8, 45, 71, 0.82);
+  border: 0.32rem solid rgba(255, 255, 255, 0.94);
   border-radius: 999px;
-  background: radial-gradient(circle at 35% 30%, #e0f2fe 0%, #7dd3fc 42%, #0e7490 100%);
-  box-shadow: 0 0 22px rgba(56, 189, 248, 0.32);
+  background: linear-gradient(135deg, var(--about-navy), var(--about-purple));
+  box-shadow: 0 0.55rem 1.15rem rgba(15, 23, 42, 0.1);
 }
 
 .experienceBody h3 {
-  color: #f8fafc;
+  color: var(--about-text);
   font-size: clamp(1.08rem, 1.55vw, 1.3rem);
   font-weight: 800;
   line-height: 1.28;
@@ -728,7 +733,7 @@
 .experienceBody strong {
   display: block;
   margin-top: 0.7rem;
-  color: #aeb8c8;
+  color: var(--about-muted);
   font-size: clamp(0.96rem, 1.2vw, 1.08rem);
   font-weight: 500;
   line-height: 1.4;
@@ -746,7 +751,7 @@
 .experienceBody li {
   position: relative;
   min-width: 0;
-  color: #aeb8c8;
+  color: var(--about-muted);
   font-size: clamp(0.95rem, 1.1vw, 1.02rem);
   line-height: 1.55;
   padding-left: 1.15rem;
@@ -757,7 +762,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: #aeb8c8;
+  color: var(--about-muted);
   background: transparent;
 }
 
@@ -766,16 +771,25 @@
   gap: clamp(0.9rem, 1.5vw, 1.15rem);
 }
 
+.experienceBody li::before {
+  content: "";
+  top: 0.72em;
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 999px;
+  background: var(--about-teal);
+}
+
 .skillsStackSection .keywordGroup {
   min-height: 14rem;
-  border: 1px solid rgba(148, 163, 184, 0.24);
+  border: 1px solid var(--about-border);
   border-radius: 1rem;
-  background: rgba(8, 13, 28, 0.78);
-  box-shadow: none;
+  background: #ffffff;
+  box-shadow: var(--about-shadow-soft);
   padding: clamp(1rem, 1.7vw, 1.3rem);
 
   h3 {
-    color: #f8fafc;
+    color: var(--about-text);
     font-size: clamp(1rem, 1.3vw, 1.14rem);
     font-weight: 800;
     line-height: 1.35;
@@ -789,9 +803,9 @@
 
   span {
     min-height: 1.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.58);
-    background: rgba(15, 23, 42, 0.62);
-    color: #f1f5f9;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: rgba(8, 123, 131, 0.08);
+    color: #087b83;
     font-size: clamp(0.78rem, 0.9vw, 0.86rem);
     font-weight: 600;
     line-height: 1.28;
