@@ -1,11 +1,11 @@
-// Layout — used on every page
+// Layout - used on every page
 export { Header } from "@/components/layout/Header";
 export { Footer } from "@/components/layout/Footer";
 export { ThemeToggle } from "@/components/layout/ThemeToggle";
 export { Providers } from "@/components/layout/Providers";
 export { RouteGuard } from "@/components/layout/RouteGuard";
 
-// Shared — project pages + blog posts (MDX, anchor scroll)
+// Shared - project pages + blog posts (MDX, anchor scroll)
 export { CustomMDX } from "@/components/shared/mdx";
 export { ScrollToHash } from "@/components/shared/ScrollToHash";
 

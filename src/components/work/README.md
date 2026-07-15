@@ -1,4 +1,4 @@
-# `work/` — What each file is for
+# `work/` - What each file is for
 
 **Quick map:** See **`WHERE_TO_EDIT.md`** in the project root for “I want to change X on the site → open this file.”
 

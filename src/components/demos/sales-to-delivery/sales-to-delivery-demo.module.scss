@@ -323,7 +323,7 @@ $text-subtle: #28406f;
   border: 1px solid $blue-border;
 }
 
-/* Table — compact so it fits in fixed viewport without scroll */
+/* Table - compact so it fits in fixed viewport without scroll */
 .tableWrap {
   overflow: hidden;
   border: 1px solid $border;
@@ -413,7 +413,7 @@ $text-subtle: #28406f;
   flex-shrink: 0;
 }
 
-/* System status — dark theme success (project created) */
+/* System status - dark theme success (project created) */
 .systemStatus {
   display: flex;
   align-items: center;
@@ -480,7 +480,7 @@ $text-subtle: #28406f;
   color: $text;
 }
 
-/* Financial cards — 5 cards; label top-left, value bottom-right; Margin & Margin % use success token */
+/* Financial cards - 5 cards; label top-left, value bottom-right; Margin & Margin % use success token */
 .financialGrid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -531,7 +531,7 @@ $text-subtle: #28406f;
   align-self: flex-end;
 }
 
-/* Kanban — equal column heights, consistent card spacing */
+/* Kanban - equal column heights, consistent card spacing */
 .kanbanGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

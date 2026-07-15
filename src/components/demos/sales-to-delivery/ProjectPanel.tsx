@@ -56,7 +56,7 @@ export function ProjectPanel() {
         </button>
       </div>
 
-      {/* Financial cards — 5 cards, same style for all */}
+      {/* Financial cards - 5 cards, same style for all */}
       <div className={styles.financialGrid}>
         {FINANCIAL_CARDS.map((card) => (
           <div key={card.label} className={styles.financialCard}>
@@ -66,7 +66,7 @@ export function ProjectPanel() {
         ))}
       </div>
 
-      {/* Kanban board — populated columns */}
+      {/* Kanban board - populated columns */}
       <div className={styles.kanbanGrid}>
         {KANBAN_COLUMNS.map((col) => (
           <div key={col.id} className={styles.kanbanColumn}>

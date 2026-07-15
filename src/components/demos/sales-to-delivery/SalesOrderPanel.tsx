@@ -88,7 +88,7 @@ export function SalesOrderPanel() {
         </table>
       </div>
 
-      {/* System status — project created from this order */}
+      {/* System status - project created from this order */}
       <div className={styles.systemStatus}>
         <span className={styles.systemStatusIcon}>✓</span>
         <span className={styles.systemStatusText}>Project auto-generated on confirmation</span>

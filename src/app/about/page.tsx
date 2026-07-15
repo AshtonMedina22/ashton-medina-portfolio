@@ -58,50 +58,34 @@ const impactMetrics = [
 const experience = [
   {
     title: "Senior AI & Automation Engineer",
-    company: "Event Operations & Rental Services Company",
-    period: "2025 - Present",
-    location: "Allen, TX",
     bullets: [
-      "Architected and built a custom ERP/CRM operating platform with Python, JavaScript, and PostgreSQL, consolidating 25+ disconnected tools and creating a foundation for AI-enabled insights.",
-      "Designed a 450-step AI-ready workflow engine with 14 SOP templates and 338 automated tasks for dynamic operational timeline generation after sales confirmation.",
-      "Implemented KPI dashboards, automated vendor compliance, financial controls, payment infrastructure, and production training materials to support adoption.",
-      "Expanded operating capacity from 600+ annual events toward a 1,500+ event ceiling without added headcount through automation and system optimization.",
+      "Sole architect and developer of a custom ERP on Odoo (Python/JS/PostgreSQL) unifying CRM, sales, payroll, and projects.",
+      "Designed a 450-step workflow engine and template-driven automation layer powering end-to-end event execution.",
+      "Built vendor portals, compliance checks, and real-time executive dashboards on a CI/CD deployment pipeline.",
     ],
   },
   {
     title: "Senior Systems Integration & TechOps Engineer",
-    company: "Automotive Technology & Telematics Company",
-    period: "2023 - 2025",
-    location: "Dallas-Fort Worth, TX",
     bullets: [
-      "Supported national automotive technology programs across 443+ client entities and 5,500+ enterprise user accounts.",
-      "Integrated telematics, dealership software, toll networks, CRM, support, payment, and internal operating systems into unified data and workflow paths.",
-      "Architected ClickUp as a central operating system with automated workflows and AgentOps-style task orchestration across CRM, sales, onboarding, support, OKRs, and capacity planning.",
-      "Designed automated conversational triage workflows in Intercom, reducing customer time-to-value by 40% and inbound ticket volume by 35%.",
+      "Led technical operations and SaaS rollout for a fleet platform across 443+ locations and 5,500+ enterprise accounts.",
+      "Designed integration architectures connecting telematics, toll systems, and dealership CRMs into a unified stack.",
+      "Implemented automated conversational triage in Intercom, cutting inbound support tickets by 35%.",
     ],
   },
   {
     title: "Senior Implementation & Data Migration Engineer",
-    company: "Enterprise SaaS / Childcare Technology Platform",
-    period: "2019 - 2023",
-    location: "Remote",
     bullets: [
-      "Supported implementation and onboarding across a shared global portfolio of 3,000+ SaaS customer organizations.",
-      "Led high-stakes multi-tenant database migrations, schema mapping, environment configuration, onboarding workflows, usage dashboards, and permission setup.",
-      "Improved data quality and readiness for downstream analytics through structured migrations, validation routines, and reusable configuration playbooks.",
-      "Built lifecycle automation and usage telemetry dashboards for rosters, relationship structures, and multi-state enrollment requirements, reducing implementation cycles by 30%.",
+      "Owned technical onboarding and data integrations for 3,000+ global SaaS customers.",
+      "Designed multi-tenant database migration pipelines and reusable mapping models, reducing timelines by 30%.",
+      "Built lifecycle automation and telemetry dashboards to monitor adoption and surface operational issues.",
     ],
   },
   {
     title: "Director of Digital Operations",
-    company: "Multi-Site Education & Childcare Organization",
-    period: "2009 - 2023",
-    location: "Dallas-Fort Worth, TX",
     bullets: [
-      "Directed digital operations across 4 locations over a 14-year tenure, supporting 500+ active families annually and a workforce of 100+ employees.",
-      "Owned P&L, staffing, scheduling, compliance, vendor procurement, billing, payroll, facilities, and operational reporting.",
-      "Centralized enrollment, administration, reporting, and compliance workflows to improve scale, operating visibility, and documentation quality.",
-      "Maintained 100% audit readiness across recurring state inspections through safety, licensing, documentation, and care-profile controls.",
+      "Directed digital operations and P&L across 4 locations serving 500+ families and 100+ staff.",
+      "Led multi-site digital transformation of enrollment and admin workflows into unified software systems.",
+      "Maintained a 100% compliance pass rate via centralized documentation and financial control workflows.",
     ],
   },
 ] as const;
@@ -110,52 +94,37 @@ const skillGroups = [
   {
     title: "AI / Automation / AgentOps",
     terms: [
-      "LLM Prompt Engineering",
-      "AI-Assisted Workflows",
-      "Automated Triage & Routing",
-      "Human-in-the-Loop Review",
-      "Telemetry",
-      "Observability",
+      "LLM prompt engineering",
+      "AI-assisted workflows & agents",
+      "Automated triage & routing",
+      "Human-in-the-loop review flows",
     ],
   },
   {
     title: "MLOps / Platform Engineering",
     terms: [
-      "CI/CD",
-      "Git/GitHub",
-      "Workflow Orchestration",
-      "Data Pipelines & ETL",
-      "Multi-Tenant Architecture",
-      "RBAC / OAuth",
-      "API-First Design",
-      "Runbooks",
+      "CI/CD pipelines (Odoo.sh, Git/GitHub)",
+      "Workflow orchestration (450-step pipelines)",
+      "Data pipelines & ETL (PostgreSQL)",
+      "Runbooks, SRE practices & observability",
     ],
   },
   {
-    title: "Cloud / Integrations / Data",
+    title: "Cloud, Integrations & Data",
     terms: [
-      "REST APIs",
-      "JSON-RPC",
-      "Webhooks",
-      "OAuth 2.0",
-      "PostgreSQL",
-      "Data Quality",
-      "KPI Dashboards",
-      "Executive Reporting",
+      "REST APIs, JSON-RPC, Webhooks, OAuth 2.0",
+      "PostgreSQL schema design & multi-tenant isolation",
+      "Third-party SaaS integrations (Salesforce, HubSpot, Zoho, QuickBooks, Intercom)",
+      "KPI dashboards, telemetry & executive reporting",
     ],
   },
   {
-    title: "Languages & Leadership",
+    title: "Languages, Tools & Leadership",
     terms: [
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "SQL",
-      "Odoo",
-      "Node.js",
-      "ClickUp",
-      "Documentation",
-      "Cross-Functional Rollouts",
+      "Python, JavaScript (ES6+), TypeScript, SQL, XML",
+      "Odoo custom modules, OWL, Google Apps Script",
+      "Jira, ClickUp, Notion, Git/GitHub",
+      "Technical strategy, onboarding frameworks, documentation",
     ],
   },
 ] as const;
@@ -257,18 +226,20 @@ export default function About() {
           <section className={`${styles.resumeSection} ${styles.experienceSection}`}>
             <div className={styles.sectionHeaderCompact}>
               <span className={styles.sectionEyebrow}>Experience</span>
-              <h2 className={styles.sectionTitle}>Architecting and operationalizing intelligent systems.</h2>
+              <h2 className={styles.sectionTitle}>
+                Building automation, data, and AI platforms end-to-end
+              </h2>
+              <p className={styles.sectionLead}>
+                15 years owning backend platforms, integrations, and workflow automation - now
+                focused on AI solutions, MLOps, and AgentOps-style systems.
+              </p>
             </div>
             <div className={styles.experienceList}>
               {experience.map((role) => (
-                <article key={`${role.company}-${role.title}`} className={styles.experienceItem}>
-                  <div className={styles.experienceMeta}>
-                    <span>{role.period}</span>
-                    <em>{role.location}</em>
-                  </div>
+                <article key={role.title} className={styles.experienceItem}>
+                  <span className={styles.timelineMarker} aria-hidden />
                   <div className={styles.experienceBody}>
                     <h3>{role.title}</h3>
-                    <strong>{role.company}</strong>
                     <ul>
                       {role.bullets.map((bullet) => (
                         <li key={bullet}>{bullet}</li>
@@ -280,10 +251,13 @@ export default function About() {
             </div>
           </section>
 
-          <section className={styles.resumeSection}>
+          <section className={`${styles.resumeSection} ${styles.skillsStackSection}`}>
             <div className={styles.sectionHeaderCompact}>
-              <span className={styles.sectionEyebrow}>Tools & Skills</span>
-              <h2 className={styles.sectionTitle}>AI and automation core stack.</h2>
+              <span className={styles.sectionEyebrow}>Skills stack</span>
+              <h2 className={styles.sectionTitle}>From cloud architecture to agents in production</h2>
+              <p className={styles.sectionLead}>
+                A practical toolkit for designing, shipping, and operating AI systems end-to-end.
+              </p>
             </div>
             <div className={styles.keywordGroups}>
               {skillGroups.map((group) => (

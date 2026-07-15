@@ -95,13 +95,13 @@ const home: Home = {
     "Dallas-Fort Worth AI solutions and automation portfolio focused on intelligent workflows, data pipelines, AgentOps-style orchestration, operational reporting, governance, and adoption.",
   headline: (
     <>
-      Operationalizing AI
+      Designing AI-enabled systems
       {" "}
       <br />
-      into systems
+      that scale operations, not
       {" "}
       <br />
-      <span className="headingAccent">teams can run.</span>
+      <span className="headingAccent">headcount.</span>
     </>
   ),
   featured: {
@@ -114,7 +114,7 @@ const home: Home = {
     href: "/work/sales-to-delivery-automation-platform",
   },
   subline:
-    "I help teams turn scattered data, manual handoffs, disconnected tools, and weak reporting into intelligent workflows, observable systems, and AI-ready operating controls.",
+    "I build production-grade platforms, workflow engines, and data pipelines that turn manual, spreadsheet-driven processes into secure, observable, and automated systems - from AI-assisted review agents to end-to-end orchestration.",
 };
 
 const about: About = {
